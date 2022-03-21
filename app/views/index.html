@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Sentence and offence management prototype
+{% endblock %}
+{% block header %}
+{{ mojHeader({
+organisationLabel: {
+text: 'HMPPS',
+href: '#'
+},
+serviceLabel: {
+text: "Sentence and offence management",
+href: '#'
+}
+}) }}
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            {% if serviceName %} {{ serviceName }} {% endif %} &nbsp;
+            <strong class="govuk-tag govuk-phase-banner__content__tag" style="vertical-align: middle;">
+                alpha
+            </strong>
+        </h1>
+            <p class="govuk-body"><a href="version-1/search-for-prisoner">Version 1</a></p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,161 @@
+{% extends "./dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+                Add a sentence
+            </h1>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-form-group">
+                <h2 class="govuk-heading-l">Offence dates</h2>
+                <label class="govuk-heading-m" for="offence-start-date">
+                    Offence start date
+                </label>
+                <div id="offence-start-date" class="govuk-hint">
+                    For example, 27 3 2007
+                </div>
+                <div class="govuk-date-input" id="offence-start-date">
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="offence-start-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="offence-start-day" name="offence-start-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="offence-start-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="offence-start-month" name="offence-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="offence-start-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="offence-start-year" name="offence-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-form-group govuk-!-margin-top-7">
+                <h2 class="govuk-heading-m">Does the offence have an end date?</h2>
+                <p class="govuk-body">This applies to offences that occur over multiple days.</p>
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="offence-end-date" name="offence-end-date" type="radio" value="offence-end-date" data-aria-controls="conditional-end-date">
+                        <label class="govuk-label govuk-radios__label" for="offence-end-date">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-end-date">
+                        <div class="govuk-form-group">
+                            <label class="govuk-heading-s" for="offence-end-date">
+                                Offence end date
+                            </label>
+                            <div id="offence-start-date" class="govuk-hint">
+                                For example, 27 3 2007
+                            </div>
+                            <div class="govuk-date-input" id="offence-end-date">
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="offence-end-day">
+                                            Day
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="offence-end-day" name="offence-end-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="offence-end-month">
+                                            Month
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="offence-end-month" name="offence-end-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                                <div class="govuk-date-input__item">
+                                    <div class="govuk-form-group">
+                                        <label class="govuk-label govuk-date-input__label" for="offence-end-year">
+                                            Year
+                                        </label>
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="offence-end-year" name="offence-end-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="offence-end-date" name="offence-end-date" type="radio" value="offence-end-date">
+                        <label class="govuk-label govuk-radios__label" for="offence-end-date">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-form-group govuk-!-margin-top-9">
+                <label class="govuk-heading-l" for="sentence-date">
+                    Sentence date
+                </label>
+                <div id="offence-start-date" class="govuk-hint">
+                    For example, 27 3 2007
+                </div>
+                <div class="govuk-date-input" id="offence-start-date">
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="offence-start-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="offence-start-day" name="offence-start-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="offence-start-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="offence-start-month" name="offence-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="offence-start-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="offence-start-year" name="offence-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="govuk-form-group govuk-!-margin-top-8">
+                <h2 class="govuk-heading-l">Sentence type</h2>
+                <label class="govuk-label" for="sort">
+                    Select a sentence type
+                </label>
+                <select class="govuk-select" id="sort" name="sort">
+                    <option value="SCSDS">Sentencing Code Standard Determinate Sentence</option>
+                    <option value="SDS">CJA03 Standard Determinate Sentence</option>
+                    <option value="ORA" selected>ORA Sentencing Code Standard Determinate Sentence</option>
+                    <option value="ORACJA03">ORA CJA03 Standard Determinate Sentence</option>
+                    <option value="SOS250">Serious Offence Sec 250 Sentencing Code (U18)</option>
+                    <option value="ORA250">ORA Serious Offence Sec 250 Sentencing Code (U18)</option>
+                    <option value="SO-18CJA03" selected>Serious Offence -18 CJA03 POCCA 2000</option>
+                    <option value="ORA-18CJA03">ORA Serious Offence -18 CJA03 POCCA 2000</option>
+                    <option value="YOI">Young Offender Institution</option>
+                    <option value="ORAYOI">ORA Young Offender Institution</option>
+                </select>
+            </div>
+            <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+                Continue
+            </button>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

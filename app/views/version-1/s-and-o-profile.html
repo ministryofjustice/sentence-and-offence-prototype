@@ -1,0 +1,57 @@
+{% extends "./dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+                Sentence and offence information
+            </h1>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Personal information</h2>
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Name
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Joe Bloggs
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Prison number
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        B4166LG
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Date of birth
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        1 February 1990
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Sentences and offences</h2>
+            <p class="govuk-body">There are no sentence and offences saved for Joe Bloggs.</p>
+            <p class="govuk-body"><a href="new-sentence.html">Add sentences and offences</a></p>
+        </div>
+    </div>
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-l">Adjustments</h2>
+            <p class="govuk-body">There are no adjustments saved for Joe Bloggs.</p>
+            <p class="govuk-body"><a href="">Add adjustments</a></p>
+        </div>
+    </div>
+</div>
+{% endblock %}
