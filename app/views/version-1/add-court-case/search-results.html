@@ -1,0 +1,65 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="search-by-name" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="/anything" method="post">
+                    <div class="govuk-form-group">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                                What is the name of the court?
+                            </h1>
+                        </legend>
+                            <label class="govuk-label govuk-label govuk-label--m" for="search">
+                                Enter a court name, address, town or city
+                            </label>
+                            <div id="search-hint" class="govuk-hint">
+                                For example, Blackburn Family Court.
+                            </div>
+                            <input class="govuk-input govuk-input govuk-!-width-three-quarters" id="search" name="search" type="text" aria-describedby="search-hint" value="Leeds">
+                    </div>
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="govuk-grid-row govuk-!-margin-top-6">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m">6 courts matching search for search 'Leeds'</h2>
+                <p class="govuk-body">Select a court to add a court case</p>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                <div class="search-results" id="search-results">
+        
+          <h3 class="govuk-heading-s">
+            <a class="govuk-link" href="court-date">Leeds Combined Court Centre</a>
+          </h3>
+        
+          <h3 class="govuk-heading-s">
+            <a class="govuk-link" href="/courts/leeds-district-probate-registry">Leeds District Probate Registry</a>
+          </h3>
+        
+          <h3 class="govuk-heading-s">
+            <a class="govuk-link" href="/courts/leeds-employment-tribunal">Leeds Employment Tribunal</a>
+          </h3>
+        
+          <h3 class="govuk-heading-s">
+            <a class="govuk-link" href="/courts/leeds-magistrates-court-and-family-court">Leeds Magistrates' Court and Family Court</a>
+          </h3>
+        
+          <h3 class="govuk-heading-s">
+            <a class="govuk-link" href="/courts/leeds-social-security-and-child-support-tribunal">Leeds Social Security and Child Support Tribunal</a>
+          </h3>
+        
+          <h3 class="govuk-heading-s">
+            <a class="govuk-link" href="/courts/north-east-regional-confiscation-unit">North East Regional Confiscation Unit</a>
+          </h3>
+        
+      </div>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="hearing-type" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" method="post">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    Do you know the outcome code for this court case?
+                                </h1>
+                            </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios" data-module="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="known-hearing-code" name="known-outcome-code" type="radio" value="yes" data-aria-controls="conditional-outcome-code">
+                                        <label class="govuk-label govuk-radios__label" for="known-outcome-code">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-outcome-code">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="outcome-code">
+                                                Outcome code
+                                            </label>
+                                            <div id="hearing-code-hint" class="govuk-hint">
+                                                For example, '1002'
+                                            </div>
+                                            <input class="govuk-input govuk-!-width-one-third" id="outcome-code" name="outcome-code" spellcheck="false">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="known-outcome-code-2" name="known-outcome-code" type="radio" value="no">
+                                        <label class="govuk-label govuk-radios__label" for="known-outcome-code-2">
+                                            No
+                                        </label>
+                                    </div>
+                                </div>
+                        </fieldset>
+                    </div>
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

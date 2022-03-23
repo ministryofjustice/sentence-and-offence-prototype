@@ -1,0 +1,31 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="do-you-know-the-name-of-the-court" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="search-results" method="post">
+                    <div class="govuk-form-group">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                                What is the name of the court?
+                            </h1>
+                        </legend>
+                            <label class="govuk-label govuk-label govuk-label--m" for="search">
+                                Enter a court name, address, town or city
+                            </label>
+                            <div id="search-hint" class="govuk-hint">
+                                For example, Blackburn Family Court.
+                            </div>
+                            <input class="govuk-input govuk-input govuk-!-width-three-quarters" id="search" name="search" type="text" aria-describedby="search-hint">
+                    </div>
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

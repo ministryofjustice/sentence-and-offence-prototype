@@ -3,84 +3,42 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-// Run this code when a form is submitted 
-router.post('/sandbox/offence-days-answer', function (req, res) {
+// Court name route
+router.post('/version-1/add-court-case/do-you-know-the-name-of-the-court', function(req, res) {
 
-  // Make a variable and give it the value 
-  var offenceDays = req.session.data['offence-multiple-days']
-console.log(offenceDays)
-  // Check whether the variable matches a condition
-  if (offenceDays == "yes"){
-    // Send user to next page
-    res.redirect('/sandbox/offence-date-a-3')
-  }
+    var knownCourtName = req.session.data['do-you-know-the-name-of-the-court']
 
+    console.log("knownCourtName:" + knownCourtName)
+
+    if (knownCourtName == "yes") {
+        res.redirect('/version-1/add-court-case/search-by-name')
+    }
 })
 
-// Route for adjustments
-router.post('/version-2/adjustments-answer', function (req, res) {
+// Hearing type route
+router.post('/version-1/add-court-case/hearing-type', function(req, res) {
 
-  // Make a variable and give it the value 
-  var adjustmentsApply = req.session.data['are-there-any-adjustments']
-console.log(adjustmentsApply)
-  // Check whether the variable matches a condition
-  if (adjustmentsApply == "yes"){
-    // Send user to next page
-    res.redirect('/version-2/what-adjustments') 
-  } else res.redirect('/version-2/check-answers')
+    var knownHearingCode = req.session.data['known-hearing-code']
 
+    console.log("knownHearingCode:" + knownHearingCode)
+
+    if (knownHearingCode == "yes") {
+        res.redirect('/version-1/add-court-case/outcome')
+    }
 })
 
-// Route for adjustments
-router.post('/version-2/what-adjustments-apply', function (req, res) {
+// Outcome type route
+router.post('/version-1/add-court-case/outcome', function(req, res) {
 
-  var adjustment = req.session.data['adjustment']
-  var nextQ = req.session.data['nextQ']
+    var knownOutcomeCode = req.session.data['known-outcome-code']
 
-console.log(adjustment)
-  if (adjustment == "remand"){
-    res.redirect('/version-2/remand-dates') 
-  }
-  else if (adjustment == "tagged-bail"){
-    res.redirect('/version-2/tagged-bail-dates')
-  }
-  else if (adjustment == 'remand', 'tagged-bail'){
-    console.log("remand + tagged bail")
-    res.redirect("/version-2/remand-dates-2")
-  }
-  else res.redirect('/version-2/check-answers')
+    console.log("knownOutcomeCode:" + knownOutcomeCode)
 
+    if (knownOutcomeCode == "yes") {
+        res.redirect('/version-1/add-court-case/check-answers')
+    }
 })
 
-
-// V6 settings
-// Route for start page
-router.post('/version-6/start-point-answer', function (req, res) {
-
-  // Make a variable and give it the value 
-  var startPoint = req.session.data['start-point']
-console.log(startPoint)
-  // Check whether the variable matches a condition
-  if (startPoint == "dps"){
-    // Send user to next page
-    res.redirect('/version-6/dps/dps-home') 
-  } else res.redirect('/version-6/start')
-
-})
-
-// Route for adjustments
-router.post('/version-6/start-point-answer', function (req, res) {
-
-  var sp = req.session.data['start-point']
-
-console.log(sp)
-  if (sp == "dps"){
-    res.redirect('/version-2/remand-dates') 
-  }
-  else if (sp == "standalone"){
-    res.redirect('/version-2/tagged-bail-dates')
-  }
-})
 
 
 module.exports = router

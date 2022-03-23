@@ -1,0 +1,43 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="../s-and-o-profile" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" method="post">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <span class="govuk-caption-xl">
+              Add a new court case
+            </span>
+                                <h1 class="govuk-fieldset__heading">
+                                    Do you know the name of the court?
+                                </h1>
+                            </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="do-you-know-the-name-of-the-court" name="do-you-know-the-name-of-the-court" type="radio" value="yes">
+                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                                        Yes, I have the name
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="do-you-know-the-name-of-the-court-2" name="do-you-know-the-name-of-the-court" type="radio" value="no">
+                                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                                        No, I don't have the name
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="court-date" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="hearing-type">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <div class="govuk-form-group">
+                                <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
+                                        What is the court case reference number?
+                                    </label>
+                                </h1>
+                                <div id="court-case-reference-number-hint" class="govuk-hint">
+                                    For example, '463909453'
+                                </div>
+                                <input class="govuk-input govuk-!-width-one-half" id="court-case-reference-number" name="court-case-reference-number" type="text" aria-describedby="court-case-reference-number-hint">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}
