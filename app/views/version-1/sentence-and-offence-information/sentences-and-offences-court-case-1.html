@@ -2,99 +2,145 @@
 {% block content %}
 <!-- Back link -->
 <div class="moj-width-container">
-<a href="../s-and-o-profile" class="govuk-back-link">Back</a>
+    <a href="../s-and-o-profile" class="govuk-back-link">Back</a>
 </div>
 <!-- Page intro -->
 <div class="moj-width-container govuk-!-margin-top-7">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h1 class="govuk-heading-xl">
-                Sentences and offences
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-4">
+                Sentences and offences for Joe Bloggs
             </h1>
-            <h2 class="govuk-heading-m govuk-!-margin-top-6">Leeds Combined Court Centre</h2>
+            <p class="govuk-body govuk-!-margin-bottom-4" data-test="prison-number"><span class="govuk-!-font-weight-bold">Prison number:</span> A5264VA</p>
+            <h2 class="govuk-heading-l govuk-!-margin-bottom-4">Leeds Combined Court Centre</h2>
             <dl class="govuk-summary-list govuk-summary-list--no-border">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Court case number
-    </dt>
-    <dd class="govuk-summary-list__value">
-      463909453
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Court case date
-    </dt>
-    <dd class="govuk-summary-list__value">
-        3 September 2021
-    </dd>
-  </div>
-</dl>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court case number
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        463909453
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court case date
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        3 September 2021
+                    </dd>
+                </div>
+            </dl>
         </div>
     </div>
 </div>
 <!-- Court case 1 -->
 <div class="moj-width-container">
-    <table class="govuk-table" style="width: 100%;">
-        <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-                <th class="govuk-table__header" scope="col" style="width: 3%">Count</th>
-                <th class="govuk-table__header" scope="col" style="width: 40%">Offence</th>
-                <th class="govuk-table__header" scope="col" style="width: 18%">Sentence type</th>
-                <th class="govuk-table__header" scope="col" style="width: 18%">Sentence date</th>
-                <th class="govuk-table__header" scope="col" style="width: 21%">Sentence length</th>
-            </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-                <!-- Count -->
-                <td class="govuk-table__cell">1.</td>
-                <!-- Offence -->
-                <td class="govuk-table__cell">Abstract / use without authority electricity<br>
-                    <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16" style="margin-bottom: 0;">Committed on 4 April 2020</div>
-                </td>
-                <!-- Sentence type -->
-                <td class="govuk-table__cell">ORA 14 Day Fixed Term Recall<br>
-                    <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16" style="margin-bottom: 0">Returned to custody on<br> 27 February 2022</div></td>
-                <!-- Sentence date -->
-                <td class="govuk-table__cell">3 September 2021</td>
-                <!-- Sentence length -->
-                <td class="govuk-table__cell">0 years 11 months<br>0 weeks 0 days<br>
-                </td>
-            </tr>
-            <tr class="govuk-table__row">
-                <!-- Count -->
-                <td class="govuk-table__cell">2.</td>
-                <!-- Offence -->
-                <td class="govuk-table__cell">13 hours or more working<br>
-                    <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16" style="margin-bottom: 0">Committed on 2 March 2019</div>
-                </td>
-                <!-- Sentence type -->
-                <td class="govuk-table__cell">ORA 14 Day Fixed Term Recall<br>
-                    <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16" style="margin-bottom: 0">Returned to custody on<br> 27 February 2022</div></td>
-                <!-- Sentence date -->
-                <td class="govuk-table__cell">3 September 2021</td>
-                <!-- Sentence length -->
-                <td class="govuk-table__cell">0 years 2 months<br>0 weeks 0 days<br>
-                </td>
-            </tr>
-            <tr class="govuk-table__row">
-                <!-- Count -->
-                <td class="govuk-table__cell">3.</td>
-                <!-- Offence -->
-                <td class="govuk-table__cell">Access / exit by unofficial route - railway bye-law<br>
-                    <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16" style="margin-bottom: 0">Committed on 1 January 2020</div>
-                </td>
-                <!-- Sentence type -->
-                <td class="govuk-table__cell">ORA 14 Day Fixed Term Recall<br>
-                    <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16" style="margin-bottom: 0">Returned to custody on<br> 27 February 2022</div></td>
-                <!-- Sentence date -->
-                <td class="govuk-table__cell">3 September 2021</td>
-                <!-- Sentence length -->
-                <td class="govuk-table__cell">0 years 2 months<br>0 weeks 0 days<br>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <a href="../add-court-case/court-name-search"><button class="govuk-button">Add new sentence</button></a>
+    <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+        <div class="govuk-grid-column-full govuk-!-margin-top-4">
+            <h3 class="govuk-body govuk-!-margin-bottom-0">Count 1</h3>
+            <h4 class="govuk-heading-m govuk-!-margin-bottom-1">
+                Act of violence on fixed platform
+            </h4>
+            <p class="govuk-body">Committed on 15 November 2020</p>
+            <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header" style="width: 20%;">Sentence type</th>
+                        <td class="govuk-table__cell">ORA CJA03 Standard Determinate Sentence</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Sentence date</th>
+                        <td class="govuk-table__cell">21 September 2021</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Sentence length</th>
+                        <td class="govuk-table__cell">0 years 18 months
+                            0 weeks 0 days</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+        <div class="govuk-grid-column-full govuk-!-margin-top-4">
+            <h3 class="govuk-body govuk-!-margin-bottom-0">Count 2</h3>
+            <h4 class="govuk-heading-m govuk-!-margin-bottom-1">
+                Burglary dwelling - with intent to steal
+            </h4>
+            <p class="govuk-body">Committed on 15 November 2020</p>
+            <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header" style="width: 20%;">Sentence type</th>
+                        <td class="govuk-table__cell">ORA CJA03 Standard Determinate Sentence</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Sentence date</th>
+                        <td class="govuk-table__cell">21 September 2021</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Sentence length</th>
+                        <td class="govuk-table__cell">0 years 18 months
+0 weeks 0 days<div class="govuk-hint"> concurrent</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+        <div class="govuk-grid-column-full govuk-!-margin-top-4">
+            <h3 class="govuk-body govuk-!-margin-bottom-0">Count 3</h4>
+            <h4 class="govuk-heading-m govuk-!-margin-bottom-1">
+                Theft from a shop
+            </h4>
+            <p class="govuk-body">Committed on 15 November 2020</p>
+            <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header" style="width: 20%;">Sentence type</th>
+                        <td class="govuk-table__cell">ORA CJA03 Standard Determinate Sentence</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Sentence date</th>
+                        <td class="govuk-table__cell">21 September 2021</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Sentence length</th>
+                        <td class="govuk-table__cell">0 years 3 months
+0 weeks 0 days<div class="govuk-hint"> concurrent</div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+        <div class="govuk-grid-column-full govuk-!-margin-top-4">
+            <h3 class="govuk-body govuk-!-margin-bottom-0">Count 4</h4>
+            <h4 class="govuk-heading-m govuk-!-margin-bottom-1">
+                Manslaughter
+            </h4>
+            <p class="govuk-body govuk-!-margin-bottom-2">Committed on 15 November 2020</p>
+            <div class="govuk-!-margin-bottom-2"><span class="moj-badge">Schedule 15</span></div>
+            <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header" style="width: 20%;">Sentence type</th>
+                        <td class="govuk-table__cell">ORA CJA03 Standard Determinate Sentence</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Sentence date</th>
+                        <td class="govuk-table__cell">21 September 2021</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Sentence length</th>
+                        <td class="govuk-table__cell">7 years 0 months
+0 weeks 0 days</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
 {% endblock %}

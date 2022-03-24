@@ -1,0 +1,99 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                <ul class="moj-sub-navigation__list">
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" aria-current="page" href="#1">Overview</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="#2">Adjustments</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="#2">Release dates</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">
+                <span class="govuk-caption-xl">Overview</span>
+                Joe Bloggs
+            </h1>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-!-margin-bottom-8 app-possible-prison-record" style="display: flex;">
+                <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-0">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header" style="width: 40%;">Name</th>
+                            <td class="govuk-table__cell">Joe Bloggs</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Date of birth</th>
+                            <td class="govuk-table__cell">1 April 1987</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Prison number</th>
+                            <td class="govuk-table__cell">A5264VA</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <img style="padding: 10px 10px 0 10px;height: 9em;" src="/public/images/prisoner.jpeg" alt="ABC, ABC">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="homepage-content">
+    <div class="moj-width-container">
+        <ul class="govuk-grid-row card-group">
+            <li class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+                    <h2 class="govuk-heading-m card__heading">
+                        <a class="govuk-link card__link" href="court-cases">Court cases</a>
+                    </h2>
+                    <p class="govuk-body card__description govuk-!-margin-bottom-2">View, add and change adjustment information.</p>
+                    <ul class="govuk-list">
+                        <li><a href="court-cases">View court cases</a></li>
+                        <li><a href="">Add court case</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable" data-test="incentives">
+                    <h2 class="govuk-heading-m card__heading">
+                        <a class="govuk-link card__link" href="https://incentives-ui-dev.hmpps.service.justice.gov.uk">Adjustments</a>
+                    </h2>
+                    <p class="govuk-body card__description govuk-!-margin-bottom-2">View, add and change adjustment information.</p>
+                    <ul class="govuk-list">
+                        <li><a href="">View adjustments</a></li>
+                        <li><a href="">Add adjustments</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="govuk-grid-column-one-third card-group__item">
+                <div class="card card--clickable" data-test="establishment-roll">
+                    <h2 class="govuk-heading-m card__heading">
+                        <a class="govuk-link card__link" href="/establishment-roll">Release dates</a>
+                    </h2>
+                    <p class="govuk-body card__description govuk-!-margin-bottom-2">View and calculate release dates.</p>
+                    <ul class="govuk-list">
+                        <li><a href="">View release dates</a></li>
+                        <li><a href="">Calculate release dates</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
+</div>
+{% endblock %}
