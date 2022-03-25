@@ -1,0 +1,38 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="offence-search">
+                    <div class="govuk-form-group">
+                        <label class="govuk-heading-l" for="sentence-date">
+                            Do you know the offence code?
+                        </label>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="offence-code" name="offence-code" type="radio" value="Yes">
+                                    <label class="govuk-label govuk-radios__label" for="offence-code">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="offence-code-2" name="offence-code" type="radio" value="Concurrent">
+                                    <label class="govuk-label govuk-radios__label" for="offence-code-2">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

@@ -1,0 +1,32 @@
+{% extends "layout.html" %}
+{% block pageTitle %}
+Sentence and offence management prototype
+{% endblock %}
+{% block header %}
+{{ mojHeader({
+organisationLabel: {
+text: 'HMPPS',
+href: '#'
+},
+serviceLabel: {
+text: "Sentence and offence management",
+href: '#'
+}
+}) }}
+{% endblock %}
+{% block beforeContent %}
+{% endblock %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Autocomplete test
+        </h1>
+            <select id="location-picker" class="enhance-autcomplete">
+                <option value="fr">France</option>
+                <option value="de">Germany</option>
+                <option value="gb">United Kingdom</option>
+            </select>
+    </div>
+</div>
+{% endblock %}

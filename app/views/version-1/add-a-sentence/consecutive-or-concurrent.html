@@ -1,0 +1,38 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="sentence-length" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="../add-an-offence/known-offence-code">
+                    <div class="govuk-form-group">
+                        <label class="govuk-heading-l" for="sentence-date">
+                            Was the sentence consecutive or concurrent?
+                        </label>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="consecutive-or-concurrent" name="consecutive-or-concurrent" type="radio" value="Consecutive">
+                                    <label class="govuk-label govuk-radios__label" for="consecutive-or-concurrent">
+                                        Consecutive
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="consecutive-or-concurrent-2" name="consecutive-or-concurrent" type="radio" value="Concurrent">
+                                    <label class="govuk-label govuk-radios__label" for="consecutive-or-concurrent-2">
+                                        Concurrent
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

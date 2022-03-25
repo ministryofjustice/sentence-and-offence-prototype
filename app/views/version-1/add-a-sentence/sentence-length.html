@@ -1,0 +1,48 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="sentence-date" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="consecutive-or-concurrent">
+                    <div class="govuk-form-group">
+                        <label class="govuk-heading-l" for="sentence-date">
+                            How long was Joe Bloggs sentenced for?
+                        </label>
+                        <div class="govuk-date-input" id="sentence-date">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="sentence-date-day">
+                                        Days
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="sentence-date-day" name="offence-start-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="sentence-date-month">
+                                        Months
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="sentence-date-month" name="offence-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="sentence-date-year">
+                                        Years
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="sentence-date-year" name="offence-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <button class="govuk-button" data-module="govuk-button">
+                            Continue
+                        </button>
+                </form>
+        </div>
+    </div>
+    </main>
+</div>
+{% endblock %}
