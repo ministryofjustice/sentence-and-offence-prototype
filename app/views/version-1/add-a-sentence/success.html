@@ -1,20 +1,20 @@
 {% extends "../dps/includes/template.html" %}
 {% block content %}
 <div class="moj-width-container">
-    <a href="outcome" class="govuk-back-link">Back</a>
+    <a href="check-answers" class="govuk-back-link">Back</a>
     <main class="govuk-main-wrapper " id="main-content" role="main">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <div class="govuk-panel govuk-panel--confirmation">
                     <h1 class="govuk-panel__title">
-                        Court case added for Joe Bloggs
+                        Sentence added for Joe Bloggs
                     </h1>
                     <div class="govuk-panel__body">
-                        Court case reference number <br><strong>{{ data['court-case-reference'] }} </strong>
+                        <strong>Court case reference number<br></strong> {{ data['court-case-reference'] }} <br>                        
                     </div>
                 </div>
-<a class="govuk-button govuk-!-margin-top-4" href="../add-a-sentence/sentence-type">Add a sentence to this court case</a>
-                <p class="govuk-body"><a href="../version-1b/court-cases-new">Return to Court cases for Joe Bloggs</a></p>
+<a class="govuk-button govuk-!-margin-top-4" href="../add-a-sentence/sentence-type">Add another sentence to this court case</a>
+                <p class="govuk-body"><a href="../sentence-and-offence-information/sentences-and-offences-court-case-1-new">Return to sentences and offences</a></p>
             </div>
         </div>
     </main>

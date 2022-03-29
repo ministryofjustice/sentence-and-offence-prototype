@@ -1,14 +1,14 @@
 {% extends "../dps/includes/template.html" %}
 {% block content %}
 <div class="moj-width-container">
-    <a href="outcome" class="govuk-back-link">Back</a>
+    <a href="offence-date" class="govuk-back-link">Back</a>
     <main class="govuk-main-wrapper " id="main-content" role="main">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <span class="govuk-caption-l">Add a sentence</span>
                 <h1 class="govuk-heading-xl">Check your answers</h1>
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                    <div class="govuk-summary-list__row">
+                                        <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             Sentence type
                         </dt>
@@ -52,7 +52,7 @@
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Consecutiver or concurrent
+                            Consecutive or concurrent
                         </dt>
                         <dd class="govuk-summary-list__value">
                             {{ data['consecutive-or-concurrent'] }}
@@ -64,10 +64,38 @@
                             </a>
                         </dd>
                     </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Offence
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['offence-name'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="#">
+                                Change
+                                <span class="govuk-visually-hidden"> court</span>
+                            </a>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Committed on
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['offence-start-day'] }} {{ data['offence-start-month'] }} {{ data['offence-start-year'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="#">
+                                Change
+                                <span class="govuk-visually-hidden"> licence type</span>
+                            </a>
+                        </dd>
+                    </div>
                 </dl>
-                <form class="form" action="../add-an-offence/known-offence-code">
+                <form class="form" action="success">
                     <button class="govuk-button" data-module="govuk-button">
-                        Add an offence
+                        Confirm and add sentence
                     </button>
                 </form>
             </div>
