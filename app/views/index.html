@@ -1,33 +1,24 @@
-{% extends "layout.html" %}
-{% block pageTitle %}
-Sentence and offence management prototype
-{% endblock %}
-{% block header %}
-{{ mojHeader({
-organisationLabel: {
-text: 'HMPPS',
-href: '#'
-},
-serviceLabel: {
-text: "Sentence and offence management",
-href: '#'
-}
-}) }}
-{% endblock %}
-{% block beforeContent %}
-{% endblock %}
+
+{% extends "version-1/dps/includes/template.html" %}
 {% block content %}
+<div class="moj-width-container">
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">
-            {% if serviceName %} {{ serviceName }} {% endif %} &nbsp;
-            <strong class="govuk-tag govuk-phase-banner__content__tag" style="vertical-align: middle;">
-                alpha
-            </strong>
+        <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+            {% if serviceName %} {{ serviceName }} {% endif %} prototypes
         </h1>
-            <p class="govuk-body"><a href="version-1/version-1a/overview">Version 1a</a></p>
-            <p class="govuk-body"><a href="version-1/version-1b/overview">Version 1b</a></p>
+        <h2 class="govuk-heading-l">Version 1</h2>
+        <h3 class="govuk-heading-m">Overview pages</h3>
+            <p class="govuk-body"><a href="version-1/version-1a/overview">Tabbed</a></p>
+            <p class="govuk-body"><a href="version-1/version-1b/overview">Sub nav</a></p>
+        <h3 class="govuk-heading-m">Journeys</h3>
+        <p class="govuk-body"><a href="version-1/add-court-case/search-by-name">Add court case</a></p>
+        <p class="govuk-body"><a href="version-1/add-a-sentence/sentence-type">Add sentence</a></p>
+        <p class="govuk-body"><a href="version-1/add-an-offence/known-offence-code">Add offence</a></p>
+        <h3 class="govuk-heading-m">Pages</h3>
+            <p class="govuk-body"><a href="version-1/task-list/task-list">Task list page</a></p>
 <!--             <p class="govuk-body"><a href="examples/autocomplete">Autocomplete example</a></p> -->
     </div>
+</div>
 </div>
 {% endblock %}

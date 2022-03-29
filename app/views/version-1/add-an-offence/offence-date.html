@@ -5,10 +5,11 @@
     <main class="govuk-main-wrapper " id="main-content" role="main">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <form class="form" action="consecutive-or-concurrent">
+                <form class="form" action="check-answers">
                     <div class="govuk-form-group">
+                        <span class="govuk-caption-l">Add an offence</span>
                         <label class="govuk-heading-l" for="sentence-date">
-                            When was the Robbery committed?
+                            When was the offence: {{ data['offence-name'] }} committed?
                         </label>
                         <div id="sentence-date" class="govuk-hint">
                             For example, 27 3 2007

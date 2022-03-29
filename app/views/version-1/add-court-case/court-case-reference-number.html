@@ -8,16 +8,37 @@
                 <form class="form" action="hearing-type">
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <div class="govuk-form-group">
-                                <h1 class="govuk-label-wrapper"><label class="govuk-label govuk-label--l" for="event-name">
-                                        What is the court case reference number?
-                                    </label>
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    Do you know the court case reference number?
                                 </h1>
-                                <div id="court-case-reference-number-hint" class="govuk-hint">
-                                    For example, '463909453'
+                            </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios" data-module="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="known-court-case-reference" name="known-court-case-reference" type="radio" value="yes" data-aria-controls="conditional-court-case-reference">
+                                        <label class="govuk-label govuk-radios__label" for="known-court-case-reference">
+                                            Yes
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-court-case-reference">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label" for="court-case-reference">
+                                                Court case reference number
+                                            </label>
+                                            <div id="court-case-reference-hint" class="govuk-hint">
+                                                For example, '463909453'
+                                            </div>
+                                            <input class="govuk-input govuk-!-width-one-third" id="court-case-reference" name="court-case-reference" spellcheck="false">
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="known-court-case-reference-2" name="known-court-case-reference" type="radio" value="no">
+                                        <label class="govuk-label govuk-radios__label" for="known-court-case-reference-2">
+                                            No
+                                        </label>
+                                    </div>
                                 </div>
-                                <input class="govuk-input govuk-!-width-one-half" id="court-case-reference-number" name="court-case-reference-number" type="text" aria-describedby="court-case-reference-number-hint">
-                            </div>
                         </fieldset>
                     </div>
                     <button class="govuk-button" data-module="govuk-button">

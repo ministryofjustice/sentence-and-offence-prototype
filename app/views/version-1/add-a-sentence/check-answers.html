@@ -5,14 +5,15 @@
     <main class="govuk-main-wrapper " id="main-content" role="main">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-l">Add a sentence</span>
                 <h1 class="govuk-heading-xl">Check your answers</h1>
                 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Court
+                            Sentence type
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{ data['court-name'] }} 
+                            {{ data['sentence-type'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a href="#">
@@ -23,10 +24,10 @@
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Court date
+                            Sentence date
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{ data['court-date-day'] }} {{ data['court-date-month'] }} {{ data['court-date-year'] }}
+                            {{ data['sentence-start-day'] }} {{ data['sentence-start-month'] }} {{ data['sentence-start-year'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a href="#">
@@ -37,10 +38,10 @@
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Court case reference number
+                            Sentence length
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{ data['court-case-reference'] }}
+                            {{ data['sentence-length-years'] }} years {{ data['sentence-length-months'] }} months {{ data['sentence-length-weeks'] }} weeks {{ data['sentence-length-days'] }} days
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a href="#">
@@ -51,24 +52,10 @@
                     </div>
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Hearing type
+                            Consecutiver or concurrent
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            {{ data['hearing-type'] }}
-                        </dd>
-                        <dd class="govuk-summary-list__actions">
-                            <a href="#">
-                                Change
-                                <span class="govuk-visually-hidden"> licence period</span>
-                            </a>
-                        </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Outcome code
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            {{ data['outcome'] }}
+                            {{ data['consecutive-or-concurrent'] }}
                         </dd>
                         <dd class="govuk-summary-list__actions">
                             <a href="#">
@@ -78,9 +65,9 @@
                         </dd>
                     </div>
                 </dl>
-                <form class="form" action="success">
+                <form class="form" action="../add-an-offence/known-offence-code">
                     <button class="govuk-button" data-module="govuk-button">
-                        Add court case
+                        Add an offence
                     </button>
                 </form>
             </div>

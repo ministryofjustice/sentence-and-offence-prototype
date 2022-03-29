@@ -15,18 +15,6 @@ router.post('/version-1/add-court-case/do-you-know-the-name-of-the-court', funct
     }
 })
 
-// Hearing type route
-router.post('/version-1/add-court-case/hearing-type', function(req, res) {
-
-    var knownHearingCode = req.session.data['known-hearing-code']
-
-    console.log("knownHearingCode:" + knownHearingCode)
-
-    if (knownHearingCode == "yes") {
-        res.redirect('/version-1/add-court-case/outcome')
-    }
-})
-
 // Outcome type route
 router.post('/version-1/add-court-case/outcome', function(req, res) {
 
