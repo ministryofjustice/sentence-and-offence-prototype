@@ -16,22 +16,6 @@ gulp.task('copy-assets', function () {
     .pipe(gulp.dest(config.paths.public))
 })
 
-gulp.task('copy-autocomplete-js', function () {
-  return gulp.src([
-    `${config.paths.nodeModules}/accessible-autocomplete/dist/accessible-autocomplete.min.js`,
-  ])
-    .pipe(gulp.dest(config.paths.public + '/javascripts'))
-})
-
-gulp.task('copy-autocomplete-css', function () {
-  return gulp.src([
-    `${config.paths.nodeModules}/accessible-autocomplete/dist/accessible-autocomplete.min.css`,
-  ])
-    .pipe(gulp.dest(config.paths.public + '/stylesheets'))
-})
-
-gulp.task('copy-autocomplete', gulp.parallel('copy-autocomplete-js', 'copy-autocomplete-css'))
-
 gulp.task('copy-assets-documentation', function () {
   return gulp.src([
     `${config.paths.docsAssets}/**`,
