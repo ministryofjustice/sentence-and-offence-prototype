@@ -1,0 +1,49 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="ada-date" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                                        <span class="govuk-caption-l">Add an adjustment</span>
+                <h1 class="govuk-heading-xl">Check your answers</h1>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                                            <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Number of ADA days awarded
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['days-ada'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="#">
+                                Change
+                                <span class="govuk-visually-hidden"> home address</span>
+                            </a>
+                        </dd>
+                    </div>
+                        <dt class="govuk-summary-list__key">
+                            Date ADA awarded
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['ada-date-day'] }} {{ data['ada-date-month'] }} {{ data['ada-date-year'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a href="#">
+                                Change
+                                <span class="govuk-visually-hidden"> licence type</span>
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+                <form class="form" action="success">
+                    <button class="govuk-button" data-module="govuk-button">
+                        Confirm and add adjustment
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

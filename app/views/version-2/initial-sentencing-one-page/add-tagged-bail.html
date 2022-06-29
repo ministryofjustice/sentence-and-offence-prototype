@@ -1,0 +1,32 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="adjustment-type" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="adjustments">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    How many days tagged bail?
+                                </h1>
+                            </legend>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label" for="days-ada">
+                                    Number of days
+                                </label>
+                                <input class="govuk-input govuk-input--width-2" id="days-ada" name="days-ada" type="text">
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

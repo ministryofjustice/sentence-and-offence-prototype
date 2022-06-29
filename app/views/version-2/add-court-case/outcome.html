@@ -1,0 +1,646 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="hearing-type" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="check-answers">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    What was the outcome?
+                                </h1>
+                            </legend>
+                                                        <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Imprisonment" name="outcome" type="radio" value="Imprisonment">
+                                <label class="govuk-label govuk-radios__label" for="Imprisonment">
+                                    Imprisonment
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Detained during HM Pleasure" name="outcome" type="radio" value="Detained during HM Pleasure">
+                                <label class="govuk-label govuk-radios__label" for="Detained during HM Pleasure">
+                                    Detained during HM Pleasure
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Restriction Order" name="outcome" type="radio" value="Restriction Order">
+                                <label class="govuk-label govuk-radios__label" for="Restriction Order">
+                                    Restriction Order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Detention" name="outcome" type="radio" value="Detention">
+                                <label class="govuk-label govuk-radios__label" for="Detention">
+                                    Detention
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Hospital Order" name="outcome" type="radio" value="Hospital Order">
+                                <label class="govuk-label govuk-radios__label" for="Hospital Order">
+                                    Hospital Order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Community Service" name="outcome" type="radio" value="Community Service">
+                                <label class="govuk-label govuk-radios__label" for="Community Service">
+                                    Community Service
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Supervision Order" name="outcome" type="radio" value="Supervision Order">
+                                <label class="govuk-label govuk-radios__label" for="Supervision Order">
+                                    Supervision Order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Probation Order" name="outcome" type="radio" value="Probation Order">
+                                <label class="govuk-label govuk-radios__label" for="Probation Order">
+                                    Probation Order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Fine" name="outcome" type="radio" value="Fine">
+                                <label class="govuk-label govuk-radios__label" for="Fine">
+                                    Fine
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Absolute Discharge" name="outcome" type="radio" value="Absolute Discharge">
+                                <label class="govuk-label govuk-radios__label" for="Absolute Discharge">
+                                    Absolute Discharge
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Conditional Discharge" name="outcome" type="radio" value="Conditional Discharge">
+                                <label class="govuk-label govuk-radios__label" for="Conditional Discharge">
+                                    Conditional Discharge
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Discharged" name="outcome" type="radio" value="Discharged">
+                                <label class="govuk-label govuk-radios__label" for="Discharged">
+                                    Discharged
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="No Order Made" name="outcome" type="radio" value="No Order Made">
+                                <label class="govuk-label govuk-radios__label" for="No Order Made">
+                                    No Order Made
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Youth Custody" name="outcome" type="radio" value="Youth Custody">
+                                <label class="govuk-label govuk-radios__label" for="Youth Custody">
+                                    Youth Custody
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Young Offenders Institution" name="outcome" type="radio" value="Young Offenders Institution">
+                                <label class="govuk-label govuk-radios__label" for="Young Offenders Institution">
+                                    Young Offenders Institution
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Subsequently Varied" name="outcome" type="radio" value="Subsequently Varied">
+                                <label class="govuk-label govuk-radios__label" for="Subsequently Varied">
+                                    Subsequently Varied
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Order Revoked" name="outcome" type="radio" value="Order Revoked">
+                                <label class="govuk-label govuk-radios__label" for="Order Revoked">
+                                    Order Revoked
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Varied on Appeal" name="outcome" type="radio" value="Varied on Appeal">
+                                <label class="govuk-label govuk-radios__label" for="Varied on Appeal">
+                                    Varied on Appeal
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Substituted" name="outcome" type="radio" value="Substituted">
+                                <label class="govuk-label govuk-radios__label" for="Substituted">
+                                    Substituted
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="No Separate Penalty" name="outcome" type="radio" value="No Separate Penalty">
+                                <label class="govuk-label govuk-radios__label" for="No Separate Penalty">
+                                    No Separate Penalty
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Detention and Training Order" name="outcome" type="radio" value="Detention and Training Order">
+                                <label class="govuk-label govuk-radios__label" for="Detention and Training Order">
+                                    Detention and Training Order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="No Action on Breach" name="outcome" type="radio" value="No Action on Breach">
+                                <label class="govuk-label govuk-radios__label" for="No Action on Breach">
+                                    No Action on Breach
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Suspended Sentence Supervision Order" name="outcome" type="radio" value="Suspended Sentence Supervision Order">
+                                <label class="govuk-label govuk-radios__label" for="Suspended Sentence Supervision Order">
+                                    Suspended Sentence Supervision Order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Young Offenders Centre (NI)" name="outcome" type="radio" value="Young Offenders Centre (NI)">
+                                <label class="govuk-label govuk-radios__label" for="Young Offenders Centre (NI)">
+                                    Young Offenders Centre (NI)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Community punishment and rehabilitation order" name="outcome" type="radio" value="Community punishment and rehabilitation order">
+                                <label class="govuk-label govuk-radios__label" for="Community punishment and rehabilitation order">
+                                    Community punishment and rehabilitation order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Fine or Imprisonment" name="outcome" type="radio" value="Fine or Imprisonment">
+                                <label class="govuk-label govuk-radios__label" for="Fine or Imprisonment">
+                                    Fine or Imprisonment
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Fine or YOI" name="outcome" type="radio" value="Fine or YOI">
+                                <label class="govuk-label govuk-radios__label" for="Fine or YOI">
+                                    Fine or YOI
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Return to Detention" name="outcome" type="radio" value="Return to Detention">
+                                <label class="govuk-label govuk-radios__label" for="Return to Detention">
+                                    Return to Detention
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Return to Prison" name="outcome" type="radio" value="Return to Prison">
+                                <label class="govuk-label govuk-radios__label" for="Return to Prison">
+                                    Return to Prison
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="NFA - No Court Appearance" name="outcome" type="radio" value="NFA - No Court Appearance">
+                                <label class="govuk-label govuk-radios__label" for="NFA - No Court Appearance">
+                                    NFA - No Court Appearance
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Prison Sentence - less than 12 months" name="outcome" type="radio" value="Prison Sentence - less than 12 months">
+                                <label class="govuk-label govuk-radios__label" for="Prison Sentence - less than 12 months">
+                                    Prison Sentence - less than 12 months
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Suspended Imprisonment" name="outcome" type="radio" value="Suspended Imprisonment">
+                                <label class="govuk-label govuk-radios__label" for="Suspended Imprisonment">
+                                    Suspended Imprisonment
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Community Order" name="outcome" type="radio" value="Community Order">
+                                <label class="govuk-label govuk-radios__label" for="Community Order">
+                                    Community Order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Indeterminate Sentence Minimum" name="outcome" type="radio" value="Indeterminate Sentence Minimum">
+                                <label class="govuk-label govuk-radios__label" for="Indeterminate Sentence Minimum">
+                                    Indeterminate Sentence Minimum
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Recall to Prison" name="outcome" type="radio" value="Recall to Prison">
+                                <label class="govuk-label govuk-radios__label" for="Recall to Prison">
+                                    Recall to Prison
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Suspended Sentence Implemented" name="outcome" type="radio" value="Suspended Sentence Implemented">
+                                <label class="govuk-label govuk-radios__label" for="Suspended Sentence Implemented">
+                                    Suspended Sentence Implemented
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Suspended Sentence Varied" name="outcome" type="radio" value="Suspended Sentence Varied">
+                                <label class="govuk-label govuk-radios__label" for="Suspended Sentence Varied">
+                                    Suspended Sentence Varied
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Detention in Default" name="outcome" type="radio" value="Detention in Default">
+                                <label class="govuk-label govuk-radios__label" for="Detention in Default">
+                                    Detention in Default
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Imprisonment in default" name="outcome" type="radio" value="Imprisonment in default">
+                                <label class="govuk-label govuk-radios__label" for="Imprisonment in default">
+                                    Imprisonment in default
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Not Guilty" name="outcome" type="radio" value="Not Guilty">
+                                <label class="govuk-label govuk-radios__label" for="Not Guilty">
+                                    Not Guilty
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Acquitted" name="outcome" type="radio" value="Acquitted">
+                                <label class="govuk-label govuk-radios__label" for="Acquitted">
+                                    Acquitted
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Dismissed" name="outcome" type="radio" value="Dismissed">
+                                <label class="govuk-label govuk-radios__label" for="Dismissed">
+                                    Dismissed
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Adjourned sine die" name="outcome" type="radio" value="Adjourned sine die">
+                                <label class="govuk-label govuk-radios__label" for="Adjourned sine die">
+                                    Adjourned sine die
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Lie on File" name="outcome" type="radio" value="Lie on File">
+                                <label class="govuk-label govuk-radios__label" for="Lie on File">
+                                    Lie on File
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Unfit to Plead" name="outcome" type="radio" value="Unfit to Plead">
+                                <label class="govuk-label govuk-radios__label" for="Unfit to Plead">
+                                    Unfit to Plead
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Not Proven" name="outcome" type="radio" value="Not Proven">
+                                <label class="govuk-label govuk-radios__label" for="Not Proven">
+                                    Not Proven
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="No Evidence Offered - Dismissed" name="outcome" type="radio" value="No Evidence Offered - Dismissed">
+                                <label class="govuk-label govuk-radios__label" for="No Evidence Offered - Dismissed">
+                                    No Evidence Offered - Dismissed
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Withdrawn" name="outcome" type="radio" value="Withdrawn">
+                                <label class="govuk-label govuk-radios__label" for="Withdrawn">
+                                    Withdrawn
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Not Proceeded with (Scotland)" name="outcome" type="radio" value="Not Proceeded with (Scotland)">
+                                <label class="govuk-label govuk-radios__label" for="Not Proceeded with (Scotland)">
+                                    Not Proceeded with (Scotland)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Discontinuance" name="outcome" type="radio" value="Discontinuance">
+                                <label class="govuk-label govuk-radios__label" for="Discontinuance">
+                                    Discontinuance
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Carried Forward to Court Case" name="outcome" type="radio" value="Carried Forward to Court Case">
+                                <label class="govuk-label govuk-radios__label" for="Carried Forward to Court Case">
+                                    Carried Forward to Court Case
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Replaced With Another Offence" name="outcome" type="radio" value="Replaced With Another Offence">
+                                <label class="govuk-label govuk-radios__label" for="Replaced With Another Offence">
+                                    Replaced With Another Offence
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Proceedings Stayed" name="outcome" type="radio" value="Proceedings Stayed">
+                                <label class="govuk-label govuk-radios__label" for="Proceedings Stayed">
+                                    Proceedings Stayed
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Withdrawn - Final" name="outcome" type="radio" value="Withdrawn - Final">
+                                <label class="govuk-label govuk-radios__label" for="Withdrawn - Final">
+                                    Withdrawn - Final
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Judge Rules No Case to Answer" name="outcome" type="radio" value="Judge Rules No Case to Answer">
+                                <label class="govuk-label govuk-radios__label" for="Judge Rules No Case to Answer">
+                                    Judge Rules No Case to Answer
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Discharged - Final" name="outcome" type="radio" value="Discharged - Final">
+                                <label class="govuk-label govuk-radios__label" for="Discharged - Final">
+                                    Discharged - Final
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Community Service Order discharged" name="outcome" type="radio" value="Community Service Order discharged">
+                                <label class="govuk-label govuk-radios__label" for="Community Service Order discharged">
+                                    Community Service Order discharged
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Conviction Quashed" name="outcome" type="radio" value="Conviction Quashed">
+                                <label class="govuk-label govuk-radios__label" for="Conviction Quashed">
+                                    Conviction Quashed
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Bail Appeal Withdrawn" name="outcome" type="radio" value="Bail Appeal Withdrawn">
+                                <label class="govuk-label govuk-radios__label" for="Bail Appeal Withdrawn">
+                                    Bail Appeal Withdrawn
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Power of Arrest" name="outcome" type="radio" value="Power of Arrest">
+                                <label class="govuk-label govuk-radios__label" for="Power of Arrest">
+                                    Power of Arrest
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="unable to reach a Verdict"" name=" outcome" type="radio" value="unable to reach a Verdict"">
+        <label class=" govuk-label govuk-radios__label" for="unable to reach a Verdict"">
+          unable to reach a Verdict" </label> </div> <div class="govuk-radios__item"><input class="govuk-radios__input" id="Deportation Recommended" name="outcome" type="radio" value="Deportation Recommended">
+                                <label class="govuk-label govuk-radios__label" for="Deportation Recommended">
+                                    Deportation Recommended
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Disqualified from Driving" name="outcome" type="radio" value="Disqualified from Driving">
+                                <label class="govuk-label govuk-radios__label" for="Disqualified from Driving">
+                                    Disqualified from Driving
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Compensation" name="outcome" type="radio" value="Compensation">
+                                <label class="govuk-label govuk-radios__label" for="Compensation">
+                                    Compensation
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Reinstated Adjourned Sine Die" name="outcome" type="radio" value="Reinstated Adjourned Sine Die">
+                                <label class="govuk-label govuk-radios__label" for="Reinstated Adjourned Sine Die">
+                                    Reinstated Adjourned Sine Die
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="R Period Extended" name="outcome" type="radio" value="R Period Extended">
+                                <label class="govuk-label govuk-radios__label" for="R Period Extended">
+                                    R Period Extended
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Appeal Pending" name="outcome" type="radio" value="Appeal Pending">
+                                <label class="govuk-label govuk-radios__label" for="Appeal Pending">
+                                    Appeal Pending
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Appeal Dismissed" name="outcome" type="radio" value="Appeal Dismissed">
+                                <label class="govuk-label govuk-radios__label" for="Appeal Dismissed">
+                                    Appeal Dismissed
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Restraining Order Protection from Harassment" name="outcome" type="radio" value="Restraining Order Protection from Harassment">
+                                <label class="govuk-label govuk-radios__label" for="Restraining Order Protection from Harassment">
+                                    Restraining Order Protection from Harassment
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Forfeiture" name="outcome" type="radio" value="Forfeiture">
+                                <label class="govuk-label govuk-radios__label" for="Forfeiture">
+                                    Forfeiture
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Confiscation" name="outcome" type="radio" value="Confiscation">
+                                <label class="govuk-label govuk-radios__label" for="Confiscation">
+                                    Confiscation
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Extended Period of Licence" name="outcome" type="radio" value="Extended Period of Licence">
+                                <label class="govuk-label govuk-radios__label" for="Extended Period of Licence">
+                                    Extended Period of Licence
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Disposal Order (NI)" name="outcome" type="radio" value="Disposal Order (NI)">
+                                <label class="govuk-label govuk-radios__label" for="Disposal Order (NI)">
+                                    Disposal Order (NI)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Anti-Social Behaviour Order" name="outcome" type="radio" value="Anti-Social Behaviour Order">
+                                <label class="govuk-label govuk-radios__label" for="Anti-Social Behaviour Order">
+                                    Anti-Social Behaviour Order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Restraining order Sexual offence" name="outcome" type="radio" value="Restraining order Sexual offence">
+                                <label class="govuk-label govuk-radios__label" for="Restraining order Sexual offence">
+                                    Restraining order Sexual offence
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Financial circumstances order" name="outcome" type="radio" value="Financial circumstances order">
+                                <label class="govuk-label govuk-radios__label" for="Financial circumstances order">
+                                    Financial circumstances order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Notification order - sex offender" name="outcome" type="radio" value="Notification order - sex offender">
+                                <label class="govuk-label govuk-radios__label" for="Notification order - sex offender">
+                                    Notification order - sex offender
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Sexual offences prevention order" name="outcome" type="radio" value="Sexual offences prevention order">
+                                <label class="govuk-label govuk-radios__label" for="Sexual offences prevention order">
+                                    Sexual offences prevention order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Risk of sexual harm order" name="outcome" type="radio" value="Risk of sexual harm order">
+                                <label class="govuk-label govuk-radios__label" for="Risk of sexual harm order">
+                                    Risk of sexual harm order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Interim Risk of sexual harm order" name="outcome" type="radio" value="Interim Risk of sexual harm order">
+                                <label class="govuk-label govuk-radios__label" for="Interim Risk of sexual harm order">
+                                    Interim Risk of sexual harm order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Interim Secure Accommodation Order" name="outcome" type="radio" value="Interim Secure Accommodation Order">
+                                <label class="govuk-label govuk-radios__label" for="Interim Secure Accommodation Order">
+                                    Interim Secure Accommodation Order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Financial Reporting Order" name="outcome" type="radio" value="Financial Reporting Order">
+                                <label class="govuk-label govuk-radios__label" for="Financial Reporting Order">
+                                    Financial Reporting Order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Activity Requirement" name="outcome" type="radio" value="Activity Requirement">
+                                <label class="govuk-label govuk-radios__label" for="Activity Requirement">
+                                    Activity Requirement
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Curfew Requirement" name="outcome" type="radio" value="Curfew Requirement">
+                                <label class="govuk-label govuk-radios__label" for="Curfew Requirement">
+                                    Curfew Requirement
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Mental Health Treatment Requirement" name="outcome" type="radio" value="Mental Health Treatment Requirement">
+                                <label class="govuk-label govuk-radios__label" for="Mental Health Treatment Requirement">
+                                    Mental Health Treatment Requirement
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Dealt with for Original Offence" name="outcome" type="radio" value="Dealt with for Original Offence">
+                                <label class="govuk-label govuk-radios__label" for="Dealt with for Original Offence">
+                                    Dealt with for Original Offence
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Dealt with for breach" name="outcome" type="radio" value="Dealt with for breach">
+                                <label class="govuk-label govuk-radios__label" for="Dealt with for breach">
+                                    Dealt with for breach
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Adjourned for Consideration of an ASBO" name="outcome" type="radio" value="Adjourned for Consideration of an ASBO">
+                                <label class="govuk-label govuk-radios__label" for="Adjourned for Consideration of an ASBO">
+                                    Adjourned for Consideration of an ASBO
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Committed to Crown Court for Sentence" name="outcome" type="radio" value="Committed to Crown Court for Sentence">
+                                <label class="govuk-label govuk-radios__label" for="Committed to Crown Court for Sentence">
+                                    Committed to Crown Court for Sentence
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Sentence Postponed" name="outcome" type="radio" value="Sentence Postponed">
+                                <label class="govuk-label govuk-radios__label" for="Sentence Postponed">
+                                    Sentence Postponed
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Sentence Deferred" name="outcome" type="radio" value="Sentence Deferred">
+                                <label class="govuk-label govuk-radios__label" for="Sentence Deferred">
+                                    Sentence Deferred
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Withdrawn (Other)" name="outcome" type="radio" value="Withdrawn (Other)">
+                                <label class="govuk-label govuk-radios__label" for="Withdrawn (Other)">
+                                    Withdrawn (Other)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remittal for Sentence on Conditional Bail" name="outcome" type="radio" value="Remittal for Sentence on Conditional Bail">
+                                <label class="govuk-label govuk-radios__label" for="Remittal for Sentence on Conditional Bail">
+                                    Remittal for Sentence on Conditional Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remittal for Sentence in Custody" name="outcome" type="radio" value="Remittal for Sentence in Custody">
+                                <label class="govuk-label govuk-radios__label" for="Remittal for Sentence in Custody">
+                                    Remittal for Sentence in Custody
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remittal for Sentence Unconditional Bail" name="outcome" type="radio" value="Remittal for Sentence Unconditional Bail">
+                                <label class="govuk-label govuk-radios__label" for="Remittal for Sentence Unconditional Bail">
+                                    Remittal for Sentence Unconditional Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit to Crown Court for Sentence Unconditional Bail" name="outcome" type="radio" value="Commit to Crown Court for Sentence Unconditional Bail">
+                                <label class="govuk-label govuk-radios__label" for="Commit to Crown Court for Sentence Unconditional Bail">
+                                    Commit to Crown Court for Sentence Unconditional Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit to Crown Court for Sentence Conditional Bail" name="outcome" type="radio" value="Commit to Crown Court for Sentence Conditional Bail">
+                                <label class="govuk-label govuk-radios__label" for="Commit to Crown Court for Sentence Conditional Bail">
+                                    Commit to Crown Court for Sentence Conditional Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit to Crown Court for Sentence in Custody" name="outcome" type="radio" value="Commit to Crown Court for Sentence in Custody">
+                                <label class="govuk-label govuk-radios__label" for="Commit to Crown Court for Sentence in Custody">
+                                    Commit to Crown Court for Sentence in Custody
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit to Crown Court for Sentence in Custody with Direction to Release on Bail" name="outcome" type="radio" value="Commit to Crown Court for Sentence in Custody with Direction to Release on Bail">
+                                <label class="govuk-label govuk-radios__label" for="Commit to Crown Court for Sentence in Custody with Direction to Release on Bail">
+                                    Commit to Crown Court for Sentence in Custody with Direction to Release on Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Discharged - Other" name="outcome" type="radio" value="Discharged - Other">
+                                <label class="govuk-label govuk-radios__label" for="Discharged - Other">
+                                    Discharged - Other
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit to Crown Court for Sentence - Remand to Local Authority Accommodation" name="outcome" type="radio" value="Commit to Crown Court for Sentence - Remand to Local Authority Accommodation">
+                                <label class="govuk-label govuk-radios__label" for="Commit to Crown Court for Sentence - Remand to Local Authority Accommodation">
+                                    Commit to Crown Court for Sentence - Remand to Local Authority Accommodation
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit to Crown Court for Sentence - Remand to Local Authority Secure Accommodation" name="outcome" type="radio" value="Commit to Crown Court for Sentence - Remand to Local Authority Secure Accommodation">
+                                <label class="govuk-label govuk-radios__label" for="Commit to Crown Court for Sentence - Remand to Local Authority Secure Accommodation">
+                                    Commit to Crown Court for Sentence - Remand to Local Authority Secure Accommodation
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Extradited" name="outcome" type="radio" value="Extradited">
+                                <label class="govuk-label govuk-radios__label" for="Extradited">
+                                    Extradited
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Warrant for Further Detention" name="outcome" type="radio" value="Warrant for Further Detention">
+                                <label class="govuk-label govuk-radios__label" for="Warrant for Further Detention">
+                                    Warrant for Further Detention
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Adjournment" name="outcome" type="radio" value="Adjournment">
+                                <label class="govuk-label govuk-radios__label" for="Adjournment">
+                                    Adjournment
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand on Conditional Bail (Defendant Absent)" name="outcome" type="radio" value="Remand on Conditional Bail (Defendant Absent)">
+                                <label class="govuk-label govuk-radios__label" for="Remand on Conditional Bail (Defendant Absent)">
+                                    Remand on Conditional Bail (Defendant Absent)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand on Conditional Bail" name="outcome" type="radio" value="Remand on Conditional Bail">
+                                <label class="govuk-label govuk-radios__label" for="Remand on Conditional Bail">
+                                    Remand on Conditional Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand in Custody (Bail Refused)" name="outcome" type="radio" value="Remand in Custody (Bail Refused)">
+                                <label class="govuk-label govuk-radios__label" for="Remand in Custody (Bail Refused)">
+                                    Remand in Custody (Bail Refused)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand in Custody Ancillary Results" name="outcome" type="radio" value="Remand in Custody Ancillary Results">
+                                <label class="govuk-label govuk-radios__label" for="Remand in Custody Ancillary Results">
+                                    Remand in Custody Ancillary Results
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand in Custody with Direction to Release on Bail" name="outcome" type="radio" value="Remand in Custody with Direction to Release on Bail">
+                                <label class="govuk-label govuk-radios__label" for="Remand in Custody with Direction to Release on Bail">
+                                    Remand in Custody with Direction to Release on Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand in Custody after Bail Appeal by Prosecutor" name="outcome" type="radio" value="Remand in Custody after Bail Appeal by Prosecutor">
+                                <label class="govuk-label govuk-radios__label" for="Remand in Custody after Bail Appeal by Prosecutor">
+                                    Remand in Custody after Bail Appeal by Prosecutor
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand in Custody to Customs Detention" name="outcome" type="radio" value="Remand in Custody to Customs Detention">
+                                <label class="govuk-label govuk-radios__label" for="Remand in Custody to Customs Detention">
+                                    Remand in Custody to Customs Detention
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand in Custody to Hospital (Mental Health Act)" name="outcome" type="radio" value="Remand in Custody to Hospital (Mental Health Act)">
+                                <label class="govuk-label govuk-radios__label" for="Remand in Custody to Hospital (Mental Health Act)">
+                                    Remand in Custody to Hospital (Mental Health Act)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand in Local Authority Accommodation (Bail Refused)" name="outcome" type="radio" value="Remand in Local Authority Accommodation (Bail Refused)">
+                                <label class="govuk-label govuk-radios__label" for="Remand in Local Authority Accommodation (Bail Refused)">
+                                    Remand in Local Authority Accommodation (Bail Refused)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand in Secure Local Authority Accommodation" name="outcome" type="radio" value="Remand in Secure Local Authority Accommodation">
+                                <label class="govuk-label govuk-radios__label" for="Remand in Secure Local Authority Accommodation">
+                                    Remand in Secure Local Authority Accommodation
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand in Police Custody" name="outcome" type="radio" value="Remand in Police Custody">
+                                <label class="govuk-label govuk-radios__label" for="Remand in Police Custody">
+                                    Remand in Police Custody
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand on Unconditional Bail" name="outcome" type="radio" value="Remand on Unconditional Bail">
+                                <label class="govuk-label govuk-radios__label" for="Remand on Unconditional Bail">
+                                    Remand on Unconditional Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remand on Unconditional Bail (Defendant Absent)" name="outcome" type="radio" value="Remand on Unconditional Bail (Defendant Absent)">
+                                <label class="govuk-label govuk-radios__label" for="Remand on Unconditional Bail (Defendant Absent)">
+                                    Remand on Unconditional Bail (Defendant Absent)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Acceptance of Surety" name="outcome" type="radio" value="Acceptance of Surety">
+                                <label class="govuk-label govuk-radios__label" for="Acceptance of Surety">
+                                    Acceptance of Surety
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remittal to Youth Court in Custody" name="outcome" type="radio" value="Remittal to Youth Court in Custody">
+                                <label class="govuk-label govuk-radios__label" for="Remittal to Youth Court in Custody">
+                                    Remittal to Youth Court in Custody
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remittal to Youth Court in Local Authority Accommodation" name="outcome" type="radio" value="Remittal to Youth Court in Local Authority Accommodation">
+                                <label class="govuk-label govuk-radios__label" for="Remittal to Youth Court in Local Authority Accommodation">
+                                    Remittal to Youth Court in Local Authority Accommodation
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remittal to Youth Court in Secure Local Authority Accommodation" name="outcome" type="radio" value="Remittal to Youth Court in Secure Local Authority Accommodation">
+                                <label class="govuk-label govuk-radios__label" for="Remittal to Youth Court in Secure Local Authority Accommodation">
+                                    Remittal to Youth Court in Secure Local Authority Accommodation
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Case Rescheduled - Not bailed" name="outcome" type="radio" value="Case Rescheduled - Not bailed">
+                                <label class="govuk-label govuk-radios__label" for="Case Rescheduled - Not bailed">
+                                    Case Rescheduled - Not bailed
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Case Rescheduled - Defendant on Bail" name="outcome" type="radio" value="Case Rescheduled - Defendant on Bail">
+                                <label class="govuk-label govuk-radios__label" for="Case Rescheduled - Defendant on Bail">
+                                    Case Rescheduled - Defendant on Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit/Transfer/Send to Crown Court for Trial on Unconditional Bail" name="outcome" type="radio" value="Commit/Transfer/Send to Crown Court for Trial on Unconditional Bail">
+                                <label class="govuk-label govuk-radios__label" for="Commit/Transfer/Send to Crown Court for Trial on Unconditional Bail">
+                                    Commit/Transfer/Send to Crown Court for Trial on Unconditional Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit/Transfer/Send to Crown Court for Trial on Conditional Bail" name="outcome" type="radio" value="Commit/Transfer/Send to Crown Court for Trial on Conditional Bail">
+                                <label class="govuk-label govuk-radios__label" for="Commit/Transfer/Send to Crown Court for Trial on Conditional Bail">
+                                    Commit/Transfer/Send to Crown Court for Trial on Conditional Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit/Transfer/Send to Crown Court for Trial in Custody" name="outcome" type="radio" value="Commit/Transfer/Send to Crown Court for Trial in Custody">
+                                <label class="govuk-label govuk-radios__label" for="Commit/Transfer/Send to Crown Court for Trial in Custody">
+                                    Commit/Transfer/Send to Crown Court for Trial in Custody
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit/Transfer/Send to Crown Court for Trial in Custody With Direction to Bail" name="outcome" type="radio" value="Commit/Transfer/Send to Crown Court for Trial in Custody With Direction to Bail">
+                                <label class="govuk-label govuk-radios__label" for="Commit/Transfer/Send to Crown Court for Trial in Custody With Direction to Bail">
+                                    Commit/Transfer/Send to Crown Court for Trial in Custody With Direction to Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit/Transfer/Send to Crown Court for Trial in Local Authority Accommodation" name="outcome" type="radio" value="Commit/Transfer/Send to Crown Court for Trial in Local Authority Accommodation">
+                                <label class="govuk-label govuk-radios__label" for="Commit/Transfer/Send to Crown Court for Trial in Local Authority Accommodation">
+                                    Commit/Transfer/Send to Crown Court for Trial in Local Authority Accommodation
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit/Transfer/Send to Crown Court for Trial in Secure Local Authority Accommodation" name="outcome" type="radio" value="Commit/Transfer/Send to Crown Court for Trial in Secure Local Authority Accommodation">
+                                <label class="govuk-label govuk-radios__label" for="Commit/Transfer/Send to Crown Court for Trial in Secure Local Authority Accommodation">
+                                    Commit/Transfer/Send to Crown Court for Trial in Secure Local Authority Accommodation
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit/Transfer/Send to Crown Court for Trial in Custody (Transfer Direction)" name="outcome" type="radio" value="Commit/Transfer/Send to Crown Court for Trial in Custody (Transfer Direction)">
+                                <label class="govuk-label govuk-radios__label" for="Commit/Transfer/Send to Crown Court for Trial in Custody (Transfer Direction)">
+                                    Commit/Transfer/Send to Crown Court for Trial in Custody (Transfer Direction)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Commit to Crown Court for Trial (Summary / Either Way Offences)" name="outcome" type="radio" value="Commit to Crown Court for Trial (Summary / Either Way Offences)">
+                                <label class="govuk-label govuk-radios__label" for="Commit to Crown Court for Trial (Summary / Either Way Offences)">
+                                    Commit to Crown Court for Trial (Summary / Either Way Offences)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Mental Health Commit to Crown Court for Restriction (Remand to Hospital)" name="outcome" type="radio" value="Mental Health Commit to Crown Court for Restriction (Remand to Hospital)">
+                                <label class="govuk-label govuk-radios__label" for="Mental Health Commit to Crown Court for Restriction (Remand to Hospital)">
+                                    Mental Health Commit to Crown Court for Restriction (Remand to Hospital)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Mental Health Commit to Crown Court for Restriction (Remand to Prison)" name="outcome" type="radio" value="Mental Health Commit to Crown Court for Restriction (Remand to Prison)">
+                                <label class="govuk-label govuk-radios__label" for="Mental Health Commit to Crown Court for Restriction (Remand to Prison)">
+                                    Mental Health Commit to Crown Court for Restriction (Remand to Prison)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Bail Review Impose/Vary Conditions" name="outcome" type="radio" value="Bail Review Impose/Vary Conditions">
+                                <label class="govuk-label govuk-radios__label" for="Bail Review Impose/Vary Conditions">
+                                    Bail Review Impose/Vary Conditions
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Bail Review - Order to Surrender" name="outcome" type="radio" value="Bail Review - Order to Surrender">
+                                <label class="govuk-label govuk-radios__label" for="Bail Review - Order to Surrender">
+                                    Bail Review - Order to Surrender
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Warrant for Offence Backed for Bail (Dated)" name="outcome" type="radio" value="Warrant for Offence Backed for Bail (Dated)">
+                                <label class="govuk-label govuk-radios__label" for="Warrant for Offence Backed for Bail (Dated)">
+                                    Warrant for Offence Backed for Bail (Dated)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Warrant for Offence Not Backed for Bail (Undated)" name="outcome" type="radio" value="Warrant for Offence Not Backed for Bail (Undated)">
+                                <label class="govuk-label govuk-radios__label" for="Warrant for Offence Not Backed for Bail (Undated)">
+                                    Warrant for Offence Not Backed for Bail (Undated)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Warrant for Offence Backed for Bail (Undated)" name="outcome" type="radio" value="Warrant for Offence Backed for Bail (Undated)">
+                                <label class="govuk-label govuk-radios__label" for="Warrant for Offence Backed for Bail (Undated)">
+                                    Warrant for Offence Backed for Bail (Undated)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Interim Hospital Order" name="outcome" type="radio" value="Interim Hospital Order">
+                                <label class="govuk-label govuk-radios__label" for="Interim Hospital Order">
+                                    Interim Hospital Order
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Hearing Removed" name="outcome" type="radio" value="Hearing Removed">
+                                <label class="govuk-label govuk-radios__label" for="Hearing Removed">
+                                    Hearing Removed
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Reopen Case" name="outcome" type="radio" value="Reopen Case">
+                                <label class="govuk-label govuk-radios__label" for="Reopen Case">
+                                    Reopen Case
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Warrant for Arrest of Witness" name="outcome" type="radio" value="Warrant for Arrest of Witness">
+                                <label class="govuk-label govuk-radios__label" for="Warrant for Arrest of Witness">
+                                    Warrant for Arrest of Witness
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remittal for Trial - Conditional Bail" name="outcome" type="radio" value="Remittal for Trial - Conditional Bail">
+                                <label class="govuk-label govuk-radios__label" for="Remittal for Trial - Conditional Bail">
+                                    Remittal for Trial - Conditional Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remittal for Trial - In Custody" name="outcome" type="radio" value="Remittal for Trial - In Custody">
+                                <label class="govuk-label govuk-radios__label" for="Remittal for Trial - In Custody">
+                                    Remittal for Trial - In Custody
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Remittal for Trial - Unconditional Bail" name="outcome" type="radio" value="Remittal for Trial - Unconditional Bail">
+                                <label class="govuk-label govuk-radios__label" for="Remittal for Trial - Unconditional Bail">
+                                    Remittal for Trial - Unconditional Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Immigration Detainee" name="outcome" type="radio" value="Immigration Detainee">
+                                <label class="govuk-label govuk-radios__label" for="Immigration Detainee">
+                                    Immigration Detainee
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Immigration Bail" name="outcome" type="radio" value="Immigration Bail">
+                                <label class="govuk-label govuk-radios__label" for="Immigration Bail">
+                                    Immigration Bail
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Immigration Decision to Deport" name="outcome" type="radio" value="Immigration Decision to Deport">
+                                <label class="govuk-label govuk-radios__label" for="Immigration Decision to Deport">
+                                    Immigration Decision to Deport
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="civil Term Imposed" name="outcome" type="radio" value="civil Term Imposed">
+                                <label class="govuk-label govuk-radios__label" for="civil Term Imposed">
+                                    civil Term Imposed
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="civil Remand" name="outcome" type="radio" value="civil Remand">
+                                <label class="govuk-label govuk-radios__label" for="civil Remand">
+                                    civil Remand
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="For Pre-Sentence Reports" name="outcome" type="radio" value="For Pre-Sentence Reports">
+                                <label class="govuk-label govuk-radios__label" for="For Pre-Sentence Reports">
+                                    For Pre-Sentence Reports
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Proved (Magistrates' Court Only)" name="outcome" type="radio" value="Proved (Magistrates' Court Only)">
+                                <label class="govuk-label govuk-radios__label" for="Proved (Magistrates' Court Only)">
+                                    Proved (Magistrates' Court Only)
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="Guilty" name="outcome" type="radio" value="Guilty">
+                                <label class="govuk-label govuk-radios__label" for="Guilty">
+                                    Guilty
+                                </label></div>
+                            <div class="govuk-radios__item"><input class="govuk-radios__input" id="No Conviction" name="outcome" type="radio" value="No Conviction">
+                                <label class="govuk-label govuk-radios__label" for="No Conviction">
+                                    No Conviction
+                                </label></div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

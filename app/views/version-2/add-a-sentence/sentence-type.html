@@ -1,0 +1,89 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="search-by-name" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="sentence-date">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <span class="govuk-caption-l">Add a sentence</span>
+                                <h1 class="govuk-fieldset__heading">
+                                    What is the sentence type?
+                                </h1>
+                            </legend>
+                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="type1" name="sentence-type" type="radio" value="Sentencing Code Standard Determinate Sentence">
+                                    <label class="govuk-label govuk-radios__label" for="type1">
+                                        Sentencing Code Standard Determinate Sentence
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="type2" name="sentence-type" type="radio" value="CJA03 Standard Determinate Sentence">
+                                    <label class="govuk-label govuk-radios__label" for="type2">
+                                        CJA03 Standard Determinate Sentence
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="type3" name="sentence-type" type="radio" value="ORA Sentencing Code Standard Determinate Sentence">
+                                    <label class="govuk-label govuk-radios__label" for="type3">
+                                        ORA Sentencing Code Standard Determinate Sentence
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="type4" name="sentence-type" type="radio" value="ORA CJA03 Standard Determinate Sentence">
+                                    <label class="govuk-label govuk-radios__label" for="type4">
+                                        ORA CJA03 Standard Determinate Sentence
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="type5" name="sentence-type" type="radio" value="Serious Offence Sec 250 Sentencing Code (U18)">
+                                    <label class="govuk-label govuk-radios__label" for="type5">
+                                        Serious Offence Sec 250 Sentencing Code (U18)
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="type6" name="sentence-type" type="radio" value="ORA Serious Offence Sec 250 Sentencing Code (U18)">
+                                    <label class="govuk-label govuk-radios__label" for="type6">
+                                        ORA Serious Offence Sec 250 Sentencing Code (U18)
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="type7" name="sentence-type" type="radio" value="Serious Offence -18 CJA03 POCCA 2000">
+                                    <label class="govuk-label govuk-radios__label" for="type7">
+                                        Serious Offence -18 CJA03 POCCA 2000
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="type8" name="sentence-type" type="radio" value="SORA Serious Offence -18 CJA03 POCCA 2000">
+                                    <label class="govuk-label govuk-radios__label" for="type8">
+                                        SORA Serious Offence -18 CJA03 POCCA 2000
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="type9" name="sentence-type" type="radio" value="Young Offender Institution">
+                                    <label class="govuk-label govuk-radios__label" for="type9">
+                                        Young Offender Institution
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="type10" name="sentence-type" type="radio" value="ORA Young Offender Institution">
+                                    <label class="govuk-label govuk-radios__label" for="type10">
+                                        ORA Young Offender Institution
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

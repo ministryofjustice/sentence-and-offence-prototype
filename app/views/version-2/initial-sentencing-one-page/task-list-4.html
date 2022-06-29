@@ -1,0 +1,104 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+      <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>B4166LG</span>
+            </div>
+        </div>
+    </div>
+    <a href="task-list" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        Add sentence and offence information for Joe Bloggs
+      </h1>
+
+      <h2 class="govuk-heading-s govuk-!-margin-bottom-2">Sentence and offence record incomplete</h2>
+      <p class="govuk-body govuk-!-margin-bottom-7">You have completed 3 of 4 sections.</p>
+
+      <ol class="app-task-list">
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">1. </span> Court cases
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="add-a-court-case-single-page" aria-describedby="eligibility-status">
+                  Add court cases
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--green  app-task-list__tag" id="company-information-status">Complete</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">2. </span> Sentences and offences
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="select-court-case" aria-describedby="company-information-status">
+                  Add sentences
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="company-information-status">Complete</strong>
+            </li>
+<!--                         <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="#" aria-describedby="company-information-status">
+                  Add offences
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="company-information-status">Not started</strong>
+            </li> -->
+          </ul>
+        </li>
+
+                <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">3. </span> Adjustments
+          </h2>
+          <ul class="app-task-list__items">
+            <li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="adjustment-type" aria-describedby="company-information-status">
+                  Add adjustments
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--green app-task-list__tag" id="company-information-status">Complete</strong>
+            </li>
+          </ul>
+        </li>
+
+        <li>
+          <h2 class="app-task-list__section">
+            <span class="app-task-list__section-number">4. </span> Review and submit
+          </h2>
+          <ul class="app-task-list__items">
+<li class="app-task-list__item">
+              <span class="app-task-list__task-name">
+                <a href="review-court-cases" aria-describedby="company-information-status">
+                  Review
+                </a>
+              </span>
+              <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="company-information-status">Not started</strong>
+            </li>
+          </ul>
+        </li>
+      </ol>
+                      <h3 class="govuk-heading-m">Confirm and submit to NOMIS</h3>
+                <p class="govuk-body">By submitting this sentence and offence infomation you are confirming that, to the best of your knowledge, it is correct. The information will be saved in NOMIS.</p>
+                <a href=""><button class="govuk-button">Confirm and submit</button></a>
+    </div>
+    </main>
+  </div>
+    </div>
+</div>
+</div>
+{% endblock %}

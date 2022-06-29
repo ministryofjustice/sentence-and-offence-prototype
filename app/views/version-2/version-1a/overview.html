@@ -1,0 +1,106 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+                Sentence and offence information for Joe Bloggs
+            </h1>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds govuk-!-margin-top-2">
+            <h2 class="govuk-heading-l">Personal information</h2>
+            <div class="govuk-!-margin-bottom-8 app-possible-prison-record" style="display: flex;">
+                <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-0">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header" style="width: 40%;">Name</th>
+                            <td class="govuk-table__cell">Joe Bloggs</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Date of birth</th>
+                            <td class="govuk-table__cell">1 April 1987</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Prison number</th>
+                            <td class="govuk-table__cell">A5264VA</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <img style="padding: 10px 10px 0 10px;height: 9em;" src="/public/images/prisoner.jpeg" alt="ABC, ABC">
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <div class="govuk-tabs" data-module="govuk-tabs">
+                <h2 class="govuk-tabs__title">
+                    Contents
+                </h2>
+                <ul class="govuk-tabs__list">
+                    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+                        <a class="govuk-tabs__tab" href="#past-day">
+                            Court cases
+                        </a>
+                    </li>
+                    <li class="govuk-tabs__list-item">
+                        <a class="govuk-tabs__tab" href="#past-week">
+                            Adjustments
+                        </a>
+                    </li>
+                </ul>
+                <div class="govuk-tabs__panel" id="past-day">
+                    <h2 class="govuk-heading-l">Court cases</h2>
+                    <a href="../add-court-case/search-by-name"><button class="govuk-button">Add new court case</button></a>
+                    <div class="govuk-!-margin-bottom-8 app-possible-prison-record" style="display: flex;">
+                        <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                            <h3 class="govuk-heading-m">
+                                Leeds Combined Court Centre
+                            </h3>
+                            <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                                <tbody class="govuk-table__body">
+                                    <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header" style="width: 25%;">Court case number</th>
+                                        <td class="govuk-table__cell">463909453</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header">Court date</th>
+                                        <td class="govuk-table__cell">3 September 2021</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="govuk-body">There are 3 sentences for this court case</p>
+                            <p class="govuk-body"><a href="sentence-and-offence-information/sentences-and-offences-court-case-1">See sentences and offences</a></p>
+                        </div>
+                    </div>
+                    <div class="govuk-!-margin-bottom-8 app-possible-prison-record" style="display: flex;">
+                        <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                            <h3 class="govuk-heading-m">
+                                Manchester Crown Court (Crown Square)
+                            </h3>
+                            <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                                <tbody class="govuk-table__body">
+                                    <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header" style="width: 25%;">Court case number</th>
+                                        <td class="govuk-table__cell">495409513</td>
+                                    </tr>
+                                    <tr class="govuk-table__row">
+                                        <th scope="row" class="govuk-table__header">Court date</th>
+                                        <td class="govuk-table__cell">25 February 2022</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <p class="govuk-body">There are 3 sentences for this court case</p>
+                            <p class="govuk-body"><a href="">See sentences and offences</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+                    <h2 class="govuk-heading-l">Adjustments</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
