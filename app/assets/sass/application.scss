@@ -93,3 +93,11 @@ $moj-page-width: 1170px;
   padding-bottom: 20px;
   display: flex;
 }
+
+.court-document-table tr, .court-document-table td{
+border: none;
+}
+
+.court-document-table-row, .court-document-table-row td {
+  padding-bottom: 0px
+}
