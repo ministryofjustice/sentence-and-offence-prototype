@@ -16,17 +16,27 @@ router.post('/version-1/add-court-case/do-you-know-the-name-of-the-court', funct
 })
 
 // Outcome type route
-router.post('/version-1/add-court-case/outcome', function(req, res) {
+router.post('/version-3/add-a-document/type-of-document-selected', function(req, res) {
 
-    var knownOutcomeCode = req.session.data['known-outcome-code']
+    var typeOfDocument = req.session.data['type-of-document']
 
-    console.log("knownOutcomeCode:" + knownOutcomeCode)
+    console.log("type-of-document:" + typeOfDocument)
 
-    if (knownOutcomeCode == "yes") {
-        res.redirect('/version-1/add-court-case/check-answers')
+    if (typeOfDocument == "remand-warrant") {
+        res.redirect('/version-3/add-a-document/add-a-remand-warrant/add-a-remand-warrant')
     }
 })
 
+// //Type of document route
+// router.post('/version-3/add-a-document/type-of-document', function(req, res) {
 
+//     var typeOfDocument = req.session.data['type-of-document']
+
+//     console.log("typeOfDocument:" + typeOfDocument)
+
+//     if (typeOfDocument == "remand-warrant") {
+//         res.redirect('/version-3/add-a-document/add-a-remand-warrant')
+//     }
+// })
 
 module.exports = router

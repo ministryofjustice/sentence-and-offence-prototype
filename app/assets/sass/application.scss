@@ -83,3 +83,13 @@ $moj-page-width: 1170px;
 .autocomplete__option {
     font-family: "GDS Transport", arial, sans-serif;
 }
+
+.court-case-card {
+  border-left: 4px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background: #f8f8f8;
+  padding: 0 20px;
+  padding-top: 5px;
+  padding-bottom: 20px;
+  display: flex;
+}

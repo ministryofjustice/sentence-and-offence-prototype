@@ -1,0 +1,44 @@
+{% extends "../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="../court-cases" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-form-group">
+            <form class="form" action="type-of-document-selected" method="post">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        What type of court document are you adding?
+                    </h1>
+                </legend>
+                <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="type-of-document-1" name="type-of-document" type="radio" value="remand-warrant">
+                        <label class="govuk-label govuk-radios__label" for="type-of-document-1">
+                            Remand warrant
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="type-of-document-2" name="type-of-document" type="radio" value="warrant-for-custodial-sentence">
+                        <label class="govuk-label govuk-radios__label" for="type-of-document-2">
+                            Warrant for custodial sentence </label>
+                        <div class="govuk-hint govuk-radios__hint">
+                            This can also be called an Order for Imprisonment
+                        </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="type-of-document-3" name="type-of-document" type="radio" value="indictment">
+                        <label class="govuk-label govuk-radios__label" for="type-of-document-3">
+                            Indictment
+                        </label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <button class="govuk-button" data-module="govuk-button">
+            Continue
+        </button>
+    </form>
+    </main>
+</div>
+{% endblock %}
