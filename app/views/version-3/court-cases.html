@@ -7,46 +7,32 @@
 <!-- Page intro -->
 <div class="moj-width-container">
     <main class="govuk-main-wrapper " id="main-content" role="main">
-        <!-- Page heading -->
         <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <h1 class="govuk-heading-xl">Legal information for Jordan Harrison</h1>
-            </div>
-        </div>
-        <!-- Prisoner info -->
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <dl class="govuk-summary-list govuk-summary-list--no-border">
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Name
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            Jordan Harrison
-                        </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Date of birth
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            20 July 1984
-                        </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Prison number
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            A5264VA
-                        </dd>
-                    </div>
-                </dl>
-            </div>
-        </div>
-        <!-- Court cases -->
-        <div class="govuk-grid-row">
+            <!-- Page heading -->
             <div class="govuk-grid-column-full">
+                <h1 class="govuk-heading-xl govuk-!-margin-bottom-9">Enter a prisoner's legal information</h1>
+            </div>
+            <!-- Prisoner info -->
+<!--             <aside>
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="nhsuk-card">
+                        <div class="nhsuk-card__content">
+                            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                                Prisoner details
+                            </h2>
+                            <span class="govuk-body govuk-!-font-weight-bold">Name</span>
+                            <p class="govuk-body">Jordan Harrison</p>
+                            <span class="govuk-body govuk-!-font-weight-bold">Date of birth</span>
+                            <p class="govuk-body">20 July 1984</p>
+                            <span class="govuk-body govuk-!-font-weight-bold">Prison number</span>
+                            <p class="govuk-body">A5264VA</p>
+                        </div>
+                    </div>
+                </div>
+            </aside> -->
+            <!-- Court cases -->
+            <div class="govuk-grid-column-three-quarters">
+                <h2 class="govuk-heading-l">Court cases</h2>
                 <!-- Court case 1 -->
                 <div class="govuk-!-margin-bottom-6 court-case-card">
                     <div class="govuk-grid-column-full govuk-!-margin-top-6">
@@ -103,10 +89,9 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <a href="add-a-document/type-of-document">                    <button class="govuk-button govuk-button--link" data-module="govuk-button">
-  Add court document
-</button></a>
-
+                        <a href="add-a-document/type-of-document"> <button class="govuk-button govuk-button--link" data-module="govuk-button">
+                                Add court document
+                            </button></a>
                     </div>
                 </div>
                 <!-- Court case 2 -->
@@ -145,15 +130,14 @@
                             <tbody class="govuk-table__body">
                             </tbody>
                         </table>
-                        <p class="govuk-hint govuk-!-margin-bottom-7">There are no documents for this  court case.</p>
-<a href="add-a-document/type-of-document">                    <button class="govuk-button govuk-button--link" data-module="govuk-button">
-  Add court document
-</button></a>
+                        <p class="govuk-hint govuk-!-margin-bottom-7">There are no documents for this court case.</p>
+                        <a href="add-a-document/type-of-document"> <button class="govuk-button govuk-button--link" data-module="govuk-button">
+                                Add court document
+                            </button></a>
                     </div>
                 </div>
             </div>
         </div>
     </main>
-</div>
 </div>
 {% endblock %}
