@@ -1,0 +1,83 @@
+{% extends "../../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="../type-of-document" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <!--             <aside>
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="nhsuk-card">
+                        <div class="nhsuk-card__content">
+                            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                                Prisoner details
+                            </h2>
+                            <span class="govuk-body govuk-!-font-weight-bold">Name</span>
+                            <p class="govuk-body">Jordan Harrison</p>
+                            <span class="govuk-body govuk-!-font-weight-bold">Date of birth</span>
+                            <p class="govuk-body">20 July 1984</p>
+                            <span class="govuk-body govuk-!-font-weight-bold">Prison number</span>
+                            <p class="govuk-body">A5264VA</p>
+                        </div>
+                    </div>
+                    <div class="nhsuk-card">
+                        <div class="nhsuk-card__content">
+                            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">
+                                Court case
+                            </h2>
+                            <span class="govuk-body govuk-!-font-weight-bold">Court</span>
+                            <p class="govuk-body">Leeds Magistrates Court</p>
+                            <span class="govuk-body govuk-!-font-weight-bold">Court case number</span>
+                            <p class="govuk-body">132200383671</p>
+                            <span class="govuk-body govuk-!-font-weight-bold">Court date</span>
+                            <p class="govuk-body">20 June 2022</p>
+                        </div>
+                    </div>
+                </div>
+            </aside> -->
+            <div class="govuk-grid-column-three-quarters">
+                <form class="form" action="court-date" method="post">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <span class="govuk-caption-xl">Add a remand warrant</span>
+                                <h1 class="govuk-fieldset__heading">
+                                    What was the outcome?
+                                </h1>
+                            </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="outcome-1" name="outcome" type="radio" value="Outcome 1">
+                                    <label class="govuk-label govuk-radios__label" for="outcome-1">
+                                        Outcome 1
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="outcome-2" name="outcome" type="radio" value="Outcome 2">
+                                    <label class="govuk-label govuk-radios__label" for="outcome-2">
+                                        Outcome 2
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="outcome-3" name="outcome" type="radio" value="Outcome 3">
+                                    <label class="govuk-label govuk-radios__label" for="outcome-3">
+                                        Outcome 3
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="outcome-4" name="outcome" type="radio" value="Outcome 4">
+                                    <label class="govuk-label govuk-radios__label" for="outcome-4">
+                                        Outcome 4
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button class="govuk-button govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

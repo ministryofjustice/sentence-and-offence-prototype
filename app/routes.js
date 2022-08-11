@@ -39,10 +39,84 @@ router.post('/version-3/add-an-offence/add-another-offence-selected', function(r
     if (addAnotherOffence == "yes") {
         res.redirect('/version-3/add-an-offence/add-an-offence')
     }
-        if (addAnotherOffence == "no") {
+    if (addAnotherOffence == "no") {
         res.redirect('/version-3/add-an-offence/check-answers')
     }
 })
+
+// add another offence choice
+// version 3 add-a-warrant/add-an-offence
+router.post('/version-3/add-a-document/add-a-remand-warrant/add-an-offence/add-another-offence-selected', function(req, res) {
+
+    var addAnotherOffence = req.session.data['add-another-offence-choice']
+
+    console.log("add-another-offence-choice" + addAnotherOffence)
+
+    if (addAnotherOffence == "yes") {
+        res.redirect('/version-3/add-an-offence/add-an-offence')
+    }
+    if (addAnotherOffence == "no") {
+        res.redirect('/version-3/add-a-document/add-a-remand-warrant/check-answers')
+    }
+})
+
+
+router.post('/version-3/add-an-offence/offence-end-date', function(req, res) {
+
+    var offenceStartDate = req.session.data['offence-start-month']
+    
+    var date = monthToWord(offenceStartDate);
+
+    console.log("Offence start month: " + date);
+
+    req.session.data['offence-start-month'] = date;
+
+    res.redirect('/version-3/add-an-offence/offence-end-date');
+
+})
+
+
+router.post('/version-3/add-a-document/add-a-remand-warrant/add-an-offence/offence-end-date', function(req, res) {
+
+    var offenceStartDate = req.session.data['offence-start-month']
+    
+    var date = monthToWord(offenceStartDate);
+
+    console.log("Offence start month: " + date);
+
+    req.session.data['offence-start-month'] = date;
+
+    res.redirect('/version-3/add-a-document/add-a-remand-warrant/add-an-offence/offence-end-date');
+
+})
+
+router.post('/version-3/add-a-document/add-a-remand-warrant/add-an-offence/add-another-offence', function(req, res) {
+
+    var offenceStartDate = req.session.data['offence-end-month']
+    
+    var date = monthToWord(offenceStartDate);
+
+    console.log("Offence end month name: " + date);
+
+    req.session.data['offence-end-month'] = date;
+
+    res.redirect('/version-3/add-a-document/add-a-remand-warrant/add-an-offence/add-another-offence');
+
+})
+
+
+//convert date to words
+
+function monthToWord (monthNum){
+
+  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+  var month = months[monthNum - 1]
+
+  console.log("Month name: " + month);
+
+  return month;
+}
+
 
 // // add another offence choice
 // // version 3 add-an-offence

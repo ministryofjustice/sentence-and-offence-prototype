@@ -1,0 +1,56 @@
+{% extends "../../../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="offence-end-date" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <!-- Summary of offences added so far -->
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-s">You have added 1 offence</h2>
+                <dl class="govuk-summary-list">
+                    <div class="govuk-summary-list__row">
+                        <dd class="govuk-summary-list__value">
+                            {{ data['offence-name'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                                Remove
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="add-another-offence-selected" method="post">
+                    <div class="govuk-form-group govuk-!-margin-top-4">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    Do you want to add another offence to this remand warrant?
+                                </h1>
+                            </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="add-another-offence-1" name="add-another-offence-choice" type="radio" value="yes">
+                                    <label class="govuk-label govuk-radios__label" for="add-another-offence-1">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="add-another-offence-2" name="add-another-offence-choice" type="radio" value="no">
+                                    <label class="govuk-label govuk-radios__label" for="add-another-offence-2">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <button class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+</div>
+{% endblock %}
