@@ -30,14 +30,3 @@ new MOJFrontend.FilterToggleButton({
   },
 });
 
-//convert date to words
-
-function monthToWord (monthNum){
-
-  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  var month = months[monthNum - 1]
-
-  console.log("Month name: " + month);
-
-  return month;
-}

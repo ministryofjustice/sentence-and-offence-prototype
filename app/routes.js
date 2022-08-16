@@ -60,6 +60,35 @@ router.post('/version-3/add-a-document/add-a-remand-warrant/add-an-offence/add-a
     }
 })
 
+router.post('/version-3/add-a-document/add-a-remand-warrant/hearing-type', function(req, res) {
+
+    var nextHearingMonth = req.session.data['next-hearing-date-month']
+    
+    var date = monthToWord(nextHearingMonth);
+
+    console.log("Next hearing month: " + date);
+
+    req.session.data['next-hearing-date-month'] = date;
+
+    res.redirect('/version-3/add-a-document/add-a-remand-warrant/hearing-type');
+
+})
+
+router.post('/version-3/add-a-document/add-a-remand-warrant/submit-court-date', function(req, res) {
+
+    var courtDateMonth = req.session.data['court-date-month']
+    
+    var date = monthToWord(courtDateMonth);
+
+    console.log("Court date month: " + date);
+
+    req.session.data['court-date-month'] = date;
+
+    res.redirect('/version-3/add-a-document/add-a-remand-warrant/add-an-offence/add-an-offence');
+
+})
+
+
 
 router.post('/version-3/add-an-offence/offence-end-date', function(req, res) {
 
@@ -92,9 +121,9 @@ router.post('/version-3/add-a-document/add-a-remand-warrant/add-an-offence/offen
 
 router.post('/version-3/add-a-document/add-a-remand-warrant/add-an-offence/add-another-offence', function(req, res) {
 
-    var offenceStartDate = req.session.data['offence-end-month']
+    var offenceEndDate = req.session.data['offence-end-month']
     
-    var date = monthToWord(offenceStartDate);
+    var date = monthToWord(offenceEndDate);
 
     console.log("Offence end month name: " + date);
 
