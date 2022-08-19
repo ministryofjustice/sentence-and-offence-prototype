@@ -1,0 +1,57 @@
+{% extends "../../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="add-an-offence/add-another-offence" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <span class="govuk-caption-xl">Add a Warrant for Custodial Sentence</span>
+                <h1 class="govuk-heading-l">Check your answers</h1>
+                <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Outcome
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ data['outcome'] }}
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="outcome">
+                                Change<span class="govuk-visually-hidden"> outcome</span>
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+            <div class="govuk-grid-column-full">
+                <table class="govuk-table">
+                    <caption class="govuk-table__caption govuk-table__caption--m">Offences</caption>
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header check-answers-offences">Offence</th>
+                            <th scope="col" class="govuk-table__header">Offence start date</th>
+                            <th scope="col" class="govuk-table__header">Offence end date</th>
+                            <th scope="col" class="govuk-table__header">Days tagged bail</th>
+                            <th scope="col" class="govuk-table__header"></th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">{{ data['offence-name'] }}</td>
+                            <td class="govuk-table__cell">{{ data['offence-start-day'] }} {{ data['offence-start-month'] }} {{ data['offence-start-year'] }}</td>
+                            <td class="govuk-table__cell">{{ data['offence-end-day'] }} {{ data['offence-end-month'] }} {{ data['offence-end-year'] }}</td>
+                            <td class="govuk-table__cell">{{ data['tagged-bail'] }}</td>
+                            <td class="govuk-table__cell"><a href="" class="govuk-!-margin-right-2">Change</a><a href="">Remove</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <form class="form" action="confirmation">
+                    <button class="govuk-button" data-module="govuk-button">
+                        Save and continue
+                    </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}

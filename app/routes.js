@@ -134,6 +134,25 @@ router.post('/version-3/add-a-document/add-a-remand-warrant/add-an-offence/add-a
 })
 
 
+// add another offence choice
+// version 3 add-a-warrant-for-custodial-sentence/add-a-sentence
+router.post('/version-3/add-a-document/add-a-warrant-for-custodial-sentence/add-a-sentence/add-another-sentence-selected', function(req, res) {
+
+    var addAnotherOffence = req.session.data['add-another-offence-choice']
+
+    console.log("add-another-offence-choice" + addAnotherOffence)
+
+    if (addAnotherOffence == "yes") {
+        res.redirect('/version-3/add-a-document/add-a-warrant-for-custodial-sentence/add-a-sentence/add-an-offence')
+    }
+    if (addAnotherOffence == "no") {
+        res.redirect('/version-3/add-a-document/add-a-warrant-for-custodial-sentence/check-answers')
+    }
+})
+
+
+
+
 //convert date to words
 
 function monthToWord (monthNum){
@@ -145,6 +164,9 @@ function monthToWord (monthNum){
 
   return month;
 }
+
+
+
 
 
 // // add another offence choice

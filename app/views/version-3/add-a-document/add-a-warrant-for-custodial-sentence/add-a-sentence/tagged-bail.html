@@ -1,0 +1,44 @@
+{% extends "../../../dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="add-an-offence" class="govuk-back-link">Back</a>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <form class="form" action="add-another-sentence" method="post">
+                    <div class="govuk-form-group">
+                        <span class="govuk-caption-xl">Add a Warrant for Custodial Sentence</span>
+                        <label class="govuk-heading-l" for="tagged-bail">
+                            How many days were spend on tagged bail?
+                        </label>
+                        <div class="govuk-date-input" id="sentence-length-years">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <div class="govuk-date-input__item">
+                                        <div class="govuk-form-group">
+                                            <label class="govuk-label govuk-date-input__label" for="tagged-bail">
+                                                Number of days tagged bail
+                                            </label>
+                                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="tagged-bail" name="tagged-bail" type="text" pattern="[0-9]*" inputmode="numeric">
+                                        </div>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="no-tagged-bail" name="tagged-bail" type="checkbox" value="0 days">
+                                                <label class="govuk-label govuk-checkboxes__label" for="no-tagged-bail">
+                                                    There was no tagged bail
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-form-group govuk-!-margin-top-7">
+                                <button class="govuk-button" data-module="govuk-button">
+                                    Continue
+                                </button>
+                </form>
+            </div>
+        </div>
+    </main>
+</div>
+{% endblock %}
