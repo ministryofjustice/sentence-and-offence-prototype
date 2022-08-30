@@ -1,0 +1,28 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+                Prisoner search
+            </h1>
+            <div class="moj-search">
+                <form action="version-4/prisoner-details.html" method="post">
+                    <div class="govuk-form-group">
+                        <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+                            Enter a prisoner name
+                        </label>
+                        <div id="search-hint" class="govuk-hint moj-search__hint ">
+                            You can search by first or last name
+                        </div>
+                        <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+                    </div>
+                    <a href="prisoner-search-results.html" class="govuk-button moj-search__button " data-module="govuk-button">
+                        Search
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
