@@ -84,7 +84,7 @@ if (offenceSelectButton) {
 
     console.log(localStorage.getItem('offence'))
     addOffence( offence, startDate, endDate);
-    //location.href = 'check-your-answers.html';
+    location.href = 'check-your-answers.html';
   })
 }
 if (nameInput) {
