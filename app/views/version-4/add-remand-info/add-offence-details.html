@@ -108,7 +108,7 @@
                         <div id="offence-name-hint" class="govuk-hint">
                             Search by offence code or name
                         </div>
-                        <select id="offence-picker" class="enhance-autcomplete" name="offence-name" type="text" aria-describedby="offence-name-hint">
+                        <select id="offence-picker" class="enhance-autcomplete" name="offence-name" type="text"  data-name="offence" aria-describedby="offence-name-hint">
                             <option value=""></option>
                             <option value="Fail to comply with an animal by-product requirement">Fail to comply with an animal by-product requirement</option>
                             <option value="Intentionally obstruct an authorised person">Intentionally obstruct an authorised person</option>
@@ -5999,8 +5999,9 @@
                 </fieldset>
 
             </form>
-            <a href="check-your-answers.html" class="govuk-button">Continue</a>
+            <a href="check-your-answers.html" class="govuk-button" data-name="offence-button">Continue</a>
         </div>
     </div>
 </div>
+<script src="/public/javascripts/data-store.js"></script>
 {% endblock %}
