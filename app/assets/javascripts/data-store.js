@@ -121,12 +121,7 @@ if(offencesSummaryContainer){
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                             ${x.offence}
                         </dt>
-                        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
-                            <ul class="govuk-summary-list__actions-list">
-                                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
-                                <li class="govuk-summary-list__actions-list-item"><a data-name="remove-link-${x.id}" class="govuk-link remove-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
-                            </ul>
-                        </dd>
+                        
                     </div>`
     offencesSummaryContainer.innerHTML += newOffence;
   }
