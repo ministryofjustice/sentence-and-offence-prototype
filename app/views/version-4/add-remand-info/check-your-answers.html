@@ -9,7 +9,7 @@
             </h1>
             <div class="govuk-form-group">
 
-                <dl class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+                <dl id="OffenceList" class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                             Intentionally obstruct an authorised person
@@ -35,13 +35,13 @@
                         </div>
                         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="Yes">
-                                <label class="govuk-label govuk-radios__label" for="add-another">
+                                <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="Yes" data-route="add-offence-details">
+                                <label class="govuk-label govuk-radios__label" for="add-another" >
                                     Yes
                                 </label>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="add-another-2" name="add-another" type="radio" value="No">
+                                <input class="govuk-radios__input" id="add-another-2" name="add-another" type="radio" value="No" data-route="confirmation-page">
                                 <label class="govuk-label govuk-radios__label" for="add-another-2">
                                     No
                                 </label>
@@ -53,8 +53,9 @@
 
 
             </form>
-            <a href="confirmation-page.html" class="govuk-button">Continue</a>
+            <a id="checkButton" href="confirmation-page.html" class="govuk-button">Continue</a>
         </div>
     </div>
 </div>
+<script src="/public/javascripts/data-store.js"></script>
 {% endblock %}

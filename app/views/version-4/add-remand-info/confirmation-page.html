@@ -3,17 +3,40 @@
 <div class="moj-width-container">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <div class="govuk-panel govuk-panel--confirmation">
-                <h1 class="govuk-panel__title">
-                    Application complete
-                </h1>
-                <div class="govuk-panel__body">
-                    Your reference number<br><strong>HDJ2123F</strong>
-                </div>
+            <div class="govuk-!-margin-bottom-8 app-possible-prison-record" style="display: flex;">
+                <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-0">
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header" style="width: 40%;">Name</th>
+                        <td class="govuk-table__cell">Joe Bloggs</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Date of birth</th>
+                        <td class="govuk-table__cell">1 April 1987</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <th scope="row" class="govuk-table__header">Prison number</th>
+                        <td class="govuk-table__cell">A5264VA</td>
+                    </tr>
+                    </tbody>
+                </table>
+                <img style="padding: 10px 10px 0 10px;height: 9em;" src="/public/images/prisoner.jpeg" alt="ABC, ABC">
             </div>
+            <dl id="OffenceListSummary" class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+
+            </dl>
+<!--            <div class="govuk-panel govuk-panel&#45;&#45;confirmation">-->
+<!--                <h1 class="govuk-panel__title">-->
+<!--                    Application complete-->
+<!--                </h1>-->
+<!--                <div class="govuk-panel__body">-->
+<!--                    Your reference number<br><strong>HDJ2123F</strong>-->
+<!--                </div>-->
+<!--            </div>-->
             <a href="../prisoner-search.html">Add another prisoner</a>
             <a href="">Log off</a>
         </div>
     </div>
 </div>
+<script src="/public/javascripts/data-store.js"></script>
 {% endblock %}

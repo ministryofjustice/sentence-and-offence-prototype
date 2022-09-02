@@ -41,17 +41,15 @@ const offenceStartDay = document.getElementById("offence-start-day");
 const offenceStartMonth = document.getElementById("offence-start-month");
 const offenceStartYear = document.getElementById("offence-start-year");
 
-console.log(offenceStartDay);
+
 function createOffenceStartDate(day, month, year) {
-  console.log(day)
   let date = `${day}-${month}-${year}`;
-  console.log("s", date)
   return date
 }
 
 
 function createOffenceEndDate(day, month, year) {
-  let date = `${day.value} - ${month.value} - ${year.value}`;
+  let date = `${day.value}-${month.value}-${year.value}`;
   return date
 }
 //add item to object
@@ -60,13 +58,17 @@ function addOffence(offence, on , to) {
 
   let offenceList = localStorage.getItem('offenceList');
   offenceList = offenceList ? JSON.parse(offenceList) : []
+  let count = offenceList.length;
+
   let oo = {
+    id:count +1,
     offence:offence,
     onDate:on,
     endDate:to
   }
   arr = JSON.stringify(offenceList)
   offenceList.push(oo);
+
   localStorage.setItem('offenceList', JSON.stringify(offenceList))
 
   console.log(2, offenceList, localStorage.getItem('offenceList'))
@@ -87,89 +89,64 @@ if (offenceSelectButton) {
     location.href = 'check-your-answers.html';
   })
 }
-if (nameInput) {
-  nameInputButton.addEventListener("click", function (e) {
-    e.preventDefault();
-    localStorage.setItem('name', nameInput.value)
-    console.log(localStorage.getItem('name'))
-    console.log(localStorage.getItem('entries'));
-    location.href = 'page-2.html';
-  })
-}
+  const offencesContainer = document.getElementById("OffenceList");
+  const offencesSummaryContainer = document.getElementById("OffenceListSummary");
+if(offencesContainer) {
+  const offenceData = localStorage.getItem('offenceList');
+  const offenceDataList = JSON.parse(offenceData);
+  console.log(offenceDataList)
 
-if(ageInput) {
-  ageInputButton.addEventListener("click", function (e) {
-    e.preventDefault();
-    console.log(localStorage.getItem('dataObject'));
-    localStorage.setItem('age', ageInput.value);
-
-    let ds = []
-    let entry = {
-      "name": localStorage.getItem('name'),
-      "age": ageInput.value
-    };
-    ds.push(entry);
-    console.log(entry)
-
-    //addItem(ageInput.value);
-
-    addEl(ageInput.value);
-
-    //const newSet = Object.assign(localStorage.getItem('dataObject'), entry)
-
-    //localStorage.setItem("dataObject", JSON.stringify(ds));
-
-    location.href= 'result.html';
-  })
-}
-
-
-function addItem(age) {
-  const source = JSON.parse(localStorage.getItem('newData'));
-
-  if(localStorage.getItem("newData") && localStorage.getItem("newData").length > 0) {
-    let tt = [localStorage.getItem('newData')];
-    console.log("here", tt)
-    let dataObj = {
-      name: "paul",
-      age: age
-    }
-    let rr = [];
-    tt.push(dataObj);
-    //rr.push(dataObj)
-
-    //source.push(dataObj);
-    localStorage.setItem("newData", JSON.stringify(tt));
-    //console.log(JSON.parse(localStorage.getItem('newData')));
-  } else {
-    let dataObj = {
-      name: "paul",
-      age: age
-    }
-    localStorage.setItem("newData", JSON.stringify(dataObj));
+  for (let x of offenceDataList) {
+    let newOffence = `<div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                            ${x.offence}
+                        </dt>
+                        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                            <ul class="govuk-summary-list__actions-list">
+                                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
+                                <li class="govuk-summary-list__actions-list-item"><a data-name="remove-link-${x.id}" class="govuk-link remove-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
+                            </ul>
+                        </dd>
+                    </div>`
+    offencesContainer.innerHTML += newOffence;
   }
-
-  //console.log(arr)
-
 }
 
-function addEl(age) {
-
-  let existing = localStorage.getItem('myLunch');
-  existing = existing ? JSON.parse(existing) : []
-  let oo = {
-    name: localStorage.getItem('name'),
-    age:age
+//
+if(offencesSummaryContainer){
+  const offenceData = localStorage.getItem('offenceList');
+  const offenceDataList = JSON.parse(offenceData);
+  for (let x of offenceDataList) {
+    let newOffence = `<div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                            ${x.offence}
+                        </dt>
+                        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                            <ul class="govuk-summary-list__actions-list">
+                                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
+                                <li class="govuk-summary-list__actions-list-item"><a data-name="remove-link-${x.id}" class="govuk-link remove-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
+                            </ul>
+                        </dd>
+                    </div>`
+    offencesSummaryContainer.innerHTML += newOffence;
   }
-  arr = JSON.stringify(existing)
-  existing.push(oo);
-  localStorage.setItem('myLunch', JSON.stringify(existing))
+}
+const radios = document.getElementsByClassName("govuk-radios__input")
 
-  console.log(2, existing, localStorage.getItem('myLunch'))
-
+function radioRoute() {
+  for(let x of radios) {
+    if(x.checked) {
+      let route = x.getAttribute("data-route")
+      location.href = `${route}.html`;
+    }
+  }
 }
 
-
+const routeButton = document.getElementById("checkButton")
+  routeButton.addEventListener("click", function(e) {
+    e.preventDefault()
+    radioRoute()
+  })
 if(resultsButton) {
   resultsButton.addEventListener("click", function (e) {
     e.preventDefault();
