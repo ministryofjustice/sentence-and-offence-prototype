@@ -41,7 +41,160 @@ const offenceStartDay = document.getElementById("offence-start-day");
 const offenceStartMonth = document.getElementById("offence-start-month");
 const offenceStartYear = document.getElementById("offence-start-year");
 
+//warrant data items
 
+  const warrantButton = document.getElementById("WarrantButton")
+
+  if (warrantButton) {
+
+
+    const warrantDateDay = document.getElementById("WarrantDay")
+    const warrantDateMonth = document.getElementById("WarrantMonth")
+    const warrantDateYear = document.getElementById("WarrantYear")
+    const courtName = document.getElementById("court-name").value
+    const caseRef = document.getElementById("CaseRef").value;
+    const remandBasis = document.getElementById("remand").value;
+    const hearingType = document.getElementById("hearing-type").value;
+    const outcome = document.getElementById("hearing-type").value;
+    const courtDateDay = document.getElementById("court-day");
+    const courtDateMonth = document.getElementById("court-month");
+    const courtDateYear = document.getElementById("court-year");
+    console.log("button")
+    warrantButton.addEventListener("click", function (e) {
+      e.preventDefault();
+      const warrantDate = createDate(warrantDateDay, warrantDateMonth, warrantDateYear);
+      const courtDate = createDate(courtDateDay, courtDateMonth, courtDateYear);
+
+      storeWarrantDetails(warrantDate, courtName, caseRef, remandBasis, hearingType,outcome, courtDate)
+
+      location.href = 'add-offence-details.html';
+    })
+  }
+  function storeWarrantDetails(warrantDate, court, ref, basis, hearing, outcome, courtDate) {
+    console.log("called")
+    let warrantDetails = localStorage.getItem('warrantDetails');
+    warrantDetails = warrantDetails ? JSON.parse(warrantDetails) : [];
+
+    let warrant = {
+      warrantDate:warrantDate,
+      court: court,
+      ref: ref,
+      basis:basis,
+      hearing: hearing,
+      outcome: outcome,
+      courtDate: courtDate
+    }
+    arr = JSON.stringify(warrantDetails)
+    warrantDetails.push(warrant)
+    localStorage.setItem('warrantDetails', JSON.stringify(warrantDetails));
+
+
+  }
+const warrantDetailsContainer = document.getElementById("warrant-details");
+  if(warrantDetailsContainer) {
+    let warrantDetails = JSON.parse(localStorage.getItem('warrantDetails'));
+    console.log(warrantDetails)
+
+    let warrantInfo = `
+        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Date of warrant
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                ${warrantDetails[0].warrantDate}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="warrant-details.html">
+                                    Change<span class="govuk-visually-hidden"> date</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Court name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                ${warrantDetails[0].court}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="warrant-details.html">
+                                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Case Reference
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                ${warrantDetails[0].ref}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="warrant-details.html">
+                                    Change<span class="govuk-visually-hidden"> address</span>
+                                </a>
+                            </dd>
+                        </div>
+                   
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Basis of remand
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                ${warrantDetails[0].basis}
+                             
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="warrant-details.html">
+                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                </a>
+                            </dd>
+                        </div>
+                             <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Hearing type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                ${warrantDetails[0].hearing}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="warrant-details.html">
+                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                </a>
+                            </dd>
+                        </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Case Reference
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                ${warrantDetails[0].ref}
+                             
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="warrant-details.html">
+                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                </a>
+                            </dd>
+                        </div>
+                          <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Court date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                ${warrantDetails[0].courtDate}
+                             
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="warrant-details.html">
+                                    Change<span class="govuk-visually-hidden"> contact details</span>
+                                </a>
+                            </dd>
+                        </div>
+
+    `
+    warrantDetailsContainer.innerHTML = warrantInfo;
+  }
 function createOffenceStartDate(day, month, year) {
   let date = `${day}-${month}-${year}`;
   return date
@@ -52,7 +205,12 @@ function createOffenceEndDate(day, month, year) {
   let date = `${day.value}-${month.value}-${year.value}`;
   return date
 }
-//add item to object
+
+  function createDate(day, month, year) {
+    let date = `${day.value}-${month.value}-${year.value}`;
+    return date
+  }
+
 
 function addOffence(offence, on , to) {
 
@@ -121,6 +279,11 @@ if(offencesSummaryContainer){
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                             ${x.offence}
                         </dt>
+                          <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="check-your-answers.html">
+                                    Change<span class="govuk-visually-hidden"> previous application number</span>
+                                </a>
+                            </dd>
                         
                     </div>`
     offencesSummaryContainer.innerHTML += newOffence;
@@ -138,10 +301,12 @@ function radioRoute() {
 }
 
 const routeButton = document.getElementById("checkButton")
-  routeButton.addEventListener("click", function(e) {
-    e.preventDefault()
-    radioRoute()
-  })
+  if(routeButton) {
+    routeButton.addEventListener("click", function (e) {
+      e.preventDefault()
+      radioRoute()
+    })
+  }
 if(resultsButton) {
   resultsButton.addEventListener("click", function (e) {
     e.preventDefault();

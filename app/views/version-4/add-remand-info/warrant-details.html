@@ -13,7 +13,7 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-xl govuk-!-margin-top-8">
-                <span class="govuk-caption-xl">Add a remand warrant</span>
+                <span class="govuk-caption-xl">Add details from a remand warrant</span>
                 Enter warrant details
             </h1>
             <!-- warrant date  -->
@@ -25,29 +25,29 @@
                     <div id="passport-issued-hint" class="govuk-hint">
                         For example, 27 3 2007
                     </div>
-                    <div class="govuk-date-input" id="passport-issued">
+                    <div class="govuk-date-input" id="warrant-date">
                         <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
+                                <label class="govuk-label govuk-date-input__label" for="WarrantDay">
                                     Day
                                 </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                                <input id="WarrantDay" class="govuk-input govuk-date-input__input govuk-input--width-2"  name="passport-issued-day" type="text" inputmode="numeric">
                             </div>
                         </div>
                         <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
+                                <label class="govuk-label govuk-date-input__label" for="WarrantMonth">
                                     Month
                                 </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                <input id="WarrantMonth" class="govuk-input govuk-date-input__input govuk-input--width-2"  name="passport-issued-month" type="text" inputmode="numeric">
                             </div>
                         </div>
                         <div class="govuk-date-input__item">
                             <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
+                                <label class="govuk-label govuk-date-input__label" for="WarrantYear">
                                     Year
                                 </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                <input id="WarrantYear" class="govuk-input govuk-date-input__input govuk-input--width-4" name="passport-issued-year" type="text" inputmode="numeric">
                             </div>
                         </div>
                     </div>
@@ -1173,9 +1173,9 @@
             <!-- court reference -->
             <div class="govuk-form-group">
                 <label class="govuk-label govuk-label--s" for="event-name">
-                    What is the case reference?
+                    case reference
                 </label>
-                <input class="govuk-input govuk-input--width-10" id="event-name" name="event-name" type="text">
+                <input  id="CaseRef"  class="govuk-input govuk-input--width-10" id="event-name" name="event-name" type="text">
             </div>
             <!-- basis of remand-->
             <div class="govuk-form-group">
@@ -1183,45 +1183,45 @@
                     Basis of remand
                 </label>
                 <select class="govuk-select" id="remand" name="sort">
-                    <option value="published">Remand at magistrates</option>
-                    <option value="updated" selected>Remand at crown court</option>
-                    <option value="views">Convicted</option>
+                    <option value="Remand at magistrates">Remand at magistrates</option>
+                    <option value="Remand at crown court" selected>Remand at crown court</option>
+                    <option value="Convicted">Convicted</option>
                 </select>
             </div>
             <!--Hearing type-->
             <div class="govuk-form-group">
                 <label class="govuk-label govuk-label--s" for="sort">
-                    What was the hearing type?
+                    Hearing type
                 </label>
                 <select class="govuk-select" id="hearing-type" name="sort">
-                    <option value="published">Bail application</option>
-                    <option value="updated" selected>Breach hearing</option>
-                    <option value="views">Expedited Breach Hearing</option>
-                    <option value="comments">Court Appearance</option>
-                    <option value="comments">Court Review</option>
+                    <option value="Bail application">Bail application</option>
+                    <option value="Breach hearing" selected>Breach hearing</option>
+                    <option value="Expedited Breach Hearing">Expedited Breach Hearing</option>
+                    <option value="Court Appearance">Court Appearance</option>
+                    <option value="Court Review">Court Review</option>
                 </select>
             </div>
             <!--Hearing outcome-->
             <div class="govuk-form-group">
                 <label class="govuk-label govuk-label--s" for="sort">
-                    What was the outcome?
+                    Outcome
                 </label>
                 <select class="govuk-select" id="hearing-outcome" name="sort">
-                    <option value="published">Remand in Custody (Bail Refused)</option>
-                    <option value="updated" selected>Mental Health Commit to Crown Court for Restriction (Remand to Prison)</option>
-                    <option value="views">Remand in Custody Ancillary Results</option>
-                    <option value="comments">Remand in Custody after Bail Appeal by Prosecutor</option>
-                    <option value="comments">Remand in Custody to Customs Detention</option>
-                    <option value="comments">Remand in Custody after Bail Appeal by Prosecutor</option>
-                    <option value="comments">Remand in Custody with Direction to Release on Bail</option>
-                    <option value="comments">Civil Remand</option>
+                    <option value="Remand in Custody (Bail Refused)">Remand in Custody (Bail Refused)</option>
+                    <option value="Mental Health Commit to Crown Court for Restriction (Remand to Prison)" selected>Mental Health Commit to Crown Court for Restriction (Remand to Prison)</option>
+                    <option value="Remand in Custody Ancillary Results">Remand in Custody Ancillary Results</option>
+                    <option value="Remand in Custody after Bail Appeal by Prosecutor">Remand in Custody after Bail Appeal by Prosecutor</option>
+                    <option value="Remand in Custody to Customs Detention">Remand in Custody to Customs Detention</option>
+                    <option value="Remand in Custody after Bail Appeal by Prosecutor">Remand in Custody after Bail Appeal by Prosecutor</option>
+                    <option value="Remand in Custody with Direction to Release on Bail">Remand in Custody with Direction to Release on Bail</option>
+                    <option value="Civil Remand">Civil Remand</option>
                 </select>
             </div>
             <!-- next hearing -->
             <div class="govuk-form-group">
                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
                     <label class="govuk-fieldset__legend govuk-label--s">
-                        When was the court date?
+                        Court date
                     </label>
                     <div id="passport-issued-hint" class="govuk-hint">
                         For example, 27 3 2007
@@ -1232,7 +1232,7 @@
                                 <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
                                     Day
                                 </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="text" inputmode="numeric">
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="court-day" name="passport-issued-day" type="text" inputmode="numeric">
                             </div>
                         </div>
                         <div class="govuk-date-input__item">
@@ -1240,7 +1240,7 @@
                                 <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
                                     Month
                                 </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="court-month" name="passport-issued-month" type="text" inputmode="numeric">
                             </div>
                         </div>
                         <div class="govuk-date-input__item">
@@ -1248,15 +1248,16 @@
                                 <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
                                     Year
                                 </label>
-                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="court-year" name="passport-issued-year" type="text" inputmode="numeric">
                             </div>
                         </div>
                     </div>
 
                 </fieldset>
             </div>
-            <a href="add-offence-details.html" class="govuk-button">Continue</a>
+            <a id="WarrantButton" href="add-offence-details.html" class="govuk-button">Continue</a>
         </div>
     </div>
 </div>
+<script src="/public/javascripts/data-store.js"></script>
 {% endblock %}

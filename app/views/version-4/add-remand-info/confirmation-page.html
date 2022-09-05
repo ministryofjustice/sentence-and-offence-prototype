@@ -10,49 +10,48 @@
     </div>
 </div>
 <div class="moj-width-container">
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds govuk-!-padding-top-8">
-            <h1 class="govuk-heading-xl">
-                <span class="govuk-caption-xl">Overview</span>
-                Joe Bloggs
-            </h1>
-            <div class="govuk-!-margin-bottom-8 app-possible-prison-record" style="display: flex;">
-                <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-0">
-                    <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header" style="width: 40%;">Name</th>
-                        <td class="govuk-table__cell">Joe Bloggs</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Date of birth</th>
-                        <td class="govuk-table__cell">1 April 1987</td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <th scope="row" class="govuk-table__header">Prison number</th>
-                        <td class="govuk-table__cell">A5264VA</td>
-                    </tr>
-                    </tbody>
-                </table>
-                <img style="padding: 10px 10px 0 10px;height: 9em;" src="/public/images/prisoner.jpeg" alt="ABC, ABC">
-            </div>
-            <h2 class="govuk-heading-m">Warrant details</h2>
-            <p>Warrant details to go here.</p>
-            <h2 class="govuk-heading-m">Offences</h2>
-            <dl id="OffenceListSummary" class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
 
-            </dl>
-<!--            <div class="govuk-panel govuk-panel&#45;&#45;confirmation">-->
-<!--                <h1 class="govuk-panel__title">-->
-<!--                    Application complete-->
-<!--                </h1>-->
-<!--                <div class="govuk-panel__body">-->
-<!--                    Your reference number<br><strong>HDJ2123F</strong>-->
-<!--                </div>-->
-<!--            </div>-->
-            <a href="../prisoner-search.html">Add another prisoner</a>
-            <a href="">Log off</a>
-        </div>
-    </div>
+
+
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop govuk-!-padding-top-8">
+
+                    <h1 class="govuk-heading-xl">
+                        <span class="govuk-caption-xl">Add details from a remand warrant</span>
+                        Check your answers before submitting warrant information</h1>
+
+                    <h2 class="govuk-heading-m">Warrant details</h2>
+
+                    <dl id="warrant-details" class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                    </dl>
+
+                    <h2 class="govuk-heading-m">Offence details</h2>
+
+                    <dl id="OffenceListSummary" class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                    </dl>
+
+<!--                    <h2 class="govuk-heading-m">Review information</h2>-->
+
+<!--                    <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>-->
+
+                    <form action="/form-handler" method="post" novalidate>
+
+                        <input type="hidden" name="answers-checked" value="true">
+
+                        <a  href="confirm.html" class="govuk-button" data-module="govuk-button">
+                            Save
+                        </a>
+
+                    </form>
+
+                </div>
+            </div>
+
+
+
 </div>
 <script src="/public/javascripts/data-store.js"></script>
 {% endblock %}
