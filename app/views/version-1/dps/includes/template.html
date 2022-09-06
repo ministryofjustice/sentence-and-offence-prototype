@@ -121,7 +121,8 @@ Digital Prison Services
                         </a>
                     </li>
                     <li class="govuk-footer__inline-list-item">
-                        <a class="govuk-footer__link" href="">
+                        <a  id="clear-storage" class="govuk-footer__link" href="">
+                            Clear storage
                         </a>
                     </li>
                     <li class="govuk-footer__inline-list-item">
@@ -153,6 +154,13 @@ window.onload = function() {
             })
         }
     })
+  const cl = document.getElementById("clear-storage");
+
+  cl.addEventListener("click", function (e){
+
+    e.preventDefault();
+    localStorage.clear()
+  } )
 }
 </script>
 {% block pageScripts %}{% endblock %}
