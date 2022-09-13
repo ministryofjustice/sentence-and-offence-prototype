@@ -19,7 +19,7 @@
                 <form class="form" action="sentences-and-offences" method="post">
 
                     <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label govuk-label--m" for="offence-name">
+                        <label class="govuk-label govuk-label govuk-label--s" for="offence-name">
                             Offence
                         </label>
                         <div id="offence-name-hint" class="govuk-hint">
@@ -5914,7 +5914,7 @@
                         </select>
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-heading-m" for="sentence-date">
+                        <label class="govuk-label govuk-label--s" for="sentence-date">
                             Offence date
                         </label>
                         <div class="govuk-date-input" id="offence-start-date">
@@ -5945,7 +5945,7 @@
                         </div>
                     </div>
                     <div class="govuk-form-group">
-                        <h2 class="govuk-heading-m">Does the offence have an end date?</h2>
+                        <label class="govuk-label govuk-label--s">Does the offence have an end date?</label>
                         <div class="govuk-radios" data-module="govuk-radios">
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="offence-end-date" name="offence-end-date" type="radio" value="offence-end-date" data-aria-controls="conditional-end-date">
@@ -5996,9 +5996,9 @@
                     </div>
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <label class="govuk-label govuk-label--s">
                                 Sentence type
-                            </legend>
+                            </label>
                             <select class="govuk-select" id="sentence-type" name="sentence-type">
                                 <option value="Sentencing Code Standard Determinate Sentence" selected>Sentencing Code Standard Determinate Sentence</option>
                                 <option value="CJA03 Standard Determinate Sentence">CJA03 Standard Determinate Sentence</option>
@@ -6013,7 +6013,7 @@
                     </div>
                     <form class="form" action="sentence-length">
                         <div class="govuk-form-group">
-                            <label class="govuk-heading-m" for="sentence-date">
+                            <label class="govuk-label govuk-label--s" for="sentence-date">
                                 Sentence date
                             </label>
                             <div class="govuk-date-input" id="sentence-date">
@@ -6044,7 +6044,7 @@
                             </div>
                         </div>
                         <div class="govuk-form-group">
-                            <label class="govuk-heading-m" for="sentence-date">
+                            <label class="govuk-label govuk-label--s" for="sentence-date">
                                 Sentence length
                             </label>
                             <div class="govuk-date-input" id="sentence-date">
@@ -6081,47 +6081,31 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="govuk-form-group govuk-!-margin-top-6">
+                                <fieldset class="govuk-fieldset">
+                                    <label class="govuk-label govuk-label--s">
+                                        Sentence to be served?
+                                    </label>
+                                    <div class="govuk-radios" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="served" name="where-do-you-live" type="radio" value="Concurrently">
+                                            <label class="govuk-label govuk-radios__label" for="served">
+                                                Concurrently
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="served-2" name="where-do-you-live" type="radio" value="Consecutively">
+                                            <label class="govuk-label govuk-radios__label" for="served-2">
+                                                Consecutively
+                                            </label>
+                                        </div>
+
+                                    </div>
+
+                                </fieldset>
+                            </div>
                         </div>
-                        <!--               <div class="govuk-form-group">
-                                          <label class="govuk-heading-m" for="consecutive-or-concurrent">
-                                              Consecutive or concurrent?
-                                          </label>
-                                          <div class="govuk-radios" data-module="govuk-radios">
-                                              <div class="govuk-radios" data-module="govuk-radios">
-                                                  <div class="govuk-radios__item">
-                                                      <input class="govuk-radios__input" id="consecutive-or-concurrent" name="consecutive-or-concurrent" type="radio" value="Consecutive">
-                                                      <label class="govuk-label govuk-radios__label" for="consecutive-or-concurrent">
-                                                          Consecutive
-                                                      </label>
-                                                  </div>
-                                                  <div class="govuk-radios__item">
-                                                      <input class="govuk-radios__input" id="consecutive-or-concurrent-2" name="consecutive-or-concurrent" type="radio" value="Concurrent" data-aria-controls="conditional-concurrent">
-                                                      <label class="govuk-label govuk-radios__label" for="consecutive-or-concurrent-2">
-                                                          Concurrent
-                                                      </label>
-                                                  </div>
-                                                  <div class="govuk-radios__conditional" id="conditional-concurrent">
-                                                      <div class="govuk-form-group">
-                                                          <label class="govuk-label" for="consecutive-or-concurrent">
-                                                              Concurrent to:
-                                                          </label>
-                                                          <div class="govuk-radios__item">
-                                                              <input class="govuk-radios__input" id="consecutive-or-concurrent-2" name="concurrent-sentence-1" type="radio" value="Court case 1, count 1<br>Act of violence on fixed platform<br>Sentence date: 21 September 2021" data-aria-controls="conditional-concurrent">
-                                                              <label class="govuk-label govuk-radios__label" for="concurrent-sentence-1">
-                                                                  Court case 1, count 1<br>Act of violence on fixed platform<br>Sentence date: 21 September 2021
-                                                              </label>
-                                                          </div>
-                                                          <div class="govuk-radios__item">
-                                                              <input class="govuk-radios__input" id="consecutive-or-concurrent-2" name="concurrent-sentence-2" type="radio" value="Court case 1, count 2<br>Burglary dwelling - with intent to steal<br>Sentence date: 21 September 2021" data-aria-controls="conditional-concurrent">
-                                                              <label class="govuk-label govuk-radios__label" for="concurrent-sentence-1">
-                                                                  Court case 1, count 2<br>Burglary dwelling - with intent to steal<br>Sentence date: 21 September 2021
-                                                              </label>
-                                                          </div>
-                                                      </div>
-                                                  </div>
-                                              </div>
-                                          </div>
-                                      </div> -->
+
                         <a id="add-sentence-button" href="sentences.html" class="govuk-button">Continue</a>
                     </form>
             </div>
