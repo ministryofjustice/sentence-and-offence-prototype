@@ -7,6 +7,15 @@ function createDate(day, month, year) {
   return date
 }
 
+function printSentence(days, weeks, months, years) {
+  let d = days.value ? days.value : "0";
+  let w = weeks.value ? weeks.value : "0";
+  let m = months.value ? months.value : "0";
+  let y = years.value ? years.value : "0";
+  let sentence = ` ${y} years ${m} months ${w} weeks ${d} days `;
+  return sentence
+}
+
 function updateData(lsName, dataItem, dataObject){
   arr = JSON.stringify(dataItem)
   dataItem.push(dataObject);
@@ -121,7 +130,7 @@ if(sentenceDetailsButton){
     const sentenceLengthWeeks = document.getElementById("sentence-length-weeks")
     const sentenceLengthDays = document.getElementById("sentence-length-days")
 
-    const sentenceLength = "0";
+    let sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
 
     const offence = localStorage.getItem('offence');
     let convictionDate = createDate(convictionDateDay, convictionDateMonth, convictionDateYear)
@@ -140,13 +149,14 @@ if(sentenceList){
   console.log("f",JSON.parse(dataDump))
 
   for(let x of data){
-     let listItem = `
+    if(x.offence.outcome === "Guilty") {
+      let listItem = `
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                             <p><strong>Offence: </strong>${x.offence.offence}</p>
                             <p><strong>Verdict: </strong>${x.offence.outcome}</p>
                             <p><strong>Sentence Length: </strong>
-                            <span>${x.sentence} days</span></p>
+                            <span>${x.sentenceDate} </span></p>
                        
                         
                         </dt>
@@ -158,7 +168,27 @@ if(sentenceList){
                         </dd>
                     </div>
         `
-    sentenceList.innerHTML += listItem
+      sentenceList.innerHTML += listItem
+    } else {
+      let listItem = `
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                            <p><strong>Offence: </strong>${x.offence.offence}</p>
+                            <p><strong>Verdict: </strong>${x.offence.outcome}</p>
+                          
+                       
+                        
+                        </dt>
+                        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
+                            <ul class="govuk-summary-list__actions-list">
+                                <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
+                                <li class="govuk-summary-list__actions-list-item"><a data-name="remove-link-${x.id}" class="govuk-link remove-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
+                            </ul>
+                        </dd>
+                    </div>
+        `
+      sentenceList.innerHTML += listItem
+    }
   }
 }
 
@@ -222,12 +252,13 @@ if(sentenceSummaryContainer){
   const sentenceData = localStorage.getItem('sentenceItem');
   const sentenceDataList = JSON.parse(sentenceData);
   for (let x of sentenceDataList) {
-    let newSentence = `<div class="govuk-summary-list__row">
+    if(x.offence.outcome === "Guilty") {
+      let newSentence = `<div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                            <p><strong>Offence: </strong>${x.offence.offence}</p>
                             <p><strong>Verdict: </strong>${x.offence.outcome}</p>
                             <p><strong>Sentence Length: </strong>
-                            <span>${x.sentence}</span></p>
+                            <span>${x.sentenceDate}</span></p>
                         </dt>
                           <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="check-your-answers.html">
@@ -236,7 +267,22 @@ if(sentenceSummaryContainer){
                             </dd>
                         
                     </div>`
-    sentenceSummaryContainer.innerHTML += newSentence;
+      sentenceSummaryContainer.innerHTML += newSentence;
+    } else {
+      let newSentence = `<div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                           <p><strong>Offence: </strong>${x.offence.offence}</p>
+                            <p><strong>Verdict: </strong>${x.offence.outcome}</p>
+                        </dt>
+                          <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="check-your-answers.html">
+                                    Change<span class="govuk-visually-hidden"> previous application number</span>
+                                </a>
+                            </dd>
+                        
+                    </div>`
+      sentenceSummaryContainer.innerHTML += newSentence;
+    }
   }
 }
 
