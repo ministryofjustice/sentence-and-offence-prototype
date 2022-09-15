@@ -69,7 +69,9 @@ if(outcomeButton) {
   addOffence(offence.value, offenceDate, offenceEndDate, outcome.value);
   let offencels = localStorage.getItem('offence')
     //sort this out
-  addSentence(offencels, "n", "n", "n","n","n", "n")
+    if(outcome.value === "Not guilty") {
+      addSentence(offencels, "n", "n", "n", "n", "n", "n")
+    }
   let url = setRoute(outcome.value)
 
   location.href = url;
