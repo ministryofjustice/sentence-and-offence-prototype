@@ -318,7 +318,6 @@ if(addSentenceButton) {
 }
 const courtDetails = document.getElementById("court-details");
 if (courtDetails) {
-  console.log("a")
  const courtData = JSON.parse(localStorage.getItem('courtDetails'));
   console.log(courtData)
   let court = `<div class="govuk-summary-list__row">

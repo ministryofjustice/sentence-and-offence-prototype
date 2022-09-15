@@ -1,0 +1,88 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">1 April 1987</span><strong>Prison number: </strong>B4166LG</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+                <span class="govuk-caption-xl">Add custodial sentence information</span>
+                Sentence added
+            </h1>
+            <h2 class="govuk-heading-m">Sentence(s)</h2>
+            <div class="govuk-form-group">
+
+                <dl id="sentence-list" class="govuk-summary-list hmrc-list-with-actions hmrc-list-with-actions--short">
+
+                </dl>
+
+            </div>
+<!--            <div class="govuk-form-group govuk-!-margin-top-7">-->
+<!--                <legend class="govuk-heading-s">Does tagged bail need to be considered?</legend>-->
+<!--                &lt;!&ndash; <p class="govuk-hint">This applies to offences that occur over multiple days.</p> &ndash;&gt;-->
+<!--                <div class="govuk-radios" data-module="govuk-radios">-->
+<!--                    <div class="govuk-radios__item">-->
+<!--                        <input class="govuk-radios__input" id="tagged-bail" name="tagged-bail" type="radio" value="yes" data-aria-controls="conditional-end-date">-->
+<!--                        <label class="govuk-label govuk-radios__label" for="tagged-bail">-->
+<!--                            Yes-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                    <div class="govuk-radios__conditional govuk-radios__conditional&#45;&#45;hidden" id="conditional-end-date">-->
+<!--                        <div class="govuk-form-group">-->
+<!--                            <label class="govuk-heading-s" for="tagged-bail">-->
+<!--                                Number of days on tagged bail-->
+<!--                            </label>-->
+
+<!--                            <input class="govuk-input govuk-!-width-one-half govuk-input&#45;&#45;width-3" id="tagged-bail-days" name="tagged bail" type="text">-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="govuk-radios__item">-->
+<!--                        <input class="govuk-radios__input" id="tagged-bail-2" name="tagged-bail-2" type="radio" value="offence-end-date">-->
+<!--                        <label class="govuk-label govuk-radios__label" for="tagged-bail-2">-->
+<!--                            No-->
+<!--                        </label>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--            </div>-->
+            <form method="post" novalidate action="">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--s">
+                            Do you need to add another sentence?
+                        </legend>
+                        <div id="add-another-hint" class="govuk-hint">
+                            You must add every sentence on the warrant.
+                        </div>
+                        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="Yes" data-route="add-a-sentence">
+                                <label class="govuk-label govuk-radios__label" for="add-another" >
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="add-another-2" name="add-another" type="radio" value="No" data-route="check-your-answers">
+                                <label class="govuk-label govuk-radios__label" for="add-another-2">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+
+            </form>
+            <a id="checkButton" href="confirmation-page.html" class="govuk-button">Continue</a>
+        </div>
+    </div>
+</div>
+<script src="/public/javascripts/custodial-data.js"></script>
+{% endblock %}
