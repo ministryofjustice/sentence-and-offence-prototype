@@ -140,7 +140,23 @@ if(sentenceDetailsButton){
     location.href = 'sentences.html';
   })
 }
+const thisOffenceContainer = document.getElementById("this-sentence-detail")
+if (thisOffenceContainer) {
+  const dataDump = localStorage.getItem("offence")
+  const data = JSON.parse(dataDump)
+  console.log(data)
 
+  // for (let x of data) {
+  //   if (x.offence.outcome === "Guilty") {
+      let details = `<p>Add sentence details for the following offence</p>
+                    <strong>Offence: </strong>${data.offence}<br>
+                    <strong>Date: </strong> ${data.offenceDate}`
+
+      thisOffenceContainer.innerHTML = details
+
+    }
+//   }
+// }
 const sentenceListButton = document.getElementById("checkButton")
 const sentenceList = document.getElementById("sentence-list");
 if(sentenceList){
