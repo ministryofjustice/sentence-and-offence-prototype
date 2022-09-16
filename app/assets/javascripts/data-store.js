@@ -51,7 +51,7 @@ const offenceStartYear = document.getElementById("offence-start-year");
     const warrantDateYear = document.getElementById("WarrantYear")
     const courtName = document.getElementById("court-name");
     const caseRef = document.getElementById("CaseRef");
-    const remandBasis = document.getElementById("remand");
+    //const remandBasis = document.getElementById("remand");
     const hearingType = document.getElementById("hearing-type");
     const outcome = document.getElementById("hearing-outcome");
     const courtDateDay = document.getElementById("court-day");
@@ -64,12 +64,12 @@ const offenceStartYear = document.getElementById("offence-start-year");
       const warrantDate = createDate(warrantDateDay, warrantDateMonth, warrantDateYear);
       const courtDate = createDate(courtDateDay, courtDateMonth, courtDateYear);
 
-      storeWarrantDetails(warrantDate, courtName.value, caseRef.value, remandBasis.value, hearingType.value,outcome.value, courtDate)
+      storeWarrantDetails(warrantDate, courtName.value, caseRef.value, hearingType.value,outcome.value, courtDate)
 
       location.href = 'add-offence-details.html';
     })
   }
-  function storeWarrantDetails(warrantDate, court, ref, basis, hearing, outcome, courtDate) {
+  function storeWarrantDetails(warrantDate, court, ref, hearing, outcome, courtDate) {
     console.log("called")
     let warrantDetails = localStorage.getItem('warrantDetails');
     warrantDetails = warrantDetails ? JSON.parse(warrantDetails) : [];
@@ -78,7 +78,6 @@ const offenceStartYear = document.getElementById("offence-start-year");
       warrantDate:warrantDate,
       court: court,
       ref: ref,
-      basis:basis,
       hearing: hearing,
       outcome: outcome,
       courtDate: courtDate
@@ -134,20 +133,6 @@ const warrantDetailsContainer = document.getElementById("warrant-details");
                             </dd>
                         </div>
                    
-                          <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Basis of remand
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                ${warrantDetails[0].basis}
-                             
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="warrant-details.html">
-                                    Change<span class="govuk-visually-hidden"> contact details</span>
-                                </a>
-                            </dd>
-                        </div>
                                 <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                                 Outcome
