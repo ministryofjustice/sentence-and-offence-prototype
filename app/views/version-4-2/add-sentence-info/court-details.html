@@ -111,6 +111,64 @@
                                 <option value="Committal for breach">Committal for breach</option>
                             </select>
                     </div>
+                    <div class="govuk-form-group">
+                        <h2 class="govuk-heading-m">Do you have the overall sentence length for this case?</h2>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="offence-end-date" name="offence-end-date" type="radio" value="offence-end-date" data-aria-controls="conditional-Osentence">
+                                <label class="govuk-label govuk-radios__label" for="offence-end-date">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Osentence">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-heading-m" for="sentence-date">
+                                        Sentence length
+                                    </label>
+                                    <div class="govuk-date-input" id="sentence-date">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="sentence-length-years">
+                                                    Years
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="sentence-length-years" name="sentence-length-years" type="text" pattern="[0-9]*" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="sentence-length-months">
+                                                    Months
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="sentence-length-months" name="sentence-length-months" type="text" pattern="[0-9]*" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="sentence-length-weeks">
+                                                    Weeks
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="sentence-length-weeks" name="sentence-length-weeks" type="text" pattern="[0-9]*" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="ssentence-length-days">
+                                                    Days
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="sentence-length-days" name="sentence-length-days" type="text" pattern="[0-9]*" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="offence-end-date" name="offence-end-date" type="radio" value="offence-end-date">
+                                <label class="govuk-label govuk-radios__label" for="offence-end-date">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
 <!--                    <div class="govuk-form-group">-->
 <!--                        <fieldset class="govuk-fieldset">-->
 <!--                            <legend class="govuk-fieldset__legend govuk-fieldset__legend&#45;&#45;m">-->

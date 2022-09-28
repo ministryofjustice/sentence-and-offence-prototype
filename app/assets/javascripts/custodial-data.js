@@ -13,7 +13,14 @@ function printSentence(days, weeks, months, years) {
   let m = months.value ? months.value : "0";
   let y = years.value ? years.value : "0";
   let sentence = ` ${y} years ${m} months ${w} weeks ${d} days `;
-  return sentence
+  console.log("y",sentence)
+  if (sentence === '0 years 0 months 0 weeks 0 days') {
+    return "Not recorded"
+  } else {
+    return sentence
+  }
+
+  //return sentence
 }
 
 function updateData(lsName, dataItem, dataObject){
@@ -38,13 +45,13 @@ function addOffence(offence, offenceDate, offenceEndDate, outcome){
   //console.log(offenceX);
 }
 
-function addSentence(offence, sentence, convictionDate, sentenceType, sentenceDate, sentenceLength){
+function addSentence(offence, convictionDate, sentenceType, sentenceDate, sentenceLength){
   let sentenceItem = localStorage.getItem('sentenceItem');
   sentenceItem = sentenceItem ? JSON.parse(sentenceItem) : []
-
+  let count = sentenceItem.length;
   let oo = {
+    id: count +1,
     offence: JSON.parse(offence),
-    sentence: sentence,
     sentenceType: sentenceType,
     sentenceDate: sentenceDate,
     sentenceLength: sentenceLength
@@ -82,7 +89,6 @@ if(outcomeButton) {
       addSentence(offencels, "n", "n", "n", "n", "n", "n")
     }
   let url = setRoute(outcome.value)
-
   location.href = url;
 })
 }
@@ -135,9 +141,9 @@ if(sentenceDetailsButton){
     const offence = localStorage.getItem('offence');
     let convictionDate = createDate(convictionDateDay, convictionDateMonth, convictionDateYear)
     let sentenceDate = createDate(sentenceDateDay, sentenceDateMonth, sentenceDateYear)
-
+  console.log(sentenceLengthDays.value)
     addSentence(offence, convictionDate, sentenceType, sentenceDate, sentenceLength)
-    location.href = 'sentences.html';
+    //location.href = 'sentences.html';
   })
 }
 const thisOffenceContainer = document.getElementById("this-sentence-detail")
@@ -172,9 +178,7 @@ if(sentenceList){
                             <p><strong>Offence: </strong>${x.offence.offence}</p>
                             <p><strong>Verdict: </strong>${x.offence.outcome}</p>
                             <p><strong>Sentence Length: </strong>
-                            <span>${x.sentenceDate} </span></p>
-                       
-                        
+                            <span>${x.sentenceLength} </span></p>
                         </dt>
                         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
                             <ul class="govuk-summary-list__actions-list">
@@ -191,9 +195,6 @@ if(sentenceList){
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                             <p><strong>Offence: </strong>${x.offence.offence}</p>
                             <p><strong>Verdict: </strong>${x.offence.outcome}</p>
-                          
-                       
-                        
                         </dt>
                         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
                             <ul class="govuk-summary-list__actions-list">
@@ -267,6 +268,7 @@ const sentenceSummaryContainer = document.getElementById("SentenceListSummary")
 if(sentenceSummaryContainer){
   const sentenceData = localStorage.getItem('sentenceItem');
   const sentenceDataList = JSON.parse(sentenceData);
+  console.log(sentenceDataList)
   for (let x of sentenceDataList) {
     if(x.offence.outcome === "Guilty") {
       let newSentence = `<div class="govuk-summary-list__row">
@@ -274,7 +276,7 @@ if(sentenceSummaryContainer){
                            <p><strong>Offence: </strong>${x.offence.offence}</p>
                             <p><strong>Verdict: </strong>${x.offence.outcome}</p>
                             <p><strong>Sentence Length: </strong>
-                            <span>${x.sentenceDate}</span></p>
+                            <span>${x.sentenceLength}</span></p>
                         </dt>
                           <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="check-your-answers.html">
@@ -362,6 +364,23 @@ if (courtDetails) {
   courtDetails.innerHTML += court;
 
 }
+
+
+// create object
+
+//list items on screen
+
+// tag links with ID
+
+//store ID in local storage
+
+//use local storage to filter array
+
+//add new data to array
+
+//save data back to object
+
+//
 
 let courts = [
   {
@@ -2610,3 +2629,113 @@ let courts = [
 //   document.write(p)
 //   cd.innerHTML += p
 // }
+
+const sentenceSummaryContainerTRS = document.getElementById("SentenceListSummaryTRS")
+if(sentenceSummaryContainerTRS){
+  const sentenceData = localStorage.getItem('sentenceItem');
+  const sentenceDataList = JSON.parse(sentenceData);
+  console.log("F",sentenceDataList)
+  for (let x of sentenceDataList) {
+    if(x.offence.outcome === "Guilty") {
+      let newSentence = `<div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                           <p><strong>Offence: </strong>${x.offence.offence}</p>
+                            <p><strong>Verdict: </strong>${x.offence.outcome}</p>
+                            <p><strong>Sentence Length: </strong>
+                            <span>${x.sentenceLength}</span></p>
+                        </dt>
+                          <dd class="govuk-summary-list__actions">
+                                <a id="${x.id}" class="govuk-link add-sentence" href="sentence-details.html">
+                                    Add sentence details<span class="govuk-visually-hidden"> previous application number</span>
+                                </a>
+                            </dd>
+                    </div>`
+      sentenceSummaryContainerTRS.innerHTML += newSentence;
+    } else {
+      let newSentence = `<div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                           <p><strong>Offence: </strong>${x.offence.offence}</p>
+                            <p><strong>Verdict: </strong>${x.offence.outcome}</p>
+                        </dt>
+                          <dd class="govuk-summary-list__actions">
+                                <a  id="${x.id}" class=" add-sentence govuk-link" href="sentence-detail-trs.html">
+                                    Change<span class="govuk-visually-hidden"> previous application number</span>
+                                </a>
+                            </dd>
+                        
+                    </div>`
+      sentenceSummaryContainerTRS.innerHTML += newSentence;
+    }
+  }
+}
+
+let sentenceLink = document.getElementsByClassName("add-sentence");
+console.log(sentenceLink)
+if (sentenceLink) {
+  for(let x of sentenceLink) {
+    let id = x.getAttribute("id")
+    x.addEventListener("click", function (e) {
+      e.preventDefault()
+      localStorage.setItem("targetOffence", id)
+      console.log(localStorage.getItem('targetOffence'))
+      location.href = "sentence-detail-trs.html"
+    })
+  }
+}
+
+const sentenceDetailPage = document.getElementById("this-sentence-detail-trs")
+
+if(sentenceDetailPage){
+  // const sentenceData = localStorage.getItem('sentenceItem');
+  // const sentenceDataList = JSON.parse(sentenceData);
+  // const itemOfInterest = parseFloat(localStorage.getItem('targetOffence'));
+  // console.log(sentenceDataList[itemOfInterest-1])
+  // console.log(sentenceDataList[itemOfInterest-1].sentence)
+  // sentenceDataList[itemOfInterest-1].sentence = "25"
+  // console.log(sentenceDataList[itemOfInterest-1].sentence)
+  // console.log(sentenceDataList[itemOfInterest-1])
+  // console.log(sentenceDataList)
+
+
+
+}
+
+const sentenceDetailsButtonTRS = document.getElementById("add-sentence-detail-button-trs");
+
+if(sentenceDetailsButtonTRS){
+  sentenceDetailsButtonTRS.addEventListener("click", function(e){
+    e.preventDefault()
+    const sentenceData = localStorage.getItem('sentenceItem');
+    const sentenceDataList = JSON.parse(sentenceData);
+    const itemOfInterest = parseFloat(localStorage.getItem('targetOffence'));
+
+    const convictionDateDay = document.getElementById("conviction-day")
+    const convictionDateMonth = document.getElementById("conviction-month")
+    const convictionDateYear = document.getElementById("conviction-year")
+    const sentenceType = document.getElementById("sentence-type")
+    const sentenceDateDay = document.getElementById("sentence-date-day")
+    const sentenceDateMonth = document.getElementById("sentence-date-month")
+    const sentenceDateYear = document.getElementById("sentence-date-year")
+    const sentenceLengthYears = document.getElementById("sentence-length-years")
+    const sentenceLengthMonths = document.getElementById("sentence-length-months")
+    const sentenceLengthWeeks = document.getElementById("sentence-length-weeks")
+    const sentenceLengthDays = document.getElementById("sentence-length-days")
+
+    let sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
+    let convictionDate = createDate(convictionDateDay, convictionDateMonth, convictionDateYear)
+    let sentenceDate = createDate(sentenceDateDay, sentenceDateMonth, sentenceDateYear)
+    console.log("a",sentenceDataList[itemOfInterest-1])
+    sentenceDataList[itemOfInterest-1].sentenceLength = sentenceLength
+    sentenceDataList[itemOfInterest-1].sentenceType = sentenceType.value
+    sentenceDataList[itemOfInterest-1].sentenceDate = sentenceDate
+   // const offence = localStorage.getItem('offence');
+    console.log("b",sentenceDataList[itemOfInterest-1])
+    console.log("c",sentenceDataList)
+    console.log("d",sentenceLengthYears.value)
+
+    //addSentence(offence, convictionDate, sentenceType, sentenceDate, sentenceLength)
+    localStorage.setItem('sentenceItem',  JSON.stringify(sentenceDataList))
+    console.log(JSON.parse(localStorage.getItem('sentenceItem')))
+    location.href = 'view-sentences-b.html';
+  })
+}

@@ -1,0 +1,115 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">1 April 1987</span><strong>Prison number: </strong>B4166LG</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+                <span class="govuk-caption-xl">Add trial record sheet information</span>
+                Case reference: T0444444
+            </h1>
+
+            <h2 class="govuk-heading-m">Court details</h2>
+
+            <dl id="court-details" class="govuk-summary-list govuk-!-margin-bottom-9">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Birmingham Crown Court
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="../add-sentence-info/warrant-details.html">
+                            Change<span class="govuk-visually-hidden"> date</span>
+                        </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court date
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        23-3-2022
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="../add-sentence-info/warrant-details.html">
+                            Change<span class="govuk-visually-hidden"> date</span>
+                        </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Case referrence
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        T0444444
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="../add-sentence-info/warrant-details.html">
+                            Change<span class="govuk-visually-hidden"> date</span>
+                        </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Hearing type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Trial
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="../add-sentence-info/warrant-details.html">
+                            Change<span class="govuk-visually-hidden"> date</span>
+                        </a>
+                    </dd>
+                </div>
+            </dl>
+
+            <h2 class="govuk-heading-m">Offence details</h2>
+
+            <dl id="SentenceListSummaryTRS" class="govuk-summary-list govuk-!-margin-bottom-9">
+
+
+            </dl>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--s">
+                        Do you need to add another offence?
+                    </legend>
+                    <div id="add-another-hint" class="govuk-hint">
+                        You must add every offence on the warrant.
+                    </div>
+                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="Yes" data-route="add-a-sentence">
+                            <label class="govuk-label govuk-radios__label" for="add-another" >
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="add-another-2" name="add-another" type="radio" value="No" data-route="check-your-answers">
+                            <label class="govuk-label govuk-radios__label" for="add-another-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+
+                </fieldset>
+            </div>
+            <a id="checkButton" class="govuk-button" href="../add-sentence-info/confirmation-page.html">Continue</a>
+
+        </div>
+    </div>
+</div>
+<script src="/public/javascripts/custodial-data.js"></script>
+{% endblock %}

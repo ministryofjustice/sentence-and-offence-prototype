@@ -60,7 +60,7 @@ const offenceStartYear = document.getElementById("offence-start-year");
     console.log("button")
     warrantButton.addEventListener("click", function (e) {
       e.preventDefault();
-
+      console.log(courtName.value);
       const warrantDate = createDate(warrantDateDay, warrantDateMonth, warrantDateYear);
       const courtDate = createDate(courtDateDay, courtDateMonth, courtDateYear);
 
