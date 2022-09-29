@@ -3145,12 +3145,12 @@ let courts = [
     "FIELD2": ""
   }
 ]
-const y = JSON.stringify(sentenceTypes);
-
-cd = document.getElementById("cd")
-for(let x of sentenceTypes) {
-  console.log(x)
-  let p = `<option value=${x.SentenceType}>${x.SentenceType}</option>`
-  document.write(p)
-  cd.innerHTML += p
-}
+// const y = JSON.stringify(sentenceTypes);
+//
+// cd = document.getElementById("cd")
+// for(let x of sentenceTypes) {
+//   console.log(x)
+//   let p = `<option value=${x.SentenceType}>${x.SentenceType}</option>`
+//   document.write(p)
+//   cd.innerHTML += p
+// }
