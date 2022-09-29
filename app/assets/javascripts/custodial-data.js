@@ -154,7 +154,7 @@ if (thisOffenceContainer) {
 
   // for (let x of data) {
   //   if (x.offence.outcome === "Guilty") {
-      let details = `<p>Add sentence details for the following offence</p>
+      let details = `<p>The details relate to the following offence</p>
                     <strong>Offence: </strong>${data.offence}<br>
                     <strong>Date: </strong> ${data.offenceDate}`
 
@@ -177,7 +177,7 @@ if(sentenceList){
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                             <p><strong>Offence: </strong>${x.offence.offence}</p>
                             <p><strong>Verdict: </strong>${x.offence.outcome}</p>
-                            <p><strong>Sentence Length: </strong>
+                            <p><strong>Sentence length: </strong>
                             <span>${x.sentenceLength} </span></p>
                         </dt>
                         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
@@ -231,16 +231,21 @@ if(courtDetailsButton) {
     const courtYear = document.getElementById("court-date-year");
     const caseReference = document.getElementById("court-case-reference");
     const hearing = document.getElementById("hearing-type");
+    const sentenceLengthYears = document.getElementById("sentence-length-years")
+    const sentenceLengthMonths = document.getElementById("sentence-length-months")
+    const sentenceLengthWeeks = document.getElementById("sentence-length-weeks")
+    const sentenceLengthDays = document.getElementById("sentence-length-days")
    //const outcome = document.getElementById("outcome");
     e.preventDefault();
     let date = createDate(courtDay, courtMonth, courtYear)
+    let overallSentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
     //console.log(courtName.value, date, caseReference.value, hearing.value, outcome.value)
-    addCourtDetails(courtName.value, date, caseReference.value, hearing.value)
+    addCourtDetails(courtName.value, date, caseReference.value, hearing.value, overallSentenceLength)
 
     location.href = 'add-a-sentence.html';
   })
 
-  function addCourtDetails (court, date, ref, hearing, outcome) {
+  function addCourtDetails (court, date, ref, hearing, overallSentenceLength) {
     let courtDetails = localStorage.getItem('courtDetails');
     console.log(courtDetails)
     courtDetails = courtDetails ? JSON.parse(courtDetails) : []
@@ -251,6 +256,7 @@ if(courtDetailsButton) {
       date: date,
       ref: ref,
       hearing: hearing,
+      overallSentenceLength:overallSentenceLength
       //outcome: outcome
     }
     //arr = JSON.stringify(courtDetails)
@@ -275,7 +281,7 @@ if(sentenceSummaryContainer){
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                            <p><strong>Offence: </strong>${x.offence.offence}</p>
                             <p><strong>Verdict: </strong>${x.offence.outcome}</p>
-                            <p><strong>Sentence Length: </strong>
+                            <p><strong>Sentence length: </strong>
                             <span>${x.sentenceLength}</span></p>
                         </dt>
                           <dd class="govuk-summary-list__actions">
@@ -336,7 +342,7 @@ if (courtDetails) {
                   </div>
                   <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                          Case referrence
+                          Case reference
                       </dt>
                       <dd class="govuk-summary-list__value">
                           ${courtData.ref}
@@ -356,6 +362,19 @@ if (courtDetails) {
                       </dd>
                       <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Overall sentence length
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${courtData.overallSentenceLength}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="court-details.html">
                               Change<span class="govuk-visually-hidden"> date</span>
                           </a>
                       </dd>
@@ -381,6 +400,512 @@ if (courtDetails) {
 //save data back to object
 
 //
+
+
+
+const sentenceSummaryContainerTRS = document.getElementById("SentenceListSummaryTRS")
+if(sentenceSummaryContainerTRS){
+  const sentenceData = localStorage.getItem('sentenceItem');
+  const sentenceDataList = JSON.parse(sentenceData);
+  console.log("F",sentenceDataList)
+  for (let x of sentenceDataList) {
+    if(x.offence.outcome === "Guilty") {
+      let newSentence = `<div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                           <p><strong>Offence: </strong>${x.offence.offence}</p>
+                            <p><strong>Verdict: </strong>${x.offence.outcome}</p>
+                            <p><strong>Sentence length: </strong>
+                            <span>${x.sentenceLength}</span></p>
+                        </dt>
+                          <dd class="govuk-summary-list__actions">
+                                <a id="${x.id}" class="govuk-link add-sentence" href="sentence-details.html">
+                                    Add sentence details<span class="govuk-visually-hidden"> previous application number</span>
+                                </a>
+                            </dd>
+                    </div>`
+      sentenceSummaryContainerTRS.innerHTML += newSentence;
+    } else {
+      let newSentence = `<div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                           <p><strong>Offence: </strong>${x.offence.offence}</p>
+                            <p><strong>Verdict: </strong>${x.offence.outcome}</p>
+                        </dt>
+                          <dd class="govuk-summary-list__actions">
+                                <a  id="${x.id}" class=" add-sentence govuk-link" href="sentence-detail-trs.html">
+                                    Change<span class="govuk-visually-hidden"> previous application number</span>
+                                </a>
+                            </dd>
+                        
+                    </div>`
+      sentenceSummaryContainerTRS.innerHTML += newSentence;
+    }
+  }
+}
+
+let sentenceLink = document.getElementsByClassName("add-sentence");
+console.log(sentenceLink)
+if (sentenceLink) {
+  for(let x of sentenceLink) {
+    let id = x.getAttribute("id")
+    x.addEventListener("click", function (e) {
+      e.preventDefault()
+      localStorage.setItem("targetOffence", id)
+      console.log(localStorage.getItem('targetOffence'))
+      location.href = "sentence-detail-trs.html"
+    })
+  }
+}
+
+const sentenceDetailPage = document.getElementById("this-sentence-detail-trs")
+
+if(sentenceDetailPage){
+  // const sentenceData = localStorage.getItem('sentenceItem');
+  // const sentenceDataList = JSON.parse(sentenceData);
+  // const itemOfInterest = parseFloat(localStorage.getItem('targetOffence'));
+  // console.log(sentenceDataList[itemOfInterest-1])
+  // console.log(sentenceDataList[itemOfInterest-1].sentence)
+  // sentenceDataList[itemOfInterest-1].sentence = "25"
+  // console.log(sentenceDataList[itemOfInterest-1].sentence)
+  // console.log(sentenceDataList[itemOfInterest-1])
+  // console.log(sentenceDataList)
+
+
+
+}
+
+const sentenceDetailsButtonTRS = document.getElementById("add-sentence-detail-button-trs");
+const sentenceDetailsInset = document.getElementById("this-sentence-detail-trs");
+
+if(sentenceDetailsButtonTRS){
+  const sentenceData = localStorage.getItem('sentenceItem');
+  const sentenceDataList = JSON.parse(sentenceData);
+  const itemOfInterest = parseFloat(localStorage.getItem('targetOffence'));
+console.log(sentenceDataList[itemOfInterest-1]);
+  let details = `<p>The details relate to the following offence</p>
+                    <strong>Offence: </strong>${sentenceDataList[itemOfInterest-1].offence.offence}<br>
+                    <strong>Date: </strong>${sentenceDataList[itemOfInterest-1].sentenceDate}`
+
+  sentenceDetailsInset.innerHTML = details
+  sentenceDetailsButtonTRS.addEventListener("click", function(e){
+    e.preventDefault()
+
+
+    const convictionDateDay = document.getElementById("conviction-day")
+    const convictionDateMonth = document.getElementById("conviction-month")
+    const convictionDateYear = document.getElementById("conviction-year")
+    const sentenceType = document.getElementById("sentence-type")
+    const sentenceDateDay = document.getElementById("sentence-date-day")
+    const sentenceDateMonth = document.getElementById("sentence-date-month")
+    const sentenceDateYear = document.getElementById("sentence-date-year")
+    const sentenceLengthYears = document.getElementById("sentence-length-years")
+    const sentenceLengthMonths = document.getElementById("sentence-length-months")
+    const sentenceLengthWeeks = document.getElementById("sentence-length-weeks")
+    const sentenceLengthDays = document.getElementById("sentence-length-days")
+
+    let sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
+    // let convictionDate = createDate(convictionDateDay, convictionDateMonth, convictionDateYear)
+    // let sentenceDate = createDate(sentenceDateDay, sentenceDateMonth, sentenceDateYear)
+    console.log("a",sentenceDataList[itemOfInterest-1])
+    sentenceDataList[itemOfInterest-1].sentenceLength = sentenceLength
+   // sentenceDataList[itemOfInterest-1].sentenceType = sentenceType.value
+   // sentenceDataList[itemOfInterest-1].sentenceDate = sentenceDate
+   // const offence = localStorage.getItem('offence');
+    console.log("b",sentenceDataList[itemOfInterest-1])
+    console.log("c",sentenceDataList)
+    console.log("d",sentenceLengthYears.value)
+
+    //addSentence(offence, convictionDate, sentenceType, sentenceDate, sentenceLength)
+    localStorage.setItem('sentenceItem',  JSON.stringify(sentenceDataList))
+    console.log(JSON.parse(localStorage.getItem('sentenceItem')))
+    location.href = 'sentences.html';
+  })
+}
+
+const sentenceTypes =
+  [
+    {
+      "SentenceType": "CJA03 Standard Determinate Sentence"
+    },
+    {
+      "SentenceType": "ORA Sentencing Code Standard Determinate Sentence"
+    },
+    {
+      "SentenceType": "Sentencing Code Standard Determinate Sentence"
+    },
+    {
+      "SentenceType": "ORA CJA03 Standard Determinate Sentence"
+    },
+    {
+      "SentenceType": "Licence Recall"
+    },
+    {
+      "SentenceType": "EDS LASPO Discretionary Release"
+    },
+    {
+      "SentenceType": "ORA Licence Recall"
+    },
+    {
+      "SentenceType": "ORA Licence Recall"
+    },
+    {
+      "SentenceType": "Section 236A SOPC CJA03"
+    },
+    {
+      "SentenceType": "Licence Recall"
+    },
+    {
+      "SentenceType": "Indeterminate Sentence for the Public Protection"
+    },
+    {
+      "SentenceType": "Imprisonment in Default of Fine"
+    },
+    {
+      "SentenceType": "EDS Sec 279 Sentencing Code (21+)"
+    },
+    {
+      "SentenceType": "Imprisonment in Default of Fine"
+    },
+    {
+      "SentenceType": "Life Imprisonment or Detention S.53(1) CYPA 1933"
+    },
+    {
+      "SentenceType": "ORA Young Offender Institution"
+    },
+    {
+      "SentenceType": "Young Offender Institution"
+    },
+    {
+      "SentenceType": "Life or Indeterminate Sentence for Public Protection"
+    },
+    {
+      "SentenceType": "Licence recall from IPP Sentence"
+    },
+    {
+      "SentenceType": "Adult Mandatory Life"
+    },
+    {
+      "SentenceType": "Young Offender Institution"
+    },
+    {
+      "SentenceType": "SOPC Sec 278 Sentencing Code (21+)"
+    },
+    {
+      "SentenceType": "Adult Discretionary Life"
+    },
+    {
+      "SentenceType": "Automatic LIfe"
+    },
+    {
+      "SentenceType": "Adult Imprison above 4 years (not Life)"
+    },
+    {
+      "SentenceType": "ORA Young Offender Institution"
+    },
+    {
+      "SentenceType": "LR - EDS LASPO Discretionary Release"
+    },
+    {
+      "SentenceType": "Adult Imprison above 12 mths below 4 yrs"
+    },
+    {
+      "SentenceType": "Licence recall from Extended Sentence for Public Protection"
+    },
+    {
+      "SentenceType": "Legacy (pre 1991 Act)"
+    },
+    {
+      "SentenceType": "ORA 14 Day Fixed Term Recall"
+    },
+    {
+      "SentenceType": "Recall to Custody Indeterminate Sentence"
+    },
+    {
+      "SentenceType": "Adult Mandatory Life"
+    },
+    {
+      "SentenceType": "Recall to Custody Indeterminate Sentence"
+    },
+    {
+      "SentenceType": "Recall from YOI"
+    },
+    {
+      "SentenceType": "ORA Detention and Training Order"
+    },
+    {
+      "SentenceType": "ORA Breach Top Up Supervision"
+    },
+    {
+      "SentenceType": "Automatic Life"
+    },
+    {
+      "SentenceType": "ORA 28 Day Fixed Term Recall"
+    },
+    {
+      "SentenceType": "EDS Sec 266 Sentencing Code (18 - 20)"
+    },
+    {
+      "SentenceType": "Detention During Her Majesty's Pleasure"
+    },
+    {
+      "SentenceType": "Detention For Life"
+    },
+    {
+      "SentenceType": "Imprisoned in Default of a fine"
+    },
+    {
+      "SentenceType": "Fixed Term Recall Pre ORA Sentence"
+    },
+    {
+      "SentenceType": "Extended Sent Public Protection CJA 03"
+    },
+    {
+      "SentenceType": "Adult Imprisonment less than 12 months"
+    },
+    {
+      "SentenceType": "ORA Recalled from Curfew Conditions"
+    },
+    {
+      "SentenceType": "Recall from Automatic Life"
+    },
+    {
+      "SentenceType": "Licence Recall"
+    },
+    {
+      "SentenceType": "Detention and Training Order"
+    },
+    {
+      "SentenceType": "Serious Offence -18 CJA03 POCCA 2000"
+    },
+    {
+      "SentenceType": "Recall from Discretionary Life"
+    },
+    {
+      "SentenceType": "Serious Offence Sec 250 Sentencing Code (U18)"
+    },
+    {
+      "SentenceType": "Automatic Life Sec 224A 03"
+    },
+    {
+      "SentenceType": "LR - EDS LASPO Automatic Release"
+    },
+    {
+      "SentenceType": "ORA 28 Day Fixed Term Recall"
+    },
+    {
+      "SentenceType": "Adult Discretionary Life"
+    },
+    {
+      "SentenceType": "Recall to Custody Mandatory Life"
+    },
+    {
+      "SentenceType": "Recall from YOI"
+    },
+    {
+      "SentenceType": "Custody Life (18-21 Years Old)"
+    },
+    {
+      "SentenceType": "Adult Discretionary Life"
+    },
+    {
+      "SentenceType": "Custody For Life - Under 21 CJA03"
+    },
+    {
+      "SentenceType": "Civil Imprisonment"
+    },
+    {
+      "SentenceType": "ORA Serious Offence -18 CJA03 POCCA 2000"
+    },
+    {
+      "SentenceType": "ORA Serious Offence Sec 250 Sentencing Code (U18)"
+    },
+    {
+      "SentenceType": "Adult Mandatory Life"
+    },
+    {
+      "SentenceType": "Sent Extended Sec 86 of PCC(S) Act 2000"
+    },
+    {
+      "SentenceType": "Recall to Custody Indeterminate Sentence"
+    },
+    {
+      "SentenceType": "Breach of Curfew"
+    },
+    {
+      "SentenceType": "LR - EDS Sec 279 Sentencing Code (21+)"
+    },
+    {
+      "SentenceType": "EDS Sec 254 Sentencing Code (U18)"
+    },
+    {
+      "SentenceType": "Fixed Term Recall Pre ORA Sentence"
+    },
+    {
+      "SentenceType": "Detention During Her Majesty' s   Pleasure"
+    },
+    {
+      "SentenceType": "EDS LASPO Automatic Release"
+    },
+    {
+      "SentenceType": "ORA HDC Recall (not curfew violation)"
+    },
+    {
+      "SentenceType": "Inability to Monitor"
+    },
+    {
+      "SentenceType": "ORA Detention and Training Order"
+    },
+    {
+      "SentenceType": "Recall Serious Off - 18 CJA03 POCCA 2000"
+    },
+    {
+      "SentenceType": "Detention For Life"
+    },
+    {
+      "SentenceType": "Recall from Automatic Life"
+    },
+    {
+      "SentenceType": "Automatic Life Sec 273 Sentencing Code (18 - 20)"
+    },
+    {
+      "SentenceType": "Young Offender Institution"
+    },
+    {
+      "SentenceType": "Detention For Public Protection"
+    },
+    {
+      "SentenceType": "Breach of Curfew"
+    },
+    {
+      "SentenceType": "ORA Fixed Term Recall while on HDC"
+    },
+    {
+      "SentenceType": "Licence recall from Extended Sentence"
+    },
+    {
+      "SentenceType": "Detention and Training Order"
+    },
+    {
+      "SentenceType": "LR - Section 236A SOPC CJA03"
+    },
+    {
+      "SentenceType": "Civil Imprisonment"
+    },
+    {
+      "SentenceType": "Custody For Life Sec 272 Sentencing Code (18 - 20)"
+    },
+    {
+      "SentenceType": "Detention During Her Majesty's Pleasure"
+    },
+    {
+      "SentenceType": "Custody For Life Sec 275 Sentencing Code (Murder) (U21)"
+    },
+    {
+      "SentenceType": "SOPC Sec 265 Sentencing Code (18 - 20)"
+    },
+    {
+      "SentenceType": "Automatic Life"
+    },
+    {
+      "SentenceType": "Recall from Discretionary Life"
+    },
+    {
+      "SentenceType": "ORA Recalled from Curfew Conditions"
+    },
+    {
+      "SentenceType": "Automatic Life Sec 283 Sentencing Code (21+)"
+    },
+    {
+      "SentenceType": "Recall to Custody Mandatory Life"
+    },
+    {
+      "SentenceType": "Extended Sentence for the Public Protection"
+    },
+    {
+      "SentenceType": "Migrated Sentence Data"
+    },
+    {
+      "SentenceType": "Special sentence of detention for terrorist offenders of particular concern Sec 252A"
+    },
+    {
+      "SentenceType": "Recall Serious Offence Sec 250 Sentencing Code (U18)"
+    },
+    {
+      "SentenceType": "Detention For Life"
+    },
+    {
+      "SentenceType": "14 Day Fixed Term Recall from HDC"
+    },
+    {
+      "SentenceType": "Inability to Monitor"
+    },
+    {
+      "SentenceType": "Licence recall from DPP Sentence"
+    },
+    {
+      "SentenceType": "ORA HDC Recall (not curfew violation)"
+    },
+    {
+      "SentenceType": "Youth Rehabilitation Order"
+    },
+    {
+      "SentenceType": "Recall from Automatic Life Sec 224A 03"
+    },
+    {
+      "SentenceType": "LR - EDS Sec 266 Sentencing Code (18 - 20)"
+    },
+    {
+      "SentenceType": "Licence recall from DPP Sentence"
+    },
+    {
+      "SentenceType": "Fixed Term Recall while on HDC"
+    },
+    {
+      "SentenceType": "ORA Breach Top Up Supervision"
+    },
+    {
+      "SentenceType": "Migrated Sentence Data"
+    },
+    {
+      "SentenceType": "ORA 14 Day Fixed Term Recall"
+    },
+    {
+      "SentenceType": "LR - SOPC Sec 278 Sentencing Code (21+)"
+    },
+    {
+      "SentenceType": "Custody Life (18-21 Years Old)"
+    },
+    {
+      "SentenceType": "Detention and Training Order"
+    },
+    {
+      "SentenceType": "Custody For Life - Under 21"
+    },
+    {
+      "SentenceType": "Detention For Public Protection"
+    },
+    {
+      "SentenceType": "Serious Offence -18 POCCA 2000"
+    },
+    {
+      "SentenceType": "IMPRISONED FOR LESS THAN 12 MONTHS"
+    },
+    {
+      "SentenceType": "ORA FTR Schedule 15 Offender"
+    },
+    {
+      "SentenceType": "Violent Offender Order"
+    },
+    {
+      "SentenceType": "CIVIL IMPRISONMENT OVER 12 MONTHS SENTENCE"
+    },
+    {
+      "SentenceType": "Life Imprisonment"
+    },
+    {
+      "SentenceType": "Recall from Automatic Life Sec 283 Sentencing Code (21+)"
+    }
+  ]
+
 
 let courts = [
   {
@@ -2620,122 +3145,12 @@ let courts = [
     "FIELD2": ""
   }
 ]
-// const y = JSON.stringify(courts);
-// console.log(courts);
-// cd = document.getElementById("cd")
-// for(let x of courts) {
-//   console.log(x)
-//   let p = `<option value=${x.Court}>${x.Court}</option>`
-//   document.write(p)
-//   cd.innerHTML += p
-// }
+const y = JSON.stringify(sentenceTypes);
 
-const sentenceSummaryContainerTRS = document.getElementById("SentenceListSummaryTRS")
-if(sentenceSummaryContainerTRS){
-  const sentenceData = localStorage.getItem('sentenceItem');
-  const sentenceDataList = JSON.parse(sentenceData);
-  console.log("F",sentenceDataList)
-  for (let x of sentenceDataList) {
-    if(x.offence.outcome === "Guilty") {
-      let newSentence = `<div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-                           <p><strong>Offence: </strong>${x.offence.offence}</p>
-                            <p><strong>Verdict: </strong>${x.offence.outcome}</p>
-                            <p><strong>Sentence Length: </strong>
-                            <span>${x.sentenceLength}</span></p>
-                        </dt>
-                          <dd class="govuk-summary-list__actions">
-                                <a id="${x.id}" class="govuk-link add-sentence" href="sentence-details.html">
-                                    Add sentence details<span class="govuk-visually-hidden"> previous application number</span>
-                                </a>
-                            </dd>
-                    </div>`
-      sentenceSummaryContainerTRS.innerHTML += newSentence;
-    } else {
-      let newSentence = `<div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-                           <p><strong>Offence: </strong>${x.offence.offence}</p>
-                            <p><strong>Verdict: </strong>${x.offence.outcome}</p>
-                        </dt>
-                          <dd class="govuk-summary-list__actions">
-                                <a  id="${x.id}" class=" add-sentence govuk-link" href="sentence-detail-trs.html">
-                                    Change<span class="govuk-visually-hidden"> previous application number</span>
-                                </a>
-                            </dd>
-                        
-                    </div>`
-      sentenceSummaryContainerTRS.innerHTML += newSentence;
-    }
-  }
-}
-
-let sentenceLink = document.getElementsByClassName("add-sentence");
-console.log(sentenceLink)
-if (sentenceLink) {
-  for(let x of sentenceLink) {
-    let id = x.getAttribute("id")
-    x.addEventListener("click", function (e) {
-      e.preventDefault()
-      localStorage.setItem("targetOffence", id)
-      console.log(localStorage.getItem('targetOffence'))
-      location.href = "sentence-detail-trs.html"
-    })
-  }
-}
-
-const sentenceDetailPage = document.getElementById("this-sentence-detail-trs")
-
-if(sentenceDetailPage){
-  // const sentenceData = localStorage.getItem('sentenceItem');
-  // const sentenceDataList = JSON.parse(sentenceData);
-  // const itemOfInterest = parseFloat(localStorage.getItem('targetOffence'));
-  // console.log(sentenceDataList[itemOfInterest-1])
-  // console.log(sentenceDataList[itemOfInterest-1].sentence)
-  // sentenceDataList[itemOfInterest-1].sentence = "25"
-  // console.log(sentenceDataList[itemOfInterest-1].sentence)
-  // console.log(sentenceDataList[itemOfInterest-1])
-  // console.log(sentenceDataList)
-
-
-
-}
-
-const sentenceDetailsButtonTRS = document.getElementById("add-sentence-detail-button-trs");
-
-if(sentenceDetailsButtonTRS){
-  sentenceDetailsButtonTRS.addEventListener("click", function(e){
-    e.preventDefault()
-    const sentenceData = localStorage.getItem('sentenceItem');
-    const sentenceDataList = JSON.parse(sentenceData);
-    const itemOfInterest = parseFloat(localStorage.getItem('targetOffence'));
-
-    const convictionDateDay = document.getElementById("conviction-day")
-    const convictionDateMonth = document.getElementById("conviction-month")
-    const convictionDateYear = document.getElementById("conviction-year")
-    const sentenceType = document.getElementById("sentence-type")
-    const sentenceDateDay = document.getElementById("sentence-date-day")
-    const sentenceDateMonth = document.getElementById("sentence-date-month")
-    const sentenceDateYear = document.getElementById("sentence-date-year")
-    const sentenceLengthYears = document.getElementById("sentence-length-years")
-    const sentenceLengthMonths = document.getElementById("sentence-length-months")
-    const sentenceLengthWeeks = document.getElementById("sentence-length-weeks")
-    const sentenceLengthDays = document.getElementById("sentence-length-days")
-
-    let sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
-    let convictionDate = createDate(convictionDateDay, convictionDateMonth, convictionDateYear)
-    let sentenceDate = createDate(sentenceDateDay, sentenceDateMonth, sentenceDateYear)
-    console.log("a",sentenceDataList[itemOfInterest-1])
-    sentenceDataList[itemOfInterest-1].sentenceLength = sentenceLength
-    sentenceDataList[itemOfInterest-1].sentenceType = sentenceType.value
-    sentenceDataList[itemOfInterest-1].sentenceDate = sentenceDate
-   // const offence = localStorage.getItem('offence');
-    console.log("b",sentenceDataList[itemOfInterest-1])
-    console.log("c",sentenceDataList)
-    console.log("d",sentenceLengthYears.value)
-
-    //addSentence(offence, convictionDate, sentenceType, sentenceDate, sentenceLength)
-    localStorage.setItem('sentenceItem',  JSON.stringify(sentenceDataList))
-    console.log(JSON.parse(localStorage.getItem('sentenceItem')))
-    location.href = 'view-sentences-b.html';
-  })
+cd = document.getElementById("cd")
+for(let x of sentenceTypes) {
+  console.log(x)
+  let p = `<option value=${x.SentenceType}>${x.SentenceType}</option>`
+  document.write(p)
+  cd.innerHTML += p
 }
