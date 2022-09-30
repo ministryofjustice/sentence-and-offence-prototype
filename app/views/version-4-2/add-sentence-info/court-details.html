@@ -16,7 +16,7 @@
                     <span class="govuk-caption-xl">Add custodial sentence information</span>
                     Enter court case details</h1>
             </div>
-            <div id="cd"></div>
+<!--            <div id="cd"></div>-->
             <div class="govuk-grid-column-one-half">
                 <form class="form" action="court-cases" method="post">
                     <div class="govuk-form-group">
@@ -104,11 +104,13 @@
                                 Hearing type
                             </legend>
                             <select class="govuk-select" id="hearing-type" name="hearing-type">
-                                <option value="Trial" selected>Trial</option>
+                                <option value="" selected></option>
+                                <option value="Trial" >Trial</option>
                                 <option value="Newton hearing">Newton hearing</option>
                                 <option value="Cracked case">Cracked case</option>
                                 <option value="Committal for sentence">Committal for sentence</option>
                                 <option value="Committal for breach">Committal for breach</option>
+                                <option value="Video Link (Court Appearance)">Video Link (Court Appearance) </option>
                             </select>
                     </div>
                     <div class="govuk-form-group">

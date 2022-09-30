@@ -154,7 +154,7 @@ if (thisOffenceContainer) {
 
   // for (let x of data) {
   //   if (x.offence.outcome === "Guilty") {
-      let details = `<p>The details relate to the following offence</p>
+      let details = `<p>Enter the details related to the following offence:</p>
                     <strong>Offence: </strong>${data.offence}<br>
                     <strong>Date: </strong> ${data.offenceDate}`
 
@@ -309,10 +309,18 @@ if(sentenceSummaryContainer){
     }
   }
 }
+const caseRef = document.getElementById("caseRef");
 
+if (caseRef){
+  const courtData = JSON.parse(localStorage.getItem('courtDetails'));
+
+  caseRef.innerHTML = courtData.ref;
+}
 const courtDetails = document.getElementById("court-details");
 if (courtDetails) {
   const courtData = JSON.parse(localStorage.getItem('courtDetails'));
+
+
   console.log(courtData)
   let court = `<div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
