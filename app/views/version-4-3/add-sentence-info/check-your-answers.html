@@ -1,0 +1,36 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>B4166LG</span>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+                <span class="govuk-caption-xl">Custodial sentence information</span>
+                Check custodial sentence information
+            </h1>
+
+            <h2 class="govuk-heading-m">Court details</h2>
+
+            <dl id="court-details" class="govuk-summary-list govuk-!-margin-bottom-9">
+
+            </dl>
+
+            <h2 class="govuk-heading-m">Sentence details</h2>
+
+            <dl id="SentenceListSummary" class="govuk-summary-list govuk-!-margin-bottom-9">
+
+            </dl>
+
+            <a class="govuk-button" href="confirmation-page.html">Continue</a>
+
+        </div>
+    </div>
+</div>
+<script src="/public/javascripts/custodial-data.js"></script>
+{% endblock %}
