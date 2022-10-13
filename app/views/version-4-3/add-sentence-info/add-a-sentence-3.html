@@ -18,32 +18,7 @@
             </div>
 
             <div class="govuk-grid-column-one-half">
-                <div class="govuk-form-group">
-                    <label class="govuk-label govuk-label--s">Is this sentence consecutive or concurrent?gg</label>
-                    <div class="govuk-radios" data-module="govuk-radios">
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="serve-type-1" name="offence-end-date" type="radio" value="offence-end-date" data-aria-controls="conditional-end-date">
-                            <label class="govuk-label govuk-radios__label" for="serve-type-1">
-                                Consecutive
-                            </label>
-                        </div>
-                        <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="serve-type-2" name="offence-end-date" type="radio" value="offence-end-date">
-                            <label class="govuk-label govuk-radios__label" for="serve-type-1">
-                                Concurrent
-                            </label>
-                        </div>
-                    </div>
-                </div>
-                <div class="govuk-form-group">
-                    <label class="govuk-heading-s" for="offences">
-                        Which offence is the sentence consecutive or concurrent to?
-                    </label>
-                    <select class="govuk-select" id="offences" name="offences">
-                        <option>offence name 1</option>
-                        <option>offence name 2</option>
-                    </select>
-                </div>
+
                 <form class="form" action="sentences-and-offences" method="post">
 
                     <div class="govuk-form-group">
@@ -6110,6 +6085,42 @@
                                 </div>
                             </div>
 
+                        </div>
+
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-label--s">Is this sentence consecutive or concurrent?</label>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="serve-type-1" name="offence-end-date" type="radio" value="offence-end-date" data-aria-controls="conditional-end-date">
+                                    <label class="govuk-label govuk-radios__label" for="serve-type-1">
+                                        Consecutive
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="serve-type-2" name="offence-end-date" type="radio" value="offence-end-date">
+                                    <label class="govuk-label govuk-radios__label" for="serve-type-1">
+                                        Concurrent
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-heading-s" for="cases">
+                                Which case?
+                            </label>
+                            <select class="govuk-select" id="cases" name="offences">
+                                <option>t000034</option>
+                                <option>Y440004</option>
+                            </select>
+                        </div>
+                        <div class="govuk-form-group">
+                            <label class="govuk-heading-s" for="offences">
+                                Which offence is the sentence consecutive or concurrent to?
+                            </label>
+                            <select class="govuk-select" id="offences" name="offences">
+                                <option>offence name 1</option>
+                                <option>offence name 2</option>
+                            </select>
                         </div>
 
                         <a id="add-sentence-button" href="sentences.html" class="govuk-button">Continue</a>
