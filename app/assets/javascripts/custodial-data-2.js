@@ -61,6 +61,25 @@ function addSentence(offence, convictionDate, sentenceType, sentenceDate, senten
   location.href = 'sentences.html';
 }
 
+function addCCSentence(offence, convictionDate, sentenceType, sentenceDate, sentenceLength, cc, caseNo, toOffence){
+  let sentenceItem = localStorage.getItem('sentenceItem');
+  sentenceItem = sentenceItem ? JSON.parse(sentenceItem) : []
+  let count = sentenceItem.length;
+  let oo = {
+    id: count +1,
+    offence: JSON.parse(offence),
+    sentenceType: sentenceType,
+    sentenceDate: sentenceDate,
+    sentenceLength: sentenceLength,
+    cc:cc,
+    caseNo:caseNo,
+    toOffence: toOffence
+  }
+  console.log(oo)
+  updateData("sentenceItem", sentenceItem, oo)
+  location.href = 'sentences.html';
+}
+
 // on click button route to page
 
 
@@ -95,7 +114,9 @@ if(outcomeButton) {
 function setRoute(selectedValue){
   if(selectedValue === "Guilty"){
     return "sentence-detail.html"
-  }else {
+  } else if(selectedValue === "Guilty2"){
+    return "sentence-detail-2.html"
+  } else {
     return "sentences.html"
   }
 }
@@ -146,6 +167,60 @@ if(sentenceDetailsButton){
     //location.href = 'sentences.html';
   })
 }
+//move these higher
+
+function getDropdownValue(option){
+  const optionValue = option.length && option.find(c => c.selected).value;
+  return optionValue
+}
+
+function getRadioValue(option){
+  const optionValue = option.length && option.find(c => c.checked).value;
+  return optionValue
+}
+const page = document.getElementsByClassName('cc')[0];
+
+if (page) {
+  const pageButton = document.getElementById('add-sentence-button2');
+  const caseList = document.getElementById('cases');
+
+  const convictionDateDay = document.getElementById("conviction-day")
+  const convictionDateMonth = document.getElementById("conviction-month")
+  const convictionDateYear = document.getElementById("conviction-year")
+  const sentenceType = document.getElementById("sentence-type")
+  const sentenceDateDay = document.getElementById("sentence-date-day")
+  const sentenceDateMonth = document.getElementById("sentence-date-month")
+  const sentenceDateYear = document.getElementById("sentence-date-year")
+  const sentenceLengthYears = document.getElementById("sentence-length-years")
+  const sentenceLengthMonths = document.getElementById("sentence-length-months")
+  const sentenceLengthWeeks = document.getElementById("sentence-length-weeks")
+  const sentenceLengthDays = document.getElementById("sentence-length-days")
+
+  const ccInput = Array.from(document.getElementsByClassName('cc-input'));
+  const cases = Array.from(document.getElementsByClassName('case-option'));
+  const offences = Array.from(document.getElementsByClassName('offence-option'));
+  //const ccValue = document.querySelector('input[name="cc-value"]:checked').value;
+
+  pageButton.addEventListener("click", function (e){
+    e.preventDefault();
+    //const caseNumber = cases.length && cases.find(c => c.selected).value;
+    const toOffence = getDropdownValue(offences)
+    const caseNumber = getDropdownValue(cases)
+    const cc = getRadioValue(ccInput)
+    console.log(cc, caseNumber, toOffence);
+
+    let sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
+
+    const offence = localStorage.getItem('offence');
+    let convictionDate = createDate(convictionDateDay, convictionDateMonth, convictionDateYear)
+    let sentenceDate = createDate(sentenceDateDay, sentenceDateMonth, sentenceDateYear)
+    console.log(sentenceLengthDays.value)
+
+    addCCSentence(offence, convictionDate, sentenceType, sentenceDate, sentenceLength, cc, caseNumber, toOffence );
+    location.href = 'sentences.html';
+  })
+}
+
 const thisOffenceContainer = document.getElementById("this-sentence-detail")
 if (thisOffenceContainer) {
   const dataDump = localStorage.getItem("offence")
@@ -167,18 +242,20 @@ const sentenceListButton = document.getElementById("checkButton")
 const sentenceList = document.getElementById("sentence-list");
 if(sentenceList){
   const dataDump = localStorage.getItem("sentenceItem")
+  //const dataDump = localStorage.getItem("sentenceItem")
   const data = JSON.parse(dataDump)
   console.log("f",JSON.parse(dataDump))
 
   for(let x of data){
-    if(x.offence.outcome === "Guilty") {
+    if(x.offence.outcome === "Guilty" || "Guilty2") {
       let listItem = `
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                             <p><strong>Offence: </strong>${x.offence.offence}</p>
-                            <p><strong>Verdict: </strong>${x.offence.outcome}</p>
+                            <p><strong>Verdict: </strong>Guilty</p>
                             <p><strong>Sentence length: </strong>
                             <span>${x.sentenceLength} </span></p>
+                            <p>to be served ${x.cc} to ${x.toOffence}</p>
                         </dt>
                         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
                             <ul class="govuk-summary-list__actions-list">
@@ -193,8 +270,9 @@ if(sentenceList){
       let listItem = `
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-                            <p><strong>Offence: </strong>${x.offence.offence}</p>
+                            <p><strong>Offence: </strong>${x.offence}</p>
                             <p><strong>Verdict: </strong>${x.offence.outcome}</p>
+                            <p><strong>to be served: </strong>${x.cc} to <span>${x.toOffence}</span></p>
                         </dt>
                         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
                             <ul class="govuk-summary-list__actions-list">
@@ -276,11 +354,11 @@ if(sentenceSummaryContainer){
   const sentenceDataList = JSON.parse(sentenceData);
   console.log(sentenceDataList)
   for (let x of sentenceDataList) {
-    if(x.offence.outcome === "Guilty") {
+    if(x.offence.outcome === "Guilty" || "Guilty2")  {
       let newSentence = `<div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                            <p><strong>Offence: </strong>${x.offence.offence}</p>
-                            <p><strong>Verdict: </strong>${x.offence.outcome}</p>
+                            <p><strong>Verdict: </strong>Guilty</p>
                             <p><strong>Sentence length: </strong>
                             <span>${x.sentenceLength}</span></p>
                         </dt>
@@ -418,7 +496,7 @@ if(sentenceSummaryContainerTRS){
   console.log("F",sentenceDataList)
 
   for (let x of sentenceDataList) {
-    if(x.offence.outcome === "Guilty") {
+    if(x.offence.outcome === "Guilty" || "Guilty2") {
       let newSentence = `<div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                            <p><strong>Offence: </strong>${x.offence.offence}</p>

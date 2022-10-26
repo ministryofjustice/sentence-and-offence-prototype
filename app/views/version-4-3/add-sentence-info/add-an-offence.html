@@ -1,6 +1,6 @@
 {% extends "version-1/dps/includes/template.html" %}
 {% block content %}
-<div class="moj-width-container cc" >
+<div class="moj-width-container">
     <div class="moj-identity-bar">
         <div class="moj-identity-bar__container govuk-!-margin-left-0">
             <div class="moj-identity-bar__details">
@@ -13,16 +13,13 @@
             <div class="govuk-grid-column-two-thirds">
                 <h1 class="govuk-heading-xl">
                     <span class="govuk-caption-xl">Custodial sentence information</span>
-                    Add a sentence
-                </h1>
+                   Add offence</h1>
             </div>
-
             <div class="govuk-grid-column-one-half">
-
                 <form class="form" action="sentences-and-offences" method="post">
 
                     <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label govuk-label--s" for="offence-name">
+                        <label class="govuk-label govuk-label govuk-label--m" for="offence-name">
                             Offence
                         </label>
                         <div id="offence-name-hint" class="govuk-hint">
@@ -5916,9 +5913,10 @@
                             <option value="Give false unsworn evidence as a witness in criminal proceedings which if sworn would have amounted to perjury">Give false unsworn evidence as a witness in criminal proceedings which if sworn would have amounted to perjury</option>
                         </select>
                     </div>
+
                     <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--s" for="sentence-date">
-                            Offence date
+                        <label class="govuk-heading-m" for="sentence-date">
+                            Date of offence
                         </label>
                         <div class="govuk-date-input" id="offence-start-date">
                             <div class="govuk-date-input__item">
@@ -5948,7 +5946,7 @@
                         </div>
                     </div>
                     <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--s">Does the offence have an end date?</label>
+                        <h2 class="govuk-heading-m">Does the offence have an end date?</h2>
                         <div class="govuk-radios" data-module="govuk-radios">
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="offence-end-date" name="offence-end-date" type="radio" value="offence-end-date" data-aria-controls="conditional-end-date">
@@ -5998,140 +5996,113 @@
                         </div>
                     </div>
                     <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                            <label class="govuk-label govuk-label--s">
-                                Sentence type
-                            </label>
-                            <select class="govuk-select" id="sentence-type" name="sentence-type">
-                                <option value="Sentencing Code Standard Determinate Sentence" selected>Sentencing Code Standard Determinate Sentence</option>
-                                <option value="CJA03 Standard Determinate Sentence">CJA03 Standard Determinate Sentence</option>
-                                <option value="ORA Sentencing Code Standard Determinate Sentence">ORA Sentencing Code Standard Determinate Sentence</option>
-                                <option value="ORA CJA03 Standard Determinate Sentence">ORA CJA03 Standard Determinate Sentence</option>
-                                <option value="Serious Offence Sec 250 Sentencing Code (U18)">Serious Offence Sec 250 Sentencing Code (U18)</option>
-                                <option value="Serious Offence -18 CJA03 POCCA 2000">Serious Offence -18 CJA03 POCCA 2000</option>
-                                <option value="SORA Serious Offence -18 CJA03 POCCA 2000">SORA Serious Offence -18 CJA03 POCCA 2000</option>
-                                <option value="Young Offender Institution">Young Offender Institution</option>
-                                <option value="ORA Young Offender Institution">ORA Young Offender Institution</option>
-                            </select>
+                        <label class="govuk-label govuk-label govuk-label--m" for="outcome-picker">
+                            Outcome
+                        </label>
+                        <div id="outcome-hint" class="govuk-hint">
+                            Select an outcome
+                        </div>
+                        <select id="outcome-picker" class="govuk-select" name="offence-name" type="text" aria-describedby="offence-name-hint">
+                            <option class="outcome-picker-item" value=""></option>
+                            <option class="outcome-picker-item" value="Guilty2" data-url="add-a-sentence-3.html">Guilty</option>
+                            <option class="outcome-picker-item" value="Not guilty" data-url="sentences.html">Not guilty</option>
+                        </select>
                     </div>
-                    <form class="form" action="sentence-length">
-                        <div class="govuk-form-group">
-                            <label class="govuk-label govuk-label--s" for="sentence-date">
-                                Sentence date
-                            </label>
-                            <div class="govuk-date-input" id="sentence-date">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="sentence-date-day">
-                                            Day
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="sentence-date-day" name="sentence-start-day" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="sentence-date-month">
-                                            Month
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="sentence-date-month" name="sentence-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="sentence-date-year">
-                                            Year
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="sentence-date-year" name="sentence-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="govuk-form-group">
-                            <label class="govuk-label govuk-label--s" for="sentence-date">
-                                Sentence length for this offence
-                            </label>
-                            <div class="govuk-date-input" id="sentence-length">
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="sentence-length-years">
-                                            Years
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="sentence-length-years" name="sentence-length-years" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="sentence-length-months">
-                                            Months
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="sentence-length-months" name="sentence-length-months" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="sentence-length-weeks">
-                                            Weeks
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="sentence-length-weeks" name="sentence-length-weeks" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                                <div class="govuk-date-input__item">
-                                    <div class="govuk-form-group">
-                                        <label class="govuk-label govuk-date-input__label" for="sentence-length-days">
-                                            Days
-                                        </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="sentence-length-days" name="sentence-length-days" type="text" pattern="[0-9]*" inputmode="numeric">
-                                    </div>
-                                </div>
-                            </div>
+<!--                    <div class="govuk-form-group">-->
+<!--                        <fieldset class="govuk-fieldset">-->
+<!--                            <legend class="govuk-fieldset__legend govuk-fieldset__legend&#45;&#45;m">-->
+<!--                                Sentence type-->
+<!--                            </legend>-->
+<!--                            <select class="govuk-select" id="sentence-type" name="sentence-type">-->
+<!--                                <option value="Sentencing Code Standard Determinate Sentence" selected>Sentencing Code Standard Determinate Sentence</option>-->
+<!--                                <option value="CJA03 Standard Determinate Sentence">CJA03 Standard Determinate Sentence</option>-->
+<!--                                <option value="ORA Sentencing Code Standard Determinate Sentence">ORA Sentencing Code Standard Determinate Sentence</option>-->
+<!--                                <option value="ORA CJA03 Standard Determinate Sentence">ORA CJA03 Standard Determinate Sentence</option>-->
+<!--                                <option value="Serious Offence Sec 250 Sentencing Code (U18)">Serious Offence Sec 250 Sentencing Code (U18)</option>-->
+<!--                                <option value="Serious Offence -18 CJA03 POCCA 2000">Serious Offence -18 CJA03 POCCA 2000</option>-->
+<!--                                <option value="SORA Serious Offence -18 CJA03 POCCA 2000">SORA Serious Offence -18 CJA03 POCCA 2000</option>-->
+<!--                                <option value="Young Offender Institution">Young Offender Institution</option>-->
+<!--                                <option value="ORA Young Offender Institution">ORA Young Offender Institution</option>-->
+<!--                            </select>-->
+<!--                    </div>-->
 
-                        </div>
-
-                        <div class="govuk-form-group">
-                            <label class="govuk-label govuk-label--s">Is this sentence consecutive or concurrent?</label>
-                            <div class="govuk-radios" data-module="govuk-radios">
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input cc-input" id="serve-type-1" name="cc-value" type="radio" value="Consecutive" data-aria-controls="conditional-end-date">
-                                    <label class="govuk-label govuk-radios__label" for="serve-type-1">
-                                        Consecutive
-                                    </label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input cc-input" id="serve-type-2" name="cc-value" type="radio" value="Concurrent">
-                                    <label class="govuk-label govuk-radios__label" for="serve-type-1">
-                                        Concurrent
-                                    </label>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="govuk-form-group">
-                            <label class="govuk-heading-s" for="cases">
-                                Which case?
-                            </label>
-                            <select class="govuk-select" id="cases" name="offences">
-                                <option class="case-option" value="t000034">t000034</option>
-                                <option class="case-option" value="Y440004">Y440004</option>
-                                <option class="case-option" value="Y440774">Y440774</option>
-                            </select>
-                        </div>
-                        <div class="govuk-form-group">
-                            <label class="govuk-heading-s" for="offences">
-                                Which offence is the sentence consecutive or concurrent to?
-                            </label>
-                            <select class="govuk-select" id="offences" name="offences">
-                                <option class="offence-option" value="offence 1">offence name 1</option>
-                                <option class="offence-option" value="offence 2">offence name 2</option>
-                                <option class="offence-option" value="offence 3">offence name 3</option>
-                            </select>
-                        </div>
-
-                        <a id="add-sentence-button-2" href="sentences.html" class="govuk-button">Continue</a>
-<!--                        <a id="add-sentence-button2" href="sentences.html" class="govuk-button">Continue</a>-->
-                    </form>
+<!--                    <form class="form" action="sentence-length">-->
+<!--                        <div class="govuk-form-group">-->
+<!--                            <label class="govuk-heading-m" for="sentence-date">-->
+<!--                                Sentence date-->
+<!--                            </label>-->
+<!--                            <div class="govuk-date-input" id="sentence-date">-->
+<!--                                <div class="govuk-date-input__item">-->
+<!--                                    <div class="govuk-form-group">-->
+<!--                                        <label class="govuk-label govuk-date-input__label" for="sentence-date-day">-->
+<!--                                            Day-->
+<!--                                        </label>-->
+<!--                                        <input class="govuk-input govuk-date-input__input govuk-input&#45;&#45;width-2" id="sentence-date-day" name="sentence-start-day" type="text" pattern="[0-9]*" inputmode="numeric">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="govuk-date-input__item">-->
+<!--                                    <div class="govuk-form-group">-->
+<!--                                        <label class="govuk-label govuk-date-input__label" for="sentence-date-month">-->
+<!--                                            Month-->
+<!--                                        </label>-->
+<!--                                        <input class="govuk-input govuk-date-input__input govuk-input&#45;&#45;width-2" id="sentence-date-month" name="sentence-start-month" type="text" pattern="[0-9]*" inputmode="numeric">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="govuk-date-input__item">-->
+<!--                                    <div class="govuk-form-group">-->
+<!--                                        <label class="govuk-label govuk-date-input__label" for="sentence-date-year">-->
+<!--                                            Year-->
+<!--                                        </label>-->
+<!--                                        <input class="govuk-input govuk-date-input__input govuk-input&#45;&#45;width-4" id="sentence-date-year" name="sentence-start-year" type="text" pattern="[0-9]*" inputmode="numeric">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        <div class="govuk-form-group">-->
+<!--                            <label class="govuk-heading-m" for="sentence-date">-->
+<!--                                Sentence length-->
+<!--                            </label>-->
+<!--                            <div class="govuk-date-input" id="sentence-date">-->
+<!--                                <div class="govuk-date-input__item">-->
+<!--                                    <div class="govuk-form-group">-->
+<!--                                        <label class="govuk-label govuk-date-input__label" for="sentence-length-years">-->
+<!--                                            Years-->
+<!--                                        </label>-->
+<!--                                        <input class="govuk-input govuk-date-input__input govuk-input&#45;&#45;width-4" id="sentence-length-years" name="sentence-length-years" type="text" pattern="[0-9]*" inputmode="numeric">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="govuk-date-input__item">-->
+<!--                                    <div class="govuk-form-group">-->
+<!--                                        <label class="govuk-label govuk-date-input__label" for="sentence-length-months">-->
+<!--                                            Months-->
+<!--                                        </label>-->
+<!--                                        <input class="govuk-input govuk-date-input__input govuk-input&#45;&#45;width-4" id="sentence-length-months" name="sentence-length-months" type="text" pattern="[0-9]*" inputmode="numeric">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="govuk-date-input__item">-->
+<!--                                    <div class="govuk-form-group">-->
+<!--                                        <label class="govuk-label govuk-date-input__label" for="sentence-length-weeks">-->
+<!--                                            Weeks-->
+<!--                                        </label>-->
+<!--                                        <input class="govuk-input govuk-date-input__input govuk-input&#45;&#45;width-4" id="sentence-length-weeks" name="sentence-length-weeks" type="text" pattern="[0-9]*" inputmode="numeric">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                                <div class="govuk-date-input__item">-->
+<!--                                    <div class="govuk-form-group">-->
+<!--                                        <label class="govuk-label govuk-date-input__label" for="ssentence-length-days">-->
+<!--                                            Days-->
+<!--                                        </label>-->
+<!--                                        <input class="govuk-input govuk-date-input__input govuk-input&#45;&#45;width-4" id="sentence-length-days" name="sentence-length-days" type="text" pattern="[0-9]*" inputmode="numeric">-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                        -->
+<!--                    </form>-->
+                    <a id="add-sentence-button" href="" class="govuk-button">Continue</a>
             </div>
         </div>
     </main>
 </div>
 <script src="/public/javascripts/custodial-data-2.js"></script>
-
 {% endblock %}
