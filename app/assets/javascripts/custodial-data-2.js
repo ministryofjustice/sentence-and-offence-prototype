@@ -170,7 +170,8 @@ if(sentenceDetailsButton){
 //move these higher
 
 function getDropdownValue(option){
-  const optionValue = option.length && option.find(c => c.selected).value;
+  //const optionValue = option.length && option.find(c => c.selected).text;
+  const optionValue = option.length && option.find(c => c.selected).text;
   return optionValue
 }
 
@@ -199,12 +200,14 @@ if (page) {
   const ccInput = Array.from(document.getElementsByClassName('cc-input'));
   const cases = Array.from(document.getElementsByClassName('case-option'));
   const offences = Array.from(document.getElementsByClassName('offence-option'));
+  const offenceList = document.getElementById('offences');
   //const ccValue = document.querySelector('input[name="cc-value"]:checked').value;
 
   pageButton.addEventListener("click", function (e){
     e.preventDefault();
     //const caseNumber = cases.length && cases.find(c => c.selected).value;
-    const toOffence = getDropdownValue(offences)
+    //const toOffence = getDropdownValue(offenceList)
+    const toOffence = offenceList.value
     const caseNumber = getDropdownValue(cases)
     const cc = getRadioValue(ccInput)
     console.log(cc, caseNumber, toOffence);
@@ -217,7 +220,7 @@ if (page) {
     console.log(sentenceLengthDays.value)
 
     addCCSentence(offence, convictionDate, sentenceType, sentenceDate, sentenceLength, cc, caseNumber, toOffence );
-    location.href = 'sentences.html';
+    //location.href = 'sentences.html';
   })
 }
 
@@ -246,6 +249,10 @@ if(sentenceList){
   const data = JSON.parse(dataDump)
   console.log("f",JSON.parse(dataDump))
 
+function printcc( sType, offence){
+    return(sType ? `To be served ` + sType + " to " + offence : "")
+}
+
   for(let x of data){
     if(x.offence.outcome === "Guilty" || "Guilty2") {
       let listItem = `
@@ -255,7 +262,7 @@ if(sentenceList){
                             <p><strong>Verdict: </strong>Guilty</p>
                             <p><strong>Sentence length: </strong>
                             <span>${x.sentenceLength} </span></p>
-                            <p>to be served ${x.cc} to ${x.toOffence}</p>
+                            ${printcc(x.cc, x.toOffence)}
                         </dt>
                         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
                             <ul class="govuk-summary-list__actions-list">
@@ -992,8 +999,6 @@ const sentenceTypes =
       "SentenceType": "Recall from Automatic Life Sec 283 Sentencing Code (21+)"
     }
   ]
-
-
 let courts = [
   {
     "Court": "Birmingham Crown Court",
@@ -3232,6 +3237,22 @@ let courts = [
     "FIELD2": ""
   }
 ]
+
+const ccpage = document.getElementsByClassName("cc")[0];
+
+if (ccpage){
+  const target = document.getElementById("offences")
+  let data = JSON.parse(localStorage.getItem('sentenceItem'))
+  console.log(data);
+
+  for(let x of data) {
+    console.log(x.offence.offence)
+    let offenceOption = `<option class="offence-option" value='${x.offence.offence}'>${x.offence.offence}</option>`
+
+    target.innerHTML += offenceOption;
+  }
+
+}
 // const y = JSON.stringify(sentenceTypes);
 //
 // cd = document.getElementById("cd")
