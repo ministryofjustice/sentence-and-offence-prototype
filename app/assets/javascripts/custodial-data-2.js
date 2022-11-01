@@ -279,7 +279,7 @@ function printcc( sType, offence){
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
                             <p><strong>Offence: </strong>${x.offence}</p>
                             <p><strong>Verdict: </strong>${x.offence.outcome}</p>
-                            <p><strong>to be served: </strong>${x.cc} to <span>${x.toOffence}</span></p>
+                            <p><strong>to be served: </strong>${x.cc} to </br><span>${x.toOffence}</span></p>
                         </dt>
                         <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
                             <ul class="govuk-summary-list__actions-list">
