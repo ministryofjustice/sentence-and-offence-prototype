@@ -3313,7 +3313,7 @@ if (ccpage){
 // cd = document.getElementById("cd")
 // for(let x of sentenceTypes) {
 //   console.log(x)
-//   let p = `<option value=${x.SentenceType}>${x.SentenceType}</option>`
+//   let p = `<option value='${x.SentenceType}'>${x.SentenceType}</option>`
 //   document.write(p)
 //   cd.innerHTML += p
 // }
