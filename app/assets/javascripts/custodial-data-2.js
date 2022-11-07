@@ -3,7 +3,50 @@ console.log("g");
 let arr = [];
 
 function createDate(day, month, year) {
-  let date = `${day.value}-${month.value}-${year.value}`;
+  let mNumber = parseInt(month.value);
+  let monthName;
+  switch (mNumber) {
+    case 1:
+      monthName = 'Jan';
+      break;
+    case 2:
+      monthName = 'Feb';
+      break;
+    case 3:
+      monthName = 'Mar';
+      break;
+    case 4:
+      monthName = 'Apr';
+      break;
+    case 5:
+      monthName = 'May';
+      break;
+    case 6:
+      monthName = 'jun';
+      break;
+    case 7:
+      monthName = 'Jul';
+      break;
+    case 8:
+      monthName = 'Aug';
+      break;
+    case 9:
+      monthName = 'Sep';
+      break;
+    case 10:
+      monthName = 'Oct';
+      break;
+    case 11:
+      monthName = 'Nov';
+      break;
+    case 12:
+      monthName = 'Dec';
+      break;
+    default:
+      monthName = 'Invalid ';
+  }
+
+  let date = `${day.value} ${monthName} ${year.value}`;
   return date
 }
 
@@ -219,7 +262,7 @@ if (page) {
     let sentenceDate = createDate(sentenceDateDay, sentenceDateMonth, sentenceDateYear)
     console.log(sentenceLengthDays.value)
 
-    addCCSentence(offence, convictionDate, sentenceType, sentenceDate, sentenceLength, cc, caseNumber, toOffence );
+    addCCSentence(offence, convictionDate, sentenceType.value, sentenceDate, sentenceLength, cc, caseNumber, toOffence );
     //location.href = 'sentences.html';
   })
 }
@@ -254,23 +297,47 @@ function printcc( sType, offence){
 }
 
   for(let x of data){
+    console.log(x)
     if(x.offence.outcome === "Guilty" || "Guilty2") {
       let listItem = `
-                    <div class="govuk-summary-list__row sentence-block">
-                        <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
-                        <p class="govuk-heading-m">Offence ${x.id}</p>
-                            <p><strong>Offence: </strong>${x.offence.offence}</p>
-                            <p><strong>Verdict: </strong>Guilty</p>
-                            <p><strong>Sentence length: </strong>
-                            <span>${x.sentenceLength} </span></p>
-                            ${printcc(x.cc, x.toOffence)}
-                        </dt>
-                        <dd class="govuk-summary-list__actions hmrc-summary-list__actions">
-                            <ul class="govuk-summary-list__actions-list">
+                    <div class="sentence-block">
+                    <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Offence ${x.id}</h3>
+                      <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+                          ${x.offence.offence}
+                      </h4>
+                      <p class="govuk-body-s">Committed on ${x.offence.offenceDate}</p>
+                      <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                          <tbody class="govuk-table__body">
+                              <tr class="govuk-table__row govuk-body-s">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Sentence type</th>
+                                  <td class="govuk-table__cell">${x.sentenceType}</td>
+                              </tr>
+                              <tr class="govuk-table__row govuk-body-s">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Sentence date</th>
+                                  <td class="govuk-table__cell">${x.sentenceDate}</td>
+                              </tr>
+                              <tr class="govuk-table__row govuk-body-s">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Sentence length</th>
+                                  <td class="govuk-table__cell">${x.sentenceLength}
+                                  </td>
+                              </tr>
+                              <tr class="govuk-table__row govuk-body-s">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
+                                  <td class="govuk-table__cell">${printcc(x.cc, x.toOffence)}
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      
+                  </div>
+                      <ul class="">
                                 <li class="govuk-summary-list__actions-list-item"><a class="govuk-link" href="#"><span aria-hidden="true">Change</span><span class="govuk-visually-hidden">Change Sydney Russell</span></a></li>
                                 <li class="govuk-summary-list__actions-list-item"><a data-name="remove-link-${x.id}" class="govuk-link remove-link" href="#"><span aria-hidden="true">Remove</span><span class="govuk-visually-hidden">Remove Sydney Russell from the list</span></a></li>
                             </ul>
-                        </dd>
+                       
+                           
+                    
                     </div>
         `
       sentenceList.innerHTML += listItem
@@ -3235,7 +3302,7 @@ if (ccpage){
 
   for(let x of data) {
     console.log(x.offence.offence)
-    let offenceOption = `<option class="offence-option" value='${x.offence.offence}'>${x.offence.offence}</option>`
+    let offenceOption = `<option class="offence-option" value='offence 1${x.offence.offence}'>Offence ${x.id} ${x.offence.offence}</option>`
 
     target.innerHTML += offenceOption;
   }
