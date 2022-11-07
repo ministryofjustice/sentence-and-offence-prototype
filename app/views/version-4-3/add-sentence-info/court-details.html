@@ -40,7 +40,7 @@
                         <fieldset class="govuk-fieldset">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                                 <h1 class="govuk-fieldset__heading">
-                                    Court date
+                                    Date of warrant
                                 </h1>
                             </legend>
                             <div class="govuk-date-input" id="court-date">
@@ -98,35 +98,25 @@
                             </div>
                         </div>
                     </div>
-                    <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                Hearing type
-                            </legend>
-                            <select class="govuk-select" id="hearing-type" name="hearing-type">
-                                <option value="" selected></option>
-                                <option value="Trial" >Trial</option>
-                                <option value="Newton hearing">Newton hearing</option>
-                                <option value="Cracked case">Cracked case</option>
-                                <option value="Committal for sentence">Committal for sentence</option>
-                                <option value="Committal for breach">Committal for breach</option>
-                                <option value="Video Link (Court Appearance)">Video Link (Court Appearance) </option>
-                            </select>
-                    </div>
+<!--                    <div class="govuk-form-group">-->
+<!--                        <fieldset class="govuk-fieldset">-->
+<!--                            <legend class="govuk-fieldset__legend govuk-fieldset__legend&#45;&#45;m">-->
+<!--                                Hearing type-->
+<!--                            </legend>-->
+<!--                            <select class="govuk-select" id="hearing-type" name="hearing-type">-->
+<!--                                <option value="" selected></option>-->
+<!--                                <option value="Trial" >Trial</option>-->
+<!--                                <option value="Newton hearing">Newton hearing</option>-->
+<!--                                <option value="Cracked case">Cracked case</option>-->
+<!--                                <option value="Committal for sentence">Committal for sentence</option>-->
+<!--                                <option value="Committal for breach">Committal for breach</option>-->
+<!--                                <option value="Video Link (Court Appearance)">Video Link (Court Appearance) </option>-->
+<!--                            </select>-->
+<!--                    </div>-->
                     <div class="govuk-form-group">
                         <h2 class="govuk-heading-m">Do you have the overall sentence length for this case?</h2>
                         <div class="govuk-radios" data-module="govuk-radios">
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="offence-end-date" name="offence-end-date" type="radio" value="offence-end-date" data-aria-controls="conditional-Osentence">
-                                <label class="govuk-label govuk-radios__label" for="offence-end-date">
-                                    Yes
-                                </label>
-                            </div>
-                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-Osentence">
                                 <div class="govuk-form-group">
-                                    <label class="govuk-heading-m" for="sentence-date">
-                                        Sentence length
-                                    </label>
                                     <div class="govuk-date-input" id="sentence-date">
                                         <div class="govuk-date-input__item">
                                             <div class="govuk-form-group">
@@ -163,13 +153,6 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="offence-end-date" name="offence-end-date" type="radio" value="offence-end-date">
-                                <label class="govuk-label govuk-radios__label" for="offence-end-date">
-                                    No
-                                </label>
-                            </div>
-                        </div>
                     </div>
 <!--                    <div class="govuk-form-group">-->
 <!--                        <fieldset class="govuk-fieldset">-->
@@ -192,5 +175,5 @@
 </div>
 </main>
 </div>
-<script src="/public/javascripts/custodial-data.js"></script>
+<script src="/public/javascripts/custodial-data-2.js"></script>
 {% endblock %}

@@ -256,8 +256,9 @@ function printcc( sType, offence){
   for(let x of data){
     if(x.offence.outcome === "Guilty" || "Guilty2") {
       let listItem = `
-                    <div class="govuk-summary-list__row">
+                    <div class="govuk-summary-list__row sentence-block">
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key">
+                        <p class="govuk-heading-m">Offence ${x.id}</p>
                             <p><strong>Offence: </strong>${x.offence.offence}</p>
                             <p><strong>Verdict: </strong>Guilty</p>
                             <p><strong>Sentence length: </strong>
@@ -315,7 +316,7 @@ if(courtDetailsButton) {
     const courtMonth = document.getElementById("court-date-month");
     const courtYear = document.getElementById("court-date-year");
     const caseReference = document.getElementById("court-case-reference");
-    const hearing = document.getElementById("hearing-type");
+
     const sentenceLengthYears = document.getElementById("sentence-length-years")
     const sentenceLengthMonths = document.getElementById("sentence-length-months")
     const sentenceLengthWeeks = document.getElementById("sentence-length-weeks")
@@ -325,12 +326,12 @@ if(courtDetailsButton) {
     let date = createDate(courtDay, courtMonth, courtYear)
     let overallSentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
     //console.log(courtName.value, date, caseReference.value, hearing.value, outcome.value)
-    addCourtDetails(courtName.value, date, caseReference.value, hearing.value, overallSentenceLength)
+    addCourtDetails(courtName.value, date, caseReference.value,  overallSentenceLength)
 
     location.href = 'add-a-sentence.html';
   })
 
-  function addCourtDetails (court, date, ref, hearing, overallSentenceLength) {
+  function addCourtDetails (court, date, ref,  overallSentenceLength) {
     let courtDetails = localStorage.getItem('courtDetails');
     console.log(courtDetails)
     courtDetails = courtDetails ? JSON.parse(courtDetails) : []
@@ -340,7 +341,7 @@ if(courtDetailsButton) {
       court: court,
       date: date,
       ref: ref,
-      hearing: hearing,
+
       overallSentenceLength:overallSentenceLength
       //outcome: outcome
     }
@@ -439,19 +440,6 @@ if (courtDetails) {
                       </dt>
                       <dd class="govuk-summary-list__value">
                           ${courtData.ref}
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="warrant-details.html">
-                              Change<span class="govuk-visually-hidden"> date</span>
-                          </a>
-                      </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                          Hearing type
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                          ${courtData.hearing}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="warrant-details.html">
