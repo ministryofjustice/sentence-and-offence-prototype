@@ -3302,7 +3302,7 @@ if (ccpage){
 
   for(let x of data) {
     console.log(x.offence.offence)
-    let offenceOption = `<option class="offence-option" value='offence 1${x.offence.offence}'>Offence ${x.id} ${x.offence.offence}</option>`
+    let offenceOption = `<option class="offence-option" value='offence 1 ${x.offence.offence}'>Offence ${x.id} ${x.offence.offence}</option>`
 
     target.innerHTML += offenceOption;
   }
