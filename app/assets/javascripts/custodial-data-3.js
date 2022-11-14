@@ -473,7 +473,7 @@ if(sentenceSummaryContainer){
                               </tr>
                               <tr class="govuk-table__row govuk-body-s firstcc">
                                   <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
-                                  <td class="govuk-table__cell"><p class="">to be served: ${x.cc} to </br><span>${x.toOffence}</span></p>
+                                  <td class="govuk-table__cell">to be served: ${x.cc} to ${x.toOffence}
                                   </td>
                               </tr>
                           </tbody>
