@@ -16,10 +16,9 @@
                         </h2>
                     </div>
                     <div id="accordion-default-content-7" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-                        <p class='govuk-body'><strong>Scenario : </strong>Allow users to enter sentence servicg data.</p>
+                        <p class='govuk-body'><strong>Scenario : </strong>Allow users to enter sentence and offence details including capturing consecutive and concurrent sentence selection.</p>
                         <p class='govuk-body'><strong>Tested : </strong>Week commencing.</p>
-                        <p class='govuk-body'><strong>Prototype : </strong>Created a new journey starting from the prisoner details where a user can
-                            the details from a trail record sheet.<br>
+                        <p class='govuk-body'><strong>Prototype : </strong>Created a new journey starting from the prisoner details where a user can enter the details from a warrant including relationships between sentences that are to be served consecutively/concurrently.<br>
                             <a target="_blank" href="version-4-4/prisoner-search.html">view</a>
                         </p>
                         <div class="govuk-grid-row">
@@ -27,7 +26,13 @@
                                 <h3 class="govuk-heading-s">key changes</h3>
                                 <ul class="govuk-list govuk-list--bullet">
                                     <li>Introduced capture for overall sentence length</li>
-
+                                    <li>Removed hearing type field</li>
+                                    <li>Updated dates to GDS format</li>
+                                    <li>Pull through of sentence type added to sentence list page</li>
+                                    <li>Added offence numbering</li>
+                                    <li>Removed conditional from overall sentence length capture</li>
+                                    <li>Renamed cort date field</li>
+                                    <li>Added radio buttons for offences entered during the journey for concurrent sentences</li>
                                 </ul>
                             </div>
 
@@ -35,7 +40,7 @@
                             <div class="govuk-grid-column-one-half">
                                 <h3 class="govuk-heading-s">To do</h3>
                                 <ul class="govuk-list govuk-list--bullet">
-                                    <li>Introduce capture of concurrent /consec for sentences.</li>
+                                    <li>Allow users to make relationships to offences from other cases</li>
                                 </ul>
                             </div>
                         </div>
@@ -46,7 +51,7 @@
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
                             <span class="govuk-accordion__section-button" id="accordion-default-heading-6">
-                              Add consec concurrent <span class="govuk-tag govuk-tag--yellow">In progress test candidate</span>
+                              Add consec concurrent <span class="govuk-tag govuk-tag--yellow">Initial concept</span>
                             </span>
                         </h2>
                     </div>
