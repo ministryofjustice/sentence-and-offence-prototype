@@ -207,7 +207,7 @@ if(sentenceDetailsButton){
     let sentenceDate = createDate(sentenceDateDay, sentenceDateMonth, sentenceDateYear)
   console.log(sentenceLengthDays.value)
     addSentence(offence, convictionDate, sentenceType, sentenceDate, sentenceLength)
-    //location.href = 'sentences.html';
+    location.href = 'sentences.html';
   })
 }
 //move these higher
@@ -221,13 +221,15 @@ function getDropdownValue(option){
 function getOffenceItem(list){
   console.log("hero", list)
   for (let x of list) {
-    console.log("gggg",x)
+
   }
 
 }
 function getRadioValue(option){
-  const optionValue = option.length && option.find(c => c.checked).value;
-  return optionValue
+
+    const optionValue = option.length && option.find(c => c.checked).value;
+    return optionValue
+
 }
 const page = document.getElementsByClassName('cc')[0];
 
@@ -253,30 +255,61 @@ if (page) {
   const cases = Array.from(document.getElementsByClassName('case-option'));
   const offences = Array.from(document.getElementsByClassName('offence-option'));
   const offenceList = document.getElementById('offences');
-  //const ccValue = document.querySelector('input[name="cc-value"]:checked').value;
+
+  function getCheckedItem(list){
+    for (let x of list) {
+      if (x.checked){
+        return x.value;
+      }
+    }
+  }
+function createToOffence(x, y) {
+    if (x === "concurrently") {
+      //getRadioValue(y)
+      console.log("45", y)
+      return getCheckedItem(y)
+    }
+    else {
+      //let z = getOffenceItem(y)
+      return ""
+    }
+}
+
   getOffenceItem(ccOffence);
-console.log("ee", ccInput)
+
+  console.log('ds',ccOffence)
+
   pageButton.addEventListener("click", function (e){
     e.preventDefault();
     let arry = Array.from(ccOffence);
-    console.log("6", arry)
+
+
     //const caseNumber = cases.length && cases.find(c => c.selected).value;
     //const toOffence = getDropdownValue(offenceList)
     //const toOffence = offenceList.value
     const caseNumber = getDropdownValue(cases)
-    const cc = getRadioValue(ccInput);
-    const toOffence = getRadioValue(arry);
-    console.log(cc, caseNumber, toOffence);
-
+    //const cc = getRadioValue(ccInput);
+    const cc = getCheckedItem(ccInput);
+    const toOffence = createToOffence(cc, arry)
+    // const toOffence = ""
+    // if (cc === "Concurrent") {
+    //   const toOffence = getRadioValue(arry);
+    // } else {
+    //  return toOffence = ""
+    // }
+    console.log("44",toOffence)
     let sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
 
     const offence = localStorage.getItem('offence');
     let convictionDate = createDate(convictionDateDay, convictionDateMonth, convictionDateYear)
     let sentenceDate = createDate(sentenceDateDay, sentenceDateMonth, sentenceDateYear)
-    console.log(sentenceLengthDays.value)
 
-    addCCSentence(offence, convictionDate, sentenceType.value, sentenceDate, sentenceLength, cc, caseNumber, toOffence );
-    //location.href = 'sentences.html';
+    if (toOffence === "another case") {
+      addCCSentence(offence, convictionDate, sentenceType.value, sentenceDate, sentenceLength, cc, caseNumber, "toOffence");
+      location.href = 'case-list.html';
+    } else {
+      addCCSentence(offence, convictionDate, sentenceType.value, sentenceDate, sentenceLength, cc, caseNumber, toOffence);
+    }
   })
 }
 
@@ -305,7 +338,12 @@ if(sentenceList){
   const data = JSON.parse(dataDump)
 
 function printcc( sType, offence){
-    return(sType ? `To be served ` + sType + " to " + offence : "")
+    if (sType === "Consecutive") {
+      //return (sType ? `To be served ` + sType + " to " + offence : "")
+      return "To be served consecutively"
+    } else {
+      return (sType ? `To be served  ` + sType + " to " + offence : "")
+    }
 }
 
   for(let x of data){
@@ -717,6 +755,36 @@ console.log(sentenceDataList[itemOfInterest-1]);
     location.href = 'sentences.html';
   })
 }
+
+const addOffenceButton = document.getElementById("add-offence-button2");
+
+if (addOffenceButton) {
+  console.log("offence button")
+  addOffenceButton.addEventListener("click", function(e) {
+      e.preventDefault()
+    const offenceList = JSON.parse(window.localStorage.getItem('sentenceItem'));
+
+      console.log()
+
+      const ccOffence = document.getElementsByClassName('cc-input')
+      let arr = Array.from(ccOffence)
+      let p = getRadioValue(arr);
+    console.log(offenceList.length)
+    let rr = offenceList.find(x=> x.id === offenceList.length);
+      rr.toOffence = p
+console.log(rr)
+
+      console.log(p, offenceList)
+    const list =JSON.stringify(offenceList)
+    window.localStorage.setItem('sentenceItem', list)
+      console.log(window.localStorage.getItem('sentenceItem'))
+    location.href = 'sentences.html'
+
+    }
+  )
+}
+
+
 
 const sentenceTypes =
   [
