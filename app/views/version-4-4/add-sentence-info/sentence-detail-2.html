@@ -196,39 +196,40 @@
 
                                     <div class="govuk-form-group">
                                           <label class="govuk-heading-s" for="consecutive-or-concurrent">
-                                              Is this sentence consecutive or concurrent?
+                                              Is this sentence consecutive?
                                           </label>
                                           <div class="govuk-radios" data-module="govuk-radios">
                                               <div class="govuk-radios" data-module="govuk-radios">
                                                   <div class="govuk-radios__item">
-                                                      <input class="govuk-radios__input cc-input" id="consecutive-or-concurrent" name="consecutive-or-concurrent" type="radio" value="Consecutive">
+                                                      <input class="govuk-radios__input cc-input" id="consecutive-or-concurrent" name="consecutive-or-concurrent" type="radio" value="Consecutive" data-aria-controls="conditional-concurrent">
                                                       <label class="govuk-label govuk-radios__label" for="consecutive-or-concurrent">
-                                                          Consecutive
-                                                      </label>
-                                                  </div>
-                                                  <div class="govuk-radios__item">
-                                                      <input class="govuk-radios__input cc-input" id="consecutive-or-concurrent-2" name="consecutive-or-concurrent" type="radio" value="concurrently" data-aria-controls="conditional-concurrent">
-                                                      <label class="govuk-label govuk-radios__label" for="consecutive-or-concurrent-2">
-                                                          Concurrent
+                                                          Yes
                                                       </label>
                                                   </div>
                                                   <div class="govuk-radios__conditional" id="conditional-concurrent">
                                                       <div class="govuk-form-group">
                                                           <label class="govuk-label" for="consecutive-or-concurrent">
-                                                              Concurrent to:
+                                                              Consecutive to:
                                                           </label>
 
                                                           <div class="govuk-radios__item">
                                                               <input class="govuk-radios__input ccOffence" id="consecutive-or-concurrent-2" name="concurrent-sentence"
                                                                      type="radio"
                                                                      value="another case"
-                                                                     >
+                                                              >
                                                               <label class="govuk-label govuk-radios__label" for="concurrent-sentence-1">
                                                                   An offence from another case
                                                               </label>
                                                           </div>
                                                       </div>
                                                   </div>
+                                                  <div class="govuk-radios__item">
+                                                      <input class="govuk-radios__input cc-input" id="consecutive-or-concurrent-2" name="consecutive-or-concurrent" type="radio" value="concurrently" >
+                                                      <label class="govuk-label govuk-radios__label" for="consecutive-or-concurrent-2">
+                                                          No
+                                                      </label>
+                                                  </div>
+
                                               </div>
                                           </div>
                                       </div>

@@ -264,7 +264,7 @@ if (page) {
     }
   }
 function createToOffence(x, y) {
-    if (x === "concurrently") {
+    if (x === "Consecutive") {
       //getRadioValue(y)
       console.log("45", y)
       return getCheckedItem(y)
@@ -338,9 +338,9 @@ if(sentenceList){
   const data = JSON.parse(dataDump)
 
 function printcc( sType, offence){
-    if (sType === "Consecutive") {
+    if (sType === "concurrently") {
       //return (sType ? `To be served ` + sType + " to " + offence : "")
-      return "To be served consecutively"
+      return "To be served concurrently"
     } else {
       return (sType ? `To be served  ` + sType + " to " + offence : "")
     }
