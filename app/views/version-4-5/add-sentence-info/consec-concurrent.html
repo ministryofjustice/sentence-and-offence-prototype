@@ -1,0 +1,132 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container cc">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>B4166LG</span>
+            </div>
+        </div>
+    </div>
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h1 class="govuk-heading-xl">
+                    <span class="govuk-caption-xl">Custodial sentence information</span>
+                    Which case is this related to?</h1>
+
+
+                <div id="this-sentence-detail" class="govuk-inset-text ">
+                    <p>The details relate to the following offence:</p>
+                    <strong>Offence: </strong> Intentionally obstruct an authorised person<br>
+                    <strong>Date: </strong> 20 Jan 2022
+                </div>
+            </div>
+            <div class="govuk-grid-column-one-half">
+                <form class="form" action="sentences-and-offences" method="post">
+                    <form class="form" action="sentence-length">
+
+
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-label--s">Select the offence </label>
+                                <div class="govuk-radios" data-module="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input cc-input" id="offence-1" name="offence" type="radio" value="Consecutive">
+                                        <label class="govuk-label govuk-radios__label" for="offence-1">
+                                            Offence 1
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input cc-input" id="offence-2" name="offence" type="radio" value="Concurrent">
+                                        <label class="govuk-label govuk-radios__label" for="offence-2">
+                                            Offence 2
+                                        </label>
+                                        <span class="govuk-hint">sentenced 23 Feb 2002</span>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input cc-input" id="offence-3" name="offence" type="radio" value="Concurrent">
+                                        <label class="govuk-label govuk-radios__label" for="offence-2">
+                                            Offence 3
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input cc-input" id="offence-4" name="offence" type="radio" value="Concurrent">
+                                        <label class="govuk-label govuk-radios__label" for="offence-2">
+                                            Offence 4
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input cc-input" id="offence-2" name="offence" type="radio" value="Concurrent">
+                                        <label class="govuk-label govuk-radios__label" for="offence-2">
+                                            An offence from another case
+                                        </label>
+                                    </div>
+                                </div>
+                        </div>
+<!--                        <div class="govuk-form-group">-->
+<!--                            <label class="govuk-heading-s" for="cases">-->
+<!--                                Which case is the sentence from?-->
+<!--                            </label>-->
+<!--                            <select class="govuk-select" id="cases" name="offences">-->
+<!--                                <option class="case-option" value="t000034">t000034</option>-->
+<!--                                <option class="case-option" value="Y440004">Y440004</option>-->
+<!--                                <option class="case-option" value="Y440774">Y440774</option>-->
+<!--                            </select>-->
+<!--                        </div>-->
+<!--                        <div class="govuk-form-group">-->
+<!--                            <label class="govuk-heading-s" for="offences">-->
+<!--                                Which offence is the sentence consecutive or concurrent to?-->
+<!--                            </label>-->
+<!--                            <select class="govuk-select" id="offences" name="offences">-->
+
+<!--                            </select>-->
+<!--                        </div>-->
+
+                        <!--               <div class="govuk-form-group">
+                                          <label class="govuk-heading-m" for="consecutive-or-concurrent">
+                                              Consecutive or concurrent?
+                                          </label>
+                                          <div class="govuk-radios" data-module="govuk-radios">
+                                              <div class="govuk-radios" data-module="govuk-radios">
+                                                  <div class="govuk-radios__item">
+                                                      <input class="govuk-radios__input" id="consecutive-or-concurrent" name="consecutive-or-concurrent" type="radio" value="Consecutive">
+                                                      <label class="govuk-label govuk-radios__label" for="consecutive-or-concurrent">
+                                                          Consecutive
+                                                      </label>
+                                                  </div>
+                                                  <div class="govuk-radios__item">
+                                                      <input class="govuk-radios__input" id="consecutive-or-concurrent-2" name="consecutive-or-concurrent" type="radio" value="Concurrent" data-aria-controls="conditional-concurrent">
+                                                      <label class="govuk-label govuk-radios__label" for="consecutive-or-concurrent-2">
+                                                          Concurrent
+                                                      </label>
+                                                  </div>
+                                                  <div class="govuk-radios__conditional" id="conditional-concurrent">
+                                                      <div class="govuk-form-group">
+                                                          <label class="govuk-label" for="consecutive-or-concurrent">
+                                                              Concurrent to:
+                                                          </label>
+                                                          <div class="govuk-radios__item">
+                                                              <input class="govuk-radios__input" id="consecutive-or-concurrent-2" name="concurrent-sentence-1" type="radio" value="Court case 1, count 1<br>Act of violence on fixed platform<br>Sentence date: 21 September 2021" data-aria-controls="conditional-concurrent">
+                                                              <label class="govuk-label govuk-radios__label" for="concurrent-sentence-1">
+                                                                  Court case 1, count 1<br>Act of violence on fixed platform<br>Sentence date: 21 September 2021
+                                                              </label>
+                                                          </div>
+                                                          <div class="govuk-radios__item">
+                                                              <input class="govuk-radios__input" id="consecutive-or-concurrent-2" name="concurrent-sentence-2" type="radio" value="Court case 1, count 2<br>Burglary dwelling - with intent to steal<br>Sentence date: 21 September 2021" data-aria-controls="conditional-concurrent">
+                                                              <label class="govuk-label govuk-radios__label" for="concurrent-sentence-1">
+                                                                  Court case 1, count 2<br>Burglary dwelling - with intent to steal<br>Sentence date: 21 September 2021
+                                                              </label>
+                                                          </div>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+                                      </div> -->
+                        <a id="add-sentence-button2" href="" class="govuk-button">Continue</a>
+                    </form>
+            </div>
+        </div>
+    </main>
+</div>
+<script src="/public/javascripts/custodial-data-2.js"></script>
+{% endblock %}
