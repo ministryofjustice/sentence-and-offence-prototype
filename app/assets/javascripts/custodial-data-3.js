@@ -3412,7 +3412,7 @@ let courts = [
 const ccpage = document.getElementsByClassName("cc")[0];
 
 if (ccpage){
-  const target = document.getElementById("conditional-concurrent")
+  const target = document.getElementById("radios-target")
   let data = JSON.parse(localStorage.getItem('sentenceItem'))
   console.log(data);
 
@@ -3429,7 +3429,9 @@ if (ccpage){
                                 for='concurrent-sentence-${x.id}'>
                                     Offence ${x.id} </br>
                                     <strong>${x.offence.offence}</strong> </br>
-                                    Sentenced: ${x.sentenceDate}
+                                    Sentence length: ${x.sentenceLength}</br>
+                                    Sentence type: ${x.sentenceType}</br>
+                                    Sentence date: ${x.sentenceDate}
                                 </label>
                             </div>`
     target.innerHTML += offenceRadio;
