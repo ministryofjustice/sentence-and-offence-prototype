@@ -264,7 +264,7 @@ if (page) {
     }
   }
 function createToOffence(x, y) {
-    if (x === "Consecutive") {
+    if (x === "consecutively") {
       //getRadioValue(y)
       console.log("45", y)
       return getCheckedItem(y)
