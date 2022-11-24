@@ -3417,13 +3417,13 @@ if (ccpage){
   console.log(data);
 
   for(let x of data) {
-    let offenceOption = `<option class="offence-option" value='offence 1 ${x.offence.offence}'>Offence ${x.id} ${x.offence.offence}</option>`
+    let offenceOption = `<option class="offence-option" value='Count 1 ${x.offence.offence}'>Offence ${x.id} ${x.offence.offence}</option>`
     let offenceRadio = `  <div class="govuk-radios__item ">
                                 <input class="govuk-radios__input ccOffence" 
                                 id='consecutive-or-concurrent-${x.id}' 
                                 name='concurrent-sentence' 
                                 type="radio" 
-                                value='Offence ${x.id}'
+                                value='Count ${x.id}'
                                 >
                                 <label class="govuk-label govuk-radios__label" 
                                 for='concurrent-sentence-${x.id}'>
