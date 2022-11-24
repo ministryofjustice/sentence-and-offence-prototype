@@ -351,7 +351,7 @@ function printcc( sType, offence){
       let listItem = `
                     <div class="sentence-block">
                     <div class="govuk-grid-column-full govuk-!-margin-top-4">
-                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Offence ${x.id}</h3>
+                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.id}</h3>
                       <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
                           ${x.offence.offence}
                       </h4>
@@ -391,7 +391,7 @@ function printcc( sType, offence){
       let listItem = `
                    <div class="sentence-block ng">
                     <div class="govuk-grid-column-full govuk-!-margin-top-4">
-                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Offence ${x.id}</h3>
+                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.id}</h3>
                       <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
                           ${x.offence.offence}
                       </h4>
@@ -489,7 +489,7 @@ if(sentenceSummaryContainer){
       let newSentence = `
                <div class="sentence-block">
                     <div class="govuk-grid-column-full govuk-!-margin-top-4">
-                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Offence ${x.id}</h3>
+                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.id}</h3>
                       <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
                           ${x.offence.offence}
                       </h4>
@@ -528,7 +528,7 @@ if(sentenceSummaryContainer){
       let newSentence = `
            <div class="sentence-block ng">
                     <div class="govuk-grid-column-full govuk-!-margin-top-4">
-                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Offence ${x.id}</h3>
+                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.id}</h3>
                       <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
                           ${x.offence.offence}
                       </h4>
@@ -3427,7 +3427,7 @@ if (ccpage){
                                 >
                                 <label class="govuk-label govuk-radios__label" 
                                 for='concurrent-sentence-${x.id}'>
-                                    Offence ${x.id} </br>
+                                    Count ${x.id} </br>
                                     <strong>${x.offence.offence}</strong> </br>
                                     Sentence length: ${x.sentenceLength}</br>
                                     Sentence type: ${x.sentenceType}</br>
