@@ -205,8 +205,8 @@ if(sentenceDetailsButton){
     const offence = localStorage.getItem('offence');
     let convictionDate = createDate(convictionDateDay, convictionDateMonth, convictionDateYear)
     let sentenceDate = createDate(sentenceDateDay, sentenceDateMonth, sentenceDateYear)
-  console.log(sentenceLengthDays.value)
-    addSentence(offence, convictionDate, sentenceType, sentenceDate, sentenceLength)
+  console.log(sentenceType.value)
+    addSentence(offence, convictionDate, sentenceType.value, sentenceDate, sentenceLength)
     location.href = 'sentences.html';
   })
 }
@@ -348,6 +348,7 @@ function printcc( sType, offence){
 
   for(let x of data){
     if(x.offence.outcome === "Guilty" || x.offence.outcome === "Guilty2") {
+      console.log(x)
       let listItem = `
                     <div class="sentence-block">
                     <div class="govuk-grid-column-full govuk-!-margin-top-4">
@@ -772,7 +773,7 @@ if (addOffenceButton) {
     console.log(offenceList.length)
     let rr = offenceList.find(x=> x.id === offenceList.length);
       rr.toOffence = p
-console.log(rr)
+console.log("j",rr)
 
       console.log(p, offenceList)
     const list =JSON.stringify(offenceList)
