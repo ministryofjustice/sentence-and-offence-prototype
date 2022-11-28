@@ -156,7 +156,7 @@ if(outcomeButton) {
 }
 function setRoute(selectedValue){
   if(selectedValue === "Guilty"){
-    return "sentence-detail.html"
+    return "sentence-detail-2.html"
   } else if(selectedValue === "Guilty2"){
     return "sentence-detail-2.html"
   } else {
@@ -414,7 +414,7 @@ function printcc( sType, offence){
       sentenceList.innerHTML += listItem
     }
   }
-  let firstItem = document.getElementsByClassName('firstcc')[0].style.display = "none";
+  //let firstItem = document.getElementsByClassName('firstcc')[0].style.display = "none";
 }
 
 if(sentenceListButton){
