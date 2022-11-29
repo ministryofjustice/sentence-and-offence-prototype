@@ -330,6 +330,15 @@ if (thisOffenceContainer) {
     }
 //   }
 // }
+
+function printcc( sType, offence){
+  if (sType === "concurrently") {
+    //return (sType ? `To be served ` + sType + " to " + offence : "")
+    return "To be served concurrently"
+  } else {
+    return (sType ? `To be served  ` + sType + " to " + offence : "")
+  }
+}
 const sentenceListButton = document.getElementById("checkButton")
 const sentenceList = document.getElementById("sentence-list");
 if(sentenceList){
@@ -337,14 +346,7 @@ if(sentenceList){
   //const dataDump = localStorage.getItem("sentenceItem")
   const data = JSON.parse(dataDump)
 
-function printcc( sType, offence){
-    if (sType === "concurrently") {
-      //return (sType ? `To be served ` + sType + " to " + offence : "")
-      return "To be served concurrently"
-    } else {
-      return (sType ? `To be served  ` + sType + " to " + offence : "")
-    }
-}
+
 
   for(let x of data){
     if(x.offence.outcome === "Guilty" || x.offence.outcome === "Guilty2") {
