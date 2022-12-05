@@ -524,8 +524,7 @@ if(sentenceSummaryContainer){
                        <a class="govuk-link" href="check-your-answers.html">
                                     Change<span class="govuk-visually-hidden"> previous application number</span>
                                 </a>
-                  </div>
-`
+                  </div>`
       sentenceSummaryContainer.innerHTML += newSentence;
     } else if (x.offence.outcome === "Not guilty"){
       let newSentence = `

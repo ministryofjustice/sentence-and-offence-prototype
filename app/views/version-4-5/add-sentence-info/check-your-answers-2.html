@@ -1,0 +1,66 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>B4166LG</span>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full-width">
+            <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+                <span class="govuk-caption-xl">Custodial sentence information</span>
+                Check custodial sentence information
+            </h1>
+
+            <h2 class="govuk-heading-m">Court details</h2>
+
+            <dl id="court-details" class="govuk-summary-list govuk-!-margin-bottom-9">
+
+            </dl>
+
+            <h2 class="govuk-heading-m">Sentence details</h2>
+
+            <dl id="SentenceListSummary" class=" govuk-!-margin-bottom-9">
+
+            </dl>
+
+
+            <form method="post" novalidate action="">
+                <div id="cd"></div>
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--s">
+                            Add another sentence?
+                        </legend>
+                        <div id="add-another-hint" class="govuk-hint">
+                            You must add every sentence on the warrant.
+                        </div>
+                        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="add-another" name="add-another" type="radio" value="Yes" data-route="add-an-offence">
+                                <label class="govuk-label govuk-radios__label" for="add-another" >
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="add-another-2" name="add-another" type="radio" value="No" data-route="confirmation-page">
+                                <label class="govuk-label govuk-radios__label" for="add-another-2">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+
+                    </fieldset>
+                </div>
+
+
+            </form>
+            <a id="checkButton" href="confirmation-page.html" class="govuk-button">Continue</a>
+        </div>
+    </div>
+</div>
+<script src="/public/javascripts/data-store-4.js"></script>
+{% endblock %}

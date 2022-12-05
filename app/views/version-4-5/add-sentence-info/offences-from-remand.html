@@ -1,0 +1,75 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>B4166LG</span>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full-width">
+            <div id="errorContainer">
+
+            </div>
+            <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+                <span class="govuk-caption-xl">Custodial sentence information</span>
+                This case reference matches this remand case
+            </h1>
+
+
+            <h2 class="govuk-heading-m">Remand details</h2>
+            <div class="remand-court-case-card">
+                <dl id="" class=" govuk-summary-list govuk-!-margin-left-2">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court
+                    </dt>
+                    <dd class="govuk-summary-list__value ">
+                        Birmingham Crown Court
+                    </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court date
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        3 Nov 2022
+                    </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Case reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        errr
+                    </dd>
+
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Number of counts
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                       3
+                    </dd>
+                </div>
+            </dl>
+            </div>
+            <h2 class="app-task-list__section">
+                Joe Bl;ogs is on remand for
+            </h2>
+            <p>You need to result the following offences.</p>
+            <ul class=" offence-list app-task-list__items govuk-!-padding-left-0">
+            </ul>
+              <a id="remandOffenceListButton" class="govuk-button" href="confirmation-page.html">Continue</a>
+
+        </div>
+    </div>
+</div>
+<script src="/public/javascripts/data-store-4.js"></script>
+{% endblock %}
