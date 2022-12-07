@@ -686,8 +686,8 @@ const sentenceContainer = document.getElementById("sentence-list")
   }
 
   function displayRemandOffenceLink(id, status){
-    let completeTag = `<a class="remand-offence-link-item" href="" id='${id}'>edit outcome</a>`
-    let notCompletedTag = `<a class="remand-offence-link-item" href="" id='${id}'>set outcome</a>`
+    let completeTag = `<a class="remand-offence-link-item" href="" id='${id}'>Change offence outcome</a>`
+    let notCompletedTag = `<a class="remand-offence-link-item" href="" id='${id}'>Enter offence outcome</a>`
     if (status === "completed") {
       return completeTag
     }
@@ -712,7 +712,7 @@ const sentenceContainer = document.getElementById("sentence-list")
 
   function updateStatus(status){
     let completeTag = `<span class="govuk-tag completed">completed</span>`
-    let notCompletedTag = `<span class="govuk-tag govuk-tag--grey">outcome required</span>`
+    let notCompletedTag = `<span class="govuk-tag govuk-tag--grey">No outcome entered</span>`
     if (status === "completed") {
       return completeTag
     }
