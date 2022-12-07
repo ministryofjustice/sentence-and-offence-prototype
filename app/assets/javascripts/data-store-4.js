@@ -421,9 +421,16 @@ if (courtDetails) {
                     </div>`
         sentenceSummaryContainer.innerHTML += newSentence;
       } else {
-        let newSentence = `<div class="sentence-block"> 
+        let newSentence = `<div class="govuk-summary-list__row sentence-block"> 
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key ">
                                 <p class="govuk-!-margin-bottom-0"><strong>Offence: </strong>${x.offence}</p>
                                 <p><strong>Outcome: </strong> ${x.outcome}</p>
+                            </dt>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="check-your-answers.html">
+                                    Change<span class="govuk-visually-hidden"> previous application number</span>
+                                </a>
+                            </dd>
                             </div>`
         sentenceSummaryContainer.innerHTML += newSentence;
       }
