@@ -190,7 +190,7 @@ function createOffenceEndDate(day, month, year) {
     let date = `${day.value}-${month.value}-${year.value}`;
     return date
   }
-
+//add overall sentence length to this
 const courtDetailsButton = document.getElementById("court-details-button");
 if(courtDetailsButton) {
   courtDetailsButton.addEventListener("click", function (e) {
@@ -201,10 +201,15 @@ if(courtDetailsButton) {
     const caseReference = document.getElementById("court-case-reference");
     const hearing = document.getElementById("hearing-type");
     const outcome = document.getElementById("outcome");
+    const sentenceLengthYears = document.getElementById("sentence-length-years");
+    const sentenceLengthMonths = document.getElementById("sentence-length-months");
+    const sentenceLengthWeeks = document.getElementById("sentence-length-weeks");
+    const sentenceLengthDays = document.getElementById("sentence-length-days");
     e.preventDefault();
     let date = createDate(courtDay, courtMonth, courtYear)
+    let overallSentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks,sentenceLengthMonths, sentenceLengthYears)
     console.log( caseReference.value)
-    addCourtDetails(courtName.value, date, caseReference.value, "hearing", "outcome")
+    addCourtDetails(courtName.value, date, caseReference.value, "hearing", "outcome", overallSentenceLength)
 
 
     if(caseReference.value === "T20221234"){
@@ -214,7 +219,7 @@ if(courtDetailsButton) {
     }
   })
 
-  function addCourtDetails (court, date, ref, hearing, outcome) {
+  function addCourtDetails (court, date, ref, hearing, outcome, sentenceLength) {
     let courtDetails = localStorage.getItem('courtDetails');
     console.log(courtDetails)
     courtDetails = courtDetails ? JSON.parse(courtDetails) : []
@@ -225,7 +230,8 @@ if(courtDetailsButton) {
       date: date,
       ref: ref,
       hearing: hearing,
-      outcome: outcome
+      outcome: outcome,
+      sentence: sentenceLength
     }
     //arr = JSON.stringify(courtDetails)
     //courtDetails.push(courtDetailsObject);
@@ -380,7 +386,7 @@ if (courtDetails) {
                           Overall sentence length
                       </dt>
                       <dd class="govuk-summary-list__value">
-                          
+                          ${courtData.sentence}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="warrant-details.html">
@@ -398,7 +404,7 @@ if (courtDetails) {
     console.log(sentenceData)
     const sentenceDataList = JSON.parse(sentenceData);
     for (let x of sentenceDataList) {
-      if(x.outcome === "Guilty") {
+      if(x.outcome === "Imprisonment") {
         let newSentence = `<div class="govuk-summary-list__row sentence-block">
                         <dt class="govuk-summary-list__key govuk-!-font-weight-regular hmrc-summary-list__key ">
                                 <p class="govuk-!-margin-bottom-0"><strong>Offence: </strong>${x.offence}</p>
@@ -627,9 +633,11 @@ const sentenceContainer = document.getElementById("sentence-list")
         let offenceOutcome =  getCheckedItem(offenceCategory)
 
         if(offenceOutcome === "Guilty"){
-          offence.outcome = getCheckedItem(offenceCategory)
+          //offence.outcome = getCheckedItem(offenceCategory)
+          offence.outcome = "Imprisonment"
         } else {
-          offence.outcome = getCheckedItem(offenceCategory) + " " + getCheckedItem(offenceSubCategory);
+          //offence.outcome = getCheckedItem(offenceCategory) + " " + getCheckedItem(offenceSubCategory);
+          offence.outcome = getCheckedItem(offenceSubCategory);
         }
         offence.status = "completed";
         offenceList.splice(idData-1,1,offence);
@@ -680,7 +688,17 @@ const sentenceContainer = document.getElementById("sentence-list")
       //hide error message
       location.href = 'check-your-answers-2.html'
     } else {
-      let errorMessage = `<p>you must complete all items</p>`
+      let errorMessage = `
+                <div class="govuk-error-summary" data-module="govuk-error-summary">
+  <div role="alert">
+    <h2 class="govuk-error-summary__title">
+      There is a problem
+    </h2>
+    <div class="govuk-error-summary__body">
+    <p class="govuk-body">You must complete all items</p>
+    </div>
+  </div>
+</div>`
       errorContainer.innerHTML += errorMessage
     }
   }
@@ -728,14 +746,24 @@ const sentenceContainer = document.getElementById("sentence-list")
       localStorage.setItem('remandOffences', JSON.stringify(remandOffenceList))
     }
 
+    function displaySentenceLength(status, sentence){
+      let SL = `<p class=" govuk-!-margin-bottom-0"><strong>Sentence length: </strong>${sentence}</p>`
+      if(status === "Imprisonment") {
+        return SL
+      } else {
+        return ""
+      }
+    }
     let remandOffences = JSON.parse(localStorage.getItem('remandOffences', remandOffenceList));
     console.log(localStorage.getItem('remandOffences'))
     for (let x of remandOffences) {
+      console.log(x)
       let offence44 = `<li class="app-task-list__item">
                             <div class="border">
                                 <div><h3 class="govuk-heading-s govuk-!-margin-bottom-0">${x.offence} <span class="app-task-list__tag">${updateStatus(x.status)}</span></h3></div>
                                 <div>
                                     <p class=" govuk-!-margin-bottom-0"><strong>Committed on: </strong>${x.date}</p>
+                                    ${displaySentenceLength(x.outcome, x.sentenceLength)}
                                     <p><strong>Outcome: </strong>${x.outcome}  <span>${displayRemandOffenceLink(x.id, x.status)}</span></p>
                                 </div>
                             </div>
