@@ -661,21 +661,21 @@ const sentenceContainer = document.getElementById("sentence-list")
       "id":"1",
       "offence": "Burglary dwelling - with intent to steal - TH68026",
       "case": "T00202022",
-      "date": "12 jun 2022",
+      "date": "12 Jun 2022",
       "outcome": "",
       "status": "Outcome required"
     },  {
     "id":"2",
       "offence": "Fail to comply with an animal by-product requirement",
       "case": "T00202022",
-      "date": "12 jun 2022",
+      "date": "12 Jun 2022",
       "outcome": "",
       "status": "Outcome required"
   },  {
     "id":"3",
       "offence": "Canvassing debtor-creditor agreements off trade premises",
       "case": "T00202022",
-      "date": "12 jun 2022",
+      "date": "12 Jun 2022",
       "outcome": "",
       "status": "Outcome required"
   }
@@ -798,7 +798,7 @@ const sentenceContainer = document.getElementById("sentence-list")
     let offenceInfo = `<p>The details relate to the following offence:</p>
                     <strong>Offence: </strong> ${offence.offence}<br>
                     <strong>Date: </strong>${offence.date}`
-    
+
     offenceDetails.innerHTML = offenceInfo
 
 
