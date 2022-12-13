@@ -797,7 +797,7 @@ const sentenceContainer = document.getElementById("sentence-list")
 
     let offenceInfo = `<p>The details relate to the following offence:</p>
                     <strong>Offence: </strong> ${offence.offence}<br>
-                    <strong>Date: </strong>${offence.date}`
+                    <strong>Committed on: </strong>${offence.date}`
 
     offenceDetails.innerHTML = offenceInfo
 
