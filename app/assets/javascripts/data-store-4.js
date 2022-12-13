@@ -790,10 +790,17 @@ const sentenceContainer = document.getElementById("sentence-list")
 
   const addRemandSentenceButton = document.getElementById("add-sentence-button2")
   if(addRemandSentenceButton) {
-    let offenceList = JSON.parse(localStorage.getItem('remandOffences'));
-    console.log(offenceList)
     let idData = localStorage.getItem('linkId')
+    let offenceList = JSON.parse(localStorage.getItem('remandOffences'));
     const offence = offenceList.find(({id}) => id === idData);
+    let offenceDetails = document.getElementById("this-sentence-detail")
+
+    let offenceInfo = `<p>The details relate to the following offence:</p>
+                    <strong>Offence: </strong> ${offence.offence}<br>
+                    <strong>Date: </strong>${offence.date}`
+    
+    offenceDetails.innerHTML = offenceInfo
+
 
     //const offence = document.getElementById("offence-picker");
     const offenceStartDay = document.getElementById("conviction-day");
