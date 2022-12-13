@@ -355,32 +355,6 @@ if (courtDetails) {
                           </a>
                       </dd>
                   </div>
-                  <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                          Hearing type
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                          ${courtData.hearing}
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="warrant-details.html">
-                              Change<span class="govuk-visually-hidden"> date</span>
-                          </a>
-                      </dd>
-                  </div>
-                    <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                          Case outcome
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                          ${courtData.outcome}
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="warrant-details.html">
-                              Change<span class="govuk-visually-hidden"> date</span>
-                          </a>
-                      </dd>
-                  </div>
                      <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
                           Overall sentence length
@@ -803,13 +777,14 @@ const sentenceContainer = document.getElementById("sentence-list")
 
 
     //const offence = document.getElementById("offence-picker");
-    const offenceStartDay = document.getElementById("conviction-day");
-    const offenceStartMonth = document.getElementById("conviction-month");
-    const offenceStartYear = document.getElementById("conviction-year");
+    // const offenceStartDay = document.getElementById("conviction-day");
+    // const offenceStartMonth = document.getElementById("conviction-month");
+    // const offenceStartYear = document.getElementById("conviction-year");
+    //
+    // const sentenceDay = document.getElementById("sentence-date-day");
+    // const sentenceMonth = document.getElementById("sentence-date-month");
+    // const sentenceYear = document.getElementById("sentence-date-year");
     const sentenceType = document.getElementById("sentence-type");
-    const sentenceDay = document.getElementById("sentence-date-day");
-    const sentenceMonth = document.getElementById("sentence-date-month");
-    const sentenceYear = document.getElementById("sentence-date-year");
     const sentenceLengthYears = document.getElementById("sentence-length-years");
     const sentenceLengthMonths = document.getElementById("sentence-length-months");
     const sentenceLengthWeeks = document.getElementById("sentence-length-weeks");
@@ -817,8 +792,8 @@ const sentenceContainer = document.getElementById("sentence-list")
 
     addRemandSentenceButton.addEventListener("click", function (e) {
       e.preventDefault()
-      offence.convictionDate = createDate(offenceStartDay, offenceStartMonth, offenceStartYear);
-      offence.sentenceDate = createDate(sentenceDay, sentenceMonth, sentenceYear);
+      //offence.convictionDate = createDate(offenceStartDay, offenceStartMonth, offenceStartYear);
+      //offence.sentenceDate = createDate(sentenceDay, sentenceMonth, sentenceYear);
       offence.sentenceType = sentenceType.value;
       offence.sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks,sentenceLengthMonths, sentenceLengthYears);
       console.log(offence)
