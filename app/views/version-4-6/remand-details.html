@@ -16,44 +16,6 @@
                 <span class="govuk-caption-xl">Add details from a remand warrant</span>
                 Enter remand warrant details
             </h1>
-            <!-- warrant date  -->
-            <div class="govuk-form-group">
-                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                    <label class="govuk-fieldset__legend govuk-label--s">
-                        Date of warrant
-                    </label>
-                    <div id="passport-issued-hint" class="govuk-hint">
-                        For example, 27 3 2007
-                    </div>
-                    <div class="govuk-date-input" id="warrant-date">
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="WarrantDay">
-                                    Day
-                                </label>
-                                <input id="WarrantDay" class="govuk-input govuk-date-input__input govuk-input--width-2"  name="passport-issued-day" type="text" inputmode="numeric">
-                            </div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="WarrantMonth">
-                                    Month
-                                </label>
-                                <input id="WarrantMonth" class="govuk-input govuk-date-input__input govuk-input--width-2"  name="passport-issued-month" type="text" inputmode="numeric">
-                            </div>
-                        </div>
-                        <div class="govuk-date-input__item">
-                            <div class="govuk-form-group">
-                                <label class="govuk-label govuk-date-input__label" for="WarrantYear">
-                                    Year
-                                </label>
-                                <input id="WarrantYear" class="govuk-input govuk-date-input__input govuk-input--width-4" name="passport-issued-year" type="text" inputmode="numeric">
-                            </div>
-                        </div>
-                    </div>
-
-                </fieldset>
-            </div>
             <!-- court name -->
 
             <!-- court reference -->
@@ -95,7 +57,7 @@
                                         <label class="govuk-label govuk-date-input__label" for="offence-end-day">
                                             Day
                                         </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="court-day" name="offence-end-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="next-court-day" name="offence-end-day" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                 </div>
                                 <div class="govuk-date-input__item">
@@ -103,7 +65,7 @@
                                         <label class="govuk-label govuk-date-input__label" for="offence-end-month">
                                             Month
                                         </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="court-month" name="offence-end-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="next-court-month" name="offence-end-month" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                 </div>
                                 <div class="govuk-date-input__item">
@@ -111,7 +73,7 @@
                                         <label class="govuk-label govuk-date-input__label" for="offence-end-year">
                                             Year
                                         </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="court-year" name="offence-end-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="next-court-year" name="offence-end-year" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                 </div>
                             </div>
@@ -150,7 +112,7 @@
                                         <label class="govuk-label govuk-date-input__label" for="offence-end-year">
                                             Time
                                         </label>
-                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="court-app-time" name="offence-end-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="next-court-time" name="offence-end-year" type="text" pattern="[0-9]*" inputmode="numeric">
                                     </div>
                                 </div>
                             </div>
@@ -164,9 +126,9 @@
                     </div>
                 </div>
             </div>
-            <a id="WarrantButton" href="add-offence-details.html" class="govuk-button">Continue</a>
+            <a id="remand-details-button" href="add-offence-details.html" class="govuk-button">Continue</a>
         </div>
     </div>
 </div>
-<script src="/public/javascripts/data-store-2.js"></script>
+<script src="/public/javascripts/cases.js"></script>
 {% endblock %}

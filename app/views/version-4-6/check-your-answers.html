@@ -21,16 +21,46 @@
 
             </dl>
 
-            <h2 class="govuk-heading-m">Sentence details</h2>
+            <h2 class="govuk-heading-m">Offence details</h2>
 
-            <dl id="SentenceListSummary" class=" govuk-!-margin-bottom-9">
+            <dl id="OffenceListSummary" class=" govuk-!-margin-bottom-9">
 
             </dl>
 
-            <a class="govuk-button" href="confirmation-page.html">Continue</a>
+
 
         </div>
     </div>
+    <form method="post" novalidate action="">
+        <div id="cd"></div>
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--s">
+                    Add another sentence?
+                </legend>
+                <div id="add-another-hint" class="govuk-hint">
+                    You must add every sentence on the warrant.
+                </div>
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input add-another" id="add-another" name="add-another" type="radio" value="Yes" data-route="add-an-offence">
+                        <label class="govuk-label govuk-radios__label" for="add-another" >
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input add-another" id="add-another-2" name="add-another" type="radio" value="No" data-route="confirmation-page">
+                        <label class="govuk-label govuk-radios__label" for="add-another-2">
+                            No
+                        </label>
+                    </div>
+                </div>
+
+            </fieldset>
+        </div>
+
+        <a id="check-your-answers-button" class="govuk-button" href="confirmation-page.html">Continue</a>
+    </form>
 </div>
-<script src="/public/javascripts/custodial-data-3.js"></script>
+<script src="/public/javascripts/cases.js"></script>
 {% endblock %}

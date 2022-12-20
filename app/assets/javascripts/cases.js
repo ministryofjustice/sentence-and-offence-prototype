@@ -5,8 +5,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let cases = localStorage.getItem('cases');
   cases = cases ? JSON.parse(cases) : [];
-//let cases = [];
+
+  let offences = localStorage.getItem('offences');
+  offences = offences ? JSON.parse(offences) : [];
+
   //data inputs
+  //case details
   const courtName = document.getElementById('court-name');
   const courtDateDay = document.getElementById('court-date-day');
   const courtDateMonth = document.getElementById('court-date-month');
@@ -14,19 +18,63 @@ document.addEventListener("DOMContentLoaded", () => {
   const courtCaseReference = document.getElementById('court-case-reference');
   const courtCaseType = document.getElementsByClassName('case-type');
 
+  //sentence details
   const sentenceLengthYears = document.getElementById("sentence-length-years")
   const sentenceLengthMonths = document.getElementById("sentence-length-months")
   const sentenceLengthWeeks = document.getElementById("sentence-length-weeks")
   const sentenceLengthDays = document.getElementById("sentence-length-days")
 
+
+
+
+  const nextCourtDay = document.getElementById("next-court-day")
+  const nextCourtMonth = document.getElementById("next-court-month")
+  const nextCourtYear = document.getElementById("next-court-year")
+  const nextCourtTime = document.getElementById("next-court-time")
+  const remandOutcome = document.getElementById("hearing-outcome")
+
+
+  //remand
+
+  //offence
+  const offence = document.getElementById("offence-picker");
+  const offenceDateDay = document.getElementById("offence-start-day");
+  const offenceDateMonth = document.getElementById("offence-start-month");
+  const offenceDateYear = document.getElementById("offence-start-year");
+  const offenceEndDateDay = document.getElementById("offence-end-day");
+  const offenceEndDateMonth = document.getElementById("offence-end-month");
+  const offenceEndDateYear = document.getElementById("offence-end-year");
+  const outcome = document.getElementById("outcome-picker");
+  const outcomeItem = document.getElementsByClassName("outcome-picker-item")
+
+  //sentencing page
+  const convictionDateDay = document.getElementById("conviction-day")
+  const convictionDateMonth = document.getElementById("conviction-month")
+  const convictionDateYear = document.getElementById("conviction-year")
+  const sentenceType = document.getElementById("sentence-type")
+  const sentenceDateDay = document.getElementById("sentence-date-day")
+  const sentenceDateMonth = document.getElementById("sentence-date-month")
+  const sentenceDateYear = document.getElementById("sentence-date-year")
+
+  //DOm targets
+  const OffenceListSummary = document.getElementById("OffenceListSummary")
+
+
+  //let sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
+
   //lists
   const caseTypeRadios = document.getElementsByClassName('case-type')
+  const offenceOutcomes = document.getElementsByClassName('outcome-sub-category')
+  const addAnother = document.getElementsByClassName('add-another')
 
 
   //buttons
   const caseDetailsSubmitButton = document.getElementById('case-details-button')
   const custodialDetailsSubmitButton = document.getElementById('custodial-details-button')
+  const remandDetailsSubmitButton = document.getElementById('remand-details-button')
   const addAnOffenceButton = document.getElementById('add-an-offence-button')
+  const addSentenceButton = document.getElementById('add-sentence-button2')
+  const checkYourAnswersButton = document.getElementById('check-your-answers-button')
 
 
   //helpers
@@ -80,10 +128,10 @@ document.addEventListener("DOMContentLoaded", () => {
     //updateData("offenceItem", offenceItem, offenceX);
     //console.log(offenceX);
   }
-  function addNewCase(localStorageItem, dataItem){
-    cases.push(dataItem)
-    localStorage.setItem(localStorageItem, JSON.stringify(cases));
-    console.log("updated cases", JSON.parse(localStorage.getItem("cases")))
+  function addNewDataItem(localStorageItem, dataItem){
+    offences.push(dataItem)
+    localStorage.setItem(localStorageItem, JSON.stringify(offences));
+    //console.log("updated cases", JSON.parse(localStorage.getItem("cases")))
   }
 
 
@@ -148,7 +196,7 @@ document.addEventListener("DOMContentLoaded", () => {
         type: getRadioValue(Array.from(courtCaseType))
       }
 
-      addNewCase('cases', courtCase,)
+      addNewDataItem('cases', courtCase,)
       radioRoute(caseTypeRadios)
 
     })
@@ -167,21 +215,77 @@ document.addEventListener("DOMContentLoaded", () => {
 
    })
  }
- if(addAnOffenceButton){
-   console.log("cases", localStorage.getItem("cases"))
 
+
+ if(addAnOffenceButton){
+
+   let cases = JSON.parse(localStorage.getItem("cases"))
+   let count = offences.length
    addAnOffenceButton.addEventListener('click', function(e){
      e.preventDefault()
-     let offences = []
-     let offence = {
-       name:'name',
-       startdate:"sd",
-       endDAte: 'ed',
-       outcome:"outcome"
+     let count = offences.length
+     let p = getLastCase(cases)
+     let outcome = getRadioValue(Array.from(offenceOutcomes))
+     let offenceItem = {
+       id: count+1,
+       name:offence.value,
+       startdate:createDate(offenceDateDay, offenceDateMonth, offenceDateYear),
+       endDate:createDate(offenceEndDateDay, offenceEndDateMonth, offenceEndDateYear),
+       outcome:outcome,
+       case: p.reference
      }
+    addNewDataItem('offences', offenceItem)
+     if(outcome === "Imprisonment") {
+       location.href = 'add-a-sentence.html'
+     }else {
+       location.href = 'check-your-answers.html'
+     }
+
+   })
+ }
+
+ if(addSentenceButton) {
+   let offences = JSON.parse(localStorage.getItem("offences"))
+   console.log("offences", localStorage.getItem("offences"))
+   let p = getLastCase(offences)
+   console.log(p)
+   addSentenceButton.addEventListener('click', function(e){
+     e.preventDefault()
+
+     let sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
+     p.sentenceLength = sentenceLength
+     p.sentenceType = sentenceType.value
+     p.sentenceDate = createDate(sentenceDateDay, sentenceDateMonth, sentenceDateYear)
+     console.log('with sentence',p)
+     //update offences in local storage
+     localStorage.setItem('offences', JSON.stringify(offences))
+
+     //route to check answers
+     location.href = 'check-your-answers.html'
    })
  }
 
 
+ if(checkYourAnswersButton) {
+   let p = getLastCase(cases)
+   console.log("cases", localStorage.getItem("cases"))
+   console.log(p.court)
+   console.log("offences", localStorage.getItem("offences"))
+   console.log(offences)
+for(let x of offences) {
+  console.log(x)
+  let offence = `<div>${x.name}</div>`
+  OffenceListSummary.innerHTML += offence
+}
+
+   checkYourAnswersButton.addEventListener('click',function(e){
+      e.preventDefault()
+     radioRoute(addAnother)
+   })
+ }
+
+  if(remandDetailsSubmitButton){
+    
+  }
 
 });
