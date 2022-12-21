@@ -57,44 +57,10 @@
 </div>
 <div class="homepage-content">
     <div class="moj-width-container">
-        <ul class="govuk-grid-row card-group">
-            <li class="govuk-grid-column-one-third card-group__item">
-                <div class="card card--clickable" data-test="manage-prisoner-whereabouts">
-                    <h2 class="govuk-heading-m card__heading">
-                        Remand details
-                    </h2>
-                    <p class="govuk-body card__description govuk-!-margin-bottom-2">View, add and change remand information.</p>
-                    <ul class="govuk-list">
-                        <li><a href="add-remand-info/warrant-details.html">Add remand warrant information</a></li>
-                        <li><a href="court-cases">View remand details</a></li>
-                    </ul>
-                </div>
-            </li>
-            <li class="govuk-grid-column-one-third card-group__item">
-                <div class="card card--clickable" data-test="incentives">
-                    <h2 class="govuk-heading-m card__heading">
-                        Custodial details
-                    </h2>
-                    <p class="govuk-body card__description govuk-!-margin-bottom-2">View, add and change custodial sentence information.</p>
-                    <ul class="govuk-list">
-                        <li><a href="add-sentence-info/court-details.html">Add custodial sentence information</a></li>
-<!--                        <li><a href="">Add adjustments</a></li>-->
-                    </ul>
-                </div>
-            </li>
-            <li class="govuk-grid-column-one-third card-group__item">
-                <div class="card card--clickable" data-test="incentives">
-                    <h2 class="govuk-heading-m card__heading">Trial record sheets
-                    </h2>
-                    <p class="govuk-body card__description govuk-!-margin-bottom-2">View, add and change custodial sentence information.</p>
-                    <ul class="govuk-list">
-                        <li><a href="trial-record-sheet/case-ref-search-results.html">Add trial record sheet information</a></li>
+        <ul id="case-list" class="govuk-grid-row card-group">
 
-                        <!--                        <li><a href="">Add adjustments</a></li>-->
-                    </ul>
-                </div>
-            </li>
         </ul>
     </div>
 </div>
+<script src="/public/javascripts/cases.js"></script>
 {% endblock %}

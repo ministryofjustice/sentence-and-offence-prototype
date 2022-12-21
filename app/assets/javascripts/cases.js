@@ -58,6 +58,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //DOm targets
   const OffenceListSummary = document.getElementById("OffenceListSummary")
+  const OffenceOutcomeList = document.getElementById("OffenceOutcome")
+  const caseDetailsContainer = document.getElementById("court-details")
+  const caseListContainer = document.getElementById("case-list")
 
 
   //let sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
@@ -65,6 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
   //lists
   const caseTypeRadios = document.getElementsByClassName('case-type')
   const offenceOutcomes = document.getElementsByClassName('outcome-sub-category')
+  const remandOffenceOutcomes = document.getElementsByClassName('outcome-category')
   const addAnother = document.getElementsByClassName('add-another')
 
 
@@ -75,6 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addAnOffenceButton = document.getElementById('add-an-offence-button')
   const addSentenceButton = document.getElementById('add-sentence-button2')
   const checkYourAnswersButton = document.getElementById('check-your-answers-button')
+  const viewCaseLink = document.getElementsByClassName('viewCase')
 
 
   //helpers
@@ -86,6 +91,182 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
   }
+
+
+  //html structures
+
+  let custodialOutcomes = `
+   <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                    <h2 class="govuk-fieldset__heading">
+                                        What was the outcome?
+                                    </h2>
+                                </legend>
+                                <div class="govuk-radios" data-module="govuk-radios">
+<!--                                    <div class="govuk-radios__item">-->
+<!--                                        <input class="govuk-radios__input outcome-category" id="where-do-you-live" name="outcome" type="radio" value="Guilty" data-route="sentence-detail-3">-->
+<!--                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live">-->
+<!--                                            Guilty imprisonment-->
+<!--                                        </label>-->
+<!--                                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">-->
+<!--                                            This is when a case has resulted in a custodial sentence.-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input outcome-category" id="where-do-you-live-2" name="outcome" type="radio" value="guilty non custodial" data-route="offences-from-remand" data-aria-controls="guilty-nc">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                                            Guilty
+                                        </label>
+                                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                            This includes community order,
+                                            fine,
+                                            conditional discharge or
+                                            suspended imprisonment.
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__conditional" id="guilty-nc">
+                                        <div class="govuk-form-group ">
+                                            <label class="govuk-label" for="contact-by-email">
+                                                Select the outcome
+                                            </label>
+                                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input outcome-sub-category" id="changed-name" name="changed-name" type="radio" value="Imprisonment" data-route="add-a-sentence">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                                        imprisonment
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input outcome-sub-category" id="changed-name" name="changed-name" type="radio" value="Community Order">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                                        Community Order
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input outcome-sub-category" id="changed-name-2" name="changed-name" type="radio" value="Fine">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                                        Fine
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input outcome-sub-category" id="changed-name-2" name="changed-name" type="radio" value="Conditional discharge">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                                        Conditional discharge
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input outcome-sub-category" id="changed-name-2" name="changed-name" type="radio" value="Suspended Imprisonment">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                                        Suspended Imprisonment
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input outcome-category" id="where-do-you-live-3" name="outcome" type="radio" value="Not-guilty" data-route="offences-from-remand" data-aria-controls="not-guilty">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                            Not Guilty
+                                        </label>
+                                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                            This includes
+                                            dismissed,
+                                            acquitted or
+                                            discontinuance.
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__conditional" id="not-guilty">
+                                        <div class="govuk-form-group ">
+                                            <label class="govuk-label" for="contact-by-email">
+                                                Select the outcome
+                                            </label>
+                                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input outcome-sub-category" id="changed-name" name="changed-name" type="radio" value="Dismissed">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                                        Dismissed
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input outcome-sub-category" id="changed-name-2" name="changed-name" type="radio" value="Acquitted">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                                        Acquitted
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input outcome-sub-category" id="changed-name-2" name="changed-name" type="radio" value="Discontinuance">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                                        Discontinuance
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input outcome-category" id="outcome-4" name="outcome" type="radio" value="Other" data-route="offences-from-remand" data-aria-controls="other-options">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                            Other
+                                        </label>
+                                        <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                            This includes lie on file.
+                                        </div>
+                                    </div>
+                                    <div class="govuk-radios__conditional" id="other-options">
+                                        <div class="govuk-form-group ">
+                                            <label class="govuk-label" for="contact-by-email">
+                                                Select the outcome
+                                            </label>
+                                            <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input outcome-sub-category" id="changed-name-2" name="changed-name" type="radio" value="Lie on file">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                                        Lie on file
+                                                    </label>
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input outcome-sub-category" id="changed-name-2" name="changed-name" type="radio" value="Not recorded on warrant">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                                        Not recorded on warrant
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+  `
+
+  let remandOutcomes = `
+   <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                    <h2 class="govuk-fieldset__heading">
+                                        What was the outcome?
+                                    </h2>
+                                </legend>
+                                <div class="govuk-radios" data-module="govuk-radios">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input outcome-category" id="where-do-you-live-2" name="outcome" type="radio" value="Remand before conviction" >
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                                           Remand before conviction
+                                        </label>
+                                    </div>
+                         
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input outcome-category" id="where-do-you-live-3" name="outcome" type="radio" value="Remand after convictiony" >
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                           Remand after conviction
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input outcome-category" id="outcome-4" name="outcome" type="radio" value="Discontinued">
+                                        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                                            Discontinued
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+  `
 
   function printSentence(days, weeks, months, years) {
     let d = days.value ? days.value : "0";
@@ -111,7 +292,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function getLastCase(caseList){
     //let amountOfItems = caseList.length
-    const optionValue = caseList.length && caseList.find(c => c.id === caseList.length);
+    const optionValue = caseList.length && caseList.find(c => parseInt(c.id) === caseList.length);
     return optionValue
   }
   function addCase(offence, offenceDate, offenceEndDate, outcome){
@@ -128,12 +309,19 @@ document.addEventListener("DOMContentLoaded", () => {
     //updateData("offenceItem", offenceItem, offenceX);
     //console.log(offenceX);
   }
+
+
   function addNewDataItem(localStorageItem, dataItem){
     offences.push(dataItem)
     localStorage.setItem(localStorageItem, JSON.stringify(offences));
     //console.log("updated cases", JSON.parse(localStorage.getItem("cases")))
   }
 
+  function addNewCase(localStorageItem, dataItem){
+    cases.push(dataItem)
+    localStorage.setItem(localStorageItem, JSON.stringify(cases));
+    //console.log("updated cases", JSON.parse(localStorage.getItem("cases")))
+  }
 
 
   function createDate(day, month, year) {
@@ -196,7 +384,8 @@ document.addEventListener("DOMContentLoaded", () => {
         type: getRadioValue(Array.from(courtCaseType))
       }
 
-      addNewDataItem('cases', courtCase,)
+      localStorage.setItem('activeCase', courtCaseReference.value);
+      addNewCase('cases', courtCase)
       radioRoute(caseTypeRadios)
 
     })
@@ -204,10 +393,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
  if(custodialDetailsSubmitButton){
    console.log("cases", localStorage.getItem("cases"))
+   console.log("offences", localStorage.getItem("offences"))
    let cases = JSON.parse(localStorage.getItem("cases"))
+   let p = getLastCase(cases)
+   console.log(p)
+   console.log(cases)
    custodialDetailsSubmitButton.addEventListener('click', function(e){
       e.preventDefault()
-      let p = getLastCase(cases)
+
       p.overallSentenceLength =  printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
       localStorage.setItem('cases', JSON.stringify(cases))
       console.log('updated cases with osl', cases)
@@ -215,24 +408,192 @@ document.addEventListener("DOMContentLoaded", () => {
 
    })
  }
+  function displayCaseData(p){
+    if (p.type === 'remand') {
+      let court = `<div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        ${p.court}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="warrant-details.html">
+                            Change<span class="govuk-visually-hidden"> date</span>
+                        </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Court date
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.date}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Case reference
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.reference}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                   <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Case type
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.type}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Next court date
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.nextCourtDate}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Overall outcome
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.outcome}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="court-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                 `
+      caseDetailsContainer.innerHTML += court;
 
-
+    } else {
+      let court = `<div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        ${p.court}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="warrant-details.html">
+                            Change<span class="govuk-visually-hidden"> date</span>
+                        </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Court date
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.date}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Case reference
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.reference}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                   <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Case type
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.type}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Overall sentence length
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.overallSentenceLength}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="court-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                 `
+      caseDetailsContainer.innerHTML += court;
+    }
+  }
+  function getCase(caseRef){
+    const activeCase =  cases.filter(x => x.reference === caseRef)
+    return activeCase[0];
+  }
  if(addAnOffenceButton){
-
    let cases = JSON.parse(localStorage.getItem("cases"))
-   let count = offences.length
+
+   console.log(getLastCase(cases))
+   let lastCase = getLastCase(cases)
+   if (lastCase.type === 'remand') {
+     OffenceOutcomeList.innerHTML += remandOutcomes
+   } else {
+     OffenceOutcomeList.innerHTML += custodialOutcomes
+   }
+
+  let outcome;
    addAnOffenceButton.addEventListener('click', function(e){
      e.preventDefault()
+     if (lastCase.type === 'remand') {
+        outcome = getRadioValue(Array.from(remandOffenceOutcomes))
+     } else {
+       outcome = getRadioValue(Array.from(offenceOutcomes))
+     }
+
      let count = offences.length
-     let p = getLastCase(cases)
-     let outcome = getRadioValue(Array.from(offenceOutcomes))
+
      let offenceItem = {
        id: count+1,
        name:offence.value,
        startdate:createDate(offenceDateDay, offenceDateMonth, offenceDateYear),
        endDate:createDate(offenceEndDateDay, offenceEndDateMonth, offenceEndDateYear),
        outcome:outcome,
-       case: p.reference
+       case: lastCase.reference
      }
     addNewDataItem('offences', offenceItem)
      if(outcome === "Imprisonment") {
@@ -265,27 +626,205 @@ document.addEventListener("DOMContentLoaded", () => {
    })
  }
 
-
- if(checkYourAnswersButton) {
-   let p = getLastCase(cases)
-   console.log("cases", localStorage.getItem("cases"))
-   console.log(p.court)
-   console.log("offences", localStorage.getItem("offences"))
-   console.log(offences)
-for(let x of offences) {
-  console.log(x)
-  let offence = `<div>${x.name}</div>`
-  OffenceListSummary.innerHTML += offence
-}
-
-   checkYourAnswersButton.addEventListener('click',function(e){
-      e.preventDefault()
-     radioRoute(addAnother)
-   })
- }
-
   if(remandDetailsSubmitButton){
-    
+    console.log("cases", localStorage.getItem("cases"))
+    let cases = JSON.parse(localStorage.getItem("cases"))
+    console.log(cases)
+    remandDetailsSubmitButton.addEventListener('click', function(e){
+      e.preventDefault()
+      let p = getLastCase(cases)
+      p.nextCourtDate =  createDate(nextCourtDay, nextCourtMonth, nextCourtYear);
+      p.nextCourtTime = nextCourtTime.value;
+      p.outcome = remandOutcome.value
+      localStorage.setItem('cases', JSON.stringify(cases))
+      console.log('updated cases with remand', cases)
+      location.href = 'add-an-offence.html'
+  })
   }
+
+  if (caseDetailsContainer) {
+    let p = getCase(localStorage.getItem('activeCase'))
+    let cases = JSON.parse(localStorage.getItem("cases"))
+    displayCaseData(p)
+  console.log(offences)
+    let list = filterOffences(offences, p.reference)
+//${printcc(x.cc, x.toOffence)}
+    for(let x of list){
+      if (p.type === 'remand'){
+        displayRemandOffences(x)
+      } else {
+        displayCustodialOffences(x)
+      }
+    }
+
+    checkYourAnswersButton.addEventListener('click',function(e){
+      e.preventDefault()
+      radioRoute(addAnother)
+    })
+  }
+
+  function displayRemandOffences(x){
+    let offence = ` <div class="sentence-block ng">
+                    <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.id}</h3>
+                      <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+                          ${x.name}
+                      </h4>
+                      <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                          <tbody class="govuk-table__body">
+                              <tr class="govuk-table__row govuk-body-s">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Outcome</th>
+                                  <td class="govuk-table__cell">${x.outcome}</td>
+                              </tr>
+                                 <tr class="govuk-table__row govuk-body-s">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Date</th>
+                                  <td class="govuk-table__cell">${x.startdate}</td>
+                              </tr>
+                          </tbody>
+                      </table>
+                  </div>
+                      <a class="govuk-link" href="check-your-answers.html">
+                                    Change<span class="govuk-visually-hidden"> previous application number</span>
+                                </a>
+                    </div>`
+    OffenceListSummary.innerHTML += offence
+  }
+  function displayCustodialOffences(x){
+    if(x.outcome === 'Imprisonment'){
+      let offence = ` 
+  <div class="sentence-block">
+                    <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.id}</h3>
+                      <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+                          ${x.name}
+                      </h4>
+                      <p class="govuk-body-s">Committed on ${x.startdate}</p>
+                      <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                          <tbody class="govuk-table__body">
+                              <tr class="govuk-table__row govuk-body-s">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Sentence type</th>
+                                  <td class="govuk-table__cell">${x.sentenceType}</td>
+                              </tr>
+                              <tr class="govuk-table__row govuk-body-s">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Sentence date</th>
+                                  <td class="govuk-table__cell">${x.sentenceDate}</td>
+                              </tr>
+                              <tr class="govuk-table__row govuk-body-s">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Sentence length</th>
+                                  <td class="govuk-table__cell">${x.sentenceLength}
+                                  </td>
+                              </tr>
+                              <tr class="govuk-table__row govuk-body-s firstcc">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
+                                  <td class="govuk-table__cell">${x.outcome}
+                                  </td>
+                              </tr>   
+                              <tr class="govuk-table__row govuk-body-s firstcc">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
+                                  <td class="govuk-table__cell">
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      
+                  </div>
+                       <a class="govuk-link" href="check-your-answers.html">
+                                    Change<span class="govuk-visually-hidden"> previous application number</span>
+                                </a>
+                  </div>
+          `
+      OffenceListSummary.innerHTML += offence
+    } else {
+      let offence = ` 
+  <div class="sentence-block">
+                    <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.id}</h3>
+                      <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+                          ${x.name}
+                      </h4>
+                      <p class="govuk-body-s">Committed on ${x.startdate}</p>
+                      <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                          <tbody class="govuk-table__body">
+                              <tr class="govuk-table__row govuk-body-s firstcc">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
+                                  <td class="govuk-table__cell">${x.outcome}
+                                  </td>
+                              </tr>   
+                              <tr class="govuk-table__row govuk-body-s firstcc">
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
+                                  <td class="govuk-table__cell">
+                                  </td>
+                              </tr>
+                          </tbody>
+                      </table>
+                      
+                  </div>
+                       <a class="govuk-link" href="check-your-answers.html">
+                                    Change<span class="govuk-visually-hidden"> previous application number</span>
+                                </a>
+                  </div>
+          `
+      OffenceListSummary.innerHTML += offence
+
+    }
+  }
+  function filterOffences(offence, ref ){
+   const result =  offences.filter(offence => offence.case === ref)
+    return result
+  }
+
+
+  if(caseListContainer) {
+    for(let x of cases) {
+      let data = `  <li class="govuk-grid-column-one-third card-group__item ${x.type}">
+                <div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+                    <h2 class="govuk-heading-m card__heading ">
+                       Case: <span class="upper">${x.reference}</span><br>
+                        <span class="govuk-hint">${x.court}</span>
+                        
+                    </h2>
+                    
+                    <p class=" govuk-!-margin-bottom-0 govuk-heading-s type">${x.type}</p>
+                    <span class="govuk-hint">${x.date}</span>
+                    <span class="govuk-hint">${x.outcome}</span>
+                    <ul class="govuk-list govuk-!-margin-top-6">
+                      
+                        <li><a class="viewCase" data-case='${x.reference}' href="check-your-answers.html">View case details</a></li>
+                        <li><a class="viewCase" data-case='${x.reference}' href="check-your-answers.html">View case documents</a></li>
+                    </ul>
+                </div>
+            </li>`
+      caseListContainer.innerHTML += data
+    }
+  }
+
+  if(viewCaseLink){
+    console.log(cases)
+
+    for(let x of viewCaseLink) {
+      x.addEventListener('click', function(e){
+        e.preventDefault()
+        let caseRef = x.getAttribute('data-case');
+        const activeCase =  cases.filter(x => x.reference === caseRef)
+        console.log(caseRef)
+        console.log(activeCase)
+        localStorage.setItem('activeCase', caseRef)
+        location.href = 'check-your-answers.html'
+      })
+    }
+  }
+  // if(checkYourAnswersButton) {
+  //   let p = getLastCase(cases)
+  //   console.log("cases", localStorage.getItem("cases"))
+  //   console.log(p.court)
+  //   console.log("offences", localStorage.getItem("offences"))
+  //   console.log(offences)
+  //   for(let x of offences) {
+  //     console.log(x)
+  //
+  //   }
+  //
+  // }
+
 
 });
