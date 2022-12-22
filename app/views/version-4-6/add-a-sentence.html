@@ -17,51 +17,52 @@
 
 
                 <div id="this-sentence-detail" class="govuk-inset-text ">
-                    <p>The details relate to the following offence:</p>
-                    <strong>Offence: </strong> Intentionally obstruct an authorised person<br>
-                    <strong>Date: </strong> 20 Jan 2022
+
                 </div>
             </div>
             <div class="govuk-grid-column-one-half">
                 <form class="form" action="sentences-and-offences" method="post">
 
 
-                    <div class="govuk-form-group">
-                        <label class="govuk-heading-s" for="sentence-date">
-                            Conviction date
-                        </label>
-                        <div class="govuk-date-input" id="offence-start-date">
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="conviction-day">
-                                        Day
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="conviction-day" name="offence-start-day" type="text" pattern="[0-9]*" inputmode="numeric">
-                                </div>
-                            </div>
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="conviction-month">
-                                        Month
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="conviction-month" name="offence-start-month" type="text" pattern="[0-9]*" inputmode="numeric">
-                                </div>
-                            </div>
-                            <div class="govuk-date-input__item">
-                                <div class="govuk-form-group">
-                                    <label class="govuk-label govuk-date-input__label" for="conviction-year">
-                                        Year
-                                    </label>
-                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="conviction-year" name="offence-start-year" type="text" pattern="[0-9]*" inputmode="numeric">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+<!--                    <div class="govuk-form-group">-->
+<!--                        <label class="govuk-heading-s" for="sentence-date">-->
+<!--                            Conviction date-->
+<!--                        </label>-->
+<!--                        <div class="govuk-date-input" id="offence-start-date">-->
+<!--                            <div class="govuk-date-input__item">-->
+<!--                                <div class="govuk-form-group">-->
+<!--                                    <label class="govuk-label govuk-date-input__label" for="conviction-day">-->
+<!--                                        Day-->
+<!--                                    </label>-->
+<!--                                    <input class="govuk-input govuk-date-input__input govuk-input&#45;&#45;width-2" id="conviction-day" name="offence-start-day" type="text" pattern="[0-9]*" inputmode="numeric">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="govuk-date-input__item">-->
+<!--                                <div class="govuk-form-group">-->
+<!--                                    <label class="govuk-label govuk-date-input__label" for="conviction-month">-->
+<!--                                        Month-->
+<!--                                    </label>-->
+<!--                                    <input class="govuk-input govuk-date-input__input govuk-input&#45;&#45;width-2" id="conviction-month" name="offence-start-month" type="text" pattern="[0-9]*" inputmode="numeric">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                            <div class="govuk-date-input__item">-->
+<!--                                <div class="govuk-form-group">-->
+<!--                                    <label class="govuk-label govuk-date-input__label" for="conviction-year">-->
+<!--                                        Year-->
+<!--                                    </label>-->
+<!--                                    <input class="govuk-input govuk-date-input__input govuk-input&#45;&#45;width-4" id="conviction-year" name="offence-start-year" type="text" pattern="[0-9]*" inputmode="numeric">-->
+<!--                                </div>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
                                 Sentence type
                             </legend>
+                            <div class="govuk-hint">
+                                Type the sentence type.
+                            </div>
                             <select id="sentence-type" class="enhance-autcomplete" name="sentence-type" type="text" aria-describedby="search-hint">
                                 <option></option>
                                 <option value="CJA03 Standard Determinate Sentence">CJA03 Standard Determinate Sentence</option>

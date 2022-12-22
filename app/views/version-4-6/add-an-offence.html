@@ -5911,7 +5911,15 @@
                                 <option value="Give false unsworn evidence as a witness in criminal proceedings which if sworn would have amounted to perjury">Give false unsworn evidence as a witness in criminal proceedings which if sworn would have amounted to perjury</option>
                             </select>
                         </div>
-
+                        <div class="govuk-form-group">
+                            <label class="govuk-heading-m" for="offence-count">
+                                Offence count number
+                            </label>
+                            <div id="offence-count-hint" class="govuk-hint">
+                              Enter the count number that appears on the warrant.
+                            </div>
+                            <input class="govuk-input govuk-input--width-3" id="offence-count" name="offence-count" type="text" pattern="[0-9]*" inputmode="numeric">
+                        </div>
                         <div class="govuk-form-group">
                             <label class="govuk-heading-m" for="sentence-date">
                                 Date of offence

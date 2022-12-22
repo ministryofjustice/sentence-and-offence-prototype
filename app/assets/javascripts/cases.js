@@ -46,6 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const offenceEndDateYear = document.getElementById("offence-end-year");
   const outcome = document.getElementById("outcome-picker");
   const outcomeItem = document.getElementsByClassName("outcome-picker-item")
+  const offenceCount = document.getElementById("offence-count")
 
   //sentencing page
   const convictionDateDay = document.getElementById("conviction-day")
@@ -61,6 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const OffenceOutcomeList = document.getElementById("OffenceOutcome")
   const caseDetailsContainer = document.getElementById("court-details")
   const caseListContainer = document.getElementById("case-list")
+  const currentOffence = document.getElementById("this-sentence-detail")
 
 
   //let sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
@@ -160,6 +162,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                                         Suspended Imprisonment
                                                     </label>
                                                 </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input outcome-sub-category" id="changed-name-2" name="changed-name" type="radio" value="No separate penalty">
+                                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                                        No separate penalty
+                                                    </label>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
@@ -236,7 +244,6 @@ document.addEventListener("DOMContentLoaded", () => {
                                 </div>
                             </fieldset>
   `
-
   let remandOutcomes = `
    <fieldset class="govuk-fieldset">
                                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -266,6 +273,12 @@ document.addEventListener("DOMContentLoaded", () => {
                                     </div>
                                 </div>
                             </fieldset>
+  `
+
+  let currentOffenceHTML = `
+  <p>The details relate to the following offence:</p>
+                    <strong>Offence: </strong> Intentionally obstruct an authorised person<br>
+                    <strong>Date: </strong> 20 Jan 2022
   `
 
   function printSentence(days, weeks, months, years) {
@@ -365,7 +378,7 @@ document.addEventListener("DOMContentLoaded", () => {
         monthName = 'Dec';
         break;
       default:
-        monthName = 'Invalid ';
+        monthName = 'Not recorded ';
     }
 
     let date = `${day.value} ${monthName} ${year.value}`;
@@ -407,6 +420,17 @@ document.addEventListener("DOMContentLoaded", () => {
       location.href = 'add-an-offence.html'
 
    })
+ }
+ if(currentOffence){
+   let p = getLastCase(offences)
+   console.log(p)
+     let currentOffenceInnerHTML = `
+   <p>The details relate to the following offence:</p>
+   <strong>Offence: </strong> ${p.name}<br>
+   <strong>Count: </strong> ${p.count}<br>
+   <strong>Date: </strong> ${p.startdate}
+   `
+   currentOffence.innerHTML += currentOffenceInnerHTML
  }
   function displayCaseData(p){
     if (p.type === 'remand') {
@@ -567,7 +591,6 @@ document.addEventListener("DOMContentLoaded", () => {
   }
  if(addAnOffenceButton){
    let cases = JSON.parse(localStorage.getItem("cases"))
-
    console.log(getLastCase(cases))
    let lastCase = getLastCase(cases)
    if (lastCase.type === 'remand') {
@@ -590,6 +613,7 @@ document.addEventListener("DOMContentLoaded", () => {
      let offenceItem = {
        id: count+1,
        name:offence.value,
+       count:offenceCount.value,
        startdate:createDate(offenceDateDay, offenceDateMonth, offenceDateYear),
        endDate:createDate(offenceEndDateDay, offenceEndDateMonth, offenceEndDateYear),
        outcome:outcome,
@@ -694,7 +718,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let offence = ` 
   <div class="sentence-block">
                     <div class="govuk-grid-column-full govuk-!-margin-top-4">
-                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.id}</h3>
+                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.count}</h3>
                       <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
                           ${x.name}
                       </h4>
@@ -738,7 +762,7 @@ document.addEventListener("DOMContentLoaded", () => {
       let offence = ` 
   <div class="sentence-block">
                     <div class="govuk-grid-column-full govuk-!-margin-top-4">
-                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.id}</h3>
+                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.count}</h3>
                       <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
                           ${x.name}
                       </h4>
@@ -789,7 +813,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     <span class="govuk-hint">${x.outcome}</span>
                     <ul class="govuk-list govuk-!-margin-top-6">
                       
-                        <li><a class="viewCase" data-case='${x.reference}' href="check-your-answers.html">View case details</a></li>
+                        <li><a class="viewCase" data-case='${x.reference}' href="view-case.html">View case</a></li>
                         <li><a class="viewCase" data-case='${x.reference}' href="check-your-answers.html">View case documents</a></li>
                     </ul>
                 </div>
@@ -809,7 +833,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.log(caseRef)
         console.log(activeCase)
         localStorage.setItem('activeCase', caseRef)
-        location.href = 'check-your-answers.html'
+        location.href = 'view-case.html'
       })
     }
   }
