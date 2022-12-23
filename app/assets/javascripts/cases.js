@@ -9,6 +9,9 @@ document.addEventListener("DOMContentLoaded", () => {
   let offences = localStorage.getItem('offences');
   offences = offences ? JSON.parse(offences) : [];
 
+  let documents = localStorage.getItem('documents');
+  documents = documents ? JSON.parse(documents) : [];
+
   //data inputs
   //case details
   const courtName = document.getElementById('court-name');
@@ -63,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const caseDetailsContainer = document.getElementById("court-details")
   const caseListContainer = document.getElementById("case-list")
   const currentOffence = document.getElementById("this-sentence-detail")
+  const caseDocumentsContainer = document.getElementById("caseDocumentsContainer")
 
 
   //let sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
@@ -72,6 +76,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const offenceOutcomes = document.getElementsByClassName('outcome-sub-category')
   const remandOffenceOutcomes = document.getElementsByClassName('outcome-category')
   const addAnother = document.getElementsByClassName('add-another')
+  const documentType = document.getElementsByClassName('document-type')
+  const documentSource = document.getElementsByClassName('document-source')
 
 
   //buttons
@@ -81,6 +87,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const addAnOffenceButton = document.getElementById('add-an-offence-button')
   const addSentenceButton = document.getElementById('add-sentence-button2')
   const checkYourAnswersButton = document.getElementById('check-your-answers-button')
+  const fileUploadButton = document.getElementById('fileUploadButton')
   const viewCaseLink = document.getElementsByClassName('viewCase')
 
 
@@ -323,7 +330,7 @@ document.addEventListener("DOMContentLoaded", () => {
     //console.log(offenceX);
   }
 
-
+//update these to be one function
   function addNewDataItem(localStorageItem, dataItem){
     offences.push(dataItem)
     localStorage.setItem(localStorageItem, JSON.stringify(offences));
@@ -333,6 +340,11 @@ document.addEventListener("DOMContentLoaded", () => {
   function addNewCase(localStorageItem, dataItem){
     cases.push(dataItem)
     localStorage.setItem(localStorageItem, JSON.stringify(cases));
+    //console.log("updated cases", JSON.parse(localStorage.getItem("cases")))
+  }
+  function addNewDocument(localStorageItem, dataItem){
+    documents.push(dataItem)
+    localStorage.setItem(localStorageItem, JSON.stringify(documents));
     //console.log("updated cases", JSON.parse(localStorage.getItem("cases")))
   }
 
@@ -688,7 +700,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function displayRemandOffences(x){
-    let offence = ` <div class="sentence-block ng">
+    let offence = ` 
+ <div class="sentence-block ng">
                     <div class="govuk-grid-column-full govuk-!-margin-top-4">
                       <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.id}</h3>
                       <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
@@ -800,7 +813,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if(caseListContainer) {
     for(let x of cases) {
-      let data = `  <li class="govuk-grid-column-one-third card-group__item ${x.type}">
+      let data = `  
+            <li class="govuk-grid-column-one-third card-group__item ${x.type}">
                 <div class="card card--clickable" data-test="manage-prisoner-whereabouts">
                     <h2 class="govuk-heading-m card__heading ">
                        Case: <span class="upper">${x.reference}</span><br>
@@ -814,14 +828,46 @@ document.addEventListener("DOMContentLoaded", () => {
                     <ul class="govuk-list govuk-!-margin-top-6">
                       
                         <li><a class="viewCase" data-case='${x.reference}' href="view-case.html">View case</a></li>
-                        <li><a class="viewCase" data-case='${x.reference}' href="check-your-answers.html">View case documents</a></li>
+                        <li><a class="viewDocuments" data-case='${x.reference}' href="case-documents.html">View case documents</a></li>
                     </ul>
                 </div>
-            </li>`
+            </li>
+`
       caseListContainer.innerHTML += data
     }
   }
 
+  if(fileUploadButton){
+    let p= localStorage.getItem('activeCase')
+    fileUploadButton.addEventListener('click', function(e){
+      e.preventDefault()
+      let documentDataSet = {
+        case: p,
+        type: getRadioValue(Array.from(documentType)),
+        source:getRadioValue(Array.from(documentSource))
+      }
+
+      addNewDocument('documents', documentDataSet)
+
+      location.href = 'confirmation-page-document-upload'
+    })
+  }
+if(caseDocumentsContainer){
+  const activeCase = localStorage.getItem('activeCase')
+  const p = documents;
+  console.log(p, activeCase)
+  for(let x of documents){
+    console.log(x.case, activeCase)
+    if(x.case === activeCase){
+      let documentItem = `
+        <div>
+            <p><a href="#">${x.type}</a><br><span class="govuk-hint">${x.source}</span></p>
+        </div>
+      `
+      caseDocumentsContainer.innerHTML += documentItem;
+    }
+  }
+}
   if(viewCaseLink){
     console.log(cases)
 
