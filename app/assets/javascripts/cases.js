@@ -67,6 +67,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const caseListContainer = document.getElementById("case-list")
   const currentOffence = document.getElementById("this-sentence-detail")
   const caseDocumentsContainer = document.getElementById("caseDocumentsContainer")
+  const pageTitle = document.getElementById("page-title")
 
 
   //let sentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
@@ -103,6 +104,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
   //html structures
+
+  if (pageTitle) {
+    let data = localStorage.getItem('activeCase')
+    console.log(data)
+    pageTitle.innerHTML = data
+  }
 
   let custodialOutcomes = `
    <fieldset class="govuk-fieldset">
@@ -747,17 +754,17 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <td class="govuk-table__cell">${x.sentenceDate}</td>
                               </tr>
                               <tr class="govuk-table__row govuk-body-s">
-                                  <th scope="row" class="govuk-table__header sentence-table-header">Sentence length</th>
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Offence sentence length</th>
                                   <td class="govuk-table__cell">${x.sentenceLength}
                                   </td>
                               </tr>
                               <tr class="govuk-table__row govuk-body-s firstcc">
-                                  <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Offence outcome</th>
                                   <td class="govuk-table__cell">${x.outcome}
                                   </td>
                               </tr>   
                               <tr class="govuk-table__row govuk-body-s firstcc">
-                                  <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
+                                  <th scope="row" class="govuk-table__header sentence-table-header">To be served</th>
                                   <td class="govuk-table__cell">
                                   </td>
                               </tr>
@@ -810,7 +817,20 @@ document.addEventListener("DOMContentLoaded", () => {
     return result
   }
 
+  function showDocumentsLink(ref) {
+    //let Y = documents
+    const a = Array.from(documents)
+    console.log(a)
+    for(let x of a ) {
+      // if (ref === x.case){
+      //   return ` <a class="viewDocuments" data-case='${ref}' href="case-documents.html">View case documents</a>`
+      // } else {
+      //   return `<span>dd</span>`
+      // }
+    }
 
+
+  }
   if(caseListContainer) {
     for(let x of cases) {
       let data = `  
@@ -828,7 +848,9 @@ document.addEventListener("DOMContentLoaded", () => {
                     <ul class="govuk-list govuk-!-margin-top-6">
                       
                         <li><a class="viewCase" data-case='${x.reference}' href="view-case.html">View case</a></li>
-                        <li><a class="viewDocuments" data-case='${x.reference}' href="case-documents.html">View case documents</a></li>
+                        <li>
+                            ${showDocumentsLink(x.reference)}
+                        </li>
                     </ul>
                 </div>
             </li>
