@@ -790,15 +790,11 @@ document.addEventListener("DOMContentLoaded", () => {
                       <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
                           <tbody class="govuk-table__body">
                               <tr class="govuk-table__row govuk-body-s firstcc">
-                                  <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
+                                  <th scope="row" class="govuk-table__header sentence-table-header">Offence outcome</th>
                                   <td class="govuk-table__cell">${x.outcome}
                                   </td>
                               </tr>   
-                              <tr class="govuk-table__row govuk-body-s firstcc">
-                                  <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
-                                  <td class="govuk-table__cell">
-                                  </td>
-                              </tr>
+                   
                           </tbody>
                       </table>
                       
