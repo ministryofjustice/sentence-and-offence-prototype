@@ -849,7 +849,7 @@ document.addEventListener("DOMContentLoaded", () => {
                       
                         <li><a class="viewCase" data-case='${x.reference}' href="view-case.html">View case</a></li>
                         <li>
-                            ${showDocumentsLink(x.reference)}
+                           <a class="viewDocuments" data-case='${ref}' href="case-documents.html">View case documents</a>
                         </li>
                     </ul>
                 </div>
