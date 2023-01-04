@@ -847,6 +847,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li>
                            <a class="viewDocuments" data-case='${x.reference}' href="case-documents.html">View case documents</a>
                         </li>
+                          <li><a class="viewCase" data-case='${x.reference}' href="check-your-answers.html">Update case</a></li>
                     </ul>
                 </div>
             </li>
@@ -891,13 +892,13 @@ if(caseDocumentsContainer){
 
     for(let x of viewCaseLink) {
       x.addEventListener('click', function(e){
-        e.preventDefault()
+        //e.preventDefault()
         let caseRef = x.getAttribute('data-case');
         const activeCase =  cases.filter(x => x.reference === caseRef)
         console.log(caseRef)
         console.log(activeCase)
         localStorage.setItem('activeCase', caseRef)
-        location.href = 'view-case.html'
+        //location.href = 'view-case.html'
       })
     }
   }
