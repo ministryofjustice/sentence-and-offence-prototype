@@ -813,6 +813,7 @@ document.addEventListener("DOMContentLoaded", () => {
     return result
   }
 
+
   function showDocumentsLink(ref) {
     //let Y = documents
     const a = Array.from(documents)
@@ -857,7 +858,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if(fileUploadButton){
-    let p= localStorage.getItem('activeCase')
+    let p = localStorage.getItem('activeCase')
+    console.log(p)
     fileUploadButton.addEventListener('click', function(e){
       e.preventDefault()
       let documentDataSet = {
@@ -871,21 +873,33 @@ document.addEventListener("DOMContentLoaded", () => {
       location.href = 'confirmation-page-document-upload'
     })
   }
+
+  function displayUploads(uploads, activeCase) {
+    const result =  uploads.filter(upload => upload.case === activeCase)
+    let noUploads = `<p class="govuk-body">No documents</p>`
+    if(result.length < 1) {
+      caseDocumentsContainer.innerHTML += noUploads;
+    }else {
+      for(let x of documents){
+        console.log(x.case, activeCase)
+        if(x.case === activeCase){
+          let documentItem = `
+        <div>
+            <p><a href="#">${x.type}</a><br><span class="govuk-hint">${x.source}</span></p>
+            <p>uploaded on DD MMM YYYY</p>
+        </div>
+      `
+          caseDocumentsContainer.innerHTML += documentItem;
+        }
+      }
+    }
+  }
 if(caseDocumentsContainer){
   const activeCase = localStorage.getItem('activeCase')
   const p = documents;
   console.log(p, activeCase)
-  for(let x of documents){
-    console.log(x.case, activeCase)
-    if(x.case === activeCase){
-      let documentItem = `
-        <div>
-            <p><a href="#">${x.type}</a><br><span class="govuk-hint">${x.source}</span></p>
-        </div>
-      `
-      caseDocumentsContainer.innerHTML += documentItem;
-    }
-  }
+  displayUploads(p, activeCase)
+
 }
   if(viewCaseLink){
     console.log(cases)
