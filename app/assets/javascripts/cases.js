@@ -710,7 +710,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let offence = ` 
  <div class="sentence-block ng">
                     <div class="govuk-grid-column-full govuk-!-margin-top-4">
-                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.id}</h3>
+                      <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count ${x.count}</h3>
                       <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
                           ${x.name}
                       </h4>
@@ -813,24 +813,10 @@ document.addEventListener("DOMContentLoaded", () => {
     return result
   }
 
-
-  function showDocumentsLink(ref) {
-    //let Y = documents
-    const a = Array.from(documents)
-    console.log(a)
-    for(let x of a ) {
-      // if (ref === x.case){
-      //   return ` <a class="viewDocuments" data-case='${ref}' href="case-documents.html">View case documents</a>`
-      // } else {
-      //   return `<span>dd</span>`
-      // }
-    }
-
-
-  }
   if(caseListContainer) {
     for(let x of cases) {
-      let data = `  
+      if (x.type === 'remand') {
+        let data = `  
             <li class="govuk-grid-column-one-third card-group__item ${x.type}">
                 <div class="card card--clickable" data-test="manage-prisoner-whereabouts">
                     <h2 class="govuk-heading-m card__heading ">
@@ -851,9 +837,33 @@ document.addEventListener("DOMContentLoaded", () => {
                           <li><a class="viewCase" data-case='${x.reference}' href="check-your-answers.html">Update case</a></li>
                     </ul>
                 </div>
-            </li>
-`
-      caseListContainer.innerHTML += data
+            </li>`
+        caseListContainer.innerHTML += data
+      } else {
+        let data = `  
+            <li class="govuk-grid-column-one-third card-group__item ${x.type}">
+                <div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+                    <h2 class="govuk-heading-m card__heading ">
+                       Case: <span class="upper">${x.reference}</span><br>
+                        <span class="govuk-hint">${x.court}</span>
+                        
+                    </h2>
+                    
+                    <p class=" govuk-!-margin-bottom-0 govuk-heading-s type">${x.type}</p>
+                    <span class="govuk-hint">${x.date}</span>
+                
+                    <ul class="govuk-list govuk-!-margin-top-6">
+                      
+                        <li><a class="viewCase" data-case='${x.reference}' href="view-case.html">View case</a></li>
+                        <li>
+                           <a class="viewDocuments" data-case='${x.reference}' href="case-documents.html">View case documents</a>
+                        </li>
+                          <li><a class="viewCase" data-case='${x.reference}' href="check-your-answers.html">Update case</a></li>
+                    </ul>
+                </div>
+            </li>`
+        caseListContainer.innerHTML += data
+      }
     }
   }
 
