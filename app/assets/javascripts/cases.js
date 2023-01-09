@@ -452,7 +452,7 @@ document.addEventListener("DOMContentLoaded", () => {
    currentOffence.innerHTML += currentOffenceInnerHTML
  }
   function displayCaseData(p){
-    if (p.type === 'remand') {
+    if (p.type === 'Remand') {
       let court = `<div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                         Court
@@ -612,7 +612,7 @@ document.addEventListener("DOMContentLoaded", () => {
    let cases = JSON.parse(localStorage.getItem("cases"))
    console.log(getLastCase(cases))
    let lastCase = getLastCase(cases)
-   if (lastCase.type === 'remand') {
+   if (lastCase.type === 'Remand') {
      OffenceOutcomeList.innerHTML += remandOutcomes
    } else {
      OffenceOutcomeList.innerHTML += custodialOutcomes
@@ -621,7 +621,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let outcome;
    addAnOffenceButton.addEventListener('click', function(e){
      e.preventDefault()
-     if (lastCase.type === 'remand') {
+     if (lastCase.type === 'Remand') {
         outcome = getRadioValue(Array.from(remandOffenceOutcomes))
      } else {
        outcome = getRadioValue(Array.from(offenceOutcomes))
@@ -693,7 +693,7 @@ document.addEventListener("DOMContentLoaded", () => {
     let list = filterOffences(offences, p.reference)
 //${printcc(x.cc, x.toOffence)}
     for(let x of list){
-      if (p.type === 'remand'){
+      if (p.type === 'Remand'){
         displayRemandOffences(x)
       } else {
         displayCustodialOffences(x)
@@ -815,7 +815,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if(caseListContainer) {
     for(let x of cases) {
-      if (x.type === 'remand') {
+      if (x.type === 'Remand') {
         let data = `  
             <li class="govuk-grid-column-one-third card-group__item ${x.type}">
                 <div class="card card--clickable" data-test="manage-prisoner-whereabouts">
@@ -858,7 +858,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         <li>
                            <a class="viewDocuments" data-case='${x.reference}' href="case-documents.html">View case documents</a>
                         </li>
-                          <li><a class="viewCase" data-case='${x.reference}' href="check-your-answers.html">Update case</a></li>
+                          <li><a class="viewCase" data-case='${x.reference}' href="check-your-answers.html">Update case information</a></li>
                     </ul>
                 </div>
             </li>`
