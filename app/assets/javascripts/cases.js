@@ -763,11 +763,11 @@ document.addEventListener("DOMContentLoaded", () => {
                                   <td class="govuk-table__cell">${x.outcome}
                                   </td>
                               </tr>   
-                              <tr class="govuk-table__row govuk-body-s firstcc">
-                                  <th scope="row" class="govuk-table__header sentence-table-header">To be served</th>
-                                  <td class="govuk-table__cell">
-                                  </td>
-                              </tr>
+<!--                              <tr class="govuk-table__row govuk-body-s firstcc">-->
+<!--                                  <th scope="row" class="govuk-table__header sentence-table-header">To be served</th>-->
+<!--                                  <td class="govuk-table__cell">-->
+<!--                                  </td>-->
+<!--                              </tr>-->
                           </tbody>
                       </table>
                       
