@@ -1,0 +1,91 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+    <div class="moj-identity-bar__container govuk-!-margin-left-0">
+        <div class="moj-identity-bar__details">
+            <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>B4166LG</span>
+        </div>
+    </div>
+</div>
+    <a href="prisoner-search.html" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l">Adjustments</h1>
+
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Remand</h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                            Update<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <p>The adjustments have been calculated based on the information in NOMIS.
+                            The rules for applying remand time can be found in <a href="#">the policy framework</a>.</p>
+                        <table class="govuk-table govuk-!-margin-bottom-8">
+                            <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-table__header" scope="col">Dates</th>
+                                <th class="govuk-table__header" scope="col">Days</th>
+                            </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <!-- Dates -->
+                                <td class="govuk-table__cell">From 17 February 2018 to 20 February 2018</td>
+                                <!-- Days -->
+                                <td class="govuk-table__cell">3</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <!-- Dates -->
+                                <td class="govuk-table__cell">From 17 June 2018 to 20 June 2018</td>
+                                <!-- Days -->
+                                <td class="govuk-table__cell">3</td>
+                            </tr>
+                            <!-- Total -->
+                            <tr class="govuk-table__row">
+                                <!-- Dates -->
+                                <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right">Total days</td>
+                                <!-- Days -->
+                                <td class="govuk-table__cell">6
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </dl>
+                </div>
+            </div>
+
+                <h3 class="govuk-heading-m">Check back records before applying remand</h3>
+                <p> Some remand time may not be recorded on NOMIS.
+                    Remember to check other sources such as back records before applying the remand.
+                </p>
+            <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organisation-2" name="organisation" type="checkbox" value="employment-tribunal">
+                        <label class="govuk-label govuk-checkboxes__label" for="organisation-2">
+                            I have checked other sources
+                        </label>
+                    </div>
+                </div>
+                </fieldset>
+            </div>
+
+                <a href="confirmation.html" class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </a>
+
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/cases.js"></script>
+{% endblock %}
