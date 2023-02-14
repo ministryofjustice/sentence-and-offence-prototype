@@ -288,7 +288,7 @@ if(adjustmentsList){
     let counted = total + parseInt(x.days)
     total = counted
   }
-  let explainer = `<div class="govuk-inset-text"><p class="govuk-label--m"> Based on the information entered Joe Bloggs has ${total} days of adjustments see details below.</p></div>`
+  let explainer = `<div class="govuk-inset-text"><p class="govuk-label--m"> Based on the information entered Joe Bloggs has ${total} days of adjustments, you can see details below.</p></div>`
   adjustmentsExplainer.innerHTML += explainer
   console.log(total)
 
