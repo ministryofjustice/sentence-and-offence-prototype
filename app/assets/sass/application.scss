@@ -149,6 +149,10 @@ border: none;
     padding-bottom: 0;
   }
 
+ .govuk-button--secondary:visited, .govuk-button--secondary:active, .govuk-button--secondary:hover {
+    color: #0b0c0c !important;
+  }
+
 }
 
 .remand-court-case-card {
@@ -157,5 +161,7 @@ border: none;
 
 
 }
+
+
 
 

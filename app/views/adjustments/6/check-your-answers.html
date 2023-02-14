@@ -1,0 +1,41 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-width-container">
+        <a href="#" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desp">
+                    <h1 class="govuk-heading-l">Check your answers before submitting</h1>
+                    <h2 class="govuk-heading-m">Adjustments</h2>
+
+                    <div id="adjustmentsList" class="govuk-body">
+
+                    </div>
+
+
+                    <h2 class="govuk-heading-m">Now send your application</h2>
+                    <p class="govuk-body">By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+                    <form action="/form-handler" method="post" novalidate>
+                        <input type="hidden" name="answers-checked" value="true">
+                        <a href="select-adjustment-type.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Add another
+                        </a>
+                        <a href="confirmation.html" class="govuk-button" data-module="govuk-button">
+                            Accept and save
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}

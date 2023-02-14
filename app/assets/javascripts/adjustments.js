@@ -1,5 +1,23 @@
-const adjustmentTypeRadios = document.getElementsByClassName('adjustment-type')
-const selectAdjustementButton = document.getElementById('select-adjustment-button')
+let adjustments = localStorage.getItem('adjustments');
+adjustments = adjustments ? JSON.parse(adjustments) : [];
+
+
+const adjustmentTypeRadios = document.getElementsByClassName('adjustment-type');
+const selectAdjustementButton = document.getElementById('select-adjustment-button');
+const addAdjustmentButton = document.getElementById('add-adjustment-button');
+
+const adjustmentsList = document.getElementById('adjustmentsList');
+
+const fromDay = document.getElementById('from-day');
+const fromMonth = document.getElementById('from-month');
+const fromYear = document.getElementById('from-year');
+
+const toDay = document.getElementById('to-day');
+const toMonth = document.getElementById('to-month');
+const toYear = document.getElementById('to-year');
+const documentID = document.getElementById('document-ID');
+
+const numberOfDays = document.getElementById('number-of-days');
 
 
 function radioRoute(radios) {
@@ -11,8 +29,247 @@ function radioRoute(radios) {
   }
 }
 
-selectAdjustementButton.addEventListener('click', function(e) {
-  e.preventDefault()
-  radioRoute(adjustmentTypeRadios);
+function addAdjustment(type, from, to, days, id){
+  // let storedAdjustments = localStorage.getItem('storedAdjustments');
+  // storedAdjustments = storedAdjustments ? JSON.parse(storedAdjustments) : []
 
-})
+  let newAdjustment = {
+    type: type,
+    from: from,
+    to: to,
+    days: days,
+    id: id
+  }
+
+  adjustments.push(newAdjustment)
+  localStorage.setItem('adjustments', JSON.stringify(adjustments))
+
+}
+
+function createDate(day, month, year) {
+  let mNumber = parseInt(month.value);
+  let monthName;
+  switch (mNumber) {
+    case 1:
+      monthName = 'Jan';
+      break;
+    case 2:
+      monthName = 'Feb';
+      break;
+    case 3:
+      monthName = 'Mar';
+      break;
+    case 4:
+      monthName = 'Apr';
+      break;
+    case 5:
+      monthName = 'May';
+      break;
+    case 6:
+      monthName = 'jun';
+      break;
+    case 7:
+      monthName = 'Jul';
+      break;
+    case 8:
+      monthName = 'Aug';
+      break;
+    case 9:
+      monthName = 'Sep';
+      break;
+    case 10:
+      monthName = 'Oct';
+      break;
+    case 11:
+      monthName = 'Nov';
+      break;
+    case 12:
+      monthName = 'Dec';
+      break;
+    default:
+      monthName = 'Not recorded ';
+  }
+
+  let date = `${day.value} ${monthName} ${year.value}`;
+  return date
+}
+if(selectAdjustementButton) {
+  selectAdjustementButton.addEventListener('click', function (e) {
+    e.preventDefault()
+    radioRoute(adjustmentTypeRadios);
+
+  })
+}
+
+if(addAdjustmentButton) {
+console.log(adjustments)
+  addAdjustmentButton.addEventListener('click', function(e){
+    e.preventDefault()
+    let type = addAdjustmentButton.getAttribute("data-name")
+
+
+    if(type === "UAL"){
+      let from = createDate(fromDay, fromMonth, fromYear);
+      let to = createDate(toDay, toMonth, toYear);
+      let days = numberOfDays.value
+      let id = documentID.value
+      addAdjustment( type, from, to, days, id)
+    } else {
+      let from = createDate(fromDay, fromMonth, fromYear);
+      let to = null;
+      let days = numberOfDays.value
+      let id = documentID.value
+      addAdjustment( type, from, to, days, id)
+    }
+
+    console.log(adjustments)
+    location.href = 'check-your-answers.html'
+
+  })
+}
+
+function displayCaseData(p){
+  if (p.type === 'UAL') {
+    let court = `
+<div class="sentence-block">
+ <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Adjustment type
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.type}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+    <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        From
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        ${p.from}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="warrant-details.html">
+                            Change<span class="govuk-visually-hidden"> date</span>
+                        </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          To
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.to}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                   <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Number of days
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.days}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Document reference
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.id}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+               </div>
+                 `
+    adjustmentsList.innerHTML += court;
+
+  } else {
+    let court = `
+<div class="sentence-block">
+<div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Adjustment type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        ${p.type}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="warrant-details.html">
+                            Change<span class="govuk-visually-hidden"> date</span>
+                        </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Date of  adjudication
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.from}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Number of days
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.days}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Document reference
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.id}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                  </div>
+                   
+    
+               
+                 `
+    adjustmentsList.innerHTML += court;
+  }
+}
+
+
+if(adjustmentsList){
+  let data = adjustments;
+  for(let x of data) {
+    displayCaseData(x)
+  }
+
+}
