@@ -3,8 +3,10 @@ adjustments = adjustments ? JSON.parse(adjustments) : [];
 
 
 const adjustmentTypeRadios = document.getElementsByClassName('adjustment-type');
+const addAnotherRadios = document.getElementsByClassName('add-another');
 const selectAdjustementButton = document.getElementById('select-adjustment-button');
 const addAdjustmentButton = document.getElementById('add-adjustment-button');
+const acceptButton = document.getElementById('accept-button');
 const adjustmentsExplainer = document.getElementById('adjustmentsExplainer');
 
 const adjustmentsList = document.getElementById('adjustmentsList');
@@ -129,6 +131,13 @@ console.log(adjustments)
   })
 }
 
+
+if(acceptButton) {
+  acceptButton.addEventListener('click', function(e){
+    e.preventDefault();
+    radioRoute(addAnotherRadios)
+  })
+}
 function displayCaseData(p){
   if (p.type === 'UAL') {
     let court = `
