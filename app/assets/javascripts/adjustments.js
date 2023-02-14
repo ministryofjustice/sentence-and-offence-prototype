@@ -229,7 +229,7 @@ function displayCaseData(p){
                 </div>
                 <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                          Date of  adjudication
+                          Date of  adjudication <br>hearing
                       </dt>
                       <dd class="govuk-summary-list__value">
                           ${p.from}
