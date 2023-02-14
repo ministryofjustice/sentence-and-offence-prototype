@@ -5,6 +5,7 @@ adjustments = adjustments ? JSON.parse(adjustments) : [];
 const adjustmentTypeRadios = document.getElementsByClassName('adjustment-type');
 const selectAdjustementButton = document.getElementById('select-adjustment-button');
 const addAdjustmentButton = document.getElementById('add-adjustment-button');
+const adjustmentsExplainer = document.getElementById('adjustmentsExplainer');
 
 const adjustmentsList = document.getElementById('adjustmentsList');
 
@@ -267,9 +268,19 @@ function displayCaseData(p){
 
 
 if(adjustmentsList){
+  let total = 0
+
+
+  console.log("ddd")
   let data = adjustments;
+
   for(let x of data) {
     displayCaseData(x)
+    let counted = total + parseInt(x.days)
+    total = counted
   }
+  let explainer = `<div class="govuk-inset-text"><p class="govuk-label--m"> Based on the information entered Joe Bloggs has ${total} days of adjustments see details below.</p></div>`
+  adjustmentsExplainer.innerHTML += explainer
+  console.log(total)
 
 }
