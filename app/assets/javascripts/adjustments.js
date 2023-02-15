@@ -115,7 +115,13 @@ console.log(adjustments)
       let from = createDate(fromDay, fromMonth, fromYear);
       let to = createDate(toDay, toMonth, toYear);
       let days = numberOfDays.value
-      let id = documentID.value
+      let id = null
+      addAdjustment( type, from, to, days, id)
+    } else if(type === "RADA") {
+      let from = createDate(fromDay, fromMonth, fromYear);
+      let to = null;
+      let days = numberOfDays.value
+      let id = null
       addAdjustment( type, from, to, days, id)
     } else {
       let from = createDate(fromDay, fromMonth, fromYear);
@@ -211,6 +217,52 @@ function displayCaseData(p){
                  `
     adjustmentsList.innerHTML += court;
 
+  } else if (p.type === 'RADA') {
+    let court = `
+<div class="sentence-block">
+<div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Adjustment type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        ${p.type}
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="warrant-details.html">
+                            Change<span class="govuk-visually-hidden"> date</span>
+                        </a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Date of  adjudication <br>hearing
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.from}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                          Number of days
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          ${p.days}
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                          <a class="govuk-link" href="warrant-details.html">
+                              Change<span class="govuk-visually-hidden"> date</span>
+                          </a>
+                      </dd>
+                  </div>
+                
+                  </div>
+                 `
+    adjustmentsList.innerHTML += court;
   } else {
     let court = `
 <div class="sentence-block">
