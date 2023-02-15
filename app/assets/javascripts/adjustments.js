@@ -32,7 +32,7 @@ function radioRoute(radios) {
   }
 }
 
-function addAdjustment(type, from, to, days, id){
+function addAdjustment(type, from, to, days, id, desc){
   // let storedAdjustments = localStorage.getItem('storedAdjustments');
   // storedAdjustments = storedAdjustments ? JSON.parse(storedAdjustments) : []
 
@@ -41,7 +41,8 @@ function addAdjustment(type, from, to, days, id){
     from: from,
     to: to,
     days: days,
-    id: id
+    id: id,
+    desc: desc
   }
 
   adjustments.push(newAdjustment)
@@ -109,6 +110,7 @@ console.log(adjustments)
   addAdjustmentButton.addEventListener('click', function(e){
     e.preventDefault()
     let type = addAdjustmentButton.getAttribute("data-name")
+    let desc = addAdjustmentButton.getAttribute("data-desc")
 
 
     if(type === "UAL"){
@@ -116,19 +118,22 @@ console.log(adjustments)
       let to = createDate(toDay, toMonth, toYear);
       let days = numberOfDays.value
       let id = null
-      addAdjustment( type, from, to, days, id)
+      let description = desc
+      addAdjustment( type, from, to, days, id, description)
     } else if(type === "RADA") {
       let from = createDate(fromDay, fromMonth, fromYear);
       let to = null;
       let days = numberOfDays.value
       let id = null
-      addAdjustment( type, from, to, days, id)
+      let description = desc
+      addAdjustment( type, from, to, days, id, description)
     } else {
       let from = createDate(fromDay, fromMonth, fromYear);
       let to = null;
       let days = numberOfDays.value
       let id = documentID.value
-      addAdjustment( type, from, to, days, id)
+      let description = desc
+      addAdjustment( type, from, to, days, id, description)
     }
 
     console.log(adjustments)
@@ -153,7 +158,7 @@ function displayCaseData(p){
                           Adjustment type
                       </dt>
                       <dd class="govuk-summary-list__value">
-                          ${p.type}
+                          ${p.desc}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="warrant-details.html">
@@ -200,19 +205,6 @@ function displayCaseData(p){
                           </a>
                       </dd>
                   </div>
-                  <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key">
-                          Document reference
-                      </dt>
-                      <dd class="govuk-summary-list__value">
-                          ${p.id}
-                      </dd>
-                      <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="warrant-details.html">
-                              Change<span class="govuk-visually-hidden"> date</span>
-                          </a>
-                      </dd>
-                  </div>
                </div>
                  `
     adjustmentsList.innerHTML += court;
@@ -225,7 +217,7 @@ function displayCaseData(p){
                         Adjustment type
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        ${p.type}
+                        ${p.desc}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="warrant-details.html">
@@ -271,7 +263,7 @@ function displayCaseData(p){
                         Adjustment type
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        ${p.type}
+                        ${p.desc}
                     </dd>
                     <dd class="govuk-summary-list__actions">
                         <a class="govuk-link" href="warrant-details.html">
@@ -319,9 +311,6 @@ function displayCaseData(p){
                       </dd>
                   </div>
                   </div>
-                   
-    
-               
                  `
     adjustmentsList.innerHTML += court;
   }
