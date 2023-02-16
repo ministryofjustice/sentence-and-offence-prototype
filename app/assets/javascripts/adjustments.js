@@ -168,7 +168,7 @@ function displayCaseData(p){
                   </div>
     <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
-                        From
+                       Unlawfully at large from
                     </dt>
                     <dd class="govuk-summary-list__value">
                         ${p.from}
@@ -181,7 +181,7 @@ function displayCaseData(p){
                 </div>
                 <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                          To
+                          Unlawfully at large to
                       </dt>
                       <dd class="govuk-summary-list__value">
                           ${p.to}
@@ -273,7 +273,7 @@ function displayCaseData(p){
                 </div>
                 <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                          Date of  adjudication <br>hearing
+                          Adjudication hearing date
                       </dt>
                       <dd class="govuk-summary-list__value">
                           ${p.from}
