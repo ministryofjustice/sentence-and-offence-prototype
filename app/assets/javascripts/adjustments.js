@@ -299,7 +299,7 @@ function displayCaseData(p){
                   </div>
                     <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key">
-                          Document reference
+                          Adjudication ID
                       </dt>
                       <dd class="govuk-summary-list__value">
                           ${p.id}
