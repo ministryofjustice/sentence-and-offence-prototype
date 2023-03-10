@@ -316,6 +316,18 @@ function displayCaseData(p){
   }
 }
 
+function daysBetweenDates(date1, date2) {
+  const oneDay = 24 * 60 * 60 * 1000; // one day in milliseconds
+  const timeDifference = Math.abs(date2.getTime() - date1.getTime());
+  const days = Math.floor(timeDifference / oneDay);
+  return days;
+}
+
+const date1 = new Date('2022-02-01');
+const date2 = new Date('2022-02-10');
+const days = daysBetweenDates(date1, date2);
+console.log(days); // outputs 9
+
 
 if(adjustmentsList){
   let total = 0
