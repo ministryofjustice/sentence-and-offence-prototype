@@ -523,3 +523,20 @@
 .nhsuk-care-card--immediate .nhsuk-action-link__link .nhsuk-icon__arrow-right-circle {
   fill: #fff
 }
+
+.adj-card {
+  background-color:#1d70b8;
+  padding:1rem;
+  color:white;
+  margin-bottom: 2rem;
+
+    .count {
+      font-size: 2rem;
+    }
+  .adj-card-heading {
+    color:white;
+  }
+  a {
+    color:white;
+  }
+}
