@@ -524,14 +524,38 @@
   fill: #fff
 }
 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card {
+  background-color: #fff;
+  padding: 20px;
+  margin: 10px;
+  flex-basis: 48%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+}
+
+.card h2 {
+  font-size: 24px;
+  margin-top: 0;
+}
+
+
 .adj-card {
+  padding: 20px;
+  flex-basis: 47%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
   background-color:#1d70b8;
-  padding:1rem;
   color:white;
-  margin-bottom: 2rem;
+  margin: 16px;
+
 
     .count {
-      font-size: 2rem;
+      font-size: 3rem;
+      color: white;
+      font-weight: 800;
     }
   .adj-card-heading {
     color:white;
