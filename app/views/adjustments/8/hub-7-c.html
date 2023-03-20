@@ -15,6 +15,22 @@
 
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full govuk-!-padding-6">
+                    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+                        <div class="govuk-notification-banner__header">
+                            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                                Success
+                            </h2>
+                        </div>
+                        <div class="govuk-notification-banner__content">
+                            <h3 class="govuk-notification-banner__heading">
+                                5 days of remand has been awarded
+                            </h3>
+                            <p class="govuk-body">This has been store in NOMIS. you can continue to add any  other adjustments or.</p>
+                            <p class="govuk-body">You may need to  recalculate the release date for this person .<a class="govuk-notification-banner__link">Calculate release date</a></p>
+                        </div>
+                    </div>
                     <h1 class="govuk-heading-l">
                         <span class="govuk-caption-xl">Adjustments</span>
                         Review and apply adjustments
@@ -24,10 +40,25 @@
                     </p>
                     <h2 class="govuk-heading-m">Adjustments history</h2>
                     <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit,t ut labore et dolore magna aliqua.
-                    <a href="history.html" class="govuk-link">View history</a>
-                    </p>
+                    <a href="history.html" class="govuk-link">View history</a> </p>
+
+                    <h2 class="govuk-heading-m">Calculate release dates</h2>
+                    <p>The changes may affect the release date for Joe Bloggs </p>
+                    <a href="select-adjustment-type.html" id="add-adjustment-button" class="govuk-button" data-name="ADA">
+                        Calculate release dates
+                    </a>
+
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                            <span class="govuk-warning-text__assistive">Warning</span>
+                            You can be fined up to £5,000 if you do not register.
+                        </strong>
+                    </div>
                 </div>
-            </div>
+
+                </div>
+
 
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
@@ -37,8 +68,8 @@
                         <div class="container govuk-body">
                             <div class="adj-card">
                                 <h2 class="govuk-heading-m adj-card-heading">Remand</h2>
-                                <span class="count govuk-body">45</span><span> Days</span>
-                                <div><a href="remand.html">Details</a></div>
+                                <span class="count govuk-body">45</span>
+                                <div><span>Days</span></div>
                                 <ul class="govuk-list govuk-!-padding-top-3">
                                     <li><a href="prisoner-details-5.html">Review pending (127 days)</a></li>
                                     <li><a href="remand.html">Add new</a></li>

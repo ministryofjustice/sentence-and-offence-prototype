@@ -542,6 +542,30 @@
   margin-top: 0;
 }
 
+.adjustment-card{
+  box-sizing: border-box;
+  flex-basis: 48%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  margin: 1%;
+  border: 1px solid #b1b4b6;
+
+  &_heading{
+    display:block;
+    background-color: #f3f2f1;
+    padding:16px;
+    color:black;
+  }
+  &_content {
+    padding:16px;
+  }
+  .count {
+    font-size: 3rem;
+    font-weight: 800;
+    padding-right:.4rem;
+  }
+}
+
+
 
 .adj-card {
   padding: 20px;
@@ -562,5 +586,29 @@
   }
   a {
     color:white;
+  }
+}
+
+.card-van {
+  padding:0;
+  background-color: white;
+  color:black;
+  h2 {
+    display:block;
+    background-color: #d9d9d9;
+    padding:10px 20px;
+    color:black;
+
+    .count {
+      color:black;
+    }
+    .adj-card-heading {
+      color:black;
+    }
+
+    a {
+      color: black;
+    };
+
   }
 }
