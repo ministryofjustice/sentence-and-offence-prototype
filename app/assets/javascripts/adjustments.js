@@ -5,9 +5,11 @@ adjustments = adjustments ? JSON.parse(adjustments) : [];
 const adjustmentTypeRadios = document.getElementsByClassName('adjustment-type');
 const addAnotherRadios = document.getElementsByClassName('add-another');
 const selectAdjustementButton = document.getElementById('select-adjustment-button');
+const hubPage = document.getElementById('hubPage');
 const addAdjustmentButton = document.getElementById('add-adjustment-button');
 const acceptButton = document.getElementById('accept-button');
 const adjustmentsExplainer = document.getElementById('adjustmentsExplainer');
+const remandToolButton = document.getElementById('remand-button');
 
 const adjustmentsList = document.getElementById('adjustmentsList');
 
@@ -21,6 +23,14 @@ const toYear = document.getElementById('to-year');
 const documentID = document.getElementById('document-ID');
 
 const numberOfDays = document.getElementById('number-of-days');
+
+//rada inputs
+
+const radaDay = document.getElementById('rada-day');
+const radaMonth = document.getElementById('rada-month');
+const radaYear = document.getElementById('rada-year');
+const radaNumberOfDays = document.getElementById('rada-number-of-days');
+const radaDocID = document.getElementById('rada-document-ID');
 
 
 function radioRoute(radios) {
@@ -47,7 +57,7 @@ function addAdjustment(type, from, to, days, id, desc){
 
   adjustments.push(newAdjustment)
   localStorage.setItem('adjustments', JSON.stringify(adjustments))
-
+  console.log(adjustments)
 }
 
 function createDate(day, month, year) {
@@ -105,6 +115,15 @@ if(selectAdjustementButton) {
   })
 }
 
+if(remandToolButton) {
+  remandToolButton.addEventListener('click',function(e){
+    e.preventDefault()
+    console.log('clicked')
+    addAdjustment('Remand', '1 Feb 2018', '17 Feb 2018', 11,  null,'Remand')
+    location.href = 'hub-9-a.html'
+  })
+}
+
 if(addAdjustmentButton) {
 console.log(adjustments)
   addAdjustmentButton.addEventListener('click', function(e){
@@ -114,23 +133,26 @@ console.log(adjustments)
 
 
     if(type === "UAL"){
+      let fromDate = new Date(fromYear.value+"-"+fromMonth.value+"-"+fromDay.value);
+      let toDate = new Date (toYear.value+"-"+toMonth.value+"-"+toDay.value);
+      console.log(fromDate)
       let from = createDate(fromDay, fromMonth, fromYear);
       let to = createDate(toDay, toMonth, toYear);
-      let days = numberOfDays.value
+      let days = daysBetweenDates(fromDate, toDate)
       let id = null
       let description = desc
       addAdjustment( type, from, to, days, id, description)
     } else if(type === "RADA") {
-      let from = createDate(fromDay, fromMonth, fromYear);
+      let from = createDate(radaDay, radaMonth, radaYear);
       let to = null;
-      let days = numberOfDays.value
+      let days = parseInt(radaNumberOfDays.value)
       let id = null
       let description = desc
       addAdjustment( type, from, to, days, id, description)
     } else {
       let from = createDate(fromDay, fromMonth, fromYear);
       let to = null;
-      let days = numberOfDays.value
+      let days = parseInt(numberOfDays.value)
       let id = documentID.value
       let description = desc
       addAdjustment( type, from, to, days, id, description)
@@ -323,17 +345,10 @@ function daysBetweenDates(date1, date2) {
   return days;
 }
 
-const date1 = new Date('2022-02-01');
-const date2 = new Date('2022-02-10');
-const days = daysBetweenDates(date1, date2);
-console.log(days); // outputs 9
 
 
 if(adjustmentsList){
   let total = 0
-
-
-  console.log("ddd")
   let data = adjustments;
 
   for(let x of data) {
@@ -345,4 +360,42 @@ if(adjustmentsList){
   adjustmentsExplainer.innerHTML += explainer
   console.log(total)
 
+}
+
+function updateTotals(adj){
+  let days = 0;
+  adjustments.forEach((e) => {
+    if (e.type === adj) {
+      days += +e.days
+    }
+  })
+  return days
+}
+
+if (hubPage) {
+  let total = 0
+  let data = adjustments;
+console.log(data)
+  for(let x of data) {
+    if(x.days > 0) {
+      let counted = total + parseInt(x.days)
+      total = counted
+    }
+  }
+let resultCount =  document.getElementById('count')
+  if (resultCount) {
+
+    resultCount.innerHTML += total
+    console.log(total)
+  }
+  const hubCounts = document.getElementsByClassName('count')
+  for(let x of hubCounts) {
+    x.innerHTML = updateTotals(x.getAttribute('ID'))
+  }
+}
+
+const remandCount = document.getElementById('Remand')
+
+if(remandCount.innerHTML > 0 ) {
+  console.log(remandCount.innerHTML)
 }

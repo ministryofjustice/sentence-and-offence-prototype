@@ -601,18 +601,28 @@
   color:white;
   margin: 1%;
 
+    &.full {
+      width:100%;
+      margin: 40px 0;
+    }
+
+  &.grey {
+    background-color: #f3f2f1;
+    .adj-card-heading, p{
+      color:black;
+    }
+  }
+
 
     .count {
       font-size: 3rem;
       color: white;
       font-weight: 800;
     }
-  .adj-card-heading {
+  .adj-card-heading, p, a {
     color:white;
   }
-  a {
-    color:white;
-  }
+
 }
 
 .card-van {
