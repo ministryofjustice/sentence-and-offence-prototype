@@ -14,6 +14,7 @@ document.addEventListener("load", function() {
   const adjustmentsExplainer = document.getElementById('adjustmentsExplainer');
   const remandToolButton = document.getElementById('remand-button');
   const review = document.getElementById('review');
+  const ualPage = document.getElementById('UALPage');
 
   const adjustmentsList = document.getElementById('adjustmentsList');
 
@@ -487,5 +488,12 @@ console.log(reviewDone)
     // if(remandCount.innerHTML > 0 ) {
     //   console.log(remandCount.innerHTML, "this")
     // }
+  }
+  if(ualPage) {
+
+    toYear.addEventListener("blur", function() {
+      let days = createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear)
+      numberOfDays.value= days
+    })
   }
 
