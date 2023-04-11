@@ -446,26 +446,81 @@ document.addEventListener("load", function() {
     console.log(total)
 
   }
-
+let totals = [];
   function updateTotals (adj) {
     let days = 0;
+
     adjustments.forEach((e) => {
       if (e.type === adj) {
         days += +e.days
+        totals.push({days:e.days, type:adj})
+        //console.log(totals)
       }
     })
+    //console.log(totals,'ggg')
     return days
   }
+
+function groupDaysAndSumByType(arr) {
+  const result = {};
+  arr.forEach(obj => {
+    const { days, type } = obj;
+    if (type in result) {
+      result[type] += days;
+    } else {
+      result[type] = days;
+    }
+  });
+
+  return result;
+}
+function displayGroupedDaysAndSum(groupedDaysAndSum) {
+  const divElement = document.getElementById("added");
+
+  // Create a table element
+  const tableElement = document.createElement("table");
+  tableElement.classList.add('govuk-table')
+  // Create a table row for the table header
+  const headerRow = document.createElement("tr");
+  headerRow.classList.add('govuk-table__cell')
+  const typeHeader = document.createElement("th");
+  typeHeader.textContent = "Type";
+  const totalDaysHeader = document.createElement("th");
+  totalDaysHeader.textContent = "Days";
+  headerRow.appendChild(typeHeader);
+  headerRow.appendChild(totalDaysHeader);
+  tableElement.appendChild(headerRow);
+
+  // Loop through the groupedDaysAndSum object and create a table row for each type and total days
+  for (const type in groupedDaysAndSum) {
+    const totalDays = groupedDaysAndSum[type];
+    const row = document.createElement("tr");
+    row.classList.add('govuk-table__row')
+    const typeCell = document.createElement("td");
+    typeCell.classList.add('govuk-table__cell')
+    typeCell.textContent = type;
+    const totalDaysCell = document.createElement("td");
+    totalDaysCell.classList.add('govuk-table__cell')
+    totalDaysCell.textContent = totalDays;
+    row.appendChild(typeCell);
+    row.appendChild(totalDaysCell);
+    tableElement.appendChild(row);
+  }
+
+  // Append the table to the div
+  divElement.appendChild(tableElement);
+}
+
+
+
 if (reviewDone == 1) {
   review.style.display = 'none'
 }
   if (hubPage) {
-console.log(reviewDone)
-
+    console.log(reviewDone)
 
     let total = 0
     let data = adjustments;
-    console.log(data, "dta")
     for (let x of data) {
       if (x.days > 0) {
         let counted = total + parseInt(x.days)
@@ -475,7 +530,6 @@ console.log(reviewDone)
     let resultCount = document.getElementById('count')
     if (resultCount) {
       resultCount.innerHTML += total
-      console.log(total)
     }
     const hubCounts = document.getElementsByClassName('count')
     console.log(hubCounts)
@@ -483,11 +537,9 @@ console.log(reviewDone)
       x.innerHTML = updateTotals(x.getAttribute('Id'))
     }
 
-    // const remandCount = document.getElementById('Remand')
-    //
-    // if(remandCount.innerHTML > 0 ) {
-    //   console.log(remandCount.innerHTML, "this")
-    // }
+    const groupedDaysAndSum = groupDaysAndSumByType(totals);
+    displayGroupedDaysAndSum(groupedDaysAndSum);
+    console.log(groupedDaysAndSum, "totals");
   }
   if(ualPage) {
 
@@ -496,4 +548,6 @@ console.log(reviewDone)
       numberOfDays.value= days
     })
   }
+
+
 
