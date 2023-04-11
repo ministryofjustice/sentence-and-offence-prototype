@@ -484,7 +484,7 @@ function displayGroupedDaysAndSum(groupedDaysAndSum) {
   const headerRow = document.createElement("tr");
   headerRow.classList.add('govuk-table__cell')
   const typeHeader = document.createElement("th");
-  typeHeader.textContent = "Type";
+  typeHeader.textContent = "Adjustment type";
   const totalDaysHeader = document.createElement("th");
   totalDaysHeader.textContent = "Days";
   headerRow.appendChild(typeHeader);
