@@ -1,0 +1,73 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="select-adjustment-type.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                        <div class="">
+                            <h1 class="govuk-heading-l">
+                                <span class="govuk-caption-xl">Adjust release dates</span>
+                                Reject calculation
+                            </h1>
+                            <h2 class ="govuk-heading-m">What happens if I reject this data</h2>
+                            <p class="govuk-body">
+                                If you reject this calculation this data will.............
+                            </p>
+                            <h2 class ="govuk-heading-m">Why is this wrong</h2>
+                            <p class="govuk-body">
+                                Many factor can contribute to a calculation appearing to be incorrect
+                            </p>
+                            <ul class="govuk-list govuk-list--bullet">
+                                <li>An offence name has changed</li>
+                                <li>Activity not Defined in Court Events</li>
+                            </ul>
+                            <h2 class ="govuk-heading-m">How can I fix this </h2>
+                            <p class="govuk-body">
+                               You can fix this by returning to NOMIS and editing the data
+                            </p>
+
+                            <form action="/form-handler" method="post" novalidate>
+                                <div class="govuk-form-group">
+                                    <fieldset class="govuk-fieldset">
+                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                            Are you sure you want to reject
+                                        </legend>
+                                        <div class="govuk-radios" data-module="govuk-radios">
+                                            <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input reject-remand-option" id="interview-needs" name="interview-needs" type="radio" value="yes" data-route="hub-9-b">
+                                                <label class="govuk-label govuk-radios__label" for="interview-needs">
+                                                    Yes
+                                                </label>
+                                            </div>
+                                            <div class="govuk-radios__item">
+                                                <input class="govuk-radios__input reject-remand-option" id="interview-needs-2" name="interview-needs" type="radio" value="no" data-route="hub-9">
+                                                <label class="govuk-label govuk-radios__label" for="interview-needs-2">
+                                                    No
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+
+                        </div>
+
+                        <a href="" id="reject-remand-button" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                            Continue
+                        </a>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}

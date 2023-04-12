@@ -6,6 +6,7 @@ document.addEventListener("load", function() {
   adjustments = adjustments ? JSON.parse(adjustments) : [];
 
   const adjustmentTypeRadios = document.getElementsByClassName('adjustment-type');
+  const rejectRemandOptions = document.getElementsByClassName('reject-remand-option');
   const addAnotherRadios = document.getElementsByClassName('add-another');
   const selectAdjustementButton = document.getElementById('select-adjustment-button');
   const hubPage = document.getElementById('hubPage');
@@ -13,6 +14,7 @@ document.addEventListener("load", function() {
   const acceptButton = document.getElementById('accept-button');
   const adjustmentsExplainer = document.getElementById('adjustmentsExplainer');
   const remandToolButton = document.getElementById('remand-button');
+  const rejectRemandToolButton = document.getElementById('reject-remand-button');
   const review = document.getElementById('review');
   const ualPage = document.getElementById('UALPage');
 
@@ -121,6 +123,14 @@ document.addEventListener("load", function() {
 
     })
   }
+
+if (rejectRemandToolButton) {
+  rejectRemandToolButton.addEventListener('click', function (e) {
+    e.preventDefault()
+    radioRoute(rejectRemandOptions);
+
+  })
+}
 
   if (remandToolButton) {
     remandToolButton.addEventListener('click', function (e) {
