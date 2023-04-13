@@ -17,42 +17,38 @@
                         <div class="">
                             <h1 class="govuk-heading-l">
                                 <span class="govuk-caption-xl">Adjust release dates</span>
-                                Reject calculation
+                                Reject identified remand
                             </h1>
-                            <h2 class ="govuk-heading-m">What happens if I reject this data</h2>
-                            <p class="govuk-body">
-                                If you reject this calculation this data will.............
+                            <p>By rejecting the identified remand, the data will not be added to the Adjust release dates service or NOMIS.
                             </p>
-                            <h2 class ="govuk-heading-m">Why is this wrong</h2>
-                            <p class="govuk-body">
-                                Many factor can contribute to a calculation appearing to be incorrect
+                            <h2 class ="govuk-heading-m">Check remand data in NOMIS</h2>
+                            <p class="govuk-body">Remand information could be wrong because:
                             </p>
                             <ul class="govuk-list govuk-list--bullet">
                                 <li>An offence name has changed</li>
-                                <li>Activity not Defined in Court Events</li>
+                                <li>The activity has not been defined in the court events in NOMIS</li>
+                                <li>Incorrect offence or court information has been added to NOMIS</li>
                             </ul>
-                            <h2 class ="govuk-heading-m">How can I fix this </h2>
-                            <p class="govuk-body">
-                               You can fix this by returning to NOMIS and editing the data
-                            </p>
+                            <p>Go back to NOMIS and update any incorrect information, then reload this page.</p>
 
                             <form action="/form-handler" method="post" novalidate>
-                                <div class="govuk-form-group">
+                                <div class="govuk-form-group govuk-!-margin-top-8">
                                     <fieldset class="govuk-fieldset">
                                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                            Are you sure you want to reject
+                                            Are you sure you want to reject the remand?
                                         </legend>
+                                        <p>If you reject the remand identified you will have to manually enter the remand time.</p>
                                         <div class="govuk-radios" data-module="govuk-radios">
                                             <div class="govuk-radios__item">
                                                 <input class="govuk-radios__input reject-remand-option" id="interview-needs" name="interview-needs" type="radio" value="yes" data-route="hub-9-b">
                                                 <label class="govuk-label govuk-radios__label" for="interview-needs">
-                                                    Yes
+                                                    Yes, reject remand
                                                 </label>
                                             </div>
                                             <div class="govuk-radios__item">
                                                 <input class="govuk-radios__input reject-remand-option" id="interview-needs-2" name="interview-needs" type="radio" value="no" data-route="hub-9">
                                                 <label class="govuk-label govuk-radios__label" for="interview-needs-2">
-                                                    No
+                                                    No, save remand
                                                 </label>
                                             </div>
                                         </div>
