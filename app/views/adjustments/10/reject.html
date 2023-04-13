@@ -21,44 +21,57 @@
                             </h1>
                             <p>By rejecting the identified remand, the data will not be added to the Adjust release dates service or NOMIS.
                             </p>
-                            <h2 class ="govuk-heading-m">Check remand data in NOMIS</h2>
-                            <p class="govuk-body">Remand information could be wrong because:
+                            <h2 class ="govuk-heading-m">Before you reject the identified remand</h2>
+                            <p class="govuk-body">Make sure all of the remand information in NOMIS is correct, then check the remand details again .
                             </p>
-                            <ul class="govuk-list govuk-list--bullet">
-                                <li>An offence name has changed</li>
-                                <li>The activity has not been defined in the court events in NOMIS</li>
-                                <li>Incorrect offence or court information has been added to NOMIS</li>
-                            </ul>
+<!--                            <ul class="govuk-list govuk-list&#45;&#45;bullet">-->
+<!--                                <li>An offence name has changed</li>-->
+<!--                                <li>The activity has not been defined in the court events in NOMIS</li>-->
+<!--                                <li>Incorrect offence or court information has been added to NOMIS</li>-->
+<!--                            </ul>-->
                             <p>Go back to NOMIS and update any incorrect information, then reload this page.</p>
+                            <p>
+                                <a href="prisoner-details-5.html" class="govuk-link">
+                                    Cancel and go back to remand details
+                                </a>
+                            </p>
+                            <h2 class ="govuk-heading-m">If you still want to reject the identified remand</h2>
 
-                            <form action="/form-handler" method="post" novalidate>
-                                <div class="govuk-form-group govuk-!-margin-top-8">
-                                    <fieldset class="govuk-fieldset">
-                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                            Are you sure you want to reject the remand?
-                                        </legend>
-                                        <p>If you reject the remand identified you will have to manually enter the remand time.</p>
-                                        <div class="govuk-radios" data-module="govuk-radios">
-                                            <div class="govuk-radios__item">
-                                                <input class="govuk-radios__input reject-remand-option" id="interview-needs" name="interview-needs" type="radio" value="yes" data-route="hub-9-b">
-                                                <label class="govuk-label govuk-radios__label" for="interview-needs">
-                                                    Yes, reject remand
-                                                </label>
-                                            </div>
-                                            <div class="govuk-radios__item">
-                                                <input class="govuk-radios__input reject-remand-option" id="interview-needs-2" name="interview-needs" type="radio" value="no" data-route="hub-9">
-                                                <label class="govuk-label govuk-radios__label" for="interview-needs-2">
-                                                    No, save remand
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </fieldset>
+                            <p>You will have to manually enter the remand time, once you have rejected the identified remand.</p>
+                            <a href="hub-9-b.html"  class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                                Yes, reject remand
+                            </a>
+                            <a href="hub-9.html"  class="govuk-button govuk-button--secondary" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                                Cancel and go back to remand overview
+                            </a>
+<!--                            <form action="/form-handler" method="post" novalidate>-->
+<!--                                <div class="govuk-form-group govuk-!-margin-top-8">-->
+<!--                                    <fieldset class="govuk-fieldset">-->
+<!--                                        <legend class="govuk-fieldset__legend govuk-fieldset__legend&#45;&#45;m">-->
+<!--                                            Are you sure you want to reject the remand?-->
+<!--                                        </legend>-->
+<!--                                        <p>If you reject the remand identified you will have to manually enter the remand time.</p>-->
+<!--                                        <div class="govuk-radios" data-module="govuk-radios">-->
+<!--                                            <div class="govuk-radios__item">-->
+<!--                                                <input class="govuk-radios__input reject-remand-option" id="interview-needs" name="interview-needs" type="radio" value="yes" data-route="hub-9-b">-->
+<!--                                                <label class="govuk-label govuk-radios__label" for="interview-needs">-->
+<!--                                                    Yes, reject remand-->
+<!--                                                </label>-->
+<!--                                            </div>-->
+<!--                                            <div class="govuk-radios__item">-->
+<!--                                                <input class="govuk-radios__input reject-remand-option" id="interview-needs-2" name="interview-needs" type="radio" value="no" data-route="hub-9">-->
+<!--                                                <label class="govuk-label govuk-radios__label" for="interview-needs-2">-->
+<!--                                                    No, save remand-->
+<!--                                                </label>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </fieldset>-->
 
-                        </div>
+<!--                        </div>-->
 
-                        <a href="" id="reject-remand-button" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
-                            Continue
-                        </a>
+<!--                        <a href="" id="reject-remand-button" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">-->
+<!--                            Continue-->
+<!--                        </a>-->
 
                 </div>
             </div>
