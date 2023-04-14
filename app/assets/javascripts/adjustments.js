@@ -18,6 +18,9 @@ document.addEventListener("load", function() {
   const review = document.getElementById('review');
   const ualPage = document.getElementById('UALPage');
 
+
+  //bacllinks
+  const backLink = document.getElementById('backLink');
   const adjustmentsList = document.getElementById('adjustmentsList');
 
   const fromDay = document.getElementById('from-day');
@@ -41,6 +44,13 @@ document.addEventListener("load", function() {
 
   let reviewDone = 0;
 
+
+  if(backLink) {
+    backLink.addEventListener("click", function(e) {
+      e.preventDefault();
+      window.history.back();
+    });
+  }
   function radioRoute (radios) {
     for (let x of radios) {
       if (x.checked) {
