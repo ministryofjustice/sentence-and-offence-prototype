@@ -1,0 +1,58 @@
+{% extends "version-1/dps/includes/template-masthead.html" %}
+{% block beforeContent %}
+<div class="app-masthead govuk-!-margin-top-0">
+    <div class="moj-width-container">
+        <h1 class="app-masthead__title govuk-!-font-size-80"> Adjustments prototypes</h1>
+    </div>
+</div>
+{% endblock%}
+{% block content %}
+<div class="govuk-body govuk-!-margin-top-6">
+    <h2 class="govuk-heading-m"><span class="govuk-caption-m">Applying relevant remand from the hub model</span>Round 3</h2>
+    <h3 class="govuk-heading-s">What we did</h3>
+    <p>
+        Combined the two previous rounds into a fuller prototype which allowed users to use the relevant remand tool and add multiple adjustments
+        <br>
+        <br>
+        Reworked the hub concept introduced during the last round to focus solely on playing back totals and signposting the data entry journeys, also splitting the adjustments into two lists one for additions the other for deductions
+        <br>
+        <br>
+        Changed the add remand link text to review
+        <br>
+        <br>
+        Iterated the remand tool calculation playback
+
+
+    </p>
+    <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-4">
+        <li>Group offences by date</li>
+        <li>Display them in chronological order</li>
+        <li>Add an outcome</li>
+    </ul>
+    <p>Simulated the transition between the adjustments service and the calculate release dates tools</p>
+    <h3 class="govuk-heading-s">What we found</h3>
+    <ul class="govuk-list govuk-list--bullet ">
+        <li>Some users didn't understand the purpose/context of the review remand link text</li>
+        <li>Users liked the split between additions and deductions for the adjustment types</li>
+        <li>Users mentioned new types of adjustments that were missing</li>
+    </ul>
+
+</div>
+
+
+
+<p>Further exploration of using a hub to navigate between and summarise the amount of adjustments. Testing the transition between the adjustments and calculate release dates services. Explore the use of a landing page for all services</p>
+<div>
+    <h3>Adjustments hub design exploration</h3>
+    <ul>
+        <li>overall adjustments table with summary per adjustment <a href="https://sentence-and-offence-prototype-main.apps.live.cloud-platform.service.justice.gov.uk/adjustments/8/hub-2" class="govuk-link"> View</a></li>
+        <li>hub designs add CTA to header <a href="https://sentence-and-offence-prototype-main.apps.live.cloud-platform.service.justice.gov.uk/adjustments/8/hub-9" class="govuk-link"> View</a></li>
+        <li>using colour <a href="https://sentence-and-offence-prototype-main.apps.live.cloud-platform.service.justice.gov.uk/adjustments/8/hub-8" class="govuk-link"> View</a></li>
+        <li>summary cards with CTA's <a href="https://sentence-and-offence-prototype-main.apps.live.cloud-platform.service.justice.gov.uk/adjustments/8/hub-6" class="govuk-link"> View</a></li>
+        <li>width change with summary aside<a href="https://sentence-and-offence-prototype-main.apps.live.cloud-platform.service.justice.gov.uk/adjustments/8/hub-5" class="govuk-link"> View</a></li>
+        <li>Simplified design focusing on counts<a href="https://sentence-and-offence-prototype-main.apps.live.cloud-platform.service.justice.gov.uk/adjustments/8/hub-9" class="govuk-link"> View</a></li>
+    </ul>
+    <h3>Testing</h3>
+    <p>Added a new start point for digital warrant folder <a href="" class="govuk-link">view</a></p>
+</div>
+{% endblock %}

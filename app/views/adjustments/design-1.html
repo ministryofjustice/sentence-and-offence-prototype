@@ -1,0 +1,81 @@
+{% extends "version-1/dps/includes/template-masthead.html" %}
+{% block beforeContent %}
+<div class="app-masthead govuk-!-margin-top-0">
+    <div class="moj-width-container">
+        <h1 class="app-masthead__title govuk-!-font-size-80"> Adjustments prototypes</h1>
+    </div>
+</div>
+{% endblock%}
+{% block content %}
+<h2 class="govuk-heading-xl govuk-!-margin-top-8">
+
+</h2>
+
+<div class="govuk-body">
+    <h2 class="govuk-heading-m"><span class="govuk-caption-m">Identifying relevant remand</span>Round 1</h2>
+
+    <h3 class="govuk-heading-s">What we did</h3>
+    <p>
+        We designed a journey where users could select an adjustment type from a list and then continue on the journey to add adjustment type specific data then potentially continue on to add further adjustments or confirm and leave the service.
+    </p>
+    <p>
+        For this round we focused on the remand journey and the introduction of  the relevant remand calculation tool, we wanted to validate our assumptions of the service and gain insights into the data the users need to be able to confidently see if the calculations were accurate and if they would trust the service.
+    </p>
+    <img src="" />
+    <h3 class="govuk-heading-s">What users said</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>3/5 participants need to see relationships between the cases. Suggest that remand details compressed down so that it is clear why the total remand days is what it is. Could be confusing when it looks like he is getting two periods of 6 days and the total is  11.</li>
+        <li>2/5 users would expect to see an audit trail or sentence history - allow them to see how remand dates have been arrived at and allow them to see who has added remand previously so that they could ask them if they had questions.</li>
+        <li>2/5 participants needed to see offence date to support them in linking the periods of remand on the service with court documents and Nomis</li>
+    </ul>
+    <h3 class="govuk-heading-s">Design recommendations</h3>
+    <ul class="govuk-list govuk-list--bullet">
+        <li>Add offence outcomes</li>
+        <li>Add offence dates</li>
+        <li>Explore ways to show the relationships between cases in case breakdown</li>
+    </ul>
+    <p>Design iterations. You can find usability testing log <a href="index.html" class="govuk-link">here</a>.</p>
+    <div>
+        <p>Designing the playback of results from the remand calculations tool</p>
+        <h4>Design concepts</h4>
+
+        <p>Visualising remand calculation play back, exploring adding a CTA for users to edit data.
+            <a
+                    href="https://sentence-and-offence-prototype-main.apps.live.cloud-platform.service.justice.gov.uk/adjustments/1/prisoner-details-2"
+                    class="govuk-link">View
+            </a>
+        </p>
+        <p>Visualising remand calculation play back, exploring adding a CTA for users to edit data. Adding a notification for supporting information
+            <a
+                    href="https://sentence-and-offence-prototype-main.apps.live.cloud-platform.service.justice.gov.uk/adjustments/1/prisoner-details-4"
+                    class="govuk-link">View
+            </a>
+        </p>
+        <p>Adding multiple adjustments introduced radio button selection list to navigate the different types of adjustments
+            <a href="https://sentence-and-offence-prototype-main.apps.live.cloud-platform.service.justice.gov.uk/adjustments/2/select-adjustment-type" class="govuk-link">
+                view
+            </a>
+        </p>
+        <p>Initial draft of remand identifier
+            <a
+                    href="https://sentence-and-offence-prototype-main.apps.live.cloud-platform.service.justice.gov.uk/adjustments/1/prisoner-details"
+                    class="govuk-link">View
+            </a>
+            second draft
+            <a
+                    href="https://sentence-and-offence-prototype-main.apps.live.cloud-platform.service.justice.gov.uk/adjustments/1/prisoner-details-4"
+                    class="govuk-link">View
+            </a>
+        </p>
+        <h3>Testing</h3>
+
+        <p>
+            Here is the prototype we tested.
+            <a href="https://sentence-and-offence-prototype-main.apps.live.cloud-platform.service.justice.gov.uk/adjustments/2/prisoner-search" class="govuk-link">view
+            </a>
+
+        </p>
+    </div>
+</div>
+
+{% endblock %}
