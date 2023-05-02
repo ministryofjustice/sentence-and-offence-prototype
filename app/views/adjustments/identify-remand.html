@@ -7,12 +7,30 @@
 </div>
 {% endblock%}
 {% block content %}
-<h2>Identify remand</h2>
-<img src="/public/images/Accepting%20identified%20remand@2x.png">
-<h2>Process</h2>
+<div class="govuk-!-padding-top-6">
+    <h2 class="govuk-heading-m">Identify remand</h2>
+    <img src="/public/images/Accepting%20identified%20remand@2x.png">
+    <h2 class="govuk-heading-m govuk-!-padding-top-6">Process</h2>
 
-<ol class=" govuk-list govuk-list--number" >
-    <li>User lands on home page</li>
-</ol>
-<p>view prototype <a href="10/hub-9.html" target="_blank">view</a></p>
+    <ol class=" govuk-list govuk-list--number" >
+        <li>When potential remand has been found the CTA is shown users cicks the CTA</li>
+        <li>User views details of the potential remand identified then clicks accept to add the remand</li>
+        <li>User is now shown a play back of what they have accepted with options to:
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Add another adjustment</li>
+            <li>Edit any data entered in error</li>
+            <li>Confirm and continue</li>
+        </ul>
+        </li>
+        <li>After selecting continue the user is returned to the dashboard that has been updated
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Notification panel confirms data has been saved and plays back a summary of the data added</li>
+                <li>Card relevant to adjustment has been updated with a new count</li>
+                <li>CTA's for calculate release dates are present</li>
+            </ul>
+        </li>
+    </ol>
+    <p>View prototype <a href="10/hub-9.html" target="_blank">view</a></p>
+</div>
+
 {% endblock %}
