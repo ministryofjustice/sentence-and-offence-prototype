@@ -90,7 +90,11 @@ li.Sentencing .card{
 .prisoner-search__form__row {
   padding: 0 15px;
 }
-
+.app-possible-prison-record {
+  img{
+    width:inherit;
+  }
+}
 .prisoner-search__form button {
   margin-bottom: 0;
 }
