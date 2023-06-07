@@ -1,0 +1,72 @@
+{
+  "bookingId": 2796284,
+  "sanctionCode": "ADA",
+  "sanctionCodeDescription": "Additional Days Added",
+  "days": 24,
+  "comment": "concurrent with 3852907, 3852968, 3852924, 3852908, 3852960",
+  "effectiveDate": "2023-05-26",
+  "status": "IMMEDIATE",
+  "statusDescription": "Immediate",
+  "hearingId": 4580762,
+  "hearingSequence": 1
+},
+{
+"bookingId": 2796284,
+"sanctionCode": "ADA",
+"sanctionCodeDescription": "Additional Days Added",
+"days": 24,
+"comment": "concurrent with 3852907, 3852968, 3852924, 3852908, 3852918",
+"effectiveDate": "2023-05-26",
+"status": "IMMEDIATE",
+"statusDescription": "Immediate",
+"hearingId": 4580767,
+"hearingSequence": 1
+},
+{
+"bookingId": 2796284,
+"sanctionCode": "ADA",
+"sanctionCodeDescription": "Additional Days Added",
+"days": 24,
+"comment": "concurrent with 3852907, 3852968, 3852960, 3852908, 3852918",
+"effectiveDate": "2023-05-26",
+"status": "IMMEDIATE",
+"statusDescription": "Immediate",
+"hearingId": 4580771,
+"hearingSequence": 1
+},
+{
+"bookingId": 2796284,
+"sanctionCode": "ADA",
+"sanctionCodeDescription": "Additional Days Added",
+"days": 24,
+"comment": "concurrent with 3852960, 3852968, 3852924, 3852908, 3852918",
+"effectiveDate": "2023-05-26",
+"status": "IMMEDIATE",
+"statusDescription": "Immediate",
+"hearingId": 4580774,
+"hearingSequence": 1
+},
+{
+"bookingId": 2796284,
+"sanctionCode": "ADA",
+"sanctionCodeDescription": "Additional Days Added",
+"days": 24,
+"comment": "concurrent with 3852907, 3852968, 3852924, 3852960, 3852918",
+"effectiveDate": "2023-05-26",
+"status": "IMMEDIATE",
+"statusDescription": "Immediate",
+"hearingId": 4580777,
+"hearingSequence": 1
+},
+{
+"bookingId": 2796284,
+"sanctionCode": "ADA",
+"sanctionCodeDescription": "Additional Days Added",
+"days": 24,
+"comment": "concurrent with 3852907, 3852960, 3852924, 3852908, 3852918",
+"effectiveDate": "2023-05-26",
+"status": "IMMEDIATE",
+"statusDescription": "Immediate",
+"hearingId": 4580780,
+"hearingSequence": 1
+}
