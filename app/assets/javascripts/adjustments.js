@@ -33,6 +33,7 @@ document.addEventListener("load", function() {
   const documentID = document.getElementById('document-ID');
 
   const numberOfDays = document.getElementById('number-of-days');
+  const checkboxes = document.querySelectorAll('.ada-days-input');
 
 //rada inputs
 
@@ -59,7 +60,31 @@ document.addEventListener("load", function() {
       }
     }
   }
+// Get all the checkboxes
 
+
+// Add event listener to each checkbox
+  if(checkboxes) {
+    checkboxes.forEach(function (checkbox) {
+      checkbox.addEventListener('change', function () {
+        calculateTotal();
+      });
+    });
+  }
+// Calculate the total balance
+function calculateTotal() {
+  let total = 0;
+
+  checkboxes.forEach(function(checkbox) {
+    if (checkbox.checked) {
+      var balance = parseInt(checkbox.getAttribute('data-days-balance'));
+      total += balance;
+    }
+  });
+
+  // Update the total balance in the HTML
+  document.getElementById('totalBalance').textContent = total;
+}
   function addAdjustment (type, from, to, days, id, desc) {
     // let storedAdjustments = localStorage.getItem('storedAdjustments');
     // storedAdjustments = storedAdjustments ? JSON.parse(storedAdjustments) : []
