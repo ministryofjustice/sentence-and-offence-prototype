@@ -77,8 +77,13 @@ function calculateTotal() {
 
   checkboxes.forEach(function(checkbox) {
     if (checkbox.checked) {
-      var balance = parseInt(checkbox.getAttribute('data-days-balance'));
-      total += balance;
+      let cc = checkbox.getAttribute('data-cc')
+      if (cc ==='consec'){
+        return 0
+      }else {
+        var balance = parseInt(checkbox.getAttribute('data-days-balance'));
+        total += balance;
+      }
     }
   });
 
