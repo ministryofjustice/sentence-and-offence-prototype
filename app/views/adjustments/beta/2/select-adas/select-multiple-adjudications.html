@@ -1,0 +1,75 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="adjustments-dashboard.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    <span class="govuk-caption-xl">Adjust release dates</span>
+                                    Select the adjudications you want to apply
+                                </h1>
+                            </legend>
+                            <p>You must select the adjudications that apply to the current sentences that are being served.</p>
+                            <div id="nationality-hint" class="govuk-hint">
+                                Select all that apply
+                            </div>
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input ada-days-input" id="nationality" name="nationality" type="checkbox" data-cc="" value="british" aria-describedby="nationality-item-hint" data-days-balance="24">
+                                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                                        Report number: 1234567, 24 Days Awarded
+                                    </label>
+                                    <div  class="govuk-hint govuk-checkboxes__hint">
+                                        Date charge proved: 12 May 2023, Adjudication ID:0000001
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input ada-days-input" id="nationality-2" name="nationality" type="checkbox" value="irish" data-days-balance="18" data-cc="">
+                                    <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+                                        Report number: 2345678, 18 Days Awarded Consecutive to 1234567
+                                    </label>
+                                    <div class="govuk-hint govuk-checkboxes__hint">
+                                        Date charge proved: 12 May 2023, Adjudication ID:0000002
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input ada-days-input" id="nationality-3" name="nationality" type="checkbox" value="other" data-days-balance="24" data-cc="consec">
+                                    <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+                                        Report number: 3456789, 24 Days Awarded
+                                    </label>
+                                    <div  class="govuk-hint govuk-checkboxes__hint">
+                                        Date charge proved: 12 May 2023, Adjudication ID:0000003
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                        <div class="govuk-!-margin-top-8">
+                            <h2 class="govuk-heading-m">Days awarded</h2>
+                        </div>
+                        <span id="totalBalance" class="govuk-body govuk-!-font-size-24">0</span>
+                    </div>
+                <a href="check-ada-details.html" id="" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                    Continue
+                </a>
+
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}

@@ -1,0 +1,36 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="hub-9.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-form-group">
+                        <h1 class="govuk-label-wrapper">
+                            <span class="govuk-caption-xl">Adjust release dates</span>
+                            <label class="govuk-label govuk-label--l" for="event-name">
+                                What is the Adjudication ID?
+                            </label>
+                        </h1>
+                        <input class="govuk-input" id="event-name" name="event-name" type="text">
+                    </div>
+                        <a href="return-ada.html" id="" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                            Continue
+                        </a>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}
