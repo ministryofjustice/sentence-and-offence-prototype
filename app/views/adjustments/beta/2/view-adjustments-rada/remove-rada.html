@@ -1,0 +1,80 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="view-rada.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjust release dates</span>Remove RADA</h1>
+                    <h2 class="govuk-heading-m">Adjustment details</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Date of days restored
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                4 Oct 2022
+                            </dd>
+
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Days
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                10
+                            </dd>
+
+                        </div>
+                    </dl>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                <h2 class="govuk-fieldset__heading">
+                                    Are you sure you want to remove this record?
+                                </h2>
+                            </legend>
+                            <div id="changed-name-hint" class="govuk-hint">
+                                Supporting content.
+                            </div>
+                            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    <div class="govuk-!-margin-top-4">
+                        <a href="adjustments-dashboard-view-journey-removed.html" class="govuk-button govuk-button--warning" data-module="govuk-button">
+                            Remove record
+                        </a>
+                        <p> <a class="govuk-link" href="view-rada.html">
+                            Cancel
+                        </a></p>
+
+                    </div>
+                </div>
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}

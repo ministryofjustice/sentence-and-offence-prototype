@@ -1,0 +1,71 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a  id="backLink" href="edit-ual.html" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <h1 class="govuk-heading-l">
+                        <span class="govuk-caption-xl">Adjust release dates</span>
+                        Check adjustment information</h1>
+                    <h2 class="govuk-heading-m">Adjustments</h2>
+
+                    <div class="sentence-block govuk-body">
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Unlawfully at large from
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                15 Dec 2022
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="warrant-details.html">
+                                    Change<span class="govuk-visually-hidden"> date</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Unlawfully at large to
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                25 Dec 2022
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Number of days
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                10
+                            </dd>
+                        </div>
+                    </div>
+
+                    <div class="govuk-form-group">
+                        <h2 class="govuk-heading-m">Confirm and save to NOMIS</h2>
+                        <p class="govuk-body">
+                            Once you have confirmed the adjustment information is correct, the data will be saved to NOMIS.
+                        </p>
+
+                    </div>
+                    <a href="adjustments-dashboard-view-journey.html" class="govuk-button" data-module="govuk-button" >
+                        Confirm change
+                    </a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}
