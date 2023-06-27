@@ -197,4 +197,28 @@ img {
   }
 }
 
+.ada-container {
+  display:flex;
+  margin-bottom:20px;
+
+  .consecutive {
+    border-left:4px solid #6f72af;
+  }
+
+  .ada-details {
+    min-width: 600px;
+    padding:0 10px;
+
+
+
+  }
+  .ada-cc {
+    display:flex;
+    justify-content: space-between;
+
+
+  }
+
+}
+
 

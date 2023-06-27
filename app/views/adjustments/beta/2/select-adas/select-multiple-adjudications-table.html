@@ -13,8 +13,8 @@
 
         <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds">
-                    <div class="govuk-form-group">
+                <div class="govuk-grid-column-full">
+                    <div class="govuk-form-group govuk-body">
                         <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                                 <h1 class="govuk-fieldset__heading">
@@ -26,33 +26,44 @@
                             <div id="nationality-hint" class="govuk-hint">
                                 Select all that apply
                             </div>
-                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input ada-days-input" id="nationality" name="nationality" type="checkbox" data-cc="" value="british" aria-describedby="nationality-item-hint" data-days-balance="24">
-                                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
-                                        Adjudication ID: 1234567, 24 Days Awarded
-                                    </label>
-                                    <div  class="govuk-hint govuk-checkboxes__hint">
-                                        Date charge proved: 12 May 2023
+                            <div class="ada-container  govuk-!-padding-bottom-9">
+                                <div>
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input ada-days-input" id="nationality-2" name="nationality" type="checkbox" value="irish" data-days-balance="18" data-cc="">
+                                        <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+
+                                        </label>
                                     </div>
                                 </div>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input ada-days-input" id="nationality-2" name="nationality" type="checkbox" value="irish" data-days-balance="18" data-cc="">
-                                    <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
-                                        Adjudication ID: 2345678, 18 Days Awarded Consecutive to 1234567
-                                    </label>
-                                    <div class="govuk-hint govuk-checkboxes__hint">
-                                        Date charge proved: 12 May 2023
+
+                                <div class="ada-details">
+                                    <h3 class="govuk-heading-m">24 days </h3>
+                                    <p>consists of:</p>
+                                    <div class="consecutive">
+
+                                    <div class="govuk-!-padding-bottom-6 govuk-!-padding-left-6">
+                                        <h3 class="govuk-heading-s">24 days </h3>
+                                        <p class="govuk-body-l">Charge no: 1234567 <br>Date charged proved: 12 May 2022</p>
+                                    </div>
+                                    <div class="govuk-!-padding-left-6">
+                                    <h3 class="govuk-heading-s">18 days  <span class="govuk-caption-m">Consecutive to 1234567</span></h3>
+                                    <p class="govuk-body-l">Charge no: 2345678<br>Date charged proved: 12 May 2022</p>
+                                    </div>
                                     </div>
                                 </div>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input ada-days-input" id="nationality-3" name="nationality" type="checkbox" value="other" data-days-balance="24" data-cc="consec">
-                                    <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
-                                        Adjudication ID: 3456789, 24 Days Awarded
-                                    </label>
-                                    <div  class="govuk-hint govuk-checkboxes__hint">
-                                        Date charge proved: 12 May 2023
+                            </div>
+                            <div class="ada-container ">
+                                <div >
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input ada-days-input" id="nationality-2" name="nationality" type="checkbox" value="irish" data-days-balance="18" data-cc="">
+                                        <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+
+                                        </label>
                                     </div>
+                                </div>
+                                <div class="ada-details">
+                                    <h3 class="govuk-heading-m">24 days<span class="govuk-caption-l">Concurrent</span></h3>
+                                    <p class="govuk-body-l">Charge no: 3456789  <br>Date charged proved: 12 May 2022</p>
                                 </div>
                             </div>
 
@@ -63,123 +74,9 @@
                         <span id="totalBalance" class="govuk-body govuk-!-font-size-24">0</span>
                     </div>
 
-                    <table  id="" class="govuk-table govuk-!-margin-bottom-8">
-                        <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                            <th class="govuk-table__header" scope="col">Date charge proved</th>
-                            <th class="govuk-table__header" scope="col">Date charge proved</th>
-                            <th class="govuk-table__header" scope="col">Report number</th>
-                            <th class="govuk-table__header" scope="col">To be served</th>
-                            <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Entered by</th>
-                            <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Days</th>
-                            <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Actions</th>
-                        </tr>
-                        </thead>
-                        <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">
-                                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                    <div class="govuk-checkboxes__item">
-                                        <input class="govuk-checkboxes__input ada-days-input" id="nationality" name="nationality" type="checkbox" data-cc="" value="british" aria-describedby="nationality-item-hint" data-days-balance="24">
-                                    </div>
-                                </div>
-                            </td>
-                            <!-- Dates -->
-                            <td class="govuk-table__cell">
-                                4 Oct 2022
-                            </td>
-                            <td class="govuk-table__cell">
-                                4567123
-                            </td>
-                            <td class="govuk-table__cell">
-                                Concurrently
-                            </td>
-                            <td class="govuk-table__cell govuk-!-text-align-centre">
-                                PNI
-                            </td>
-                            <!-- Days -->
-                            <td class="govuk-table__cell govuk-!-text-align-centre">10 </td>
-                            <td class="govuk-table__cell govuk-!-text-align-centre">
-                                <a href="edit-ada.html" class="govuk-link">Edit</a>
-                            </td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <td  class="govuk-table__cell">
-                                <input class="govuk-checkboxes__input ada-days-input" id="nationality" name="nationality" type="checkbox" data-cc="" value="british" aria-describedby="nationality-item-hint" data-days-balance="24">
-                            </td>
-                            <!-- Dates -->
-                            <td class="govuk-table__cell">
-                                15 Dec 2022
-                            </td>
-                            <td class="govuk-table__cell">
-                                5678901
-                            </td>
-                            <td class="govuk-table__cell">
-                                Concurrently
-                            </td>
-                            <td class="govuk-table__cell govuk-!-text-align-centre">
-                                WMI
-                            </td>
-                            <!-- Days -->
-                            <td class="govuk-table__cell govuk-!-text-align-centre">14 </td>
-                            <td class="govuk-table__cell govuk-!-text-align-centre">
-                                <a href="edit-ada.html" class="govuk-link">Edit</a>
-                            </td>
 
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th class="govuk-table__cell">
-                                Total days
-                            </th>
-                            <td class="govuk-table__cell"></td>
-                            <td class="govuk-table__cell"></td>
-                            <td class="govuk-table__cell"></td>
 
-                            <td class="govuk-table__cell govuk-!-text-align-centre">
-                                <b>24</b>
-                            </td>
-                            <td class="govuk-table__cell"></td>
-                        </tr>
 
-                        </tbody>
-                    </table>
-
-                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                12345678
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                15 Dec 2022
-                                24 days
-                                concurrent
-                            </dd>
-                            <dd class="govuk-summary-list__value">
-                                <a href="" class="govuk-link">Change</a>
-                            </dd>
-
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Number of additional days Awarded
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                10
-                            </dd>
-                            <dd class="govuk-summary-list__value">
-                                <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                        <div class="govuk-checkboxes__item">
-                                            <input class="" id="organisation" name="organisation" type="checkbox" value="hmrc">
-
-                                        </div>
-                                    </div>
-                                </div>
-                                <a href="" class="govuk-link">Change</a>
-                            </dd>
-
-                        </div>
-                    </dl>
                 <a href="check-ada-details.html" id="" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
                     Continue
                 </a>
