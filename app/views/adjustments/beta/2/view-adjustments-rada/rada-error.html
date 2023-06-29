@@ -15,11 +15,31 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                     <form action="/form-handler" method="post" novalidate>
+                        <div class="govuk-error-summary" data-module="govuk-error-summary">
+                            <div role="alert">
+                                <h2 class="govuk-error-summary__title">
+                                    There is a problem
+                                </h2>
+                                <div class="govuk-error-summary__body">
+                                    <ul class="govuk-list govuk-error-summary__list">
+                                        <li>
+                                            <a href="#passport-issued-year">Message detailing error here with instructions of what to do next</a>
+                                        </li>
+                                    </ul>
+                                    <br>
+
+                                    <p>If this is ok please continue</p>
+                                    <a href="../view-adjustments/check-your-answers-ual.html" class="govuk-button" data-name="RADA" data-desc="RADA (Restore additional days awarded) ">
+                                        Continue
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
                         <div class="">
                             <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjust release dates</span>
                                 Enter RADA details
                             </h1>
-                            <div class="govuk-form-group">
+                            <div class="govuk-form-group ">
                                 <fieldset class="govuk-fieldset" role="group" aria-describedby="rada-hint">
                                     <legend class="govuk-fieldset__legend--s">
                                         Date of days restored
@@ -49,18 +69,18 @@
                                                 <label class="govuk-label govuk-date-input__label" for="rada-year">
                                                     Year
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="rada-year" name="rada-year" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4 " id="rada-year" name="rada-year" type="text" inputmode="numeric">
                                             </div>
                                         </div>
                                     </div>
                                 </fieldset>
 
                             </div>
-                            <div class="govuk-form-group">
+                            <div class="govuk-form-group govuk-form-group--error">
                                 <label class="govuk-label govuk-label--s" for="rada-number-of-days">
                                     Number of additional days restored
                                 </label>
-                                <input class="govuk-input govuk-input--width-4" id="rada-number-of-days" name="width-4" type="text">
+                                <input class="govuk-input govuk-input--width-4 govuk-input--error" id="rada-number-of-days" name="width-4" type="text">
                             </div>
 <!--                            <div class="govuk-form-group">-->
 <!--                                <label class="govuk-label" for="rada-document-ID">-->
@@ -71,7 +91,7 @@
 
                         </div>
 
-                        <a href="check-your-answers-rada.html"  class="govuk-button" data-name="RADA" data-desc="RADA (Restore additional days awarded) ">
+                        <a href="../view-adjustments/check-your-answers-ual.html" class="govuk-button" data-name="RADA" data-desc="RADA (Restore additional days awarded) ">
                             Continue
                         </a>
                     </form>
@@ -80,5 +100,5 @@
         </main>
     </div>
 </div>
-<script src="/public/javascripts/adjustments.js"></script>
+<script src="/javascripts/adjustments.js"></script>
 {% endblock %}
