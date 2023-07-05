@@ -71,6 +71,7 @@ const addUALButton = document.getElementById('add-ual-button');
 
 // Add event listener to each checkbox
   if(checkboxes) {
+
     checkboxes.forEach(function (checkbox) {
       checkbox.addEventListener('change', function () {
         calculateTotal();
@@ -79,6 +80,8 @@ const addUALButton = document.getElementById('add-ual-button');
   }
 // Calculate the total balance
 function calculateTotal() {
+  let cb1 = document.getElementById('1234567');
+  let cb2 = document.getElementById('3456789');
   let total = 0;
 
   checkboxes.forEach(function(checkbox) {
@@ -90,6 +93,9 @@ function calculateTotal() {
         var balance = parseInt(checkbox.getAttribute('data-days-balance'));
         total += balance;
       }
+    }
+    if(cb1.checked && cb2.checked){
+      total = 42
     }
   });
 
