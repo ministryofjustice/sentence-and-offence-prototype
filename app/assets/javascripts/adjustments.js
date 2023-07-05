@@ -5,6 +5,8 @@ document.addEventListener("load", function() {
   let adjustments = localStorage.getItem('adjustments');
   adjustments = adjustments ? JSON.parse(adjustments) : [];
 
+  let liveID = localStorage.getItem('liveID')
+
   const adjustmentTypeRadios = document.getElementsByClassName('adjustment-type');
   const rejectRemandOptions = document.getElementsByClassName('reject-remand-option');
   const addAnotherRadios = document.getElementsByClassName('add-another');
@@ -19,7 +21,7 @@ document.addEventListener("load", function() {
   const ualPage = document.getElementById('UALPage');
 
 
-  //bacllinks
+  //backlinks
   const backLink = document.getElementById('backLink');
   const adjustmentsList = document.getElementById('adjustmentsList');
 
@@ -43,6 +45,10 @@ document.addEventListener("load", function() {
   const radaNumberOfDays = document.getElementById('rada-number-of-days');
   const radaDocID = document.getElementById('rada-document-ID');
 
+
+  //buttons
+
+const addUALButton = document.getElementById('add-ual-button');
   let reviewDone = 0;
 
 
@@ -588,16 +594,192 @@ if (reviewDone == 1) {
     }
 
     const groupedDaysAndSum = groupDaysAndSumByType(totals);
-    displayGroupedDaysAndSum(groupedDaysAndSum);
+   // displayGroupedDaysAndSum(groupedDaysAndSum);
     console.log(groupedDaysAndSum, "totals");
   }
+
+function addUAL (type, from, to, days, id, desc, ualType) {
+  // let storedAdjustments = localStorage.getItem('storedAdjustments');
+  // storedAdjustments = storedAdjustments ? JSON.parse(storedAdjustments) : []
+
+  let newAdjustment = {
+    type: type,
+    from: from,
+    to: to,
+    days: days,
+    id: id,
+    desc: desc,
+    ualType: ualType
+  }
+
+  adjustments.push(newAdjustment)
+  localStorage.setItem('adjustments', JSON.stringify(adjustments))
+  console.log(adjustments)
+}
+const radios = document.getElementsByClassName("govuk-radios__input")
+function createOffenceEndDate(day, month, year) {
+  let date = `${day.value}-${month.value}-${year.value}`;
+  return date
+}
+
+
+
+function getCheckedItem(list){
+  for (let x of list) {
+    if (x.checked){
+      return x.value;
+    }
+  }
+}
   if(ualPage) {
 
     toYear.addEventListener("blur", function() {
       let days = createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear)
       numberOfDays.value= days
     })
+
+    addUALButton.addEventListener('click', function(e) {
+
+    const radios = document.getElementsByClassName("govuk-radios__input")
+      let id = adjustments.length +1
+      let UALType = getCheckedItem(radios)
+      let days = createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear)
+      let from = createDate(fromDay, fromMonth, fromYear);
+      let to = createDate(toDay, toMonth, toYear);
+      let desc = "description";
+      addUAL("UAL", from, to, days, id, desc, UALType )
+      localStorage.setItem('liveID', adjustments.length)
+      console.log('clicked', adjustments, liveID )
+    })
   }
+
+  const CheckUAL = document.getElementById("CheckUAL")
+
+  if(CheckUAL) {
+
+    //console.log(liveID, adjustments)
+   let UALdata =  adjustments.filter((x) => x.id === parseInt(liveID));
+
+   let uals = adjustments.filter((x) => x.type === "UAL");
+    console.log(adjustments, liveID, UALdata,uals)
+    let html = ` <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Type of UAL
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                ${UALdata[0].ualType}
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                When is this adjustment valid from
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                               ${UALdata[0].from}
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                When is this adjustment valid to
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                               ${UALdata[0].to}
+                            </dd>
+
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Number of days
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                               ${UALdata[0].days}
+                            </dd>
+
+
+                        </div>
+                    </dl>`
+    CheckUAL.innerHTML = html;
+  }
+
+const viewUAL = document.getElementById("viewUAL")
+function addRow( table,  ualType, from, to, enteredBy, days, actions){
+  var tableRow = table;
+  var row = tableRow.insertRow(-1);
+  row.classList.add('govuk-table__row');
+  var cell1 = row.insertCell(0);
+  cell1.classList.add("govuk-table__cell");
+  var cell2 = row.insertCell(1);
+  cell2.classList.add("govuk-table__cell");
+  var cell3 = row.insertCell(2);
+  cell3.classList.add("govuk-table__cell");
+  var cell4 = row.insertCell(3);
+  cell4.classList.add("govuk-table__cell");
+  var cell5 = row.insertCell(4);
+  cell5.classList.add("govuk-table__cell","govuk-!-text-align-centre");
+  var cell6 = row.insertCell(5);
+  cell6.classList.add("govuk-table__cell");
+  cell1.innerHTML = `${ualType}`;
+  cell2.innerHTML = `${from}`;
+  cell3.innerHTML = `${to}`;
+  cell4.innerHTML = `${enteredBy}`;
+  cell5.innerHTML = `${days}`;
+  cell6.innerHTML = actions
+}
+let totaldays = 0;
+if(viewUAL){
+
+  console.log(adjustments)
+  let uals = adjustments.filter((x) => x.type === "UAL");
+  for ( let x of uals) {
+    let actions = `  <ul class="govuk-list">\
+                                 <li><a href=\"edit-ual.html\" class=\"govuk-link\" id=${x.id}>Edit</a></li>
+                                 <li><a id="ItemRemove" data-liveID="${x.id}" href=\"remove-ual-1.html\" class="govuk-link removelink">Remove</a></li>
+                           </ul>`;
+    totaldays += x.days
+    addRow(viewUAL,  x.ualType,x.from, x.to,"J.Smith at WMI", x.days, actions);
+  }
+  let footer = viewUAL.createTFoot();
+  footer.innerHTML =  `
+                       <tr class="govuk-table__row">
+                          <td class="govuk-table__cell govuk-table__header govuk-!-text-align-right" colspan="4">Total days</td>
+                          <td colspan="1" id="TotalDays" class="govuk-table__cell govuk-table__header govuk-!-text-align-centre">${totaldays}</td>
+                          <td class="govuk-table__cell"></td>
+                       </tr>`
+
+
+  const table = document.getElementById("viewUAL")
+
+  const removeItem = document.getElementsByClassName('removelink')
+
+  Array.from(removeItem).forEach(function(element){
+    element.addEventListener("click", function(e) {
+      const attID = element.getAttribute("data-liveID")
+      localStorage.setItem('liveID', attID)
+
+    })
+  })
+
+}
+
+const removeUAL = document.getElementById("RemoveUAL")
+
+if (removeUAL) {
+  console.log("here")
+  removeUAL.addEventListener('click', function(e){
+    //e.preventDefault()
+    console.log(adjustments[0].id,liveID)
+    const revisedAdjustments = adjustments.filter(adjustment => {
+      return adjustment.id !== parseInt(liveID)
+    })
+    console.log(revisedAdjustments,"yy")
+    localStorage.setItem('adjustments', JSON.stringify(revisedAdjustments))
+    console.log(adjustments, localStorage.getItem('adjustments'),"ff")
+  })
+}
+
+
+
 
 
 
