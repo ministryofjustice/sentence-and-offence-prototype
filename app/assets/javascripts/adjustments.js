@@ -679,7 +679,7 @@ function getCheckedItem(list){
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                When is this adjustment valid from?
+            First day spent unlawfully at large                            
                             </dt>
                             <dd class="govuk-summary-list__value">
                                ${UALdata[0].from}
@@ -687,7 +687,7 @@ function getCheckedItem(list){
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                When is this adjustment valid to?
+Last day spent unlawfully at large                            
                             </dt>
                             <dd class="govuk-summary-list__value">
                                ${UALdata[0].to}
