@@ -679,7 +679,7 @@ function getCheckedItem(list){
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                When is this adjustment valid from
+                                When is this adjustment valid from?
                             </dt>
                             <dd class="govuk-summary-list__value">
                                ${UALdata[0].from}
@@ -687,7 +687,7 @@ function getCheckedItem(list){
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                When is this adjustment valid to
+                                When is this adjustment valid to?
                             </dt>
                             <dd class="govuk-summary-list__value">
                                ${UALdata[0].to}
