@@ -604,7 +604,7 @@ if (reviewDone == 1) {
     console.log(groupedDaysAndSum, "totals");
   }
 
-function addUAL (type, from, to, days, id, desc, ualType) {
+function addUAL (type, from, to, days, id, desc, ualType, fromDay, toDay, fromMonth, toMonth, fromYear, toYear) {
   // let storedAdjustments = localStorage.getItem('storedAdjustments');
   // storedAdjustments = storedAdjustments ? JSON.parse(storedAdjustments) : []
 
@@ -615,7 +615,13 @@ function addUAL (type, from, to, days, id, desc, ualType) {
     days: days,
     id: id,
     desc: desc,
-    ualType: ualType
+    ualType: ualType,
+    fromDay: fromDay,
+    toDay: toDay,
+    fromMonth: fromMonth,
+    toMonth: toMonth,
+    fromYear: fromYear,
+    toYear: toYear
   }
 
   adjustments.push(newAdjustment)
@@ -639,6 +645,7 @@ function getCheckedItem(list){
 }
   if(ualPage) {
 
+
     toYear.addEventListener("blur", function() {
       let days = createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear)
       numberOfDays.value= days
@@ -653,7 +660,7 @@ function getCheckedItem(list){
       let from = createDate(fromDay, fromMonth, fromYear);
       let to = createDate(toDay, toMonth, toYear);
       let desc = "description";
-      addUAL("UAL", from, to, days, id, desc, UALType )
+      addUAL("UAL", from, to, days, id, desc, UALType, fromDay.value, toDay.value, fromMonth.value, toMonth.value, fromYear.value, toYear.value )
       localStorage.setItem('liveID', adjustments.length)
       console.log('clicked', adjustments, liveID )
     })
@@ -663,7 +670,7 @@ function getCheckedItem(list){
 
   if(CheckUAL) {
 
-    //console.log(liveID, adjustments)
+    console.log(liveID, adjustments)
    let UALdata =  adjustments.filter((x) => x.id === parseInt(liveID));
 
    let uals = adjustments.filter((x) => x.type === "UAL");
@@ -738,11 +745,11 @@ if(viewUAL){
   console.log(adjustments)
   let uals = adjustments.filter((x) => x.type === "UAL");
   for ( let x of uals) {
-    let actions = `  <ul class="govuk-list">\
-                                 <li><a href=\"edit-ual.html\" class=\"govuk-link\" id=${x.id}>Edit</a></li>
-                                 <li><a id="ItemRemove" data-liveID="${x.id}" href=\"remove-ual-1.html\" class="govuk-link removelink">Remove</a></li>
+    let actions = `  <ul class="govuk-list">
+                                 <li><a id="ItemEdit" href="edit-ual.html" class="govuk-link" data-liveID="${x.id}">Edit</a></li>
+                                 <li><a id="ItemRemove" data-liveID="${x.id}" href="remove-ual-1.html" class="govuk-link removelink">Remove</a></li>
                            </ul>`;
-    totaldays += x.days
+    totaldays += parseInt(x.days)
     addRow(viewUAL,  x.ualType,x.from, x.to,"J.Smith at WMI", x.days, actions);
   }
   let footer = viewUAL.createTFoot();
@@ -769,6 +776,60 @@ if(viewUAL){
 }
 
 const removeUAL = document.getElementById("RemoveUAL")
+const editUAL = document.getElementById("EditUALPage")
+
+
+if(editUAL){
+  const editUALButton = document.getElementById("EditUAlButton")
+  let item = JSON.parse(localStorage.getItem('liveID'))
+
+  let record = adjustments.filter((x) => x.id === item);
+  let radios = document.getElementsByClassName('govuk-radios__input')
+  let days = 0;
+  for(let x of radios){
+    if (x.value === record[0].ualType) {
+      x.checked = true
+    }
+  }
+
+  fromDay.value = record[0].fromDay;
+  toDay.value = record[0].toDay;
+  fromMonth.value = record[0].fromMonth;
+  toMonth.value = record[0].toMonth;
+  fromYear.value = record[0].fromYear;
+  toYear.value = record[0].toYear;
+  numberOfDays.value = record[0].days;
+
+
+  toYear.addEventListener("blur", function() {
+    let days = createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear)
+    numberOfDays.value= days
+  })
+  editUALButton.addEventListener('click', function(e){
+    //e.preventDefault();
+    console.log(item)
+    for(let x of adjustments){
+      if(x.id === item){
+        console.log(x)
+          x.from = createDate(fromDay, fromMonth, fromYear);
+          x.to = createDate(toDay, toMonth, toYear);
+          x.days = numberOfDays.value;
+          x.ualType = getCheckedItem(radios);
+          x.fromDay = fromDay.value;
+          x.toDay = toDay.value;
+          x.fromMonth =  fromMonth.value;
+          x.toMonth =  toMonth.value;
+          x.fromYear=  fromYear.value;
+          x.toYear=  toYear.value;
+      }
+    }
+    console.log(adjustments)
+
+    localStorage.setItem('adjustments', JSON.stringify(adjustments))
+  })
+  console.log(adjustments)
+
+}
 
 if (removeUAL) {
   console.log("here")

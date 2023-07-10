@@ -14,9 +14,9 @@
         <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
-                    <form action="/form-handler" method="post" novalidate>
+                    <form >
 
-                        <div id="UALPage" class="">
+                        <div id="EditUALPage" class="">
 
 
                             <h1 class="govuk-heading-l">
@@ -27,6 +27,39 @@
                                 The rules for UAL (Unlawfully at large) can be found in
                                 <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1083190/sc-annex-a-operational-guidance.pdf#page=87">the policy framework</a>.
                             </p>
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                        Type of UAL
+                                    </legend>
+                                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="option1" name="UALType" type="radio" value="Recall">
+                                            <label class="govuk-label govuk-radios__label" for="option1">
+                                                Recall
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="option2" name="UALType" type="radio" value="Escapes/absconds/ROTL failures">
+                                            <label class="govuk-label govuk-radios__label" for="option2">
+                                                Escapes/absconds/ROTL failures
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="option3" name="UALType" type="radio" value="Sentenced in absence">
+                                            <label class="govuk-label govuk-radios__label" for="option3">
+                                                Sentenced in absence
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="option4" name="UALType" type="radio" value="Release in error">
+                                            <label class="govuk-label govuk-radios__label" for="option4">
+                                                Release in error
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
                          <div class="govuk-form-group">
                                 <fieldset class="govuk-fieldset" role="group" aria-describedby="valid-from">
                                     <legend class="govuk-fieldset__legend">
@@ -114,7 +147,7 @@
 
                         </div>
                         <div class="govuk-!-margin-top-8 govuk-button-group">
-                            <a href="check-your-answers-ual.html" class="govuk-button" data-module="govuk-button">
+                            <a id="EditUAlButton" href="check-your-answers-ual.html" class="govuk-button" data-module="govuk-button">
                                 Continue
                             </a>
                             <a href="view-ual.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
