@@ -9,72 +9,39 @@
         </div>
     </div>
     <div class="">
-        <a href="view-ual.html" class="govuk-back-link">Back</a>
+        <a href="hub-9.html" class="govuk-back-link">Back</a>
 
         <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
-                    <form >
+                    <form action="/form-handler" method="post" novalidate>
 
-                        <div id="EditUALPage" class="">
+                        <div id="UALPage" class="">
 
 
                             <h1 class="govuk-heading-l">
                                 <span class="govuk-caption-xl">Adjust release dates</span>
-                               Edit UAL details
+                               Enter UAL details
                             </h1>
                             <p class="govuk-body">
                                 The rules for UAL (Unlawfully at large) can be found in
                                 <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1083190/sc-annex-a-operational-guidance.pdf#page=87">the policy framework</a>.
                             </p>
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-                                        Type of UAL
-                                    </legend>
-                                    <div class="govuk-radios govuk-radios--small" data-module="govuk-radios">
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="option1" name="UALType" type="radio" value="Recall">
-                                            <label class="govuk-label govuk-radios__label" for="option1">
-                                                Recall
-                                            </label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="option2" name="UALType" type="radio" value="Escapes/absconds/ROTL failures">
-                                            <label class="govuk-label govuk-radios__label" for="option2">
-                                                Escapes/absconds/ROTL failures
-                                            </label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="option3" name="UALType" type="radio" value="Sentenced in absence">
-                                            <label class="govuk-label govuk-radios__label" for="option3">
-                                                Sentenced in absence
-                                            </label>
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="option4" name="UALType" type="radio" value="Release in error">
-                                            <label class="govuk-label govuk-radios__label" for="option4">
-                                                Release in error
-                                            </label>
-                                        </div>
-                                    </div>
-                                </fieldset>
-                            </div>
                          <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset" role="group" aria-describedby="valid-from">
-                                    <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                                    <legend class="govuk-fieldset__legend">
                                         When is this adjustment valid from?
                                     </legend>
-                                    <div id="valid-from" class="govuk-hint">
+                                    <div id="passport-issued-hint" class="govuk-hint">
                                         For example, 27 3 2022
                                     </div>
-                                    <div class="govuk-date-input" id="valid-from-date">
+                                    <div class="govuk-date-input" id="passport-issued">
                                         <div class="govuk-date-input__item">
                                             <div class="govuk-form-group">
-                                                <label class="govuk-label govuk-date-input__label" for="from-day" >
+                                                <label class="govuk-label govuk-date-input__label" for="from-day">
                                                     Day
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" placeholder="25" name="passport-issued-day" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="passport-issued-day" type="text" inputmode="numeric">
                                             </div>
                                         </div>
                                         <div class="govuk-date-input__item">
@@ -82,7 +49,7 @@
                                                 <label class="govuk-label govuk-date-input__label" for="from-month">
                                                     Month
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" placeholder="12" id="from-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="passport-issued-month" type="text" inputmode="numeric">
                                             </div>
                                         </div>
                                         <div class="govuk-date-input__item">
@@ -90,27 +57,27 @@
                                                 <label class="govuk-label govuk-date-input__label" for="from-year">
                                                     Year
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" placeholder="2022" id="from-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="passport-issued-year" type="text" inputmode="numeric">
                                             </div>
                                         </div>
                                     </div>
                                 </fieldset>
                             </div>
                             <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset" role="group" aria-describedby="valid-to-hint">
-                                    <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                                    <legend class="govuk-fieldset__legend">
                                         When is this adjustment valid to?
                                     </legend>
-                                    <div id=" valid-to-hint" class="govuk-hint">
+                                    <div id="passport-issued-hint" class="govuk-hint">
                                         For example, 27 3 2022
                                     </div>
-                                    <div class="govuk-date-input" id="valid-to-date">
+                                    <div class="govuk-date-input" id="passport-issued">
                                         <div class="govuk-date-input__item">
                                             <div class="govuk-form-group">
                                                 <label class="govuk-label govuk-date-input__label" for="to-day">
                                                     Day
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" placeholder="25" id="to-day" name="passport-issued-day" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="passport-issued-day" type="text" inputmode="numeric">
                                             </div>
                                         </div>
                                         <div class="govuk-date-input__item">
@@ -118,7 +85,7 @@
                                                 <label class="govuk-label govuk-date-input__label" for="to-month">
                                                     Month
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" placeholder="12" id="to-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="passport-issued-month" type="text" inputmode="numeric">
                                             </div>
                                         </div>
                                         <div class="govuk-date-input__item">
@@ -126,17 +93,17 @@
                                                 <label class="govuk-label govuk-date-input__label" for="to-year">
                                                     Year
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" placeholder="2022" id="to-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="passport-issued-year" type="text" inputmode="numeric">
                                             </div>
                                         </div>
                                     </div>
                                 </fieldset>
                             </div>
                             <div class="govuk-form-group">
-                                <label class="govuk-label govuk-!-font-weight-bold" for="number-of-days">
+                                <label class="govuk-label" for="number-of-days">
                                     Number of days
                                 </label>
-                                <input class="govuk-input govuk-input--width-4" id="number-of-days" name="width-4" type="text" placeholder="10">
+                                <input class="govuk-input govuk-input--width-4" id="number-of-days" name="width-4" type="text">
                             </div>
 <!--                            <div class="govuk-form-group">-->
 <!--                                <label class="govuk-label" for="document-ID">-->
@@ -146,14 +113,10 @@
 <!--                            </div>-->
 
                         </div>
-                        <div class="govuk-!-margin-top-8 govuk-button-group">
-                            <a id="EditUAlButton" href="check-your-answers-ual.html" class="govuk-button" data-module="govuk-button">
-                                Continue
-                            </a>
-                            <a href="view-ual.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                                Cancel
-                            </a>
-                        </div>
+
+                        <a href="prisoner-details-4.html" id="add-adjustment-button" class="govuk-button" data-name="UAL" data-desc="UAL (Unlawfully at large) ">
+                            Continue
+                        </a>
                     </form>
                 </div>
             </div>

@@ -1,0 +1,74 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="date-of-ada.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Adjust release dates</span>
+                                Select adjudication
+                            </h1>
+                        </legend>
+                        <div id="sign-in-hint" class="govuk-hint">
+                            Select adjudication from the list below.
+                        </div>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="sign-in">
+                                    Adjudication 0000000000: 25 days awarded
+                                </label>
+                                <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+                                    awarded on 12 May 2023
+                                </div>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+                                <label class="govuk-label govuk-radios__label" for="sign-in-2">
+                                    Adjudication 0000000001: 2 days awarded
+                                </label>
+                                <div id="sign-in-2-item-hint" class="govuk-hint govuk-radios__hint">
+                                    awarded on 12 May 2023
+                                </div>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="contact-2" name="sign-in" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                                <label class="govuk-label govuk-radios__label" for="contact-2">
+                                    Not listed
+                                </label>
+                            </div>
+                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="contact-by-phone">
+                                        Enter adjudication ID
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel" autocomplete="tel">
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <a href="check-ada.html" id="" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                    Continue
+                </a>
+
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}
