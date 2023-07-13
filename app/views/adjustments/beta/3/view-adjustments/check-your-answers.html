@@ -11,55 +11,32 @@
     <div class="">
         <a  id="backLink" href="#" class="govuk-back-link">Back</a>
         <main class="govuk-main-wrapper " id="main-content" role="main">
-            <div class="govuk-grid-row">
+            <div id="CheckYourAnswersPage" class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds-from-desktop">
                     <h1 class="govuk-heading-l">
                         <span class="govuk-caption-xl">Adjust release dates</span>
-                        Check adjustment information</h1>
-                    <h2 class="govuk-heading-m">Adjustments</h2>
-                    <div id="adjustmentsExplainer">
+                        Check your answers</h1>
+                    <h2 id="DataTitle" class="govuk-heading-m">Adjustments</h2>
+                    <div id="Details">
 
                     </div>
-                    <div id="adjustmentsList" class="govuk-body">
 
-                    </div>
                     <div class="govuk-form-group">
-                        <h2 class="govuk-heading-m">Confirm and save to NOMIS</h2>
-                        <p class="govuk-body">
-                            Once you have confirmed the adjustment information is correct, the data will be saved to NOMIS.
-                        </p>
-                        <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend govuk-fieldset__legend--m">
-                                Do you need to add any another adjustments?
-                            </legend>
-<!--                            <div id="add-another-hint" class="govuk-hint">-->
-<!--                                You must add every adjustment on the warrant.-->
-<!--                            </div>-->
-                            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input add-another" id="add-another" name="add-another" type="radio" value="Yes" data-route="select-adjustment-type">
-                                    <label class="govuk-label govuk-radios__label" for="add-another" >
-                                        Yes
-                                    </label>
-                                </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input add-another" id="add-another-2" name="add-another" type="radio" value="No" data-route="hub-9-a">
-                                    <label class="govuk-label govuk-radios__label" for="add-another-2">
-                                        No
-                                    </label>
-                                </div>
-                            </div>
-
-                        </fieldset>
+                        <h2 class="govuk-heading-m">Submit adjustment details</h2>
+                        <p class="govuk-body">Your data will be saved to NOMIS. After submitting you will need to recalculate release dates for this prisoner.</p>
+                        <div class="govuk-!-margin-top-8 govuk-button-group">
+                            <a href="adjustments-dashboard-view-journey-s1.html" class="govuk-button" data-module="govuk-button">
+                                Submit
+                            </a>
+                            <a href="edit-rada.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                Edit
+                            </a>
+                        </div>
                     </div>
-                    <a href="hub-9.html" class="govuk-button" data-module="govuk-button" id="accept-button">
-                        Accept and save
-                    </a>
-                </div>
 
             </div>
         </main>
     </div>
 </div>
-<script src="/public/javascripts/adjustments.js"></script>
+<script src="/public/javascripts/adjustments-3.js"></script>
 {% endblock %}

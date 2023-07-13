@@ -9,13 +9,13 @@
         </div>
     </div>
     <div class="">
-        <a href="hub-9.html" class="govuk-back-link">Back</a>
+        <a href="adjustments-dashboard-view-journey.html" class="govuk-back-link">Back</a>
 
         <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                     <form action="/form-handler" method="post" novalidate>
-                        <div class="">
+                        <div id="Enter-Rada-Details" class="">
                             <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjust release dates</span>
                                 Enter RADA details
                             </h1>
@@ -60,18 +60,13 @@
                                 <label class="govuk-label govuk-label--s" for="rada-number-of-days">
                                     Number of additional days restored
                                 </label>
-                                <input class="govuk-input govuk-input--width-4" id="rada-number-of-days" name="width-4" type="text">
+                                <input class="govuk-input govuk-input--width-4" id="rada-number-of-days" name="width-4" type="number">
                             </div>
-<!--                            <div class="govuk-form-group">-->
-<!--                                <label class="govuk-label" for="rada-document-ID">-->
-<!--                                    Adjudication ID-->
-<!--                                </label>-->
-<!--                                <input class="govuk-input govuk-input&#45;&#45;width-20" id="rada-document-ID" name="width-20" type="text">-->
-<!--                            </div>-->
+
 
                         </div>
 
-                        <a href="check-your-answers-ual.html"  class="govuk-button" data-name="RADA" data-desc="RADA (Restore additional days awarded) ">
+                        <a id="add-adjustment-button" href=""  class="govuk-button" data-name="RADA" data-desc="RADA (Restore additional days awarded)">
                             Continue
                         </a>
                     </form>
@@ -80,5 +75,5 @@
         </main>
     </div>
 </div>
-<script src="/public/javascripts/adjustments.js"></script>
+<script src="/public/javascripts/adjustments-3.js"></script>
 {% endblock %}
