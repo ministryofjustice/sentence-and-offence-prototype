@@ -66,14 +66,6 @@ if(checkYourAnswersPage) {
       let html = `<dl class="govuk-summary-list govuk-!-margin-bottom-9">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Type of UAL
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                ${data[0].ualType}
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
                                 First day spent unlawfully at large
                             </dt>
                             <dd class="govuk-summary-list__value">
@@ -94,6 +86,14 @@ if(checkYourAnswersPage) {
                             </dt>
                             <dd class="govuk-summary-list__value">
                                ${data[0].days}
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Type of UAL
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                ${data[0].ualType}
                             </dd>
                         </div>
                     </dl>`
