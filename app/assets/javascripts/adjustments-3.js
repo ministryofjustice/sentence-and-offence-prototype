@@ -923,7 +923,7 @@ if(viewUAL){
                                  <li><a id="ItemRemove" data-liveID="${x.id}" href="remove-ual-1.html" class="govuk-link removelink">Remove</a></li>
                            </ul>`;
     totaldays += parseInt(x.days)
-    addRow("UAL",viewUAL,  x.ualType,x.from, x.to,"J.Smith at WMI", x.days, actions);
+    addRow("UAL",viewUAL,  x.ualType,x.from, x.to,"Manchester Prison", x.days, actions);
   }
   let footer = viewUAL.createTFoot();
   footer.innerHTML =  `
