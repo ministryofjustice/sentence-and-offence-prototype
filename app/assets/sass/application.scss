@@ -196,7 +196,9 @@ img {
     width: 50%;
   }
 }
-
+.govuk-notification-banner__content > * {
+  max-width: inherit;
+}
 .ada-container {
   display:flex;
   margin-bottom:20px;
