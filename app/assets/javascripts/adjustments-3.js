@@ -264,7 +264,7 @@ function addAdjustmentData (type, from, to, days, id, desc, ualType, fromDay, to
         monthName = 'May';
         break;
       case 6:
-        monthName = 'jun';
+        monthName = 'Jun';
         break;
       case 7:
         monthName = 'Jul';
