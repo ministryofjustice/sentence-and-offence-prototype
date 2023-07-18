@@ -862,10 +862,10 @@ function addRow( adjustmentType, table,  ualType, from, to, enteredBy, days, act
       cell5.classList.add("govuk-table__cell", "govuk-!-text-align-centre");
       var cell6 = row.insertCell(5);
       cell6.classList.add("govuk-table__cell");
-      cell1.innerHTML = `${ualType}`;
-      cell2.innerHTML = `${from}`;
-      cell3.innerHTML = `${to}`;
-      cell4.innerHTML = `${enteredBy}`;
+      cell1.innerHTML = `${from}`;
+      cell2.innerHTML = `${to}`;
+      cell3.innerHTML = `${enteredBy}`;
+      cell4.innerHTML = `${ualType}`;
       cell5.innerHTML = `${days}`;
       cell6.innerHTML = actions
       break;
