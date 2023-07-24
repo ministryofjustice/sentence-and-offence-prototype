@@ -89,6 +89,32 @@
 
                         </div>
                     </div>
+
+                    <h2 class="govuk-heading-m">CRD error</h2>
+                    <div class="govuk-error-summary govuk-!-margin-bottom-4" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+                        <h2 class="govuk-error-summary__title" id="error-summary-title">
+                            There is a problem
+                        </h2>
+                        <div class="govuk-error-summary__body">
+                            <ul class="govuk-list govuk-error-summary__list">
+                                <li>
+                                    <p class="govuk-body">Error message text in regular font weight.</p>
+                                </li>
+                                <li>
+                                    <p class="govuk-body govuk-!-margin-bottom-0">You need to return to NOMIS to correct this, <a class="govuk-link" style="color: #1d70b8;">then reload this page</a>.</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <h2 class="govuk-heading-m">CRD Info notification</h2>
+                    <div class="moj-banner" id="missingNOMISInfoError">
+                        <h2 class="govuk-heading-m">You have entered multiple offences for a single sentence </h2>
+                        <div class="moj-banner__message">
+                            <p class="govuk-bpdy">Court case x count x has multiple offences against the sentence.  Each sentence must have only one offence. This service has automatically applied a new sentence for each offence.</p>
+                            <p class="govuk-body"> If you make any corrections in NOMIS, then <a href="#">reload this page</a>.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
