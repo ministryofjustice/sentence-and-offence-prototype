@@ -1,0 +1,150 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+    <div class="moj-identity-bar__container govuk-!-margin-left-0">
+        <div class="moj-identity-bar__details">
+            <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+        </div>
+    </div>
+</div>
+    <a href="select-adjustment-type.html" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+                <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Check remand details for Joe Bloggs</h1>
+
+                <p class="govuk-!-margin-bottom-8">This calculation only includes active adjustments from NOMIS.
+                    The rules for applying remand time can be found in <a href="#">the policy framework</a>.</p>
+<!--hide this until we know what we are doing-->
+<!--            <div class="govuk-inset-text">-->
+<!--                Farmer create agricultural charge remove property subject to charge from holding.-->
+<!--            </div>-->
+            <article class="moj-ticket-panel govuk-!-margin-bottom-8" aria-label="Sub navigation 1">
+
+                <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+
+                    <table class="govuk-table">
+                        <caption class="govuk-table__caption govuk-table__caption--m">Calculated remand days</caption>
+
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">From</th>
+                            <td class="govuk-table__cell">17 Apr 2020</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">To</th>
+                            <td class="govuk-table__cell">14 Dec 2022</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Days</th>
+                            <td class="govuk-table__cell">972</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Applies to sentence</th>
+                            <td class="govuk-table__cell">18</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+            </article>
+            <h2 class="govuk-heading-m">Details</h2>
+                <table class="govuk-table govuk-!-margin-bottom-8">
+                    <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__header" scope="col">Remand Period Identified from Court Events</th>
+                        <th class="govuk-table__header" scope="col">Days</th>
+                        <th class="govuk-table__header" scope="col"></th>
+                    </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row">
+                        <!-- Dates -->
+                        <td class="govuk-table__cell">
+                            <span class="govuk-!-padding-top-3"><b>From 17 Apr 2020 to 14 Dec 2022</b></span><br>
+                            <span class="govuk-hint">Case outcome: Remand in custody</span><br>
+                            <ul class="govuk-list">
+                                <li>Burglary other dwelling - theft on 1 Feb 2018</li>
+                                <li>Possess a firearm without a certificate on 1 Feb 2018</li>
+                                <li>Possess knife blade or sharp pointed article on 1 Feb 2018</li>
+                            </ul>
+
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell"></br>972</td>
+                        <!-- Change -->
+                        <td class="govuk-table__cell"><a href="edit"><br>Edit</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <!-- Dates -->
+                        <td class="govuk-table__cell">
+                            <span class="govuk-!-padding-top-3"><b>From 07 Dec 2020 to 14 Feb 2022 </b></span><br>
+                            <span class="moj-badge moj-badge--red">Not counted</span>
+                            <span class="govuk-hint">Case outcome: Remand in custody</span> <br>
+                            Possess with intent to supply a controlled drug of Class A - Heroin<br>
+                            Possess with intent to supply a controlled drug of Class A - Crack Cocaine<br>
+
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell"></br>738</td>
+                        <!-- Change -->
+                        <td class="govuk-table__cell"><a href="edit"><br>Edit</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <!-- Dates -->
+                        <td class="govuk-table__cell">
+                            <span class="govuk-!-padding-top-3"><b>From 12 Feb 18 to 17 Feb 18</b></span><br>
+                            <span class="moj-badge moj-badge--red">Not counted</span>
+                            <span class="govuk-hint govuk-!-margin-bottom-4">Case outcome: Remand in custody</span><br>
+                            Possess an offensive weapon in a public space<br>
+                            Failing to comply with the community requirements if a suspended sentence order<br>
+
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell"><br>513</td>
+                        <!-- Change -->
+                        <td class="govuk-table__cell"><br><a href="edit">Edit</a></td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <!-- Dates -->
+                        <td class="govuk-table__cell">
+                            <span class="govuk-!-padding-top-3"><b>From 20 Oct 2021 to 07 dec 2021</b></span><br>
+                            <span class="moj-badge moj-badge--red">Not counted</span>
+                            <span class="govuk-hint govuk-!-margin-bottom-4">Case outcome: Remand in custody</span><br>
+                            Possess shotgun without a certificate<br>
+                            Possess shotgun without a certificate<br>
+
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell"><br>49</td>
+                        <!-- Change -->
+                        <td class="govuk-table__cell"><br><a href="edit">Edit</a></td>
+                    </tr>
+<!--                    &lt;!&ndash; Total &ndash;&gt;-->
+<!--                    <tr class="govuk-table__row">-->
+<!--                        &lt;!&ndash; Dates &ndash;&gt;-->
+<!--                        <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right">Total days</td>-->
+<!--                        &lt;!&ndash; Days &ndash;&gt;-->
+<!--                        <td class="govuk-table__cell">972-->
+<!--                        </td>-->
+<!--                        <td class="govuk-table__cell"></td>-->
+<!--                    </tr>-->
+                    </tbody>
+                </table>
+            <div>
+
+            </div>
+
+
+
+                <a href="confirmation.html" class="govuk-button" data-module="govuk-button">
+                    Save and continue
+                </a>
+
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/cases.js"></script>
+{% endblock %}

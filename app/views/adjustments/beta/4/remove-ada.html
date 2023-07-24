@@ -1,0 +1,84 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="hub-9.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjust release dates</span>Remove ADA</h1>
+                    <h2 class="govuk-heading-m">Adjudication details</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                12 May 2023
+                            </dd>
+
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Adjudication ID
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                0000001
+                            </dd>
+
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Days
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                25
+                            </dd>
+
+                        </div>
+                    </dl>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                <h2 class="govuk-fieldset__heading">
+                                    Are you sure you want to remove this record?
+                                </h2>
+                            </legend>
+                            <div id="changed-name-hint" class="govuk-hint">
+                                Supporting content.
+                            </div>
+                            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name">
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
+                                    <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    <div class="govuk-!-margin-top-8">
+                        <a href="adjustments-dashboard.html" class="govuk-button" data-module="govuk-button">
+                            Continue
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}

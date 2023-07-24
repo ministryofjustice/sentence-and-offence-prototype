@@ -1,0 +1,79 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="ual.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjust release dates</span>Check your answers</h1>
+                    <h2 class="govuk-heading-m">UAL details</h2>
+<!--                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">-->
+<!--                        <div class="govuk-summary-list__row">-->
+<!--                            <dt class="govuk-summary-list__key">-->
+<!--                                Type of UAL-->
+<!--                            </dt>-->
+<!--                            <dd class="govuk-summary-list__value">-->
+<!--                                Option 1-->
+<!--                            </dd>-->
+<!--                        </div>-->
+<!--                        <div class="govuk-summary-list__row">-->
+<!--                            <dt class="govuk-summary-list__key">-->
+<!--                                When is this adjustment valid from-->
+<!--                            </dt>-->
+<!--                            <dd class="govuk-summary-list__value">-->
+<!--                                15 Dec 2022-->
+<!--                            </dd>-->
+<!--                        </div>-->
+<!--                        <div class="govuk-summary-list__row">-->
+<!--                            <dt class="govuk-summary-list__key">-->
+<!--                                When is this adjustment valid to-->
+<!--                            </dt>-->
+<!--                            <dd class="govuk-summary-list__value">-->
+<!--                                25 Dec 2022-->
+<!--                            </dd>-->
+
+<!--                        </div>-->
+<!--                        <div class="govuk-summary-list__row">-->
+<!--                            <dt class="govuk-summary-list__key">-->
+<!--                                Number of days-->
+<!--                            </dt>-->
+<!--                            <dd class="govuk-summary-list__value">-->
+<!--                                10-->
+<!--                            </dd>-->
+<!--&lt;!&ndash;                            <dd class="govuk-summary-list__value">&ndash;&gt;-->
+<!--&lt;!&ndash;                                <a href="" class="govuk-link">Change</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </dd>&ndash;&gt;-->
+
+<!--                        </div>-->
+<!--                    </dl>-->
+                    <div id="CheckUAL">
+
+                    </div>
+                    <div class="govuk-form-group">
+                        <h2 class="govuk-heading-m">Submit adjustment details</h2>
+                        <p class="govuk-body">Your data will be saved to NOMIS. After submitting you will need to recalculate release dates for this prisoner.</p>
+                        <div class="govuk-!-margin-top-8 govuk-button-group">
+                            <a href="adjustments-dashboard-view-journey-s1.html" class="govuk-button" data-module="govuk-button">
+                                Submit
+                            </a>
+                            <a href="edit-ual.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                Edit
+                            </a>
+                        </div>
+                </div>
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}
