@@ -1037,8 +1037,19 @@ if(ualSelectionPage) {
     e.preventDefault()
     radioRoute(radios);
 
+    //set ualtype in local storage
+
   })
 }
+
+if(UALPage){
+  //ual entry page
+
+//on click take ualtype local storage pluss data entered and save
+
+//route to check your ansers page
+}
+
 
 
 
