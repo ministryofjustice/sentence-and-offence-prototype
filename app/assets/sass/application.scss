@@ -222,5 +222,19 @@ img {
   }
 
 }
+.search-bar {
+  display:flex;
+  flex-direction: row;
+}
+
+.search-button {
+  box-sizing: border-box;
+  background-color: 	#1d70b8;
+  color:white;
+  margin-top:0px;
+  display:inline-block;
+  height:40px;
+  border:0;
+}
 
 
