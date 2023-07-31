@@ -20,6 +20,7 @@ document.addEventListener("load", function() {
   const review = document.getElementById('review');
   const ualPage = document.getElementById('UALPage');
   const ualSelectionPage = document.getElementById('UALSelectionPage');
+  const chargeNumber = document.getElementById('Charge-number');
 
 
   //backlinks
@@ -53,6 +54,114 @@ const checkYourAnswersPage = document.getElementById('CheckYourAnswersPage')
 
 //buttons
 const enterRadaDetailsButton = document.getElementById('Enter-rada-detail-button')
+const addADAButton = document.getElementById('add-ada-button')
+const ADACheckButton = document.getElementById('ADACheckButton')
+const ADACheck = document.getElementById('ADACheck')
+
+const radioList = Array.from(document.getElementsByClassName("govuk-radios__input"))
+const caseNumber = document.getElementsByClassName("case-number")
+
+function getRadioValue(option){
+  const optionValue = option.length && option.find(c => c.checked).value;
+  return optionValue
+}
+function getCaseNumberValue(list){
+  let caseNo = ""
+  for(let x of list) {
+    if(x.value > null) {
+      caseNo =  x.value
+    }
+  }
+  return caseNo
+}
+
+if(addADAButton) {
+  addADAButton.addEventListener('click', function(e){
+    e.preventDefault();
+    const chargeNo = chargeNumber.value
+     //get date
+    const from = createDate(fromDay, fromMonth, fromYear);
+    //get number of days
+    const days = numberOfDays.value
+    //get cc
+    const ccStatus = getRadioValue(radioList)
+
+    //get case number
+    const caseNo = getCaseNumberValue(caseNumber)
+    manualAddADA("ADA", chargeNo, from, days, ccStatus, caseNo )
+    //go to nest step
+    location.href = `check-your-answers-3.html`;
+  })
+}
+
+function manualAddADA (type, chargeNo, from, days, ccStatus, caseNo) {
+
+
+  let newAdjustment = {
+    type: type,
+    chargeNo: chargeNo,
+    from: from,
+    days: days,
+    ccStatus: ccStatus,
+    caseNo: caseNo
+  }
+
+  adjustments.push(newAdjustment)
+  localStorage.setItem('adjustments', JSON.stringify(adjustments))
+  console.log(adjustments)
+}
+
+if (ADACheck){
+  const target = document.getElementById('details')
+  let data =  adjustments.filter((x) => x.type === "ADA");
+
+  for(let x in data){
+      let html=  `<dl class="govuk-summary-list govuk-!-margin-bottom-3">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Charge number
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                               ${data[x].chargeNo}
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Date charge proved
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                               ${data[x].from}
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Number of days
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                               ${data[x].days}
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                To be served
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                ${data[x].ccStatus} to ${data[x].caseNo}
+                            </dd>
+                        </div>
+                        <div>
+                            <p><a href="">Change</a></p>
+                        </div>
+                    </dl>`
+    target.innerHTML += html
+  }
+
+  ADACheckButton.addEventListener('click', function (e){
+    e.preventDefault();
+    let radios = document.getElementsByClassName('govuk-radios__input');
+    radioRoute(radios);
+  })
+}
 
 if(checkYourAnswersPage) {
   const heading = document.getElementById('DataTitle')
@@ -1042,13 +1151,7 @@ if(ualSelectionPage) {
   })
 }
 
-if(UALPage){
-  //ual entry page
 
-//on click take ualtype local storage pluss data entered and save
-
-//route to check your ansers page
-}
 
 
 
