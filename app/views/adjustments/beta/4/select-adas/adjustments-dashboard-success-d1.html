@@ -16,6 +16,24 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full govuk-!-padding-6">
                     <div class="moj-page-header-actions">
+                        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                             aria-labelledby="govuk-notification-banner-title"
+                             data-module="govuk-notification-banner">
+                            <div class="govuk-notification-banner__header">
+                                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                                    Success
+                                </h2>
+                            </div>
+                            <div class="govuk-notification-banner__content">
+                                <h3 class="govuk-notification-banner__heading">
+                                    ADA's added
+                                </h3>
+                                <p class="govuk-body">The 42 days awarded to Joe Bloggs have been added.</p>
+                                <p class="govuk-body">You must recalculate the release dates once all adjustments have been applied.
+                                    <a href="crd.html" class="govuk-notification-banner__link">Calculate release date</a>
+                                </p>
+                            </div>
+                        </div>
                         <div class="moj-page-header-actions__title">
                             <h1 class="govuk-heading-xl">
                                 <span class="govuk-caption-xl">Adjust release dates</span>
@@ -26,11 +44,7 @@
                     <p class="govuk-body">
                         This page lists all the adjustments that have been recorded for Joe Bloggs. You can add new adjustments, update existing information or review remand that has been logged in NOMIS.
                     </p>
-                    <div id="review" class="adj-card full grey">
-                        <h2 class="govuk-heading-m adj-card-heading">There are unapplied ADA's to review</h2>
-                        <p>ADAs have been entered but have not yet been applied to the sentence.</p>
-                        <a href="select-multiple-adjudications-table.html" class="govuk-button" role="button">Review</a>
-                    </div>
+
                 </div>
             </div>
 
@@ -276,24 +290,22 @@ Here you will find details about this adjustment type......                     
                                     <h2 class="govuk-summary-card__title">ADA (Additional days awarded)</h2>
                                     <ul class="govuk-summary-card__actions">
                                         <li class="govuk-summary-card__action">
-                                            <a class="govuk-link" href="ada-2.html">
-                                            Add new<span class="govuk-visually-hidden"> add new</span>
-                                        </a>
+<!--                                            <a class="govuk-link" href="date-of-ada.html">-->
+<!--                                            Add new<span class="govuk-visually-hidden"> add new</span>-->
+<!--                                        </a>-->
                                         </li>
-                                        <li class="govuk-summary-card__action">
-                                            <a class="govuk-link" href="view-ada.html">
-                                                View
-                                                <span class="govuk-visually-hidden"> View</span>
-                                            </a>
-                                        </li>
+<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="view.html">-->
+<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
+<!--                                        </a>-->
+<!--                                        </li>-->
                                     </ul>
                                 </div>
                             <div class="adjustment-card_content">
-                                <span id="ADA" class="count govuk-body">0</span><span>Days</span>
-<!--                                <a class="govuk-link" href="view-ada.html">-->
-<!--                                    view details<span class="govuk-visually-hidden"> view details</span>-->
-<!--                                </a>-->
-<!--                                <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
+                                <span id="ADA" class="count-2 govuk-body">42</span><span>Days</span>
+                                <a class="govuk-link" href="view-ada.html">
+                                    view details<span class="govuk-visually-hidden"> view details</span>
+                                </a>
+                                <p class="govuk-body govuk-!-font-size-14">Last updated on 9 jun 2023 by Belmarsh prison</p>
                                 <details class="govuk-details" data-module="govuk-details">
                                     <summary class="govuk-details__summary">
                                             <span class="govuk-details__summary-text">
@@ -306,11 +318,18 @@ Here you will find details about this adjustment type......                     
                                 </details>
                             </div>
                         </div>
+                        <div class="govuk-inset-text govuk-!-margin-left-2 govuk-!-margin-top-9">
+                            <h2 class="govuk-heading-m">Calculate release dates</h2>
+                            <p>The changes may affect the release date for Joe Bloggs </p>
+                            <a href="crd.html" id="" class="govuk-button">
+                                Calculate release dates
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
         </main>
     </div>
 </div>
-<script src="/public/javascripts/adjustments.js"></script>
+<script src="/public/javascripts/adjustments-3.js"></script>
 {% endblock %}
