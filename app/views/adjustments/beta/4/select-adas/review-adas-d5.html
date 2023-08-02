@@ -1,0 +1,267 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="../adjustments-dashboard.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <div class="govuk-form-group govuk-body">
+                        <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    <span class="govuk-caption-xl">Adjust release dates</span>
+                                    Review adjudications
+                                </h1>
+                            </legend>
+
+
+
+                            <h2 class="govuk-heading-m">Current days awarded</h2>
+                            <table  id="" class="govuk-table govuk-!-margin-bottom-8">
+                                <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-table__header" scope="col">Date charge proved</th>
+                                    <th class="govuk-table__header" scope="col">Charge number</th>
+                                    <th class="govuk-table__header" scope="col">To be served</th>
+                                    <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Entered by</th>
+                                    <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Status</th>
+                                    <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Days</th>
+                                </tr>
+                                </thead>
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <!-- Dates -->
+                                    <td class="govuk-table__cell">
+                                        12 May 2022
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        3456789
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        Concurrent to 1234567
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        Belmarsh prison
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        <span class=" moj-badge moj-badge--black">Quashed</span>
+                                    </td>
+                                    <!-- Days -->
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">24 </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <!-- Dates -->
+                                    <td class="govuk-table__cell">
+                                        12 May 2022
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        3456789
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        Concurrent to 1234567
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        Belmarsh prison
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        <span class=" moj-badge moj-badge--red">suspended</span>
+                                    </td>
+                                    <!-- Days -->
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">24 </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <!-- Dates -->
+                                    <td class="govuk-table__cell">
+                                        12 May 2022
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        3456789
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        Concurrent to 1234567
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        Belmarsh prison
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        <span class=" moj-badge moj-badge--blue">awarded</span>
+                                    </td>
+                                    <!-- Days -->
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">24 </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <!-- Dates -->
+                                    <td class="govuk-table__cell">
+                                        12 May 2022
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        3456789
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        Concurrent to 1234567
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        Belmarsh prison
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        <span class=" moj-badge moj-badge--grey">perspective</span>
+                                    </td>
+                                    <!-- Days -->
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">24 </td>
+                                </tr>
+
+                                </tbody>
+                                <tfoot>
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-table__cell govuk-!-text-align-right" scope="row" colspan="5">Current total days</th>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">42</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                            <h2 class="govuk-heading-m">Days to be awarded</h2>
+                            <table  id="" class="govuk-table govuk-!-margin-bottom-8">
+                                <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-table__header" scope="col">Date charge proved</th>
+                                    <th class="govuk-table__header" scope="col">Charge number</th>
+                                    <th class="govuk-table__header" scope="col">To be served</th>
+                                    <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Entered by</th>
+                                    <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Status</th>
+                                    <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Days</th>
+                                </tr>
+                                </thead>
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <!-- Dates -->
+                                    <td class="govuk-table__cell">
+                                        12 May 2023
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        1234567
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        Concurrently
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        Belmarsh prison
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        <span class= "moj-badge moj-badge--green">Awaiting approval</span>
+                                    </td>
+                                    <!-- Days -->
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">24</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <!-- Dates -->
+                                    <td class="govuk-table__cell">
+                                        12 May 2022
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        2345678
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        Consecutive to 1234567
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        Belmarsh prison
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        <span class= "moj-badge moj-badge--green">Awaiting approval</span>
+                                    </td>
+                                    <!-- Days -->
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">18 </td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <!-- Dates -->
+                                    <td class="govuk-table__cell">
+                                        12 May 2022
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        3456789
+                                    </td>
+                                    <td class="govuk-table__cell">
+                                        Concurrent to 1234567
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        Belmarsh prison
+                                    </td>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">
+                                        <span class= "moj-badge moj-badge--green">Awaiting approval</span>
+                                    </td>
+                                    <!-- Days -->
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">24 </td>
+                                </tr>
+
+                                </tbody>
+                                <tfoot>
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-table__cell govuk-!-text-align-right" scope="row" colspan="5">Total days to be awarded</th>
+                                    <td class="govuk-table__cell govuk-!-text-align-centre">42</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </fieldset>
+                        <div class="govuk-!-margin-top-6">
+                            <h2 class="govuk-heading-m">Days awarded</h2>
+                            <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-!-width-two-thirds">
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                       Current days awarded
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        25
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Days to be awarded
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        42
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                       Total days
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        67
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+
+
+
+
+<!--                <a href="check-your-answers.html" id="" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">-->
+<!--                    Continue-->
+<!--                </a>-->
+                    <h2 class="govuk-heading-m">Award days</h2>
+                    <p class="govuk-body govuk-!-width-two-thirds">These have been added by the adjudications service. If there is a problem with this data please fix the issue in NOMIS or alternativley contact the adjuications team. Once this
+                        has been resolved please return to this page and <a href="">refresh</a> the screen to see the changes reflected.
+                    </p>
+                    <div class="govuk-!-margin-top-8 govuk-button-group">
+                        <a href="check-your-answers-4.html" class="govuk-button" data-module="govuk-button">
+                            Award days
+                        </a>
+                    </div>
+                    <a href="">Cancel and return to dashboard</a>
+
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/javascripts/adjustments.js"></script>
+{% endblock %}
