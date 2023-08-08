@@ -22,7 +22,8 @@
                                     Review adjudications
                                 </h1>
                             </legend>
-                            <h2 class="govuk-heading-m">Current ADAs</h2>
+                            <h2 class="govuk-heading-m">Awarded ADAs</h2>
+                            <p>These adjudications have been added as an adjustment and will be applied to sentence calculations.</p>
                             <table  id="" class="govuk-table govuk-!-margin-bottom-8">
                                 <thead class="govuk-table__head">
                                 <tr class="govuk-table__row">
@@ -225,6 +226,7 @@
                                 </tfoot>
                             </table>
                             <h2 class="govuk-heading-m">Suspended ADAs</h2>
+                            <p>These adjudications are currently suspended and cannot be applied to a sentence calculation until they have been awarded. Refer to the team responsible for managing adjudications if these are no longer suspended and need to be added as an adjustment.</p>
                             <table  id="" class="govuk-table govuk-!-margin-bottom-8">
                                 <thead class="govuk-table__head">
                                 <tr class="govuk-table__row">
@@ -345,7 +347,8 @@
                                 </tr>
                                 </tfoot>
                             </table>
-                            <h2 class="govuk-heading-m">New ADAs</h2>
+                            <h2 class="govuk-heading-m">Awarded ADAs pending approval</h2>
+                            <p>These adjudications have not yet been added as an adjustment and will not be applied to sentence calculations. To add these as an adjustment submit them below.</p>
                             <table  id="" class="govuk-table govuk-!-margin-bottom-8">
                                 <thead class="govuk-table__head">
                                 <tr class="govuk-table__row">
@@ -427,36 +430,10 @@
                                 </tr>
                                 </tfoot>
                             </table>
+                            <div class="govuk-inset-text">
+                                If you think some information is wrong, update it NOMIS or contact the adjudications team for support, then <a href="">reload this page</a>.
+                            </div>
                         </fieldset>
-                        <div class="govuk-!-margin-top-6">
-                            <h2 class="govuk-heading-m">Days awarded</h2>
-                            <dl class="govuk-summary-list govuk-!-margin-bottom-9 govuk-!-width-two-thirds">
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                       Current days awarded
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        26
-                                    </dd>
-                                </div>
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                        Days to be awarded
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        42
-                                    </dd>
-                                </div>
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                       Total days
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        68
-                                    </dd>
-                                </div>
-                            </dl>
-                        </div>
                     </div>
 
 
@@ -465,13 +442,13 @@
 <!--                <a href="check-your-answers.html" id="" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">-->
 <!--                    Continue-->
 <!--                </a>-->
-                    <h2 class="govuk-heading-m">Award days</h2>
-                    <p class="govuk-body govuk-!-width-two-thirds">These have been added by the adjudications service. If there is a problem with this data please fix the issue in NOMIS or alternativley contact the adjuications team. Once this
-                        has been resolved please return to this page and <a href="">refresh</a> the screen to see the changes reflected.
+                    <h2 class="govuk-heading-m">Approve pending awarded days</h2>
+                    <p class="govuk-body govuk-!-width-two-thirds">
+                        Once you have checked all the adjudication information is correct, submit the days awarded.
                     </p>
                     <div class="govuk-!-margin-top-8 govuk-button-group">
                         <a href="check-your-answers-4.html" class="govuk-button" data-module="govuk-button">
-                            Award days
+                            Approve
                         </a>
                     </div>
                     <a href="adjustments-dashboard-d3.html">Cancel and return to dashboard</a>
