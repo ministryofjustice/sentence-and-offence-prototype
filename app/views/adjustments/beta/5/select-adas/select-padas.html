@@ -15,7 +15,7 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                     <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset" aria-describedby="nationality-hint">
+                        <fieldset class="govuk-fieldset" aria-describedby="option-hint">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                                 <h1 class="govuk-fieldset__heading">
                                     <span class="govuk-caption-xl">Adjust release dates</span>
@@ -23,13 +23,13 @@
                                 </h1>
                             </legend>
                             <p>You must select the adjudications that apply to the current sentences that are being served.</p>
-                            <div id="nationality-hint" class="govuk-hint">
+                            <div id="option-hint" class="govuk-hint">
                                 Select all that apply
                             </div>
                             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                 <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input ada-days-input" id="nationality" name="nationality" type="checkbox" data-cc="" value="british" aria-describedby="nationality-item-hint" data-days-balance="24">
-                                    <label class="govuk-label govuk-checkboxes__label" for="nationality">
+                                    <input class="govuk-checkboxes__input ada-days-input" id="option" name="option" type="checkbox" data-cc="" value="british" aria-describedby="option-item-hint" data-days-balance="24">
+                                    <label class="govuk-label govuk-checkboxes__label" for="option">
                                         Charge number: 3765949, 3 Days, Concurrent
                                     </label>
                                     <div  class="govuk-hint govuk-checkboxes__hint">
@@ -37,8 +37,8 @@
                                     </div>
                                 </div>
                                 <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input ada-days-input" id="nationality-2" name="nationality" type="checkbox" value="irish" data-days-balance="18" data-cc="">
-                                    <label class="govuk-label govuk-checkboxes__label" for="nationality-2">
+                                    <input class="govuk-checkboxes__input ada-days-input" id="option-2" name="option" type="checkbox" value="irish" data-days-balance="18" data-cc="">
+                                    <label class="govuk-label govuk-checkboxes__label" for="option-2">
                                         Charge number: 2345678, 18 Days Awarded Consecutive to 1234567
                                     </label>
                                     <div class="govuk-hint govuk-checkboxes__hint">
@@ -46,12 +46,21 @@
                                     </div>
                                 </div>
                                 <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input ada-days-input" id="nationality-3" name="nationality" type="checkbox" value="other" data-days-balance="24" data-cc="consec">
-                                    <label class="govuk-label govuk-checkboxes__label" for="nationality-3">
+                                    <input class="govuk-checkboxes__input ada-days-input" id="option-3" name="option" type="checkbox" value="other" data-days-balance="24" data-cc="consec">
+                                    <label class="govuk-label govuk-checkboxes__label" for="option-3">
                                         Charge number: 3456789, 24 Days Awarded, Concurrent
                                     </label>
                                     <div  class="govuk-hint govuk-checkboxes__hint">
                                         Date charge proved: 12 May 2023
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input ada-days-input" id="option-4" name="option" type="checkbox" value="other" data-days-balance="24" data-cc="consec">
+                                    <label class="govuk-label govuk-checkboxes__label" for="option-4">
+                                        None
+                                    </label>
+                                    <div  class="govuk-hint govuk-checkboxes__hint">
+                                        None of these are relevant
                                     </div>
                                 </div>
                             </div>
