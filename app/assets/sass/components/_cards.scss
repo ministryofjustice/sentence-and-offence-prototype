@@ -35,6 +35,31 @@
   }
 }
 
+.remand-period {
+  display:flex;
+  flex-direction: row;
+
+}
+.remand-summary {
+
+}
+.remand-details__container {
+  display:flex;
+  flex-direction: column;
+
+  .remand-details__row {
+    display: flex;
+    flex-direction: row;
+    :nth-child(1){
+      padding-left: 32px;
+    }
+
+    .remand-details-key {
+      font-weight: bold;
+      padding-right: 4px;
+    }
+  }
+}
 .homepage-search {
   padding: 30px 0;
   background-color: #e0eef8
