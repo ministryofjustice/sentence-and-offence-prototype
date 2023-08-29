@@ -10,7 +10,7 @@
 </div>
     <a href="select-adjustment-type.html" class="govuk-back-link">Back</a>
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds govuk-!-padding-top-6">
+        <div class="govuk-grid-column-full govuk-!-padding-top-6">
 
                 <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjust release dates</span>Check remand details for Joe Bloggs</h1>
 
@@ -21,136 +21,322 @@
 <!--            <div class="govuk-inset-text">-->
 <!--                Farmer create agricultural charge remove property subject to charge from holding.-->
 <!--            </div>-->
-            <article class="moj-ticket-panel govuk-!-margin-bottom-8" aria-label="Sub navigation 1">
-
-                <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
 
                     <table class="govuk-table">
-                        <caption class="govuk-table__caption govuk-table__caption--m">Calculated remand days summary</caption>
-
+                        <caption class="govuk-table__caption govuk-table__caption--m">Remand identified</caption>
+                        <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">From</th>
+                            <th scope="col" class="govuk-table__header">To</th>
+                            <th scope="col" class="govuk-table__header">Days</th>
+                            <th scope="col" class="govuk-table__header">Offence</th>
+                        </tr>
+                        </thead>
                         <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">From</th>
-                            <td class="govuk-table__cell">1 Feb 2018</td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">To</th>
+                            <td  class="govuk-table__cell">1 Feb 2018</td>
                             <td class="govuk-table__cell">17 Feb 2018</td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">Days</th>
                             <td class="govuk-table__cell">11</td>
+                            <td class="govuk-table__cell">Attempted burglary<br>committed on 1 Feb 2018</td>
                         </tr>
-<!--                        <tr class="govuk-table__row">-->
-<!--                            <th scope="row" class="govuk-table__header">Applies to</th>-->
-<!--                            <td class="govuk-table__cell">Offence name</td>-->
-<!--                        </tr>-->
                         </tbody>
                     </table>
-                </section>
 
-            </article>
             <h2 class="govuk-heading-m">Relevant remand</h2>
-            <table class="govuk-table govuk-!-margin-bottom-8">
-                    <thead class="govuk-table__head">
-                    <tr class="govuk-table__row">
-                        <th class="govuk-table__header" scope="col">Remand periods identified from court events</th>
-                        <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Days</th>
-                    </tr>
-                    </thead>
-                    <tbody class="govuk-table__body">
-                    <tr class="govuk-table__row">
-                        <!-- Dates -->
-                        <td class="govuk-table__cell">
-                            <span class="govuk-!-padding-top-3"><b>Court case number: T1000000</b></span><br>
-                            <span>Court : Wolverhampton crown court</span><br>
-                            <span>Case outcome : Bailed</span><br>
-                            <span>Remand period : </span><span class="govuk-hint">From 1 Feb 2018 - 05 Feb 2018</span><br>
-                            <ul class="govuk-list">
-                                <li>Attempted burglary <br> <span class="govuk-hint">committed on 1 Feb 2018</span>
-                                    </li>
-<!--                                <li>Possess a firearm without a certificate on 1 Feb 2018</li>-->
-<!--                                <li>Possess knife blade or sharp pointed article on 1 Feb 2018</li>-->
-                            </ul>
-                        </td>
-                        <!-- Days -->
-                        <td class="govuk-table__cell govuk-!-text-align-centre"></br>5 </td>
-                    </tr>
-                    <tr class="govuk-table__row">
-                        <!-- Dates -->
-                        <td class="govuk-table__cell">
-                            <span class="govuk-!-padding-top-3"><b>Court case number: T1000000</b></span><br>
-                            <span>Court : Wolverhampton crown court</span><br>
-                            <span>Case outcome : Sentencing</span><br>
-                            <span class="govuk-hint">From 12 Feb 2018 - 17 Feb 2018</span><br>
-                            <ul class="govuk-list">
-                                <li>Attempted burglary  <br> <span class="govuk-hint">committed on 1 Feb 2018</span></li>
-                            </ul>
-                        </td>
-                        <!-- Days -->
-                        <td class="govuk-table__cell govuk-!-text-align-centre"></br>6</td>
-                    </tr>
-                    </tbody>
-                </table>
+            <article class="moj-ticket-panel govuk-!-margin-left-6" >
+                <section class="moj-ticket-panel__content moj-ticket-panel__content--green remand-period govuk-body" aria-label="Section 1">
+                     <div class="remand-summary govuk-!-width-one-third">
+                         <div>
+                             <div><h3 class="govuk-heading-s">Days spent on remand</h3></div>
+                             <div> <span class="govuk-heading-s">69</span><span class="moj-badge moj-badge--green">Tag 1</span></div>
+                         </div>
 
-            <h2 class="govuk-heading-m">Other remand</h2>
-            <table class="govuk-table govuk-!-margin-bottom-8">
-                <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                    <th class="govuk-table__header" scope="col">Remand periods identified from court events</th>
-                    <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Days</th>
-                </tr>
-                </thead>
-                <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <!-- Dates -->
-                    <td class="govuk-table__cell">
-                        <span class="govuk-!-padding-top-3"><b>Court case number: T1000300</b></span><br>
-                        <span>Court : Wolverhampton crown court</span><br>
-                        <span>Case outcome : Sentencing</span><br>
-                        <span class="govuk-hint">From 12 Feb 2018 - 17 Feb 2018</span><br>
-                        <ul class="govuk-list">
-                            <li>Assualt by beating  <br> <span class="govuk-hint">committed on 1 Feb 2018</span></li>
-                        </ul>
+                     </div>
+                    <div class="remand-details__container govuk-!-width-two-thirds">
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Court:</span> <span>Birmingham</span></div>
+                            <div><span class="remand-details-key">Case number:</span><span>T00003333</span></div>
+                        </div>
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Offence:</span><span>T00003333</span></div>
+                        </div>
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Committed on:</span> <span>T00003333</span></div>
+                            <div><span class="remand-details-key">Offence outcome:</span><span>T00003333</span></div>
+                        </div >
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Period of remand:</span> <span>T00003333</span></div>
+                        </div>
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Case outcome:</span><span>T00003333</span></div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <article class="moj-ticket-panel govuk-!-margin-left-6 govuk-!-margin-bottom-8" >
+                <section class="moj-ticket-panel__content moj-ticket-panel__content--blue remand-period govuk-body" aria-label="Section 1">
+                    <div class="remand-summary govuk-!-width-one-third">
+                        <div>
+                            <h3 class="govuk-heading-s">Days spent on remand</h3>
+                            <span class="govuk-heading-s">69</span>
+                            <span class="moj-badge moj-badge--blue">Tag 2</span>
+                        </div>
 
-                    </td>
-                    <!-- Days -->
-                    <td class="govuk-table__cell govuk-!-text-align-centre"><br>6
-<!--                        <br><span class="moj-badge moj-badge&#45;&#45;bright-purple">not counted</span>-->
-                    </td>
+                    </div>
+                    <div class="remand-details__container govuk-!-width-two-thirds">
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Court:</span> <span>Birmingham</span></div>
+                            <div><span class="remand-details-key">Case number:</span><span>T00003333</span></div>
+                        </div>
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Offence:</span><span>T00003333</span></div>
+                        </div>
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Committed on:</span> <span>T00003333</span></div>
+                            <div><span class="remand-details-key">Offence outcome:</span><span>T00003333</span></div>
+                        </div >
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Period of remand:</span> <span>T00003333</span></div>
+                        </div>
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Case outcome:</span><span>T00003333</span></div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <h2 class="govuk-heading-m">Non relevant remand</h2>
+            <article class="moj-ticket-panel govuk-!-margin-left-6" >
+                <section class="moj-ticket-panel__content moj-ticket-panel__content--green remand-period govuk-body" aria-label="Section 1">
+                    <div class="remand-summary govuk-!-width-one-third">
+                        <div>
+                            <h3 class="govuk-heading-s">Days spent on remand</h3>
+                            <span class="govuk-heading-s">69</span>
+                            <span class="moj-badge moj-badge--green">Tag 1</span>
+                        </div>
 
-                </tr>
+                    </div>
+                    <div class="remand-details__container govuk-!-width-two-thirds">
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Court:</span> <span>Birmingham</span></div>
+                            <div><span class="remand-details-key">Case number:</span><span>T00003333</span></div>
+                        </div>
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Offence:</span><span>T00003333</span></div>
+                        </div>
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Committed on:</span> <span>T00003333</span></div>
+                            <div><span class="remand-details-key">Offence outcome:</span><span>T00003333</span></div>
+                        </div >
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Period of remand:</span> <span>T00003333</span></div>
+                        </div>
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Case outcome:</span><span>T00003333</span></div>
+                        </div>
+                    </div>
+                </section>
+            </article>
+            <article class="moj-ticket-panel govuk-!-margin-left-6" >
+                <section class="moj-ticket-panel__content moj-ticket-panel__content--blue remand-period govuk-body" aria-label="Section 1">
+                    <div class="remand-summary govuk-!-width-one-third">
+                        <div>
+                            <h3 class="govuk-heading-s">Days spent on remand</h3>
+                            <span class="govuk-heading-s">69</span>
+                            <span class="moj-badge moj-badge--blue">Tag 2</span>
+                        </div>
 
-                </tbody>
-            </table>
-            <div>
+                    </div>
+                    <div class="remand-details__container govuk-!-width-two-thirds">
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Court:</span> <span>Birmingham</span></div>
+                            <div><span class="remand-details-key">Case number:</span><span>T00003333</span></div>
+                        </div>
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Offence:</span><span>T00003333</span></div>
+                        </div>
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Committed on:</span> <span>T00003333</span></div>
+                            <div><span class="remand-details-key">Offence outcome:</span><span>T00003333</span></div>
+                        </div >
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Period of remand:</span> <span>T00003333</span></div>
+                        </div>
+                        <div class="govuk-!-padding-bottom-1 remand-details__row">
+                            <div><span class="remand-details-key">Case outcome:</span><span>T00003333</span></div>
+                        </div>
+                    </div>
+                </section>
+            </article>
 
-            </div>
+<!--            <table  id="" class="govuk-table govuk-!-margin-bottom-8">-->
+<!--                <thead class="govuk-table__head">-->
+<!--                <tr class="govuk-table__row">-->
+<!--                    <th class="govuk-table__header" scope="col">Case number</th>-->
+<!--                    <th class="govuk-table__header" scope="col">Offence details</th>-->
+<!--                    <th class="govuk-table__header" scope="col">days</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                <tr class="govuk-table__row">-->
+<!--                    <td class="govuk-table__cell">-->
+<!--                       T20187071<span class="moj-badge&#45;&#45;purple moj-badge">Applicable</span>-->
+<!--                    </td>-->
+<!--                    <td class="govuk-table__cell">-->
+<!--                        <table class="govuk-table">-->
 
-<!--            <div class="govuk-form-group">-->
-<!--                <fieldset class="govuk-fieldset">-->
 
-<!--                        <h2 class="govuk-heading-m">-->
-<!--                            Next steps-->
-<!--                        </h2>-->
+<!--                            <tbody class="govuk-table__body">-->
+<!--                            <tr class="govuk-table__row">-->
+<!--                                <th scope="row" class="govuk-table__header">Court</th>-->
+<!--                                <td class="govuk-table__cell">Birmingham</td>-->
+<!--                            </tr>-->
+<!--                            <tr class="govuk-table__row">-->
+<!--                                <th scope="row" class="govuk-table__header">Case outcome</th>-->
+<!--                                <td class="govuk-table__cell">Imprisonment</td>-->
+<!--                            </tr>-->
+<!--                            <tr class="govuk-table__row">-->
+<!--                                <th scope="row" class="govuk-table__header">Dates</th>-->
+<!--                                <td class="govuk-table__cell">24 Feb 2018 01 May 2018</td>-->
+<!--                            </tr>-->
+<!--                            <tr class="govuk-table__row">-->
+<!--                                <th scope="row" class="govuk-table__header">Offence</th>-->
+<!--                                <td class="govuk-table__cell">verry long offence name here to test the limits of the design as this can be a really really long string</td>-->
+<!--                            </tr>-->
+<!--                            <tr class="govuk-table__row">-->
+<!--                                <th scope="row" class="govuk-table__header">Committed on</th>-->
+<!--                                <td class="govuk-table__cell">22 Feb 2018</td>-->
+<!--                            </tr>-->
+<!--                            </tbody>-->
+<!--                        </table>-->
+<!--                    </td>-->
+<!--                    <td class="govuk-table__cell">69</td>-->
+<!--                </tr>-->
+<!--                <tr class="govuk-table__row">-->
+<!--                    <td class="govuk-table__cell">-->
+<!--                        T20187071<span class="moj-badge&#45;&#45;purple moj-badge">Applicable</span>-->
+<!--                    </td>-->
+<!--                    <td class="govuk-table__cell">-->
+<!--                        <table class="govuk-table">-->
+<!--                            <tbody class="govuk-table__body">-->
+<!--                            <tr class="govuk-table__row">-->
+<!--                                <th scope="row" class="govuk-table__header">Court</th>-->
+<!--                                <td class="govuk-table__cell">Birmingham</td>-->
+<!--                            </tr>-->
+<!--                            <tr class="govuk-table__row">-->
+<!--                                <th scope="row" class="govuk-table__header">Case outcome</th>-->
+<!--                                <td class="govuk-table__cell">Imprisonment</td>-->
+<!--                            </tr>-->
+<!--                            <tr class="govuk-table__row">-->
+<!--                                <th scope="row" class="govuk-table__header">Dates</th>-->
+<!--                                <td class="govuk-table__cell">24 Feb 2018 01 May 2018</td>-->
+<!--                            </tr>-->
+<!--                            <tr class="govuk-table__row">-->
+<!--                                <th scope="row" class="govuk-table__header">Offence</th>-->
+<!--                                <td class="govuk-table__cell">verry long offence name here to test the limits of the design as this can be a really really long string</td>-->
+<!--                            </tr>-->
+<!--                            <tr class="govuk-table__row">-->
+<!--                                <th scope="row" class="govuk-table__header">Committed on</th>-->
+<!--                                <td class="govuk-table__cell">22 Feb 2018</td>-->
+<!--                            </tr>-->
+<!--                            </tbody>-->
+<!--                        </table>-->
+<!--                    </td>-->
+<!--                    <td class="govuk-table__cell">69</td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+<!--            </table>-->
 
-<!--                    <div class="govuk-radios govuk-radios&#45;&#45;small" data-module="govuk-radios">-->
-<!--                        <div class="govuk-radios__item">-->
-<!--                            <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="month">-->
-<!--                            <label class="govuk-label govuk-radios__label" for="changed-name">-->
-<!--                                Approve remand-->
-<!--                            </label>-->
-<!--                        </div>-->
-<!--                        <div class="govuk-radios__item">-->
-<!--                            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="year">-->
-<!--                            <label class="govuk-label govuk-radios__label" for="changed-name-2">-->
-<!--                                Do not approve remand and return to hub-->
-<!--                            </label>-->
-<!--                        </div>-->
+<!--            <table class="govuk-table govuk-!-margin-bottom-8">-->
+<!--                    <thead class="govuk-table__head">-->
+<!--                    <tr class="govuk-table__row">-->
+<!--                        <th class="govuk-table__header" scope="col">Remand periods identified from court events</th>-->
+<!--                        <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Status</th>-->
+<!--                        <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Days</th>-->
+<!--                    </tr>-->
+<!--                    </thead>-->
+<!--                    <tbody class="govuk-table__body">-->
+<!--                    <tr class="govuk-table__row">-->
+<!--                        &lt;!&ndash; Dates &ndash;&gt;-->
+<!--                        <td class="govuk-table__cell govuk-!-width-two-thirds">-->
+<!--                            <table class="govuk-table">-->
+<!--                                <tbody class="govuk-table__body">-->
+<!--                                <tr class="govuk-table__row">-->
+<!--                                    <th scope="row" class="govuk-table__header">Court</th>-->
+<!--                                    <td class="govuk-table__cell">Birmingham</td>-->
+<!--                                </tr>-->
+<!--                                <tr class="govuk-table__row">-->
+<!--                                    <th scope="row" class="govuk-table__header">Case outcome</th>-->
+<!--                                    <td class="govuk-table__cell">Imprisonment</td>-->
+<!--                                </tr>-->
+<!--                                <tr class="govuk-table__row">-->
+<!--                                    <th scope="row" class="govuk-table__header">Dates</th>-->
+<!--                                    <td class="govuk-table__cell">24 Feb 2018 01 May 2018</td>-->
+<!--                                </tr>-->
+<!--                                <tr class="govuk-table__row">-->
+<!--                                    <th scope="row" class="govuk-table__header">Offence</th>-->
+<!--                                    <td class="govuk-table__cell">verry long offence name here to test the limits of the design as this can be a really really long string</td>-->
+<!--                                </tr>-->
+<!--                                <tr class="govuk-table__row">-->
+<!--                                    <th scope="row" class="govuk-table__header">Committed on</th>-->
+<!--                                    <td class="govuk-table__cell">22 Feb 2018</td>-->
+<!--                                </tr>-->
+<!--                                </tbody>-->
+<!--                            </table>-->
+<!--                        </td>-->
+<!--                        &lt;!&ndash; Days &ndash;&gt;-->
+<!--                        <td class="govuk-table__cell govuk-!-text-align-centre"><span class="moj-badge moj-badge&#45;&#45;green">good</span> </td>-->
+<!--                        <td class="govuk-table__cell govuk-!-text-align-centre">5 </td>-->
+<!--                    </tr>-->
+<!--                    <tr class="govuk-table__row">-->
+<!--                        &lt;!&ndash; Dates &ndash;&gt;-->
+<!--                        <td class="govuk-table__cell">-->
+<!--                            <span class="govuk-!-padding-top-3"><b>Court case number: T1000000</b></span><br>-->
+<!--                            <span>Court : Wolverhampton crown court</span><br>-->
+<!--                            <span>Case outcome : Sentencing</span><br>-->
+<!--                            <span class="govuk-hint">From 12 Feb 2018 - 17 Feb 2018</span><br>-->
+<!--                            <ul class="govuk-list">-->
+<!--                                <li>Attempted burglary  <br> <span class="govuk-hint">committed on 1 Feb 2018</span></li>-->
+<!--                            </ul>-->
+<!--                        </td>-->
+<!--                        &lt;!&ndash; Days &ndash;&gt;-->
+<!--                        <td class="govuk-table__cell govuk-!-text-align-centre"></br>6</td>-->
+<!--                    </tr>-->
+<!--                    </tbody>-->
+<!--                </table>-->
 
-<!--                    </div>-->
-<!--                </fieldset>-->
-<!--            </div>-->
+<!--            <h2 class="govuk-heading-m">Other remand</h2>-->
+<!--            <table class="govuk-table govuk-!-margin-bottom-8">-->
+<!--                <thead class="govuk-table__head">-->
+<!--                <tr class="govuk-table__row">-->
+<!--                    <th class="govuk-table__header" scope="col">Remand periods identified from court events</th>-->
+<!--                    <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Days</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody class="govuk-table__body">-->
+<!--                <tr class="govuk-table__row">-->
+<!--                    &lt;!&ndash; Dates &ndash;&gt;-->
+<!--                    <td class="govuk-table__cell">-->
+<!--                        <span class="govuk-!-padding-top-3"><b>Court case number: T1000300</b></span><br>-->
+<!--                        <span>Court : Wolverhampton crown court</span><br>-->
+<!--                        <span>Case outcome : Sentencing</span><br>-->
+<!--                        <span class="govuk-hint">From 12 Feb 2018 - 17 Feb 2018</span><br>-->
+<!--                        <ul class="govuk-list">-->
+<!--                            <li>Assualt by beating  <br> <span class="govuk-hint">committed on 1 Feb 2018</span></li>-->
+<!--                        </ul>-->
+
+<!--                    </td>-->
+<!--                    &lt;!&ndash; Days &ndash;&gt;-->
+<!--                    <td class="govuk-table__cell govuk-!-text-align-centre"><br>6-->
+<!--&lt;!&ndash;                        <br><span class="moj-badge moj-badge&#45;&#45;bright-purple">not counted</span>&ndash;&gt;-->
+<!--                    </td>-->
+
+<!--                </tr>-->
+
+<!--                </tbody>-->
+<!--            </table>-->
+
+
+
 
                 <a href="hub-9-a.html" class="govuk-button" data-module="govuk-button">
                     Accept and save
