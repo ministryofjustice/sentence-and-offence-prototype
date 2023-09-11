@@ -1,0 +1,82 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="edit-rada.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjust release dates</span>Check your answers</h1>
+                    <h2 class="govuk-heading-m">ADA details</h2>
+                    <table class="govuk-table govuk-!-width-one-half">
+                        <tr>
+                            <th class="govuk-table__header" scope="col">Charge number</th>
+                            <th class="govuk-table__header govuk-!-text-align-right" scope="col">Days</th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                3765949
+                            </td>
+                            <!-- Days -->
+                            <td class="govuk-table__cell govuk-!-text-align-right ">3</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                3583998
+                            </td>
+                            <!-- Days -->
+                            <td class="govuk-table__cell govuk-!-text-align-right ">7</td>
+                        </tr>
+
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                3584019
+                            </td>
+                            <!-- Days -->
+                            <td class="govuk-table__cell govuk-!-text-align-right ">7 </td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                3584030
+                            </td>
+                            <!-- Days -->
+                            <td class="govuk-table__cell govuk-!-text-align-right ">5 </td>
+                        </tr>
+
+
+                        <tfoot>
+                        <tr class="govuk-table__row">
+                            <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="1">Total ADAs taken into calculation </th>
+                            <td class="govuk-table__cell govuk-!-text-align-right">22</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <div class="govuk-form-group">
+
+                        <h2 class="govuk-heading-m">Submit adjustment details</h2>
+                        <p class="govuk-body">Once submitted the adjustment details will be saved in NOMIS. You will then need to recalculate the release dates.</p>
+                    <div class="govuk-!-margin-top-8 govuk-body">
+                        <a href="adjustments-dashboard-success-d1.html" class="govuk-button" data-module="govuk-button">
+                            Submit
+                        </a>
+                        <br>
+                        <a href="intercept-page-changes.html" class="govuk-link" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}

@@ -1,0 +1,80 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="adjustments-dashboard.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="option-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                                <h1 class="govuk-fieldset__heading">
+                                    <span class="govuk-caption-xl">Adjust release dates</span>
+                                    There are PADAs that need reviewing
+                                </h1>
+                            </legend>
+                            <p>Select which PADAs (Pending additional days awarded) need to be included in the calculation.</p>
+                            <div id="option-hint" class="govuk-hint">
+                                Select all that apply
+                            </div>
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input ada-days-input" id="option" name="option" type="checkbox" data-cc="" value="british" aria-describedby="option-item-hint" data-days-balance="24">
+                                    <label class="govuk-label govuk-checkboxes__label" for="option">
+                                        Charge number: 3765949, 3 Days, Concurrent
+                                    </label>
+                                    <div  class="govuk-hint govuk-checkboxes__hint">
+                                        Date charge proved: 8 Aug 2023
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input ada-days-input" id="option-2" name="option" type="checkbox" value="irish" data-days-balance="18" data-cc="">
+                                    <label class="govuk-label govuk-checkboxes__label" for="option-2">
+                                        Charge number: 2345678, 18 Days Awarded Consecutive to 1234567
+                                    </label>
+                                    <div class="govuk-hint govuk-checkboxes__hint">
+                                        Date charge proved: 12 May 2023
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input ada-days-input" id="option-3" name="option" type="checkbox" value="other" data-days-balance="24" data-cc="consec">
+                                    <label class="govuk-label govuk-checkboxes__label" for="option-3">
+                                        Charge number: 3456789, 24 Days Awarded, Concurrent
+                                    </label>
+                                    <div  class="govuk-hint govuk-checkboxes__hint">
+                                        Date charge proved: 12 May 2023
+                                    </div>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input ada-days-input" id="option-4" name="option" type="checkbox" value="other" data-days-balance="24" data-cc="consec">
+                                    <label class="govuk-label govuk-checkboxes__label" for="option-4">
+                                        None
+                                    </label>
+                                    <div  class="govuk-hint govuk-checkboxes__hint">
+                                        None of these are relevant
+                                    </div>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </div>
+                <a href="review-adas-padas.html" id="" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                    Continue
+                </a>
+
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}
