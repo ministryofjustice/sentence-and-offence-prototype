@@ -1,0 +1,54 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div id="hubPage">
+        <a href="#" class="govuk-back-link">Back</a>
+
+        <main class=" offence-outcome " id="main-content" role="main">
+            <div class="moj-page-header-actions">
+                <div class="moj-page-header-actions__title">
+                    <h1 class="govuk-heading-xl">
+                        <span class="govuk-caption-xl">Adjust release dates</span>
+                        There is information to be reviewed
+                    </h1>
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full govuk-!-padding-6">
+                    <article class="moj-ticket-panel govuk-!-margin-bottom-6" aria-label="Sub navigation 1">
+                        <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">There have been changes</h2>
+                            <p>There has been a change to adjudications you will need to review these. this may require a re calculation.</p>
+                            <p><a href="" class="govuk-link">Review changes</a></p>
+                        </section>
+                    </article>
+                    <article class="moj-ticket-panel govuk-!-margin-bottom-6" aria-label="Sub navigation 1">
+                        <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">There are unapplied ADA's to review</h2>
+                            <p>ADAs have been entered but have not yet been applied to the sentence.</p>
+                            <p><a href="" class="govuk-link">Review ADAs</a></p>
+                        </section>
+                    </article>
+                    <article class="moj-ticket-panel govuk-!-margin-bottom-6" aria-label="Sub navigation 1">
+                        <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">There is existing remand to review</h2>
+                            <p>Based on the data from court outcomes in NOMIS, Joe Bloggs may have 11 days remand. Review the remand to make sure it is relevant.</p>
+                            <p><a href="prisoner-details-5.html" class="govuk-link">Review remand</a></p>
+                        </section>
+                    </article>
+
+                    <p><a href="prisoner-details-5.html" class="govuk-link">Continue to Adjustments service</a></p>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments-3.js"></script>
+{% endblock %}

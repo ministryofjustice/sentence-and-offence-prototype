@@ -1,0 +1,86 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="#" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                        <div id="" class="">
+                            <h1 class="govuk-heading-l">
+                                <span class="govuk-caption-xl">Adjust release dates</span>
+                               Approve changes
+                            </h1>
+                            <p>
+                                Explainer here.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <table class="govuk-table">
+                        <caption class="govuk-table__caption govuk-table__caption--m">Record has been updated</caption>
+                        <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header"></th>
+                            <th scope="col" class="govuk-table__header">Original entry</th>
+                            <th scope="col" class="govuk-table__header">New entry</th>
+                        </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Charge Number</th>
+                            <td class="govuk-table__cell">12345678</td>
+                            <td class="govuk-table__cell">12345678</td>
+
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Date charge proved</th>
+                            <td class="govuk-table__cell">1 Jun 2022</td>
+                            <td class="govuk-table__cell">1 Jun 2022</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">To be served <span class="moj-badge">Updated</span>
+                            </th>
+                            <td class="govuk-table__cell">Consecutive</td>
+                            <td class="govuk-table__cell">Concurrent to 98765432</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Entered by</th>
+                            <td class="govuk-table__cell">Belmarsh</td>
+                            <td class="govuk-table__cell">Belmarsh</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Number of days <span class="moj-badge">Updated</span></th>
+                            <td class="govuk-table__cell">5</td>
+                            <td class="govuk-table__cell">3</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <h2 class="govuk-heading-m">Approve changes</h2>
+                    <p class="govuk-body">
+                        By approving the changes you are confirming that, to the best of your knowledge, the information is correct.
+                    </p>
+                    <a href="review-changes-success.html" class="govuk-button">
+                        Approve
+                    </a>
+                    <div class="govuk-inset-text">
+                        If you think some information is wrong, update it NOMIS or contact the adjudications team for support, then <a href="">reload this page</a>.
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments-3.js"></script>
+{% endblock %}

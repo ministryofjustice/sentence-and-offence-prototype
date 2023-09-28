@@ -1,0 +1,39 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="adjustments-dashboard-view-journey.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjust release dates</span>
+                RADA details
+            </h1>
+
+            <table  id="ViewAdjustment" class="govuk-table govuk-!-margin-bottom-8">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">Date charge proved</th>
+                    <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Entered by</th>
+                    <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Days</th>
+                    <th class="govuk-table__header govuk-!-text-align-centre" scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+
+
+
+
+                </tbody>
+            </table>
+        </main>
+    </div>
+</div>
+<script src="/public//javascripts/adjustments-3.js"></script>
+{% endblock %}

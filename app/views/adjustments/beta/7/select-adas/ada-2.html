@@ -1,0 +1,127 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="hub-9.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                        <div class="">
+                            <h1 class="govuk-heading-l">
+                                <span class="govuk-caption-xl">Adjust release dates</span>
+                                Enter ADA details
+                            </h1>
+                            <p>Please add each ADA separately you will be able to add more using the following screens.</p>
+
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="Charge-number">
+                                    Charge Number
+                                </label>
+                                <input class="govuk-input govuk-input--width-20" id="Charge-number" name="width-20" type="text">
+                            </div>
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="date-charge-proved">
+                                    <legend class="govuk-fieldset__legend govuk-!-font-weight-bold">
+                                        Date charge proved
+                                    </legend>
+                                    <div id="date-charge-proved" class="govuk-hint">
+                                        For example, 27 3 2022
+                                    </div>
+                                    <div class="govuk-date-input" id="passport-issued">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="from-day">
+                                                    Day
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="passport-issued-day" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="from-month">
+                                                    Month
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="from-year">
+                                                    Year
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="govuk-form-group">
+                                <label class="govuk-label govuk-!-font-weight-bold" for="number-of-days">
+                                    Number of added days awarded
+                                </label>
+                                <input class="govuk-input govuk-input--width-4" id="number-of-days" name="width-4" type="text">
+                            </div>
+
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                            How will this be served?
+                                    </legend>
+
+                                    <div class="govuk-radios" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="Consecutive" checked data-aria-controls="conditional-contact">
+                                            <label class="govuk-label govuk-radios__label" for="contact">
+                                                Consecutive
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__conditional" id="conditional-contact">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="contact-by-email">
+                                                    Consecutive to which charge number
+                                                </label>
+<!--                                                <p id="contact-by-email-error" class="govuk-error-message">-->
+<!--                                                    <span class="govuk-visually-hidden">Error:</span> Email address cannot be blank-->
+<!--                                                </p>-->
+                                                <input class="govuk-input govuk-!-width-one-third  case-number" id="contact-by-email" name="contact-by-email" type="number" spellcheck="false" aria-describedby="contact-by-email-error" autocomplete="email">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="Concurrent" data-aria-controls="conditional-contact-2">
+                                            <label class="govuk-label govuk-radios__label" for="contact-2">
+                                                Concurrently
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label" for="contact-by-phone">
+                                                    Concurrent to which charge number
+                                                </label>
+                                                <input class="govuk-input govuk-!-width-one-third case-number" id="contact-by-phone" name="contact-by-phone" type="number" autocomplete="tel">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+
+                        </div>
+
+                        <a href="check-your-answers-3.html" id="add-ada-button" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                            Continue
+                        </a>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments-4.js"></script>
+{% endblock %}
