@@ -14,59 +14,66 @@
         <main class="govuk-main-wrapper " id="main-content" role="main">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <div class="govuk-notification-banner" role="region"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+                        <div class="govuk-notification-banner__content">
+                            <p class="govuk-notification-banner__heading">
+                                The number of ADAs recorded has changed
+
+                            </p>
+                            <p>The number of ADAs does not match what was originally recorded as NOMIS.
+                                Make sure the ADA information is correct, before continuing.
+                            </p>
+                            <p>
+                                The number of ADAs differs from the number originally recorded on NOMIS.
+                            </p>
+                        </div>
+                    </div>
                     <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjust release dates</span>Check your answers</h1>
                     <h2 class="govuk-heading-m">ADA details</h2>
-                    <table class="govuk-table govuk-!-width-one-half">
+
+                    <table class="govuk-table govuk-!-width-three-quarters">
                         <tr>
-                            <th class="govuk-table__header" scope="col">Charge number</th>
+                            <th class="govuk-table__header" scope="col">
+                                Date charge proved</th>
+                            <th class="govuk-table__header" scope="col">Charge number(s)</th>
                             <th class="govuk-table__header govuk-!-text-align-right" scope="col">Days</th>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                3822448
+                                6 Mar 2023
+                            </td>
+                            <td class="govuk-table__cell">
+                                3765949
                             </td>
                             <!-- Days -->
-                            <td class="govuk-table__cell govuk-!-text-align-right ">8</td>
+                            <td class="govuk-table__cell govuk-!-text-align-right ">3</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                3583998
+                                7 Aug 2023
                             </td>
-                            <!-- Days -->
-                            <td class="govuk-table__cell govuk-!-text-align-right ">7 </td>
-                        </tr>
-                        <tr class="govuk-table__row">
                             <td class="govuk-table__cell">
-                                3584019
+                                <span>3583998</span><br>
+                                3584019<br>
+                                3584030
                             </td>
                             <!-- Days -->
-                            <td class="govuk-table__cell govuk-!-text-align-right ">7 </td>
+                            <td class="govuk-table__cell govuk-!-text-align-right ">19</td>
                         </tr>
-                        <tr class="govuk-table__row">
-                            <td class="govuk-table__cell">
-                                3582030
-                            </td>
-                            <!-- Days -->
-                            <td class="govuk-table__cell govuk-!-text-align-right ">5 </td>
-                        </tr>
+
                         <tfoot>
                         <tr class="govuk-table__row">
-                            <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="1">Total ADAs taken into calculation </th>
-                            <td class="govuk-table__cell govuk-!-text-align-right">27</td>
+                            <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="2">Total ADAs </th>
+                            <td class="govuk-table__cell govuk-!-text-align-right">22</td>
                         </tr>
                         </tfoot>
                     </table>
+                    <div class="govuk-inset-text">If you think some information is wrong, ask the team responsible for adjudications in your prison to correct it, then <a href="#">reload this page</a>.
+                    </div>
                     <div class="govuk-form-group">
-                        <div class="govuk-warning-text">
-                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                            <strong class="govuk-warning-text__text">
-                                <span class="govuk-warning-text__assistive">Warning</span>
-                                The number of additional days that will be awarded, differs to the additional days that were originally recorded as adjustments in NOMIS.
-                                <br>
-                                <br>
-                                If you think some of the information is wrong then contact the team responsible for managing adjudications.
-                            </strong>
-                        </div>
+
                         <h2 class="govuk-heading-m">Submit adjustment details</h2>
                         <p class="govuk-body">Once submitted the adjustment details will be saved in NOMIS. You will then need to recalculate the release dates.</p>
                     <div class="govuk-!-margin-top-8 govuk-body">
