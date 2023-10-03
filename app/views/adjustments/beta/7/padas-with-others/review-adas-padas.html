@@ -15,7 +15,6 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
                     <div class="govuk-form-group govuk-body">
-
                         <h1 class="govuk-heading-l">
                             <span class="govuk-caption-xl">Adjust release dates</span>
                             Review adjudications
@@ -23,9 +22,9 @@
                         <p>
                             Check that the existing ADAs are correct, then review and approve pending ADAs.
                         </p>
-                            <h2 class="govuk-heading-m">Awarded ADAs</h2>
-                            <p>These adjudications have been added as an adjustment and will be applied to sentence calculations.</p>
-                            <table  id="" class="govuk-table govuk-!-margin-bottom-8">
+                        <h2 class="govuk-heading-m">Awarded ADAs</h2>
+                        <p>These adjudications have been added as an adjustment and will be applied to sentence calculations.</p>
+                        <table  id="" class="govuk-table govuk-!-margin-bottom-8">
                             <thead class="govuk-table__head">
                             <tr class="govuk-table__row">
                                 <th class="govuk-table__header" scope="col">Date charge proved</th>
@@ -139,8 +138,8 @@
                             </tfoot>
                         </table>
 
-                            <h2 class="govuk-heading-m">Suspended ADAs</h2>
-                            <p>These adjudications are currently suspended and cannot be applied to a sentence calculation until they have been awarded. Refer to the team responsible for managing adjudications if these are no longer suspended and need to be added as an adjustment.</p>
+                        <h2 class="govuk-heading-m">Suspended ADAs</h2>
+                        <p>These adjudications are currently suspended and cannot be applied to a sentence calculation until they have been awarded. Refer to the team responsible for managing adjudications if these are no longer suspended and need to be added as an adjustment.</p>
                         <table  id="" class="govuk-table govuk-!-margin-bottom-8">
                             <thead class="govuk-table__head">
                             <tr class="govuk-table__row">
@@ -196,9 +195,9 @@
                             </tr>
                             </tfoot>
                         </table>
-                            <h2 class="govuk-heading-m">Awarded ADAs pending approval</h2>
-                            <p>These adjudications have not yet been added as an adjustment and will not be applied to sentence calculations. Until they have been approved</p>
-                            <table  id="" class="govuk-table govuk-!-margin-bottom-8">
+                        <h2 class="govuk-heading-m">Awarded ADAs pending approval</h2>
+                        <p>These adjudications have not yet been added as an adjustment and will not be applied to sentence calculations. Until they have been approved</p>
+                        <table  id="" class="govuk-table govuk-!-margin-bottom-8">
                             <thead class="govuk-table__head">
                             <tr class="govuk-table__row">
                                 <th class="govuk-table__header" scope="col">Date charge proved</th>
@@ -231,7 +230,8 @@
                                                 Nottingham prison
                                             </td>
                                             <td class="govuk-table__cell  ">
-                                                <span class=" moj-badge moj-badge--green">prospective awaiting approval</span>
+                                                <span class=" moj-badge moj-badge--green">awaiting approval</span>
+                                                <span class=" moj-badge moj-badge--bright-purple">prospective</span>
                                             </td>
                                             <!-- Days -->
                                             <td class="govuk-table__cell govuk-!-text-align-right  ">3 </td>
@@ -329,11 +329,9 @@
                         </a>
                     </div>
                     <a href="intercept-page-changes.html">Cancel</a>
-
             </div>
             </div>
         </main>
     </div>
 </div>
-<script src="/javascripts/adjustments.js"></script>
 {% endblock %}
