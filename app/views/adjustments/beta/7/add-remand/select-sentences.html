@@ -1,0 +1,122 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="remand-days.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="option-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    <span class="govuk-caption-xl">Adjust release dates</span>
+                                    Select sentences
+                                </h1>
+                            </legend>
+                            <p>[Explainer]</p>
+
+                            <p>The rules for PADAs can be found in the <a href="#">policy framework</a>.</p>
+
+                            <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+                                <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-table__header" scope="col" ></th>
+                                    <th class="govuk-table__header" scope="col">Offence</th>
+                                    <th class="govuk-table__header" scope="col">Offence details</th>
+
+                                </tr>
+                                </thead>
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row govuk-table__row--selected">
+                                    <td class="govuk-table__cell">
+                                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+                                            <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                                                <span class="govuk-visually-hidden">Select 12345678</span>
+                                            </label>
+
+                                        </div>
+                                    </td>
+                                    <td class="govuk-table__cell">Offence name which can be quite long</td>
+                                    <td class="govuk-table__cell">
+                                        <table class="govuk-table">
+                                            <tr>
+                                                <th class="govuk-table__header" scope="col">Court case ref</th>
+                                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Court</th>
+                                                <th class="govuk-table__header" scope="col">Offence dates</th>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">
+                                                    3822448
+                                                </td>
+                                                <td class="govuk-table__cell">
+                                                    Birmingham magistrates court
+                                                </td>
+                                                <td class="govuk-table__cell  ">
+                                                   2 Jun 2022 - 23 Jun 2022
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row govuk-table__row--selected">
+                                    <td class="govuk-table__cell">
+                                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+                                            <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                                                <span class="govuk-visually-hidden">Select 12345678</span>
+                                            </label>
+
+                                        </div>
+                                    </td>
+                                    <td class="govuk-table__cell">Offence name which can be quite long</td>
+                                    <td class="govuk-table__cell">
+                                        <table class="govuk-table">
+                                            <tr>
+                                                <th class="govuk-table__header" scope="col">Court case ref</th>
+                                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Court</th>
+                                                <th class="govuk-table__header" scope="col">Offence dates</th>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">
+                                                    3822448
+                                                </td>
+                                                <td class="govuk-table__cell">
+                                                    Birmingham magistrates court
+                                                </td>
+                                                <td class="govuk-table__cell  ">
+                                                    2 Jun 2022 - 23 Jun 2022
+                                                </td>
+                                            </tr>
+
+                                        </table>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </fieldset>
+                    </div>
+                <a href="review.html" id="" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                    Continue
+                </a>
+                    <a href="index.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Cancel
+                    </a>
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}
