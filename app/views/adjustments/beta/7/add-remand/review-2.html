@@ -1,0 +1,127 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+    <div class="moj-identity-bar__container govuk-!-margin-left-0">
+        <div class="moj-identity-bar__details">
+            <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+        </div>
+    </div>
+</div>
+    <div class="govuk-width-container">
+        <a href="select-sentences-2.html" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <h1 class="govuk-heading-l">Remand details</h1>
+                    <p>[Explainer].</p>
+                    <h2 class="govuk-heading-m">Remand details</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Period of remand
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                               12 Mar 2023 to 5 May 2023
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Offences
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <ul class="govuk-list">
+                                    <li>offence name 1</li>
+                                    <li>offence name 2</li>
+                                    <li>offence name 3</li>
+                                </ul>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden"> address</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Days spent on remand
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                000
+                            </dd>
+
+                        </div>
+                    </dl>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Period of remand
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                12 Mar 2023 to 5 May 2023
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Offences
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <ul class="govuk-list">
+                                    <li>offence name 1</li>
+                                    <li>offence name 2</li>
+                                    <li>offence name 3</li>
+                                </ul>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden"> address</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Days spent on remand
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                000
+                            </dd>
+
+                        </div>
+                    </dl>
+                    <div class="govuk-!-margin-bottom-6">
+                        <h2 class="govuk-heading-m">Do you need to add anymore remand?</h2>
+                        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                                <label class="govuk-label govuk-radios__label" for="changedName">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="check-your-answers.html" class="govuk-button" data-module="govuk-button">
+                        Continue
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+{% endblock %}
