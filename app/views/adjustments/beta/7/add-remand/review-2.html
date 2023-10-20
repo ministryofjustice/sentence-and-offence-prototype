@@ -16,106 +16,40 @@
                     <h1 class="govuk-heading-l">Review remand details</h1>
                     <p>Check that the remand and offence information is correct. Once you’ve reviewed it, you can add more remand time if needed</p>
                     <h2 class="govuk-heading-m">Remand details</h2>
+                    <div id="periodsOfRemand">
+
+                    </div>
                     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                               Period of remand
+                                Total days
                             </dt>
-                            <dd class="govuk-summary-list__value">
-                               12 Mar 2023 to 5 May 2023
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="#">
-                                    Change<span class="govuk-visually-hidden"> name</span>
-                                </a>
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                               Offences
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                <ul class="govuk-list">
-                                    <li>offence name 1</li>
-                                    <li>offence name 2</li>
-                                    <li>offence name 3</li>
-                                </ul>
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="#">
-                                    Change<span class="govuk-visually-hidden"> address</span>
-                                </a>
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Days spent on remand
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                000
+                            <dd id="totalDays" class="govuk-summary-list__value">
+
                             </dd>
 
                         </div>
-                    </dl>
-                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Period of remand
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                12 Mar 2023 to 5 May 2023
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="#">
-                                    Change<span class="govuk-visually-hidden"> name</span>
-                                </a>
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Offences
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                <ul class="govuk-list">
-                                    <li>offence name 1</li>
-                                    <li>offence name 2</li>
-                                    <li>offence name 3</li>
-                                </ul>
-                            </dd>
-                            <dd class="govuk-summary-list__actions">
-                                <a class="govuk-link" href="#">
-                                    Change<span class="govuk-visually-hidden"> address</span>
-                                </a>
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Days spent on remand
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                000
-                            </dd>
 
-                        </div>
+
                     </dl>
                     <div class="govuk-!-margin-bottom-6">
                         <h2 class="govuk-heading-m">Do you need to add another period of remand?</h2>
                         <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
-                                <label class="govuk-label govuk-radios__label" for="changedName">
+                                <input class="govuk-radios__input" id="yes" name="changedName" type="radio" value="yes" data-route="enter-remand">
+                                <label class="govuk-label govuk-radios__label" for="review-remand-button">
                                     Yes
                                 </label>
                             </div>
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no" data-route="check-your-answers-2">
                                 <label class="govuk-label govuk-radios__label" for="changedName-2">
                                     No
                                 </label>
                             </div>
                         </div>
                     </div>
-                    <a href="check-your-answers-2.html" class="govuk-button" data-module="govuk-button">
+                    <a href="check-your-answers-2.html" id="review-remand-button" class="govuk-button" data-module="govuk-button">
                         Continue
                     </a>
                     <a href="check-your-answers.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -126,5 +60,5 @@
         </main>
     </div>
 </div>
-
+<script src="/public/javascripts/add-remand.js"></script>
 {% endblock %}
