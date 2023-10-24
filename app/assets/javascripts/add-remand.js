@@ -100,25 +100,24 @@ let unusedDeductions = document.getElementById("unusedDeductions");
 
 if(unusedDeductions) {
   let html = `
-  <article class="moj-ticket-panel" aria-label="Sub navigation 1">
-
-  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Unused deductions</h2>
-    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Unused deductions</h2>
+  </div>
+  <div class="govuk-summary-card__content">
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Unused remand
         </dt>
         <dd class="govuk-summary-list__value">
-          25 days
+          38 days
         </dd>
       </div>
     </dl>
-  
-  </section>
-
-</article>`
+  </div>
+</div>
+`
 
   if(totalDays >=50) {
     unusedDeductions.innerHTML = html
@@ -131,11 +130,11 @@ if(saveTable){
   document.getElementById('saveTableTotal').innerHTML = totalDays
   if(totalDays >= 50) {
     let alert = `
-  <div class="govuk-notification-banner__content">
-    <p class="govuk-notification-banner__heading">
-      We have identified xx days of unused remand that will not be taken into the sentence calculation based on this entry. <the total unused  deductions for this sentence envelope is now xx>.
+<h2 class="govuk-heading-m">Unused remand identified</h2>
+    <p class="govuk-body-l">
+      We have identified xx days of unused remand that will not be taken into the sentence calculation based on this entry. 
+      the total unused  deductions for this sentence envelope is now XX days.
     </p>
-  </div>
 `
     console.log(totalDays)
     document.getElementById("alerthere").innerHTML = alert
