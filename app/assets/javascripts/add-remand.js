@@ -108,10 +108,10 @@ if(unusedDeductions) {
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Remand
+          Unused remand
         </dt>
         <dd class="govuk-summary-list__value">
-          25
+          25 days
         </dd>
       </div>
     </dl>
