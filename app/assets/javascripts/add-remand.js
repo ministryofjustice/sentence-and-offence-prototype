@@ -96,10 +96,50 @@ function listOffences(offences) {
 }
 
 
+let unusedDeductions = document.getElementById("unusedDeductions");
+
+if(unusedDeductions) {
+  let html = `
+  <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+  <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Unused deductions</h2>
+    <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Remand
+        </dt>
+        <dd class="govuk-summary-list__value">
+          25
+        </dd>
+      </div>
+    </dl>
+  
+  </section>
+
+</article>`
+
+  if(totalDays >=50) {
+    unusedDeductions.innerHTML = html
+  }
+}
+
 let saveTable = document.getElementById('tableBody')
 if(saveTable){
-
+  console.log(totalDays)
   document.getElementById('saveTableTotal').innerHTML = totalDays
+  if(totalDays >= 50) {
+    let alert = `
+  <div class="govuk-notification-banner__content">
+    <p class="govuk-notification-banner__heading">
+      We have identified xx days of unused remand that will not be taken into the sentence calculation based on this entry. <the total unused  deductions for this sentence envelope is now xx>.
+    </p>
+  </div>
+`
+    console.log(totalDays)
+    document.getElementById("alerthere").innerHTML = alert
+  }
 function createTableRow(data){
   let html = ``
   for(let x of data){
@@ -114,11 +154,19 @@ function createTableRow(data){
   let html = `${createTableRow(adjustments)}`
   saveTable.innerHTML = html
 }
+
+
 if(addOffencesButton) {
+  let activeId = adjustments.length+1
+  //get record
+  const result = dates.find(({ caseNo }) => caseNo === activeId);
+  console.log(result)
+  const numberOfDays = document.getElementById("Days")
+  numberOfDays.innerHTML = result.days
   let store = []
   addOffencesButton.addEventListener("click", function (e) {
     e.preventDefault()
-    let activeId = adjustments.length+1
+
     let checkboxes = document.querySelectorAll('input[type=checkbox]:checked').valueOf()
 
     //store offences
@@ -127,9 +175,7 @@ if(addOffencesButton) {
         store.push(offence)
     }
 
-    //get record
-    const result = dates.find(({ caseNo }) => caseNo === activeId);
-  console.log(result)
+
     //build new object
     let remandPeriod = {
       type: result.type,
@@ -164,7 +210,7 @@ if(addDatesButton) {
 
     console.log(adjustments)
     //go to next page
-    location.href = `select-sentences-2.html`;
+    location.href = `select-offences.html`;
   })
 }
 
