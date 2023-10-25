@@ -100,23 +100,19 @@ let unusedDeductions = document.getElementById("unusedDeductions");
 
 if(unusedDeductions) {
   let html = `
-<div class="govuk-summary-card">
-  <div class="govuk-summary-card__title-wrapper">
-    <h2 class="govuk-summary-card__title">Unused deductions</h2>
-  </div>
-  <div class="govuk-summary-card__content">
+
+ 
     <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Unused remand
-        </dt>
-        <dd class="govuk-summary-list__value">
-          38 days
-        </dd>
-      </div>
-    </dl>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Unused remand
+    </dt>
+    <dd class="govuk-summary-list__value">
+      38 days
+    </dd>
   </div>
-</div>
+</dl>
+
 `
 
   if(totalDays >=50) {
