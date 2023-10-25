@@ -221,7 +221,7 @@ function createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear) 
   let fromDate = new Date(fromYear.value + "-" + fromMonth.value + "-" + fromDay.value);
   let toDate = new Date(toYear.value + "-" + toMonth.value + "-" + toDay.value);
 
-  return daysBetweenDates(fromDate, toDate)
+  return daysBetweenDates(fromDate, toDate)+1
 }
 function createDate (day, month, year) {
   let mNumber = parseInt(month.value);
