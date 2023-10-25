@@ -1,0 +1,172 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="intercept-page-changes.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="option-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    <span class="govuk-caption-xl">Adjust release dates</span>
+                                    Review PADAs
+                                </h1>
+                            </legend>
+                            <p> Select the PADA adjudications that apply to the prisoner's sentence calculation.</p>
+<!--                            <p>ADA adjustments are based on adjudication records. To apply ADAs, you must confirm that the adjustment information below is correct.-->
+<!--                            </p>-->
+                            <p>The rules for PADAs can be found in the <a href="#">policy framework</a>.</p>
+
+                            <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+                                <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th class="govuk-table__header" scope="col" ></th>
+                                    <th class="govuk-table__header" scope="col">Date charge proved</th>
+                                    <th class="govuk-table__header" scope="col">Charge details</th>
+
+                                </tr>
+                                </thead>
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row govuk-table__row--selected">
+                                    <td class="govuk-table__cell">
+                                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+                                            <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                                                <span class="govuk-visually-hidden">Select 12345678</span>
+                                            </label>
+
+                                        </div>
+                                    </td>
+                                    <td class="govuk-table__cell">6 Mar 2023</td>
+                                    <td class="govuk-table__cell">
+                                        <table class="govuk-table">
+                                            <tr>
+                                                <th class="govuk-table__header" scope="col">Charge number</th>
+                                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">To be served</th>
+                                                <th class="govuk-table__header" scope="col">Heard at</th>
+                                                <th class="govuk-table__header" scope="col">Status</th>
+                                                <th class="govuk-table__header" scope="col">Days</th>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">
+                                                    3822448
+                                                </td>
+                                                <td class="govuk-table__cell">
+                                                    Forthwith
+                                                </td>
+                                                <td class="govuk-table__cell  ">
+                                                    Nottingham prison
+                                                </td>
+                                                <td class="govuk-table__cell  ">
+                                                    <span class="moj-badge moj-badge--bright-purple">prospective</span>
+                                                </td>
+                                                <!-- Days -->
+                                                <td class="govuk-table__cell govuk-!-text-align-right  ">8 </td>
+                                            </tr>
+
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr class="govuk-table__row govuk-table__row--selected">
+                                    <td class="govuk-table__cell">
+                                        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                                            <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+                                            <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+                                                <span class="govuk-visually-hidden">Select 12345678</span>
+                                            </label>
+
+                                        </div>
+                                    </td>
+                                    <td class="govuk-table__cell">12 Jun 2022</td>
+                                    <td class="govuk-table__cell">
+                                        <table class="govuk-table">
+                                            <tr>
+                                                <th class="govuk-table__header" scope="col">Charge number</th>
+                                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">To be served</th>
+                                                <th class="govuk-table__header" scope="col">Heard at</th>
+                                                <th class="govuk-table__header" scope="col">Status</th>
+                                                <th class="govuk-table__header" scope="col">Days</th>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">
+                                                    3812489
+                                                </td>
+                                                <td class="govuk-table__cell">
+                                                    Concurrent
+                                                </td>
+                                                <td class="govuk-table__cell  ">
+                                                    Nottingham prison
+                                                </td>
+                                                <td class="govuk-table__cell  ">
+                                                    <span class="moj-badge moj-badge--bright-purple">prospective</span>
+                                                </td>
+                                                <!-- Days -->
+                                                <td class="govuk-table__cell govuk-!-text-align-right  ">6 </td>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">
+                                                    3812491
+                                                </td>
+                                                <td class="govuk-table__cell">
+                                                    Concurrent
+                                                </td>
+                                                <td class="govuk-table__cell  ">
+                                                    Nottingham prison
+                                                </td>
+                                                <td class="govuk-table__cell  ">
+                                                    <span class="moj-badge moj-badge--bright-purple">prospective</span>
+                                                </td>
+                                                <!-- Days -->
+                                                <td class="govuk-table__cell govuk-!-text-align-right  ">6 </td>
+                                            </tr>
+                                            <tr class="govuk-table__row">
+                                                <td class="govuk-table__cell">
+                                                    3812577
+                                                </td>
+                                                <td class="govuk-table__cell">
+                                                    Concurrent
+                                                </td>
+                                                <td class="govuk-table__cell  ">
+                                                    Nottingham prison
+                                                </td>
+                                                <td class="govuk-table__cell  ">
+                                                    <span class="moj-badge moj-badge--bright-purple">prospective</span>
+                                                </td>
+                                                <!-- Days -->
+                                                <td class="govuk-table__cell govuk-!-text-align-right  ">6 </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <div class="none-selected govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+                                <input type="checkbox" class="govuk-checkboxes__input" id="mountain-elbrus" value="elbrus">
+                                <label class="govuk-label govuk-checkboxes__label" for="mountain-elbrus">
+                                    <span class="govuk-visually-hidden">Select 000345678</span>
+                                    <span>None of these apply</span>
+                                </label>
+                            </div>
+                        </fieldset>
+                    </div>
+                <a href="review-adas-padas.html" id="" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                    Continue
+                </a>
+
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}

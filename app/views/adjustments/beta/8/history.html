@@ -1,0 +1,86 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="select-adjustment-type.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <form action="/form-handler" method="post" novalidate>
+
+                        <div class="">
+
+
+                            <h1 class="govuk-heading-l">
+Adjustments history                            </h1>
+                            <table class="govuk-table" data-module="moj-sortable-table">
+
+                                <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+
+                                    <th scope="col" class="govuk-table__header" aria-sort="ascending">Adjustment</th>
+
+                                    <th scope="col" class="govuk-table__header" aria-sort="none">Days</th>
+
+                                    <th scope="col" class="govuk-table__header" aria-sort="none">Case</th>
+
+                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Date added</th>
+                                    <th scope="col" class="govuk-table__header govuk-table__header--numeric" aria-sort="none">Establishment</th>
+
+                                </tr>
+                                </thead>
+
+                                <tbody class="govuk-table__body">
+
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">Remand</td>
+                                    <td class="govuk-table__cell" data-sort-value="45">45</td>
+                                    <td class="govuk-table__cell">T0007633</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">18 Jun 2000</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">Leeds</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">Remand</td>
+                                    <td class="govuk-table__cell" data-sort-value="55">55</td>
+                                    <td class="govuk-table__cell">T0007633</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">18 Jun 2000</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="leeds">Leeds</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">UAL</td>
+                                    <td class="govuk-table__cell" data-sort-value="55">-5</td>
+                                    <td class="govuk-table__cell">T0007633</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="1897">18 Jun 2002</td>
+                                    <td class="govuk-table__cell govuk-table__cell--numeric" data-sort-value="leeds">Bradford</td>
+                                </tr>
+
+                                </tbody>
+                                <tfoot>
+                                    <tr>
+                                        <th class="govuk-table__cell" scope="row">Total</th>
+                                        <td class="govuk-table__cell">95 days</td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+
+                        </div>
+
+                        <a href="hub-7.html"  class="govuk-button govuk-button--secondary" data-name="UAL">
+                            Close
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}
