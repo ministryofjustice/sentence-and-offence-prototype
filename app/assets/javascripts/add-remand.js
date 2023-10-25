@@ -126,10 +126,9 @@ if(saveTable){
   document.getElementById('saveTableTotal').innerHTML = totalDays
   if(totalDays >= 50) {
     let alert = `
-<h2 class="govuk-heading-m">Unused remand identified</h2>
+<h2 class="govuk-heading-m">There is unused remand</h2>
     <p class="govuk-body-l">
-      We have identified xx days of unused remand that will not be taken into the sentence calculation based on this entry. 
-      the total unused  deductions for this sentence envelope is now XX days.
+      Based on this entry, there are xx days of unused remand, which will not be taken into the sentence calculation.
     </p>
 `
     console.log(totalDays)
