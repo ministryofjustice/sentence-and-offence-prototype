@@ -111,6 +111,14 @@ if(unusedDeductions) {
       38 days
     </dd>
   </div>
+    <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Unused tagged bail
+    </dt>
+    <dd class="govuk-summary-list__value">
+      0 days
+    </dd>
+  </div>
 </dl>
 
 `
