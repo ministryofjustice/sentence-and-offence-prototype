@@ -101,9 +101,7 @@ let unusedDeductions = document.getElementById("unusedDeductions");
 if(unusedDeductions) {
   document.getElementById('saveTableTotal').innerHTML = totalDays
   let html = `
-
- 
-    <dl class="govuk-summary-list">
+<dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
       Unused remand
@@ -121,7 +119,6 @@ if(unusedDeductions) {
     </dd>
   </div>
 </dl>
-
 `
 
   if(totalDays >=50) {
