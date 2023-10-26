@@ -99,6 +99,7 @@ function listOffences(offences) {
 let unusedDeductions = document.getElementById("unusedDeductions");
 
 if(unusedDeductions) {
+  document.getElementById('saveTableTotal').innerHTML = totalDays
   let html = `
 
  
@@ -108,7 +109,7 @@ if(unusedDeductions) {
       Unused remand
     </dt>
     <dd class="govuk-summary-list__value">
-      38 days
+      18 days
     </dd>
   </div>
     <div class="govuk-summary-list__row">
@@ -136,7 +137,7 @@ if(saveTable){
     let alert = `
 <h2 class="govuk-heading-m">There is unused remand</h2>
     <p class="govuk-body-l">
-      Based on this entry, there are xx days of unused remand, which will not be taken into the sentence calculation.
+      Based on this entry, there are 18 days of unused remand, which will not be taken into the sentence calculation.
     </p>
 `
     console.log(totalDays)
