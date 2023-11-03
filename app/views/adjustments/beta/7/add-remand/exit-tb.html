@@ -9,23 +9,38 @@
         </div>
     </div>
     <div id="hubPage">
-        <a href="check-your-answers-6.html" class="govuk-back-link">Back</a>
+        <a href="check-your-answers-2.html" class="govuk-back-link">Back</a>
 
         <main class=" offence-outcome " id="main-content" role="main">
 
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full govuk-!-padding-6">
-                    <h1 class="govuk-heading-xl">
-                        <span class="govuk-caption-xl">Adjust release dates</span>
-                        Review and apply adjustments
-                    </h1>
+                        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                             aria-labelledby="govuk-notification-banner-title"
+                             data-module="govuk-notification-banner">
+                            <div class="govuk-notification-banner__content">
+                                <h3 class="govuk-notification-banner__heading">
+                                   Tagged bail updates have been saved
+                                </h3>
+                                <p class="govuk-body">Once all of the adjustments have been made, you must
+                                    <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+                                </p>
+                            </div>
+                        </div>
+                        <h1 class="govuk-heading-xl">
+                            <span class="govuk-caption-xl">Adjust release dates</span>
+                            Review and apply adjustments
+                        </h1>
                     <p class="govuk-body">
                         This page lists all the adjustments that have been recorded for Joe Bloggs. You can add new adjustments, update existing information or review remand that has been logged in NOMIS.
                     </p>
+
                 </div>
             </div>
+
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
+
                     <h2 class="govuk-heading-m govuk-!-padding-left-4">
                         Deductions
                     </h2>
@@ -38,12 +53,16 @@
                                             Add new<span class="govuk-visually-hidden"> add new</span>
                                         </a>
                                         </li>
-
+<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">-->
+<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
+<!--                                        </a>-->
+<!--                                        </li>-->
                                     </ul>
                                 </div>
 
                                 <div class="adjustment-card_content">
-                                    <span id="REMAND" class="count govuk-body">0</span><span>Days</span>
+
+                                    <span id="RemandTotal"  class="count govuk-body">0</span><span>Days</span>
 <!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
                                     <details class="govuk-details" data-module="govuk-details">
                                         <summary class="govuk-details__summary">
@@ -60,7 +79,7 @@
                                 <div class="govuk-summary-card__title-wrapper">
                                     <h2 class="govuk-summary-card__title">Tagged bail</h2>
                                     <ul class="govuk-summary-card__actions">
-                                        <li class="govuk-summary-card__action"> <a id="AddNewTaggedBail" class="govuk-link" href="select-case.html">
+                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="select-case.html">
                                             Add new<span class="govuk-visually-hidden"> add new</span>
                                         </a>
                                         </li>
@@ -304,5 +323,5 @@ Here you will find details about this adjustment type......                     
         </main>
     </div>
 </div>
-<script src="/public/javascripts/adjustments-3.js"></script>
+<script src="/public/javascripts/add-remand.js"></script>
 {% endblock %}

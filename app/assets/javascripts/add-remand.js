@@ -6,6 +6,9 @@ adjustments = adjustments ? JSON.parse(adjustments) : [];
 
 let dates = localStorage.getItem('dates');
 dates = dates ? JSON.parse(dates) : [];
+
+let TBcase = localStorage.getItem('TBcase');
+TBcase = TBcase ? JSON.parse(TBcase) : [];
 let selectedOffences = [];
 
 let totalDays = 0;
@@ -25,13 +28,19 @@ function radioRoute (radios) {
 
 const addDatesButton = document.getElementById("add-remand-dates-button")
 const addOffencesButton = document.getElementById("add-offences-button")
+const addTaggedBailDaysButton = document.getElementById("add-tagged-bail-days-button")
+const saveTaggedBailButton = document.getElementById("saveTaggedBailButton")
+const addCaseButton = document.getElementById("add-case-button")
 const reviewButton = document.getElementById('review-remand-button')
 const displayRemandContainer = document.getElementById('periodsOfRemand')
 
+//add remand review page
 if(reviewButton){
-  document.getElementById('totalDays').innerHTML = totalDays
-  console.log(adjustments)
-  for(let x of adjustments) {
+  let remandCount = document.getElementById('totalDays')
+   let p=displayAdjustmentTotals("Remand", remandCount)
+
+  const result = adjustments.filter(({ type }) => type === "Remand");
+  for(let x of result) {
     displayRemandPeriod(x,displayRemandContainer);
   }
 
@@ -94,12 +103,23 @@ function listOffences(offences) {
   }
   return html
 }
+//index page
 
+const AddNewTaggedBailLink =document.getElementById("AddNewTaggedBail")
+let journey = "Home"
+if(AddNewTaggedBailLink){
+  addTaggedBailDaysButton.addEventListener("click", function(e){
+    e.preventDefault()
+    journey = "Tagged Bail"
+    location.href = `select-case.html`
+  })
+}
 
+//unused deductions
 let unusedDeductions = document.getElementById("unusedDeductions");
 
 if(unusedDeductions) {
-  document.getElementById('saveTableTotal').innerHTML = totalDays
+  document.getElementById('unusedDeductions').innerHTML = totalDays
   let html = `
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
@@ -126,6 +146,7 @@ if(unusedDeductions) {
   }
 }
 
+//add remand save page
 let saveTable = document.getElementById('tableBody')
 if(saveTable){
   console.log(totalDays)
@@ -155,7 +176,7 @@ function createTableRow(data){
   saveTable.innerHTML = html
 }
 
-
+//add remand select offences page
 if(addOffencesButton) {
   let activeId = adjustments.length+1
   //get record
@@ -191,8 +212,6 @@ if(addOffencesButton) {
 
     location.href = `review-2.html`;
   })
-
-
 }
 if(addDatesButton) {
   console.log("enter dates")
@@ -214,6 +233,121 @@ if(addDatesButton) {
   })
 }
 
+/////tagged bail
+if(addCaseButton) {
+  let radios = document.getElementsByClassName("govuk-radios__input")
+
+  addCaseButton.addEventListener("click", function (e){
+    e.preventDefault()
+    let selectedCase = {}
+    for(let x of radios) {
+      if(x.checked) {
+        console.log(x.getAttribute("data-case"))
+        let selectedCase ={
+          court: x.value,
+          date:x.getAttribute("data-date"),
+          ref:x.getAttribute("data-case")
+        }
+        TBcase.push(selectedCase)
+        localStorage.setItem('TBcase', JSON.stringify(TBcase))
+      }
+    }
+    location.href = `add-tagged-bail.html`;
+  })
+}
+
+if(addTaggedBailDaysButton) {
+  const TBDays = document.getElementById("taggedBailDays")
+  addTaggedBailDaysButton.addEventListener("click", function(e){
+    e.preventDefault()
+
+    let taggedBail = {
+      caseNo: adjustments.length+1,
+      type: "Tagged Bail",
+      court:TBcase[0].court,
+      date:TBcase[0].date,
+      ref:TBcase[0].ref,
+      days: parseInt(TBDays.value)
+    }
+    adjustments.push(taggedBail)
+    localStorage.setItem('adjustments', JSON.stringify(adjustments))
+    location.href = `review-tagged-bail.html`;
+  })
+}
+
+//save tagged bail
+if(saveTaggedBailButton){
+  let activeId = adjustments.length
+  //get record
+  const result = adjustments.find(({ caseNo }) => caseNo === activeId);
+  let dataTarget = document.getElementById('ReviewTaggedBail')
+ let html = `
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Case details
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                               ${result.court} <br>
+                               <span>${result.ref}</span>
+                               <span>${result.date}</span>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="select-case">
+                                    Change<span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Days 
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                               ${result.days}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="add-tagged-bail.html">
+                                    Change<span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+                    </dl>
+`
+  dataTarget.innerHTML = html
+
+
+}
+
+//display tagged bail count on exit
+const taggedBailCount = document.getElementById('TAGGED-BAIl')
+const RemandCount = document.getElementById('RemandTotal')
+
+if(taggedBailCount) {
+  displayAdjustmentTotals("Tagged Bail", taggedBailCount)
+  displayAdjustmentTotals("Remand", RemandCount)
+}
+
+if(taggedBailCount){
+  const result = adjustments.filter(({ type }) => type === "Tagged Bail");
+  console.log(journey)
+
+}
+
+function displayAdjustmentTotals(adjustment ,target){
+  const result = adjustments.filter(({ type }) => type === adjustment);
+
+  let total = 0
+  if(result.length >= 0) {
+    for (let x of result) {
+      total += +x.days
+    }
+
+    target.innerHTML = total
+  } else {
+    return 0
+  }
+}
 
 function createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear) {
   let fromDate = new Date(fromYear.value + "-" + fromMonth.value + "-" + fromDay.value);
