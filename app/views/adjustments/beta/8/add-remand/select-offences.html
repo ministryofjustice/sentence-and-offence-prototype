@@ -22,103 +22,154 @@
                                     Select the offences
                                 </h1>
                             </legend>
-                            <p> You have currently entered  <span id="Days"></span>  day(s) of remand. Select the offences that the remand time applies to. </p>
+                            <p class="govuk-body-l govuk-!-margin-top-6"> You have entered  <span class="govuk-!-font-weight-bold" id="Days"></span>  day(s) of remand. Select all the offences that apply to this remand time. </p>
+
                             <div id="OffenceLiostContainer">
                                 <h2 class="govuk-heading-m">Court cases</h2>
                                 <h3 class="govuk-heading-s"> Case 1</h3>
-                                <div id="Case" class="offenceListItem">
-                                    <p>Heard at:Bristol Magistrates Court
-                                        <br>
-                                        Case reference: T20220701
-                                    </p>
-                                    <div id="" >
-                                        <div class="govuk-checkboxes__item govuk-checkboxes--small govuk-!-margin-left-4" >
-                                            <input type="checkbox" class="govuk-checkboxes__input" id="T20220701-1" value="Burglary dwelling and theft - no violence">
-                                            <label class="govuk-label govuk-checkboxes__label" for="T20220701-1">
-                                                Burglary dwelling and theft - no violence  <br>
-                                                <span class="govuk-hint">committed on 8 Jan 2023</span>
-                                                <span class="govuk-visually-hidden">Select offence name here</span>
-                                            </label>
+                                <p>Heard at:Bristol Magistrates Court
+                                    <br>
+                                    Case reference: T20220701
+                                </p>
+                                <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+                                    <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                                        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+                                            Attempted blackmail
+                                        </h3>
+                                        <p class="govuk-body-s">Committed on 15 May 2023</p>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="Attempted blackmail">
+                                                <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                                    Select this offence
+                                                </label>
+                                            </div>
                                         </div>
-
                                     </div>
-<!--                                    <div class="">-->
-<!--                                        <div class="govuk-checkboxes__item govuk-checkboxes&#45;&#45;small govuk-!-margin-left-4" >-->
-<!--                                            <input type="checkbox" class="govuk-checkboxes__input" id="offence-2" value="Fail to give to an authorised person information / assistance / provide facilities that person may require">-->
-<!--                                            <label class="govuk-label govuk-checkboxes__label" for="offence-2">-->
-<!--                                                Fail to give to an authorised person information / assistance / provide facilities that person may require-->
-<!--                                                <br><span class="govuk-hint">comitted on 2 Jun 2023</span>-->
-<!--                                                <span class="govuk-visually-hidden">Select offence name here</span>-->
-<!--                                            </label>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-<!--                                    <div class="">-->
-<!--                                        <div class="govuk-checkboxes__item govuk-checkboxes&#45;&#45;small govuk-!-margin-left-4" >-->
-<!--                                            <input type="checkbox" class="govuk-checkboxes__input" id="offence-2" value="Remove a child not yet placed for adoption from accommodation provided by an adoption agency">-->
-<!--                                            <label class="govuk-label govuk-checkboxes__label" for="offence-2">-->
-<!--                                                Remove a child not yet placed for adoption from accommodation provided by an adoption agency-->
-<!--                                                <br><span class="govuk-hint">comitted on 2 Jun 2023</span>-->
-<!--                                                <span class="govuk-visually-hidden">Select offence name here</span>-->
-<!--                                            </label>-->
-<!--                                        </div>-->
-<!--                                    </div>-->
                                 </div>
-                                <h3 class="govuk-heading-s"> Case 2</h3>
-                                <div id="Case2" class="offenceListItem">
-                                    <p>Heard at:Bristol Magistrates Court
-                                        <br>
-                                        Case reference: T20220702
-                                    </p>
-
-                                    <div id="" class="">
-                                        <div class="govuk-checkboxes__item govuk-checkboxes--small govuk-!-margin-left-4" >
-                                            <input type="checkbox" class="govuk-checkboxes__input" id="T20220702-1" value="Blackmail ">
-                                            <label class="govuk-label govuk-checkboxes__label" for="T20220702-1">
-                                                Blackmail <br><span class="govuk-hint">committed on 15 May 2023</span>
-                                                <br><span class="govuk-visually-hidden">Select offence name here</span>
-                                            </label>
-                                        </div>
-
-                                    </div>
-                                    <div class="">
-                                        <div class="govuk-checkboxes__item govuk-checkboxes--small govuk-!-margin-left-4" >
-                                            <input type="checkbox" class="govuk-checkboxes__input" id="T20220702-2" value="Attempted blackmail">
-                                            <label class="govuk-label govuk-checkboxes__label" for="T20220702-2">
-                                                Attempted blackmail
-                                                <br> <span class="govuk-hint">committed on 15 May 2023</span>
-                                                <span class="govuk-visually-hidden">Select offence name here</span>
-                                            </label>
-                                        </div>
-                                    </div>
-<!--                                    <div class="">-->
+<!--                                <div id="Case" class="offenceListItem">-->
+<!--                                  -->
+<!--                                    <div id="" >-->
 <!--                                        <div class="govuk-checkboxes__item govuk-checkboxes&#45;&#45;small govuk-!-margin-left-4" >-->
-<!--                                            <input type="checkbox" class="govuk-checkboxes__input" id="offence-2" value="Improperly import a controlled drug of Class A to which a prohibition / restriction applies into the United Kingdom">-->
-<!--                                            <label class="govuk-label govuk-checkboxes__label" for="offence-2">-->
-<!--                                                Improperly import a controlled drug of Class A to which a prohibition / restriction applies into the United Kingdom-->
-<!--                                                <br><span class="govuk-hint">comitted on 2 Jun 2023</span>-->
+<!--                                            <input type="checkbox" class="govuk-checkboxes__input" id="T20220701-1" value="Burglary dwelling and theft - no violence">-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="T20220701-1">-->
+<!--                                                Burglary dwelling and theft - no violence  <br>-->
+<!--                                                <span class="govuk-hint">committed on 8 Jan 2023</span>-->
 <!--                                                <span class="govuk-visually-hidden">Select offence name here</span>-->
 <!--                                            </label>-->
 <!--                                        </div>-->
+
 <!--                                    </div>-->
-<!--                                    <div class="">-->
-<!--                                        <div class="govuk-checkboxes__item govuk-checkboxes&#45;&#45;small  govuk-!-margin-left-4" >-->
-<!--                                            <input type="checkbox" class="govuk-checkboxes__input" id="offence-2" value="Knowingly concerned in evading the prohibition on exportation of a controlled drug of Class B from the United Kingdom">-->
-<!--                                            <label class="govuk-label govuk-checkboxes__label" for="offence-2">-->
-<!--                                                Knowingly concerned in evading the prohibition on exportation of a controlled drug of Class B from the United Kingdom <span class="govuk-hint">comitted on 2 Jun 2023</span>-->
+<!--&lt;!&ndash;                                    <div class="">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="govuk-checkboxes__item govuk-checkboxes&#45;&#45;small govuk-!-margin-left-4" >&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <input type="checkbox" class="govuk-checkboxes__input" id="offence-2" value="Fail to give to an authorised person information / assistance / provide facilities that person may require">&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <label class="govuk-label govuk-checkboxes__label" for="offence-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                Fail to give to an authorised person information / assistance / provide facilities that person may require&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <br><span class="govuk-hint">comitted on 2 Jun 2023</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <span class="govuk-visually-hidden">Select offence name here</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <div class="">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="govuk-checkboxes__item govuk-checkboxes&#45;&#45;small govuk-!-margin-left-4" >&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <input type="checkbox" class="govuk-checkboxes__input" id="offence-2" value="Remove a child not yet placed for adoption from accommodation provided by an adoption agency">&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <label class="govuk-label govuk-checkboxes__label" for="offence-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                Remove a child not yet placed for adoption from accommodation provided by an adoption agency&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <br><span class="govuk-hint">comitted on 2 Jun 2023</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <span class="govuk-visually-hidden">Select offence name here</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--                                </div>-->
+                                <h3 class="govuk-heading-s"> Case 2</h3>
+                                <p>Heard at:Bristol Magistrates Court
+                                    <br>
+                                    Case reference: T20220702
+                                </p>
+                                <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+                                    <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                                        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+                                            Attempted blackmail
+                                        </h3>
+                                        <p class="govuk-body-s">Committed on 15 May 2023</p>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="Attempted blackmail">
+                                                <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                                    Select this offence
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+                                    <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                                        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+                                            Blackmail
+                                        </h3>
+                                        <p class="govuk-body-s">Committed on 15 May 2023</p>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="Blackmail">
+                                                <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                                    Select this offence
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+<!--                                <div id="Case2" class="offenceListItem">-->
+
+
+<!--                                    <div id="" class="">-->
+<!--                                        <div class="govuk-checkboxes__item govuk-checkboxes&#45;&#45;small govuk-!-margin-left-4" >-->
+<!--                                            <input type="checkbox" class="govuk-checkboxes__input" id="T20220702-1" value="Blackmail ">-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="T20220702-1">-->
+<!--                                                Blackmail <br><span class="govuk-hint">committed on 15 May 2023</span>-->
 <!--                                                <br><span class="govuk-visually-hidden">Select offence name here</span>-->
 <!--                                            </label>-->
 <!--                                        </div>-->
+
 <!--                                    </div>-->
 <!--                                    <div class="">-->
 <!--                                        <div class="govuk-checkboxes__item govuk-checkboxes&#45;&#45;small govuk-!-margin-left-4" >-->
-<!--                                            <input type="checkbox" class="govuk-checkboxes__input" id="offence-2" value="Possess a class A drug for export with intent to evade prohibition / restriction">-->
-<!--                                            <label class="govuk-label govuk-checkboxes__label" for="offence-2">-->
-<!--                                                Possess a class A drug for export with intent to evade prohibition / restriction<br> <span class="govuk-hint">comitted on 2 Jun 2023</span>-->
+<!--                                            <input type="checkbox" class="govuk-checkboxes__input" id="T20220702-2" value="Attempted blackmail">-->
+<!--                                            <label class="govuk-label govuk-checkboxes__label" for="T20220702-2">-->
+<!--                                                Attempted blackmail-->
+<!--                                                <br> <span class="govuk-hint">committed on 15 May 2023</span>-->
 <!--                                                <span class="govuk-visually-hidden">Select offence name here</span>-->
 <!--                                            </label>-->
 <!--                                        </div>-->
 <!--                                    </div>-->
-                                </div>
+<!--&lt;!&ndash;                                    <div class="">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="govuk-checkboxes__item govuk-checkboxes&#45;&#45;small govuk-!-margin-left-4" >&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <input type="checkbox" class="govuk-checkboxes__input" id="offence-2" value="Improperly import a controlled drug of Class A to which a prohibition / restriction applies into the United Kingdom">&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <label class="govuk-label govuk-checkboxes__label" for="offence-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                Improperly import a controlled drug of Class A to which a prohibition / restriction applies into the United Kingdom&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <br><span class="govuk-hint">comitted on 2 Jun 2023</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <span class="govuk-visually-hidden">Select offence name here</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <div class="">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="govuk-checkboxes__item govuk-checkboxes&#45;&#45;small  govuk-!-margin-left-4" >&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <input type="checkbox" class="govuk-checkboxes__input" id="offence-2" value="Knowingly concerned in evading the prohibition on exportation of a controlled drug of Class B from the United Kingdom">&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <label class="govuk-label govuk-checkboxes__label" for="offence-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                Knowingly concerned in evading the prohibition on exportation of a controlled drug of Class B from the United Kingdom <span class="govuk-hint">comitted on 2 Jun 2023</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <br><span class="govuk-visually-hidden">Select offence name here</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    <div class="">&ndash;&gt;-->
+<!--&lt;!&ndash;                                        <div class="govuk-checkboxes__item govuk-checkboxes&#45;&#45;small govuk-!-margin-left-4" >&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <input type="checkbox" class="govuk-checkboxes__input" id="offence-2" value="Possess a class A drug for export with intent to evade prohibition / restriction">&ndash;&gt;-->
+<!--&lt;!&ndash;                                            <label class="govuk-label govuk-checkboxes__label" for="offence-2">&ndash;&gt;-->
+<!--&lt;!&ndash;                                                Possess a class A drug for export with intent to evade prohibition / restriction<br> <span class="govuk-hint">comitted on 2 Jun 2023</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                                <span class="govuk-visually-hidden">Select offence name here</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                                            </label>&ndash;&gt;-->
+<!--&lt;!&ndash;                                        </div>&ndash;&gt;-->
+<!--&lt;!&ndash;                                    </div>&ndash;&gt;-->
+<!--                                </div>-->
                             </div>
                         </fieldset>
                     </div>
