@@ -154,14 +154,13 @@ if(saveTable){
   if(totalDays >= 50) {
     let alert = `
 <h2 class="govuk-heading-m">There are 18 days of unused remand</h2>
-    <p class="govuk-body-l">
+    <p class="">
       Unused remand will not be taken into the sentence calculation. The unused remand time can be carried over to future licence recall cases.
       </p>
      
-      <p class="govuk-body-l">You will need to add the unused remand alert on NOMIS.</p>
-    
+      <p class="">You will need to add the unused remand alert on NOMIS.</p>
 `
-    console.log(totalDays)
+
     document.getElementById("alerthere").innerHTML = alert
   }
 function createTableRow(data){
