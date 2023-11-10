@@ -63,7 +63,7 @@ function displayRemandPeriod(x, target){
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="#">
-                                    Change<span class="govuk-visually-hidden"> name</span>
+                                    Edit<span class="govuk-visually-hidden"> Edit</span>
                                 </a>
                             </dd>
                         </div>
@@ -72,13 +72,13 @@ function displayRemandPeriod(x, target){
                                Offences
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                <ul class="govuk-list">
+                                <ul class="govuk-list govuk-list--bullet">
                                     ${listOffences(x.offences)}
                                 </ul>
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="#">
-                                    Change<span class="govuk-visually-hidden"> address</span>
+                                    Edit<span class="govuk-visually-hidden"> Edit</span>
                                 </a>
                             </dd>
                         </div>
@@ -153,10 +153,13 @@ if(saveTable){
   document.getElementById('saveTableTotal').innerHTML = totalDays
   if(totalDays >= 50) {
     let alert = `
-<h2 class="govuk-heading-m">There is unused remand</h2>
+<h2 class="govuk-heading-m">There are 18 days of unused remand</h2>
     <p class="govuk-body-l">
-      Based on this entry, there are 18 days of unused remand, which will not be taken into the sentence calculation.
-    </p>
+      Unused remand will not be taken into the sentence calculation. The unused remand time can be carried over to future licence recall cases.
+      </p>
+     
+      <p class="govuk-body-l">You will need to add the unused remand alert on NOMIS.</p>
+    
 `
     console.log(totalDays)
     document.getElementById("alerthere").innerHTML = alert
@@ -165,7 +168,7 @@ function createTableRow(data){
   let html = ``
   for(let x of data){
     let row = `  <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">${x.start}to ${x.end}</th>
+                            <th scope="row" class="govuk-table__header">${x.start} to ${x.end}</th>
                             <td class="govuk-table__cell">${x.days}</td>
                         </tr>`
     html += row
@@ -295,7 +298,7 @@ if(saveTaggedBailButton){
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="select-case">
-                                    Change<span class="govuk-visually-hidden"> name</span>
+                                    Edit<span class="govuk-visually-hidden"> Edit</span>
                                 </a>
                             </dd>
                         </div>
@@ -308,7 +311,7 @@ if(saveTaggedBailButton){
                             </dd>
                             <dd class="govuk-summary-list__actions">
                                 <a class="govuk-link" href="add-tagged-bail.html">
-                                    Change<span class="govuk-visually-hidden"> name</span>
+                                    Edit<span class="govuk-visually-hidden"> Edit</span>
                                 </a>
                             </dd>
                         </div>
