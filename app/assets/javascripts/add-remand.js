@@ -49,14 +49,13 @@ if(reviewButton){
     let radios = document.getElementsByClassName('govuk-radios__input');
     radioRoute(radios);
   })
-
 }
 
 function displayRemandPeriod(x, target){
   let html = `    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                               Period of remand
+                               Remand period
                             </dt>
                             <dd class="govuk-summary-list__value">
                                ${x.start} to ${x.end}
