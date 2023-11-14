@@ -687,3 +687,20 @@
 
   }
 }
+
+.adjustments-home {
+  .govuk-summary-list__key {
+    width:50%;
+  }
+}
+
+
+.govuk-summary-card.remand {
+  border: 2px solid #b1b4b6;
+  //border-left: 4px solid #505a5f;
+
+  .govuk-summary-card__title-wrapper {
+    background-color: white;
+    border-bottom: 1px solid #b1b4b6;
+  }
+}
