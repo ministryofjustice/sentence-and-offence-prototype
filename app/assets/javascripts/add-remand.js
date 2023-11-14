@@ -39,7 +39,8 @@ if(reviewButton){
   let remandCount = document.getElementById('totalDays')
    let p=displayAdjustmentTotals("Remand", remandCount)
 
-  const result = adjustments.filter(({ type }) => type === "Remand");
+  //const result = adjustments.filter(({ type }) => type === "Remand");
+  const result = filterAdjustmentsByType( "Remand");
   for(let x of result) {
     displayRemandPeriod(x,displayRemandContainer);
   }
@@ -49,6 +50,11 @@ if(reviewButton){
     let radios = document.getElementsByClassName('govuk-radios__input');
     radioRoute(radios);
   })
+}
+
+function filterAdjustmentsByType(remandType){
+  const result = adjustments.filter(({ type }) => type === remandType );
+  return result
 }
 
 function displayRemandPeriod(x, target){
@@ -166,7 +172,7 @@ function createTableRow(data){
   let html = ``
   for(let x of data){
     let row = `  <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header">${x.start} to ${x.end}</th>
+                            <td scope="row" class="govuk-table__cell">${x.start} to ${x.end}</td>
                             <td class="govuk-table__cell">${x.days}</td>
                         </tr>`
     html += row
@@ -193,7 +199,7 @@ if(addOffencesButton) {
 
     //store offences
     for (let x of checkboxes) {
-        let offence = {offence: x.value}
+        let offence = {offence: x.value, court:x.getAttribute("data-court")}
         store.push(offence)
     }
 
@@ -234,9 +240,32 @@ if(addDatesButton) {
   })
 }
 
+
 /////tagged bail
+
+let selectCaseLinks = document.getElementsByClassName("select-case-link")
+
+if(selectCaseLinks){
+  Array.from(selectCaseLinks).forEach(function(selectedLink)
+  {
+    selectedLink.addEventListener('click', function (e) {
+      e.preventDefault()
+
+      let selectedCase = {
+        court: selectedLink.getAttribute("data-court"),
+        date: selectedLink.getAttribute("data-date"),
+        ref: selectedLink.getAttribute("data-case")
+      }
+      console.log(selectedCase)
+      TBcase.push(selectedCase)
+      localStorage.setItem('TBcase', JSON.stringify(TBcase))
+      location.href = `add-tagged-bail.html`;
+    })
+  })
+}
 if(addCaseButton) {
   let radios = document.getElementsByClassName("govuk-radios__input")
+
 
   addCaseButton.addEventListener("click", function (e){
     e.preventDefault()
@@ -445,3 +474,102 @@ function getCheckedItem(list){
   }
 }
 
+///// index page
+let indexPage = document.getElementById("indexPage")
+
+if(indexPage) {
+  RemandScreenCount = document.getElementById("RemandTotal");
+
+  //get counts
+  remandCount = getCount(RemandScreenCount)
+  displayViewLink("remand", remandCount)
+  //if greater than 0 display view
+}
+function getCount(element){
+  let count = parseInt(element.innerHTML)
+  return count;
+}
+function displayViewLink(adjustment, days) {
+  if(days >= 1) {
+    let adjustmentName = adjustment
+    let element = "view-"+adjustmentName
+    let target = document.getElementsByClassName(element)[0]
+    //view-remand
+    target.classList.remove('moj-hidden')
+  }
+}
+
+const ViewRemandPage = document.getElementById('ViewRemandPage')
+
+if(ViewRemandPage){
+  let screenRemandPeriods = document.getElementById("RemandPeriodsCount")
+  let screenRemandCount = document.getElementById("TotalRemandDays")
+  let target = document.getElementById('RemandPeriodListContainer')
+  let remandPeriods = filterAdjustmentsByType("Remand")
+  let remandPeriodCount = remandPeriods.length
+  let totalRemandDays = 0
+  for( let x of remandPeriods){
+    displayRemandCard(x, target)
+    totalRemandDays += x.days;
+  }
+  screenRemandPeriods.innerHTML = remandPeriodCount
+  screenRemandCount.innerHTML = totalRemandDays
+  //console.log(totalRemandDays, remandPeriodCount)
+}
+
+function displayRemandCard(record, target){
+  let html =`
+    <div class="govuk-summary-card remand">
+                        <div class="govuk-summary-card__title-wrapper ">
+                            <h2 class="govuk-summary-card__title">From ${record.start} to ${record.end}</h2>
+                            <ul class="govuk-summary-card__actions">
+                                <li class="govuk-summary-card__action"> <a id="remand${record.caseNo}" class="govuk-link" href="edit.html">
+                                    Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                                </a>
+                                </li>
+                                <li class="govuk-summary-card__action"> <a class="govuk-link" href="delete.html">
+                                    Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="govuk-summary-card__content">
+                            <dl class="govuk-summary-list">
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Court name
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        ${record.offences[0].court}
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Offences
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        <ul>
+                                            <li>Attempted blackmail<br><span class="govuk-hint">Committed on 23 Jan 2023</span> </li>
+                                        </ul>
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Days
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        ${record.days}
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+  `
+  target.innerHTML += html
+}
+
+//edit remand page
+
+if(editRemand) {
+  //filterRemand by
+}
