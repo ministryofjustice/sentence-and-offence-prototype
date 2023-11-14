@@ -8,7 +8,7 @@
             </div>
         </div>
     </div>
-    <div id="hubPage">
+    <div id="indexPage">
         <a href="check-your-answers-6.html" class="govuk-back-link">Back</a>
 
         <main class=" offence-outcome " id="main-content" role="main">
@@ -35,21 +35,21 @@
                                     <h2 class="govuk-summary-card__title">Remand</h2>
                                     <ul class="govuk-summary-card__actions">
                                         <li class="govuk-summary-card__action">
-                                            <a class="govuk-link" href="enter-remand.html">
+                                            <a class="govuk-link " href="enter-remand.html">
                                             Add new<span class="govuk-visually-hidden"> add new</span>
                                             </a>
                                         </li>
-<!--                                        <li class="govuk-summary-card__action">-->
-<!--                                            <a class="govuk-link" href="view-remand.html">-->
-<!--                                                View<span class="govuk-visually-hidden"> add new</span>-->
-<!--                                            </a>-->
-<!--                                        </li>-->
+                                        <li class="govuk-summary-card__action moj-hidden view-remand">
+                                            <a class="govuk-link" href="view-remand.html">
+                                                View<span class="govuk-visually-hidden"> add new</span>
+                                            </a>
+                                        </li>
 
                                     </ul>
                                 </div>
 
                                 <div class="adjustment-card_content">
-                                    <span id="REMAND" class="count govuk-body">0</span><span>Days</span>
+                                    <span id="RemandTotal" class="count govuk-body">0</span><span>Days</span>
 <!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
                                     <details class="govuk-details" data-module="govuk-details">
                                         <summary class="govuk-details__summary">
@@ -310,5 +310,5 @@ Here you will find details about this adjustment type......                     
         </main>
     </div>
 </div>
-<script src="/public/javascripts/adjustments-3.js"></script>
+<script src="/public/javascripts/add-remand.js"></script>
 {% endblock %}

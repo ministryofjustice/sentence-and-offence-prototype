@@ -24,98 +24,74 @@
                             </legend>
                             <p class="govuk-body">You can add other periods of tagged bail later.</p>
 
-<!--                            <div class="govuk-summary-card">-->
-<!--                                <div class="govuk-summary-card__title-wrapper">-->
-<!--                                    <h2 class="govuk-summary-card__title">Bristol magistrates court</h2>-->
-<!--                                    <ul class="govuk-summary-card__actions">-->
-<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">-->
-<!--                                            Select this case<span class="govuk-visually-hidden"> of University of Gloucestershire</span>-->
-<!--                                        </a>-->
-<!--                                        </li>-->
-<!--                                    </ul>-->
-<!--                                </div>-->
-<!--                                <div class="govuk-summary-card__content">-->
-<!--                                    <dl class="govuk-summary-list">-->
-<!--                                        <div class="govuk-summary-list__row">-->
-<!--                                            <dt class="govuk-summary-list__key">-->
-<!--                                                Case number-->
-<!--                                            </dt>-->
-<!--                                            <dd class="govuk-summary-list__value">-->
-<!--                                                T900000000-->
-<!--                                            </dd>-->
-<!--                                        </div>-->
-<!--                                        <div class="govuk-summary-list__row">-->
-<!--                                            <dt class="govuk-summary-list__key">-->
-<!--                                                Date-->
-<!--                                            </dt>-->
-<!--                                            <dd class="govuk-summary-list__value">-->
-<!--                                                23 Jan 2023-->
-<!--                                            </dd>-->
-<!--                                        </div>-->
-<!--                                    </dl>-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                            <div class="govuk-summary-card">-->
-<!--                                <div class="govuk-summary-card__title-wrapper">-->
-<!--                                    <h2 class="govuk-summary-card__title">Manchester crown cpurt</h2>-->
-<!--                                    <ul class="govuk-summary-card__actions">-->
-<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">-->
-<!--                                            Select this case<span class="govuk-visually-hidden"> of University of Bristol</span>-->
-<!--                                        </a>-->
-<!--                                        </li>-->
-<!--                                    </ul>-->
-<!--                                </div>-->
-<!--                                <div class="govuk-summary-card__content">-->
-<!--                                    <dl class="govuk-summary-list">-->
-<!--                                        <div class="govuk-summary-list__row">-->
-<!--                                            <dt class="govuk-summary-list__key">-->
-<!--                                                Case number-->
-<!--                                            </dt>-->
-<!--                                            <dd class="govuk-summary-list__value">-->
-<!--                                                T0000007-->
-<!--                                            </dd>-->
-<!--                                        </div>-->
-<!--                                        <div class="govuk-summary-list__row">-->
-<!--                                            <dt class="govuk-summary-list__key">-->
-<!--                                               Date-->
-<!--                                            </dt>-->
-<!--                                            <dd class="govuk-summary-list__value">-->
-<!--                                                3 Jun 2023-->
-<!--                                            </dd>-->
-<!--                                        </div>-->
-<!--                                    </dl>-->
-<!--                                </div>-->
-<!--                            </div>-->
-                            <div class="govuk-radios govuk-!-margin-top-6" data-module="govuk-radios">
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" data-date="23 Jan 2023"  data-case="T90000000" value="Bristol magistrates court" aria-describedby="signIn-item-hint">
-                                    <label class="govuk-label govuk-radios__label" for="signIn">
-                                        Bristol magistrates court
-                                    </label>
-                                    <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                                        T90000000 | 23 Jan 2023
-                                    </div>
+                            <div class="govuk-summary-card">
+                                <div class="govuk-summary-card__title-wrapper">
+                                    <h2 class="govuk-summary-card__title">Bristol magistrates court</h2>
+                                    <ul class="govuk-summary-card__actions">
+                                        <li class="govuk-summary-card__action">
+                                            <a class="govuk-link select-case-link" href="#"  data-date="23 Jan 2023"  data-case="T90000000" data-court="Bristol Magistrates Court">
+                                            Select this case<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                                            </a>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="Manchester crown court" data-date="3 Jun 2023"  data-case="T90000001" aria-describedby="signIn-2-item-hint">
-                                    <label class="govuk-label govuk-radios__label" for="signIn-2">
-                                        Manchester crown court
-                                    </label>
-                                    <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-                                        T90000001 | 3 Jun 2023
-                                    </div>
+                                <div class="govuk-summary-card__content">
+                                    <dl class="govuk-summary-list">
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Case number
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                T900000000
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Date
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                23 Jan 2023
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                            <div class="govuk-summary-card">
+                                <div class="govuk-summary-card__title-wrapper">
+                                    <h2 class="govuk-summary-card__title">Manchester Crown Court</h2>
+                                    <ul class="govuk-summary-card__actions">
+                                        <li class="govuk-summary-card__action">
+                                            <a class="govuk-link select-case-link" href="#" data-date="3 Jun 2023"  data-case="T90000001" data-court="Manchester Crown Court">
+                                                Select this case<span class="govuk-visually-hidden"> of University of Bristol</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="govuk-summary-card__content">
+                                    <dl class="govuk-summary-list">
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Case number
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                T90000001
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                               Date
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                3 Jun 2023
+                                            </dd>
+                                        </div>
+                                    </dl>
                                 </div>
                             </div>
                         </fieldset>
                     </div>
 
                     <p class="govuk-inset-text"> If you think some information is wrong, edit it in NOMIS and <a href="#">reload this page</a>.</p>
-                <a href="add-tagged-bail.html" id="add-case-button" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
-                    Continue
-                </a>
-                    <a href="index.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                        Cancel
-                    </a>
             </div>
             </div>
         </main>
