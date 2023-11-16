@@ -89,7 +89,7 @@ function displayRemandPeriod(x, target){
                                Offences
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                <ul class="govuk-list govuk-list--bullet">
+                                <ul class="govuk-list">
                                     ${listOffences(x.offences)}
                                 </ul>
                             </dd>
@@ -783,7 +783,7 @@ function displayRemandCard(record, target){
                                         Offences
                                     </dt>
                                     <dd class="govuk-summary-list__value">
-                                        <ul>
+                                        <ul class="govuk-list">
                                              ${listOffences(record.offences)}
                                         </ul>
                                     </dd>
@@ -813,7 +813,7 @@ if(editRemand) {
 
   date.innerHTML = `From ${period[0].start} to ${period[0].end}`
   days.innerHTML = `${period[0].days}`
-  offences.innerHTML = `   <ul class="govuk-list govuk-list--bullet">
+  offences.innerHTML = `   <ul class="govuk-list">
                                     ${listOffences(period[0].offences)}
                                 </ul>`
   console.log(period,'t')
@@ -845,7 +845,7 @@ if(deleteRemand) {
 
   date.innerHTML = `From ${period[0].start} to ${period[0].end}`
   days.innerHTML = `${period[0].days}`
-  offences.innerHTML = `   <ul class="govuk-list govuk-list--bullet">
+  offences.innerHTML = `   <ul class="govuk-list ">
                                     ${listOffences(period[0].offences)}
                                 </ul>`
 
@@ -866,7 +866,7 @@ if(DeleteTaggedBailPage) {
   let period = filterAdjustmentsByID(selectedRemandPeriodID)
   console.log(period)
 
-  date.innerHTML = `From ${period[0].court} `
+  date.innerHTML = `${period[0].court} `
   days.innerHTML = `${period[0].days}`
 
 
