@@ -8,11 +8,11 @@
         </div>
     </div>
 </div>
-    <div class="govuk-width-container">
-        <a href="select-sentences-2.html" class="govuk-back-link">Back</a>
+    <div id="DeleteRemandPage" class="govuk-width-container">
+        <a href="view-3.html" class="govuk-back-link">Back</a>
         <main class="govuk-main-wrapper " id="main-content" role="main">
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-one-half">
+                <div class="govuk-grid-column-two-thirds">
                     <h1 class="govuk-heading-l">Delete remand details</h1>
 <!--                    <p>[Explainer].</p>-->
                     <h2 class="govuk-heading-m">Remand details</h2>
@@ -21,7 +21,7 @@
                             <dt class="govuk-summary-list__key">
                                Period of remand
                             </dt>
-                            <dd class="govuk-summary-list__value">
+                            <dd id="PeriodDate" class="govuk-summary-list__value">
                                12 Mar 2023 to 5 May 2023
                             </dd>
                         </div>
@@ -30,7 +30,7 @@
                                Offences
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                <ul class="govuk-list">
+                                <ul id="OffenceLI" class="govuk-list">
                                     <li>offence name 1</li>
                                     <li>offence name 2</li>
                                     <li>offence name 3</li>
@@ -41,7 +41,7 @@
                             <dt class="govuk-summary-list__key">
                                 Days spent on remand
                             </dt>
-                            <dd class="govuk-summary-list__value">
+                            <dd id="PeriodDays" class="govuk-summary-list__value">
                                 000
                             </dd>
                         </div>
@@ -50,16 +50,19 @@
                         <h2 class="govuk-heading-m">Are you sure you want to delete the remand period?</h2>
                         <p>The remand time will be removed from the records. You will need to recalculate a prisoner’s release dates.</p>
                     </div>
-                    <a href="index-deleted.html" class="govuk-button " data-module="govuk-button">
-                        Delete record
-                    </a>
-                    <a href="view-3.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                        Cancel
-                    </a>
+                    <div class="govuk-button-group">
+                        <a id="DeleteRemandPeriod" href="index-deleted.html" class="govuk-button " data-module="govuk-button" data-journey="2">
+                            Delete record
+                        </a>
+                        <a href="view-3.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+
                 </div>
             </div>
         </main>
     </div>
 </div>
-
+<script src="/public/javascripts/add-remand.js"></script>
 {% endblock %}
