@@ -11,6 +11,13 @@ let TBcase = localStorage.getItem('TBcase');
 TBcase = TBcase ? JSON.parse(TBcase) : [];
 let selectedOffences = [];
 
+let selectedRemandPeriodID = localStorage.getItem('SelectedRemandPeriod');
+selectedRemandPeriodID = selectedRemandPeriodID ? JSON.parse(selectedRemandPeriodID) :0;
+
+let activeJourney = localStorage.getItem('activeJourney');
+activeJourney = activeJourney ? JSON.parse(activeJourney) :0;
+
+
 let totalDays = 0;
 for(let x of adjustments){
   totalDays += x.days;
@@ -37,7 +44,7 @@ const displayRemandContainer = document.getElementById('periodsOfRemand')
 //add remand review page
 if(reviewButton){
   let remandCount = document.getElementById('totalDays')
-   let p=displayAdjustmentTotals("Remand", remandCount)
+   let p=getTotalRemandDays("Remand", remandCount)
 
   //const result = adjustments.filter(({ type }) => type === "Remand");
   const result = filterAdjustmentsByType( "Remand");
@@ -54,6 +61,11 @@ if(reviewButton){
 
 function filterAdjustmentsByType(remandType){
   const result = adjustments.filter(({ type }) => type === remandType );
+  return result
+}
+
+function filterAdjustmentsByID(id){
+  const result = adjustments.filter(({ caseNo }) => caseNo === id );
   return result
 }
 
@@ -103,7 +115,7 @@ function displayRemandPeriod(x, target){
 function listOffences(offences) {
   let html = ``
   for(let x of offences){
-    let row = `<li>${x.offence}</li>`
+    let row = `<li>${x.offence}<br><span class="govuk-hint">${x.date}</span></li>`
     html += row
   }
   return html
@@ -199,7 +211,11 @@ if(addOffencesButton) {
 
     //store offences
     for (let x of checkboxes) {
-        let offence = {offence: x.value, court:x.getAttribute("data-court")}
+        let offence = {
+          offence: x.value,
+          court:x.getAttribute("data-court"),
+          date:x.getAttribute("data-offence-date"),
+        }
         store.push(offence)
     }
 
@@ -287,9 +303,13 @@ if(addCaseButton) {
 }
 
 if(addTaggedBailDaysButton) {
+  console.log(TBcase)
+  let tbc = adjustments.length-1;
+  console.log(tbc,'8')
   const TBDays = document.getElementById("taggedBailDays")
   addTaggedBailDaysButton.addEventListener("click", function(e){
     e.preventDefault()
+
 
     let taggedBail = {
       caseNo: adjustments.length+1,
@@ -309,6 +329,7 @@ if(addTaggedBailDaysButton) {
 if(saveTaggedBailButton){
   let activeId = adjustments.length
   //get record
+  console.log(adjustments)
   const result = adjustments.find(({ caseNo }) => caseNo === activeId);
   let dataTarget = document.getElementById('ReviewTaggedBail')
  let html = `
@@ -345,39 +366,14 @@ if(saveTaggedBailButton){
                     </dl>
 `
   dataTarget.innerHTML = html
-
-
-}
-
-//display tagged bail count on exit
-const taggedBailCount = document.getElementById('TAGGED-BAIl')
-const RemandCount = document.getElementById('RemandTotal')
-
-if(taggedBailCount) {
-  displayAdjustmentTotals("Tagged Bail", taggedBailCount)
-  displayAdjustmentTotals("Remand", RemandCount)
-}
-
-if(taggedBailCount){
-  const result = adjustments.filter(({ type }) => type === "Tagged Bail");
-  console.log(journey)
+  saveTaggedBailButton.addEventListener('click', function(){
+    let journey = saveTaggedBailButton.getAttribute('data-journey')
+    localStorage.setItem('activeJourney', parseInt(journey))
+  })
 
 }
 
-function displayAdjustmentTotals(adjustment ,target){
-  const result = adjustments.filter(({ type }) => type === adjustment);
 
-  let total = 0
-  if(result.length >= 0) {
-    for (let x of result) {
-      total += +x.days
-    }
-
-    target.innerHTML = total
-  } else {
-    return 0
-  }
-}
 
 function createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear) {
   let fromDate = new Date(fromYear.value + "-" + fromMonth.value + "-" + fromDay.value);
@@ -475,16 +471,18 @@ function getCheckedItem(list){
 }
 
 ///// index page
-let indexPage = document.getElementById("indexPage")
 
-if(indexPage) {
-  RemandScreenCount = document.getElementById("RemandTotal");
 
-  //get counts
-  remandCount = getCount(RemandScreenCount)
-  displayViewLink("remand", remandCount)
-  //if greater than 0 display view
-}
+// if(indexPage) {
+//   // RemandScreenCount = document.getElementById("RemandTotal");
+//   // TaggedBailScreenCount = document.getElementById("TaggedBailTotal");
+//   // console.log(adjustments)
+//   // //get counts
+//   // remandCount = getCount(RemandScreenCount)
+//   // displayViewLink("remand", remandCount)
+//   //displayViewLink("remand", TaggedBailScreenCount)
+//   //if greater than 0 display view
+// }
 function getCount(element){
   let count = parseInt(element.innerHTML)
   return count;
@@ -499,22 +497,259 @@ function displayViewLink(adjustment, days) {
   }
 }
 
+//display tagged bail count on exit
+const taggedBailCount = document.getElementById('TaggedBailTotal')
+const RemandCount = document.getElementById('RemandTotal')
+const RemandViewLink = document.getElementById('viewRemand')
+const TaggedBailViewLink = document.getElementById('viewTaggedBail')
+let indexPage = document.getElementById("indexPage")
+let notificationContainer = document.getElementById("notificationContainer")
+if(indexPage) {
+  console.log(adjustments)
+  console.log(activeJourney)
+  displayAdjustmentTotals("Tagged Bail", taggedBailCount,TaggedBailViewLink)
+  displayAdjustmentTotals("Remand", RemandCount,RemandViewLink)
+  displayNotification(activeJourney, notificationContainer)
+}
+
+
+const TaggedBailList = document.getElementById('TaggedBailList');
+if(TaggedBailList){
+  //let target = document.getElementById('RemandPeriodListContainer')
+  let editLinks = document.getElementsByClassName("edit-link")
+  let deleteLinks = document.getElementsByClassName("delete-link")
+  let taggedBailPeriods = filterAdjustmentsByType("Tagged Bail")
+  let taggedBailPeriodCount = taggedBailPeriods.length
+  let totalTaggedBailDays = 0
+
+  for( let x of taggedBailPeriods){
+    displayTaggedBailCard(x, TaggedBailList)
+    totalTaggedBailDays += x.days;
+  }
+
+  selectItemByLink(deleteLinks, "delete-tagged-bail")
+}
+
+function displayTaggedBailCard(record, target){
+  console.log(record);
+  let html =`
+    <div class="govuk-summary-card remand">
+                        <div class="govuk-summary-card__title-wrapper ">
+                            <h2 class="govuk-summary-card__title">${record.court}</h2>
+                            <ul class="govuk-summary-card__actions">
+                                <li class="govuk-summary-card__action"> <a id="remand${record.caseNo}" data-caseNo="${record.caseNo}" class="govuk-link edit-link" href="edit.html">
+                                    Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                                </a>
+                                </li>
+                                <li class="govuk-summary-card__action"> <a class="govuk-link delete-link" href="delete-tagged-bail.html" data-caseNo="${record.caseNo}">
+                                    Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="govuk-summary-card__content">
+                            <dl class="govuk-summary-list">
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Date
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        ${record.date}
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Days
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        ${record.days}
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+  `
+  target.innerHTML += html
+}
+function displayNotification(journey, container){
+  const base = '';
+  switch (journey) {
+    case 1:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+              The record has been Added
+          </h3>
+          <p class="govuk-body">You must
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+          </p>
+      </div>
+  </div>
+`
+      break;
+    case 2:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+              The remand record has been deleted
+          </h3>
+          <p class="govuk-body">You must
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+          </p>
+      </div>
+  </div>
+`
+      break;
+    case 3:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+              Tagged bail added
+          </h3>
+          <p class="govuk-body">You must
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+          </p>
+      </div>
+  </div>
+`
+      break;
+    case 4:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+              Tagged bail deleted
+          </h3>
+          <p class="govuk-body">You must
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+          </p>
+      </div>
+  </div>
+`
+      break;
+    default:
+      console.log(`Sorry, we are out of ${journey}.`);
+  }
+
+}
+if(taggedBailCount){
+  const result = adjustments.filter(({ type }) => type === "Tagged Bail");
+  console.log(journey)
+
+}
+
+let saveRemandButton = document.getElementById('saveRemandButton')
+
+if(saveRemandButton) {
+  saveRemandButton.addEventListener('click', function(){
+    let journey = saveRemandButton.getAttribute('data-journey')
+    localStorage.setItem('activeJourney', parseInt(journey))
+  })
+}
+function displayAdjustmentTotals(adjustment ,target, linkContainer){
+  const result = adjustments.filter(({ type }) => type === adjustment);
+
+  let total = 0
+  if(result.length >= 0) {
+    for (let x of result) {
+      total += +x.days
+    }
+    console.log(total, adjustment)
+    showViewLink(total,linkContainer )
+    target.innerHTML = total
+  } else {
+    return 0
+  }
+}
+
+function getTotalRemandDays(adjustment ,target){
+  const result = adjustments.filter(({ type }) => type === adjustment);
+
+  let total = 0
+  if(result.length >= 0) {
+    for (let x of result) {
+      total += +x.days
+    }
+    console.log(total, adjustment)
+    target.innerHTML = total
+  } else {
+    return 0
+  }
+}
+
+function showViewLink(days, linkContainer){
+  if(days >= 1){
+    linkContainer.classList.remove('moj-hidden')
+  }
+}
+
 const ViewRemandPage = document.getElementById('ViewRemandPage')
 
 if(ViewRemandPage){
+  console.log(adjustments)
   let screenRemandPeriods = document.getElementById("RemandPeriodsCount")
+  let editLinks = document.getElementsByClassName("edit-link")
+  let deleteLinks = document.getElementsByClassName("delete-link")
   let screenRemandCount = document.getElementById("TotalRemandDays")
   let target = document.getElementById('RemandPeriodListContainer')
   let remandPeriods = filterAdjustmentsByType("Remand")
   let remandPeriodCount = remandPeriods.length
   let totalRemandDays = 0
+
   for( let x of remandPeriods){
     displayRemandCard(x, target)
     totalRemandDays += x.days;
   }
+
+  Array.from(editLinks).forEach(function(selectedLink) {
+    selectedLink.addEventListener('click', function (e) {
+      e.preventDefault()
+      localStorage.setItem('SelectedRemandPeriod', selectedLink.getAttribute('data-caseNo'))
+      //selectedRemandPeriodID = selectedLink.getAttribute('data-caseNo')
+      location.href = `edit.html`;
+    })
+  })
+
+  //combine these
+
+  // Array.from(deleteLinks).forEach(function(selectedLink) {
+  //   selectedLink.addEventListener('click', function (e) {
+  //     e.preventDefault()
+  //     localStorage.setItem('SelectedRemandPeriod', selectedLink.getAttribute('data-caseNo'))
+  //     //selectedRemandPeriodID = selectedLink.getAttribute('data-caseNo')
+  //     location.href = `delete.html`;
+  //   })
+  // })
+  selectItemByLink(deleteLinks, "delete")
+  selectItemByLink(editLinks, "edit")
   screenRemandPeriods.innerHTML = remandPeriodCount
   screenRemandCount.innerHTML = totalRemandDays
+
+
+
   //console.log(totalRemandDays, remandPeriodCount)
+}
+
+function selectItemByLink(links, page){
+  Array.from(links).forEach(function(selectedLink) {
+    selectedLink.addEventListener('click', function (e) {
+      e.preventDefault()
+      localStorage.setItem('SelectedRemandPeriod', selectedLink.getAttribute('data-caseNo'))
+      //selectedRemandPeriodID = selectedLink.getAttribute('data-caseNo')
+      location.href = page+`.html`;
+    })
+  })
 }
 
 function displayRemandCard(record, target){
@@ -523,11 +758,11 @@ function displayRemandCard(record, target){
                         <div class="govuk-summary-card__title-wrapper ">
                             <h2 class="govuk-summary-card__title">From ${record.start} to ${record.end}</h2>
                             <ul class="govuk-summary-card__actions">
-                                <li class="govuk-summary-card__action"> <a id="remand${record.caseNo}" class="govuk-link" href="edit.html">
+                                <li class="govuk-summary-card__action"> <a id="remand${record.caseNo}" data-caseNo="${record.caseNo}" class="govuk-link edit-link" href="edit.html">
                                     Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
                                 </a>
                                 </li>
-                                <li class="govuk-summary-card__action"> <a class="govuk-link" href="delete.html">
+                                <li class="govuk-summary-card__action"> <a class="govuk-link delete-link" href="delete.html" data-caseNo="${record.caseNo}">
                                     Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
                                 </a>
                                 </li>
@@ -549,7 +784,7 @@ function displayRemandCard(record, target){
                                     </dt>
                                     <dd class="govuk-summary-list__value">
                                         <ul>
-                                            <li>Attempted blackmail<br><span class="govuk-hint">Committed on 23 Jan 2023</span> </li>
+                                             ${listOffences(record.offences)}
                                         </ul>
                                     </dd>
                                 </div>
@@ -569,7 +804,78 @@ function displayRemandCard(record, target){
 }
 
 //edit remand page
-
+let editRemand = document.getElementById('EditRemandPage')
 if(editRemand) {
-  //filterRemand by
+  let date = document.getElementById('PeriodDate')
+  let days = document.getElementById('PeriodDays')
+  let offences = document.getElementById('OffenceLI')
+  let period = filterAdjustmentsByID(selectedRemandPeriodID)
+
+  date.innerHTML = `From ${period[0].start} to ${period[0].end}`
+  days.innerHTML = `${period[0].days}`
+  offences.innerHTML = `   <ul class="govuk-list govuk-list--bullet">
+                                    ${listOffences(period[0].offences)}
+                                </ul>`
+  console.log(period,'t')
 }
+
+//delete remand page
+//delete record using caseNo
+function deleteRecord(records, id){
+  let updateAdjustments = records.filter((record) => record.caseNo !== id)
+  updateAdjustmentsList(updateAdjustments)
+}
+
+function updateAdjustmentsList(newData){
+  localStorage.setItem('adjustments', JSON.stringify(newData))
+}
+
+
+let deleteRemand = document.getElementById('DeleteRemandPage')
+let DeleteTaggedBailPage = document.getElementById('DeleteTaggedBailPage')
+if(deleteRemand) {
+  // let screenRemandPeriods = document.getElementById("RemandPeriodsCount")
+  // let screenRemandCount = document.getElementById("TotalRemandDays")
+  let offences = document.getElementById("OffenceLI")
+
+  let date = document.getElementById('PeriodDate')
+  let deletebutton = document.getElementById('DeleteRemandPeriod')
+  let days = document.getElementById('PeriodDays')
+  let period = filterAdjustmentsByID(selectedRemandPeriodID)
+
+  date.innerHTML = `From ${period[0].start} to ${period[0].end}`
+  days.innerHTML = `${period[0].days}`
+  offences.innerHTML = `   <ul class="govuk-list govuk-list--bullet">
+                                    ${listOffences(period[0].offences)}
+                                </ul>`
+
+  deletebutton.addEventListener('click', function(e){
+    e.preventDefault()
+     deleteRecord(adjustments, selectedRemandPeriodID)
+    let journey = deletebutton.getAttribute('data-journey')
+    localStorage.setItem('activeJourney', parseInt(journey))
+    location.href = `index-1.html`;
+  })
+}
+
+if(DeleteTaggedBailPage) {
+
+  let date = document.getElementById('PeriodDate')
+  let deletebutton = document.getElementById('DeleteRemandPeriod')
+  let days = document.getElementById('PeriodDays')
+  let period = filterAdjustmentsByID(selectedRemandPeriodID)
+  console.log(period)
+
+  date.innerHTML = `From ${period[0].court} `
+  days.innerHTML = `${period[0].days}`
+
+
+  deletebutton.addEventListener('click', function(e){
+    e.preventDefault()
+    deleteRecord(adjustments, selectedRemandPeriodID)
+    let journey = deletebutton.getAttribute('data-journey')
+    localStorage.setItem('activeJourney', parseInt(journey))
+    location.href = `index-1.html`;
+  })
+}
+
