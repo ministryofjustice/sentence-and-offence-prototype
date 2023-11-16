@@ -581,9 +581,9 @@ function displayNotification(journey, container){
                          data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
-              The record has been Added
+               Remand updates have been saved
           </h3>
-          <p class="govuk-body">You must
+          <p class="govuk-body">Once all of the adjustments have been made, you must
               <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
           </p>
       </div>
@@ -613,9 +613,9 @@ function displayNotification(journey, container){
                          data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
-              Tagged bail added
+              Tagged bail updates have been saved
           </h3>
-          <p class="govuk-body">You must
+          <p class="govuk-body">Once all of the adjustments have been made, you must
               <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
           </p>
       </div>
