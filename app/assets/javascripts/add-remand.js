@@ -21,7 +21,7 @@ let activeJourney = localStorage.getItem('activeJourney');
 activeJourney = activeJourney ? JSON.parse(activeJourney) :0;
 
 let caseNo = localStorage.getItem('caseNo');
-caseNo = caseNo ? JSON.parse(caseNo) :adjustments.length+1;
+caseNo = caseNo ? JSON.parse(caseNo) :1;
 
 
 let totalDays = 0;
@@ -198,7 +198,7 @@ function createTableRow(data){
 
 //add remand select offences page
 if(addOffencesButton) {
-  let activeId = adjustments.length+1
+  let activeId = caseNo
   //get record
   const result = dates.find(({ caseNo }) => caseNo === activeId);
   console.log(result)
@@ -216,6 +216,8 @@ if(addOffencesButton) {
           offence: x.value,
           court:x.getAttribute("data-court"),
           date:x.getAttribute("data-offence-date"),
+          date2:x.getAttribute("data-offence-date-date"),
+          ref:x.getAttribute("data-case-ref")
         }
         store.push(offence)
     }
@@ -253,11 +255,10 @@ if(addDatesButton) {
     const to = createDate(toDay, toMonth, toYear);
     //work out days
     const days = createDaysAdded(fromDay, fromMonth, fromYear, toDay, toMonth, toYear);
-
+    let cn = createCaseNo(caseNo)
     //add dates to local storage
-    addDates("Remand", from, to, days, adjustments.length + 1)
+    addDates("Remand", from, to, days, cn)
 
-    console.log(adjustments)
     //go to next page
     location.href = `select-offences.html`;
   })
@@ -269,6 +270,7 @@ if(addDatesButton) {
 let selectCaseLinks = document.getElementsByClassName("select-case-link")
 
 if(selectCaseLinks){
+  let newCase = []
   Array.from(selectCaseLinks).forEach(function(selectedLink)
   {
     selectedLink.addEventListener('click', function (e) {
@@ -280,8 +282,8 @@ if(selectCaseLinks){
         ref: selectedLink.getAttribute("data-case")
       }
       console.log(selectedCase)
-      TBcase.push(selectedCase)
-      localStorage.setItem('TBcase', JSON.stringify(TBcase))
+      newCase.push(selectedCase)
+      localStorage.setItem('TBcase', JSON.stringify(newCase))
       location.href = `add-tagged-bail.html`;
     })
   })
@@ -319,7 +321,7 @@ if(addTaggedBailDaysButton) {
 
 
     let taggedBail = {
-      caseNo: adjustments.length+1,
+      caseNo: createCaseNo(caseNo),
       type: "Tagged Bail",
       court:TBcase[0].court,
       date:TBcase[0].date,
@@ -334,7 +336,7 @@ if(addTaggedBailDaysButton) {
 
 //save tagged bail
 if(saveTaggedBailButton){
-  let activeId = adjustments.length
+  let activeId = caseNo
   //get record
   console.log(adjustments)
   let byType = filterAdjustmentsByType("Tagged Bail")
@@ -415,6 +417,13 @@ function addDates(type, start, end, days, caseNo) {
   console.log(dates)
 }
 
+function createCaseNo(x){
+  let newCaseNo = x+1
+  localStorage.setItem('caseNo',newCaseNo)
+  return newCaseNo
+
+
+}
 
 
 ///// index page
@@ -586,7 +595,7 @@ function displayNotification(journey, container){
 `
       break;
     default:
-      console.log(`Sorry, we are out of ${journey}.`);
+      ``
   }
 
 }
@@ -612,7 +621,6 @@ function displayAdjustmentTotals(adjustment ,target, linkContainer){
     for (let x of result) {
       total += +x.days
     }
-    console.log(total, adjustment)
     showViewLink(total,linkContainer )
     target.innerHTML = total
   } else {
@@ -625,7 +633,7 @@ function displayAdjustmentTotals(adjustment ,target, linkContainer){
 const ViewRemandPage = document.getElementById('ViewRemandPage')
 
 if(ViewRemandPage){
-  console.log(adjustments)
+
   let screenRemandPeriods = document.getElementById("RemandPeriodsCount")
   let editLinks = document.getElementsByClassName("edit-link")
   let deleteLinks = document.getElementsByClassName("delete-link")
@@ -668,67 +676,24 @@ if(ViewRemandPage){
 
   //console.log(totalRemandDays, remandPeriodCount)
 }
+//view remand page using a table
+let RemandTableBody = document.getElementById('RemandTableBody');
+if (RemandTableBody){
+  let editLinks = document.getElementsByClassName("edit-link")
+  let deleteLinks = document.getElementsByClassName("delete-link")
+  let total = document.getElementById('TotalRemandDays')
+  let remandPeriods = filterAdjustmentsByType("Remand")
 
-function selectItemByLink(links, page){
-  Array.from(links).forEach(function(selectedLink) {
-    selectedLink.addEventListener('click', function (e) {
-      e.preventDefault()
-      localStorage.setItem('SelectedRemandPeriod', selectedLink.getAttribute('data-caseNo'))
-      //selectedRemandPeriodID = selectedLink.getAttribute('data-caseNo')
-      location.href = page+`.html`;
-    })
-  })
-}
+  let totalRemandDays = 0
 
-function displayRemandCard(record, target){
-  let html =`
-    <div class="govuk-summary-card remand">
-                        <div class="govuk-summary-card__title-wrapper ">
-                            <h2 class="govuk-summary-card__title">From ${record.start} to ${record.end}</h2>
-                            <ul class="govuk-summary-card__actions">
-                                <li class="govuk-summary-card__action"> <a id="remand${record.caseNo}" data-caseNo="${record.caseNo}" class="govuk-link edit-link" href="edit.html">
-                                    Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
-                                </a>
-                                </li>
-                                <li class="govuk-summary-card__action"> <a class="govuk-link delete-link" href="delete.html" data-caseNo="${record.caseNo}">
-                                    Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
-                                </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="govuk-summary-card__content">
-                            <dl class="govuk-summary-list">
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                        Court name
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        ${record.offences[0].court}
-                                    </dd>
-                                </div>
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                        Offences
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        <ul class="govuk-list">
-                                             ${listOffences(record.offences)}
-                                        </ul>
-                                    </dd>
-                                </div>
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                        Days
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        ${record.days}
-                                    </dd>
-                                </div>
-                            </dl>
-                        </div>
-                    </div>
-  `
-  target.innerHTML += html
+  for( let x of remandPeriods){
+    totalRemandDays += x.days;
+  }
+  total.innerHTML = totalRemandDays
+
+  displayRemandTableData(remandPeriods)
+  selectItemByLink(deleteLinks, "delete")
+  selectItemByLink(editLinks, "edit")
 }
 
 //edit remand page
@@ -816,10 +781,7 @@ function updateDates(type, caseNo, record, fromDay, fromMonth, fromYear, toDay, 
 
 }
 
-
-
 let deleteRemand = document.getElementById('DeleteRemandPage')
-let DeleteTaggedBailPage = document.getElementById('DeleteTaggedBailPage')
 if(deleteRemand) {
   // let screenRemandPeriods = document.getElementById("RemandPeriodsCount")
   // let screenRemandCount = document.getElementById("TotalRemandDays")
@@ -831,6 +793,8 @@ if(deleteRemand) {
   let adjustmentsByType = filterAdjustmentsByType("Remand")
   let period = filterAdjustmentsByID(selectedRemandPeriodID, adjustmentsByType)
 
+console.log(selectedRemandPeriodID)
+  console.log(period)
   date.innerHTML = `From ${period[0].start} to ${period[0].end}`
   days.innerHTML = `${period[0].days}`
   offences.innerHTML = `   <ul class="govuk-list ">
@@ -842,10 +806,11 @@ if(deleteRemand) {
      deleteRecord("Remand", adjustments, selectedRemandPeriodID)
     let journey = deletebutton.getAttribute('data-journey')
     localStorage.setItem('activeJourney', parseInt(journey))
-    //location.href = `index-1.html`;
+    location.href = `index-1.html`;
   })
 }
 
+let DeleteTaggedBailPage = document.getElementById('DeleteTaggedBailPage')
 if(DeleteTaggedBailPage) {
 
   let date = document.getElementById('PeriodDate')
@@ -870,26 +835,23 @@ if(DeleteTaggedBailPage) {
 
 
 function deleteRecord(type, records, id){
-  let filteredByType = records.filter((record) => record.type === type)
-  console.log(filteredByType)
-  let updateAdjustments = filteredByType.filter((record) => record.caseNo !== id)
+  // let filteredByType = records.filter((record) => record.type === type)
+  // console.log(filteredByType)
+  let updateAdjustments = adjustments.filter((record) => record.caseNo !== id)
   updateAdjustmentsList(updateAdjustments)
-  // console.log(adjustments,"fin")
-  return updateAdjustments
+  localStorage.getItem(adjustments)
+  localStorage.setItem('adjustments',JSON.stringify(updateAdjustments))
+  //return updateAdjustments
 }
-
-
 function updateAdjustmentsList(newData){
   localStorage.getItem('adjustments')
   localStorage.setItem('adjustments', JSON.stringify(newData))
-  console.log(adjustments,"from update function")
-}
 
+}
 function filterAdjustmentsByType(adjustmentType){
   const result = adjustments.filter(({ type }) => type === adjustmentType );
   return result
 }
-
 function filterAdjustmentsByID(id, adjustmentsByType){
   const result = adjustmentsByType.filter(({ caseNo }) => caseNo === id );
   return result
@@ -897,7 +859,6 @@ function filterAdjustmentsByID(id, adjustmentsByType){
 function setSelectedRecord(newData){
   localStorage.setItem('selectedRecord', JSON.stringify(newData))
 }
-
 function getTotalRemandDays(adjustment ,target){
   const result = adjustments.filter(({ type }) => type === adjustment);
 
@@ -912,14 +873,11 @@ function getTotalRemandDays(adjustment ,target){
     return 0
   }
 }
-
 function showViewLink(days, linkContainer){
   if(days >= 1){
     linkContainer.classList.remove('moj-hidden')
   }
 }
-
-
 function createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear) {
   let fromDate = new Date(fromYear.value + "-" + fromMonth.value + "-" + fromDay.value);
   let toDate = new Date(toYear.value + "-" + toMonth.value + "-" + toDay.value);
@@ -987,5 +945,128 @@ function getCheckedItem(list){
     }
     return offences
   }
+}
+function selectItemByLink(links, page){
+  Array.from(links).forEach(function(selectedLink) {
+    selectedLink.addEventListener('click', function (e) {
+      e.preventDefault()
+      localStorage.setItem('SelectedRemandPeriod', selectedLink.getAttribute('data-caseNo'))
+      selectedRemandPeriodID = selectedLink.getAttribute('data-caseNo')
+      location.href = page+`.html`;
+    })
+  })
+}
+
+function displayRemandCard(record, target){
+  let html =`
+    <div class="govuk-summary-card remand">
+                        <div class="govuk-summary-card__title-wrapper ">
+                            <h2 class="govuk-summary-card__title">From ${record.start} to ${record.end}</h2>
+                            <ul class="govuk-summary-card__actions">
+                                <li class="govuk-summary-card__action"> <a id="remand${record.caseNo}" data-caseNo="${record.caseNo}" class="govuk-link edit-link" href="edit.html">
+                                    Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                                </a>
+                                </li>
+                                <li class="govuk-summary-card__action"> <a class="govuk-link delete-link" href="delete.html" data-caseNo="${record.caseNo}">
+                                    Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
+                                </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="govuk-summary-card__content">
+                            <dl class="govuk-summary-list">
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Court name
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        ${record.offences[0].court}
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Offences
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        <ul class="govuk-list">
+                                             ${listOffences(record.offences)}
+                                        </ul>
+                                    </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                    <dt class="govuk-summary-list__key">
+                                        Days
+                                    </dt>
+                                    <dd class="govuk-summary-list__value">
+                                        ${record.days}
+                                    </dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+  `
+  target.innerHTML += html
+}
+function displayRemandTableData(record){
+  for(let x of record){
+    displayTableRow(x, RemandTableBody )
+  }
+}
+function displayTableRow(data, target) {
+  let html = `
+  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                     ${data.start} - ${data.end}
+                    </td>
+                    <td class="govuk-table__cell">
+                        <table class="govuk-table">
+                            <tr>
+                                <th class="govuk-table__header" scope="col">Case reference</th>
+                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Court name</th>
+                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Offence</th>
+                                <th class="govuk-table__header  " scope="col">Offence dates</th>
+                            </tr>
+                            <tbody id="CaseDetails">
+                            ${viewRemandTableOffences(data.offences)}
+                            </tbody>
+                        </table>
+                    </td>
+                    <td class="govuk-table__cell">
+                        ${data.days}
+                    </td>
+                    <td class="govuk-table__cell">
+                        <a data-caseNo="${data.caseNo}" class="govuk-link edit-link" href="">
+                                    Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                                </a><br>
+                        <a class="govuk-link delete-link" href="" data-caseNo="${data.caseNo}">
+                                    Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
+                                </a>
+                    </td>
+                </tr>
+ `
+  target.innerHTML += html
+}
+function viewRemandTableOffences(offences){
+  let fr = ``;
+offences.forEach((offence)=> {
+     let html = `
+      <tr>
+          <td class="govuk-table__cell">
+              ${offence.ref}
+          </td>
+          <td class="govuk-table__cell">
+              ${offence.court}
+          </td>
+          <td class="govuk-table__cell">
+             ${offence.offence}
+          </td>
+          <td class="govuk-table__cell  ">
+              ${offence.date2}
+          </td>
+      </tr>
+  `
+    fr += html}
+)
+  return fr
 }
 
