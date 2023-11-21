@@ -21,143 +21,14 @@
                     <th class="govuk-table__header" scope="col">Actions</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                     2 Mar 2023 - 7 Aug 2023
-                    </td>
-                    <td class="govuk-table__cell">
-                        <table class="govuk-table">
-                            <tr>
-                                <th class="govuk-table__header" scope="col">Case reference</th>
-                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Court name</th>
-                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Offence</th>
-                                <th class="govuk-table__header  " scope="col">Offence dates</th>
-                            </tr>
-                            <tr>
-                                <td class="govuk-table__cell">
-                                    3583998
-                                </td>
-                                <td class="govuk-table__cell">
-                                    Birmingham crown court
-                                </td>
-                                <td class="govuk-table__cell">
-                                    Sample of a really long offence name for testing
-                                </td>
-                                <td class="govuk-table__cell  ">
-                                    15 May 2023
-                                </td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                                <td class="govuk-table__cell">
-                                    3584019
-                                </td>
-                                <td class="govuk-table__cell">
-                                    Birmingham crown court
-                                </td>
-                                <td class="govuk-table__cell">
-                                    Sample of a really long offence name for testing
-                                </td>
-                                <td class="govuk-table__cell  ">
-                                    12 Jan 2023
-                                </td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                                <td class="govuk-table__cell">
-                                    3584030
-                                </td>
-                                <td class="govuk-table__cell">
-                                    Birmingham crown court
-                                </td>
-                                <td class="govuk-table__cell">
-                                    Sample of a really long offence name for testing
-                                </td>
+                <tbody id="RemandTableBody">
 
-                                <td class="govuk-table__cell  ">
-                                    12 Jan 2023
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td class="govuk-table__cell">
-                        120
-                    </td>
-                    <td class="govuk-table__cell">
-                        <a href="edit.html">Edit </a>
-                        <a href="delete.html">Delete</a>
-                    </td>
-                </tr>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">
-                        2 Mar 2023 - 7 Aug 2023
-                    </td>
-                    <td class="govuk-table__cell">
-                        <table class="govuk-table">
-                            <tr>
-                                <th class="govuk-table__header" scope="col">Case reference</th>
-                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Court</th>
-                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Offence</th>
-                                <th class="govuk-table__header  " scope="col">Offence dates</th>
-                            </tr>
-                            <tr>
-                                <td class="govuk-table__cell">
-                                    3583998
-                                </td>
-
-                                <td class="govuk-table__cell">
-                                    Birmingham crown court
-                                </td>
-                                <td class="govuk-table__cell">
-                                    Sample of a really long offence name for testing
-                                </td>
-                                <td class="govuk-table__cell  ">
-                                    12 Jan 2023
-                                </td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                                <td class="govuk-table__cell">
-                                    3584019
-                                </td>
-                                <td class="govuk-table__cell">
-                                    Birmingham crown court
-                                </td>
-                                <td class="govuk-table__cell">
-                                    Sample of a really long offence name for testing
-                                </td>
-                                <td class="govuk-table__cell  ">
-                                    12 Jan 2023
-                                </td>
-                            </tr>
-                            <tr class="govuk-table__row">
-                                <td class="govuk-table__cell">
-                                    3584030
-                                </td>
-                                <td class="govuk-table__cell">
-                                    Birmingham crown court
-                                </td>
-                                <td class="govuk-table__cell">
-                                    Sample of a really long offence name for testing
-                                </td>
-                                <td class="govuk-table__cell  ">
-                                    12 Jan 2023
-                                </td>
-                            </tr>
-                        </table>
-                    </td>
-                    <td class="govuk-table__cell">
-                        120
-                    </td>
-                    <td class="govuk-table__cell">
-                        <a href="edit.html">Edit </a>
-                        <a href="delete.html">Delete</a>
-                    </td>
-                </tr>
                 </tbody>
 
                 <tfoot>
                 <tr class="govuk-table__row">
                     <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="2">Total </th>
-                    <td class="govuk-table__cell govuk-!-text-align-right">120</td>
+                    <td id="TotalRemandDays" class="govuk-table__cell govuk-!-text-align-right">120</td>
                     <td class="govuk-table__cell govuk-!-text-align-right" colspan="2"></td>
                 </tr>
                 </tfoot>
@@ -172,5 +43,5 @@
     </div>
 </div>
 
-<script src="/public/javascripts/cases.js"></script>
+<script src="/public/javascripts/add-remand.js"></script>
 {% endblock %}
