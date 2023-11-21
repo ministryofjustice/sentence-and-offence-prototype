@@ -14,8 +14,14 @@ let selectedOffences = [];
 let selectedRemandPeriodID = localStorage.getItem('SelectedRemandPeriod');
 selectedRemandPeriodID = selectedRemandPeriodID ? JSON.parse(selectedRemandPeriodID) :0;
 
+let selectedRecord = localStorage.getItem('selectedRecord');
+selectedRecord = selectedRecord ? JSON.parse(selectedRecord) :[];
+
 let activeJourney = localStorage.getItem('activeJourney');
 activeJourney = activeJourney ? JSON.parse(activeJourney) :0;
+
+let caseNo = localStorage.getItem('caseNo');
+caseNo = caseNo ? JSON.parse(caseNo) :adjustments.length+1;
 
 
 let totalDays = 0;
@@ -59,14 +65,10 @@ if(reviewButton){
   })
 }
 
-function filterAdjustmentsByType(remandType){
-  const result = adjustments.filter(({ type }) => type === remandType );
-  return result
-}
 
-function filterAdjustmentsByID(id){
-  const result = adjustments.filter(({ caseNo }) => caseNo === id );
-  return result
+
+function getSingleAdjustment(){
+
 }
 
 function displayRemandPeriod(x, target){
@@ -172,10 +174,9 @@ if(saveTable){
     let alert = `
 <h2 class="govuk-heading-m">There are 18 days of unused remand</h2>
     <p class="">
-      Unused remand will not be taken into the sentence calculation. The unused remand time can be carried over to future licence recall cases.
-      </p>
+     Unused deductions can include unused remand and unused tagged bail. They will not be taken into the sentence calculation, but can be carried over to future licence recall cases.</p>
      
-      <p class="">You will need to add the unused remand alert on NOMIS.</p>
+      <p class="">For the unused deductions, you will need to add the unused remand alert on NOMIS.</p>
 `
 
     document.getElementById("alerthere").innerHTML = alert
@@ -227,6 +228,12 @@ if(addOffencesButton) {
       end: result.end,
       days: result.days,
       caseNo: result.caseNo,
+      fromDay: result.fromDay,
+      toDay: result.toDay,
+      fromMonth: result.fromMonth,
+      toMonth: result.toMonth,
+      toYear: result.toYear,
+      fromYear: result.fromYear,
       offences: store
     }
 
@@ -330,7 +337,8 @@ if(saveTaggedBailButton){
   let activeId = adjustments.length
   //get record
   console.log(adjustments)
-  const result = adjustments.find(({ caseNo }) => caseNo === activeId);
+  let byType = filterAdjustmentsByType("Tagged Bail")
+  const result = byType.find(({ caseNo }) => caseNo === activeId);
   let dataTarget = document.getElementById('ReviewTaggedBail')
  let html = `
 
@@ -375,65 +383,6 @@ if(saveTaggedBailButton){
 
 
 
-function createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear) {
-  let fromDate = new Date(fromYear.value + "-" + fromMonth.value + "-" + fromDay.value);
-  let toDate = new Date(toYear.value + "-" + toMonth.value + "-" + toDay.value);
-
-  return daysBetweenDates(fromDate, toDate)+1
-}
-function createDate (day, month, year) {
-  let mNumber = parseInt(month.value);
-  let monthName;
-  switch (mNumber) {
-    case 1:
-      monthName = 'Jan';
-      break;
-    case 2:
-      monthName = 'Feb';
-      break;
-    case 3:
-      monthName = 'Mar';
-      break;
-    case 4:
-      monthName = 'Apr';
-      break;
-    case 5:
-      monthName = 'May';
-      break;
-    case 6:
-      monthName = 'Jun';
-      break;
-    case 7:
-      monthName = 'Jul';
-      break;
-    case 8:
-      monthName = 'Aug';
-      break;
-    case 9:
-      monthName = 'Sep';
-      break;
-    case 10:
-      monthName = 'Oct';
-      break;
-    case 11:
-      monthName = 'Nov';
-      break;
-    case 12:
-      monthName = 'Dec';
-      break;
-    default:
-      monthName = 'Not recorded ';
-  }
-
-  let date = `${day.value} ${monthName} ${year.value}`;
-  return date
-}
-function daysBetweenDates (date1, date2) {
-  const oneDay = 24 * 60 * 60 * 1000; // one day in milliseconds
-  const timeDifference = Math.abs(date2.getTime() - date1.getTime());
-  const days = Math.floor(timeDifference / oneDay);
-  return days;
-}
 const addAnotherRadios = document.getElementsByClassName('add-another');
 
 const fromDay = document.getElementById('from-day');
@@ -452,7 +401,13 @@ function addDates(type, start, end, days, caseNo) {
     start: start,
     end: end,
     days: days,
-    caseNo: caseNo
+    caseNo: caseNo,
+    fromDay:fromDay.value,
+    fromMonth:fromMonth.value,
+    fromYear:fromYear.value,
+    toDay:toDay.value,
+    toMonth:toMonth.value,
+    toYear:toYear.value
   }
 
   dates.push(newDates)
@@ -460,15 +415,7 @@ function addDates(type, start, end, days, caseNo) {
   console.log(dates)
 }
 
-function getCheckedItem(list){
-  let offences = [];
-  for (let x of list) {
-    if (x.checked){
-      offences.push(x.value);
-    }
-    return offences
-  }
-}
+
 
 ///// index page
 
@@ -673,26 +620,7 @@ function displayAdjustmentTotals(adjustment ,target, linkContainer){
   }
 }
 
-function getTotalRemandDays(adjustment ,target){
-  const result = adjustments.filter(({ type }) => type === adjustment);
 
-  let total = 0
-  if(result.length >= 0) {
-    for (let x of result) {
-      total += +x.days
-    }
-    console.log(total, adjustment)
-    target.innerHTML = total
-  } else {
-    return 0
-  }
-}
-
-function showViewLink(days, linkContainer){
-  if(days >= 1){
-    linkContainer.classList.remove('moj-hidden')
-  }
-}
 
 const ViewRemandPage = document.getElementById('ViewRemandPage')
 
@@ -809,26 +737,85 @@ if(editRemand) {
   let date = document.getElementById('PeriodDate')
   let days = document.getElementById('PeriodDays')
   let offences = document.getElementById('OffenceLI')
-  let period = filterAdjustmentsByID(selectedRemandPeriodID)
+  let adjustmentsByType = filterAdjustmentsByType("Remand")
+  let period = filterAdjustmentsByID(selectedRemandPeriodID, adjustmentsByType)
 
   date.innerHTML = `From ${period[0].start} to ${period[0].end}`
   days.innerHTML = `${period[0].days}`
   offences.innerHTML = `   <ul class="govuk-list">
                                     ${listOffences(period[0].offences)}
                                 </ul>`
-  console.log(period,'t')
+//  selectedRecord
+  setSelectedRecord(period)
+  console.log(selectedRecord,'t')
 }
 
-//delete remand page
-//delete record using caseNo
-function deleteRecord(records, id){
-  let updateAdjustments = records.filter((record) => record.caseNo !== id)
-  updateAdjustmentsList(updateAdjustments)
+let editRemandPage = document.getElementById('editRemandDates')
+if(editRemandPage) {
+  let editButton = document.getElementById("edit-remand-dates-button")
+  let startDay = document.getElementById('from-day')
+ //apply placeholders
+  fromDay.value = selectedRecord[0].fromDay
+  fromMonth.value = selectedRecord[0].fromMonth
+  fromYear.value = selectedRecord[0].fromYear
+
+  toDay.value = selectedRecord[0].toDay
+  toMonth.value = selectedRecord[0].toMonth
+  toYear.value = selectedRecord[0].toYear
+
+  editButton.addEventListener("click", function(e){
+    e.preventDefault()
+    let el = updateDates(selectedRecord[0].type, selectedRecord[0].caseNo,selectedRecord, fromDay, fromMonth, fromYear, toDay, toMonth, toYear)
+
+  console.log(el ,"tyty")
+    localStorage.getItem('adjustments')
+    localStorage.setItem('adjustments',JSON.stringify(el))
+    console.log(adjustments)
+    // //updateAdjustmentsList2(updatedList)
+    // console.log(adjustments,"please")
+    // console.log(updatedList,"please")
+    location.href = "edit.html"
+  })
 }
 
-function updateAdjustmentsList(newData){
-  localStorage.setItem('adjustments', JSON.stringify(newData))
+function updateDates(type, caseNo, record, fromDay, fromMonth, fromYear, toDay, toMonth, toYear){
+  console.log(adjustments,"4")
+  //let adjclone = adjustments
+  // for(let x of adjclone){
+  //   if (x.type === type && x.caseNo === caseNo){
+  //     console.log(x, 'dd')
+  //     x.fromDay = fromDay
+  //   }
+  //   console.log(adjclone, 'change?')
+  // }
+  //delete record
+  //rew record
+  let clone = adjustments
+  let newList = deleteRecord("Remand", clone, caseNo)
+  let newRecord = {
+    type: type,
+    start: createDate(fromDay, fromMonth, fromYear),
+    end: createDate(toDay, toMonth, toYear),
+    days: createDaysAdded(fromDay, fromMonth, fromYear, toDay, toMonth, toYear),
+    caseNo: caseNo,
+    fromDay:fromDay.value,
+    fromMonth:fromMonth.value,
+    fromYear:fromYear.value,
+    toDay:toDay.value,
+    toMonth:toMonth.value,
+    toYear:toYear.value,
+    offences: record[0].offences
+  }
+
+
+  newList.push(newRecord)
+  console.log(newList,'new')
+  return newList;
+
+
+
 }
+
 
 
 let deleteRemand = document.getElementById('DeleteRemandPage')
@@ -841,7 +828,8 @@ if(deleteRemand) {
   let date = document.getElementById('PeriodDate')
   let deletebutton = document.getElementById('DeleteRemandPeriod')
   let days = document.getElementById('PeriodDays')
-  let period = filterAdjustmentsByID(selectedRemandPeriodID)
+  let adjustmentsByType = filterAdjustmentsByType("Remand")
+  let period = filterAdjustmentsByID(selectedRemandPeriodID, adjustmentsByType)
 
   date.innerHTML = `From ${period[0].start} to ${period[0].end}`
   days.innerHTML = `${period[0].days}`
@@ -851,19 +839,20 @@ if(deleteRemand) {
 
   deletebutton.addEventListener('click', function(e){
     e.preventDefault()
-     deleteRecord(adjustments, selectedRemandPeriodID)
+     deleteRecord("Remand", adjustments, selectedRemandPeriodID)
     let journey = deletebutton.getAttribute('data-journey')
     localStorage.setItem('activeJourney', parseInt(journey))
-    location.href = `index-1.html`;
+    //location.href = `index-1.html`;
   })
 }
 
 if(DeleteTaggedBailPage) {
 
   let date = document.getElementById('PeriodDate')
-  let deletebutton = document.getElementById('DeleteRemandPeriod')
+  let deletebutton = document.getElementById('DeleteTaggedBail')
   let days = document.getElementById('PeriodDays')
-  let period = filterAdjustmentsByID(selectedRemandPeriodID)
+  let adjustmentsByType = filterAdjustmentsByType("Tagged Bail")
+  let period = filterAdjustmentsByID(selectedRemandPeriodID, adjustmentsByType)
   console.log(period)
 
   date.innerHTML = `${period[0].court} `
@@ -872,10 +861,131 @@ if(DeleteTaggedBailPage) {
 
   deletebutton.addEventListener('click', function(e){
     e.preventDefault()
-    deleteRecord(adjustments, selectedRemandPeriodID)
+    deleteRecord("Tagged Bail",adjustments, selectedRemandPeriodID)
     let journey = deletebutton.getAttribute('data-journey')
     localStorage.setItem('activeJourney', parseInt(journey))
     location.href = `index-1.html`;
   })
+}
+
+
+function deleteRecord(type, records, id){
+  let filteredByType = records.filter((record) => record.type === type)
+  console.log(filteredByType)
+  let updateAdjustments = filteredByType.filter((record) => record.caseNo !== id)
+  updateAdjustmentsList(updateAdjustments)
+  // console.log(adjustments,"fin")
+  return updateAdjustments
+}
+
+
+function updateAdjustmentsList(newData){
+  localStorage.getItem('adjustments')
+  localStorage.setItem('adjustments', JSON.stringify(newData))
+  console.log(adjustments,"from update function")
+}
+
+function filterAdjustmentsByType(adjustmentType){
+  const result = adjustments.filter(({ type }) => type === adjustmentType );
+  return result
+}
+
+function filterAdjustmentsByID(id, adjustmentsByType){
+  const result = adjustmentsByType.filter(({ caseNo }) => caseNo === id );
+  return result
+}
+function setSelectedRecord(newData){
+  localStorage.setItem('selectedRecord', JSON.stringify(newData))
+}
+
+function getTotalRemandDays(adjustment ,target){
+  const result = adjustments.filter(({ type }) => type === adjustment);
+
+  let total = 0
+  if(result.length >= 0) {
+    for (let x of result) {
+      total += +x.days
+    }
+    console.log(total, adjustment)
+    target.innerHTML = total
+  } else {
+    return 0
+  }
+}
+
+function showViewLink(days, linkContainer){
+  if(days >= 1){
+    linkContainer.classList.remove('moj-hidden')
+  }
+}
+
+
+function createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear) {
+  let fromDate = new Date(fromYear.value + "-" + fromMonth.value + "-" + fromDay.value);
+  let toDate = new Date(toYear.value + "-" + toMonth.value + "-" + toDay.value);
+
+  return daysBetweenDates(fromDate, toDate)+1
+}
+function createDate (day, month, year) {
+  let mNumber = parseInt(month.value);
+  let monthName;
+  switch (mNumber) {
+    case 1:
+      monthName = 'Jan';
+      break;
+    case 2:
+      monthName = 'Feb';
+      break;
+    case 3:
+      monthName = 'Mar';
+      break;
+    case 4:
+      monthName = 'Apr';
+      break;
+    case 5:
+      monthName = 'May';
+      break;
+    case 6:
+      monthName = 'Jun';
+      break;
+    case 7:
+      monthName = 'Jul';
+      break;
+    case 8:
+      monthName = 'Aug';
+      break;
+    case 9:
+      monthName = 'Sep';
+      break;
+    case 10:
+      monthName = 'Oct';
+      break;
+    case 11:
+      monthName = 'Nov';
+      break;
+    case 12:
+      monthName = 'Dec';
+      break;
+    default:
+      monthName = 'Not recorded ';
+  }
+
+  let date = `${day.value} ${monthName} ${year.value}`;
+  return date
+}
+function daysBetweenDates (date1, date2) {
+  const oneDay = 24 * 60 * 60 * 1000; // one day in milliseconds
+  const timeDifference = Math.abs(date2.getTime() - date1.getTime());
+  const days = Math.floor(timeDifference / oneDay);
+  return days;
+}
+function getCheckedItem(list){
+  let offences = [];
+  for (let x of list) {
+    if (x.checked){
+      offences.push(x.value);
+    }
+    return offences
+  }
 }
 
