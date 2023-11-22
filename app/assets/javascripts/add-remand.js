@@ -23,6 +23,9 @@ activeJourney = activeJourney ? JSON.parse(activeJourney) :0;
 let caseNo = localStorage.getItem('caseNo');
 caseNo = caseNo ? JSON.parse(caseNo) :1;
 
+let datesUpdated = localStorage.getItem('datesUpdated');
+datesUpdated = datesUpdated ? JSON.parse(datesUpdated) :0;
+
 
 let totalDays = 0;
 for(let x of adjustments){
@@ -172,7 +175,7 @@ if(saveTable){
   document.getElementById('saveTableTotal').innerHTML = totalDays
   if(totalDays >= 50) {
     let alert = `
-<h2 class="govuk-heading-m">There are 18 days of unused remand</h2>
+<h2 class="govuk-heading-m">There are 18 days of unused deductions</h2>
     <p class="">
      Unused deductions can include unused remand and unused tagged bail. They will not be taken into the sentence calculation, but can be carried over to future licence recall cases.</p>
      
@@ -207,9 +210,7 @@ if(addOffencesButton) {
   let store = []
   addOffencesButton.addEventListener("click", function (e) {
     e.preventDefault()
-
     let checkboxes = document.querySelectorAll('input[type=checkbox]:checked').valueOf()
-
     //store offences
     for (let x of checkboxes) {
         let offence = {
@@ -217,7 +218,8 @@ if(addOffencesButton) {
           court:x.getAttribute("data-court"),
           date:x.getAttribute("data-offence-date"),
           date2:x.getAttribute("data-offence-date-date"),
-          ref:x.getAttribute("data-case-ref")
+          ref:x.getAttribute("data-case-ref"),
+          id:x.getAttribute("data-id")
         }
         store.push(offence)
     }
@@ -699,6 +701,7 @@ if (RemandTableBody){
 //edit remand page
 let editRemand = document.getElementById('EditRemandPage')
 if(editRemand) {
+  let saveEditButton = document.getElementById('saveEditButton')
   let date = document.getElementById('PeriodDate')
   let days = document.getElementById('PeriodDays')
   let offences = document.getElementById('OffenceLI')
@@ -712,13 +715,28 @@ if(editRemand) {
                                 </ul>`
 //  selectedRecord
   setSelectedRecord(period)
-  console.log(selectedRecord,'t')
+  console.log(datesUpdated, "rr");
+
+  saveEditButton.addEventListener('click', function(e){
+    e.preventDefault()
+    if (datesUpdated >=1 ){
+      location.href = 'date-changed.html'
+    }else {
+      location.href = 'view-remand.html'
+    }
+  })
+
 }
 
+let DateChanged = document.getElementById('DateChanged')
+if(DateChanged){
+  localStorage.getItem('datesUpdated')
+  localStorage.setItem('datesUpdated', JSON.stringify(0))
+}
 let editRemandPage = document.getElementById('editRemandDates')
+//edit remand dates
 if(editRemandPage) {
   let editButton = document.getElementById("edit-remand-dates-button")
-  let startDay = document.getElementById('from-day')
  //apply placeholders
   fromDay.value = selectedRecord[0].fromDay
   fromMonth.value = selectedRecord[0].fromMonth
@@ -730,53 +748,47 @@ if(editRemandPage) {
 
   editButton.addEventListener("click", function(e){
     e.preventDefault()
-    let el = updateDates(selectedRecord[0].type, selectedRecord[0].caseNo,selectedRecord, fromDay, fromMonth, fromYear, toDay, toMonth, toYear)
-
-  console.log(el ,"tyty")
-    localStorage.getItem('adjustments')
-    localStorage.setItem('adjustments',JSON.stringify(el))
-    console.log(adjustments)
-    // //updateAdjustmentsList2(updatedList)
-    // console.log(adjustments,"please")
-    // console.log(updatedList,"please")
+    updateDates(selectedRecord[0].type, selectedRecord[0].caseNo,selectedRecord, fromDay, fromMonth, fromYear, toDay, toMonth, toYear)
+    localStorage.getItem('datesUpdated')
+    localStorage.setItem('datesUpdated', JSON.stringify(1))
     location.href = "edit.html"
   })
 }
 
-function updateDates(type, caseNo, record, fromDay, fromMonth, fromYear, toDay, toMonth, toYear){
-  console.log(adjustments,"4")
-  //let adjclone = adjustments
-  // for(let x of adjclone){
-  //   if (x.type === type && x.caseNo === caseNo){
-  //     console.log(x, 'dd')
-  //     x.fromDay = fromDay
-  //   }
-  //   console.log(adjclone, 'change?')
-  // }
-  //delete record
-  //rew record
-  let clone = adjustments
-  let newList = deleteRecord("Remand", clone, caseNo)
-  let newRecord = {
-    type: type,
-    start: createDate(fromDay, fromMonth, fromYear),
-    end: createDate(toDay, toMonth, toYear),
-    days: createDaysAdded(fromDay, fromMonth, fromYear, toDay, toMonth, toYear),
-    caseNo: caseNo,
-    fromDay:fromDay.value,
-    fromMonth:fromMonth.value,
-    fromYear:fromYear.value,
-    toDay:toDay.value,
-    toMonth:toMonth.value,
-    toYear:toYear.value,
-    offences: record[0].offences
+
+
+let OffenceListContainer = document.getElementById('OffenceListContainer')
+if(OffenceListContainer){
+  let editOffencesButton = document.getElementById('edit-offences-button')
+  let checkboxes = Array.from(document.querySelectorAll('input[type=checkbox]'))
+  let offences = selectedRecord[0].offences
+  let store = [];
+  for(let x of offences){
+    addCheck(checkboxes,x.id)
   }
 
-
-  newList.push(newRecord)
-  console.log(newList,'new')
-  return newList;
-
+  //add event listener
+  editOffencesButton.addEventListener('click',function(e){
+    e.preventDefault()
+    let updateAdjustments = adjustments.filter((record) => record.caseNo !== selectedRecord[0].caseNo)
+    let checkedCheckboxes = document.querySelectorAll('input[type=checkbox]:checked').valueOf()
+    for (let x of checkedCheckboxes) {
+      let offence = {
+        offence: x.value,
+        court: x.getAttribute("data-court"),
+        date: x.getAttribute("data-offence-date"),
+        date2: x.getAttribute("data-offence-date-date"),
+        ref: x.getAttribute("data-case-ref"),
+        id: x.getAttribute("data-id")
+      }
+      store.push(offence)
+    }
+    selectedRecord[0].offences = store
+    updateAdjustments.push(...selectedRecord)
+    updateAdjustmentsList(updateAdjustments)
+    location.href = "edit.html"
+  })
+  //remove
 
 
 }
@@ -833,7 +845,14 @@ if(DeleteTaggedBailPage) {
   })
 }
 
+function addCheck(checkboxes, id){
+  checkboxes.forEach((checkbox)=>{
+    if(checkbox.getAttribute('data-id') === id) {
+      checkbox.checked = true;
+    }
+  })
 
+}
 function deleteRecord(type, records, id){
   // let filteredByType = records.filter((record) => record.type === type)
   // console.log(filteredByType)
@@ -847,6 +866,31 @@ function updateAdjustmentsList(newData){
   localStorage.getItem('adjustments')
   localStorage.setItem('adjustments', JSON.stringify(newData))
 
+}
+function updateDates(type, caseNo, record, fromDay, fromMonth, fromYear, toDay, toMonth, toYear){
+  //delete record
+  let updateAdjustments = adjustments.filter((record) => record.caseNo !== caseNo)
+  //let newList = Array.from(deleteRecord(type, adjustments, caseNo))
+  console.log(updateAdjustments)
+  //create new record
+  let newRecord = {
+    type: type,
+    start: createDate(fromDay, fromMonth, fromYear),
+    end: createDate(toDay, toMonth, toYear),
+    days: createDaysAdded(fromDay, fromMonth, fromYear, toDay, toMonth, toYear),
+    caseNo: caseNo,
+    fromDay:fromDay.value,
+    fromMonth:fromMonth.value,
+    fromYear:fromYear.value,
+    toDay:toDay.value,
+    toMonth:toMonth.value,
+    toYear:toYear.value,
+    offences: record[0].offences
+  }
+  //add it to list
+  updateAdjustments.push(newRecord)
+  //update adjustments list
+  updateAdjustmentsList(updateAdjustments)
 }
 function filterAdjustmentsByType(adjustmentType){
   const result = adjustments.filter(({ type }) => type === adjustmentType );
