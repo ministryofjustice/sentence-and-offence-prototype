@@ -177,9 +177,10 @@ if(saveTable){
     let alert = `
 <h2 class="govuk-heading-m">There are 18 days of unused deductions</h2>
     <p class="">
-     Unused deductions can include unused remand and unused tagged bail. They will not be taken into the sentence calculation, but can be carried over to future licence recall cases.</p>
+     Unused deductions can include remand and tagged bail. They will not be taken into the calculation, but can be carried over to future licence recall cases.
+</p>
      
-      <p class="">For the unused deductions, you will need to add the unused remand alert on NOMIS.</p>
+      <p class="">For deductions, you will need to add the unused remand alert on NOMIS.</p>
 `
 
     document.getElementById("alerthere").innerHTML = alert
@@ -470,7 +471,62 @@ if(indexPage) {
   displayNotification(activeJourney, notificationContainer)
 }
 
+//for tagged bail table design
+const TaggedBailDetails = document.getElementById('TaggedBailDetails');
+if(TaggedBailDetails){
+  let taggedBailPeriods = filterAdjustmentsByType("Tagged Bail")
+  console.log( taggedBailPeriods)
+  taggedBailPeriods.forEach((item)=> {
+    createTBRow(item,TaggedBailDetails)
+  })
+  let editLinks = document.getElementsByClassName("edit-link")
+  let deleteLinks = document.getElementsByClassName("delete-link")
+  selectItemByLink(deleteLinks, "delete-tagged-bail")
+  selectItemByLink(editLinks, "edit-tagged-bail")
+}
 
+function createTBRow(item, target){
+  let html = `
+  <tr class="govuk-table__row">
+                    <td  class="govuk-table__cell">${item.court}</td>
+                    <td  class="govuk-table__cell">${item.ref}</td>
+                    <td  class="govuk-table__cell">${item.days}</td>
+                    <td class="govuk-table__cell">
+                        <a href="" class="edit-link" data-caseNo="${item.caseNo}">Edit</a>
+                        <br>
+                        <a href="" class="delete-link" data-caseNo="${item.caseNo}">Delete</a>
+                    </td>
+                </tr>
+  `
+  target.innerHTML += html
+
+}
+
+
+let DeleteTaggedBailPage = document.getElementById('DeleteTaggedBailPage')
+if(DeleteTaggedBailPage) {
+
+  let date = document.getElementById('PeriodDate')
+  let deletebutton = document.getElementById('DeleteTaggedBail')
+  let days = document.getElementById('PeriodDays')
+  let adjustmentsByType = filterAdjustmentsByType("Tagged Bail")
+  let period = filterAdjustmentsByID(selectedRemandPeriodID, adjustmentsByType)
+  console.log(selectedRemandPeriodID)
+
+  date.innerHTML = `${period[0].court} `
+  days.innerHTML = `${period[0].days}`
+
+
+  deletebutton.addEventListener('click', function(e){
+    e.preventDefault()
+    deleteRecord("Tagged Bail",adjustments, selectedRemandPeriodID)
+    let journey = deletebutton.getAttribute('data-journey')
+    localStorage.setItem('activeJourney', parseInt(journey))
+    location.href = `index-1.html`;
+  })
+}
+
+//for tagged bail card design
 const TaggedBailList = document.getElementById('TaggedBailList');
 if(TaggedBailList){
   //let target = document.getElementById('RemandPeriodListContainer')
@@ -539,7 +595,7 @@ function displayNotification(journey, container){
                          data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
-               Remand updates have been saved
+               Remand time added
           </h3>
           <p class="govuk-body">Once all of the adjustments have been made, you must
               <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
@@ -822,28 +878,6 @@ console.log(selectedRemandPeriodID)
   })
 }
 
-let DeleteTaggedBailPage = document.getElementById('DeleteTaggedBailPage')
-if(DeleteTaggedBailPage) {
-
-  let date = document.getElementById('PeriodDate')
-  let deletebutton = document.getElementById('DeleteTaggedBail')
-  let days = document.getElementById('PeriodDays')
-  let adjustmentsByType = filterAdjustmentsByType("Tagged Bail")
-  let period = filterAdjustmentsByID(selectedRemandPeriodID, adjustmentsByType)
-  console.log(period)
-
-  date.innerHTML = `${period[0].court} `
-  days.innerHTML = `${period[0].days}`
-
-
-  deletebutton.addEventListener('click', function(e){
-    e.preventDefault()
-    deleteRecord("Tagged Bail",adjustments, selectedRemandPeriodID)
-    let journey = deletebutton.getAttribute('data-journey')
-    localStorage.setItem('activeJourney', parseInt(journey))
-    location.href = `index-1.html`;
-  })
-}
 
 function addCheck(checkboxes, id){
   checkboxes.forEach((checkbox)=>{
