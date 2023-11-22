@@ -19,12 +19,11 @@
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                                 <h1 class="govuk-fieldset__heading">
                                     <span class="govuk-caption-xl">Adjust release dates</span>
-                                    Select the offences
+                                    Edit offences
                                 </h1>
                             </legend>
-                            <p class="govuk-body-l govuk-!-margin-top-6"> You have entered  <span class="govuk-!-font-weight-bold" id="Days"></span>  day(s) of remand. Select all the offences that apply to this remand time. </p>
-                            <p class="govuk-body-l">The rules for applying remand can be found in the <a href="#">policy framework</a>.</p>
-                            <div id="OffenceLiostContainer">
+
+                            <div id="OffenceListContainer">
                                 <h2 class="govuk-heading-m">Court cases</h2>
                                 <h3 class="govuk-heading-s"> Case 1</h3>
                                 <p><span class="govuk-!-font-weight-bold">Court name</span>: Bristol Magistrates Court
@@ -39,8 +38,15 @@
                                         <p class="govuk-body-s">Committed on 15 May 2023</p>
                                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                             <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="Attempted blackmail" data-court="Bristol Magistrates Court">
-                                                <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                                <input class="govuk-checkboxes__input" id="offence-1" name="waste" type="checkbox"
+                                                       value="Attempted blackmail"
+                                                       data-court="Bristol Magistrates Court"
+                                                       data-case-ref="T20220701"
+                                                       data-offence-date="Committed on 15 May 2023"
+                                                       data-offence-date-date="15 May 2023"
+                                                       data-id="1"
+                                                >
+                                                <label class="govuk-label govuk-checkboxes__label" for="offence-1">
                                                     Select this offence
                                                 </label>
                                             </div>
@@ -61,8 +67,15 @@
                                         <p class="govuk-body-s">Committed on 15 May 2023</p>
                                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                             <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="Attempted blackmail" data-court="Bristol Magistrates Court">
-                                                <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                                <input class="govuk-checkboxes__input" id="offence-2" name="waste" type="checkbox"
+                                                       value="Attempted blackmail"
+                                                       data-court="Bristol Magistrates Court"
+                                                       data-case-ref="T20220702"
+                                                       data-offence-date="Committed on 15 May 2023"
+                                                       data-offence-date-date="15 May 2023"
+                                                       data-id="2"
+                                                >
+                                                <label class="govuk-label govuk-checkboxes__label" for="offence-2">
                                                     Select this offence
                                                 </label>
                                             </div>
@@ -77,8 +90,15 @@
                                         <p class="govuk-body-s">Committed on 15 May 2023</p>
                                         <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                                             <div class="govuk-checkboxes__item">
-                                                <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="Blackmail" data-court="Bristol Magistrates Court">
-                                                <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                                                <input class="govuk-checkboxes__input" id="offence-3" name="waste" type="checkbox"
+                                                       value="Blackmail"
+                                                       data-court="Bristol Magistrates Court"
+                                                       data-case-ref="T20220702"
+                                                       data-offence-date="Committed on 15 May 2023"
+                                                       data-offence-date-date="15 May 2023"
+                                                       data-id="3"
+                                                >
+                                                <label class="govuk-label govuk-checkboxes__label" for="offence-3">
                                                     Select this offence
                                                 </label>
                                             </div>
@@ -91,12 +111,15 @@
                     </div>
 
                     <p class="govuk-inset-text">If you think some information is wrong, you can edit it in NOMIS and <a href="#">reload this page</a>.</p>
-                <a href="edit.html" id="edit-offences-button" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
-                    Continue
-                </a>
-                    <a href="edit.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                        Cancel
-                    </a>
+                    <div class="govuk-button-group">
+                        <a href="edit.html" id="edit-offences-button" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                            Continue
+                        </a>
+                        <a href="edit.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+
             </div>
             </div>
         </main>
