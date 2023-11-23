@@ -402,7 +402,6 @@ if(editTaggedBail) {
   let byType = filterAdjustmentsByType("Tagged Bail")
   //const result = byType.find(({ caseNo }) => caseNo === selectedRemandPeriodID);
   const result = adjustments.filter(({ caseNo }) => caseNo === selectedRemandPeriodID);
-  console.log(result[0].court,'t')
   let html = `
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
@@ -428,7 +427,7 @@ if(editTaggedBail) {
              ${result[0].days}
           </dd>
           <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="edit-tagged-bail-days.html">
+              <a class="govuk-link" href="edit-days.html">
                   Edit<span class="govuk-visually-hidden"> Edit</span>
               </a>
           </dd>
@@ -438,12 +437,42 @@ if(editTaggedBail) {
   editTaggedBail.innerHTML = html
 }
 
+//edit tagged bail days
+let editTaggedBailDays = document.getElementById('edit-tagged-bail-days-button')
+if(editTaggedBailDays) {
+  console.log(selectedRemandPeriodID)
+  let byType = filterAdjustmentsByType("Tagged Bail")
+  const record = byType.find(({ caseNo }) => caseNo === selectedRemandPeriodID);
+  //const adjustemntsMinusRecord = adjustments.filter(({ caseNo }) => caseNo === selectedRemandPeriodID);
+  let newArray = adjustments.filter(({ caseNo }) => caseNo !== selectedRemandPeriodID );
+  let taggedBailDays = document.getElementById('taggedBailDays')
+
+  taggedBailDays.value=record.days
+
+
+
+  editTaggedBailDays.addEventListener('click', function(e){
+    e.preventDefault()
+    let selectedCase = {
+      court: record.court,
+      date: record.date,
+      ref: record.ref,
+      days:parseInt(taggedBailDays.value),
+      caseNo: record.caseNo,
+      type:record.type
+    }
+    newArray.push(selectedCase)
+    updateAdjustmentsList(newArray)
+    console.log(adjustments)
+    location.href = `edit-tagged-bail.html`;
+  })
+}
+
 let EditCase = document.getElementById('EditCase')
 if (EditCase){
   let selectCaseLinks = document.getElementsByClassName("select-case-link")
   console.log(selectedRemandPeriodID )
   let yt = adjustments.filter(({ caseNo }) => caseNo === selectedRemandPeriodID );
-  console.log(yt)
   //remove case
   let newArray = adjustments.filter(({ caseNo }) => caseNo !== selectedRemandPeriodID );
 
@@ -453,7 +482,6 @@ if (EditCase){
     {
       selectedLink.addEventListener('click', function (e) {
         e.preventDefault()
-
         let selectedCase = {
           court: selectedLink.getAttribute("data-court"),
           date: selectedLink.getAttribute("data-date"),
@@ -462,7 +490,7 @@ if (EditCase){
           caseNo: yt[0].caseNo,
           type:yt[0].type
         }
-        console.log(selectedCase)
+
         newArray.push(selectedCase)
         console.log(newArray,'new')
         updateAdjustmentsList(newArray)
@@ -568,16 +596,25 @@ if(indexPage) {
 
 //for tagged bail table design
 const TaggedBailDetails = document.getElementById('TaggedBailDetails');
+
 if(TaggedBailDetails){
+  const totalTB = document.getElementById('totalTB');
+  let total = 0
   let taggedBailPeriods = filterAdjustmentsByType("Tagged Bail")
   console.log( taggedBailPeriods)
   taggedBailPeriods.forEach((item)=> {
     createTBRow(item,TaggedBailDetails)
+    console.log(item.days)
+    total += +item.days
   })
+  console.log(total)
+  totalTB.innerHTML = total
   let editLinks = document.getElementsByClassName("edit-link")
   let deleteLinks = document.getElementsByClassName("delete-link")
   selectItemByLink(deleteLinks, "delete-tagged-bail")
   selectItemByLink(editLinks, "edit-tagged-bail")
+
+
 }
 
 function createTBRow(item, target){
@@ -594,6 +631,13 @@ function createTBRow(item, target){
   </tr>
   `
   target.innerHTML += html
+
+}
+let editTaggedBailButton = document.getElementById('editTaggedBailButton')
+if(editTaggedBailButton){
+  editTaggedBailButton.addEventListener('click', function(){
+    localStorage.setItem('activeJourney', 3)
+  })
 
 }
 
