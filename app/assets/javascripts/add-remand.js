@@ -747,6 +747,22 @@ function displayNotification(journey, container){
   </div>
 `
       break;
+    case 5:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+              Remand updates have been saved
+          </h3>
+          <p class="govuk-body">You must
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+          </p>
+      </div>
+  </div>
+`
+      break;
     default:
       ``
   }
@@ -870,11 +886,10 @@ if(editRemand) {
 
   saveEditButton.addEventListener('click', function(e){
     e.preventDefault()
-    if (datesUpdated >=1 ){
-      location.href = 'date-changed.html'
-    }else {
-      location.href = 'view-remand.html'
-    }
+    location.href = 'index-1.html'
+    //let journey = saveEditButton.getAttribute('data-journey')
+    localStorage.setItem('activeJourney', 5)
+
   })
 
 }
