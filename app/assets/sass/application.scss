@@ -23,6 +23,7 @@ $moj-page-width: 1170px;
 
 // DPS header
 @import "components/dps-header";
+@import "components/new-dps-header";
 
 // Hero banner (masthead)
 @import "components/masthead";
@@ -63,6 +64,7 @@ $moj-page-width: 1170px;
 @import "components/modal";
 @import "components/govuk-cards";
 @import "components/govuk-grid";
+@import "components/service-header";
 
 @import "components/matcher";
 
@@ -170,9 +172,6 @@ border: none;
 
 }
 
-.hero {
-  background-color: red;
-}
 
 .govuk-details {
   margin-bottom:0;
@@ -252,4 +251,45 @@ img {
   }
 }
 
+dwf-header {
+  margin: 0px 0px 30px 0px;
+  position: relative;
+  height: 175px;
+}
+
+.dwf-header-inner {
+  background-color: #f3f2f1 !important;
+  width: 100%;
+  padding: 20px;
+  height: 170px;
+}
+
+.dwf-header-profile-img {
+  width: 100px;
+  height: 130px;
+}
+
+.dwf-header-left {
+  display: inline-block;
+  float: left;
+  margin-right: 15px;
+}
+
+.dwf-header-info {
+  padding: 0 !important;
+  margin: 0;
+}
+
+.dwf-header-info ul {
+  list-style: none;
+}
+
+.dwf-header-info li {
+  display: inline-block;
+  margin-right: 25px;
+  color: #0b0c0c;
+}
+.header-icon {
+  width:32px;
+}
 
