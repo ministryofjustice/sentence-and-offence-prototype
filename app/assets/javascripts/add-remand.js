@@ -270,9 +270,11 @@ if(addDatesButton) {
 
 /////tagged bail
 
-let selectCaseLinks = document.getElementsByClassName("select-case-link")
 
-if(selectCaseLinks){
+let SelectCase = document.getElementById("SelectCase")
+
+if(SelectCase){
+  let selectCaseLinks = document.getElementsByClassName("select-case-link")
   let newCase = []
   Array.from(selectCaseLinks).forEach(function(selectedLink)
   {
@@ -337,7 +339,7 @@ if(addTaggedBailDaysButton) {
   })
 }
 
-//save tagged bail
+//save tagged bail edit
 if(saveTaggedBailButton){
   let activeId = caseNo
   //get record
@@ -383,8 +385,93 @@ if(saveTaggedBailButton){
     let journey = saveTaggedBailButton.getAttribute('data-journey')
     localStorage.setItem('activeJourney', parseInt(journey))
   })
+}
+
+//edit tagged bail
+let editTaggedBail = document.getElementById('EditTaggedBail')
+if(editTaggedBail) {
+  console.log(adjustments)
+  let byType = filterAdjustmentsByType("Tagged Bail")
+  //const result = byType.find(({ caseNo }) => caseNo === selectedRemandPeriodID);
+  const result = adjustments.filter(({ caseNo }) => caseNo === selectedRemandPeriodID);
+  console.log(result[0].court,'t')
+  let html = `
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+             Case details
+          </dt>
+          <dd class="govuk-summary-list__value">
+             ${result[0].court} <br>
+             <span>${result[0].ref}</span>
+             <span>${result[0].date}</span>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="edit-case.html">
+                  Edit<span class="govuk-visually-hidden"> Edit</span>
+              </a>
+          </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+              Days 
+          </dt>
+          <dd class="govuk-summary-list__value">
+             ${result[0].days}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="edit-tagged-bail-days.html">
+                  Edit<span class="govuk-visually-hidden"> Edit</span>
+              </a>
+          </dd>
+      </div>
+  </dl>
+`
+  editTaggedBail.innerHTML = html
+}
+
+let EditCase = document.getElementById('EditCase')
+if (EditCase){
+  let selectCaseLinks = document.getElementsByClassName("select-case-link")
+  console.log(selectedRemandPeriodID )
+  let yt = adjustments.filter(({ caseNo }) => caseNo === selectedRemandPeriodID );
+  console.log(yt)
+  //remove case
+  let newArray = adjustments.filter(({ caseNo }) => caseNo !== selectedRemandPeriodID );
+
+
+    let updatedCase = []
+    Array.from(selectCaseLinks).forEach(function(selectedLink)
+    {
+      selectedLink.addEventListener('click', function (e) {
+        e.preventDefault()
+
+        let selectedCase = {
+          court: selectedLink.getAttribute("data-court"),
+          date: selectedLink.getAttribute("data-date"),
+          ref: selectedLink.getAttribute("data-case"),
+          days:yt[0].days,
+          caseNo: yt[0].caseNo,
+          type:yt[0].type
+        }
+        console.log(selectedCase)
+        newArray.push(selectedCase)
+        console.log(newArray,'new')
+        updateAdjustmentsList(newArray)
+        //localStorage.setItem('adjustments', JSON.stringify(newArray))
+
+        console.log(adjustments, 'yes')
+
+        location.href = `edit-tagged-bail.html`;
+      })
+    })
+
 
 }
+
+
+
+
 
 
 
@@ -488,15 +575,15 @@ if(TaggedBailDetails){
 function createTBRow(item, target){
   let html = `
   <tr class="govuk-table__row">
-                    <td  class="govuk-table__cell">${item.court}</td>
-                    <td  class="govuk-table__cell">${item.ref}</td>
-                    <td  class="govuk-table__cell">${item.days}</td>
-                    <td class="govuk-table__cell">
-                        <a href="" class="edit-link" data-caseNo="${item.caseNo}">Edit</a>
-                        <br>
-                        <a href="" class="delete-link" data-caseNo="${item.caseNo}">Delete</a>
-                    </td>
-                </tr>
+      <td  class="govuk-table__cell">${item.court}</td>
+      <td  class="govuk-table__cell">${item.ref}</td>
+      <td  class="govuk-table__cell">${item.days}</td>
+      <td class="govuk-table__cell">
+          <a href="edit-case.html" class="edit-link" data-caseNo="${item.caseNo}">Edit</a>
+          <br>
+          <a href="edit-days.html" class="delete-link" data-caseNo="${item.caseNo}">Delete</a>
+      </td>
+  </tr>
   `
   target.innerHTML += html
 
@@ -673,7 +760,7 @@ if(saveRemandButton) {
 }
 function displayAdjustmentTotals(adjustment ,target, linkContainer){
   const result = adjustments.filter(({ type }) => type === adjustment);
-
+console.log(result)
   let total = 0
   if(result.length >= 0) {
     for (let x of result) {
