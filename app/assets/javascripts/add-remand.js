@@ -138,11 +138,17 @@ if(AddNewTaggedBailLink){
 }
 
 //unused deductions
-let unusedDeductions = document.getElementById("unusedDeductions");
+let unusedDeductions = document.getElementById("unusedDeductionsContainer");
 
 if(unusedDeductions) {
-  document.getElementById('unusedDeductions').innerHTML = totalDays
+  //document.getElementById('unusedDeductions').innerHTML = totalDays
+  //document.getElementById('unusedDeductions').innerHTML = totalDays
   let html = `
+<h2 class="govuk-heading-m govuk-!-padding-left-4">
+                        Unused deductions
+                    </h2>
+<div id="unusedDeductions" class="">
+
 <dl class="govuk-summary-list">
   <div class="govuk-summary-list__row">
     <dt class="govuk-summary-list__key">
@@ -161,6 +167,8 @@ if(unusedDeductions) {
     </dd>
   </div>
 </dl>
+</div>
+
 `
 
   if(totalDays >=50) {
