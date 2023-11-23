@@ -711,7 +711,10 @@ console.log(sentenceDataList[itemOfInterest-1]);
     location.href = 'sentences.html';
   })
 }
-
+function createDate(day, month, year) {
+  let date = `${day.value}-${month.value}-${year.value}`;
+  return date
+}
 const addOffenceButton = document.getElementById("add-offence-button2");
 
 if (addOffenceButton) {
