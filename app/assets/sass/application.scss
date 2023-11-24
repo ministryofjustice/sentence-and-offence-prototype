@@ -64,8 +64,8 @@ $moj-page-width: 1170px;
 @import "components/modal";
 @import "components/govuk-cards";
 @import "components/govuk-grid";
+//new file
 @import "components/service-header";
-
 @import "components/matcher";
 
 // RaP styles
@@ -291,5 +291,22 @@ dwf-header {
 }
 .header-icon {
   width:32px;
+}
+
+.home-container {
+  display:flex;
+
+
+  .home-container-item {
+
+
+      border: 1px solid;
+      padding: 12px;
+      box-shadow: 5px 10px #888888;
+
+    margin:10px;
+
+  }
+
 }
 
