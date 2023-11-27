@@ -690,7 +690,7 @@ function displayTaggedBailCard(record, target){
                         <div class="govuk-summary-card__title-wrapper ">
                             <h2 class="govuk-summary-card__title">${record.court}</h2>
                             <ul class="govuk-summary-card__actions">
-                                <li class="govuk-summary-card__action"> <a id="remand${record.caseNo}" data-caseNo="${record.caseNo}" class="govuk-link edit-link" href="edit.html">
+                                <li class="govuk-summary-card__action"> <a id="remand${record.caseNo}" data-caseNo="${record.caseNo}" class="govuk-link edit-link" href="edit-tagged-bail.html">
                                     Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
                                 </a>
                                 </li>
@@ -1253,9 +1253,8 @@ function displayTableRow(data, target) {
                     <td class="govuk-table__cell">
                         <table class="govuk-table">
                             <tr>
-                                <th class="govuk-table__header" scope="col">Case reference</th>
-                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Court name</th>
-                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Offence</th>
+                             
+                                <th class="govuk-table__header govuk-!-width-two-thirds" scope="col">Offence</th>
                                 <th class="govuk-table__header  " scope="col">Offence dates</th>
                             </tr>
                             <tbody id="CaseDetails">
@@ -1284,13 +1283,10 @@ offences.forEach((offence)=> {
      let html = `
       <tr>
           <td class="govuk-table__cell">
-              ${offence.ref}
-          </td>
-          <td class="govuk-table__cell">
-              ${offence.court}
-          </td>
-          <td class="govuk-table__cell">
-             ${offence.offence}
+             ${offence.offence}<br>
+             <span class="govuk-hint">
+               Case reference: ${offence.ref}
+              </span>
           </td>
           <td class="govuk-table__cell  ">
               ${offence.date2}
