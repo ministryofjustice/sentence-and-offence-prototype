@@ -155,7 +155,7 @@ if(unusedDeductions) {
       Unused remand
     </dt>
     <dd class="govuk-summary-list__value">
-      18 days
+      90 days
     </dd>
   </div>
     <div class="govuk-summary-list__row">
@@ -163,7 +163,7 @@ if(unusedDeductions) {
       Unused tagged bail
     </dt>
     <dd class="govuk-summary-list__value">
-      0 days
+      10 days
     </dd>
   </div>
 </dl>
