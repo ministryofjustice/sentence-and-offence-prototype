@@ -26,6 +26,11 @@ caseNo = caseNo ? JSON.parse(caseNo) :1;
 let datesUpdated = localStorage.getItem('datesUpdated');
 datesUpdated = datesUpdated ? JSON.parse(datesUpdated) :0;
 
+let unusedRemand = localStorage.getItem('unusedRemand');
+unusedRemand = unusedRemand ? JSON.parse(unusedRemand) :0;
+
+let unusedTaggedBail = localStorage.getItem('unusedTaggedBail');
+unusedTaggedBail = unusedTaggedBail ? JSON.parse(unusedTaggedBail) :0;
 
 let totalDays = 0;
 for(let x of adjustments){
@@ -143,6 +148,10 @@ let unusedDeductions = document.getElementById("unusedDeductionsContainer");
 if(unusedDeductions) {
   //document.getElementById('unusedDeductions').innerHTML = totalDays
   //document.getElementById('unusedDeductions').innerHTML = totalDays
+  let unusedRemand = localStorage.getItem('unusedRemand')
+  let unusedTaggedBail = localStorage.getItem('unusedTaggedBail')
+  let displayTB = unusedTaggedBail ? unusedTaggedBail : 0
+  let displayR = unusedRemand ? unusedRemand : 0
   let html = `
 <h2 class="govuk-heading-m govuk-!-padding-left-4">
                         Unused deductions
@@ -155,7 +164,7 @@ if(unusedDeductions) {
       Unused remand
     </dt>
     <dd class="govuk-summary-list__value">
-      90 days
+      ${displayR} days
     </dd>
   </div>
     <div class="govuk-summary-list__row">
@@ -163,14 +172,14 @@ if(unusedDeductions) {
       Unused tagged bail
     </dt>
     <dd class="govuk-summary-list__value">
-      10 days
+     ${displayTB} days
     </dd>
   </div>
 </dl>
 </div>
 
 `
-
+console.log(unusedTaggedBail)
   if(totalDays >=50) {
     unusedDeductions.innerHTML = html
   }
@@ -183,7 +192,7 @@ if(saveTable){
   document.getElementById('saveTableTotal').innerHTML = totalDays
   if(totalDays >= 50) {
     let alert = `
-<h2 class="govuk-heading-m">There are 18 days of unused deductions</h2>
+<h2 class="govuk-heading-m">There are 90 days of unused deductions</h2>
     <p class="">
      Unused deductions can include remand and tagged bail. They will not be taken into the calculation, but can be carried over to future licence recall cases.
 </p>
@@ -392,6 +401,18 @@ if(saveTaggedBailButton){
   saveTaggedBailButton.addEventListener('click', function(){
     let journey = saveTaggedBailButton.getAttribute('data-journey')
     localStorage.setItem('activeJourney', parseInt(journey))
+    localStorage.setItem('unusedTaggedBail', 10)
+
+    if (activeJourney == 1){
+      localStorage.setItem('unusedRemand', 90)
+      localStorage.setItem('unusedTaggedBail', 10)
+    } else {
+      localStorage.setItem('unusedRemand', 0)
+      localStorage.setItem('unusedTaggedBail', 10)
+    }
+    localStorage.setItem('activeJourney', parseInt(journey))
+
+    //set unused tagged bail to 10
   })
 }
 
@@ -588,7 +609,8 @@ let indexPage = document.getElementById("indexPage")
 let notificationContainer = document.getElementById("notificationContainer")
 if(indexPage) {
   console.log(adjustments)
-  console.log(activeJourney)
+  console.log(activeJourney, 'k')
+
   displayAdjustmentTotals("Tagged Bail", taggedBailCount,TaggedBailViewLink)
   displayAdjustmentTotals("Remand", RemandCount,RemandViewLink)
   displayNotification(activeJourney, notificationContainer)
@@ -823,7 +845,20 @@ let saveRemandButton = document.getElementById('saveRemandButton')
 if(saveRemandButton) {
   saveRemandButton.addEventListener('click', function(){
     let journey = saveRemandButton.getAttribute('data-journey')
+
+
+    if (activeJourney == 3){
+      localStorage.setItem('unusedRemand', 90)
+      localStorage.setItem('unusedTaggedBail', 10)
+    } else {
+      localStorage.setItem('unusedRemand', 10)
+      localStorage.setItem('unusedTaggedBail', 0)
+    }
     localStorage.setItem('activeJourney', parseInt(journey))
+
+
+
+    //set unused remand to 90
   })
 }
 function displayAdjustmentTotals(adjustment ,target, linkContainer){
