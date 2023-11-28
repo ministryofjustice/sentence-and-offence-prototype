@@ -968,6 +968,9 @@ if(editRemand) {
     location.href = 'index-1.html'
     //let journey = saveEditButton.getAttribute('data-journey')
     localStorage.setItem('activeJourney', 5)
+    localStorage.setItem('unusedRemand', 90)
+    localStorage.setItem('unusedTaggedBail', 10)
+
 
   })
 

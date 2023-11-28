@@ -67,6 +67,7 @@ $moj-page-width: 1170px;
 //new file
 @import "components/service-header";
 @import "components/matcher";
+@import "components/actions-list";
 
 // RaP styles
 
@@ -296,14 +297,10 @@ dwf-header {
 .home-container {
   display:flex;
 
-
   .home-container-item {
-
-
-      border: 1px solid;
-      padding: 12px;
-      box-shadow: 5px 10px #888888;
-
+    border: 1px solid;
+    padding: 12px;
+    box-shadow: 5px 10px #888888;
     margin:10px;
 
   }
