@@ -188,20 +188,30 @@ console.log(unusedTaggedBail)
 //add remand save page
 let saveTable = document.getElementById('tableBody')
 if(saveTable){
-  console.log(totalDays)
+  let unusedRemand = localStorage.getItem('unusedRemand')
   document.getElementById('saveTableTotal').innerHTML = totalDays
   if(totalDays >= 50) {
     let alert = `
-<h2 class="govuk-heading-m">There are 90 days of unused deductions</h2>
+<h2 class="govuk-heading-m">There are 10 days of unused deductions</h2>
     <p class="">
      Unused deductions can include remand and tagged bail. They will not be taken into the calculation, but can be carried over to future licence recall cases.
 </p>
      
       <p class="">For deductions, you will need to add the unused remand alert on NOMIS.</p>
 `
-
     document.getElementById("alerthere").innerHTML = alert
   }
+  function createDays(data){
+    let days = 0;
+    for(let x of byType){
+      days += x.days;
+    }
+    return days
+  }
+
+  let byType = filterAdjustmentsByType("Remand")
+  let remandDays = createDays(byType)
+
 function createTableRow(data){
   let html = ``
   for(let x of data){
@@ -213,7 +223,9 @@ function createTableRow(data){
   }
   return html
 }
-  let html = `${createTableRow(adjustments)}`
+
+  let html = `${createTableRow(byType)}`
+  document.getElementById('saveTableTotal').innerHTML = remandDays
   saveTable.innerHTML = html
 }
 
