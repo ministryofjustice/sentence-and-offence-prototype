@@ -146,6 +146,7 @@ if(AddNewTaggedBailLink){
 let unusedDeductions = document.getElementById("unusedDeductionsContainer");
 
 if(unusedDeductions) {
+  console.log(activeJourney, 'u')
   //document.getElementById('unusedDeductions').innerHTML = totalDays
   //document.getElementById('unusedDeductions').innerHTML = totalDays
   let unusedRemand = localStorage.getItem('unusedRemand')
@@ -188,16 +189,27 @@ console.log(unusedTaggedBail)
 //add remand save page
 let saveTable = document.getElementById('tableBody')
 if(saveTable){
-  let unusedRemand = localStorage.getItem('unusedRemand')
+
+console.log(activeJourney,'u')
   document.getElementById('saveTableTotal').innerHTML = totalDays
-  if(totalDays >= 50) {
+  if(activeJourney === 3) {
+    console.log('if')
     let alert = `
-<h2 class="govuk-heading-m">There are 10 days of unused deductions</h2>
-    <p class="">
-     Unused deductions can include remand and tagged bail. They will not be taken into the calculation, but can be carried over to future licence recall cases.
-</p>
-     
-      <p class="">For deductions, you will need to add the unused remand alert on NOMIS.</p>
+        <h2 class="govuk-heading-m">There are 90 days of unused deductions</h2>
+        <p class="">
+            Unused deductions can include remand and tagged bail. They will not be taken into the calculation, but can be carried over to future licence recall cases.
+        </p>
+        <p class="">For deductions, you will need to add the unused remand alert on NOMIS.</p>
+`
+    document.getElementById("alerthere").innerHTML = alert
+  } else {
+    console.log('else')
+    let alert = `
+        <h2 class="govuk-heading-m">There are 10 days of unused deductions</h2>
+        <p class="">
+            Unused deductions can include remand and tagged bail. They will not be taken into the calculation, but can be carried over to future licence recall cases.
+        </p>
+        <p class="">For deductions, you will need to add the unused remand alert on NOMIS.</p>
 `
     document.getElementById("alerthere").innerHTML = alert
   }
