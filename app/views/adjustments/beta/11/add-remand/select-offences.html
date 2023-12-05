@@ -1,0 +1,127 @@
+{% extends "version-1/dps/includes/hub-layout.html" %}
+{% set adjustmentsActive = true %}
+{% block content %}
+<div class="moj-width-container">
+
+    <div class="">
+        <a href="enter-remand.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="option-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    <span class="govuk-caption-xl">Adjust release dates</span>
+                                    Select the offences
+                                </h1>
+                            </legend>
+                            <p class="govuk-body-l govuk-!-margin-top-6"> You have entered  <span class="govuk-!-font-weight-bold" id="Days"></span>  day(s) of remand. Select all the offences that apply to this remand time. </p>
+                            <p class="govuk-body-l">The rules for applying remand can be found in the <a href="#">policy framework</a>.</p>
+                            <div id="OffenceLiostContainer">
+                                <h2 class="govuk-heading-m">Court cases</h2>
+                                <h3 class="govuk-heading-s"> Case 1</h3>
+                                <p><span class="govuk-!-font-weight-bold">Court name</span>: Bristol Magistrates Court
+                                    <br>
+                                    <span class="govuk-!-font-weight-bold">Case reference</span>: T20230101
+                                </p>
+                                <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+                                    <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                                        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+                                            Burglary
+                                            other than dwelling - theft
+                                        </h3>
+                                        <p class="govuk-body-s">Committed on 1 Jan 2023</p>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="offence-2" name="waste" type="checkbox"
+                                                       value="Burglary other than dwelling - theft"
+                                                       data-court="Bristol Magistrates Court"
+                                                       data-case-ref="T20220702"
+                                                       data-offence-date="Committed on 1 Jan 2023"
+                                                       data-offence-date-date="1 Jan 2023"
+                                                       data-id="2"
+                                                >
+                                                <label class="govuk-label govuk-checkboxes__label" for="offence-2">
+                                                    Select this offence
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <h3 class="govuk-heading-s"> Case 2</h3>
+                                <p><span class="govuk-!-font-weight-bold">Court name</span>: Bristol Magistrates Court
+                                    <br>
+                                    <span class="govuk-!-font-weight-bold">Case reference</span>: T20223256
+                                </p>
+                                <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+                                    <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                                        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">
+                                            Attempt to possess a controlled drug of Class C - GHB
+                                        </h3>
+                                        <p class="govuk-body-s">Committed on 30 Oct 2023</p>
+                                        <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                            <div class="govuk-checkboxes__item">
+                                                <input class="govuk-checkboxes__input" id="offence-1" name="waste" type="checkbox"
+                                                       value="Attempt to possess a controlled drug of Class C - GHB"
+                                                       data-court="Bristol Magistrates Court"
+                                                       data-case-ref="T20223256"
+                                                       data-offence-date="Committed on 30 Oct 2023"
+                                                       data-offence-date-date="30 Oct 2023"
+                                                       data-id="1"
+                                                >
+                                                <label class="govuk-label govuk-checkboxes__label" for="offence-1">
+                                                    Select this offence
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+<!--                                <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">-->
+<!--                                    <div class="govuk-grid-column-full govuk-!-margin-top-4">-->
+<!--                                        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">-->
+<!--                                            Blackmail-->
+<!--                                        </h3>-->
+<!--                                        <p class="govuk-body-s">Committed on 15 May 2023</p>-->
+<!--                                        <div class="govuk-checkboxes govuk-checkboxes&#45;&#45;small" data-module="govuk-checkboxes">-->
+<!--                                            <div class="govuk-checkboxes__item">-->
+<!--                                                <input class="govuk-checkboxes__input" id="offence-3" name="waste" type="checkbox"-->
+<!--                                                       value="Blackmail"-->
+<!--                                                       data-court="Bristol Magistrates Court"-->
+<!--                                                       data-case-ref="T20220702"-->
+<!--                                                       data-offence-date="Committed on 15 May 2023"-->
+<!--                                                       data-offence-date-date="15 May 2023"-->
+<!--                                                       data-id="3"-->
+<!--                                                >-->
+<!--                                                <label class="govuk-label govuk-checkboxes__label" for="offence-3">-->
+<!--                                                    Select this offence-->
+<!--                                                </label>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+
+                            </div>
+                        </fieldset>
+                    </div>
+
+                    <p class="govuk-inset-text">If you think some information is wrong, you can edit it in NOMIS and <a href="#">reload this page</a>.</p>
+                    <div class="govuk-button-group">
+                        <a href="review-2.html" id="add-offences-button" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                            Continue
+                        </a>
+                        <a href="index-1.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}
