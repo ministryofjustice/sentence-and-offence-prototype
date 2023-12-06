@@ -80,7 +80,8 @@ function getSingleAdjustment(){
 }
 
 function displayRemandPeriod(x, target){
-  let html = `    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  let html = `    <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+   
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                                Remand period
@@ -109,16 +110,26 @@ function displayRemandPeriod(x, target){
                                 </a>
                             </dd>
                         </div>
-                        <div class="govuk-summary-list__row">
+                        <div class="govuk-summary-list__row ">
                             <dt class="govuk-summary-list__key">
                                 Days spent on remand
                             </dt>
                             <dd class="govuk-summary-list__value">
                                ${x.days}
                             </dd>
-
+<!--                           <dd class="govuk-summary-list__actions">-->
+<!--                                 <a class="govuk-link" href="#">-->
+<!--                                    Remove<span class="govuk-visually-hidden"> Edit</span>-->
+<!--                                </a>-->
+<!--                            </dd>-->
                         </div>
-                    </dl>`
+                    </dl>
+                    <div class="govuk-body govuk-!-text-align-right govuk-!-margin-top-2 govuk-!-margin-bottom-9">
+                        <a class="govuk-link govuk-button govuk-button--secondary " href="#">
+                                    Remove this period of remand<span class="govuk-visually-hidden"> Remove</span>
+                                </a>
+</div>
+`
   target.innerHTML += html
 }
 
@@ -239,6 +250,62 @@ function createTableRow(data){
   let html = `${createTableRow(byType)}`
   document.getElementById('saveTableTotal').innerHTML = remandDays
   saveTable.innerHTML = html
+}
+
+let saveTableR = document.getElementById('tableBody-2')
+if(saveTableR){
+
+  console.log(activeJourney,'u')
+  document.getElementById('saveTableTotal').innerHTML = totalDays
+  if(activeJourney === 3) {
+    console.log('if')
+    let alert = `
+        <h2 class="govuk-heading-m">There are 90 days of unused deductions</h2>
+        <p class="">
+            Unused deductions can include remand and tagged bail. They will not be taken into the calculation, but can be carried over to future licence recall cases.
+        </p>
+        <p class="">For deductions, you will need to add the unused remand alert on NOMIS.</p>
+`
+    document.getElementById("alerthere").innerHTML = alert
+  } else {
+    console.log('else')
+    let alert = `
+        <h2 class="govuk-heading-m">There are 10 days of unused deductions</h2>
+        <p class="">
+            Unused deductions can include remand and tagged bail. They will not be taken into the calculation, but can be carried over to future licence recall cases.
+        </p>
+        <p class="">For deductions, you will need to add the unused remand alert on NOMIS.</p>
+`
+    document.getElementById("alerthere").innerHTML = alert
+  }
+  function createDays(data){
+    let days = 0;
+    for(let x of byType){
+      days += x.days;
+    }
+    return days
+  }
+
+  let byType = filterAdjustmentsByType("Remand")
+  let remandDays = createDays(byType)
+
+  function createTableRow(data){
+    console.log(data)
+    let html = ``
+    for(let x of data){
+      let row = `  <tr class="govuk-table__row">
+                            <td scope="row" class="govuk-table__cell">${x.start} to ${x.end}</td>
+                            <td class="govuk-table__cell">${x.days}</td>
+                            <td class="govuk-table__cell"><a href="#">Remove</a></td>
+                        </tr>`
+      html += row
+    }
+    return html
+  }
+
+  let html = `${createTableRow(byType)}`
+  document.getElementById('saveTableTotal').innerHTML = remandDays
+  saveTableR.innerHTML = html
 }
 
 //add remand select offences page
@@ -633,10 +700,25 @@ let indexPage = document.getElementById("indexPage")
 let notificationContainer = document.getElementById("notificationContainer")
 if(indexPage) {
   console.log(adjustments)
-  console.log(activeJourney, 'k')
+  console.log(activeJourney, 'k' , unusedRemand, "ur" , unusedTaggedBail, "utb")
+  let unusedTBD = document.getElementById("UTB");
+  let unusedRD = document.getElementById("UTR");
+ if(unusedTBD) {
+   if (unusedTaggedBail >= 1) {
+     unusedTBD.innerHTML = `including <span id="UnusedTaggedBail">${unusedTaggedBail}</span> days unused `
+     console.log("UTB")
+   }
+ }
 
-  displayAdjustmentTotals("Tagged Bail", taggedBailCount,TaggedBailViewLink)
-  displayAdjustmentTotals("Remand", RemandCount,RemandViewLink)
+ if(unusedRD) {
+   if (unusedRemand >= 1) {
+     unusedRD.innerHTML = `including <span id="UnusedRemand">${unusedRemand}</span> days unused `
+     console.log("UTR")
+   }
+ }
+
+  displayAdjustmentTotals("Tagged Bail", taggedBailCount, TaggedBailViewLink)
+  displayAdjustmentTotals("Remand", RemandCount, RemandViewLink)
   displayNotification(activeJourney, notificationContainer)
 }
 
@@ -686,8 +768,6 @@ if(editTaggedBailButton){
   })
 
 }
-
-
 let DeleteTaggedBailPage = document.getElementById('DeleteTaggedBailPage')
 if(DeleteTaggedBailPage) {
 
@@ -886,8 +966,9 @@ if(saveRemandButton) {
   })
 }
 function displayAdjustmentTotals(adjustment ,target, linkContainer){
+  console.log("called")
   const result = adjustments.filter(({ type }) => type === adjustment);
-console.log(result)
+console.log(result, 'uuuu')
   let total = 0
   if(result.length >= 0) {
     for (let x of result) {
@@ -1324,14 +1405,14 @@ function displayTableRow(data, target) {
                             </tbody>
                         </table>
                     </td>
-                    <td class="govuk-table__cell">
+                    <td class="govuk-table__cell govuk-!-text-align-right">
                         ${data.days}
                     </td>
                     <td class="govuk-table__cell">
-                        <a data-caseNo="${data.caseNo}" class="govuk-link edit-link" href="">
+                        <a data-caseNo="${data.caseNo}" class="govuk-link edit-link govuk-!-display-block govuk-!-margin-bottom-4" href="">
                                     Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
-                                </a><br>
-                        <a class="govuk-link delete-link" href="" data-caseNo="${data.caseNo}">
+                                </a>
+                        <a class="govuk-link  delete-link" href="" data-caseNo="${data.caseNo}">
                                     Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
                                 </a>
                     </td>
