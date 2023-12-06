@@ -81,7 +81,7 @@ function getSingleAdjustment(){
 }
 
 function displayRemandPeriod(x, target){
-  let html = `    <dl class="govuk-summary-list govuk-!-margin-bottom-0">
+  let html = `    <dl class="govuk-summary-list govuk-!-margin-bottom-6">
    
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
