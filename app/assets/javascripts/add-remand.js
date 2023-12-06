@@ -702,19 +702,17 @@ if(indexPage) {
   console.log(adjustments)
   console.log(activeJourney, 'k' , unusedRemand, "ur" , unusedTaggedBail, "utb")
   let unusedTBD = document.getElementById("UTB");
-  let unusedRD = document.getElementById("UTR");
- if(unusedTBD) {
-   if (unusedTaggedBail >= 1) {
+  let unusedRD = document.getElementById("UR");
+ if(unusedTBD && unusedTaggedBail >= 1) {
      unusedTBD.innerHTML = `including <span id="UnusedTaggedBail">${unusedTaggedBail}</span> days unused `
      console.log("UTB")
-   }
  }
 
- if(unusedRD) {
-   if (unusedRemand >= 1) {
+ if(unusedRD && unusedRemand >= 1) {
+
      unusedRD.innerHTML = `including <span id="UnusedRemand">${unusedRemand}</span> days unused `
      console.log("UTR")
-   }
+
  }
 
   displayAdjustmentTotals("Tagged Bail", taggedBailCount, TaggedBailViewLink)
