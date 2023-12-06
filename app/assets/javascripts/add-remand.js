@@ -64,6 +64,7 @@ if(reviewButton){
   const result = filterAdjustmentsByType( "Remand");
   for(let x of result) {
     displayRemandPeriod(x,displayRemandContainer);
+    //displayRemandPeriodAsCard(x,displayRemandContainer);
   }
 
   reviewButton.addEventListener('click', function(e){
@@ -124,11 +125,75 @@ function displayRemandPeriod(x, target){
 <!--                            </dd>-->
                         </div>
                     </dl>
-                    <div class="govuk-body govuk-!-text-align-right govuk-!-margin-top-2 govuk-!-margin-bottom-9">
-                        <a class="govuk-link govuk-button govuk-button--secondary " href="#">
-                                    Remove this period of remand<span class="govuk-visually-hidden"> Remove</span>
+<!--                    <div class="govuk-body govuk-!-text-align-right govuk-!-margin-top-2 govuk-!-margin-bottom-9">-->
+<!--                        <a class="govuk-link govuk-button govuk-button&#45;&#45;secondary " href="#">-->
+<!--                                    Remove this period of remand<span class="govuk-visually-hidden"> Remove</span>-->
+<!--                                </a>-->
+<!--</div>-->
+`
+  target.innerHTML += html
+}
+
+function displayRemandPeriodAsCard(x, target){
+  let html = `    
+    
+    <div class="govuk-summary-card remand">
+  <div class="govuk-summary-card__title-wrapper no-heading-title">
+    <ul class="govuk-summary-card__actions ">
+      <li class="govuk-summary-card__action "> <a class="govuk-link govuk-!-text-align-right" href="#">
+          Remove this period of remand<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="govuk-summary-card__content">
+<dl class="govuk-summary-list govuk-!-margin-bottom-0">
+   
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Remand period
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                               ${x.start} to ${x.end}
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                    Edit<span class="govuk-visually-hidden"> Edit</span>
                                 </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Offences
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <ul class="govuk-list">
+                                    ${listOffences(x.offences)}
+                                </ul>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                    Edit<span class="govuk-visually-hidden"> Edit</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row ">
+                            <dt class="govuk-summary-list__key">
+                                Days spent on remand
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                               ${x.days}
+                            </dd>
+<!--                           <dd class="govuk-summary-list__actions">-->
+<!--                                 <a class="govuk-link" href="#">-->
+<!--                                    Remove<span class="govuk-visually-hidden"> Edit</span>-->
+<!--                                </a>-->
+<!--                            </dd>-->
+                        </div>
+                    </dl>
+  </div>
 </div>
+
 `
   target.innerHTML += html
 }
