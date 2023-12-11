@@ -81,7 +81,7 @@ function getSingleAdjustment(){
 }
 
 function displayRemandPeriod(x, target){
-  let html = `    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  let html = `    <dl class="govuk-summary-list govuk-!-margin-bottom-4">
    
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
@@ -125,11 +125,11 @@ function displayRemandPeriod(x, target){
 <!--                            </dd>-->
                         </div>
                     </dl>
-<!--                    <div class="govuk-body govuk-!-text-align-right govuk-!-margin-top-2 govuk-!-margin-bottom-9">-->
-<!--                        <a class="govuk-link govuk-button govuk-button&#45;&#45;secondary " href="#">-->
-<!--                                    Remove this period of remand<span class="govuk-visually-hidden"> Remove</span>-->
-<!--                                </a>-->
-<!--</div>-->
+                    <div class="govuk-body govuk-!-text-align-right govuk-!-margin-top-2 govuk-!-margin-bottom-9">
+                        <a class="govuk-link " href="#">
+                                    Remove this period of remand<span class="govuk-visually-hidden"> Remove</span>
+                                </a>
+</div>
 `
   target.innerHTML += html
 }
@@ -957,8 +957,8 @@ function displayNotification(journey, container){
           <h3 class="govuk-notification-banner__heading">
               Tagged bail details have been saved
           </h3>
-          <p class="govuk-body">Once all of the adjustments have been made, you must
-              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+          <p class="govuk-body">Once all of the adjustments have been made, you will need to
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a> for Joe Bloggs.
           </p>
       </div>
   </div>
