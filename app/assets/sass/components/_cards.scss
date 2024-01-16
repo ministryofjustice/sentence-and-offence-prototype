@@ -698,9 +698,34 @@
 .govuk-summary-card.remand {
   border: 2px solid #b1b4b6;
   //border-left: 4px solid #505a5f;
-
+  &.r-remand {
+    border-left: 4px solid green;
+  }
+  &.adjustment {
+    border-left: 4px solid #0b0c0c;
+  }
+  &.nr-remand {
+    border-left: 4px solid 	#942514;
+  }
   .govuk-summary-card__title-wrapper {
     background-color: white;
     border-bottom: 1px solid #b1b4b6;
+    &.no-heading-title {
+      display:block;
+      text-align: right;
+    }
+
+  }
+}
+
+.govuk-summary-card__content.recalls {
+  display: flex;
+  flex-direction: row;
+
+  .recall-checkbox-container {
+    width:20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
