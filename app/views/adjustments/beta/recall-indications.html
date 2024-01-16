@@ -1,0 +1,40 @@
+{% extends "version-1/dps/includes/template-masthead-adjustments.html" %}
+{% block beforeContent %}
+<div class="app-masthead govuk-!-margin-top-0">
+    <div class="moj-width-container dwf-masthead">
+        <h1 class="govuk-heading-xl govuk-!-font-size-80"> Adjustments prototypes</h1>
+    </div>
+</div>
+{% endblock%}
+{% block content %}
+<div class="govuk-!-padding-top-6">
+    <h2 class="govuk-heading-m">Recall tags</h2>
+<!--    <img src="/public/images/Accepting%20identified%20remand@2x.png">-->
+    <h2 class="govuk-heading-m govuk-!-padding-top-6">Problem space</h2>
+    <p>We need to way to indicate when remand and or tagged bail is part of a recall. This must work throughout the adjustments service and easily allow
+    users to see when and offence or case has a recall element.</p>
+    <p>Journeys to consider are:</p>
+    <ol class=" govuk-list govuk-list--number" >
+        <li>Add/Edit/View/Delete remand</li>
+        <li>Add/Edit/View/Delete tagged bail</li>
+        <li>Adjustments display component in CRDs</li>
+    </ol>
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-6">Prototypes of page changes</h2>
+    <p> All links open in a new window. </p>
+    <ul class="govuk-list">
+        <li> <a href="11/add-remand/view-remand-summary-with-cards-3.html" target="_blank">view remand</a></li>
+        <li> <a href="12/add-remand/select-offences.html" target="_blank">add remand (select offence)</a></li>
+        <li> <a href="12/add-remand/recall-reveiw-remand.html" target="_blank">add remand (review)</a></li>
+        <li> <a href="12/add-remand/recall-edit" target="_blank">edit remand</a></li>
+        <li> <a href="12/add-remand/recall-delete" target="_blank">delete remand</a></li>
+    </ul>
+    <ul class="govuk-list">
+        <li> <a href="12/add-remand/select-case.html" target="_blank">add tagged bail (select case)</a></li>
+        <li> <a href="12/add-remand/recall-view-tagged-bail-3.html" target="_blank">tagged bail (view)</a></li>
+        <li> <a href="12/add-remand/recall-edit-tagged-bail.html" target="_blank">tagged bail (edit)</a></li>
+        <li> <a href="12/add-remand/recall-delete-tagged-bail.html" target="_blank">tagged bail (delete)</a></li>
+    </ul>
+</div>
+
+{% endblock %}

@@ -1,0 +1,138 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+    <div class="moj-identity-bar__container govuk-!-margin-left-0">
+        <div class="moj-identity-bar__details">
+            <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+        </div>
+    </div>
+</div>
+    <a href="select-adjustment-type.html" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-padding-top-6">
+            <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjust release dates</span>Review adjustments for case T233456006</h1>
+            <p>There are recently deleted adjustments that can be added to this case.</p>
+            <p>Select yes if you would like to add these adjusts to to case: [number]. you will be able to add further adjustments later.</p>
+            <p>if these adjustments are not relevant to this case case select no and continue on to the adjustments dasboard.</p>
+<!--            <div class="govuk-summary-card govuk-!-width-two-thirds">-->
+<!--                <div class="govuk-summary-card__title-wrapper">-->
+<!--                    <h2 class="govuk-summary-card__title">Bristol magistrates court</h2>-->
+<!--&lt;!&ndash;                    <ul class="govuk-summary-card__actions">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <li class="govuk-summary-card__action">&ndash;&gt;-->
+<!--&lt;!&ndash;                            <a class="govuk-link select-case-link" href="#"  data-date="10 May 2023"  data-case="T20223256" data-court="Bristol Magistrates Court">&ndash;&gt;-->
+<!--&lt;!&ndash;                                Select this case<span class="govuk-visually-hidden"> of University of Gloucestershire</span>&ndash;&gt;-->
+<!--&lt;!&ndash;                            </a>&ndash;&gt;-->
+<!--&lt;!&ndash;                        </li>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </ul>&ndash;&gt;-->
+<!--                </div>-->
+<!--                <div class="govuk-summary-card__content">-->
+<!--                    <dl class="govuk-summary-list">-->
+<!--                        <div class="govuk-summary-list__row">-->
+<!--                            <dt class="govuk-summary-list__key">-->
+<!--                                Case reference-->
+<!--                            </dt>-->
+<!--                            <dd class="govuk-summary-list__value">-->
+<!--                                T20223256-->
+<!--                            </dd>-->
+<!--                        </div>-->
+<!--                        <div class="govuk-summary-list__row">-->
+<!--                            <dt class="govuk-summary-list__key">-->
+<!--                                Offences-->
+<!--                            </dt>-->
+<!--                            <dd class="govuk-summary-list__value">-->
+
+<!--                                Attempt to possess a controlled drug of Class C - GHB<br>-->
+<!--                                <span class="govuk-hint">Commited on 2 Jan 2022</span>-->
+<!--                            </dd>-->
+<!--                        </div>-->
+<!--                        <div class="govuk-summary-list__row">-->
+<!--                            <dt class="govuk-summary-list__key">-->
+<!--                                Warrant date-->
+<!--                            </dt>-->
+<!--                            <dd class="govuk-summary-list__value">-->
+<!--                                10 May 2023-->
+<!--                            </dd>-->
+<!--                        </div>-->
+<!--                    </dl>-->
+<!--                </div>-->
+<!--            </div>-->
+
+            <table class="govuk-table govuk-!-margin-top-8">
+                <caption class="govuk-table__caption govuk-table__caption--l">Adjustments to be added</caption>
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Adjustment type</th>
+                    <th scope="col" class="govuk-table__header">Adjustment details</th>
+                    <th scope="col" class="govuk-table__header">Days</th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Tagged Bail</th>
+                    <td class="govuk-table__cell">	Bristol Magistrates Court<br>
+                        Case reference: T00003333 2 Jan 2023</td>
+                    <td class="govuk-table__cell">4</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Remand</th>
+                    <td class="govuk-table__cell">
+                        Attempt to possess a controlled drug of Class C - GHB<br>
+                        <span class="govuk-hint">From 3 Apr 2023 to 4 Aug 2023</span>
+                    </td>
+                    <td class="govuk-table__cell">27</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Remand</th>
+                    <td class="govuk-table__cell">From 1 Jan to 2 feb 2023</td>
+                    <td class="govuk-table__cell">27</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Total</th>
+                    <td class="govuk-table__cell"></td>
+                    <td class="govuk-table__cell">58</td>
+                </tr>
+                </tbody>
+<!--                <tfoot>-->
+<!--                    <tr class="govuk-table__row">-->
+<!--                        <th scope="row">Totals</th>-->
+<!--                        <td>21,000</td>-->
+<!--                    </tr>-->
+<!--                </tfoot>-->
+            </table>
+            <div class="govuk-!-margin-top-8">
+                <div class="govuk-!-margin-bottom-6">
+                    <h2 class="govuk-heading-m">Do you want to add these adjustments?</h2>
+                    <div id="recallRadios" class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="yes" name="changedName" type="radio" value="yes" data-route="index-1-success">
+                            <label class="govuk-label govuk-radios__label" for="review-remand-button">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no" data-route="index-1">
+                            <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+<div class="govuk-button-group">
+    <a id="recalls-button" href="hub-9-a.html" class="govuk-button" data-module="govuk-button">
+        Continue
+    </a>
+
+</div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/cases.js"></script>
+{% endblock %}

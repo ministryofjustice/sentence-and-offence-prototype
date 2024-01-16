@@ -1,68 +1,82 @@
-{% extends "./hub-layout.html" %}
-{% set adjustmentsActive = true %}
-
+{% extends "version-1/dps/includes/template.html" %}
 {% block content %}
 <div class="moj-width-container">
-<!--    <div class="moj-identity-bar">-->
-<!--        <div class="moj-identity-bar__container govuk-!-margin-left-0">-->
-<!--            <div class="moj-identity-bar__details">-->
-<!--                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-    <div id="indexPage">
-<!--        <a href="#" class="govuk-back-link">Back</a>-->
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div id="hubPage">
+        <a href="check-your-answers-2.html" class="govuk-back-link">Back</a>
 
         <main class=" offence-outcome " id="main-content" role="main">
 
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full govuk-!-padding-6 govuk-!-padding-top-1">
-<!--                    <div id="notificationContainer">-->
-
-<!--                    </div>-->
-
-                    <h1 class="govuk-heading-xl">
-                        <span class="govuk-caption-xl">Adjust release dates</span>
-                        Review and apply adjustments
-                    </h1>
+                <div class="govuk-grid-column-full govuk-!-padding-6">
+                        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                             aria-labelledby="govuk-notification-banner-title"
+                             data-module="govuk-notification-banner">
+                            <div class="govuk-notification-banner__content">
+                                <h3 class="govuk-notification-banner__heading">
+                                   Remand updates have been saved
+                                </h3>
+                                <p class="govuk-body">Once all of the adjustments have been made, you must
+                                    <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+                                </p>
+                            </div>
+                        </div>
+                        <h1 class="govuk-heading-xl">
+                            <span class="govuk-caption-xl">Adjust release dates</span>
+                            Review and apply adjustments
+                        </h1>
                     <p class="govuk-body">
                         This page lists all the adjustments that have been recorded for Joe Bloggs. You can add new adjustments, update existing information or review remand that has been logged in NOMIS.
                     </p>
+
                 </div>
             </div>
+
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
-
-<!--                    <div id="unusedDeductionsContainer" class="">-->
-
-<!--                    </div>-->
                     <h2 class="govuk-heading-m govuk-!-padding-left-4">
-                        Deductions<br>
-                        <span id="UDTotal"  class="govuk-hint">100 days unused</span>
+                        Unused deductions
+                    </h2>
+                    <div id="unusedDeductions" class="">
+
+                    </div>
+                    <h2 class="govuk-heading-m govuk-!-padding-left-4">
+                        Deductions
                     </h2>
                         <div class="container  govuk-body">
                             <div class="adjustment-card ">
                                 <div class="govuk-summary-card__title-wrapper">
                                     <h2 class="govuk-summary-card__title">Remand</h2>
                                     <ul class="govuk-summary-card__actions">
-                                        <li class="govuk-summary-card__action">
-                                            <a class="govuk-link " href="enter-remand.html">
+                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="enter-remand.html">
                                             Add new<span class="govuk-visually-hidden"> add new</span>
-                                            </a>
+                                        </a>
                                         </li>
-                                        <li id="viewRemand" class="govuk-summary-card__action moj-hidden view-remand">
-                                            <a class="govuk-link" href="view-remand.html">
-                                                View<span class="govuk-visually-hidden"> add new</span>
-                                            </a>
+                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="view-3.html">
+                                            View<span class="govuk-visually-hidden"> View</span>
+                                        </a>
                                         </li>
-
                                     </ul>
                                 </div>
 
                                 <div class="adjustment-card_content">
-                                    <span id="RemandTotal" class="count govuk-body">0</span><span>Days</span>
-                                   <br>
-                                    <span id="UR"  class="govuk-hint"></span>
+                                    <span id="RemandTotal"  class="count govuk-body">0</span><span>Days</span>
+<!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
+                                    <details class="govuk-details" data-module="govuk-details">
+                                        <summary class="govuk-details__summary">
+                                            <span class="govuk-details__summary-text">
+                                              More about remand
+                                            </span>
+                                        </summary>
+                                        <div class="govuk-details__text">
+    Here you will find details about this adjustment type......                                        </div>
+                                    </details>
                                 </div>
                             </div>
                             <div class="adjustment-card ">
@@ -73,16 +87,14 @@
                                             Add new<span class="govuk-visually-hidden"> add new</span>
                                         </a>
                                         </li>
-                                        <li id="viewTaggedBail" class="govuk-summary-card__action moj-hidden view-tagged-bail">
-                                            <a class="govuk-link" href="view-tagged-bail-3.html">
-                                            View
-                                                <span class="govuk-visually-hidden"> View</span>
-                                            </a>
+                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="view-tagged-bail.html">
+                                            View<span class="govuk-visually-hidden"> View</span>
+                                        </a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div class="adjustment-card_content">
-                                    <span id="TaggedBailTotal"  class="count govuk-body">0</span><span>Days</span>
+                                    <span id="TAGGED-BAIl"  class="count govuk-body">0</span><span>Days</span>
 <!--                                    <a class="govuk-link" href="#">-->
 <!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
 <!--                                    </a>-->
@@ -91,8 +103,16 @@
 <!--                                        <li><a href="add-tagged-bail.html">View/Edit tagged bail</a></li>-->
 <!--                                    </ul>-->
 <!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
-                                    <br>
-                                    <span id="UTB" class="govuk-hint"></span>
+                                    <details class="govuk-details" data-module="govuk-details">
+                                        <summary class="govuk-details__summary">
+                                            <span class="govuk-details__summary-text">
+                                              More about tagged bail
+                                            </span>
+                                        </summary>
+                                        <div class="govuk-details__text">
+    Here you will find details about this adjustment type......                                        </div>
+                                    </details>
+
                                 </div>
                             </div>
                             <div class="adjustment-card ">
@@ -115,7 +135,15 @@
 <!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
 <!--                                    </a>-->
 <!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
-
+                                    <details class="govuk-details" data-module="govuk-details">
+                                        <summary class="govuk-details__summary">
+                                            <span class="govuk-details__summary-text">
+                                              More about Lawfully at large
+                                            </span>
+                                        </summary>
+                                        <div class="govuk-details__text">
+    Here you will find details about this adjustment type......                                        </div>
+                                    </details>
 
                                 </div>
                             </div>
@@ -139,7 +167,15 @@
 <!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
 <!--                                    </a>-->
 <!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
-
+                                    <details class="govuk-details" data-module="govuk-details">
+                                        <summary class="govuk-details__summary">
+                                            <span class="govuk-details__summary-text">
+                                              More about RADA
+                                            </span>
+                                        </summary>
+                                        <div class="govuk-details__text">
+    Here you will find details about this adjustment type......                                        </div>
+                                    </details>
                                 </div>
                             </div>
                             <div class="adjustment-card ">
@@ -163,7 +199,15 @@
 <!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
 <!--                                    </a>-->
 <!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
-
+                                    <details class="govuk-details" data-module="govuk-details">
+                                        <summary class="govuk-details__summary">
+                                            <span class="govuk-details__summary-text">
+                                              More about Special remission
+                                            </span>
+                                        </summary>
+                                        <div class="govuk-details__text">
+    Here you will find details about this adjustment type......                                        </div>
+                                    </details>
                                 </div>
                             </div>
                             <div class="adjustment-card ">
@@ -186,7 +230,15 @@
 <!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
 <!--                                    </a>-->
 <!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
-
+                                    <details class="govuk-details" data-module="govuk-details">
+                                        <summary class="govuk-details__summary">
+                                            <span class="govuk-details__summary-text">
+                                              More about Time spent in custody abroad
+                                            </span>
+                                        </summary>
+                                        <div class="govuk-details__text">
+    Here you will find details about this adjustment type......                                        </div>
+                                    </details>
                                 </div>
                             </div>
                         </div>
@@ -214,7 +266,19 @@
                             </div>
                             <div class="adjustment-card_content">
                                 <span id="UAL" class="count govuk-body">0</span><span>Days</span>
-
+                                <a class="govuk-link" href="#">
+                                    view details<span class="govuk-visually-hidden"> view details</span>
+                                </a>
+                                <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>
+                                <details class="govuk-details" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                            <span class="govuk-details__summary-text">
+                                              More about UAL
+                                            </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+Here you will find details about this adjustment type......                                    </div>
+                                </details>
                             </div>
                         </div>
                         <div class="adjustment-card ">
@@ -233,8 +297,21 @@
                                     </ul>
                                 </div>
                             <div class="adjustment-card_content">
-                                <span id="ADA" class="count-2 govuk-body">0</span><span>Days</span>
-
+                                <span id="ADA" class="count-2 govuk-body">36</span><span>Days</span>
+                                <a class="govuk-link" href="view-ada.html">
+                                    view details<span class="govuk-visually-hidden"> view details</span>
+                                </a>
+                                <p class="govuk-body govuk-!-font-size-14">Last updated on 9 jun 2023 by Belmarsh prison</p>
+                                <details class="govuk-details" data-module="govuk-details">
+                                    <summary class="govuk-details__summary">
+                                            <span class="govuk-details__summary-text">
+                                              What is ADA
+                                            </span>
+                                    </summary>
+                                    <div class="govuk-details__text">
+                                        Governors can restore some of the Additional days awarded (ADA) time for a prisoner. These are known as RADAs (Restore additional days awarded). Any RADA's granted will bring forward release dates.
+                                    </div>
+                                </details>
                             </div>
                         </div>
                         <div class="govuk-inset-text govuk-!-margin-left-2 govuk-!-margin-top-9">

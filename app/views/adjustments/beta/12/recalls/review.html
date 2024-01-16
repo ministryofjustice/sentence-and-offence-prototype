@@ -1,0 +1,66 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+    <div class="moj-identity-bar__container govuk-!-margin-left-0">
+        <div class="moj-identity-bar__details">
+            <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+        </div>
+    </div>
+</div>
+    <a href="select-adjustment-type.html" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-padding-top-6">
+            <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjust release dates</span>Review adjustments</h1>
+
+            <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Adjustments to be added</caption>
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Adjustment type</th>
+                    <th scope="col" class="govuk-table__header">Days</th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Tagged Bail</th>
+                    <td class="govuk-table__cell">4</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Remand</th>
+                    <td class="govuk-table__cell">27</td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header">Total</th>
+
+                    <td class="govuk-table__cell">31</td>
+                </tr>
+                </tbody>
+<!--                <tfoot>-->
+<!--                    <tr class="govuk-table__row">-->
+<!--                        <th scope="row">Totals</th>-->
+<!--                        <td>21,000</td>-->
+<!--                    </tr>-->
+<!--                </tfoot>-->
+            </table>
+
+
+<div class="govuk-button-group">
+    <a href="index-1-success.html" class="govuk-button" data-module="govuk-button">
+        Continue
+    </a>
+    <a href="select-recalls.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+       Change selections
+    </a>
+</div>
+            <a class="govuk-link" href="index-1.html">Cancel and add adjustments manually</a>
+
+
+
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/cases.js"></script>
+{% endblock %}
