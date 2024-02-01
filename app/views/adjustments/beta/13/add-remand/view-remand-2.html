@@ -1,0 +1,105 @@
+{% extends "version-1/dps/includes/hub-layout.html" %}
+{% set adjustmentsActive = true %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="index-1.html" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds govuk-!-padding-top-6">
+            <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjust release dates</span>
+                Remand overview
+            </h1>
+            <table id="" class="govuk-table govuk-!-margin-bottom-8">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">Remand period</th>
+                    <th class="govuk-table__header" scope="col">Days</th>
+                    <th class="govuk-table__header" scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody id="">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+
+                        1 Feb 2023 - 5 Aug 2023
+
+                    </td>
+                    <td class="govuk-table__cell ">
+                        185
+                    </td>
+                    <td class="govuk-table__cell">
+                        <a data-caseno="5" class="govuk-link govuk-!-display-block govuk-!-margin-bottom-4" href="view-remand-detail.html">
+                            Details<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                        </a>
+<!--                        <a data-caseno="2" class="govuk-link edit-link govuk-!-display-block govuk-!-margin-bottom-4" href="">-->
+<!--                            Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>-->
+<!--                        </a>-->
+<!--                        <a class="govuk-link  delete-link" href="" data-caseno="2">-->
+<!--                            Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>-->
+<!--                        </a>-->
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+
+                        3 Apr 2023 - 4 Aug 2023
+
+                    </td>
+                    <td class="govuk-table__cell ">
+                        124
+                    </td>
+                    <td class="govuk-table__cell">
+                        <a data-caseno="5" class="govuk-link edit-link govuk-!-display-block govuk-!-margin-bottom-4" href="">
+                            Details<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                        </a>
+<!--                        <a data-caseno="4" class="govuk-link edit-link govuk-!-display-block govuk-!-margin-bottom-4" href="">-->
+<!--                            Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>-->
+<!--                        </a>-->
+<!--                        <a class="govuk-link  delete-link" href="" data-caseno="4">-->
+<!--                            Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>-->
+<!--                        </a>-->
+                    </td>
+                </tr>
+
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+
+                        2 Mar 2023 - 10 Sep 2023
+
+                    </td>
+                    <td class="govuk-table__cell">
+                        192
+                    </td>
+                    <td class="govuk-table__cell">
+                        <a data-caseno="5" class="govuk-link edit-link govuk-!-display-block govuk-!-margin-bottom-4" href="">
+                            Details<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                        </a>
+<!--                        <a data-caseno="5" class="govuk-link edit-link govuk-!-display-block govuk-!-margin-bottom-4" href="">-->
+<!--                            Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>-->
+<!--                        </a>-->
+<!--                        <a class="govuk-link  delete-link" href="" data-caseno="5">-->
+<!--                            Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>-->
+<!--                        </a>-->
+                    </td>
+                </tr>
+                </tbody>
+
+                <tfoot>
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="1">Total </th>
+                    <td id="TotalRemandDays" class="govuk-table__cell">501</td>
+                    <td class="govuk-table__cell " colspan="2"></td>
+                </tr>
+                </tfoot>
+            </table>
+            <div class="govuk-!-margin-bottom-6">
+                <a href="enter-remand.html" class="govuk-button" data-module="govuk-button">
+                    Add new
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}
