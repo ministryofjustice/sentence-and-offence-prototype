@@ -1,0 +1,132 @@
+{% extends "version-1/dps/includes/hub-layout.html" %}
+{% set adjustmentsActive = true %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="view-remand-2.html" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-padding-top-6">
+            <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjustments</span>
+                Remand period details
+            </h1>
+
+<!--            <div class="govuk-summary-card remand">-->
+<!--                <div class="govuk-summary-card__title-wrapper ">-->
+<!--                    <h2 class="govuk-summary-card__title">From 5 Mar 2023 to 15 Aug 2023</h2>-->
+<!--                    <ul class="govuk-summary-card__actions">-->
+<!--                        <li class="govuk-summary-card__action"> <a id="remand3" data-caseno="3" class="govuk-link edit-link" href="edit.html">-->
+<!--                            Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>-->
+<!--                        </a>-->
+<!--                        </li>-->
+<!--                        <li class="govuk-summary-card__action"> <a class="govuk-link delete-link" href="delete.html" data-caseno="3">-->
+<!--                            Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>-->
+<!--                        </a>-->
+<!--                        </li>-->
+<!--                    </ul>-->
+<!--                </div>-->
+<!--                <div class="govuk-summary-card__content">-->
+<!--                    <dl class="govuk-summary-list">-->
+<!--                        <div class="govuk-summary-list__row">-->
+<!--                            <dt class="govuk-summary-list__key">-->
+<!--                                Court name-->
+<!--                            </dt>-->
+<!--                            <dd class="govuk-summary-list__value">-->
+<!--                                Bristol Magistrates Court-->
+<!--                            </dd>-->
+<!--                        </div>-->
+<!--                        <div class="govuk-summary-list__row">-->
+<!--                            <dt class="govuk-summary-list__key">-->
+<!--                                Offences-->
+<!--                            </dt>-->
+<!--                            <dd class="govuk-summary-list__value">-->
+<!--                                <ul class="govuk-list">-->
+<!--                                    <li>Burglary other than dwelling - theft<br><span class="govuk-hint">Committed on 1 Jan 2023</span></li><li>Attempt to possess a controlled drug of Class C - GHB<br><span class="govuk-hint">Committed on 30 Oct 2023</span></li>-->
+<!--                                </ul>-->
+<!--                            </dd>-->
+<!--                        </div>-->
+<!--                        <div class="govuk-summary-list__row">-->
+<!--                            <dt class="govuk-summary-list__key">-->
+<!--                                Days-->
+<!--                            </dt>-->
+<!--                            <dd class="govuk-summary-list__value">-->
+<!--                                163-->
+<!--                            </dd>-->
+<!--                        </div>-->
+<!--                    </dl>-->
+<!--                </div>-->
+<!--            </div>-->
+<!--            <table class="govuk-table">-->
+<!--                <tbody><tr>-->
+
+<!--                    <th class="govuk-table__header govuk-!-width-two-thirds" scope="col">Offence</th>-->
+<!--                    <th class="govuk-table__header  " scope="col">Offence dates</th>-->
+<!--                </tr>-->
+<!--                </tbody><tbody id="CaseDetails">-->
+
+<!--            <tr>-->
+<!--                <td class="govuk-table__cell">-->
+<!--                    Burglary other than dwelling - theft<br>-->
+<!--                    <span class="govuk-hint">-->
+<!--               Case reference: T20220702-->
+<!--              </span>-->
+<!--                </td>-->
+<!--                <td class="govuk-table__cell  ">-->
+<!--                    1 Jan 2023-->
+<!--                </td>-->
+<!--            </tr>-->
+
+<!--            </tbody>-->
+<!--            </table>-->
+            <dl class="govuk-summary-list">
+
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Bristol Magistrates Court
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Dates
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        From 5 Mar 2023 to 15 Aug 2023
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> name</span></a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                    <dt class="govuk-summary-list__key">
+                        Offences
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <ul class="govuk-list">
+                            <li>Burglary other than dwelling - theft<br><span class="govuk-hint">Committed on 1 Jan 2023</span></li><li>Attempt to possess a controlled drug of Class C - GHB<br><span class="govuk-hint">Committed on 30 Oct 2023</span></li>
+                        </ul>
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> name</span></a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                    <dt class="govuk-summary-list__key">
+                        Days
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                       168
+                    </dd>
+                </div>
+            </dl>
+            <div class="govuk-!-margin-bottom-6">
+                <a href="enter-remand.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Delete
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}

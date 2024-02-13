@@ -1,0 +1,37 @@
+{% extends "./hub-layout.html" %}
+{% set adjustmentsActive = true %}
+
+{% block content %}
+<div class="moj-width-container">
+<!--    <div class="moj-identity-bar">-->
+<!--        <div class="moj-identity-bar__container govuk-!-margin-left-0">-->
+<!--            <div class="moj-identity-bar__details">-->
+<!--                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+    <div id="indexPage">
+<!--        <a href="#" class="govuk-back-link">Back</a>-->
+
+        <main class=" offence-outcome " id="main-content" role="main">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full govuk-!-padding-6 govuk-!-padding-top-1">
+<!--                    <div id="notificationContainer">-->
+
+<!--                    </div>-->
+
+                    <h1 class="govuk-heading-xl">
+                        <span class="govuk-caption-xl">Adjustments</span>
+                        Review ADA adjudications
+                    </h1>
+                    <p class="govuk-!-width-two-thirds"> The first time you use the adjustments service, you must check that the ADA (Additional days awarded) information is correct.</p>
+                    <a href="review-ada-tables-1.html" class="govuk-link">Review ADAs</a>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}

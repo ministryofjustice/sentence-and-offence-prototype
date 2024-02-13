@@ -1,0 +1,223 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+    <div class="moj-identity-bar__container govuk-!-margin-left-0">
+        <div class="moj-identity-bar__details">
+            <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+        </div>
+    </div>
+</div>
+    <a href="select-sentences.html" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-padding-top-6">
+                <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjustments</span>Check remand details for Joe Bloggs</h1>
+                <p class="govuk-!-margin-bottom-8">
+                    [Explainer]<br>
+                    The rules for applying remand time can be found in <a href="#">the policy framework</a>.
+                </p>
+
+<!--                    <table class="govuk-table">-->
+<!--                        <caption class="govuk-table__caption govuk-table__caption&#45;&#45;m">Remand identified</caption>-->
+<!--                        <thead class="govuk-table__head">-->
+<!--                        <tr class="govuk-table__row">-->
+<!--                            <th scope="col" class="govuk-table__header">From</th>-->
+<!--                            <th scope="col" class="govuk-table__header">To</th>-->
+<!--                            <th scope="col" class="govuk-table__header">Days</th>-->
+<!--                            <th scope="col" class="govuk-table__header">Offence</th>-->
+<!--                            <th scope="col" class="govuk-table__header">Offence dates</th>-->
+<!--                        </tr>-->
+<!--                        </thead>-->
+<!--                        <tbody class="govuk-table__body">-->
+<!--                        <tr class="govuk-table__row">-->
+<!--                            <td  class="govuk-table__cell">1 Feb 2018</td>-->
+<!--                            <td class="govuk-table__cell">17 Feb 2018</td>-->
+<!--                            <td class="govuk-table__cell">11</td>-->
+<!--                            <td class="govuk-table__cell">Attempted burglary</td>-->
+<!--                            <td class="govuk-table__cell">committed on 1 Feb 2018</td>-->
+<!--                        </tr>-->
+<!--                        <tr class="govuk-table__row">-->
+<!--                            <td  class="govuk-table__cell">1 Feb 2018</td>-->
+<!--                            <td class="govuk-table__cell">17 Feb 2018</td>-->
+<!--                            <td class="govuk-table__cell">11</td>-->
+<!--                            <td class="govuk-table__cell">Attempted burglary</td>-->
+<!--                            <td class="govuk-table__cell">committed on 1 Feb 2018</td>-->
+<!--                        </tr>-->
+<!--                        </tbody>-->
+<!--                    </table>-->
+            <table  id="" class="govuk-table govuk-!-margin-bottom-8">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">Remand period</th>
+                    <th class="govuk-table__header" scope="col">Days</th>
+                    <th class="govuk-table__header" scope="col">Offence details</th>
+                    <th class="govuk-table__header" scope="col">Actions</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      2 Mar 2023 - 7 Aug 2023
+                    </td>
+                    <td class="govuk-table__cell">
+                        120
+                    </td>
+                    <td class="govuk-table__cell">
+                        <table class="govuk-table">
+                            <tr>
+                                <th class="govuk-table__header" scope="col">Case number</th>
+                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Offence</th>
+                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Court</th>
+                                <th class="govuk-table__header  " scope="col">Offence dates</th>
+                            </tr>
+                            <tr>
+                                <td class="govuk-table__cell">
+                                    3583998
+                                </td>
+                                <td class="govuk-table__cell">
+                                    Sample of a really long offence name for testing
+                                </td>
+                                <td class="govuk-table__cell">
+                                    Birmingham crown court
+                                </td>
+                                <td class="govuk-table__cell  ">
+                                    Belmarsh prison
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    3584019
+                                </td>
+                                <td class="govuk-table__cell">
+                                    Sample of a really long offence name for testing
+                                </td>
+                                <td class="govuk-table__cell">
+                                    Birmingham crown court
+                                </td>
+                                <td class="govuk-table__cell  ">
+                                    Belmarsh prison
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    3584030
+                                </td>
+                                <td class="govuk-table__cell">
+                                    Sample of a really long offence name for testing
+                                </td>
+                                <td class="govuk-table__cell">
+                                    Birmingham crown court
+                                </td>
+                                <td class="govuk-table__cell  ">
+                                    Belmarsh prison
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="govuk-table__cell">
+                        <a href="#">Change</a>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        2 Mar 2023 - 7 Aug 2023
+                    </td>
+                    <td class="govuk-table__cell">
+                        120
+                    </td>
+                    <td class="govuk-table__cell">
+                        <table class="govuk-table">
+                            <tr>
+                                <th class="govuk-table__header" scope="col">Case number</th>
+                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Offence</th>
+                                <th class="govuk-table__header govuk-!-width-one-third" scope="col">Court</th>
+                                <th class="govuk-table__header  " scope="col">Offence dates</th>
+                            </tr>
+                            <tr>
+                                <td class="govuk-table__cell">
+                                    3583998
+                                </td>
+                                <td class="govuk-table__cell">
+                                    Sample of a really long offence name for testing
+                                </td>
+                                <td class="govuk-table__cell">
+                                    Birmingham crown court
+                                </td>
+                                <td class="govuk-table__cell  ">
+                                    Belmarsh prison
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    3584019
+                                </td>
+                                <td class="govuk-table__cell">
+                                    Sample of a really long offence name for testing
+                                </td>
+                                <td class="govuk-table__cell">
+                                    Birmingham crown court
+                                </td>
+                                <td class="govuk-table__cell  ">
+                                    Belmarsh prison
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">
+                                    3584030
+                                </td>
+                                <td class="govuk-table__cell">
+                                    Sample of a really long offence name for testing
+                                </td>
+                                <td class="govuk-table__cell">
+                                    Birmingham crown court
+                                </td>
+                                <td class="govuk-table__cell  ">
+                                    Belmarsh prison
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                    <td class="govuk-table__cell">
+                        <a href="#">Change</a>
+                    </td>
+                </tr>
+                </tbody>
+
+                <tfoot>
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="1">Total </th>
+                    <td class="govuk-table__cell govuk-!-text-align-right">120</td>
+                    <td class="govuk-table__cell govuk-!-text-align-right"></td>
+                </tr>
+                </tfoot>
+            </table>
+            <div class="govuk-!-margin-bottom-6">
+                <h2 class="govuk-heading-m">Do you need to add anymore remand?</h2>
+                <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName" name="changedName" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for="changedName">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no">
+                        <label class="govuk-label govuk-radios__label" for="changedName-2">
+                            No
+                        </label>
+                    </div>
+                </div>
+            </div>
+                <a href="exit.html" class="govuk-button" data-module="govuk-button">
+                    Accept and save
+                </a>
+                <a href="index.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Cancel
+                </a>
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/cases.js"></script>
+{% endblock %}
