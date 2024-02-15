@@ -73,6 +73,12 @@ $moj-page-width: 1170px;
 
 @import "components/rap-styles";
 
+  .govuk-tag {
+    text-transform: none;
+    font-size: .5rem;
+  }
+
+
 li.Remand .card{
   border-left:5px solid #b58840;
 
