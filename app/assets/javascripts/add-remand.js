@@ -63,8 +63,8 @@ if(reviewButton){
   //const result = adjustments.filter(({ type }) => type === "Remand");
   const result = filterAdjustmentsByType( "Remand");
   for(let x of result) {
-    displayRemandPeriod(x,displayRemandContainer);
-    //displayRemandPeriodAsCard(x,displayRemandContainer);
+    //displayRemandPeriod(x,displayRemandContainer);
+    displayRemandPeriodAsCard(x,displayRemandContainer);
   }
 
   reviewButton.addEventListener('click', function(e){
@@ -361,7 +361,7 @@ if(saveTableR){
       let row = `  <tr class="govuk-table__row">
                             <td scope="row" class="govuk-table__cell">${x.start} to ${x.end}</td>
                             <td class="govuk-table__cell">${x.days}</td>
-                            <td class="govuk-table__cell"><a href="#">Remove</a></td>
+<!--                            <td class="govuk-table__cell"><a href="#">Remove</a></td>-->
                         </tr>`
       html += row
     }
@@ -528,8 +528,8 @@ if(saveTaggedBailButton){
                                Case details
                             </dt>
                             <dd class="govuk-summary-list__value">
-                               ${result.court} <br>
-                               <span>${result.ref}</span>
+                               ${result.court} /
+                               <span>${result.ref}</span><br>
                                <span>${result.date}</span>
                             </dd>
                             <dd class="govuk-summary-list__actions">
