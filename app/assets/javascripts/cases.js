@@ -939,5 +939,17 @@ if(caseDocumentsContainer){
   //
   // }
 
+  /////RECALLS
 
+   const recallRadios = document.getElementsByClassName("govuk-radios__input")
+   const recallsButton = document.getElementById("recalls-button")
+  if(recallsButton) {
+    console.log("true")
+    recallsButton.addEventListener("click", function(e){
+      console.log("true yyyy")
+      e.preventDefault()
+      radioRoute(recallRadios)
+    })
+
+  }
 });

@@ -528,7 +528,7 @@ if(saveTaggedBailButton){
                                Case details
                             </dt>
                             <dd class="govuk-summary-list__value">
-                               ${result.court} /
+                               ${result.court} |
                                <span>${result.ref}</span><br>
                                <span>${result.date}</span>
                             </dd>

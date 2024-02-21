@@ -160,8 +160,9 @@ if(sentenceDetailsButton){
     let convictionDate = createDate(convictionDateDay, convictionDateMonth, convictionDateYear)
     let sentenceDate = createDate(sentenceDateDay, sentenceDateMonth, sentenceDateYear)
   console.log(sentenceType.value)
+
     addSentence(offence, convictionDate, sentenceType.value, sentenceDate, sentenceLength)
-    location.href = 'sentences.html';
+    //location.href = 'sentences.html';
   })
 }
 //move these higher
@@ -302,9 +303,11 @@ if(sentenceList){
 
 
 
+
   for(let x of data){
     if(x.offence.outcome === "Guilty" || x.offence.outcome === "Guilty2") {
       console.log(x)
+
       let listItem = `
                     <div class="sentence-block">
                     <div class="govuk-grid-column-full govuk-!-margin-top-4">
@@ -317,7 +320,7 @@ if(sentenceList){
                           <tbody class="govuk-table__body">
                               <tr class="govuk-table__row govuk-body-s">
                                   <th scope="row" class="govuk-table__header sentence-table-header">Sentence type</th>
-                                  <td class="govuk-table__cell">${x.sentenceType}</td>
+                                  <td class="govuk-table__cell">${x.sentenceType.value}</td>
                               </tr>
                               <tr class="govuk-table__row govuk-body-s">
                                   <th scope="row" class="govuk-table__header sentence-table-header">Sentence date</th>
@@ -403,7 +406,7 @@ if(courtDetailsButton) {
     e.preventDefault();
     let date = createDate(courtDay, courtMonth, courtYear)
     let overallSentenceLength = printSentence(sentenceLengthDays, sentenceLengthWeeks, sentenceLengthMonths, sentenceLengthYears);
-    //console.log(courtName.value, date, caseReference.value, hearing.value, outcome.value)
+    console.log(courtName.value, date, caseReference.value, hearing.value, outcome.value)
     addCourtDetails(courtName.value, date, caseReference.value,  overallSentenceLength)
 
     location.href = 'add-a-sentence.html';
@@ -518,6 +521,7 @@ if (caseRef){
 const courtDetails = document.getElementById("court-details");
 if (courtDetails) {
   const courtData = JSON.parse(localStorage.getItem('courtDetails'));
+  console.log(courtData)
   let court = `<div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                         Court
@@ -562,7 +566,7 @@ if (courtDetails) {
                           Overall sentence length
                       </dt>
                       <dd class="govuk-summary-list__value">
-                          ${courtData.overallSentenceLength}
+                          ${courtData.sentence}
                       </dd>
                       <dd class="govuk-summary-list__actions">
                           <a class="govuk-link" href="court-details.html">
