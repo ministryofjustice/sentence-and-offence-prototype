@@ -1,11 +1,18 @@
 {
+
+  "name": "govuk-prototype-kit",
+  "description": "Rapidly create HTML prototypes of GOV.UK services",
+  "version": "12.1.0",
+  "private": true,
+  "engines": {
+    "node": ">=12.0.0 <=20.6.1"
+  },
   "scripts": {
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start",
     "clean": "rm -rf .tmp node_modules"
   },
-  "name": "govuk-prototype-kit",
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.2",
