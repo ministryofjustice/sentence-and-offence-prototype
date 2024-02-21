@@ -1,0 +1,189 @@
+{% extends "adjustments/components/templates/template-masthead.html" %}
+{% block beforeContent %}
+<div class="app-masthead govuk-!-margin-top-0">
+    <div class="moj-width-container dwf-masthead">
+        <h1 class="govuk-heading-xl govuk-!-font-size-80"> Adjustments components</h1>
+    </div>
+</div>
+{% endblock%}
+{% block content %}
+<div class="govuk-!-padding-top-6">
+    <h2 class="govuk-heading-m">Applied ADA Table</h2>
+    <p>
+        To be used for displaying applied ADA details
+    </p>
+    <table  id="" class="govuk-table govuk-!-margin-bottom-8">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Date charge proved</th>
+            <th class="govuk-table__header" scope="col">Charge details</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                7 Aug 2023
+            </td>
+            <td class="govuk-table__cell">
+                <table class="govuk-table">
+                    <tr>
+                        <th class="govuk-table__header" scope="col">Charge number</th>
+                        <th class="govuk-table__header govuk-!-width-one-third" scope="col">To be served</th>
+                        <th class="govuk-table__header  " scope="col"> Heard at</th>
+                        <th class="govuk-table__header govuk-!-text-align-right " scope="col">Days</th>
+                    </tr>
+                    <tr>
+                        <td class="govuk-table__cell">
+                            3583998
+                        </td>
+                        <td class="govuk-table__cell">
+                            Forthwith
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            Belmarsh prison
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell govuk-!-text-align-right ">7</td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            3584019
+                        </td>
+                        <td class="govuk-table__cell">
+                            Consecutive to 3583998
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            Belmarsh prison
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell govuk-!-text-align-right ">7 </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            3584030
+                        </td>
+                        <td class="govuk-table__cell">
+                            Consecutive to 3584019
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            Belmarsh prison
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell govuk-!-text-align-right ">5 </td>
+                    </tr>
+                    <tfoot>
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="3">Total</th>
+                        <td class="govuk-table__cell govuk-!-text-align-right">19</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                6 Mar 2023
+            </td>
+            <td class="govuk-table__cell">
+                <table class="govuk-table">
+                    <tr>
+                        <th class="govuk-table__header" scope="col">Charge number</th>
+                        <th class="govuk-table__header govuk-!-width-one-third" scope="col">To be served</th>
+                        <th class="govuk-table__header  " scope="col">Heard at</th>
+                        <th class="govuk-table__header govuk-!-text-align-right " scope="col">Days</th>
+                    </tr>
+
+                    <tr>
+                        <td class="govuk-table__cell">
+                            3822448
+                        </td>
+                        <td class="govuk-table__cell">
+                            Forthwith
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            Nottingham prison
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell govuk-!-text-align-right ">8</td>
+                    </tr>
+                    <tfoot>
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="3">Total</th>
+                        <td class="govuk-table__cell govuk-!-text-align-right">8</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </td>
+        </tr>
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                15 Mar 2023
+            </td>
+            <td class="govuk-table__cell">
+                <table class="govuk-table">
+                    <tr>
+                        <th class="govuk-table__header" scope="col">Charge number</th>
+                        <th class="govuk-table__header govuk-!-width-one-third" scope="col">To be served</th>
+                        <th class="govuk-table__header  " scope="col"> Heard at</th>
+                        <th class="govuk-table__header govuk-!-text-align-right " scope="col">Days</th>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            3812489
+                        </td>
+                        <td class="govuk-table__cell">
+                            Concurrent
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            Nottingham prison
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell govuk-!-text-align-right ">6 </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            3812491
+                        </td>
+                        <td class="govuk-table__cell">
+                            Concurrent
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            Nottingham prison
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell govuk-!-text-align-right  ">6 </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            3812577
+                        </td>
+                        <td class="govuk-table__cell">
+                            Concurrent
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            Nottingham prison
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell govuk-!-text-align-right ">6 </td>
+                    </tr>
+                    <tfoot>
+                    <tr class="govuk-table__row">
+                        <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="3">Total</th>
+                        <td class="govuk-table__cell govuk-!-text-align-right">6</td>
+                    </tr>
+                    </tfoot>
+                </table>
+            </td>
+        </tr>
+        </tbody>
+
+        <tfoot>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="1">Total ADAs taken into calculation </th>
+            <td class="govuk-table__cell govuk-!-text-align-right">33</td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+{% endblock %}

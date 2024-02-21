@@ -36,7 +36,7 @@ Digital Prison Services
 {% endblock %}
 {% block header %}
 <header class="dps-header" role="banner">
-    <div class="dps-header__container">
+    <div class="dps-header__container govuk-!-padding-top-6">
         <div class="dps-header__title">
             <a class="dps-header__link dps-header__title__organisation-name" href="/">
                 <svg role="presentation" focusable="false" class="dps-header__logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" height="40" width="40">
@@ -47,19 +47,6 @@ Digital Prison Services
             </a>
             <a class="dps-header__link dps-header__title__service-name" href="/">Manage a digital warrant folder</a>
         </div>
-        <nav aria-label="Account navigation">
-            <ul class="dps-header__navigation">
-                <li class="dps-header__navigation__item">
-                    <a class="dps-header__link govuk-link--no-visited-state" href="#" onclick="showAlert()" data-test="manage-account-link">
-                        <span data-test="logged-in-name">Paul Edgecomb</span>
-                        <span class="dps-header__link__sub-text">Manage your details</span>
-                    </a>
-                </li>
-                <li class="dps-header__navigation__item">
-                    <a class="dps-header__link govuk-link--no-visited-state" href="#" onclick="showAlert()">Sign out</a>
-                </li>
-            </ul>
-        </nav>
     </div>
 </header>
 <!-- <div class="location-bar">
@@ -68,28 +55,45 @@ Digital Prison Services
           <span class="gtm-active-case-load">Cold Mountain Penitentiary (HMP)</span>
       </span>
 </div> -->
-<div class="moj-width-container ">
-    <div class="govuk-phase-banner">
-        <p class="govuk-phase-banner__content">
-            <strong class="govuk-tag govuk-phase-banner__content__tag">
-                alpha
-            </strong>
-            <span class="govuk-phase-banner__text">
-                This is a new service.
-            </span>
-        </p>
-    </div>
-</div>
+
 {% endblock %}
+
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 {% block main %}
 {% block beforeContent %}{% endblock %}
-{% block content %}{% endblock %}
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter govuk-!-padding-top-6 govuk-body">
+            <span class=""><a href="/adjustments/index.html" class="govuk-link">Return to prototypes</a></span>
+
+            <ul class="govuk-list">
+                <li><a href="/adjustments/components/ada-table" class="govuk-link">ADA View table</a></li>
+                <li><a href="/adjustments/components/ada-applied-table" class="govuk-link">View of applied ADAs</a></li>
+                <li><a href="/adjustments/components/remand-view-table" class="govuk-link">View of applied ADAs</a></li>
+            </ul>
+
+<!--            <span class="govuk-heading-s">Journeys <span class="govuk-tag&#45;&#45;green">Current</span></span>-->
+<!--            <ul class="govuk-list">-->
+<!--                <li><a href="add-adjustment.html" class="govuk-link">Adding a single adjustment</a></li>-->
+<!--                <li><a href="add-multiple-adjustments.html" class="govuk-link">Adding multiple adjustments</a></li>-->
+<!--                <li><a href="identify-remand.html" class="govuk-link">Accepting identified remand</a></li>-->
+<!--                <li><a href="reject-remand.html" class="govuk-link">Rejecting identified remand</a></li>-->
+
+<!--            </ul>-->
+<!--            <span class="govuk-heading-s">Research playbacks</span>-->
+<!--            <a href="index.html" class="govuk-link">View</a>-->
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+            {% block content %}{% endblock %}
+        </div>
+    </div>
+</div>
+
 {% endblock %}
 {% if useAutoStoreData %}
 {% block footer %}
 <footer class="govuk-footer govuk-!-display-none-print govuk-!-margin-top-8" role="contentinfo">
-    <div class="gov-width-container ">
+    <div class="moj-width-container ">
         <div class="govuk-footer__meta">
             <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
                 <h2 class="govuk-visually-hidden">Support links</h2>
@@ -143,35 +147,27 @@ Digital Prison Services
 {% block scripts %}
 {% include "includes/scripts.html" %}
 <script>
-// window.onload = function() {
-//     // Loops through dom and finds all elements with card--clickable class
-//     document.querySelectorAll('.card--clickable').forEach(card => {
-//         // Check if card has a link within it
-//         if (card.querySelector('a') !== null) {
-//             // Clicks the link within the heading to navigate to desired page
-//             card.addEventListener('click', () => {
-//                 card.querySelector('a').click()
-//             })
-//         }
-//     })
-//   const cl = document.getElementById("clear-storage");
-//
-//   cl.addEventListener("click", function (e){
-//
-//     e.preventDefault();
-//     localStorage.clear()
-//   } )
-// }
-</script>
+window.onload = function() {
+    // Loops through dom and finds all elements with card--clickable class
+    document.querySelectorAll('.card--clickable').forEach(card => {
+        // Check if card has a link within it
+        if (card.querySelector('a') !== null) {
+            // Clicks the link within the heading to navigate to desired page
+            card.addEventListener('click', () => {
+                card.querySelector('a').click()
+            })
+        }
+    })
+  const cl = document.getElementById("clear-storage");
 
+  cl.addEventListener("click", function (e){
 
-{% block pageScripts %}
-<script type="module" src="/public/javascripts/govuk-frontend.min.js"></script>
-<script type="module">
-  import { initAll } from '/public/javascripts/govuk-frontend.min.js'
-  initAll()
+    e.preventDefault();
+    localStorage.clear()
+  } )
+}
 </script>
-{% endblock %}
+{% block pageScripts %}{% endblock %}
 {% endblock %}
 <!-- GOV.UK Prototype Kit {{releaseVersion}} -->
 {% endblock %}

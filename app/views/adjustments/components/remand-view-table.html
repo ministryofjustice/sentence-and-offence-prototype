@@ -1,0 +1,161 @@
+{% extends "adjustments/components/templates/template-masthead.html" %}
+{% block beforeContent %}
+<div class="app-masthead govuk-!-margin-top-0">
+    <div class="moj-width-container dwf-masthead">
+        <h1 class="govuk-heading-xl govuk-!-font-size-80"> Adjustments components</h1>
+    </div>
+</div>
+{% endblock%}
+{% block content %}
+<div class="govuk-!-padding-top-6">
+    <h2 class="govuk-heading-m">Remand view table</h2>
+    <p>
+        To be used for displaying Remand details
+    </p>
+    <table id="" class="govuk-table govuk-!-margin-bottom-8">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Remand period</th>
+            <th class="govuk-table__header" scope="col">Case details</th>
+            <th class="govuk-table__header" scope="col">Days</th>
+            <th class="govuk-table__header" scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody id="RemandTableBody">
+
+
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                22 Feb 2023 - 4 Apr 2023
+            </td>
+            <td class="govuk-table__cell">
+                <table class="govuk-table">
+                    <tbody><tr>
+
+                        <th class="govuk-table__header govuk-!-width-one-third" scope="col">Offence</th>
+                        <th class="govuk-table__header  " scope="col">Offence dates</th>
+                    </tr>
+                    </tbody><tbody id="CaseDetails">
+
+                <tr>
+
+                    <td class="govuk-table__cell">
+                        Attempted blackmail
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        15 May 2023
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td class="govuk-table__cell">
+                        Attempted blackmail
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        15 May 2023
+                    </td>
+                </tr>
+
+                </tbody>
+                </table>
+            </td>
+            <td class="govuk-table__cell">
+                41
+            </td>
+            <td class="govuk-table__cell">
+                <a data-caseno="3" class="govuk-link edit-link" href="">
+                    Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                </a><br>
+                <a class="govuk-link delete-link" href="" data-caseno="3">
+                    Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+
+        <tfoot>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="2">Total </th>
+            <td id="TotalRemandDays" class="govuk-table__cell govuk-!-text-align-right">41</td>
+            <td class="govuk-table__cell govuk-!-text-align-right" colspan="2"></td>
+        </tr>
+        </tfoot>
+    </table>
+    <hr>
+    <h2 class="govuk-heading-m">version 2</h2>
+    <table id="" class="govuk-table govuk-!-margin-bottom-8">
+        <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Remand period</th>
+            <th class="govuk-table__header" scope="col">Case details</th>
+            <th class="govuk-table__header" scope="col">Days</th>
+            <th class="govuk-table__header" scope="col">Actions</th>
+        </tr>
+        </thead>
+        <tbody id="">
+
+
+        <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+                22 Feb 2023 - 4 Apr 2023
+            </td>
+            <td class="govuk-table__cell">
+                <table class="govuk-table">
+                    <tbody><tr>
+
+                        <th class="govuk-table__header govuk-!-width-one-third" scope="col">Offence</th>
+                        <th class="govuk-table__header  " scope="col">Offence dates</th>
+                    </tr>
+                    </tbody><tbody id="">
+
+                <tr>
+
+                    <td class="govuk-table__cell">
+                        Attempted blackmail
+                        <br>
+                        <span class="govuk-hint">Case Reference: T20220701</span>
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        15 May 2023
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="govuk-table__cell">
+                        Attempted blackmail<br>
+                        <span class="govuk-hint">Case Reference: T20220702</span>
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        15 May 2023
+                    </td>
+                </tr>
+
+                </tbody>
+                </table>
+            </td>
+            <td class="govuk-table__cell">
+                41
+            </td>
+            <td class="govuk-table__cell">
+                <a data-caseno="3" class="govuk-link edit-link" href="">
+                    Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                </a><br>
+                <a class="govuk-link delete-link" href="" data-caseno="3">
+                    Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+
+        <tfoot>
+        <tr class="govuk-table__row">
+            <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="2">Total </th>
+            <td id="TotalRemandDays2" class="govuk-table__cell govuk-!-text-align-right">41</td>
+            <td class="govuk-table__cell govuk-!-text-align-right" colspan="2"></td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+
+{% endblock %}

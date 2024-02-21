@@ -85,7 +85,7 @@ Court cases and release dates
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 {% block main %}
 <main class="govuk-main-wrapper-govuk-body">
-  <div class="govuk-width-container">
+  <div class="page-container">
     <!-- Breadcrumbs -->
     <!-- {% block breadcrumbs %} -->
     <!--         <div class="govuk-breadcrumbs">
@@ -107,33 +107,18 @@ Court cases and release dates
     {% endblock %} -->
     {% block banner %}
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <div class="dwf-header govuk-!-margin-top-6 govuk-!-margin-bottom-4">
-          <div class="dwf-header-inner">
-            <div class="govuk-grid-column-one-third govuk-!-padding-left-0">
-              <div class="dwf-header-left">
-                <img class="dwf-header-profile-img" src="/public/images/prisoner-3.jpeg" alt="Joe Bloggs">
-              </div>
-              <p class="govuk-heading-s govuk-!-margin-bottom-1"><a class="govuk-link--no-visited-state" href="https://prisoner-dev.digital.prison.service.justice.gov.uk/prisoner/G6123VU" target="_blank">Joe Bloggs</a></p>
-              <ul class="govuk-list">
-                <li>A123456</li>
-              </ul>
-            </div>
-            <div class="govuk-grid-column-two-thirds govuk-!-padding-0">
-              <ul class="dwf-header-info">
-                <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Date of birth</span><span class="govuk-body">02/02/1932</span></li>
-                <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">PNC number</span><span class="govuk-body">123456</span></li>
-                <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Status</span>{% if status == "On remand" %}
-                  <span class="govuk-body">On remand</span>
-                  {% else %}
-                  <span class="govuk-body">On remand</span>
-                  {% endif %}</li>
-                <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Establishment</span><span class="govuk-body">HMP Kirkham</span></li>
-                <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Cell number</span><span class="govuk-body">01-234</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
+      <div class="govuk-grid-column-full govuk-!-margin-top-8">
+        {% set person = {
+        firstName: 'Neil',
+        lastName: 'Rudge',
+        prisonerNumber: 'A1234BC',
+        dateOfBirth: '1932-02-02',
+        status: 'On remand',
+        prisonName: 'HMP Kirkham',
+        cellLocation: 'A-1-1'
+        } %}
+
+        {{ miniProfile(person, '/plugin-assets/hmpps-design-system-frontend/hmpps/assets/images/prisoner-profile-image.png', '#') }}
       </div>
     </div>
     {% endblock %}
@@ -396,7 +381,7 @@ Court cases and release dates
 
       e.preventDefault();
       localStorage.clear()
-      location.reload()
+      //location.reload()
     } )
   }
 </script>
