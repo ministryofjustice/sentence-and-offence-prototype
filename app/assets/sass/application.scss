@@ -1,3 +1,5 @@
+
+
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 $govuk-new-link-styles: true;
@@ -10,14 +12,13 @@ $govuk-assets-path: "/govuk/assets/";
 $moj-page-width: 1170px;
 
 // Import GOV.UK Frontend and any extension styles if extensions have been configured
-@import "lib/extensions/extensions";
+//@import "extensions";
 
 // Patterns that aren't in Frontend
-@import "patterns/step-by-step-header";
-@import "patterns/step-by-step-nav";
-@import "patterns/step-by-step-related";
-@import "patterns/task-list";
-@import "patterns/related-items";
+//@import "step-by-step-header";
+//@import "step-by-step-related";
+//@import "task-list";
+//@import "related-items";
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
@@ -47,23 +48,22 @@ $moj-page-width: 1170px;
 @import "components/print-link";
 
 // BaSM styles
-@import "components/basm";
+//@import "components/basm";
 
 // DPS profile styles
 @import "components/prisonerProfile/prisoner-alerts";
 @import "components/prisonerProfile/prisoner-full-image";
-@import "components/prisonerProfile/prisoner-personal";
-@import "components/prisonerProfile/prisoner-profile";
-@import "components/prisonerProfile/prisoner-profile-header";
-@import "components/prisonerProfile/prisoner-profile-footer";
-@import "components/prisonerProfile/prisoner-schedule";
-@import "components/prisonerProfile/prisoner-visits";
-@import "components/prisonerSearch/prisoner-search";
-@import "components/prisonerSearch/prisoner-panel";
+//@import "components/prisonerProfile/prisoner-personal";
+//@import "components/prisonerProfile/prisoner-profile";
+//@import "components/prisonerProfile/prisoner-profile-header";
+//@import "components/prisonerProfile/prisoner-visits";
+//@import "components/prisonerSearch/prisoner-search";
+//@import "components/prisonerSearch/prisoner-panel";
 
 @import "components/modal";
-@import "components/govuk-cards";
-@import "components/govuk-grid";
+//@import "components/govuk-cards";
+//@import "components/govuk-grid";
+
 //new file
 @import "components/service-header";
 @import "components/matcher";
@@ -71,12 +71,52 @@ $moj-page-width: 1170px;
 
 // RaP styles
 
-@import "components/rap-styles";
+//@import "components/rap-styles";
 
   .govuk-tag {
     text-transform: none;
-    font-size: .5rem;
   }
+
+.govuk-width-container-custom {
+  max-width: 1170px;
+  margin-right: 15px;
+  margin-left:15px
+}
+
+@supports (margin: max(calc(0px))) {
+  .govuk-width-container-custom {
+    margin-right: max(15px, calc(15px + env(safe-area-inset-right)));
+    margin-left:max(15px, calc(15px + env(safe-area-inset-left)))
+  }
+}
+
+@media (min-width: 40.0625em) {
+  .govuk-width-container-custom {
+    margin-right: 30px;
+    margin-left:30px
+  }
+
+  @supports (margin: max(calc(0px))) {
+    .govuk-width-container-custom {
+      margin-right: max(30px, calc(15px + env(safe-area-inset-right)));
+      margin-left:max(30px, calc(15px + env(safe-area-inset-left)))
+    }
+  }
+}
+
+@media (min-width: 1230px) {
+  .govuk-width-container-custom {
+    margin-right: auto;
+    margin-left:auto
+  }
+
+  @supports (margin: max(calc(0px))) {
+    .govuk-width-container-custom {
+      margin-right: auto;
+      margin-left:auto
+    }
+  }
+}
 
 
 li.Remand .card{
@@ -318,4 +358,5 @@ dwf-header {
     margin-bottom:0;
   }
 }
+
 

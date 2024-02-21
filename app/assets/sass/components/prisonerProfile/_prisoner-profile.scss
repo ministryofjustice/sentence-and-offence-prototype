@@ -1,5 +1,5 @@
 .prisoner-profile-breadcrumbs {
-  @include govuk-clearfix;
+  //@include govuk-clearfix;
 
   &__search {
     @include govuk-font($size: 16);
