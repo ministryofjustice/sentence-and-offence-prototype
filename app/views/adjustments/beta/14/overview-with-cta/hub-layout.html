@@ -28,12 +28,15 @@
 {% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
 {%- from "moj/components/header/macro.njk" import mojHeader -%}
 {%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
 {% block head %}
-{% include "includes/head.html" %}
+  {% include "includes/head.html" %}
 {% endblock %}
+
 {% block pageTitle %}
-Court cases and release dates
+  Court cases and release dates
 {% endblock %}
+
 {% block header %}
 {% from "govuk/components/tag/macro.njk" import govukTag %}
 <header class="connect-dps-common-header govuk-!-display-none-print" role="banner">
@@ -325,7 +328,7 @@ Court cases and release dates
 {% if useAutoStoreData %}
 {% block footer %}
 <footer class="govuk-footer govuk-!-display-none-print govuk-!-margin-top-8" role="contentinfo">
-  <div class="moj-width-container ">
+  <div class="govuk-width-container">
     <div class="govuk-footer__meta">
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
         <h2 class="govuk-visually-hidden">Support links</h2>
