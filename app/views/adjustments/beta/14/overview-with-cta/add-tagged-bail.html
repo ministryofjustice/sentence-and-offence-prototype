@@ -1,7 +1,7 @@
-{% extends "version-1/dps/includes/hub-layout.html" %}
+{% extends "./hub-layout.html" %}
 {% set adjustmentsActive = true %}
 {% block content %}
-<div class="moj-width-container">
+<div class="">
     <div class="">
         <a href="select-case.html" class="govuk-back-link">Back</a>
 
@@ -16,10 +16,10 @@
                                     Enter the amount of tagged bail
                                 </h1>
                             </legend>
-                            <p class="govuk-body">Enter the number of days as it’s written on the warrant.</p>
+                            <p class="govuk-body">The number of days should be entered as it's written on the warrant.</p>
                             <div class="govuk-form-group govuk-body govuk-!-margin-top-6">
 
-                                <label class="govuk-label" for="taggedBailDays">
+                                <label class="govuk-label--s" for="taggedBailDays">
                                     Number of days
                                 </label>
                                 <div class="govuk-input__wrapper"><input id="taggedBailDays" class="govuk-input govuk-input--width-5"  name="weight" type="text" spellcheck="false">

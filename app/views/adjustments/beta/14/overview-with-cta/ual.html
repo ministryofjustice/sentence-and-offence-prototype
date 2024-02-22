@@ -1,22 +1,15 @@
-{% extends "version-1/dps/includes/template.html" %}
+{% extends "./hub-layout.html" %}
 {% block content %}
-<div class="moj-width-container">
-    <div class="moj-identity-bar">
-        <div class="moj-identity-bar__container govuk-!-margin-left-0">
-            <div class="moj-identity-bar__details">
-                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
-            </div>
-        </div>
-    </div>
+<div class="govuk-body">
     <div class="">
-        <a href="hub-9.html" class="govuk-back-link">Back</a>
+        <a href="index-1" class="govuk-back-link">Back</a>
 
         <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                     <form action="/form-handler" method="post" novalidate>
 
-                        <div id="UALPage" class="">
+                        <div id="" class="">
 
 
                             <h1 class="govuk-heading-l">
@@ -29,8 +22,8 @@
                             </p>
                          <div class="govuk-form-group">
                                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                                    <legend class="govuk-fieldset__legend">
-                                        When is this adjustment valid from?
+                                    <legend class="govuk-fieldset__legend--s">
+                                        First day spent UAL
                                     </legend>
                                     <div id="passport-issued-hint" class="govuk-hint">
                                         For example, 27 3 2022
@@ -65,8 +58,8 @@
                             </div>
                             <div class="govuk-form-group">
                                 <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
-                                    <legend class="govuk-fieldset__legend">
-                                        When is this adjustment valid to?
+                                    <legend class="govuk-fieldset__legend--s">
+                                        Last day spent UAL
                                     </legend>
                                     <div id="passport-issued-hint" class="govuk-hint">
                                         For example, 27 3 2022
@@ -100,10 +93,37 @@
                                 </fieldset>
                             </div>
                             <div class="govuk-form-group">
-                                <label class="govuk-label" for="number-of-days">
-                                    Number of days
-                                </label>
-                                <input class="govuk-input govuk-input--width-4" id="number-of-days" name="width-4" type="text">
+                                <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend--s">
+                                        Select the type ofUAL
+                                    </legend>
+                                    <div class="govuk-radios" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+                                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                                                Recall
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+                                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                                                Escape, including absconds and RPTL failures
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
+                                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                                                Sentenced in absence
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
+                                            <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                                                Release in error
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
                             </div>
 <!--                            <div class="govuk-form-group">-->
 <!--                                <label class="govuk-label" for="document-ID">-->
@@ -114,7 +134,7 @@
 
                         </div>
 
-                        <a href="prisoner-details-4.html" id="add-adjustment-button" class="govuk-button" data-name="UAL" data-desc="UAL (Unlawfully at large) ">
+                        <a href="confirm-ual"  class="govuk-button" >
                             Continue
                         </a>
                     </form>
