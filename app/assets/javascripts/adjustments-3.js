@@ -899,10 +899,10 @@ function addRow( adjustmentType, table,  ualType, from, to, enteredBy, days, act
     console.log(adjustments)
     let data =  adjustments.filter((x) => x.type === "RADA");
     for ( let x of data) {
-      let actions = `  <ul class="govuk-list">
-                                 <li><a id="ItemEdit" href="edit-ual.html" class="govuk-link" data-liveID="${x.id}">Edit</a></li>
-                                 <li><a id="ItemRemove" data-liveID="${x.id}" href="remove-ual-1.html" class="govuk-link removelink">Remove</a></li>
-                           </ul>`;
+      let actions = `  
+                                 <a id="ItemEdit" href="edit-ual.html" class="govuk-link" data-liveID="${x.id}">Edit</a>
+                                 <a id="ItemRemove" data-liveID="${x.id}" href="remove-ual-1.html" class="govuk-link removelink govuk-!-margin-left-4">Remove</a>
+                           `;
       totaldays += parseInt(x.days)
       addRow("RADA",viewAdjustmentData, x.ualType,x.from, x.to,"Belmarsh prison", x.days, actions);
       let footer = viewAdjustmentData.createTFoot();
@@ -918,10 +918,10 @@ let totaldays = 0;
 if(viewUAL){
   let uals = adjustments.filter((x) => x.type === "UAL");
   for ( let x of uals) {
-    let actions = `  <ul class="govuk-list">
-                                 <li><a id="ItemEdit" href="edit-ual.html" class="govuk-link edit-link" data-liveID="${x.id}">Edit</a></li>
-                                 <li><a id="ItemRemove" data-liveID="${x.id}" href="remove-ual-1.html" class="govuk-link removelink">Remove</a></li>
-                           </ul>`;
+    let actions = `  
+                                <a id="ItemEdit" href="edit-ual.html" class="govuk-link edit-link" data-liveID="${x.id}">Edit</a>
+                                <a id="ItemRemove" data-liveID="${x.id}" href="remove-ual-1.html" class="govuk-link removelink govuk-!-margin-left-4">Remove</a>
+                           `;
     totaldays += parseInt(x.days)
     addRow("UAL",viewUAL,  x.ualType,x.from, x.to,"Manchester Prison", x.days, actions);
   }
