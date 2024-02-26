@@ -540,7 +540,7 @@ if(saveTaggedBailButton){
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Days 
+                                Number of days 
                             </dt>
                             <dd class="govuk-summary-list__value">
                                ${result.days}
@@ -816,8 +816,7 @@ function createTBRow(item, target){
       <td  class="govuk-table__cell">${item.days}</td>
       <td class="govuk-table__cell">
           <a href="edit-case.html" class="edit-link" data-caseNo="${item.caseNo}">Edit</a>
-          <br>
-          <a href="edit-days.html" class="delete-link" data-caseNo="${item.caseNo}">Delete</a>
+          <a href="edit-days.html" class="delete-link govuk-!-margin-left-4" data-caseNo="${item.caseNo}">Delete</a>
       </td>
   </tr>
   `
