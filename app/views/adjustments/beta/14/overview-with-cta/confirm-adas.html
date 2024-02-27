@@ -1,0 +1,81 @@
+{% extends "version-1/dps/includes/hub-layout-cta.html" %}
+{% set adjustmentsActive = true %}
+{% block content %}
+<div class="">
+    <div class="">
+        <a href="review-adas-padas.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+<!--                    <div class="govuk-notification-banner" role="region"-->
+<!--                         aria-labelledby="govuk-notification-banner-title"-->
+<!--                         data-module="govuk-notification-banner">-->
+<!--                        <div class="govuk-notification-banner__content">-->
+<!--                            <p class="govuk-notification-banner__heading">-->
+<!--                                The number of ADAs recorded has changed-->
+
+<!--                            </p>-->
+<!--                            <p>The number of ADAs does not match what was originally recorded in NOMIS.-->
+<!--                                Make sure the ADA information is correct, before continuing.-->
+<!--                            </p>-->
+<!--&lt;!&ndash;                            <p>&ndash;&gt;-->
+<!--&lt;!&ndash;                                The number of ADAs differs from the number originally recorded on NOMIS.&ndash;&gt;-->
+<!--&lt;!&ndash;                            </p>&ndash;&gt;-->
+<!--                        </div>-->
+<!--                    </div>-->
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Confirm and save</h1>
+                    <p>Check that the ADA details are correct, then submit the adjustments.</p>
+                    <h2 class="govuk-heading-m">ADA details</h2>
+                    <table class="govuk-table govuk-!-width-three-quarters">
+                        <tr>
+                            <th class="govuk-table__header" scope="col">
+                                Date charge proved</th>
+                            <th class="govuk-table__header" scope="col">Charge number(s)</th>
+                            <th class="govuk-table__header govuk-!-text-align-right" scope="col">Days</th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                6 Mar 2023
+                            </td>
+                            <td class="govuk-table__cell">
+                                3822448
+                            </td>
+                            <!-- Days -->
+                            <td class="govuk-table__cell govuk-!-text-align-right ">8</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                7 Aug 2023
+                            </td>
+                            <td class="govuk-table__cell">
+                                <span>3583998</span><br>
+                                3584019<br>
+                                3584030
+                            </td>
+                            <!-- Days -->
+                            <td class="govuk-table__cell govuk-!-text-align-right ">19</td>
+                        </tr>
+
+                        <tfoot>
+                        <tr class="govuk-table__row">
+                            <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="2">Total ADAs </th>
+                            <td class="govuk-table__cell govuk-!-text-align-right">27</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <div class="govuk-button-group">
+                        <a href="index-1"  class="govuk-button" data-module="govuk-button">
+                            Confirm and save
+                        </a>
+                        <a href="index-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}
