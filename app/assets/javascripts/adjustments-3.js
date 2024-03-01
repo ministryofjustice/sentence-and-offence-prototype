@@ -919,7 +919,7 @@ if(viewUAL){
   let uals = adjustments.filter((x) => x.type === "UAL");
   for ( let x of uals) {
     let actions = `  
-                                <a id="ItemEdit" href="edit-ual.html" class="govuk-link edit-link" data-liveID="${x.id}">Edit</a>
+                                <a id="ItemEdit" href="edit-ual" class="govuk-link edit-link" data-liveID="${x.id}">Edit</a>
                                 <a id="ItemRemove" data-liveID="${x.id}" href="remove-ual-1.html" class="govuk-link removelink govuk-!-margin-left-4">Remove</a>
                            `;
     totaldays += parseInt(x.days)
