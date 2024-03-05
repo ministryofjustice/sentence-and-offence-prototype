@@ -920,7 +920,7 @@ if(viewUAL){
   for ( let x of uals) {
     let actions = `  
                                 <a id="ItemEdit" href="edit-ual" class="govuk-link edit-link" data-liveID="${x.id}">Edit</a>
-                                <a id="ItemRemove" data-liveID="${x.id}" href="remove-ual-1.html" class="govuk-link removelink govuk-!-margin-left-4">Remove</a>
+                                <a id="ItemRemove" data-liveID="${x.id}" href="remove-ual-1.html" class="govuk-link removelink govuk-!-margin-left-4">Delete</a>
                            `;
     totaldays += parseInt(x.days)
     addRow("UAL",viewUAL,  x.ualType,x.from, x.to,"Manchester Prison", x.days, actions);
@@ -928,7 +928,7 @@ if(viewUAL){
   let footer = viewUAL.createTFoot();
   footer.innerHTML =  `
                        <tr class="govuk-table__row">
-                          <td class="govuk-table__cell govuk-table__header govuk-!-text-align-right" colspan="4">Total days</td>
+                          <td class="govuk-table__cell govuk-table__header " colspan="4">Total days</td>
                           <td colspan="1" id="TotalDays" class="govuk-table__cell govuk-table__header govuk-!-text-align-centre">${totaldays}</td>
                           <td class="govuk-table__cell"></td>
                        </tr>`

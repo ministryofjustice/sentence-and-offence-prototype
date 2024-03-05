@@ -586,8 +586,9 @@ if(editTaggedBail) {
              Case details
           </dt>
           <dd class="govuk-summary-list__value">
-             ${result[0].court} <br>
+             ${result[0].court} | 
              <span>${result[0].ref}</span>
+             <br>
              <span>${result[0].date}</span>
           </dd>
           <dd class="govuk-summary-list__actions">

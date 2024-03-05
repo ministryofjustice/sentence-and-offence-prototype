@@ -1,0 +1,53 @@
+{% extends "version-1/dps/includes/hub-layout-cta.html" %}
+{% set adjustmentsActive = true %}
+{% block content %}
+<div class="">
+    <div class="">
+        <a href="review-quashed-adas" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Confirm and save</h1>
+                    <p>Check that the ADA details are correct, then submit the adjustments.</p>
+                    <h2 class="govuk-heading-m">ADA details</h2>
+                    <table class="govuk-table ">
+                        <tr>
+                            <th class="govuk-table__header" scope="col">
+                                Date charge proved</th>
+                            <th class="govuk-table__header" scope="col">Charge number(s)</th>
+                            <th class="govuk-table__header govuk-!-text-align-right" scope="col">Days</th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                04 Mar 2023
+                            </td>
+                            <td class="govuk-table__cell">
+                                1526435
+                            </td>
+                            <!-- Days -->
+                            <td class="govuk-table__cell govuk-!-text-align-right ">8</td>
+                        </tr>
+
+                        <tfoot>
+                        <tr class="govuk-table__row">
+                            <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="2">Total quashed ADAs </th>
+                            <td class="govuk-table__cell govuk-!-text-align-right">8</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <div class="govuk-button-group">
+                        <a href="index-1"  class="govuk-button" data-module="govuk-button">
+                            Confirm and save
+                        </a>
+                        <a href="index-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}
