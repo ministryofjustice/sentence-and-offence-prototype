@@ -1,0 +1,108 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+    <div class="moj-identity-bar__container govuk-!-margin-left-0">
+        <div class="moj-identity-bar__details">
+            <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+        </div>
+    </div>
+</div>
+    <a href="exit-tb.html" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop govuk-!-padding-top-6">
+            <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjustments</span>Tagged bail details</h1>
+
+            <div class="govuk-summary-card remand">
+                <div class="govuk-summary-card__title-wrapper ">
+                    <h2 class="govuk-summary-card__title">Bristol Crown Court</h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="../remand/edit.html">
+                            Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                        </a>
+                        </li>
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="../remand/delete.html">
+                            Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                3 Jun 2023
+                            </dd>
+                        </div>
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Days
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                5
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+
+<!--            <table  id="" class="govuk-table govuk-!-margin-bottom-8">-->
+<!--                <thead class="govuk-table__head">-->
+<!--                <tr class="govuk-table__row">-->
+<!--                    <th class="govuk-table__header" scope="col">Case details</th>-->
+<!--                    <th class="govuk-table__header govuk-!-text-align-right" scope="col">Days</th>-->
+<!--                    <th class="govuk-table__header govuk-!-text-align-right" scope="col">Actions</th>-->
+<!--                </tr>-->
+<!--                </thead>-->
+<!--                <tbody>-->
+<!--                <tr class="govuk-table__row">-->
+<!--                    <td class="govuk-table__cell">-->
+<!--                     Court name-->
+<!--                    </td>-->
+<!--                    <td class="govuk-table__cell govuk-!-text-align-right">-->
+<!--                        120-->
+<!--                    </td>-->
+<!--                    <td class="govuk-table__cell govuk-!-text-align-right">-->
+<!--                        <a href="edit.html">Edit </a>-->
+<!--                        <br>-->
+<!--                        <a href="delete.html">Delete</a>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                <tr class="govuk-table__row">-->
+<!--                    <td class="govuk-table__cell">-->
+<!--                        Court name-->
+<!--                    </td>-->
+<!--                    <td class="govuk-table__cell govuk-!-text-align-right">-->
+<!--                        120-->
+<!--                    </td>-->
+<!--                    <td class="govuk-table__cell govuk-!-text-align-right">-->
+<!--                        <a href="edit.html">Edit </a><br>-->
+<!--                        <a href="delete.html">Delete</a>-->
+<!--                    </td>-->
+<!--                </tr>-->
+<!--                </tbody>-->
+
+<!--                <tfoot>-->
+<!--                <tr class="govuk-table__row">-->
+<!--                    <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="1">Total </th>-->
+<!--                    <td class="govuk-table__cell govuk-!-text-align-right ">240</td>-->
+<!--                    <td class="govuk-table__cell " colspan="1"></td>-->
+<!--                </tr>-->
+<!--                </tfoot>-->
+<!--            </table>-->
+            <div class="govuk-!-margin-bottom-6">
+                <a href="select-case.html" class="govuk-button" data-module="govuk-button">
+                    Add new
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/cases.js"></script>
+{% endblock %}

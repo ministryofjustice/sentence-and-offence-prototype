@@ -1,0 +1,151 @@
+{% extends "version-1/dps/includes/hub-layout-cta.html" %}
+{% set adjustmentsActive = true %}
+{% block content %}
+<div class="">
+    <div class="Adas">
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>
+                Review and approve ADAs
+            </h1>
+            <p>
+                Check that the existing ADAs are correct, then review and approve pending ADAs.
+            </p>
+            <h2 class="govuk-heading-m">Existing ADAs</h2>
+            <p>These ADAs will be included in the calculation.</p>
+            <table class="govuk-table govuk-!-margin-bottom-8">
+                <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Date charge proved 6 Mar 2023</caption>
+                <thead class="govuk-table__head">
+                <tr>
+                    <th class="govuk-table__header " scope="col">Charge number</th>
+                    <th class="govuk-table__header" scope="col">To be served</th>
+                    <th class="govuk-table__header" scope="col">Heard at</th>
+                    <th class="govuk-table__header" scope="col">Status</th>
+                    <th class="govuk-table__header " scope="col">Days</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="govuk-table__cell">
+                            3822448
+                        </td>
+                        <td class="govuk-table__cell govuk-!-width-one-third">
+                            Forthwith
+                        </td>
+                        <td class="govuk-table__cell">
+                            Nottingham prison
+                        </td>
+                        <td class="govuk-table__cell table-font-xsmall">
+                            <span class="govuk-tag govuk-tag--blue govuk-!-font-size-16 ">Awarded</span>
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell ">8</td>
+                    </tr>
+                </tbody>
+            </table>
+
+
+
+            <p class="govuk-!-font-weight-bold govuk-!-text-align-right govuk-!-margin-right-7">Total ADAs taken into calculation 8</p>
+            <hr class="govuk-section-break govuk-section-break--visible">
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-8">Suspended ADAs</h2>
+            <p class="govuk-!-width-three-quarters">Suspended ADAs will not be included in the calculation.</p>
+            <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Date charge proved 15 Dec 2023</caption>
+                <thead class="govuk-table__head">
+                <tr>
+                    <th class="govuk-table__header" scope="col">Charge number</th>
+                    <th class="govuk-table__header govuk-!-width-one-third" scope="col">To be served</th>
+                    <th class="govuk-table__header" scope="col">Heard at</th>
+                    <th class="govuk-table__header" scope="col">Status</th>
+                    <th class="govuk-table__header " scope="col">Days</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr class="govuk-table__row">
+
+                    <td class="govuk-table__cell">
+                        3765949
+                    </td>
+                    <td class="govuk-table__cell ">
+                        Forthwith
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        Nottingham prison
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        <span class="govuk-!-font-size-16 govuk-tag govuk-tag--red">Suspended</span>
+                    </td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell ">8 </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p class="govuk-!-font-weight-bold govuk-!-text-align-right govuk-!-margin-right-7">Total suspended ADAs 8</p>
+            <hr class="govuk-section-break govuk-section-break--visible">
+
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-8">ADAs to be approved</h2>
+            <p class="govuk-!-width-three-quarters">Once you have reviewed and approved the pending ADAs, they will be added to the sentence calculation.</p>
+            <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Date charge proved 8 Aug 2023</caption>
+                <thead class="govuk-table__head">
+                <tr>
+                    <th class="govuk-table__header" scope="col">Charge number</th>
+                    <th class="govuk-table__header" scope="col">To be served</th>
+                    <th class="govuk-table__header" scope="col">Heard at</th>
+                    <th class="govuk-table__header" scope="col">Status</th>
+                    <th class="govuk-table__header " scope="col">Days</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr class="govuk-table__row">
+
+                    <td class="govuk-table__cell">
+                        3765949
+                    </td>
+                    <td class="govuk-table__cell govuk-!-width-one-third">
+                        Forthwith
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        Nottingham prison
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        <span class=" govuk-tag govuk-tag--green govuk-!-margin-bottom-1  govuk-!-font-size-16">Awaiting approval</span><br>
+                        <span class=" govuk-tag govuk-tag--purple  govuk-!-font-size-16">Prospective</span>
+                    </td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell ">3 </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p class=" govuk-!-font-weight-bold govuk-!-text-align-right govuk-!-margin-right-7">Total ADAs taken into calculation 19</p>
+            <hr class="govuk-section-break govuk-section-break--visible">
+
+            <div class="govuk-inset-text govuk-!-width-three-quarters">
+                If you think some information is wrong, ask the team responsible for adjudications in your prison to correct it, then <a href="">reload this page</a>.
+            </div>
+            <h2 class="govuk-heading-m">Approve ADAs</h2>
+            <p class="govuk-body govuk-!-width-two-thirds">
+                If all the ADA information is correct, approve the pending ADAs.
+            </p>
+<!--            <p>By approving this, this will update the data in NOMIS.</p>-->
+
+            <div class="govuk-button-group">
+                <a href="confirm-adas"  class="govuk-button" data-module="govuk-button">
+                    Approve
+                </a>
+                <a href="index-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Cancel
+                </a>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}

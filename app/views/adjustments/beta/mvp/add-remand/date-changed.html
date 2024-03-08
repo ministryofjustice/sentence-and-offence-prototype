@@ -1,0 +1,50 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+    <div class="moj-identity-bar__container govuk-!-margin-left-0">
+        <div class="moj-identity-bar__details">
+            <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+        </div>
+    </div>
+</div>
+    <div id="DateChanged" class="govuk-width-container">
+        <a href="view-remand.html" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+                        <div class="govuk-notification-banner__content">
+                            <h3 class="govuk-notification-banner__heading">
+                                Remand updates have been saved
+                            </h3>
+                            <p class="govuk-body">Once all of the adjustments have been made, you must
+                                <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+                            </p>
+                            <p class="govuk-body">Once all of the adjustments have been made, you must
+                                <a href="crd.html" class="govuk-link">recalculate release dates</a>.
+                            </p>
+                        </div>
+                    </div>
+                    <h1 class="govuk-heading-l"> <span class="govuk-caption-xl">Adjustments</span>Date changed</h1>
+<!--                    <p>[Explainer].</p>-->
+                    <h2 class="govuk-heading-m">Nothing to see here!!! this is WIP</h2>
+
+                    <div class="govuk-button-group">
+                        <a id="" href="view-remand.html" class="govuk-button " data-module="govuk-button">
+                           Back to safety
+                        </a>
+                        <a href="view-remand.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}
