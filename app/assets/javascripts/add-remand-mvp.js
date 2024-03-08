@@ -940,10 +940,10 @@ function displayNotification(journey, container){
                          data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
-               Remand time added
+               Remand information has been saved.
           </h3>
-          <p class="govuk-body">Once all of the adjustments have been made, you must
-              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+          <p class="govuk-body">Once all of the adjustments have been applied, you must
+              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a>.
           </p>
       </div>
   </div>
@@ -1005,6 +1005,38 @@ function displayNotification(journey, container){
       <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
               Remand updates have been saved
+          </h3>
+          <p class="govuk-body">You must
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+          </p>
+      </div>
+  </div>
+`
+      break;
+    case 6:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+              RADA updates have been saved
+          </h3>
+          <p class="govuk-body">You must
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+          </p>
+      </div>
+  </div>
+`
+      break;
+    case 7:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+              UAL updates have been saved
           </h3>
           <p class="govuk-body">You must
               <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
@@ -1552,6 +1584,7 @@ if(addUALButton) {
     let id=adjustments.length+1
     //e.preventDefault()
 
+
     addUAL('UAL', fromDay.value, fromMonth.value, fromYear.value, toDay.value, toMonth.value, toYear.value, ualType, days, id, start, end )
   })
 }
@@ -1597,28 +1630,20 @@ if(saveUALButton){
     localStorage.setItem('adjustments', JSON.stringify(adjustments))
     //localStorage.setItem('tempUAl',  {})
 
+    let journey = saveUALButton.getAttribute('data-journey')
+    localStorage.setItem('activeJourney', parseInt(journey))
+
   })
 
 }
-function addRADA (type,  fromDay, fromMonth, fromYear, toDay, toMonth, toYear, ualType, days, id, start, end  ) {
-  let newAdjustment = {
-    type: type,
-    days: days,
-    start: start,
-    end:end,
-    id: id,
-    ualType: ualType,
-    fromDay: fromDay,
-    toDay: toDay,
-    fromMonth: fromMonth,
-    toMonth: toMonth,
-    fromYear: fromYear,
-    toYear: toYear
-  }
+const saveRADA = document.getElementById("saveRADA");
 
-  tempUAL = newAdjustment;
-  localStorage.setItem('tempUAL', JSON.stringify(tempUAL))
-  //localStorage.setItem('tempUAL', JSON.stringify(tempUAL))
-  console.log(adjustments)
-  console.log(tempUAL)
+
+if(saveRADA){
+
+  saveRADA.addEventListener("click", function(){
+    let journey = saveRADA.getAttribute('data-journey')
+    localStorage.setItem('activeJourney', parseInt(journey))
+  })
 }
+

@@ -1041,6 +1041,94 @@ if (removeUAL) {
   })
 }
 
+function displayNotification(journey, container){
+  const base = '';
+  switch (journey) {
+    case 1:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+               Remand time added
+          </h3>
+          <p class="govuk-body">Once all of the adjustments have been made, you must
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+          </p>
+      </div>
+  </div>
+`
+      break;
+    case 2:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+              The remand record has been deleted
+          </h3>
+          <p class="govuk-body">You must
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+          </p>
+      </div>
+  </div>
+`
+      break;
+    case 3:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+              Tagged bail details have been saved
+          </h3>
+          <p class="govuk-body">Once all of the adjustments have been made, you will need to
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a> for Joe Bloggs.
+          </p>
+      </div>
+  </div>
+`
+      break;
+    case 4:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+              Tagged bail has been deleted
+          </h3>
+          <p class="govuk-body">Once all the adjustments have been made, you will need to
+              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a> for Joe Bloggs.
+          </p>
+      </div>
+  </div>
+`
+      break;
+    case 5:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+              Remand updates have been saved
+          </h3>
+          <p class="govuk-body">You must
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+          </p>
+      </div>
+  </div>
+`
+      break;
+    default:
+      ``
+  }
+
+}
 
 
 
