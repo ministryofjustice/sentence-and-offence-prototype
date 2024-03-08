@@ -1072,11 +1072,12 @@ if(ViewRemandPage){
   let deleteLinks = document.getElementsByClassName("delete-link")
   let screenRemandCount = document.getElementById("TotalRemandDays")
   let target = document.getElementById('RemandPeriodListContainer')
+  let viewRemandSummary = document.getElementById('viewRemandSummary')
   let remandPeriods = filterAdjustmentsByType("Remand")
   let remandPeriodCount = remandPeriods.length
   let totalRemandDays = 0
   let remandSummaryTable = document.getElementById("R-summary")
-  console.log(remandPeriods)
+  console.log(remandPeriods.length, totalRemandDays)
 
 
   for( let x of remandPeriods){
@@ -1084,7 +1085,11 @@ if(ViewRemandPage){
     displayRemandSummaryRow(x, remandSummaryTable)
     totalRemandDays += x.days;
   }
+  if(remandPeriods.length < 2){
+    viewRemandSummary.classList.add("moj-hidden")
+  }
 
+  screenRemandCount.innerHTML = totalRemandDays
   function displayRemandSummaryRow(data, target) {
     let html = ` <tr class="govuk-table__row">
                                     <td scope="row" class="govuk-table__cell">From ${data.start} to ${data.end}</td>
@@ -1114,8 +1119,7 @@ if(ViewRemandPage){
   // })
   selectItemByLink(deleteLinks, "delete")
   selectItemByLink(editLinks, "edit")
-  screenRemandPeriods.innerHTML = remandPeriodCount
-  screenRemandCount.innerHTML = totalRemandDays
+
 
 
 
