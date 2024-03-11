@@ -867,7 +867,7 @@ if(DeleteTaggedBailPage) {
     deleteRecord("Tagged Bail",adjustments, selectedRemandPeriodID)
     let journey = deletebutton.getAttribute('data-journey')
     localStorage.setItem('activeJourney', parseInt(journey))
-    location.href = `index-1.html`;
+    location.href = `../index-1.html`;
   })
 }
 
