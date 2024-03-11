@@ -958,8 +958,8 @@ function displayNotification(journey, container){
           <h3 class="govuk-notification-banner__heading">
               The remand record has been deleted
           </h3>
-          <p class="govuk-body">You must
-              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+            <p class="govuk-body">Once all of the adjustments have been applied, you must
+              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a>.
           </p>
       </div>
   </div>
@@ -990,8 +990,8 @@ function displayNotification(journey, container){
           <h3 class="govuk-notification-banner__heading">
               Tagged bail has been deleted
           </h3>
-          <p class="govuk-body">Once all the adjustments have been made, you will need to
-              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a> for Joe Bloggs.
+          <p class="govuk-body">Once all of the adjustments have been applied, you must
+              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a>.
           </p>
       </div>
   </div>
@@ -1006,8 +1006,8 @@ function displayNotification(journey, container){
           <h3 class="govuk-notification-banner__heading">
               Remand updates have been saved
           </h3>
-          <p class="govuk-body">You must
-              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+            <p class="govuk-body">Once all of the adjustments have been applied, you must
+              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a>.
           </p>
       </div>
   </div>
@@ -1022,8 +1022,8 @@ function displayNotification(journey, container){
           <h3 class="govuk-notification-banner__heading">
               RADA updates have been saved
           </h3>
-          <p class="govuk-body">You must
-              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+           <p class="govuk-body">Once all of the adjustments have been applied, you must
+              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a>.
           </p>
       </div>
   </div>
@@ -1038,8 +1038,8 @@ function displayNotification(journey, container){
           <h3 class="govuk-notification-banner__heading">
               UAL updates have been saved
           </h3>
-          <p class="govuk-body">You must
-              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a>.
+            <p class="govuk-body">Once all of the adjustments have been applied, you must
+              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a>.
           </p>
       </div>
   </div>
