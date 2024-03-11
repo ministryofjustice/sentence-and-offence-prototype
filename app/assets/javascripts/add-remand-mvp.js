@@ -956,7 +956,7 @@ function displayNotification(journey, container){
                          data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
-              The remand record has been deleted
+              Remand details have been deleted
           </h3>
             <p class="govuk-body">Once all of the adjustments have been applied, you must
               <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a>.
