@@ -972,10 +972,10 @@ function displayNotification(journey, container){
                          data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
-              Tagged bail details have been saved
+              Tagged bail information has been saved
           </h3>
-          <p class="govuk-body">Once all of the adjustments have been made, you will need to
-              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a> for Joe Bloggs.
+           <p class="govuk-body">Once all of the adjustments have been applied, you must
+              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a>.
           </p>
       </div>
   </div>
@@ -1036,7 +1036,7 @@ function displayNotification(journey, container){
                          data-module="govuk-notification-banner">
       <div class="govuk-notification-banner__content">
           <h3 class="govuk-notification-banner__heading">
-              UAL updates have been saved
+              UAL information has been saved
           </h3>
             <p class="govuk-body">Once all of the adjustments have been applied, you must
               <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a>.
