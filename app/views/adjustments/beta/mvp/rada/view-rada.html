@@ -1,7 +1,7 @@
 {% extends "version-1/dps/includes/hub-layout-minus-nav.html" %}
 {% block content %}
 <div class="">
-    <div class="">
+    <div id="viewRADAPage" class="" data-type="RADA">
         <a href="../index-1" class="govuk-back-link">Back</a>
 
         <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
@@ -19,18 +19,18 @@
                     <th class="govuk-table__header " scope="col">Actions</th>
                 </tr>
                 </thead>
-                <tbody>
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">3 Apr 2022</td>
-                    <td class="govuk-table__cell">Belmarsh prison</td>
-                    <td class="govuk-table__cell govuk-!-text-align-centre">6</td>
-                    <td class="govuk-table__cell ">
-                        <a id="ItemEdit" href="edit-rada" class="govuk-link" data-liveid="null">Edit</a>
-                        <a id="ItemRemove" data-liveid="null" href="delete-rada" class="govuk-link removelink govuk-!-margin-left-4">Delete</a>
-                    </td>
-                </tr>
+                <tbody id="viewRADAS">
+<!--                <tr class="govuk-table__row">-->
+<!--                    <td class="govuk-table__cell">3 Apr 2022</td>-->
+<!--                    <td class="govuk-table__cell">Belmarsh prison</td>-->
+<!--                    <td class="govuk-table__cell govuk-!-text-align-centre">6</td>-->
+<!--                    <td class="govuk-table__cell ">-->
+<!--                        <a id="ItemEdit" href="edit-rada" class="govuk-link" data-liveid="null">Edit</a>-->
+<!--                        <a id="ItemRemove" data-liveid="null" href="delete-rada" class="govuk-link removelink govuk-!-margin-left-4">Delete</a>-->
+<!--                    </td>-->
+<!--                </tr>-->
             </tbody>
-                <tfoot>
+                <tfoot id = "viewRADASFooter">
                 <tr class="govuk-table__row">
                     <td class="govuk-table__cell govuk-table__header " colspan="2">Total days</td>
                     <td colspan="1" id="TotalDays" class="govuk-table__cell govuk-table__header govuk-!-text-align-centre">12</td>
@@ -42,5 +42,5 @@
         </main>
     </div>
 </div>
-<script src="/public/javascripts/adjustments-3.js"></script>
+<script src="/public/javascripts/adjustments-3-mvp.js"></script>
 {% endblock %}

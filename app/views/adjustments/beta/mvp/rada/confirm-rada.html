@@ -1,7 +1,7 @@
 {% extends "version-1/dps/includes/hub-layout-minus-nav.html" %}
 {% block content %}
 
-    <div class="">
+    <div id="radaConfirm" class="">
         <a href="rada" class="govuk-back-link">Back</a>
         <main class="govuk-main-wrapper " id="main-content" role="main">
             <div class="govuk-grid-row">
@@ -12,6 +12,7 @@
                     </h1>
 
                     <h2 class="govuk-heading-m">RADA details</h2>
+
                     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
@@ -21,7 +22,7 @@
                                5 May 2023
                             </dd>
                             <dd class="govuk-summary-list__value">
-                                <a href="rada">Edit</a>
+                                <a href="edit-rada">Edit</a>
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -32,7 +33,7 @@
                                2
                             </dd>
                             <dd class="govuk-summary-list__value">
-                                <a href="rada">Edit</a>
+                                <a href="edit-rada">Edit</a>
                             </dd>
                         </div>
                     </dl>
@@ -48,6 +49,6 @@
             </div>
         </main>
     </div>
-<script src="/public/javascripts/add-remand-mvp.js"></script>
+<script src="/public/javascripts/adjustments-3-mvp.js"></script>
 
 {% endblock %}

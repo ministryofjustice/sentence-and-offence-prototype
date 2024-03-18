@@ -408,6 +408,7 @@ if(addOffencesButton) {
 
     //build new object
     let remandPeriod = {
+      id: adjustments.length+1,
       type: result.type,
       start: result.start,
       end: result.end,
@@ -507,6 +508,7 @@ if(addTaggedBailDaysButton) {
 
 
     let taggedBail = {
+      id: adjustments.length+1,
       caseNo: createCaseNo(caseNo),
       type: "Tagged Bail",
       court:TBcase[0].court,

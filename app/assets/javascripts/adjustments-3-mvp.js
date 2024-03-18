@@ -226,7 +226,7 @@ function addAdjustmentData (type, from, to, days, id, desc, ualType, fromDay, to
   localStorage.setItem('adjustments', JSON.stringify(adjustments))
   console.log(adjustments)
 }
-  function addAdjustment (type, from, to, days, id, desc) {
+  function addAdjustment (type, from, to, days, day, month, year, id, desc) {
     // let storedAdjustments = localStorage.getItem('storedAdjustments');
     // storedAdjustments = storedAdjustments ? JSON.parse(storedAdjustments) : []
 
@@ -235,6 +235,9 @@ function addAdjustmentData (type, from, to, days, id, desc, ualType, fromDay, to
       from: from,
       to: to,
       days: days,
+      day: day,
+      month:month,
+      year:year,
       id: id,
       desc: desc
     }
@@ -349,12 +352,15 @@ if (rejectRemandToolButton) {
           localStorage.setItem('liveID', id)
           break;
         case "RADA":
+          let day = radaDay.value
+          let month = radaMonth.value
+          let year = radaYear.value
           from = createDate(radaDay, radaMonth, radaYear);
           to = null;
           days = parseInt(radaNumberOfDays.value);
           id = adjustments.length +1;
           description = desc;
-          addAdjustment(type, from, to, days, id, description);
+          addAdjustment(type, from, to, days, day,  month, year, id, description);
           localStorage.setItem('liveID', id)
           break;
         case "REMAND":
@@ -521,7 +527,7 @@ if (rejectRemandToolButton) {
                         ${p.desc}
                     </dd>
                     <dd class="govuk-summary-list__actions">
-                        <a class="govuk-link" href="warrant-details.html">
+                        <a class="govuk-link" href="rada">
                             Change<span class="govuk-visually-hidden"> date</span>
                         </a>
                     </dd>
@@ -534,7 +540,7 @@ if (rejectRemandToolButton) {
                           ${p.from}
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="warrant-details.html">
+                          <a class="govuk-link" href="rada">
                               Change<span class="govuk-visually-hidden"> date</span>
                           </a>
                       </dd>
@@ -547,7 +553,7 @@ if (rejectRemandToolButton) {
                           ${p.days}
                       </dd>
                       <dd class="govuk-summary-list__actions">
-                          <a class="govuk-link" href="warrant-details.html">
+                          <a class="govuk-link" href="rada">
                               Change<span class="govuk-visually-hidden"> date</span>
                           </a>
                       </dd>
@@ -974,8 +980,6 @@ if(editUAL){
       x.checked = true
     }
   }
-  console.log(record[0])
-
   fromDay.value = record[0].fromDay;
   toDay.value = record[0].toDay;
   fromMonth.value = record[0].fromMonth;
@@ -1015,6 +1019,42 @@ if(editUAL){
 
 }
 
+const editRADAPage = document.getElementById("editRADAPage");
+const RADADays = document.getElementById("RADADays");
+if(editRADAPage) {
+
+  console.log(liveID, "55")
+  const editRADAButton = document.getElementById("editRADAButton")
+  let item = JSON.parse(localStorage.getItem('liveID'))
+
+  let record = adjustments.filter((x) => x.id === item);
+  console.log(adjustments, record)
+
+  RADADays.value = record[0].days;
+  radaDay.value = record[0].day;
+  radaMonth.value = record[0].month;
+  radaYear.value = record[0].year;
+
+  editRADAButton.addEventListener('click', function(e) {
+
+    console.log(adjustments)
+    for(let x of adjustments){
+      if(x.id === item){
+        console.log(x)
+        x.from = createDate(radaDay, radaMonth, radaYear);
+        x.days = RADADays.value;
+        x.day = radaDay.value;
+        x.month =  radaMonth.value;
+        x.year =  radaYear.value;
+      }
+    }
+    console.log( "i",adjustments)
+
+    localStorage.setItem('adjustments', JSON.stringify(adjustments))
+    console.log(adjustments,"edited")
+  })
+}
+
 if (removeUAL) {
   const activeAdjustment = adjustments.filter(adjustment => {
     return adjustment.id === parseInt(liveID)
@@ -1041,6 +1081,56 @@ if (removeUAL) {
   })
 }
 
+const viewRADAPage = document.getElementById("viewRADAPage");
+const viewRADAS = document.getElementById("viewRADAS");
+if(viewRADAPage){
+  let radas = adjustments.filter((x) => x.type === "RADA");
+  console.log(radas)
+  for ( let x of radas) {
+    let actions = `  
+                                <a id="ItemEdit" href="edit-rada" class="govuk-link edit-link" data-liveID="${x.id}">Edit</a>
+                                <a id="ItemRemove" data-liveID="${x.id}" href="delete-rada.html" class="govuk-link removelink govuk-!-margin-left-4">Delete</a>
+                           `;
+    totaldays += parseInt(x.days)
+    addRow("RADA", viewRADAS, x.ualType, x.from, x.end, "Manchester Prison", x.days, actions);
+  }
+  let TotalDays = document.getElementById("TotalDays")
+  TotalDays.innerHTML =  totaldays;
+
+
+  //const table = document.getElementById("viewUAL")
+
+  const removeItem = document.getElementsByClassName('removelink')
+  const editItem = document.getElementsByClassName('edit-link')
+
+  Array.from(removeItem).forEach(function(element){
+    element.addEventListener("click", function(e) {
+      const attID = element.getAttribute("data-liveID")
+      localStorage.setItem('liveID', attID)
+
+    })
+  })
+
+  Array.from(editItem).forEach(function(element){
+    element.addEventListener("click", function(e) {
+      const attID = element.getAttribute("data-liveID")
+      localStorage.setItem('liveID', attID)
+
+    })
+  })
+
+
+}
+
+const radaConfirm = document.getElementById("radaConfirm")
+if (radaConfirm){
+  const date = document.getElementById('date');
+  const days = document.getElementById('days')
+  let data =  adjustments.filter((x) => x.id === parseInt(liveID));
+
+  days.innerHTML = data[0].days
+  date.innerHTML = data[0].from
+}
 function displayNotification(journey, container){
   const base = '';
   switch (journey) {

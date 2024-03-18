@@ -2,9 +2,9 @@
 {% block content %}
 <div class="govuk-body">
     <div class="">
-        <a href="index-1" class="govuk-back-link">Back</a>
+        <a href="view-rada" class="govuk-back-link">Back</a>
 
-        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+        <main id="editRADAPage" class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                     <form action="/form-handler" method="post" novalidate>
@@ -50,11 +50,11 @@
 
                             </div>
                             <div class="govuk-form-group">
-                                <label class="govuk-label govuk-label--s" for="rada-number-of-days">
+                                <label class="govuk-label govuk-label--s" for="RADADays">
                                     Number of additional days restored
                                 </label>
                                 <div class="govuk-input__wrapper">
-                                    <input id="rada-number-of-days" class="govuk-input govuk-input--width-4"  name="days" type="text" spellcheck="false">
+                                    <input id="RADADays" class="govuk-input govuk-input--width-4"  name="days" type="text" spellcheck="false">
                                     <div class="govuk-input__suffix" aria-hidden="true">days</div>
                                 </div>
                             </div>
@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="govuk-button-group">
-                            <a href="confirm-rada"  class="govuk-button" data-module="govuk-button">
+                            <a id="editRADAButton" href="confirm-rada"  class="govuk-button" data-module="govuk-button">
                                 Continue
                             </a>
                             <a href="view-rada" class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -81,5 +81,5 @@
         </main>
     </div>
 </div>
-<script src="/public/javascripts/adjustments.js"></script>
+<script src="/public/javascripts/adjustments-3-mvp.js"></script>
 {% endblock %}
