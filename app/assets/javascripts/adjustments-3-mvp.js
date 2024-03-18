@@ -1056,6 +1056,7 @@ if(editRADAPage) {
 }
 
 if (removeUAL) {
+  let removeUALButton =document.getElementById('removeUALButton')
   const activeAdjustment = adjustments.filter(adjustment => {
     return adjustment.id === parseInt(liveID)
   })
@@ -1069,15 +1070,17 @@ if (removeUAL) {
   days.innerHTML = activeAdjustment[0].days
   type.innerHTML = activeAdjustment[0].ualType
   console.log(activeAdjustment)
-  removeUAL.addEventListener('click', function(e){
-    //e.preventDefault()
+
+  removeUALButton.addEventListener('click', function(e){
 
     const revisedAdjustments = adjustments.filter(adjustment => {
       return adjustment.id !== parseInt(liveID)
     })
+
     console.log(revisedAdjustments,"yy")
     localStorage.setItem('adjustments', JSON.stringify(revisedAdjustments))
-    console.log(adjustments, localStorage.getItem('adjustments'),"ff")
+    let journey = removeUALButton.getAttribute('data-journey')
+    localStorage.setItem('activeJourney', parseInt(journey))
   })
 }
 
@@ -1097,6 +1100,8 @@ if (DeleteRADAPage) {
 
   DeleteRADA.addEventListener('click', function (){
     localStorage.setItem('adjustments', JSON.stringify(revisedAdjustments))
+    let journey = DeleteRADA.getAttribute('data-journey')
+    localStorage.setItem('activeJourney', parseInt(journey))
   })
 }
 
