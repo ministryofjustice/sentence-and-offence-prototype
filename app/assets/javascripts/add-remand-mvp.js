@@ -771,8 +771,11 @@ function displayViewLink(adjustment, days) {
 //display tagged bail count on exit
 const taggedBailCount = document.getElementById('TaggedBailTotal')
 const RemandCount = document.getElementById('RemandTotal')
+const RemandUpdatedContainer = document.getElementById('RemandUpdated')
 const UALCount = document.getElementById('UALTotal')
+const UALupdatedContainer = document.getElementById('UALupdated')
 const RADACount = document.getElementById('RADATotal')
+const RADAupdatedContainer = document.getElementById('RADAupdated')
 const RemandViewLink = document.getElementById('viewRemand')
 const TaggedBailViewLink = document.getElementById('viewTaggedBail')
 const UALViewLink = document.getElementById('viewUAL')
@@ -801,6 +804,11 @@ if(indexPage) {
   displayAdjustmentTotals("UAL", UALCount, UALViewLink)
   displayAdjustmentTotals("RADA", RADACount, RADAViewLink)
   displayNotification(activeJourney, notificationContainer)
+  showLastUpdatedText(RemandCount,RemandUpdatedContainer)
+  showLastUpdatedText(RADACount,RADAupdatedContainer)
+  showLastUpdatedText(UALCount,UALupdatedContainer)
+
+
 }
 
 //for tagged bail table design
@@ -1070,8 +1078,25 @@ function displayNotification(journey, container){
 if(taggedBailCount){
   const result = adjustments.filter(({ type }) => type === "Tagged Bail");
   console.log(journey,"3")
-  let count
+  let lastUpdateContainer = document.getElementById("updated")
+  showLastUpdatedText(taggedBailCount,lastUpdateContainer)
 
+}
+
+function showLastUpdatedText(adjustmentCount, updatedContainer){
+  let countTotal = parseInt(adjustmentCount.innerHTML);
+  //create date
+  let today = new Date();
+  let dd = today.getDate().toString();
+  let mm = today.getMonth()+1;
+  let mstring = mm.toString()
+  let yyyy = today.getFullYear().toString();
+ let createdDay =  createGDSDate(dd,mstring,yyyy)
+  console.log(createdDay)
+  if(countTotal > 0){
+    //updatedContainer.innerHTML = "Last updated on 9 jun 2023 by Belmarsh prison "
+    updatedContainer.innerHTML = `Last updated on ${createdDay} by Belmarsh prison `
+  }
 }
 
 let saveRemandButton = document.getElementById('saveRemandButton')
@@ -1451,6 +1476,54 @@ function createDate (day, month, year) {
   }
 
   let date = `${day.value} ${monthName} ${year.value}`;
+  return date
+}
+
+function createGDSDate (day, month, year) {
+  let mNumber = parseInt(month);
+  let monthName;
+  switch (mNumber) {
+    case 1:
+      monthName = 'Jan';
+      break;
+    case 2:
+      monthName = 'Feb';
+      break;
+    case 3:
+      monthName = 'Mar';
+      break;
+    case 4:
+      monthName = 'Apr';
+      break;
+    case 5:
+      monthName = 'May';
+      break;
+    case 6:
+      monthName = 'Jun';
+      break;
+    case 7:
+      monthName = 'Jul';
+      break;
+    case 8:
+      monthName = 'Aug';
+      break;
+    case 9:
+      monthName = 'Sep';
+      break;
+    case 10:
+      monthName = 'Oct';
+      break;
+    case 11:
+      monthName = 'Nov';
+      break;
+    case 12:
+      monthName = 'Dec';
+      break;
+    default:
+      monthName = 'Not recorded ';
+  }
+
+  let date = `${day} ${monthName} ${year}`;
   return date
 }
 function daysBetweenDates (date1, date2) {
