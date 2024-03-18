@@ -1081,6 +1081,25 @@ if (removeUAL) {
   })
 }
 
+const DeleteRADAPage = document.getElementById("DeleteRADAPage")
+if (DeleteRADAPage) {
+  const DeleteRADA = document.getElementById('DeleteRADA')
+  const date = document.getElementById('PeriodDate');
+  const days = document.getElementById('PeriodDays')
+  let data =  adjustments.filter((x) => x.id === parseInt(liveID));
+
+ days.innerHTML = data[0].days
+  date.innerHTML = data[0].from
+
+  const revisedAdjustments = adjustments.filter(adjustment => {
+    return adjustment.id !== parseInt(liveID)
+  })
+
+  DeleteRADA.addEventListener('click', function (){
+    localStorage.setItem('adjustments', JSON.stringify(revisedAdjustments))
+  })
+}
+
 const viewRADAPage = document.getElementById("viewRADAPage");
 const viewRADAS = document.getElementById("viewRADAS");
 if(viewRADAPage){
