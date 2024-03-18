@@ -367,7 +367,7 @@ if (rejectRemandToolButton) {
           from = createDate(fromDay, fromMonth, fromYear);
           to = createDate(toDay, toMonth, toYear);
           days = createDaysAdded(fromDay, fromMonth, fromYear, toDay, toMonth, toYear);
-          id = null;
+          id = adjustments.length+1;
           description = desc;
           addAdjustment(type, from, to, days, id, description);
           break;
@@ -383,7 +383,7 @@ if (rejectRemandToolButton) {
           from = createDate(fromDay, fromMonth, fromYear);
           to = null;
           days = parseInt(numberOfDays.value);
-          id = documentID.value;
+          id = adjustments.length+1;
           description = desc;
           addAdjustment(type, from, to, days, id, description);
           break;
@@ -1141,14 +1141,24 @@ if(viewRADAPage){
 
 }
 
+
+
 const radaConfirm = document.getElementById("radaConfirm")
 if (radaConfirm){
   const date = document.getElementById('date');
   const days = document.getElementById('days')
   let data =  adjustments.filter((x) => x.id === parseInt(liveID));
 
+  console.log(data)
+  const saveRADA = document.getElementById("saveRADA");
+
   days.innerHTML = data[0].days
   date.innerHTML = data[0].from
+
+  saveRADA.addEventListener("click", function(){
+    let journey = saveRADA.getAttribute('data-journey')
+    localStorage.setItem('activeJourney', parseInt(journey))
+  })
 }
 function displayNotification(journey, container){
   const base = '';

@@ -1047,6 +1047,21 @@ function displayNotification(journey, container){
   </div>
 `
       break;
+    case 8:
+      container.innerHTML = `
+   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+                         aria-labelledby="govuk-notification-banner-title"
+                         data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__content">
+          <h3 class="govuk-notification-banner__heading">
+              RADA details have been deleted
+          </h3>
+            <p class="govuk-body">Once all of the adjustments have been applied, you must
+              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a>.
+          </p>
+      </div>
+  </div>
+`
     default:
       ``
   }
@@ -1054,7 +1069,8 @@ function displayNotification(journey, container){
 }
 if(taggedBailCount){
   const result = adjustments.filter(({ type }) => type === "Tagged Bail");
-  console.log(journey)
+  console.log(journey,"3")
+  let count
 
 }
 
@@ -1638,14 +1654,5 @@ if(saveUALButton){
   })
 
 }
-const saveRADA = document.getElementById("saveRADA");
 
-
-if(saveRADA){
-
-  saveRADA.addEventListener("click", function(){
-    let journey = saveRADA.getAttribute('data-journey')
-    localStorage.setItem('activeJourney', parseInt(journey))
-  })
-}
 
