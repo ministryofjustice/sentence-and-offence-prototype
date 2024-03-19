@@ -133,7 +133,16 @@ if(checkYourAnswersPage) {
       break;
   }
 }
-
+function createID(adjustments){
+  let ids = [0]
+  for(let x of adjustments) {
+    ids.push(parseInt(x.id))
+    console.log(x)
+  }
+  let max = Math.max(...ids)
+  return max+1
+}
+console.log(createID(adjustments) ,'id')
 //Rada
 // if(enterRadaDetails) {
 //   console.log('working')
@@ -211,7 +220,7 @@ function addAdjustmentData (type, from, to, days, id, desc, ualType, fromDay, to
     from: from,
     to: to,
     days: days,
-    id: id,
+    id: createID(adjustments),
     desc: desc,
     ualType: ualType,
     fromDay: fromDay,
@@ -971,8 +980,9 @@ if(editUAL){
   console.log(liveID)
   const editUALButton = document.getElementById("EditUAlButton")
   let item = JSON.parse(localStorage.getItem('liveID'))
-
-  let record = adjustments.filter((x) => x.id === item);
+  let UALs = adjustments.filter((x)=> x.type ==="UAL")
+  let record = UALs.filter((x) => x.id === item);
+  console.log(record)
   let radios = document.getElementsByClassName('govuk-radios__input')
   let days = 0;
   for(let x of radios){
@@ -986,38 +996,71 @@ if(editUAL){
   toMonth.value = record[0].toMonth;
   fromYear.value = record[0].fromYear;
   toYear.value = record[0].toYear;
-  numberOfDays.value = record[0].days;
+  //numberOfDays.value = record[0].days;
 
 
-  toYear.addEventListener("blur", function() {
-    let days = createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear)
-    numberOfDays.value= days
-  })
-  editUALButton.addEventListener('click', function(e){
+  // toYear.addEventListener("blur", function() {
+  //   let days = createDaysAdded (fromDay, fromMonth, fromYear, toDay, toMonth, toYear)
+  //   numberOfDays.value= days
+  // })
+  editUALButton.addEventListener('click', function(){
     //e.preventDefault();
-    console.log(item)
-    for(let x of adjustments){
-      if(x.id === item){
-        console.log(x)
-          x.from = createDate(fromDay, fromMonth, fromYear);
-          x.to = createDate(toDay, toMonth, toYear);
-          x.days = numberOfDays.value;
-          x.ualType = getCheckedItem(radios);
-          x.fromDay = fromDay.value;
-          x.toDay = toDay.value;
-          x.fromMonth =  fromMonth.value;
-          x.toMonth =  toMonth.value;
-          x.fromYear=  fromYear.value;
-          x.toYear=  toYear.value;
-      }
-    }
-    console.log(adjustments)
 
-    localStorage.setItem('adjustments', JSON.stringify(adjustments))
+
+    let updatedUAL = {
+      type:"UAL",
+      start :createDate(fromDay, fromMonth, fromYear),
+      end : createDate(toDay, toMonth, toYear),
+      days :createDaysAdded(fromDay, fromMonth, fromYear, toDay, toMonth, toYear),
+      ualType : getCheckedItem(radios),
+      fromDay: fromDay.value,
+      toDay: toDay.value,
+      fromMonth :fromMonth.value,
+      toMonth :toMonth.value,
+      fromYear :fromYear.value,
+      toYear:toYear.value,
+      id :createID(adjustments)
+    }
+
+    tempUAL = updatedUAL;
+    localStorage.setItem('tempUAL', JSON.stringify(tempUAL))
+
+
+
+
+    //localStorage.setItem('adjustments', JSON.stringify(adjustments))
   })
-  console.log(adjustments)
+}
+
+const confirmEditUALButton = document.getElementById('confirmEditUALButton')
+
+if(confirmEditUALButton){
+  const tempUAL = JSON.parse(localStorage.getItem('tempUAL'))
+
+  const start = document.getElementById("start")
+  const end = document.getElementById("end")
+  const days = document.getElementById("days")
+  const type = document.getElementById("type")
+
+  start.innerHTML = tempUAL.start
+  end.innerHTML = tempUAL.end
+  days.innerHTML = tempUAL.days
+  type.innerHTML = tempUAL.ualType
+
+  let item = JSON.parse(localStorage.getItem('liveID'))
+  let newArray = adjustments.filter((x)=> x.id !== item );
+  newArray.push(tempUAL)
+  updateAdjustmentsList(newArray)
+
 
 }
+function updateAdjustmentsList(newData){
+  localStorage.getItem('adjustments')
+  localStorage.setItem('adjustments', JSON.stringify(newData))
+
+}
+
+
 
 const editRADAPage = document.getElementById("editRADAPage");
 const RADADays = document.getElementById("RADADays");

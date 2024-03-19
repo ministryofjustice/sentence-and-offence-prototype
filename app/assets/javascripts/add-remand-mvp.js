@@ -54,6 +54,17 @@ function radioRoute (radios) {
   }
 }
 
+function createID(adjustments){
+  let ids = [1]
+  for(let x of adjustments) {
+    ids.push(parseInt(x.id))
+
+  }
+  let max = Math.max(...ids)
+  return max+1
+}
+
+
 const addDatesButton = document.getElementById("add-remand-dates-button")
 const addOffencesButton = document.getElementById("add-offences-button")
 const addTaggedBailDaysButton = document.getElementById("add-tagged-bail-days-button")
@@ -408,7 +419,7 @@ if(addOffencesButton) {
 
     //build new object
     let remandPeriod = {
-      id: adjustments.length+1,
+      id: createID(adjustments),
       type: result.type,
       start: result.start,
       end: result.end,
@@ -508,7 +519,7 @@ if(addTaggedBailDaysButton) {
 
 
     let taggedBail = {
-      id: adjustments.length+1,
+      id: createID(adjustments),
       caseNo: createCaseNo(caseNo),
       type: "Tagged Bail",
       court:TBcase[0].court,
@@ -1688,7 +1699,7 @@ if(addUALButton) {
     let days = createDaysAdded(fromDay, fromMonth, fromYear, toDay, toMonth, toYear);
     let start = createDate(fromDay, fromMonth, fromYear);
     let end = createDate(toDay, toMonth, toYear);
-    let id=adjustments.length+1
+    let id = createID(adjustments)
     //e.preventDefault()
 
 
@@ -1727,6 +1738,8 @@ if(saveUALButton){
   const days = document.getElementById("days")
   const type = document.getElementById("type")
 
+
+  console.log(adjustments)
   start.innerHTML = tempUAL.start
   end.innerHTML = tempUAL.end
   days.innerHTML = tempUAL.days
