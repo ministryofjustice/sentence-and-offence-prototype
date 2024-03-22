@@ -1,0 +1,32 @@
+{% extends "version-1/dps/includes/hub-layout.html" %}
+{% set adjustmentsActive = true %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="">
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-panel govuk-panel--confirmation">
+                        <h1 class="govuk-panel__title">
+                            Adjustment added
+                        </h1>
+                        <div class="govuk-panel__body">
+                            Remand <br><strong>xx days added</strong>
+                        </div>
+                    </div>
+
+                    <h2 class="govuk-heading-m">Next steps</h2>
+
+                    <p class="govuk-body">
+                        <a href="crd.html" class="govuk-link">Calculate release dates</a>
+                    </p>
+                    <p class="govuk-body">
+                        <a href="index-1.html" class="govuk-link">Add another adjustment</a>
+                    </p>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}

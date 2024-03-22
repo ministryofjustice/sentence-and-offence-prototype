@@ -1,0 +1,43 @@
+{% extends "version-1/dps/includes/hub-layout.html" %}
+{% set adjustmentsActive = true %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="index-1.html" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-padding-top-6">
+            <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjustments</span>
+                Remand overview
+            </h1>
+            <table  id="" class="govuk-table govuk-!-margin-bottom-8">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">Remand period</th>
+                    <th class="govuk-table__header" scope="col">Case details</th>
+                    <th class="govuk-table__header" scope="col">Days</th>
+                    <th class="govuk-table__header" scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody id="RemandTableBody">
+
+                </tbody>
+
+                <tfoot>
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="2">Total </th>
+                    <td id="TotalRemandDays" class="govuk-table__cell govuk-!-text-align-right">120</td>
+                    <td class="govuk-table__cell govuk-!-text-align-right" colspan="2"></td>
+                </tr>
+                </tfoot>
+            </table>
+            <div class="govuk-!-margin-bottom-6">
+                <a href="enter-remand.html" class="govuk-button" data-module="govuk-button">
+                    Add new
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}
