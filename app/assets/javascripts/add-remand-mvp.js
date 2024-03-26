@@ -620,7 +620,7 @@ if(editTaggedBail) {
       </div>
       <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-              Days 
+              Number of days 
           </dt>
           <dd class="govuk-summary-list__value">
              ${result[0].days}
