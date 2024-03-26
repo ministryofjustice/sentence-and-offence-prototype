@@ -56,10 +56,10 @@ const enterRadaDetailsButton = document.getElementById('Enter-rada-detail-button
 if(checkYourAnswersPage) {
   const heading = document.getElementById('DataTitle')
   let target = document.getElementById('Details')
-  console.log(parseInt(liveID), 'f');
+
 
   let data =  adjustments.filter((x) => x.id === parseInt(liveID));
-  console.log(data)
+
   let type = data[0].type
   switch (type) {
     case "UAL":
@@ -137,7 +137,7 @@ function createID(adjustments){
   let ids = [0]
   for(let x of adjustments) {
     ids.push(parseInt(x.id))
-    console.log(x)
+
   }
   let max = Math.max(...ids)
   return max+1
@@ -892,7 +892,7 @@ function addRow( adjustmentType, table,  ualType, from, to, enteredBy, days, act
       var cell1 = row.insertCell(0);
       cell1.classList.add("govuk-table__cell");
       var cell2 = row.insertCell(1);
-      cell2.classList.add("govuk-table__cell" , "govuk-!-text-align-centre");
+      cell2.classList.add("govuk-table__cell");
       var cell3 = row.insertCell(2);
       cell3.classList.add("govuk-table__cell" , "govuk-!-text-align-centre");
       var cell4 = row.insertCell(3);
@@ -1066,12 +1066,11 @@ const editRADAPage = document.getElementById("editRADAPage");
 const RADADays = document.getElementById("RADADays");
 if(editRADAPage) {
 
-  console.log(liveID, "55")
   const editRADAButton = document.getElementById("editRADAButton")
   let item = JSON.parse(localStorage.getItem('liveID'))
 
   let record = adjustments.filter((x) => x.id === item);
-  console.log(adjustments, record)
+
 
   RADADays.value = record[0].days;
   radaDay.value = record[0].day;
@@ -1080,7 +1079,7 @@ if(editRADAPage) {
 
   editRADAButton.addEventListener('click', function(e) {
 
-    console.log(adjustments)
+
     for(let x of adjustments){
       if(x.id === item){
         console.log(x)
@@ -1091,10 +1090,10 @@ if(editRADAPage) {
         x.year =  radaYear.value;
       }
     }
-    console.log( "i",adjustments)
+
 
     localStorage.setItem('adjustments', JSON.stringify(adjustments))
-    console.log(adjustments,"edited")
+
   })
 }
 
@@ -1112,7 +1111,7 @@ if (removeUAL) {
   end.innerHTML = activeAdjustment[0].end
   days.innerHTML = activeAdjustment[0].days
   type.innerHTML = activeAdjustment[0].ualType
-  console.log(activeAdjustment)
+
 
   removeUALButton.addEventListener('click', function(e){
 
@@ -1120,7 +1119,7 @@ if (removeUAL) {
       return adjustment.id !== parseInt(liveID)
     })
 
-    console.log(revisedAdjustments,"yy")
+
     localStorage.setItem('adjustments', JSON.stringify(revisedAdjustments))
     let journey = removeUALButton.getAttribute('data-journey')
     localStorage.setItem('activeJourney', parseInt(journey))
@@ -1152,7 +1151,7 @@ const viewRADAPage = document.getElementById("viewRADAPage");
 const viewRADAS = document.getElementById("viewRADAS");
 if(viewRADAPage){
   let radas = adjustments.filter((x) => x.type === "RADA");
-  console.log(radas)
+
   for ( let x of radas) {
     let actions = `  
                                 <a id="ItemEdit" href="edit-rada" class="govuk-link edit-link" data-liveID="${x.id}">Edit</a>
@@ -1197,7 +1196,6 @@ if (radaConfirm){
   const days = document.getElementById('days')
   let data =  adjustments.filter((x) => x.id === parseInt(liveID));
 
-  console.log(data)
   const saveRADA = document.getElementById("saveRADA");
 
   days.innerHTML = data[0].days
