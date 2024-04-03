@@ -17,6 +17,11 @@
   padding: 0 20px;
   padding-bottom: 15px;
   padding-top: 5px;
+
+  &.improved-contrast {
+    border:2px solid #b1b4b6;
+    background-color: none;
+  }
 }
 
 .app-task-card {
@@ -37,4 +42,9 @@
   margin-right: 1px;
   background-color: #fff2d3;
   padding: 2px 0px 0px;
+}
+
+.app-possible-prison-record-improved-contrast {
+  background-color: none;
+  border: 2px solid #f1f2f3;
 }
