@@ -1,11 +1,11 @@
-{% extends "version-1/dps/includes/template.html" %}
+{% extends "version-1/dps/includes/template-2.html" %}
 {% block content %}
 <body class="">
-<div class="moj-width-container">
+<div class="govuk-width-container ">
     <div class="">
         <a href="" class="govuk-back-link">Back</a>
 
-        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+        <div class="offence-outcome " id="main-content" role="main">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                     <div id="" class="govuk-body">
@@ -18,22 +18,54 @@
                             <div class="govuk-accordion__section">
                                 <div class="govuk-accordion__section-header">
                                     <h2 class="govuk-accordion__section-heading">
+                                        <span class="govuk-accordion__section-button" id="accordion-default-heading-14">
+                                          Adjustments MVP Plus
+                                        </span>
+                                    </h2>
+                                </div>
+                                <div id="accordion-default-content-14" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-14">
+                                    <div class="govuk-grid-row">
+                                        <div class="govuk-grid-column-full">
+                                            <p class="govuk-body govuk-!-font-weight-bold">Accessibility changes</p>
+                                            <p>Change the HTML structure of the select offences and review PADA pages to a checkbox list to address accessibility concerns.</p>
+                                            <ul class="govuk-list">
+                                                <li>
+                                                    <a href="beta/mvp-plus/remand/select-offences">Select offences</a>
+                                                </li>
+                                                <li>
+                                                    <a href="beta/mvp-plus/padas/select-padas-table-2">Review PADAs</a>
+                                                </li>
+                                            </ul>
+                                            <p class="govuk-body govuk-!-font-weight-bold">Unused deductions<span class="govuk-tag govuk-tag--turquoise">Todo</span></p>
+                                            <ul class="govuk-list">
+                                                <li>
+                                                    <a href="beta/mvp-plus/manual-unused-deductions/index">Manual unused deductions</a>
+                                                </li>
+
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="govuk-accordion__section">
+                                <div class="govuk-accordion__section-header">
+                                    <h2 class="govuk-accordion__section-heading">
                                         <span class="govuk-accordion__section-button" id="accordion-default-heading-13">
                                           Adjustments MVP
                                         </span>
                                     </h2>
                                 </div>
-                                <div id="accordion-default-content-13" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-12">
+                                <div id="accordion-default-content-13" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-13">
                                     <div class="govuk-grid-row">
-                                        <div class="govuk-grid-column-one-half">
+                                        <div class="govuk-grid-column-full">
                                             <p class="govuk-body govuk-!-font-weight-bold">MVP for phase approval</p>
+                                            <p>Adjustments prototype updates ready for Phase approval and MVP</p>
                                             <ul class="govuk-list">
                                                 <li>
-                                                    <a href="beta/mvp/index-1">MVP</a>
+                                                    <a href="beta/mvp/index-1">View  </a>
                                                 </li>
                                             </ul>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -939,7 +971,7 @@
                     </ul>
                 </div>
             </div>
-        </main>
+        </div>
     </div>
 </div>
 </body>
