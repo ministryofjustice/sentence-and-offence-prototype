@@ -7,10 +7,36 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds-from-desktop">
 
-                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Review remand</h1>
-                    <div id="dataContainer">
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Review unused deductions</h1>
+                    <p>[Explainer here]</p>
+                    <table class="govuk-table">
+                        <caption class="govuk-table__caption govuk-table__caption--m">Deduction summary</caption>
+                        <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Deductions</th>
+                            <th scope="col" class="govuk-table__header govuk-!-text-align-right">Days</th>
+                        </tr>
+                        </thead>
+                        <tbody id="R-summary" class="govuk-table__body">
 
-                    </div>
+                        <tr class="govuk-table__row">
+                            <td scope="row" class="govuk-table__cell">Remand</td>
+                            <td id="" class="govuk-table__cell govuk-!-text-align-right">14 <span class="govuk-hint">including 4 days unused</span> </td>
+                        </tr> <tr class="govuk-table__row">
+                            <td scope="row" class="govuk-table__cell">Tagged bail</td>
+                            <td id="" class="govuk-table__cell govuk-!-text-align-right">21</td>
+                        </tr></tbody>
+                        <tfoot>
+                        <tr class="govuk-table__row">
+                            <th id="" scope="row" class="govuk-table__header">Total days on remand</th>
+                            <td id="TotalRemandDays" class="govuk-table__cell govuk-!-text-align-right">35</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-half">
                     <h2 class="govuk-heading-m">Remand details</h2>
                     <div class="govuk-summary-card remand">
                         <div class="govuk-summary-card__title-wrapper ">
@@ -103,6 +129,8 @@
                             </dl>
                         </div>
                     </div>
+                </div>
+                <div class="govuk-grid-column-one-half">
                     <h2 class="govuk-heading-m">Tagged bail details</h2>
                     <div class="govuk-summary-card remand">
                         <div class="govuk-summary-card__title-wrapper ">
@@ -139,18 +167,19 @@
                             </dl>
                         </div>
                     </div>
-                    <div id="alerthere"></div>
-                    <div class="govuk-button-group">
-                        <a href="review-tagged-bail" id="saveRemandButton" class="govuk-button" data-journey="1">
-                            Continue
-                        </a>
-                        <a href="../index-1.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                            Cancel
-                        </a>
-                    </div>
 
 <!--                    <a href="review-2.html" class="govuk-link">Return to remand details</a>-->
                 </div>
+
+            </div>
+
+            <div class="govuk-button-group">
+                <a href="review-tagged-bail" id="saveRemandButton" class="govuk-button" data-journey="1">
+                    Continue
+                </a>
+                <a href="../../index-1.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Cancel
+                </a>
             </div>
         </main>
     </div>
