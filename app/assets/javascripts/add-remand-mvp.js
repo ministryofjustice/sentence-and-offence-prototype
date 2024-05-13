@@ -1121,8 +1121,8 @@ function showLastUpdatedText(adjustmentCount, updatedContainer){
  let createdDay =  createGDSDate(dd,mstring,yyyy)
   console.log(createdDay)
   if(countTotal > 0){
-    //updatedContainer.innerHTML = "Last updated on 9 jun 2023 by Belmarsh prison "
-    updatedContainer.innerHTML = `Last updated on ${createdDay} by Belmarsh prison `
+    //updatedContainer.innerHTML = "Last updated on 9 jun 2023 by HMP Kirkham "
+    updatedContainer.innerHTML = `Last updated on ${createdDay} by HMP Kirkham `
   }
 }
 

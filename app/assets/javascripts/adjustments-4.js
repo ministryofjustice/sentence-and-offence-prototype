@@ -1014,7 +1014,7 @@ function addRow( adjustmentType, table,  ualType, from, to, enteredBy, days, act
                                  <li><a id="ItemRemove" data-liveID="${x.id}" href="remove-ual-1.html" class="govuk-link removelink">Remove</a></li>
                            </ul>`;
       totaldays += parseInt(x.days)
-      addRow("RADA",viewAdjustmentData, x.ualType,x.from, x.to,"Belmarsh prison", x.days, actions);
+      addRow("RADA",viewAdjustmentData, x.ualType,x.from, x.to,"HMP Kirkham", x.days, actions);
       let footer = viewAdjustmentData.createTFoot();
       footer.innerHTML =  `
                        <tr class="govuk-table__row">
