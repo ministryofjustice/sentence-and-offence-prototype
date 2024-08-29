@@ -50,8 +50,12 @@
                             <dt class="govuk-summary-list__key">
                                 Defer release dates
                             </dt>
-                            <dd  id="LALtype" class="govuk-summary-list__value">
-                                Yes
+                            <dd class="govuk-summary-list__value" id>
+         
+             {%if (data.laloption) %}{{data.laloption}}
+             {% endif %}
+              
+                                
                             </dd>
                             <dd id="start" class="govuk-summary-list__value"></dd>
                             <dd class="govuk-summary-list__value">

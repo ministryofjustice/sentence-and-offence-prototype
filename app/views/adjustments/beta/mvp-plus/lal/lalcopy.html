@@ -92,37 +92,48 @@
                                     </div>
                                 </fieldset>
                             </div>
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <legend class="govuk-fieldset__legend--s">
-                                        Will the LAL days defer this person’s release dates?
-                                    </legend>
-                                    <div class="govuk-radios" data-module="govuk-radios">
-                                        <div class="govuk-radios__item govuk-!-margin-top-4">
-                                            <input class="govuk-radios__input" id="LALtype-1" name="LALtype" type="radio" value=" Recall from licence">
-                                            <label class="govuk-label govuk-radios__label" for="LALtype-1">
-                                                Yes
-                                                <div id="signIn-hint" class="govuk-hint">
-                                                    For example, a non-custodial sentence is upgraded at the Court of Appeal to a custodial sentence on appeal. The time lawfully at large between the original sentence and when the sentence is upgraded or amended would defer the release dates.
-                                                  </div>
-                                            </label>
-                                            
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="LALtype-2" name="LALtype" type="radio" value="Recall after the person completed their sentence">
-                                            <label class="govuk-label govuk-radios__label" for="LALtype-2">No 
-                                                <div id="signIn-hint" class="govuk-hint">
-                                                    For example, a prisoner is lawfully released on licence. The sentence is increased on appeal. The time spent on licence will count as time served towards the sentence.
-                                                  </div>
-                                                  
-                                            </label>
-                                            <p class="govuk-body">Email <a href="mailto:omu.specialistsupportteam@justice.gov.uk">omu.specialistsupportteam@justice.gov.uk </a> if you're unsure whether the LAL days will defer this person’s release dates.  </p>
-                                        </div>
-                                      
-                                       
-                                    </div>
-                                </fieldset>
-                            </div>
+                            {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+                            {{ govukRadios({
+                                idPrefix: "laloption",
+                                name: "laloption",
+                                fieldset: {
+                                  legend: {
+                                    text: " Will the LAL days defer this person’s release dates?",
+                                    isPageHeading: true,
+                                    classes: "govuk-fieldset__legend--s"
+                                  }
+                                },
+                              
+                                items: [
+                                {
+                                    idPrefix: "laloption1",
+                                    name: "laloption1",
+                                  value: "Yes",
+                                  text: "Yes
+                                  ",
+                                  hint: {
+                                    text: " For example, a non-custodial sentence is upgraded at the Court of Appeal to a custodial sentence on appeal. The time lawfully at large between the original sentence and when the sentence is upgraded or amended would defer the release dates."
+                                  }
+                                
+                                },
+                              
+                              
+                                {
+                                    idPrefix: "laloption2",
+                                    name: "laloption2",
+                                  value: "No",
+                                  text: "No",
+                                  hint: {
+                                    text: " For example, a prisoner is lawfully released on licence. The sentence is increased on appeal. The time spent on licence will count as time served towards the sentence."
+                                  }
+                            
+                                }
+                              
+                    
+                              
+                                ]
+                              }) }}
 <!--                            <div class="govuk-form-group">-->
 <!--                                <label class="govuk-label" for="document-ID">-->
 <!--                                    Adjudication ID-->
