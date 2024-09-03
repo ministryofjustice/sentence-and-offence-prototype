@@ -7,7 +7,7 @@
         <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
-                    <form action="/form-handler" method="post" novalidate>
+                    <form action="confirm-lal" method="post">
 
                         <div id="" class="">
 
@@ -90,39 +90,43 @@
                                             </div>
                                         </div>
                                     </div>
-                                </fieldset>
-                            </div>
-                            <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset">
-                                    <legend class="govuk-fieldset__legend--s">
-                                        Will the LAL days defer this person’s release dates?
-                                    </legend>
-                                    <div class="govuk-radios" data-module="govuk-radios">
-                                        <div class="govuk-radios__item govuk-!-margin-top-4">
-                                            <input class="govuk-radios__input" id="LALtype-1" name="LALtype" type="radio" value=" Recall from licence">
-                                            <label class="govuk-label govuk-radios__label" for="LALtype-1">
-                                                Yes
-                                                <div id="signIn-hint" class="govuk-hint">
-                                                    For example, a non-custodial sentence is upgraded at the Court of Appeal to a custodial sentence on appeal. The time lawfully at large between the original sentence and when the sentence is upgraded or amended would defer the release dates.
-                                                  </div>
-                                            </label>
-                                            
-                                        </div>
-                                        <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="LALtype-2" name="LALtype" type="radio" value="Recall after the person completed their sentence">
-                                            <label class="govuk-label govuk-radios__label" for="LALtype-2">No 
-                                                <div id="signIn-hint" class="govuk-hint">
-                                                    For example, a prisoner is lawfully released on licence. The sentence is increased on appeal. The time spent on licence will count as time served towards the sentence.
-                                                  </div>
-                                                  
-                                            </label>
-                                            <p class="govuk-body">Email <a href="mailto:omu.specialistsupportteam@justice.gov.uk">omu.specialistsupportteam@justice.gov.uk </a> if you're unsure whether the LAL days will defer this person’s release dates.  </p>
-                                        </div>
-                                      
-                                       
+                                  <br>
+                                    <div class="govuk-form-group">
+                                        <fieldset class="govuk-fieldset">
+                                            <legend class="govuk-fieldset__legend--s">
+                                                Will the LAL days defer this person’s release dates?
+                                            </legend>
+                                            <div class="govuk-radios" data-module="govuk-radios">
+                                                <div class="govuk-radios__item govuk-!-margin-top-4">
+                                                    <input class="govuk-radios__input" id="laltype-1" name="laltype" type="radio" value="Yes">
+                                                    <label class="govuk-label govuk-radios__label" for="laltype-1">
+                                                        Yes
+                                                        <div id="signIn-hint" class="govuk-hint">
+                                                            For example, a non-custodial sentence is upgraded at the Court of Appeal to a custodial sentence on appeal. The time lawfully at large between the original sentence and when the sentence is upgraded or amended would defer the release dates.
+                                                          </div>
+                                                    </label>
+                                                    
+                                                </div>
+                                                <div class="govuk-radios__item">
+                                                    <input class="govuk-radios__input" id="laltype-2" name="laltype" type="radio" value="No">
+                                                    <label class="govuk-label govuk-radios__label" for="laltype-2">
+                                                        No 
+                                                        <div id="signIn-hint" class="govuk-hint">
+                                                            For example, a prisoner is lawfully released on licence. The sentence is increased on appeal. The time spent on licence will count as time served towards the sentence.
+                                                          </div>
+                                                          
+                                                    </label>
+                                                    <p class="govuk-body">Email <a href="mailto:omu.specialistsupportteam@justice.gov.uk">omu.specialistsupportteam@justice.gov.uk </a> if you're unsure whether the LAL days will defer this person’s release dates.  </p>
+                                                </div>
+                                              
+                                               
+                                            </div>
+                                        </fieldset>
                                     </div>
                                 </fieldset>
                             </div>
+                           
+                            
 <!--                            <div class="govuk-form-group">-->
 <!--                                <label class="govuk-label" for="document-ID">-->
 <!--                                    Adjudication ID-->
@@ -132,10 +136,13 @@
 
                         </div>
 
+                       
+
+
                         <div class="govuk-button-group">
-                            <a id="addUALButton" href="confirm-lal.html" class="govuk-button" data-module="govuk-button">
+                            <button id="addUALButton" class="govuk-button" data-module="govuk-button">
                                 Continue
-                            </a>
+                            </button>
                             <a href="../index-1.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                                 Cancel
                             </a>
