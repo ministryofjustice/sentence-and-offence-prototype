@@ -166,7 +166,16 @@ function monthToWord (monthNum){
 }
 
 
-
+//special remissions - question
+router.post('/adjustments/beta/mvp-plus/special-remission/special-remission-question', function(req, res) {
+    var activatecreate = req.session.data['activatecreate'];
+    if (activatecreate == "yes"){
+      res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-days');
+    }
+    else if (activatecreate == "no"){
+      res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-required');
+    }
+  });
 
 
 // // add another offence choice
