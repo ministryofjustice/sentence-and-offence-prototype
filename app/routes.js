@@ -166,17 +166,21 @@ function monthToWord (monthNum){
 }
 
 
-//special remissions - question
-router.post('/adjustments/beta/mvp-plus/special-remission/special-remission-question', function(req, res) {
-    var activatecreate = req.session.data['activatecreate'];
-    if (activatecreate == "yes"){
-      res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-days');
+//Hardstop - Prison admin creating a new licence
+router.post('/adjustments/beta/mvp-plus/special-remission/special-remission-question', function (req, res) {
+    var srdays = req.session.data['srdays']
+  
+    // Check whether the variable matches a condition
+    if (srdays == "Yes"){
+     
+     // Send user to next page
+      res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-days')
+    } else {
+      // Send user to ineligible page
+      res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-required')
     }
-    else if (activatecreate == "no"){
-      res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-required');
-    }
+  
   });
-
 
 // // add another offence choice
 // // version 3 add-an-offence

@@ -10,30 +10,7 @@
 
                     <h2 class="govuk-heading-m">LAL details</h2>
                     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                               First day spent LAL
-                            </dt>
-                            <dd class="govuk-summary-list__value" style="width:470px;">
-                               15 September 2023
-                            </dd>
-                            <dd class="govuk-summary-list__value" ></dd>
-                            <dd class="govuk-summary-list__value">
-                                <a href="lal">Edit</a>
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Last day spent LAL
-                            </dt>
-                            <dd id="end" class="govuk-summary-list__value">
-                                19 September 2023
-                            </dd>
-                            <dd id="start" class="govuk-summary-list__value"></dd>
-                            <dd class="govuk-summary-list__value">
-                                <a href="lal">Edit</a>
-                            </dd>
-                        </div>
+                       
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
                                 Number of days
@@ -41,23 +18,19 @@
                             <dd  id="days" class="govuk-summary-list__value">
                                 4
                             </dd>
-                            <dd id="start" class="govuk-summary-list__value"></dd>
+                            <dd id="start" class="govuk-summary-list__value" style="width: 455px;"></dd>
+                            
                             <dd class="govuk-summary-list__value">
                                 <a href="lal">Edit</a>
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                                Defer release dates
-                            </dt>
-                            
+                                Type of special special remission
+                             </dt>
                             <dd class="govuk-summary-list__value">
-                               
-                                {%if (data.laltype) %} 
-                                {{data.laltype}}
-
-                              {% endif %}
-                              
+                                {%if (data.specialremission-type) %}{{data.specialremission-type}}
+                                 {% endif %}
                             </dd>
                             <dd id="start" class="govuk-summary-list__value"></dd>
                             <dd class="govuk-summary-list__value">
@@ -69,7 +42,7 @@
                         <a href="../lal/index1"  id="saveLALButton" class="govuk-button" data-module="govuk-button"  data-journey="7">
                             Confirm and save
                         </a>
-                        <a href="../index-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        <a href="/adjustments/beta/mvp-plus/special-remission/index1" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                             Cancel
                         </a>
                     </div>
