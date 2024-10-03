@@ -166,21 +166,23 @@ function monthToWord (monthNum){
 }
 
 
-//Hardstop - Prison admin creating a new licence
-router.post('/adjustments/beta/mvp-plus/special-remission/special-remission-question', function (req, res) {
-    var srdays = req.session.data['srdays']
+//Special remission - question
+router.post('special-remission-question', function (req, res) {
+    var srselect = req.session.data['srselect']
   
     // Check whether the variable matches a condition
-    if (srdays == "Yes"){
+    if (srselect == "Yes"){
      
      // Send user to next page
       res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-days')
     } else {
-      // Send user to ineligible page
+      // Send user to homepage
       res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-required')
     }
   
   });
+
+  
 
 // // add another offence choice
 // // version 3 add-an-offence
