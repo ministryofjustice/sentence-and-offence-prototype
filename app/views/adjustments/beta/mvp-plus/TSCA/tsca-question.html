@@ -8,7 +8,8 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                   
-                  <form class="form" action="./tsca-sentencing-date" method="post">
+                  <form class="form" action="/tsca-question-submit" method="post">
+
                        <h1 class="govuk-heading-l">
                                 <span class="govuk-caption-xl">Adjustments</span>
                                 Has the court specified how many days to count as time served and included it in the sentencing warrant?
@@ -20,14 +21,14 @@
                                   </div>
                                   <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                     <div class="govuk-radios__item">
-                                      <input class="govuk-radios__input" id="changedName" name="tscaselect" type="radio" value="Sentencing warrant">
-                                      <label class="govuk-label govuk-radios__label" for="changedName">
+                                      <input class="govuk-radios__input" id="tscaquestion" name="tscaselect" type="radio" value="Yes">
+                                      <label class="govuk-label govuk-radios__label" for="tscaquestion">
                                         Yes
                                       </label>
                                     </div>
                                     <div class="govuk-radios__item">
-                                      <input class="govuk-radios__input" id="changedName-2" name="tscaselect" type="radio" value="PPCS">
-                                      <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                      <input class="govuk-radios__input" id="tscaquestion-2" name="tscaselect" type="radio" value="No">
+                                      <label class="govuk-label govuk-radios__label" for="tscaquestion-2">
                                         No
                                       </label>
                                     </div>
@@ -37,7 +38,7 @@
 
 
                   <div class="govuk-button-group">
-                         <button class="govuk-button" data-module="govuk-button">
+                         <button class="govuk-button" data-module="govuk-button" type="submit">
                               Continue
                           </button>
                             <a href="./index.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">

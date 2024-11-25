@@ -153,19 +153,6 @@ router.post('/version-3/add-a-document/add-a-warrant-for-custodial-sentence/add-
 
 
 
-//convert date to words
-
-function monthToWord (monthNum){
-
-  var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-  var month = months[monthNum - 1]
-
-  console.log("Month name: " + month);
-
-  return month;
-}
-
-
 //Special remission - question
 router.post('special-remission-question', function (req, res) {
     var srselect = req.session.data['srselect']
@@ -180,14 +167,38 @@ router.post('special-remission-question', function (req, res) {
       res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-required')
     }
   
-  });
+  })
 
 
-
-
+//TSCA
+router.post('/tsca-question-submit', function (req, res) {
+    var radiobuttonname = req.session.data['tscaselect']
+   // Check whether the variable matches a condition
+    if (radiobuttonname == "Yes"){
+    // Send user to next page
+    res.redirect('/tsca-sentencing-date')}
+    else {
+    // Send user to ppcs question
+    res.redirect('/tsca-question-ppcs')
+    }
   
+  })
 
 
+
+
+//convert date to words
+
+function monthToWord (monthNum){
+
+    var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    var month = months[monthNum - 1]
+  
+    console.log("Month name: " + month);
+  
+    return month;
+  }
+  
 
 // // add another offence choice
 // // version 3 add-an-offence
