@@ -182,7 +182,36 @@ router.post('special-remission-question', function (req, res) {
   
   });
 
+
+
+  router.post('/tsca-question', function (req, res) {
+    var tscaselect = req.session.data['tscaselect']
   
+    // Check whether the variable matches a condition
+    if (tscaselect == "Yes"){
+     
+     // Send user to next page
+      res.redirect('/tsca-sentencing-date')
+    } else {
+      // Send user to ineligible page
+      res.redirect('/tsca-question-ppcs')
+    }
+  
+  });
+
+  
+  
+  //Create journey for v10 save & exit routing
+router.post('tsca-select', function(req, res) {
+    var tscaselect = req.session.data['tscaselect'];
+    if (tscaselect == "yes"){
+      res.redirect('/tsca-ppcs-date');
+    }
+    else if (tscaselect == "no"){
+      res.redirect('/tsca-cannot-continue');
+    }
+  });
+
 
 // // add another offence choice
 // // version 3 add-an-offence
