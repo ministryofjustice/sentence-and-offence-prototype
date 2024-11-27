@@ -2,24 +2,21 @@
 {% block content %}
 <div class="govuk-body">
     <div class="">
-        <a href="./tsca-question-ppcs.html" class="govuk-back-link">Back</a>
+        <a href="./time-spent-appeal-question.html" class="govuk-back-link">Back</a>
 
-        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+       
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                     <form action="confirm-tsca" method="post">
 
-                        <div id="" class="">
-
-
-                            <h1 class="govuk-heading-l">
+                         <h1 class="govuk-heading-l">
                                 <span class="govuk-caption-xl">Adjustments</span>
-                                Enter the number of days spent in custody abroad (TSCA)
+                                Enter the number of days spent in custody awaiting appeal that will not count towards the sentence as specified by the court
                             </h1>
-                           
-
-                        </div>
                         <div class="govuk-form-group">
+                            <div id="changedName-hint" class="govuk-hint">
+                                You can find this in the paperwork provided by the court of appeal
+                              </div>
                             <label class="govuk-label" for="weight">
                              Number of days
                             </label>
@@ -42,7 +39,7 @@
                     </form>
                 </div>
             </div>
-        </main>
+       
     </div>
 </div>
 <script src="/public/javascripts/add-remand-mvp.js"></script>
