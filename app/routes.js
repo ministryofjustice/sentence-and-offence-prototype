@@ -109,14 +109,13 @@ router.post('special-remission-question', function (req, res) {
       // Send user to homepage
       res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-required')
     }
-  
-  })
+   })
 //TSCA
 router.post('/tsca-question-submit', function (req, res) {
     // this
     var tscaselect = req.session.data['tscaselect']
    // Check whether the variable matches a condition
-    if (tscaselect == "Yes"){
+    if (tscaselect == "Sentencing warrant"){
     // Send user to next page
     res.redirect('/adjustments/beta/mvp-plus/TSCA/tsca-days')}
     else {
@@ -124,8 +123,7 @@ router.post('/tsca-question-submit', function (req, res) {
     res.redirect('/adjustments/beta/mvp-plus/TSCA/tsca-question-ppcs')
     }
   })
-
-  //PPCS
+//PPCS
 router.post('/tsca-question-ppcs-submit', function (req, res) {
     // this
     var ppscselect = req.session.data['ppscselect']
@@ -138,8 +136,19 @@ router.post('/tsca-question-ppcs-submit', function (req, res) {
     res.redirect('/adjustments/beta/mvp-plus/TSCA/tsca-cannot-continue')
     }
   })
-
-
+//TSPANC
+router.post('/time-spent-appeal-question-submit', function (req, res) {
+    // this
+    var appealselect = req.session.data['appealselect']
+   // Check whether the variable matches a condition
+    if (appealselect == "Yes"){
+    // Send user to next page
+    res.redirect('/adjustments/beta/mvp-plus/tspanc/time-spent-appeal-days')}
+    else {
+    // Send user to ppcs question
+    res.redirect('/adjustments/beta/mvp-plus/tspanc/time-spent-appeal-cannot-continue')
+    }
+  })
 //convert date to words
 function monthToWord (monthNum){
     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
