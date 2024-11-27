@@ -3,13 +3,10 @@
 <div class="govuk-body">
     <div class="">
         <a href="./index.html" class="govuk-back-link">Back</a>
-
-       
+       <form class="form" action="/tsca-question-submit" method="post">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
                   
-                  <form class="form" action="/tsca-question-submit" method="post">
-
                        <h1 class="govuk-heading-l">
                                 <span class="govuk-caption-xl">Adjustments</span>
                                 Has the court specified how many days to count as time served and included it in the sentencing warrant?
@@ -17,7 +14,7 @@
                            <div class="govuk-form-group">
                                 <fieldset class="govuk-fieldset" aria-describedby="changedName-hint">
                                   <div id="changedName-hint" class="govuk-hint">
-                                    Hint text
+                                    You will find this in the sentencing warrant
                                   </div>
                                   <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
                                     <div class="govuk-radios__item">
@@ -27,7 +24,7 @@
                                       </label>
                                     </div>
                                     <div class="govuk-radios__item">
-                                      <input class="govuk-radios__input" id="tscaquestion-2" name="tscaselect" type="radio" value="No">
+                                      <input class="govuk-radios__input" id="tscaquestion-2" name="tscaselect" type="radio" value="PPCS">
                                       <label class="govuk-label govuk-radios__label" for="tscaquestion-2">
                                         No
                                       </label>
@@ -35,8 +32,6 @@
                                   </div>
                                 </fieldset>
                         </div>
-
-
                   <div class="govuk-button-group">
                          <button class="govuk-button" data-module="govuk-button" type="submit">
                               Continue
@@ -49,9 +44,19 @@
                 </div>
             </div>
          
-
             
     </div>
 </div>
 <script src="/public/javascripts/add-remand-mvp.js"></script>
 {% endblock %}
+Collapse
+
+
+
+
+
+
+
+
+
+

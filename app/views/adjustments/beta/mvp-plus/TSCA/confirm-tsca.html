@@ -3,7 +3,7 @@
 
     <div class="">
         <a href="./tsca-days" class="govuk-back-link">Back</a>
-        <main class="govuk-main-wrapper " id="main-content" role="main">
+       
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds-from-desktop">
                     <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Confirm and save</h1>
@@ -29,28 +29,19 @@
                                 Confirmed by
                              </dt>
                             <dd class="govuk-summary-list__value">
-                                {%if (data.tscaselect) %} 
-                                {{data.tscaselect}}
-
-                              {% endif %}
+                                {% if data.tscaselect=="Yes"%}
+                                <p class="govuk-body govuk">Sentencing warrant</p>
+   
+                               {% else %}
+                               <p class="govuk-body govuk">PPCS</p>
+                               {% endif %}
                             </dd>
                             <dd id="start" class="govuk-summary-list__value"></dd>
                             <dd class="govuk-summary-list__value">
                                 <a href="lal">Edit</a>
                             </dd>
                         </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Date of confirmation
-                             </dt>
-                            <dd class="govuk-summary-list__value">
-                               15 September 2024
-                            </dd>
-                            <dd id="start" class="govuk-summary-list__value"></dd>
-                            <dd class="govuk-summary-list__value">
-                                <a href="lal">Edit</a>
-                            </dd>
-                        </div>
+                       
                     </dl>
                     <div class="govuk-button-group">
                         <a href="./index1.html"  id="saveLALButton" class="govuk-button" data-module="govuk-button"  data-journey="7">
@@ -62,7 +53,7 @@
                     </div>
                 </div>
             </div>
-        </main>
+     
     </div>
 <script src="/public/javascripts/add-remand-mvp.js"></script>
 
