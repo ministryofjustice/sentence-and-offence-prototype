@@ -124,6 +124,22 @@ router.post('/tsca-question-submit', function (req, res) {
     res.redirect('/adjustments/beta/mvp-plus/TSCA/tsca-question-ppcs')
     }
   })
+
+  //PPCS
+router.post('/tsca-question-ppcs-submit', function (req, res) {
+    // this
+    var ppscselect = req.session.data['ppscselect']
+   // Check whether the variable matches a condition
+    if (ppscselect == "Yes"){
+    // Send user to next page
+    res.redirect('/adjustments/beta/mvp-plus/TSCA/tsca-ppcs-days')}
+    else {
+    // Send user to ppcs question
+    res.redirect('/adjustments/beta/mvp-plus/TSCA/tsca-cannot-continue')
+    }
+  })
+
+
 //convert date to words
 function monthToWord (monthNum){
     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
