@@ -115,7 +115,7 @@ router.post('/tsca-question-submit', function (req, res) {
     // this
     var tscaselect = req.session.data['tscaselect']
    // Check whether the variable matches a condition
-    if (tscaselect == "Sentencing warrant"){
+    if (tscaselect == "Yes"){
     // Send user to next page
     res.redirect('/adjustments/beta/mvp-plus/TSCA/tsca-days')}
     else {
