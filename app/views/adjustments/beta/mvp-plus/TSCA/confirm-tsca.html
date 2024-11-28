@@ -29,7 +29,13 @@
                                 Confirmed by
                              </dt>
                             <dd class="govuk-summary-list__value">
-                               Sentencing warrant
+                                {% if data.tscaselect=="Yes"%}
+                                <p class="govuk-body govuk">Sentencing warrant</p>
+   
+                               {% else %}
+                               <p class="govuk-body govuk">PPCS</p>
+   
+                           {% endif %}
                             </dd>
                             <dd id="start" class="govuk-summary-list__value"></dd>
                             <dd class="govuk-summary-list__value">
