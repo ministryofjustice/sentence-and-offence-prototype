@@ -1,8 +1,12 @@
-const express = require('express')
-const govukPrototypeKit = require('govuk-prototype-kit')
-const router = govukPrototypeKit.requests.setupRouter()
-// const router = express.Router()
-// Add your routes here - above the module.exports line
+//
+// For guidance on how to create routes see:
+// https://prototype-kit.service.gov.uk/docs/create-routes
+//
+
+const govukPrototypeKit = require("govuk-prototype-kit");
+const sessionDataDefaults = require("./data/session-data-defaults");
+const router = govukPrototypeKit.requests.setupRouter();
+
 // Court name route
 router.post('/version-1/add-court-case/do-you-know-the-name-of-the-court', function(req, res) {
     var knownCourtName = req.session.data['do-you-know-the-name-of-the-court']
