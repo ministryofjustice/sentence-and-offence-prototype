@@ -16,42 +16,42 @@
         <main class=" offence-outcome " id="main-content" role="main">
 
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full govuk-!-padding-6 govuk-!-padding-top-1">
+                <div class="govuk-grid-column-full">
 
 
                     <h1 class="govuk-heading-xl">
                         <span class="govuk-caption-xl">Adjustments</span>
                         Review and apply adjustments
                     </h1>
-                    <p class="govuk-body govuk-!-width-three-quarters">
+                    <p class="govuk-body">
                         You can add new adjustments, or review and edit existing adjustments using this service. Make sure you calculate release dates after making any changes to this person's adjustment information.
                     </p>
                 </div>
             </div>
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full">
-                        <h2 class="govuk-heading-m govuk-!-padding-left-4">Deductions</h2>
-                    <div class="govuk-!-padding-left-4 govuk-!-width-three-quarters">
-                        <p class="govuk-inset-text" >
-                            Unused deductions have not yet been calculated. To do this, you will need to
-                            <a href="review-unused-deductions">review deductions</a>.
-                        </p>
-                    </div>
+                        <h2 class="govuk-heading-m">Deductions</h2>
+                        <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+                             <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+                              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">There are periods of remand to review</h2>
+                              <p class="govuk-body">This service has identified periods of remand that may be relevant. You must review these remand periods before calculating release dates</p>
+                              <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="./review-remand">
+                                Review remand
+                              </a>
+                            </section>
+                        </article>
+                          
                         <div class="container  govuk-body">
                             <div class="adjustment-card ">
                                 <div class="govuk-summary-card__title-wrapper">
                                     <h2 class="govuk-summary-card__title">Remand</h2>
                                     <ul class="govuk-summary-card__actions">
                                         <li class="govuk-summary-card__action">
-                                            <a class="govuk-link " href="remand/enter-remand">
-                                            Add new<span class="govuk-visually-hidden"> Remand</span>
+                                            <a class="govuk-link " href="./review-remand">
+                                           Review remand<span class="govuk-visually-hidden"> Remand</span>
                                             </a>
                                         </li>
-                                        <li id="viewRemand" class="govuk-summary-card__action moj-hidden view-remand">
-                                            <a class="govuk-link" href="remand/view-remand">
-                                                View<span class="govuk-visually-hidden"> Remand</span>
-                                            </a>
-                                        </li>
+                                        
                                     </ul>
                                 </div>
 
