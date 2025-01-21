@@ -1,6 +1,6 @@
 {% extends "version-1/dps/includes/hub-layout-minus-nav2.html" %}
 {% block content %}
-
+<div class="govuk-body">
     <a href="../remand-periods/index.html" class="govuk-back-link">Back</a>
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
@@ -10,9 +10,11 @@
                 
 
                    <div class="govuk-body">Based on the court case information in NOMIS, this service has calculated the below remand to be applied. The rules for applying remand time can be found in the policy framework.</div>
+                  
             
-            <table class="govuk-table govuk-!-margin-bottom-8">
-                <caption class="govuk-table__caption govuk-table__caption--m">Remand to be applied</caption>
+            <table class="govuk-table govuk-!-margin-top-8 govuk-!-margin-bottom-8">
+                <caption class="govuk-table__caption">Remand to be applied</caption>
+              
                 <thead class="govuk-table__head">
                   <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header">From</th>
@@ -42,77 +44,172 @@
               </table>
 
 
-<!--accordian-->
+<h2 class="govuk-heading-m"> Relevant remand</h2>
+<!--accordian for relevant remand-->
 
-              <div class="govuk-accordion" data-module="govuk-accordion" id="all-sections-open">
-                <div class="govuk-accordion__section govuk-accordion__section--expanded">
-                  <div class="govuk-accordion__section-header">
-                    <h2 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button" id="all-sections-open-heading-1" aria-labelledby="all-sections-open-heading-1">
-                        Writing well for the web
-                      </span>
 
-                    </h2>
-                  </div>
-                  <div id="accordion-open-content-1" class="govuk-accordion__section-content">
-                    <p class="govuk-body">This is the content for Writing well for the web.</p>
-                  </div>
-                </div>
-                <div class="govuk-accordion__section">
-                  <div class="govuk-accordion__section-header">
-                    <h2 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button" id="accordion-open-heading-2">
-                        Writing well for specialists
-                      </span>
-                    </h2>
-                  </div>
-                  <div id="accordion-open-content-2" class="govuk-accordion__section-content">
-                    <p class="govuk-body">This is the content for Writing well for specialists.</p>
-                  </div>
-                </div>
-                <div class="govuk-accordion__section">
-                  <div class="govuk-accordion__section-header">
-                    <h2 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button" id="accordion-open-heading-3">
-                        Know your audience
-                      </span>
-                    </h2>
-                  </div>
-                  <div id="accordion-open-content-3" class="govuk-accordion__section-content">
-                    <p class="govuk-body">This is the content for Know your audience.</p>
-                  </div>
-                </div>
-                <div class="govuk-accordion__section">
-                  <div class="govuk-accordion__section-header">
-                    <h2 class="govuk-accordion__section-heading">
-                      <span class="govuk-accordion__section-button" id="accordion-open-heading-4">
-                        How people read
-                      </span>
-                    </h2>
-                  </div>
-                  <div id="accordion-open-content-4" class="govuk-accordion__section-content">
-                    <p class="govuk-body">This is the content for How people read.</p>
-                  </div>
-                </div>
+
+
+      <div class="govuk-accordion" data-module="govuk-accordion" id="all-sections-open">
+        <div class="govuk-accordion__section govuk-accordion__section--expanded">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-open-heading-1">
+                Section 18 - grevious bodily harm with intent replaced by wound/inflict grevious bodily harm without intent
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-open-content-1" class="govuk-accordion__section-content">
+            <p class="govuk-body">This is the content for Writing well for the web.</p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section govuk-accordion__section--expanded">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-open-heading-2">
+                Assaulting by beating of an emergency worker
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-open-content-2" class="govuk-accordion__section-content">
+            <p class="govuk-body">This is the content for Writing well for specialists.</p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section govuk-accordion__section--expanded">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-open-heading-2">
+                Wound/inflict grevious bodily harm without intent.
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-open-content-2" class="govuk-accordion__section-content">
+            <p class="govuk-body">Wound/inflict grevious bodily harm without intent.</p>
+          </div>
+        </div>
+   
+  
+      </div>
+
+      <h2 class="govuk-heading-m"> Non-relevant remand</h2>
+
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                Assault by beating of an emergency worker
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content">
+            <p class="govuk-body">This is the content for Writing well for the web.</p>
+          </div>
+        </div>
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+              <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+               Breach of personal licence condition - Gambling Act 2005
+              </span>
+            </h2>
+          </div>
+          <div id="accordion-default-content-2" class="govuk-accordion__section-content">
+            <p class="govuk-body">This is the content for Writing well for specialists.</p>
+          </div>
+        </div>
+        
+      </div>
+
+      <h3 class="govuk-heading-s">Previous sentences that may overlap remand periods</h3>
+      <p class="govuk-body">These sentences could overlap with the relevant remand periods above.</p>
+
+      <table class="govuk-table govuk-!-margin-bottom-8">
+      
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Sentenced</th>
+            <th scope="col" class="govuk-table__header">Released</th>
+            <th scope="col" class="govuk-table__header">Offence details</th>
+            <th scope="col" class="govuk-table__header">Committed on</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">03 Apr 2023</td>
+            <td class="govuk-table__cell">22 Nov 2023</td>
+            <td class="govuk-table__cell">Assault by beating of an emergency worker</td>
+            <td class="govuk-table__cell">18 Jul 2021</td>
+            
+          </tr>
+        
+        
+        </tbody>
+      </table>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Confirm that the remand to be applied is correct
+            </h1>
+          </legend>
+          <div id="contact-hint" class="govuk-hint">
+            By selecting yes, the remand will be saved and applied when you calculate a release date. Select no to enter remand periods manually.
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Yes, the remand to be applied is correct
+              </label>
+            </div>
+           
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+              <label class="govuk-label govuk-radios__label" for="contact-2">
+                No, the remand is incorrect
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-phone">
+                  Enter the reason that the remand is incorrect.
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel">
               </div>
+            </div>
+           
+          </div>
+        </fieldset>
+
+        <br/> <br/>
+        <div class="govuk-button-group">
+          <button class="govuk-button" data-module="govuk-button" a href="/index.html" class="govuk-button govuk-button--primary" data-module="govuk-button">Save and Continue</a>
+              
+          </button>
+          <a href="/index.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Cancel
+          </a>
+      </div>
+      </div>
+
+
+      
+      </div>
+   
+     
+   
+
 
             
                   
 
 
              
-            <div class="govuk-button-group">
-                <a href="hub-9-a.html" class="govuk-button" data-module="govuk-button">
-                    Accept and save
-                </a>
-                <a href="hub-9.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                    Cancel
-                </a>
-            </div>
-
+            
         </div>
     </div>
-</div>
+
 
 <script src="/public/javascripts/cases.js"></script>
 {% endblock %}
