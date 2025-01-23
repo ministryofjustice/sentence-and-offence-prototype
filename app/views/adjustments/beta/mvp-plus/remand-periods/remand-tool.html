@@ -470,7 +470,7 @@
               Confirm that the remand to be applied is correct
             </h1>
           </legend>
-          <div id="contact-hint" class="govuk-hint">
+          <div id="contact-hint"class="govuk-hint">
             By selecting yes, the remand will be saved and applied when you calculate a release date. Select no to enter remand periods manually.
           </div>
           <div class="govuk-radios" data-module="govuk-radios">
@@ -512,58 +512,7 @@
        
       </div>
 
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              Where do you live?
-            </h1>
-          </legend>
-          <div class="govuk-radios" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                England
-              </label>
-            </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="remand-2" name="remand" type="radio" value="no" data-aria-controls="conditional-remand-2">
-              <label class="govuk-label govuk-radios__label" for="remand-2">
-                No, the remand is incorrect
-              </label>
-            </div>
-            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="contact-by-phone">
-                  Enter the reason that the remand is incorrect.
-                </label>
-                <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel">
-              </div>
-            </div>
-
-            
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                Scotland
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio" value="wales">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
-                Wales
-              </label>
-            </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio" value="northern-ireland">
-              <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
-                Northern Ireland
-              </label>
-            </div>
-          </div>
-        </fieldset>
-      </div>
+    
       
       </div>
    
@@ -580,7 +529,7 @@
         </div>
     </div>
 
+    
 
-<script src="/public/javascripts/cases.js"></script>
 <script type="module" src="/public/javascripts/gov-uk-latest.js"></script>
 {% endblock %}
