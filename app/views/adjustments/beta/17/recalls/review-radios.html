@@ -1,0 +1,170 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+    <div class="moj-identity-bar__container govuk-!-margin-left-0">
+        <div class="moj-identity-bar__details">
+            <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+        </div>
+    </div>
+</div>
+    <a href="intercept-page-radio.html" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full govuk-!-padding-top-6">
+            <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjustments</span>Review adjustments</h1>
+
+            <div class="govuk-summary-card remand adjustment govuk-!-width-two-thirds">
+                <div class="govuk-summary-card__content recalls ">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Adjustment type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Tagged bail
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Case details
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Bristol Magistrates Court<br>
+                                <span class="govuk-hint">Case reference: T00003333 2 Jan  2023</span>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Days
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                4
+                            </dd>
+                        </div>
+                    </dl>
+
+                </div>
+            </div>
+
+            <div class="govuk-summary-card remand adjustment govuk-!-width-two-thirds">
+<!--                <div class="govuk-summary-card__title-wrapper ">-->
+<!--                    <h2 class="govuk-summary-card__title">From 3 Apr 2023 to 4 Aug 2023</h2>-->
+<!--                </div>-->
+                <div class="govuk-summary-card__content recalls">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Adjustment type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Remand
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Dates
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                From 3 Apr 2023 to 4 Aug 2023
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Offences
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <ul class="govuk-list">
+                                    <li>Attempt to possess a controlled drug of Class C - GHB<br><span class="govuk-hint">Committed on 30 Oct 2023</span></li>
+                                </ul>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Days
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                               12
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="govuk-summary-card remand adjustment govuk-!-width-two-thirds">
+                <!--                <div class="govuk-summary-card__title-wrapper ">-->
+                <!--                    <h2 class="govuk-summary-card__title">From 3 Apr 2023 to 4 Aug 2023</h2>-->
+                <!--                </div>-->
+                <div class="govuk-summary-card__content recalls">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Adjustment type
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Remand
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Dates
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                From 3 Apr 2023 to 4 Aug 2023
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Offences
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <ul class="govuk-list">
+                                    <li>Attempt to possess a controlled drug of Class C - GHB<br><span class="govuk-hint">Committed on 30 Oct 2023</span></li>
+                                </ul>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Days
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                20
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="govuk-!-margin-top-8">
+                <div class="govuk-!-margin-bottom-6">
+                    <h2 class="govuk-heading-m">Do you want to add these adjustments?</h2>
+                    <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="yes" name="changedName" type="radio" value="yes" data-route="index-1-review-success">
+                            <label class="govuk-label govuk-radios__label" for="review-remand-button">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no" data-route="index-1">
+                            <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                No
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+<div class="govuk-button-group">
+    <a id="recalls-button" href="index-1-success.html" class="govuk-button" data-module="govuk-button">
+        Continue
+    </a>
+
+</div>
+
+
+
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/cases.js"></script>
+{% endblock %}

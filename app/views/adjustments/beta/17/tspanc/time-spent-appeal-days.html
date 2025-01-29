@@ -1,0 +1,45 @@
+{% extends "version-1/dps/includes/hub-layout-minus-nav.html" %}
+{% block content %}
+<div class="govuk-body">
+    <div class="">
+        <a href="./index.html" class="govuk-back-link">Back</a>
+
+       
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    
+
+                         <h1 class="govuk-heading-l">
+                                <span class="govuk-caption-xl">Adjustments</span>
+                                Enter the number of days spent in custody as an appeal applicant that will not count towards the sentence
+                        <div class="govuk-form-group">
+                            <div id="changedName-hint" class="govuk-hint">
+                                You will find this in the paperwork provided by the Court of Appeal
+                              </div>
+                            <label class="govuk-label" for="weight">
+                             Number of days
+                            </label>
+                            <div class="govuk-input__wrapper">
+                              <input class="govuk-input govuk-input--width-5" id="weight" name="weight" type="text" spellcheck="false">
+                              <div class="govuk-input__suffix" aria-hidden="true">days</div>
+                            </div>
+                          </div>
+                       
+
+
+                          <div class="govuk-button-group">
+                            <a href="./confirm-time-spent-appeal.html"  id="saveLALButton" class="govuk-button" data-module="govuk-button"  data-journey="7">
+                                Confirm and save
+                            </a>
+                            <a href="./index.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                Cancel
+                            </a>
+                        </div>
+                    
+                </div>
+            </div>
+       
+    </div>
+</div>
+<script src="/public/javascripts/add-remand-mvp.js"></script>
+{% endblock %}
