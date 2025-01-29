@@ -1,0 +1,45 @@
+{% extends "version-1/dps/includes/template-masthead.html" %}
+{% block beforeContent %}
+<div class="app-masthead govuk-!-margin-top-0">
+    <div class="govuk-width-container dwf-masthead">
+        <h1 class="govuk-heading-xl govuk-!-font-size-80"> Adjustments prototypes</h1>
+    </div>
+</div>
+{% endblock%}
+{% block content %}
+<div class="govuk-body govuk-!-padding-top-6">
+    <h2 class="govuk-heading-m">Adding multiple adjustments</h2>
+    <img src="/public/images/add-multiple-adjustments@2x.png"/>
+    <h2 class="govuk-heading-m govuk-!-padding-top-6">Process</h2>
+    <ol class="govuk-list govuk-list--number">
+        <li>User selects required adjustment from the list</li>
+        <li>User enters data related the adjustment</li>
+        <li>User reviews data entered on previous scree, user has opportunity to:
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Add another adjustment</li>
+                <li>Edit any data entered in error</li>
+                <li>Confirm and continue</li>
+            </ul>
+        </li>
+        <li>
+            After selecting add another adjustment user is taken to an adjustment type selection page
+        </li>
+        <li>User then enters data for selected adjustment</li>
+        <li>User reviews data entered on previous scree, user has opportunity to:
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Add another adjustment</li>
+                <li>Edit any data entered in error</li>
+                <li>Confirm and continue</li>
+            </ul>
+        </li>
+        <li>After selecting continue the user is returned to the dashboard that has been updated
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Notification panel confirms data has been saved and plays back a summary of the data added</li>
+                <li>Card relevant to adjustment has been updated with a new count</li>
+                <li>CTA's for calculate release dates are present</li>
+            </ul>
+        </li>
+    </ol>
+</div>
+
+{% endblock %}

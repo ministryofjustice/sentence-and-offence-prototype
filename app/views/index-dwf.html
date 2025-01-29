@@ -1,0 +1,309 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <a href="index.html" class="govuk-back-link">Back</a>
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-xl govuk-!-margin-top-8">
+                Manage a digital warrant folder3
+            </h1>
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+             
+                <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                            <span class="govuk-accordion__section-button" id="accordion-default-heading-9">
+                              Case based <span class="govuk-tag govuk-tag--red">In progress</span>
+                            </span>
+                        </h2>
+                    </div>
+                    <div id="accordion-default-content-9" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                        <p class='govuk-body'><strong>Scenario : </strong>Linking existing remand case details to the journey for adding a custodial sentence</p>
+                        <p class='govuk-body'><strong>Tested : </strong>Week commencing.</p>
+                        <p class='govuk-body'><strong>Prototype : </strong>
+                            When entering details from a custodial warrant where the case has a related remand warrant the existing custodial journey is re routed to result(add outcomes)
+                            to the offence on remand
+                            <br>
+                            <a target="_blank" href="dwf/version-4-6/prisoner-search.html">view</a>
+                        </p>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <h3 class="govuk-heading-s">key changes</h3>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Applying case based taxonomy to journeys</li>
+                                    <li>Using colour to for case types</li>
+                                    <li>Adding document upload</li>
+                                </ul>
+                            </div>
+
+                            <div class="govuk-grid-column-one-half">
+                                <h3 class="govuk-heading-s">To do</h3>
+                                <p>We are pausing to start work on adjustments</p>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Introduce capture of concurrent /consec for sentences.<br>
+                                        <span class="govuk-hint">consec + concurrent ad remand to custodial journeys have been tested in previous rounds</span>
+                                    </li>
+                                    <li>Review outcomes of individual outcomes.</li>
+                                    <li>Review how we handle unofficial document uploads.</li>
+                                    <li>Review the launch points for when remand and sentencing journeys link.</li>
+                                    <li>Add update and edit journeys (TRS)</li>
+                                    <li>Case status  (active case)</li>
+                                    <li>Review document upload journey (start point)</li>
+                                    <li>Person status  (active case)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                            <span class="govuk-accordion__section-button" id="accordion-default-heading-8">
+                              Remand to custodial <span class="govuk-tag govuk-tag--red">In progress</span>
+                            </span>
+                        </h2>
+                    </div>
+                    <div id="accordion-default-content-8" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                        <p class='govuk-body'><strong>Scenario : </strong>Linking existing remand case details to the journey for adding a custodial sentence</p>
+                        <p class='govuk-body'><strong>Tested : </strong>Week commencing.</p>
+                        <p class='govuk-body'><strong>Prototype : </strong>
+                            When entering details from a custodial warrant where the case has a related remand warrant the existing custodial journey is re routed to result(add outcomes)
+                            to the offence on remand
+                            <br>
+                            <a target="_blank" href="dwf/version-4-5/prisoner-search.html">view</a>
+                        </p>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <h3 class="govuk-heading-s">key changes</h3>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Exploring new court case details card</li>
+                                    <li>Exploring new offence details card</li>
+                                    <li>Introduce the task list pattern for users to result offences from existing remand cases</li>
+                                </ul>
+                            </div>
+
+                            <div class="govuk-grid-column-one-half">
+                                <h3 class="govuk-heading-s">To do</h3>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Improve the groupings for outcomes</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                            <span class="govuk-accordion__section-button" id="accordion-default-heading-7">
+                              Add consec concurrent <span class="govuk-tag govuk-tag--green">Stable for testing and demos</span>
+                            </span>
+                        </h2>
+                    </div>
+                    <div id="accordion-default-content-7" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                        <p class='govuk-body'><strong>Scenario : </strong>Allow users to enter sentence and offence details including capturing consecutive and concurrent sentence selection.</p>
+                        <p class='govuk-body'><strong>Tested : </strong>Week commencing.  <a href="https://miro.com/app/board/uXjVP8YuEus=/?moveToWidget=3458764540770162418&cot=14">Findings</a> </p>
+                        <p class='govuk-body'><strong>Prototype : </strong>Created a new journey starting from the prisoner details where a user can enter the details from a warrant including relationships between sentences that are to be served consecutively/concurrently.<br>
+                            <a target="_blank" href="dwf/version-4-4/prisoner-search.html">view</a>
+                        </p>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <h3 class="govuk-heading-s">key changes</h3>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Removed hearing type field</li>
+                                    <li>Updated dates to GDS format</li>
+                                    <li>Pull through of sentence type added to sentence list page</li>
+                                    <li>Added offence numbering</li>
+                                    <li>Removed conditional from overall sentence length capture</li>
+                                    <li>Renamed court date field</li>
+                                    <li>Added radio buttons for offences entered during the journey for concurrent sentences</li>
+                                    <li>Allow users to make relationships to offences from other cases</li>
+                                </ul>
+                            </div>
+
+
+                            <div class="govuk-grid-column-one-half">
+                                <h3 class="govuk-heading-s">To do</h3>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Content review</li>
+                                    <li>IA review for displaying offences and relationships between sentences</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                            <span class="govuk-accordion__section-button" id="accordion-default-heading-6">
+                              Add consec concurrent
+                            </span>
+                        </h2>
+                    </div>
+                    <div id="accordion-default-content-6" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                        <p class='govuk-body'><strong>Scenario : </strong>Allow users to enter sentence servicg data.</p>
+                        <p class='govuk-body'><strong>Tested : </strong>Week commencing.</p>
+                        <p class='govuk-body'><strong>Prototype : </strong>Created a new journey starting from the prisoner details where a user can
+                            the details from a trail record sheet.<br>
+                            <a target="_blank" href="dwf/version-4-3/prisoner-search.html">view</a>
+                        </p>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                                <h3 class="govuk-heading-s">key changes</h3>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Introduced capture for overall sentence length</li>
+
+                                </ul>
+                            </div>
+
+
+                            <div class="govuk-grid-column-one-half">
+                                <h3 class="govuk-heading-s">To do</h3>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Introduce capture of concurrent /consec for sentences.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                            <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                              Add information from a trial record sheet
+                            </span>
+                        </h2>
+                    </div>
+                    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                        <p class='govuk-body'><strong>Scenario : </strong>Allow users to enter details from a trial record sheet.</p>
+                        <p class='govuk-body'><strong>Tested : </strong>Week commencing 4 Oct 2022.</p>
+                        <p class='govuk-body'><strong>Prototype : </strong>Created a new journey starting from the prisoner details where a user can
+                        the details from a trail record sheet.<br>
+                            <a target="_blank" href="dwf/version-4-2/prisoner-search.html">view</a>
+                        </p>
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-one-half">
+                        <h3 class="govuk-heading-s">key changes</h3>
+                            <ul class="govuk-list govuk-list--bullet">
+                                <li>Introduced capture for overall sentence length</li>
+                                <li>Updated hint text for court name input</li>
+                                <li>Remove outcome input on custodial journey</li>
+                                <li>add a video link option to the hearing type selection</li>
+                                <li>Added a conditional to the sentence detail capture page as depending on the document they are using the
+                                information may not be present</li>
+                                <li>Updated the sentence type list to a more comprehensive list</li>
+                                <li>Changed sentence type input from a select to a type ahead search due to dataset size</li>
+                                <li>Added overall sentence length to court details playback</li>
+                                <li>Removed the links on tha card heading on the overview page as during testing some users clicked on them.</li>
+                                <li>Added links to the confirmation page so users could proceed with onward journeys</li>
+                            </ul>
+                        </div>
+
+
+                            <div class="govuk-grid-column-one-half">
+                                <h3 class="govuk-heading-s">To do</h3>
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Introduce capture of concurrent /consec for sentences.</li>
+                                </ul>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                            <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                              Add information from a custodial warrant
+                            </span>
+                        </h2>
+                    </div>
+                    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+                        <p class='govuk-body'><strong>Scenario : </strong>Allow users to enter details from a custodial warrant.</p>
+                        <p class='govuk-body'><strong>Tested : </strong>14 - 26 Sept 2022.
+                            <a target="_blank" href="https://docs.google.com/presentation/d/1BFL9OK2VE07w8Mowxo8iN9yrCqpMm3dSdx0qjMhjzx4/edit#slide=id.g138e6f79365_0_396">see findings</a>
+                        </p>
+                        <p class='govuk-body'><strong>Prototype : </strong>Building on the remand warrant journey we added a new card to start the
+                         journey for entering information from a custodial warrant.<br>
+                            <a target="_blank" href="dwf/version-4-1/prisoner-search.html">view</a>
+                        </p>
+                        <h3 class="govuk-heading-s">key changes & hypotheses tested</h3>
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>Task based approach to adding custodial warrant journey</li>
+                            <li>Updated the list of courts</li>
+                            <li>Added a new card for custodial information on the prisoner screen</li>
+                            <li>Amended court details page title</li>
+                            <li>Added a time capture to the remand warrant journey</li>
+                            <li>introduced a conditional to case reference input </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                            <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                              Add information from a remand warrant
+                            </span>
+                        </h2>
+                    </div>
+                    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                        <p class='govuk-body'><strong>Background : </strong>From the findings of the card sorting sessions we were able to identify that users had a task based approached to the data.</p>
+                        <p class='govuk-body'><strong>Scenario : </strong>Allow users to enter details from a remand warrant.</p>
+                        <p class='govuk-body'><strong>Tested : </strong>1 -13 Sept 2022.
+                        <a target="_blank" href="https://docs.google.com/presentation/d/1eXb3oV1HuOSuJLkutiJSF8MjHJMj619qYL1lgqEmpac/edit#slide=id.g143a13e225b_0_267">view report</a>
+                        </p>
+                        <p class='govuk-body'><strong>Prototype : </strong>Testing a complete journey where users search and find a prisoner then add the information from the
+                            information from a remand warrant. <br>
+                            <a target="_blank" href="dwf/version-4/prisoner-search.html">view</a>
+                        </p>
+                        <h3 class="govuk-heading-s">hypotheses tested</h3>
+                        <ul class="govuk-list govuk-list--bullet">
+                            <li>Task based approach</li>
+                            <li>Preforming tasks against a prisoner</li>
+                            <li>Having a multiple related fields on one page</li>
+                            <li>Showing users  playback of the data they entered will improve accuracy </li>
+                        </ul>
+
+                    </div>
+                </div>
+                <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                            <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                              Card sorting
+                            </span>
+                        </h2>
+                    </div>
+                    <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                        <p><strong>Scope : </strong>How do we facilitate users getting data from documents onto a digital service to be used in the prison context?</p>
+                        <p><a target="_blank" href="https://docs.google.com/presentation/d/1G-skNIQxqXdR4VEHh-Y5DPfGJIVO9opoDBLAhla9KX4/edit#slide=id.g143a13e225b_0_267">findings</a></p>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                            <span class="govuk-accordion__section-button" id="accordion-default-heading-5">
+                              Older versions
+                            </span>
+                        </h2>
+                    </div>
+                    <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+                        <h3 class="govuk-heading-s">Hubs</h3>
+                        <ul class="govuk-list">
+                            <li><a target="_blank"  href="dwf/version-3/court-cases">Version 3</a></li>
+                        </ul>
+                        <ul class="govuk-list">
+                            <li><a target="_blank" href="dwf/version-3/add-a-document/add-a-remand-warrant/next-hearing-date">Add a remand warrant</a></li>
+                            <li><a target="_blank" href="dwf/version-3/add-a-document/add-a-warrant-for-custodial-sentence/outcome">Add a warrant for custodial sentence</a>
+                                <p class="govuk-hint">Also known as an Order for Imprisonment</p></li>
+                            <li><a target="_blank" href="dwf/version-2/initial-sentencing-one-page/task-list">Version 2 - initial sentencing journey using task list</a></li>
+                            <li><a target="_blank" href="dwf/version-1/version-1b/overview">Version 1 - sub nav</a></li>
+                            <li><a target="_blank" href="dwf/version-1/version-1a/overview">Version 1 - tabbed</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

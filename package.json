@@ -34,7 +34,7 @@
 
     "@govuk-prototype-kit/task-list": "2.0.0",
 
-    "@ministryofjustice/frontend": "3.3.1",
+    "@ministryofjustice/frontend": "^3.3.1",
 
     "accessible-autocomplete": "^2.0.4",
 
@@ -46,9 +46,7 @@
 
     "govuk-prototype-kit": "13.16.2",
 
-    "hmpps-court-cases-release-dates-design": "^4.1.0",
-
-    "hmpps-design-system-frontend": "1.3.5",
+    "hmpps-court-cases-release-dates-design": "^4.2.0",
 
     "inquirer": "^9.2.11",
 

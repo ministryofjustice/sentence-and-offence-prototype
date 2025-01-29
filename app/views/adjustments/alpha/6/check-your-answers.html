@@ -1,0 +1,62 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="govuk-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-width-container">
+        <a href="#" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desp">
+                    <h1 class="govuk-heading-l">Review adjustments before submitting</h1>
+
+                    <div id="adjustmentsExplainer">
+
+                    </div>
+                    <h2 class="govuk-heading-s">Adjustment details</h2>
+                    <div id="adjustmentsList" class="govuk-body">
+
+                    </div>
+
+
+                    <h2 class="govuk-heading-m">Do you need to add any another adjustments?</h2>
+<!--                    <p class="govuk-body">This information will be stored in NOMIS.</p>-->
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="add-another-hint">
+
+<!--                            <div id="add-another-hint" class="govuk-hint">-->
+<!--                                You must add every offence on the warrant.-->
+<!--                            </div>-->
+                            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input add-another" id="add-another" name="add-another" type="radio" value="Yes" data-route="select-adjustment-type">
+                                    <label class="govuk-label govuk-radios__label" for="add-another" >
+                                        Yes
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input add-another" id="add-another-2" name="add-another" type="radio" value="No" data-route="confirmation">
+                                    <label class="govuk-label govuk-radios__label" for="add-another-2">
+                                        No
+                                    </label>
+                                </div>
+                            </div>
+
+                        </fieldset>
+                    </div>
+                    <a href="confirmation.html" class="govuk-button" data-module="govuk-button" id="accept-button">
+                        Continue
+                    </a>
+                </div>
+
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}

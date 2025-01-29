@@ -1,0 +1,64 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="govuk-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="select-adjustment-type.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+
+
+                    <h1 class="govuk-heading-l">Check your answers before submitting</h1>
+                    <h2 class="govuk-heading-m">Remand details</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Remand started on
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Sarah Philips
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Remand ended on
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                5 January 1978
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">
+                                    Change<span class="govuk-visually-hidden"> date of birth</span>
+                                </a>
+                            </dd>
+                        </div>
+                    </dl>
+                    <h2 class="govuk-heading-m">Calculated remand days</h2>
+                    <p class="govuk-body govuk-!-margin-bottom-9">Based on the dates entered <span>6</span> days wil be awarded</p>
+
+                    <h2 class="govuk-heading-m">Now send your application</h2>
+                    <p class="govuk-body">By submitting this information you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+                        <a href="hub-7-c" id="n" class="govuk-button" data-name="ADA">
+                            Accept and submit
+                        </a>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}

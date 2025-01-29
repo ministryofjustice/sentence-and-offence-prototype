@@ -1,0 +1,36 @@
+{% extends "version-1/dps/includes/template-masthead.html" %}
+{% block beforeContent %}
+<div class="app-masthead govuk-!-margin-top-0">
+    <div class="govuk-width-container dwf-masthead">
+        <h1 class="govuk-heading-xl govuk-!-font-size-80"> Adjustments prototypes</h1>
+    </div>
+</div>
+{% endblock%}
+{% block content %}
+<div class="govuk-!-padding-top-6">
+    <h2 class="govuk-heading-m">Accepting identified remand</h2>
+    <img src="/public/images/Accepting%20identified%20remand@2x.png">
+    <h2 class="govuk-heading-m govuk-!-padding-top-6">Process</h2>
+
+    <ol class=" govuk-list govuk-list--number" >
+        <li>When potential remand has been found the CTA is shown users cicks the CTA</li>
+        <li>User views details of the potential remand identified then clicks accept to add the remand</li>
+        <li>User is now shown a play back of what they have accepted with options to:
+        <ul class="govuk-list govuk-list--bullet">
+            <li>Add another adjustment</li>
+            <li>Edit any data entered in error</li>
+            <li>Confirm and continue</li>
+        </ul>
+        </li>
+        <li>After selecting continue the user is returned to the dashboard that has been updated
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Notification panel confirms data has been saved and plays back a summary of the data added</li>
+                <li>Card relevant to adjustment has been updated with a new count</li>
+                <li>CTA's for calculate release dates are present</li>
+            </ul>
+        </li>
+    </ol>
+    <p>View prototype <a href="10/hub-9.html" target="_blank">view</a></p>
+</div>
+
+{% endblock %}

@@ -1,0 +1,185 @@
+{% extends "version-1/dps/includes/template.html" %}
+{% block content %}
+<div class="govuk-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">21 March 1986</span><strong>Prison number: </strong>A8207AA</span>
+            </div>
+        </div>
+    </div>
+    <div class="">
+        <a href="prisoner-search-results.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full govuk-!-padding-6">
+                    <h1 class="govuk-heading-l">
+                        Adjustment release dates
+                    </h1>
+
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+
+                <div class="govuk-grid-column-full govuk-!-static-padding-5">
+                    <article class="moj-ticket-panel govuk-!-margin-bottom-8" aria-label="Sub navigation 1">
+                        <h2 class="govuk-heading-m govuk-!-padding-left-1">
+                            Adjustments summary
+                        </h2>
+                        <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+
+                            <table class="govuk-table">
+                                <caption class="govuk-table__caption govuk-table__caption--s">Additions and deductions</caption>
+
+                                <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Total Additions</th>
+                                    <td class="govuk-table__cell">972 days</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Total deductions</th>
+                                    <td class="govuk-table__cell">2 days</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Total days</th>
+                                    <td class="govuk-table__cell">970</td>
+                                </tr>
+                                <tr class="govuk-table__row">
+                                    <th scope="row" class="govuk-table__header">Applies to sentence</th>
+                                    <td class="govuk-table__cell">18</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </section>
+
+                    </article>
+                    <h2 class="govuk-heading-m">Calculate release dates</h2>
+                    <p>The changes may affect the release date for Joe Bloggs </p>
+                    <a href="select-adjustment-type.html" id="add-adjustment-button" class="govuk-button" data-name="ADA">
+                        Calculate release dates
+                    </a>
+                </div>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-m govuk-!-padding-left-4">
+                        Deductions
+                    </h2>
+                        <div class="govuk-grid-column-one-half">
+                            <div class="adj-card">
+                                <h2 class="govuk-heading-m adj-card-heading">Remand</h2>
+                                <span class="count">45</span>
+                                <ul class="govuk-list govuk-!-padding-top-3">
+                                    <li><a href="">Add new</a></li>
+                                    <li><a href="">Approve pending</a></li>
+                                    <li><a href="">View history</a></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                    <div class="govuk-grid-column-one-half">
+                        <div class="adj-card">
+                            <h2 class="govuk-heading-m adj-card-heading">Tagged bail</h2>
+                            <span class="count">0</span>
+                            <ul class="govuk-list govuk-!-padding-top-3">
+                                <li><a href="">Add new</a></li>
+                                <li><a href="">Approve pending</a></li>
+                                <li><a href="">View history</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="adj-card">
+                            <h2 class="govuk-heading-m adj-card-heading">Lawfully at large </h2>
+                            <span class="count">0</span>
+                            <ul class="govuk-list govuk-!-padding-top-3">
+                                <li><a href="">Add new</a></li>
+                                <li><a href="">Approve pending</a></li>
+                                <li><a href="">View history</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+
+                        <div class="adj-card">
+                            <h2 class="govuk-heading-m adj-card-heading">Restore additional days awarded (RADA)</h2>
+                            <span class="count">0</span>
+                            <ul class="govuk-list govuk-!-padding-top-3">
+                                <li><a href="">Add new</a></li>
+                                <li><a href="">Approve pending</a></li>
+                                <li><a href="">View history</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="adj-card">
+                            <h2 class="govuk-heading-m adj-card-heading">Special remission</h2>
+                            <span class="count">0</span>
+                            <ul class="govuk-list govuk-!-padding-top-3">
+                                <li><a href="">Add new</a></li>
+                                <li><a href="">Approve pending</a></li>
+                                <li><a href="">View history</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <div class="adj-card">
+                            <h2 class="govuk-heading-m adj-card-heading">Time spent in custody abroad</h2>
+                            <span class="count">0</span>
+                            <ul class="govuk-list govuk-!-padding-top-3">
+                                <li><a href="">Add new</a></li>
+                                <li><a href="">Approve pending</a></li>
+                                <li><a href="">View history</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+
+                </div>
+            </div>
+            <div class="govuk-grid-row govuk-!-padding-top-8">
+
+                <div class="govuk-grid-column-full">
+                    <h2 class="govuk-heading-m govuk-!-padding-left-4">
+                        Additions
+                    </h2>
+                    <div class="govuk-grid-column-one-half">
+
+                        <div class="adj-card">
+                            <h2 class="govuk-heading-m adj-card-heading">Unlawfully at large (UAL)</h2>
+                            <span class="count">0</span>
+                            <ul class="govuk-list govuk-!-padding-top-3">
+                                <li><a href="">Add new</a></li>
+                                <li><a href="">Approve pending</a></li>
+                                <li><a href="">View history</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+
+                        <div class="adj-card">
+                            <h2 class="govuk-heading-m adj-card-heading">Additional days awarded (ADA)</h2>
+                            <span class="count">0</span>
+                            <ul class="govuk-list govuk-!-padding-top-3">
+                                <li><a href="">Add new</a></li>
+                                <li><a href="">Approve pending</a></li>
+                                <li><a href="">View history</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}
