@@ -40,7 +40,7 @@ document.addEventListener("load", function() {
 //rada inputs
 
   const radaDay = document.getElementById('rada-day');
-  const radaMonth = document.getElementById('rada-month');
+  const radJoeth = document.getElementById('rada-month');
   const radaYear = document.getElementById('rada-year');
   const radaNumberOfDays = document.getElementById('rada-number-of-days');
   const radaDocID = document.getElementById('rada-document-ID');
@@ -148,7 +148,7 @@ console.log(createID(adjustments) ,'id')
 //   console.log('working')
 //
 //   enterRadaDetailsButton.addEventListener('click', function(e){
-//     let from = createDate(radaDay,radaMonth,radaYear)
+//     let from = createDate(radaDay,radJoeth,radaYear)
 //     let days = radaNumberOfDays.value
 //     let id = adjustments.length +1
 //     let desc = null
@@ -362,9 +362,9 @@ if (rejectRemandToolButton) {
           break;
         case "RADA":
           let day = radaDay.value
-          let month = radaMonth.value
+          let month = radJoeth.value
           let year = radaYear.value
-          from = createDate(radaDay, radaMonth, radaYear);
+          from = createDate(radaDay, radJoeth, radaYear);
           to = null;
           days = parseInt(radaNumberOfDays.value);
           id = adjustments.length +1;
@@ -1074,7 +1074,7 @@ if(editRADAPage) {
 
   RADADays.value = record[0].days;
   radaDay.value = record[0].day;
-  radaMonth.value = record[0].month;
+  radJoeth.value = record[0].month;
   radaYear.value = record[0].year;
 
   editRADAButton.addEventListener('click', function(e) {
@@ -1083,10 +1083,10 @@ if(editRADAPage) {
     for(let x of adjustments){
       if(x.id === item){
         console.log(x)
-        x.from = createDate(radaDay, radaMonth, radaYear);
+        x.from = createDate(radaDay, radJoeth, radaYear);
         x.days = RADADays.value;
         x.day = radaDay.value;
-        x.month =  radaMonth.value;
+        x.month =  radJoeth.value;
         x.year =  radaYear.value;
       }
     }

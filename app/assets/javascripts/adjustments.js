@@ -40,7 +40,7 @@ document.addEventListener("load", function() {
 //rada inputs
 
   const radaDay = document.getElementById('rada-day');
-  const radaMonth = document.getElementById('rada-month');
+  const radJoeth = document.getElementById('rada-month');
   const radaYear = document.getElementById('rada-year');
   const radaNumberOfDays = document.getElementById('rada-number-of-days');
   const radaDocID = document.getElementById('rada-document-ID');
@@ -222,7 +222,7 @@ if (rejectRemandToolButton) {
           addAdjustment(type, from, to, days, id, description);
           break;
         case "RADA":
-          from = createDate(radaDay, radaMonth, radaYear);
+          from = createDate(radaDay, radJoeth, radaYear);
           to = null;
           days = parseInt(radaNumberOfDays.value);
           id = null;

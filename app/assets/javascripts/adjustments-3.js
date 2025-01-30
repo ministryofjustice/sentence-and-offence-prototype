@@ -40,7 +40,7 @@ document.addEventListener("load", function() {
 //rada inputs
 
   const radaDay = document.getElementById('rada-day');
-  const radaMonth = document.getElementById('rada-month');
+  const radJoeth = document.getElementById('rada-month');
   const radaYear = document.getElementById('rada-year');
   const radaNumberOfDays = document.getElementById('rada-number-of-days');
   const radaDocID = document.getElementById('rada-document-ID');
@@ -139,7 +139,7 @@ if(checkYourAnswersPage) {
 //   console.log('working')
 //
 //   enterRadaDetailsButton.addEventListener('click', function(e){
-//     let from = createDate(radaDay,radaMonth,radaYear)
+//     let from = createDate(radaDay,radJoeth,radaYear)
 //     let days = radaNumberOfDays.value
 //     let id = adjustments.length +1
 //     let desc = null
@@ -349,7 +349,7 @@ if (rejectRemandToolButton) {
           localStorage.setItem('liveID', id)
           break;
         case "RADA":
-          from = createDate(radaDay, radaMonth, radaYear);
+          from = createDate(radaDay, radJoeth, radaYear);
           to = null;
           days = parseInt(radaNumberOfDays.value);
           id = adjustments.length +1;

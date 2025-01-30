@@ -28,15 +28,34 @@
                     <p class="govuk-body govuk-!-width-three-quarters">
                         You can add new adjustments, or review and edit existing adjustments using this service. Make sure you calculate release dates after making any changes to this person's adjustment information.
                     </p>
+
+                    {% if data['toDo'] == 'reviewRemand' %}
+
+                    
+                    <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+                        <section class="moj-ticket-panel__content moj-ticket-panel__content--grey" aria-label="Section 1">
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">There is existing remand to review</h2>
+                        <p class="govuk-body">Based on data from court outcomes in NOMIS, Joe Bloggs may have 270 days remand. Review the remand to make sure it is relevant.</p>
+                        <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="remand-tool/check-for-replaced-sentences">
+                            Calculate release dates
+                        </a>
+                        </section>
+                    
+                    </article>
+
+                    {% else %}
+
+                    {% endif %}
                 </div>
             </div>
             <div class="govuk-grid-row"> 
                         <h2 class="govuk-heading-m govuk-!-padding-left-4">Deductions</h2>
-                    <div class="govuk-!-padding-left-4">
+                    <!-- <div class="govuk-!-padding-left-4">
                         <p class="govuk-inset-text" >
                             Some of the details recorded in NOMIS cannot be used for a sentence calculation. This means unused deductions cannot be automatically calculated by this service. To add any unused remand, go to the sentence adjustments screen in NOMIS.
                         </p>
-                    </div>
+                    </div> -->
                         <div class="container  govuk-body">
                             <div class="adjustment-card ">
                                 <div class="govuk-summary-card__title-wrapper">
@@ -56,7 +75,7 @@
                                 </div>
 
                                 <div class="adjustment-card_content">
-                                    <span id="RemandTotal" class="count govuk-body">0</span><span>days</span>
+                                    <span id="RemandTotal" class="count govuk-body">270</span><span>days</span>
                                     <span id="UR" ></span><br>
                                     <span id="RemandUpdated" class="govuk-hint"></span>
                                 </div>
