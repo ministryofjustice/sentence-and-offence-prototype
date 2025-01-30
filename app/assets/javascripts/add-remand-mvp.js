@@ -956,19 +956,7 @@ function displayNotification(journey, container){
   switch (journey) {
     case 1:
       container.innerHTML = `
-   <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-                         aria-labelledby="govuk-notification-banner-title"
-                         data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__content">
-          <h3 class="govuk-notification-banner__heading">
-               Remand information has been saved
-          </h3>
-          <p class="govuk-body">Once all of the adjustments have been applied, you must
-              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a>.
-          </p>
-      </div>
-  </div>
-`
+ 
       break;
     case 2:
       container.innerHTML = `
