@@ -1,0 +1,49 @@
+{% extends "version-1/dps/includes/hub-layout-minus-nav.html" %}
+{% block content %}
+
+    <div id="ViewRemandPage">
+        <a href="../index-1.html" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Remand overview</h1>
+                    <p></p>
+
+                    <div id="viewRemandSummary" class="">
+
+                        <div class="govuk-summary-card__content">
+                            <table class="govuk-table">
+                                <caption class="govuk-table__caption govuk-table__caption--m">Remand summary</caption>
+                                <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Periods of remand</th>
+                                    <th scope="col" class="govuk-table__header">Days</th>
+                                </tr>
+                                </thead>
+                                <tbody id="R-summary" class="govuk-table__body">
+
+
+                                </tbody>
+                                <tfoot>
+                                <tr class="govuk-table__row">
+                                    <th id="" scope="row" class="govuk-table__header">Total days on remand</th>
+                                    <td id="TotalRemandDays" class="govuk-table__cell">100</td>
+                                </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                    <div id="RemandPeriodListContainer">
+
+                    </div>
+ 
+                    <a href="enter-remand.html" class="govuk-button" data-module="govuk-button">
+                        Add new
+                    </a>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand-mvp.js"></script>
+{% endblock %}

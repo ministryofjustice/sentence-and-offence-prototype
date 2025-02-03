@@ -80,7 +80,7 @@ Court cases and release dates
 </header>
 <div class="service-header">
   <div class="service-header__container">
-    <a href="/index-alpha"><span class="service-header__service-name">Court cases and release dates</span></a>
+    <a href="/index-beta"><span class="service-header__service-name">Court cases and release dates</span></a>
   </div>
 </div>
 {% endblock %}
@@ -143,7 +143,12 @@ Court cases and release dates
           <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
         </li> -->
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link" href="index-1">Adjustments</a>
+          <a class="moj-sub-navigation__link" href="index-1">Adjustments {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory' or data['toShow'] == 'ualAdded' or data['toDo'] == 'reviewRemand' %} <span id="notifications" class="moj-notification-badge">1</span> 
+            {% else %} 
+            {% endif %} 
+
+
+          </a>
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations</a>
@@ -167,7 +172,11 @@ Court cases and release dates
           <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
         </li> -->
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link"  href="index-1">Adjustments</a>
+          <a class="moj-sub-navigation__link"  href="index-1">Adjustments  {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory' or data['toShow'] == 'ualAdded' or data['toDo'] == 'reviewRemand' %} <span id="notifications" class="moj-notification-badge">1</span> 
+            {% else %} 
+            {% endif %} 
+
+          </a>
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link"  aria-current="page" href="release-dates">Release dates and calculations</a>
@@ -191,7 +200,12 @@ Court cases and release dates
           <a class="moj-sub-navigation__link"  aria-current="page" href="court-cases">Court cases</a>
         </li> -->
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link"  href="index-1">Adjustments</a>
+          <a class="moj-sub-navigation__link"  href="index-1">Adjustments
+
+            {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory' or data['toShow'] == 'ualAdded' or data['toDo'] == 'reviewRemand' %} <span id="notifications" class="moj-notification-badge">1</span> 
+            {% else %} 
+            {% endif %} 
+          </a>
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations</a>
@@ -215,7 +229,11 @@ Court cases and release dates
           <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
         </li> -->
         <li class="moj-sub-navigation__item">
-          <a class="moj-sub-navigation__link"  aria-current="page" href="index-1">Adjustments</a>
+          <a class="moj-sub-navigation__link"  aria-current="page" href="index-1">Adjustments
+            {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory' or data['toShow'] == 'ualAdded' or data['toDo'] == 'reviewRemand' %} <span id="notifications" class="moj-notification-badge">1</span> 
+            {% else %} 
+            {% endif %} 
+          </a>
         </li>
         <li class="moj-sub-navigation__item">
           <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations</a>

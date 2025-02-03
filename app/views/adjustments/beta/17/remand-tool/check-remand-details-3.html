@@ -2,7 +2,7 @@
 {% block content %}
 <div class="govuk-width-container">
  
-    <a href="check-for-replaced-offences" class="govuk-back-link">Back</a>
+    <a href="confirm-replaced-offences-2" class="govuk-back-link">Back</a>
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters govuk-!-padding-top-6">
 
@@ -46,6 +46,40 @@
                         </tr>
                         </tbody>
                     </table>
+
+
+ 
+            <details class="govuk-details govuk-!-margin-bottom-6">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    View previous sentences that may overlap remand periods
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <p class="govuk-!-margin-bottom-4">These sentences could overlap with the relevant remand periods above.</p>
+ 
+                    <table class="govuk-table govuk-!-margin-bottom">
+                        <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Remand to be applied</caption>
+                        <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Sentenced</th> 
+                            <th scope="col" class="govuk-table__header">Released</th> 
+                            <th scope="col" class="govuk-table__header">Offence details</th>
+                            <th scope="col" class="govuk-table__header">Commited on</th>
+                        </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <td  class="govuk-table__cell">21/3/2023</td>
+                            <td  class="govuk-table__cell">2/4/2023</td> 
+                            <td class="govuk-table__cell">Abstract water without a licence</td>
+                            <td class="govuk-table__cell">11/1/2022</td>
+                        </tr> 
+                        </tbody>
+                    </table>
+                      
+            </div>
+              </details>
 
             <h2 class="govuk-heading-l">Relevant remand</h2>
 
@@ -173,7 +207,6 @@
                     <div class="offence-card-offence-details"> 
                         <!-- <span class="govuk-body">Count 1</span>  -->
                         
-                            
                         <strong class="govuk-tag govuk-tag--red govuk-!-margin-bottom-2" style="max-width: 200px;">
                             Case not concluded
                           </strong>
@@ -264,30 +297,8 @@
                 </div>
             </div>
 
-
-            <h2 class="govuk-heading-m">Previous sentences that may overlap remand periods</h2>
-            <p class="govuk-!-margin-bottom-4">These sentences could overlap with the relevant remand periods above.</p>
  
-            <table class="govuk-table govuk-!-margin-bottom-8">
-                <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Remand to be applied</caption>
-                <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">Sentenced</th> 
-                    <th scope="col" class="govuk-table__header">Released</th> 
-                    <th scope="col" class="govuk-table__header">Offence details</th>
-                    <th scope="col" class="govuk-table__header">Commited on</th>
-                </tr>
-                </thead>
-                <tbody class="govuk-table__body">
-                <tr class="govuk-table__row">
-                    <td  class="govuk-table__cell">21/3/2023</td>
-                    <td  class="govuk-table__cell">2/4/2023</td> 
-                    <td class="govuk-table__cell">Abstract water without a licence</td>
-                    <td class="govuk-table__cell">11/1/2022</td>
-                </tr> 
-                </tbody>
-            </table>
-              
+  
  
             <div class="govuk-form-group govuk-!-margin-bottom-6 ">
                 <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
