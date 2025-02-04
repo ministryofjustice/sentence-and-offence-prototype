@@ -128,7 +128,8 @@
         <h3 class="govuk-heading-l">Adjustments</h3>
 
 
-        {% if data['toDo'] == 'changesApplied' %}
+
+        {% if data['toDo'] == 'remandAdded' %}
 
         <dl class="govuk-summary-list" style="margin-bottom: 10px;">
             <div class="govuk-summary-list__row">
@@ -136,29 +137,7 @@
                     Remand
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    29 Days
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Additional days awarded
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    14 Days
-                </dd>
-            </div>
-        </dl>
-
-
-        {% elif data['toDo'] == 'nothing' %}
-
-        <dl class="govuk-summary-list" style="margin-bottom: 10px;">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Remand
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    270 Days
+                    2152 Days
                 </dd>
             </div>
             <!-- <div class="govuk-summary-list__row">
@@ -170,27 +149,15 @@
                 </dd>
             </div> -->
         </dl>
+
+        {% elif data['toDo'] == 'reviewRemand' %}
+
+        <p class="govuk-body">There are no active adjustments.</p> 
 
         {% else %}
 
-        <dl class="govuk-summary-list" style="margin-bottom: 10px;">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Remand
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    270 Days
-                </dd>
-            </div>
-            <!-- <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Additional days awarded
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    7 Days
-                </dd>
-            </div> -->
-        </dl>
+       
+        <p class="govuk-body">There are no active adjustments.</p> 
 
         {% endif %}
 
