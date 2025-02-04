@@ -66,18 +66,27 @@
                                             Add new<span class="govuk-visually-hidden"> Remand</span>
                                             </a>
                                         </li>
-                                        <li id="viewRemand" class="govuk-summary-card__action moj-hidden view-remand">
-                                            <a class="govuk-link" href="remand/view-remand">
+
+                                        {% if data['toDo'] == 'remandAdded' %}
+                                        <li id="viewRemand" class="govuk-summary-card__action  view-remand">
+                                            <a class="govuk-link" href="remand-tool/view-remand">
                                                 View<span class="govuk-visually-hidden"> Remand</span>
                                             </a>
                                         </li>
+
+                                        {% else %}
+
+                                        {% endif %}  
                                     </ul>
                                 </div>
 
                                 <div class="adjustment-card_content">
-                                    <span id="RemandTotal" class="count govuk-body">270</span><span>days</span>
-                                    <span id="UR" ></span><br>
-                                    <span id="RemandUpdated" class="govuk-hint"></span>
+
+                                    {% if data['toDo'] == 'remandAdded' %}
+                                    <span id="RemandTotal" class="count govuk-body">152</span><span>days</span>  
+                                    {% else %}
+                                    <span id="RemandTotal" class="count govuk-body">0</span><span>days</span>  
+                                    {% endif %}  
                                 </div>
                             </div>
                             <div class="adjustment-card ">
@@ -88,24 +97,22 @@
                                             Add new<span class="govuk-visually-hidden"> Tagged bail</span>
                                         </a>
                                         </li>
+
                                         <li id="viewTaggedBail" class="govuk-summary-card__action moj-hidden view-tagged-bail">
                                             <a class="govuk-link" href="tagged-bail/view-tagged-bail-3">
                                             View
                                                 <span class="govuk-visually-hidden"> Tagged bail</span>
                                             </a>
                                         </li>
+   
                                     </ul>
                                 </div>
                                 <div class="adjustment-card_content">
+
+                                     
+                                   
                                     <span id="TaggedBailTotal"  class="count govuk-body">0</span><span>days </span><span id="UTB"></span>
-<!--                                    <a class="govuk-link" href="#">-->
-<!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
-<!--                                    </a>-->
-<!--                                    <ul class="govuk-list govuk-!-padding-top-3">-->
-<!--                                        <li><a href="add-tagged-bail.html">Add tagged bail</a></li>-->
-<!--                                        <li><a href="add-tagged-bail.html">View/Edit tagged bail</a></li>-->
-<!--                                    </ul>-->
-<!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by HMP Kirkham</p>-->
+                                  
                                     <br>
 
                                    <span id="updated" class="govuk-hint"></span>                               </div>
