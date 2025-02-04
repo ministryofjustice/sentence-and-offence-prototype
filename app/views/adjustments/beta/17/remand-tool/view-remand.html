@@ -2,48 +2,238 @@
 {% block content %}
 
     <div id="ViewRemandPage">
-        <a href="../index-1.html" class="govuk-back-link">Back</a>
+        <a href="check-remand-details-2" class="govuk-back-link">Back</a>
         <main class="govuk-main-wrapper " id="main-content" role="main">
             <div class="govuk-grid-row">
-                <div class="govuk-grid-column-two-thirds-from-desktop">
+                <div class="govuk-grid-column-three-quarters">
                     <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Remand overview</h1>
-                    <p></p>
+                    <p></p> 
 
-                    <div id="viewRemandSummary" class="">
+                    <table class="govuk-table">
+                        <caption class="govuk-table__caption govuk-table__caption--m">Remand that has been applied</caption>
+                        <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">From</th> 
+                            <th scope="col" class="govuk-table__header">To</th>
+                            <th scope="col" class="govuk-table__header" style="width:15%">Days</th>
+                            <th scope="col" class="govuk-table__header">Offence details</th>
+                            <th scope="col" class="govuk-table__header">Commited on</th>
+                        </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <td  class="govuk-table__cell">1/2/2023</td>
+                            <td  class="govuk-table__cell">22/3/2023</td>
+                            <td class="govuk-table__cell">48</td>
+                            <td class="govuk-table__cell">Abstract water without a licence</td>
+                            <td class="govuk-table__cell">11/1/2022</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td  class="govuk-table__cell">23/11/2023</td>
+                            <td  class="govuk-table__cell">16/12/2023</td>
+                            <td class="govuk-table__cell">24</td>
+                            <td class="govuk-table__cell">Accidentally allow a chimney to be on fire</td>
+                            <td class="govuk-table__cell">1/2/2023</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td  class="govuk-table__cell"><b>Total days</b></td>
+                            <td  class="govuk-table__cell"> </td>
+                            <td class="govuk-table__cell"><b>72 days</b></td>
+                            <td class="govuk-table__cell"> </td>
+                            <td class="govuk-table__cell"> </td>
+                        </tr>
+                        </tbody>
+                    </table>
 
-                        <div class="govuk-summary-card__content">
-                            <table class="govuk-table">
-                                <caption class="govuk-table__caption govuk-table__caption--m">Remand summary</caption>
-                                <thead class="govuk-table__head">
-                                <tr class="govuk-table__row">
-                                    <th scope="col" class="govuk-table__header">Periods of remand</th>
-                                    <th scope="col" class="govuk-table__header">Days</th>
-                                </tr>
-                                </thead>
-                                <tbody id="R-summary" class="govuk-table__body">
-
-
-                                </tbody>
-                                <tfoot>
-                                <tr class="govuk-table__row">
-                                    <th id="" scope="row" class="govuk-table__header">Total days on remand</th>
-                                    <td id="TotalRemandDays" class="govuk-table__cell">100</td>
-                                </tr>
-                                </tfoot>
-                            </table>
+                    <div class="govuk-summary-card">
+                        <div class="govuk-summary-card__title-wrapper">
+                          <h2 class="govuk-summary-card__title">
+                            From 1/2/2023 to 20/3/2023
+                          </h2>
                         </div>
-                    </div>
-                    <div id="RemandPeriodListContainer">
+                        <div class="govuk-summary-card__content">
+                          <dl class="govuk-summary-list">
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Offence
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                <b>Abstract water without a lisence</b>
+                                <br>
+                                Comitted on 10/1/2023
+                                <br>
+                                Heard at Preston Crown Court
+                              </dd>
+                              <!-- <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                              </dd> -->
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Replaced by
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                <b>Manslaughter</b>
+                                <br>
+                                Comitted on 11/1/2023
+                                <br>
+                                Heard at Preston Crown Court
+                              </dd>
+                              <!-- <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                              </dd> -->
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Establishment
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Kirkham
+                              </dd>
+                              <!-- <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                              </dd> -->
+                            </div>
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Date added
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Approved on 4/2/2025
+                              </dd>
+                              <!-- <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                              </dd> -->
+                            </div>
+                            <!-- <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Reason for rejection
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                Incorrect
+                              </dd>
+                              <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                              </dd>
+                            </div> -->
+                            <div class="govuk-summary-list__row">
+                              <dt class="govuk-summary-list__key">
+                                Days
+                              </dt>
+                              <dd class="govuk-summary-list__value">
+                                <b>48</b>
+                              </dd>
+                              <!-- <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                              </dd> -->
+                            </div>
+                          </dl>
+                        </div>
+                      </div>
 
-                    </div>
+                      <div class="govuk-summary-card">
+                          <div class="govuk-summary-card__title-wrapper">
+                            <h2 class="govuk-summary-card__title">
+                              From 1/2/2023 to 20/3/2023
+                            </h2>
+                          </div>
+                          <div class="govuk-summary-card__content">
+                            <dl class="govuk-summary-list">
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Offence
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  <b>Abstract water without a lisence</b>
+                                  <br>
+                                  Comitted on 10/1/2023
+                                  <br>
+                                  Heard at Preston Crown Court
+                                </dd>
+                                <!-- <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                                </dd> -->
+                              </div>
+                              <!-- <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Replaced by
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  <b>Manslaughter</b>
+                                  <br>
+                                  Comitted on 11/1/2023
+                                  <br>
+                                  Heard at Preston Crown Court
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+                                </dd>
+                              </div> -->
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Establishment
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Kirkham
+                                </dd>
+                                <!-- <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead tenant)</span></a>
+                                </dd> -->
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Date added
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Approved on 4/2/2025
+                                </dd>
+                                <!-- <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                                </dd> -->
+                              </div>
+                              <!-- <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Reason for rejection
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  Incorrect
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                                </dd>
+                              </div> -->
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  Days
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  <b>48</b>
+                                </dd>
+                                <!-- <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead tenant)</span></a>
+                                </dd> -->
+                              </div>
+                            </dl>
+                          </div>
+                        </div>
+
+                        <a href="#" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Add new
+                        </a>
+   
  
-                    <a href="enter-remand.html" class="govuk-button" data-module="govuk-button">
-                        Add new
-                    </a>
+                        <div class="govuk-button-group">
+                            <a href="check-remand-details" class="govuk-button" data-module="govuk-button">
+                                Confirm and save
+                            </a>
+                            <a href="clear-remand" class="govuk-link">
+                                Clear remand and review again
+                            </a>
+                        </div>
+
                 </div>
             </div>
         </main>
     </div>
-</div>
-<script src="/public/javascripts/add-remand-mvp.js"></script>
+</div> 
 {% endblock %}

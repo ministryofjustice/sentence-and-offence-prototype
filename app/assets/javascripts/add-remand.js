@@ -958,7 +958,7 @@ function displayNotification(journey, container){
               Tagged bail details have been saved
           </h3>
           <p class="govuk-body">Once all of the adjustments have been made, you will need to
-              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a> for Joe Bloggs.
+              <a href="crd.html" class="govuk-notification-banner__link">recalculate release dates</a> for Justin Bell.
           </p>
       </div>
   </div>
@@ -974,7 +974,7 @@ function displayNotification(journey, container){
               Tagged bail has been deleted
           </h3>
           <p class="govuk-body">Once all the adjustments have been made, you will need to
-              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a> for Joe Bloggs.
+              <a href="crd.html" class="govuk-notification-banner__link">calculate release dates</a> for Justin Bell.
           </p>
       </div>
   </div>
