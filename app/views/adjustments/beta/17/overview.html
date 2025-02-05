@@ -61,20 +61,35 @@
             </div>
         </div>
 
-        {% elif data['toDo'] == 'reviewRemand' %}
+        {% elif data['toShow'] == 'reviewRemand' %}
 
-                            
+      
         <article class="moj-ticket-panel" aria-label="Sub navigation 1">
 
             <section class="moj-ticket-panel__content moj-ticket-panel__content--grey" aria-label="Section 1">
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">There is existing remand to review</h2>
-            <p class="govuk-body">Based on data from court outcomes in NOMIS, Justin Bell may have 152 days remand. Review the remand to make sure it is relevant.</p>
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">There are periods of remand to review</h2>
+            <p class="govuk-body">This service has identified periods of remand that may be relevant. You must review these remand periods before calculating a release date.</p>
             <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="remand-tool/check-for-replaced-offences-intercept">
                 Review remand
             </a>
             </section>
-
+        
         </article>
+
+              
+        {% elif data['toShow'] == 'ualAdded' or data['toShow'] == 'calcRequired' or data['toShow'] == 'recallHistory' or data['toShow'] == 'sentenceAdded' or data['toShow'] == 'taggedBailAdded' or data['toShow'] == 'remandAdded' %} 
+
+        <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+            <section class="moj-ticket-panel__content moj-ticket-panel__content--grey" aria-label="Section 1">
+            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Perform a calculation</h2>
+            <p class="govuk-body">Some information has changed. Check that all information is up to date then calculation release dates.</p>
+            <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="calculate-release-dates/calculation-reason">
+                Calculate release dates
+            </a>
+            </section>
+        
+        </article> 
  
 
         {% else %}
@@ -129,12 +144,35 @@
 
 
 
-        {% if data['toDo'] == 'remandAdded' %}
+        {% if data['toShow'] == 'remandAdded' %}
 
         <dl class="govuk-summary-list" style="margin-bottom: 10px;">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Remand
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    152 Days
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Tagged bail
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    152 Days
+                </dd>
+            </div>
+        </dl>
+
+        {% elif data['toShow'] == 'reviewRemand' %}
+
+        
+
+        <dl class="govuk-summary-list" style="margin-bottom: 10px;">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Tagged bail
                 </dt>
                 <dd class="govuk-summary-list__value">
                     152 Days
@@ -149,10 +187,6 @@
                 </dd>
             </div> -->
         </dl>
-
-        {% elif data['toDo'] == 'reviewRemand' %}
-
-        <p class="govuk-body">There are no active adjustments.</p> 
 
         {% else %}
 

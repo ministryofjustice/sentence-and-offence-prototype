@@ -48,12 +48,12 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
-            {% if data['toDo'] == 'reviewAda' or data['toDo'] == 'reviewPada' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %}
+            {% if data['toShow'] == 'reviewAda' or data['toShow'] == 'reviewPada' or data['toShow'] == 'adjustmentsApplied' or data['toShow'] == 'courtCaseAdded' or data['toShow'] == 'generalChangesApplied' %}
             <h2 class="govuk-heading-m">Things you need to do
                 <!-- <span id="notifications" class="moj-notification-badge">1</span> -->
             </h2>
 
-            {% if data['toDo'] == 'reviewAda' %}
+            {% if data['toShow'] == 'reviewAda' %}
             <div class="to-do-item">
 
                 <div class="to-do-item-text">
@@ -70,7 +70,7 @@
 
 
 
-            {% elif data['toDo'] == 'addCourtCase' %}
+            {% elif data['toShow'] == 'addCourtCase' %}
             <div class="to-do-item">
 
                 <div class="to-do-item-text">
@@ -87,7 +87,7 @@
 
 
 
-            {% elif data['toDo'] == 'generalChangesApplied' %}
+            {% elif data['toShow'] == 'generalChangesApplied' %}
             <div class="to-do-item">
 
                 <div class="to-do-item-text">
@@ -105,7 +105,7 @@
 
 
 
-            {% elif data['toDo'] == 'adjustmentsApplied' %}
+            {% elif data['toShow'] == 'adjustmentsApplied' %}
             <div class="to-do-item">
 
                 <div class="to-do-item-text">
@@ -123,7 +123,7 @@
 
 
 
-            {% elif data['toDo'] == 'courtCaseAdded' %}
+            {% elif data['toShow'] == 'courtCaseAdded' %}
             <div class="to-do-item">
 
                 <div class="to-do-item-text">
@@ -138,7 +138,7 @@
                 </div> -->
             </div>
 
-            {% elif data['toDo'] == 'reviewPada' %}
+            {% elif data['toShow'] == 'reviewPada' %}
             <div class="to-do-item">
 
                 <div class="to-do-item-text">

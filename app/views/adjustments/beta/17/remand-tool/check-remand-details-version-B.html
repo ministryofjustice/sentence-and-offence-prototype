@@ -8,12 +8,26 @@
 
                 <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjustments</span>Check remand details for Justin Bell</h1>
 
+
+                <div class="moj-banner moj-banner--warning" role="region" aria-label="Warning">
+                    <h2 class="govuk-heading-m">
+                        Some remand might be incorrectly marked as non-relevant 
+                    </h2>
+
+                    <p class="govuk-body">This service has flagged that at least one offence has not resulted in a sentence being imposed.</p>
+                    <p class="govuk-body">In some cases, this can happen because the offence was replaced (for example, reduced to a lesser offence).</p>
+                    <p class="govuk-body">If the offence was replaced, and a sentence was imposed for that replaced offence, the remand may be considered relevant.</p>
+                    <p class="govuk-body">Before you can confirm the remand to be applied, you need to <a href="confirm-replaced-offences-1">check if any offences without a sentence have been replaced</a>.</p> 
+            
+                </div>
+
                 <p class="govuk-!-margin-bottom-4">Based on the court case information in NOMIS, this service has calculated the below remand to be applied. The rules for applying remand time can be found in the policy framework.</p>
-    </div>
+ 
+        </div>
     </div>
 
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
+        <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
                     <table class="govuk-table">
                         <caption class="govuk-table__caption govuk-table__caption--m">Remand to be applied</caption>
                         <thead class="govuk-table__head">
@@ -56,14 +70,12 @@
                         </tr>
                         </tbody>
                     </table>
+
             </div>
         </div>
 
-        
-
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-three-quarters">
-
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
             <h2 class="govuk-heading-l">Relevant remand</h2>
    
             <div class="offence-card sentence-card " style="border-left: 4px solid 	#00703c !important">
@@ -366,7 +378,6 @@
         </div>
  
 
-         
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-full ">
             <h2 class="govuk-heading-m">Previous sentences that may overlap remand periods</h2>
@@ -398,11 +409,7 @@
                 </tbody>
             </table>
               
-            </div>
-            </div>  
-
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-three-quarters ">
+<!--  
             <div class="govuk-form-group govuk-!-margin-bottom-6 ">
                 <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -439,14 +446,17 @@
                       </div>
                   </div>
                 </fieldset>
-              </div>
-
+              </div> -->
 
             <div class="govuk-button-group">
-                <a href="view-remand" class="govuk-button" data-module="govuk-button">
+                <!-- <a href="view-remand" class="govuk-button" data-module="govuk-button">
                     Save and continue
+                </a> -->
+
+                <a href="confirm-replaced-offences-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Check if any offences have been replaced
                 </a>
-                <a href="cancel" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                <a href="cancel" class="govuk-link" data-module="govuk-button">
                     Cancel
                 </a>
             </div>
