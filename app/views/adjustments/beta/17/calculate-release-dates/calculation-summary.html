@@ -29,70 +29,60 @@
                     </ul>
                 </div>
                 <div class="govuk-summary-card__content" id="release-dates">
-                
-                    {% if data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'  %} 
-                    <dl class="govuk-summary-list release-dates-list">
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                                SLED
-                                <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                <p class="govuk-body">Tuesday, 5 March 2025</p>
-                            </dd>
-                        </div> 
-    
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                                PRRD
-                                <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
-                            </dt>
-                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                                <p class="govuk-body">Tuesday, 5 March 2025</p>
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                                TUSED
-                                <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
-                            </dt>
-                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                                <p class="govuk-body">Monday, 5 August 2025</p>
-                            </dd>
-                        </div>
-                    </dl>
-                    {% else %} 
-                
+          
               <dl class="govuk-summary-list release-dates-list">
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
                         SLED
                         <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
                     </dt>
-                    <dd class="govuk-summary-list__value">
-                        <p class="govuk-body">Tuesday, 09 September 2025</p>
+                    <dd class="govuk-summary-list__value" data-qa="SLED-date">Saturday, 07 November 2026
+                        <p style="margin-top: 10px;" data-qa="SLED-release-date-hints">
+                            
+                                
+                            
+            
+                            
+                        </p>
                     </dd>
                 </div>  
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                        PRRD
-                        <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
+                        CRD
+                        <p class="govuk-!-font-size-16 govuk-hint">Conditional release date</p>
                     </dt>
-                    <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                        <p class="govuk-body">Tuesday, 09 September 2025</p>
+                    <dd class="govuk-summary-list__value" data-qa="CRD-date">Sunday, 19 January 2025
+                        <p style="margin-top: 10px;" data-qa="CRD-release-date-hints">
+                            
+                                
+                            
+            
+                            
+                                </p><p class="govuk-body govuk-hint govuk-!-font-size-16" data-qa="CRD-release-date-hint-0">40% date has been applied</p>
+                            
+                        <p></p>
                     </dd>
                 </div>
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                        TUSED
-                        <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
+                        HDCED
+                        <p class="govuk-!-font-size-16 govuk-hint">Home detention curfew eligibility date</p>
                     </dt>
-                    <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                        <p class="govuk-body">Sunday, 25 October 2025</p>
+                    <dd class="govuk-summary-list__value" data-qa="HDCED-date">Sunday, 22 September 2024
+                        <p style="margin-top: 10px;" data-qa="HDCED-release-date-hints">
+                            
+                                
+                            
+            
+                            
+                                </p><p class="govuk-body govuk-hint govuk-!-font-size-16" data-qa="HDCED-release-date-hint-0">40% date has been applied</p>
+                            
+                                <p class="govuk-body govuk-hint govuk-!-font-size-16">Adjusted for sentence date, plus 14 days as per <a class="govuk-link" rel="noreferrer noopener" target="_blank" href="https://assets.publishing.service.gov.uk/media/66701aa6fdbf70d6d79d9705/Home_Detention_Curfew_V7___002_.pdf" data-qa="HDCED-release-date-hint-1">HDC policy</a></p>
+                            
+                        <p></p>
                     </dd>
                 </div>
-            </dl>
-                    {% endif %}  
+            </dl> 
                 </div>
             </div>
         </div>
