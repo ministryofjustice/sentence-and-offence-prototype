@@ -401,9 +401,10 @@
             </div>
             </div>  
 
+        <form class="form" method="post" action="/accept-reject-remand-question">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-three-quarters ">
-            <div class="govuk-form-group govuk-!-margin-bottom-6 ">
+            <!-- <div class="govuk-form-group govuk-!-margin-bottom-6 ">
                 <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading">
@@ -414,21 +415,21 @@
                   <div id="contact-hint" class="govuk-hint">
                     By selecting yes, the remand will be saved and applied when you calculate a release date. Select no to enter remand periods manually.
                   </div>
-                  <div class="govuk-radios" data-module="govuk-radios">
+                  <div class="govuk-radios" data-module="govuk-radios" name="contact">
                     <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="Yes, the remand to be applied is correct" aria-describedby="conditional-contact">
+                      <input class="govuk-radios__input" id="contact-1" name="contact" type="radio" value="Yes" aria-describedby="conditional-contact">
                       <label class="govuk-label govuk-radios__label" for="contact">
                         Yes, the remand to be applied is correct
                       </label> 
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="No, the remand to be applied is incorrect" data-aria-controls="conditional-contact-2">
+                        <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="No" data-aria-controls="conditional-contact-2">
                         <label class="govuk-label govuk-radios__label" for="contact-2">
                             No, the remand to be applied is incorrect
 
                         </label>
                       </div>
-                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" name="contact" value="No"   id="conditional-contact-2">
                         <div class="govuk-form-group">
                           <label class="govuk-label" for="contact-by-phone">
                             
@@ -439,20 +440,59 @@
                       </div>
                   </div>
                 </fieldset>
+              </div> -->
+
+              <div class="govuk-form-group govuk-!-margin-bottom-6">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Confirm that the remand to be applied is correct
+                    </h1>
+                  </legend>
+                
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email">
+                      <label class="govuk-label govuk-radios__label" for="contact">
+                        Yes, the remand to be applied is correct
+                      </label>
+                    </div>
+                 
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                      <label class="govuk-label govuk-radios__label" for="contact-2">
+                        No, the remand to be applied is incorrect
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="contact-by-phone">
+                            Enter the reason that the remand is incorrect
+                        </label>
+                        <!-- <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel"> -->
+                        <textarea class="govuk-textarea" id="contact-by-phone"  rows="3" name="contactByPhone" type="tel" autocomplete="tel"></textarea>
+                      </div>
+                    </div>
+                  
+                  </div>
+                </fieldset>
               </div>
 
 
-            <div class="govuk-button-group">
-                <a href="view-remand" class="govuk-button" data-module="govuk-button">
-                    Save and continue
-                </a>
-                <a href="cancel" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                    Cancel
-                </a>
+              <div class="govuk-button-group">
+                    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+                        Save and continue
+                    </button> 
+                   
+                    <a href="cancel" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Cancel
+                    </a>
             </div>
-
+ 
         </div>
     </div>
+
+</form>
 </div>
 
 <script src="/public/javascripts/cases.js"></script>

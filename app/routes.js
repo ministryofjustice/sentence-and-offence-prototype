@@ -162,6 +162,17 @@ function monthToWord (monthNum){
   
     return month;
   }
+
+  router.post('/accept-reject-remand-question', function(request, response) {
+
+    var contact = request.session.data['contact']
+    if (contact == "phone"){
+        response.redirect("adjustments/beta/17/remand/enter-remand")
+    }  
+    else {
+        response.redirect("adjustments/beta/17/remand-tool/view-remand")
+    }
+})
   
 // // add another offence choice
 // // version 3 add-an-offence
