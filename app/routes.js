@@ -167,7 +167,7 @@ function monthToWord (monthNum){
 
     var contact = request.session.data['contact']
     if (contact == "phone"){
-        response.redirect("adjustments/beta/17/remand/enter-remand")
+        response.redirect("adjustments/beta/17/remand-tool/check-your-answers-rejected-remand")
     }  
     else {
         response.redirect("adjustments/beta/17/remand-tool/view-remand")
