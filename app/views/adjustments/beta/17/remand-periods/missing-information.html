@@ -6,30 +6,29 @@
         <div class="govuk-grid-column-two-thirds">
 
                 <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjustments</span></h1>
-
-                
-                <div class="moj-interruption-card">
-                    <div class="moj-interruption-card__content">
-                      <h1 class="govuk-heading-l moj-interruption-card__heading">There is a problem</h1>
-                      <div class="govuk-body-l moj-interruption-card__body">
-                        <p>There is imformation missing in NOMIS that could impact the remand time</p>
-                        <p>There is another offence of ["OFFENCE NAME"] within booking 12345A that has a missing offence date</p>
+                <div class="govuk-error-summary" data-module="govuk-error-summary">
+                  <div role="alert">
+                    <h2 class="govuk-error-summary__title">
+                      There is a problem
+                    </h2>
+                    <div class="govuk-error-summary__body">
+                      <p>There is information missing in NOMIS that could impact the remand time</p><br>
+                        <p>There is another offence of ["OFFENCE NAME"] within booking 12345A that has a missing offence date.</p><br>
                         <p>To ensure the remand time is calculated correctly, add the missing information in NOMIS, then reload this page.</p>
-                        
-                      </div>
-                      <div class="govuk-button-group moj-interruption-card__actions">
-                  
-                        <a href="../remand-periods/review-remand.html" role="button" draggable="false" class="govuk-button govuk-button--inverse" data-module="govuk-button">
-                          Reload this page
-                        </a>
-                  
-                        <a class="govuk-link govuk-link--inverse" href="../remand-periods/index.html">Go back to adjustments</a>
-                  
-                      </div>
                     </div>
                   </div>
+                </div>
+                
+            
                   
-                    
+                  <div class="govuk-button-group">
+                    <a href="../remand-tool/check-remand-details-2" id="saveRemandButton" class="govuk-button" data-journey="1">
+                      Reload this page
+                    </a>
+                    <a href="../index-1.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Cancel
+                    </a>
+                </div>
         
 
 
