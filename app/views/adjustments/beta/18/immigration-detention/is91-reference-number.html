@@ -1,0 +1,46 @@
+{% extends "version-1/dps/includes/hub-layout-minus-nav.html" %}
+{% block content %}
+<div class="govuk-body">
+    <div class="">
+        <a href="../index-1" class="govuk-back-link">Back</a>
+
+       
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-three-quarters">
+                  <form class="form" action="/adjustments/beta/18/immigration-detention/check-your-answers" method="post">
+                       <h1 class="govuk-heading-xl">
+                                <span class="govuk-caption-xl">Immigration Detention</span>
+                               <p></p>
+  <div class="govuk-form-group">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+      Enter the reference number on the IS91
+      </h1>
+    </legend>
+                            <div id="changedName-hint" class="govuk-hint">
+                              This can be found at the top of the IS91 document
+                              </div>
+                           
+                            <div class="govuk-input__wrapper">
+                              <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text" spellcheck="false">
+                             
+                            </div>
+                          </div>      
+                      <div class="govuk-button-group">
+                        <button class="govuk-button" data-module="govuk-button">Continue</button>
+                            <a href="../index.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                Cancel
+                            </a>
+                        
+                      </div>
+                    </form>
+                </div>
+            </div>
+            
+         
+
+            
+    </div>
+</div>
+<script src="/public/javascripts/add-remand-mvp.js"></script>
+{% endblock %}

@@ -1,0 +1,78 @@
+{% extends "version-1/dps/includes/hub-layout-minus-nav.html" %}
+{% block content %}
+<div class="">
+    <div class="">
+        <a href="review-2.html" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Immigration detention</span>Confirm and save</h1>
+                    <div id="dataContainer">
+
+                    </div>
+                    <h2 class="govuk-heading-m">Time spent in custody abroad details</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                       
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Document type
+                            </dt>
+                            <dd  id="days" class="govuk-summary-list__value">
+                               {% if data.IS91=="IS91"%}
+                               <p class="govuk-body govuk">IS91</p>
+                                {% else %}
+                               <p class="govuk-body govuk">Deportation order</p>
+   
+                           {% endif %}
+                            </dd>
+                            <dd id="start" class="govuk-summary-list__value" style="width: 155px;"></dd>
+                            
+                            <dd class="govuk-summary-list__value">
+                                <a href="record-immigration-detention-details.html">Edit</a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Date issued
+                             </dt>
+                            <dd class="govuk-summary-list__value">
+                                14 July 2025
+                            </dd>
+                            <dd id="start" class="govuk-summary-list__value"></dd>
+                            <dd class="govuk-summary-list__value">
+                                <a href="is91-date-issued.html">Edit</a>
+                            </dd>
+                        </div>
+                         <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Reference number
+                             </dt>
+                            <dd class="govuk-summary-list__value">
+                                ABCD12345
+                            </dd>
+                            <dd id="start" class="govuk-summary-list__value"></dd>
+                            <dd class="govuk-summary-list__value">
+                                <a href="is91-reference-number.html">Edit</a>
+                            </dd>
+                        </div>
+                       
+                    </dl>
+                   
+                   <div class="govuk-button-group">
+                          <a href="/adjustments/beta/18/immigration-detention/index1" class="govuk-button" data-module="govuk-button">
+                              Confirm and save
+                          </a>
+                         
+                        <a href="/adjustments/beta/18/immigration-detention/index" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                          Cancel
+                      </a>
+                      </div>
+                    
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}
