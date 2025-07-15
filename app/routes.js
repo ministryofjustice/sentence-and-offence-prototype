@@ -153,6 +153,20 @@ router.post('/time-spent-appeal-question-submit', function (req, res) {
     res.redirect('/adjustments/beta/mvp-plus/tspanc/time-spent-appeal-cannot-continue')
     }
   })
+    //Immigration detention
+router.post('/immigration-detention-submit', function (req, res) {
+    // this
+    var IS91 = req.session.data['IS91']
+   // Check whether the variable matches a condition
+    if (IS91 == "IS91"){
+    // Send user to next page
+    res.redirect('/adjustments/beta/18/immigration-detention/is91-date-issued')}
+    else {
+    // Send user to ppcs question
+    res.redirect('/adjustments/beta/18/immigration-detention/do-date-issued')
+    }
+  })
+
 //convert date to words
 function monthToWord (monthNum){
     var months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
@@ -173,6 +187,9 @@ function monthToWord (monthNum){
         response.redirect("adjustments/beta/17/remand-tool/view-remand")
     }
 })
+
+
+ 
   
 // // add another offence choice
 // // version 3 add-an-offence
