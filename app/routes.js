@@ -2,10 +2,11 @@
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
-
+const express = require('express')
 const govukPrototypeKit = require("govuk-prototype-kit");
 const sessionDataDefaults = require("./data/session-data-defaults");
 const router = govukPrototypeKit.requests.setupRouter();
+// const router = express.Router()
 
 // Court name route
 router.post('/version-1/add-court-case/do-you-know-the-name-of-the-court', function(req, res) {
@@ -114,6 +115,19 @@ router.post('special-remission-question', function (req, res) {
       res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-required')
     }
    })
+ //Immigration documents
+router.post('/immigration-documents-submit', function (req, res) {
+    // this
+    var documenttype = req.session.data['IS91']
+   // Check whether the variable matches a condition
+    if (documenttype == "IS91"){
+    // Send user to next page
+    res.redirect('/adjustments/beta/18/immigration-detention/is91-date-issued')}
+    else {
+    // Send user to dpeortation order
+    res.redirect('/adjustments/beta/18/immigration-detention/do-date-issued')
+    }
+  })
 //TSCA
 router.post('/tsca-question-submit', function (req, res) {
     // this
@@ -153,19 +167,7 @@ router.post('/time-spent-appeal-question-submit', function (req, res) {
     res.redirect('/adjustments/beta/mvp-plus/tspanc/time-spent-appeal-cannot-continue')
     }
   })
-    //Immigration detention
-router.post('/immigration-detention-submit', function (req, res) {
-    // this
-    var IS91 = req.session.data['IS91']
-   // Check whether the variable matches a condition
-    if (IS91 == "IS91"){
-    // Send user to next page
-    res.redirect('/adjustments/beta/18/immigration-detention/is91-date-issued')}
-    else {
-    // Send user to ppcs question
-    res.redirect('/adjustments/beta/18/immigration-detention/do-date-issued')
-    }
-  })
+
 
 //convert date to words
 function monthToWord (monthNum){

@@ -2,42 +2,45 @@
 {% block content %}
 <div class="govuk-body">
     <div class="">
-        <a href="/adjustments/beta/18/overview" class="govuk-back-link">Back</a>
-  <form class="form" action="/immigration-detention-submit" method="post">
-                     <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
+        <a href="../overview" class="govuk-back-link">Back</a>
+       <form class="form" action="/immigration-documents-submit" method="post">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  
                        <h1 class="govuk-heading-xl">
                                 <span class="govuk-caption-xl">Immigration documents</span>
-                               Record immigration document for Justin Bell</h1>
-                                
- <div class="govuk-form-group">
+                                Record immigration document for Justin Bell
+                            </h1>
+                          <div class="govuk-form-group">
   <fieldset class="govuk-fieldset">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
-       Select which document you have received<br> from the Home Office
+      Select which document you have received
+from the Home Office
       </h1>
     </legend>
-     
     <div class="govuk-radios" data-module="govuk-radios">
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="type-1" name="IS91" type="radio" value="IS91">
+        <input class="govuk-radios__input" id="type-1" name="documenttype" type="radio" value="IS91">
         <label class="govuk-label govuk-radios__label" for="type-1">
           IS91
         </label>
       </div>
       <div class="govuk-radios__item">
-        <input class="govuk-radios__input" id="type-1" name="deportationorder" type="radio" value="Deportation order">
+        <input class="govuk-radios__input" id="type-2" name="documenttype" type="radio" value="Deportation order">
         <label class="govuk-label govuk-radios__label" for="type-2">
-          Deportation order
+         Deportation order
         </label>
       </div>
-   
+     
     </div>
   </fieldset>
 </div>
-                      <div class="govuk-button-group">
-                        <button class="govuk-button" data-module="govuk-button">Continue</button>
-                            <a href="../overview" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  <div class="govuk-button-group">
+                         <button class="govuk-button" data-module="govuk-button" type="submit">
+                              Continue
+                          </button>
+                            <a href="./index.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                                 Cancel
                             </a>
                         </div>
@@ -45,7 +48,6 @@
                 </div>
             </div>
          
-
             
     </div>
 </div>
