@@ -13,7 +13,11 @@
    Status updated successfully
   </h1>
  <div class="govuk-panel__body">
-   Inactive
+ {% if data.status=="Active"%}
+                               <div class="govuk-panel__body">Active</div>
+                                {% else %}
+                               <div class="govuk-panel__body">Inactive</div>
+                                {% endif %}
   </div>
 </div>
 <br>

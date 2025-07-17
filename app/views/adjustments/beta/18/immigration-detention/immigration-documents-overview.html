@@ -40,7 +40,11 @@
                                   Document type
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                               IS91
+                                {% if data.documenttype=="IS91"%}
+                               <p class="govuk-body govuk">IS91</p>
+                                {% else %}
+                               <p class="govuk-body govuk">Deportation order</p>
+                                {% endif %}
                                 </dd>
                                 <dd class="govuk-summary-list__actions">
                                   <a class="govuk-link" href="#">Edit</a>
@@ -92,8 +96,10 @@
  
                         <div class="govuk-button-group">
                            
-                          <a href="check-remand-details-2.html" class="govuk-button govuk-button" data-module="govuk-button">
+                          <a href="#" class="govuk-button govuk-button" data-module="govuk-button">
                             Add an alert
+                              <a href="../overview2.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Return to overview
                         </a>
                         </div>
                         
