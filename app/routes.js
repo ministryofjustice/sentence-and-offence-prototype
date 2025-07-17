@@ -129,16 +129,16 @@ router.post('/immigration-documents-submit', function (req, res) {
     }
   })
    //Immigration documents status
-router.post('/immigration-status-submit', function (req, res) {
+router.post('/immigration-documents-status-submit', function (req, res) {
     // this
-    var status = req.session.data['Active']
+    var statustype = req.session.data['Active']
    // Check whether the variable matches a condition
-    if (status == "Active"){
+    if (statustype == "Active"){
     // Send user to next page
-    res.redirect('/adjustments/beta/18/immigration-detention/status-confirmation')}
+    res.redirect('/adjustments/beta/18/immigration-detention/active-confirmation')}
     else {
     // Send user to dpeortation order
-    res.redirect('/adjustments/beta/18/immigration-detention/status-confirmation2')
+    res.redirect('/adjustments/beta/18/immigration-detention/inactive-confirmation')
     }
   })
 //TSCA
