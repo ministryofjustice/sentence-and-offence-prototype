@@ -1,0 +1,62 @@
+{% extends "version-1/dps/includes/hub-layout-minus-nav.html" %}
+{% block content %}
+<div class="govuk-width-container">
+ 
+    <a href="./immigration-documents-overview" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+       
+    </div>
+
+   
+        <form class="form" method="post" action="#">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters ">
+           
+              <div class="govuk-form-group govuk-!-margin-bottom-6">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                  Are you sure you want to delete this record?
+                    </h1>
+                  </legend>
+                
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email">
+                      <label class="govuk-label govuk-radios__label" for="contact">
+                        Yes
+                      </label>
+                    </div>
+                 
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                      <label class="govuk-label govuk-radios__label" for="contact-2">
+                       No
+                      </label>
+                    </div>
+                   
+                  
+                  </div>
+                </fieldset>
+              </div>
+
+
+              <div class="govuk-button-group">
+                    <a href="../overview.html" class="govuk-button" data-module="govuk-button">
+                       Confirm
+                    </button> 
+                   
+                    <a href="../overview2.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Cancel
+                    </a>
+            </div>
+ 
+        </div>
+    </div>
+
+</form>
+</div>
+
+<script src="/public/javascripts/cases.js"></script>
+<script type="module" src="/public/javascripts/gov-uk-latest.js"></script>
+{% endblock %}

@@ -1,0 +1,70 @@
+{% extends "version-1/dps/includes/hub-layout-minus-nav.html" %}
+{% block content %}
+<div class="govuk-width-container">
+ 
+    <a href="./immigration-documents-overview" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+       
+    </div>
+
+   
+        <form class="form" method="post" action="./immigration-documents-overview.html">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters ">
+           
+              <div class="govuk-form-group govuk-!-margin-bottom-6">
+                <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                       Edit the status of the immigration document:
+                    </h1>
+                  </legend>
+                
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email">
+                      <label class="govuk-label govuk-radios__label" for="contact">
+                        Active
+                      </label>
+                    </div>
+                 
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
+                      <label class="govuk-label govuk-radios__label" for="contact-2">
+                       Inactive
+                      </label>
+                    </div>
+                    <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label" for="contact-by-phone">
+                            Enter the reason why the status has changed:
+                        </label>
+                        <!-- <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="tel" autocomplete="tel"> -->
+                        <textarea class="govuk-textarea" id="contact-by-phone"  rows="3" name="contactByPhone" type="tel" autocomplete="tel"></textarea>
+                      </div>
+                    </div>
+                  
+                  </div>
+                </fieldset>
+              </div>
+
+
+              <div class="govuk-button-group">
+                    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+                        Save and continue
+                    </button> 
+                   
+                    <a href="../overview2.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Cancel
+                    </a>
+            </div>
+ 
+        </div>
+    </div>
+
+</form>
+</div>
+
+<script src="/public/javascripts/cases.js"></script>
+<script type="module" src="/public/javascripts/gov-uk-latest.js"></script>
+{% endblock %}

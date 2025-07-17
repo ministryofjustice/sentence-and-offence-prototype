@@ -27,59 +27,10 @@
 
 
         <h3 class="govuk-heading-l">Adjustments</h3>
-
-
-
-        {% if data['toShow'] == 'remandAdded' %}
-
-        <dl class="govuk-summary-list" style="margin-bottom: 10px;">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Remand
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    152 Days
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Tagged bail
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    152 Days
-                </dd>
-            </div>
-        </dl>
-
-        {% elif data['toShow'] == 'reviewRemand' %}
-
         
-
-        <dl class="govuk-summary-list" style="margin-bottom: 10px;">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Tagged bail
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    152 Days
-                </dd>
-            </div>
-            <!-- <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Additional days awarded
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    14 Days
-                </dd>
-            </div> -->
-        </dl>
-
-        {% else %}
-
-       
         <p class="govuk-body">There are no active adjustments.</p> 
 
-        {% endif %}
+        
 
         <p class="govuk-body govuk-!-margin-top-6"><a href="index-1">View all adjustments</a></p>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
