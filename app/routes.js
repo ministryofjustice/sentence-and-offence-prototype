@@ -2,11 +2,11 @@
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
-const express = require('express')
+
 const govukPrototypeKit = require("govuk-prototype-kit");
 const sessionDataDefaults = require("./data/session-data-defaults");
 const router = govukPrototypeKit.requests.setupRouter();
-// const router = express.Router()
+
 
 // Court name route
 router.post('/version-1/add-court-case/do-you-know-the-name-of-the-court', function(req, res) {
