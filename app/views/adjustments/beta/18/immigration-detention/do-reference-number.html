@@ -9,8 +9,8 @@
                 <div class="govuk-grid-column-three-quarters">
                   <form class="form" action="./check-your-answers" method="post">
                        <h1 class="govuk-heading-xl">
-                                <span class="govuk-caption-xl">Immigration Detention</span>
-                               <p></p>
+                                 <span class="govuk-caption-xl"> Record authority to detain</span>
+                    <p></p>
   <div class="govuk-form-group">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
       <h1 class="govuk-fieldset__heading">
@@ -20,15 +20,17 @@
                             <div id="changedName-hint" class="govuk-hint">
                               This will be at the top of the deportation order
                               </div>
+                          
+ <div class="govuk-input__wrapper">
+  <input class="govuk-input govuk-input--width-10" {%if (data.doref) %}
+            value="{{data.doref}}" {% endif %} id="ref-1" name="doref" type="text">
+  </div>
+
                            
-                            <div class="govuk-input__wrapper">
-                              <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text" spellcheck="false">
-                             
-                            </div>
                           </div>      
                       <div class="govuk-button-group">
                         <button class="govuk-button" data-module="govuk-button">Continue</button>
-                            <a href="./index" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            <a href="../overview.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                                 Cancel
                             </a>
                         

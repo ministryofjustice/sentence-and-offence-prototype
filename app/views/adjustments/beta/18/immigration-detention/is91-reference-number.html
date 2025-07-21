@@ -9,7 +9,7 @@
                 <div class="govuk-grid-column-three-quarters">
                   <form class="form" action="./check-your-answers" method="post">
                        <h1 class="govuk-heading-xl">
-                                <span class="govuk-caption-xl">Immigration documents</span>
+                             <span class="govuk-caption-xl"> Record authority to detain</span>
                                <p></p>
   <div class="govuk-form-group">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -21,10 +21,10 @@
                               This can be found at the top of the IS91 document
                               </div>
                            
-                            <div class="govuk-input__wrapper">
-                              <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text" spellcheck="false">
-                             
-                            </div>
+                           <div class="govuk-input__wrapper">
+  <input class="govuk-input govuk-input--width-10" {%if (data.is91ref) %}
+            value="{{data.is91ref}}" {% endif %} id="ref-1" name="is91ref" type="text" autocomplete="is91ref-1">
+  </div>
                           </div>      
                       <div class="govuk-button-group">
                         <button class="govuk-button" data-module="govuk-button">Continue</button>

@@ -7,7 +7,9 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds-from-desktop">
 
-                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Immigration documents</span>
+                    <h1 class="govuk-heading-l">
+                        <span class="govuk-caption-xl"> Record authority to detain</span>
+                        <p></p>
                         Confirm and save</h1>
                     <div id="dataContainer">
 
@@ -20,7 +22,7 @@
                                Document type
                             </dt>
                             <dd  id="days" class="govuk-summary-list__value">
-                               {% if data.documenttype=="IS91"%}
+                               {% if data.recordDocument=="IS91"%}
                                <p class="govuk-body govuk">IS91</p>
                                 {% else %}
                                <p class="govuk-body govuk">Deportation order</p>
@@ -50,7 +52,11 @@
                                Reference number
                              </dt>
                             <dd class="govuk-summary-list__value">
-                                ABCD12345
+                               {%if (data.is91ref) %}
+                {{data.is91ref}}
+                               {% elseif (data.doref) %}
+                {{data.doref}}
+                 {% endif %}
                             </dd>
                             <dd id="start" class="govuk-summary-list__value"></dd>
                             <dd class="govuk-summary-list__value">

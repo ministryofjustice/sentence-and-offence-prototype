@@ -2,7 +2,6 @@
 // For guidance on how to create routes see:
 // https://prototype-kit.service.gov.uk/docs/create-routes
 //
-
 const govukPrototypeKit = require("govuk-prototype-kit");
 const sessionDataDefaults = require("./data/session-data-defaults");
 const router = govukPrototypeKit.requests.setupRouter();
@@ -115,29 +114,29 @@ router.post('special-remission-question', function (req, res) {
       res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-required')
     }
    })
- //Immigration documents
-router.post('/immigration-documents-submit', function (req, res) {
+//Record immigration
+router.post('/record-submit', function (req, res) {
     // this
-    var documenttype = req.session.data['IS91']
+    var recordDocument = req.session.data['recordDocument']
    // Check whether the variable matches a condition
-    if (documenttype == "IS91"){
+    if (recordDocument == "IS91"){
     // Send user to next page
     res.redirect('/adjustments/beta/18/immigration-detention/is91-date-issued')}
     else {
-    // Send user to dpeortation order
+    // Send user to deportation order questions
     res.redirect('/adjustments/beta/18/immigration-detention/do-date-issued')
     }
   })
-   //Immigration documents status
-router.post('/immigration-documents-status-submit', function (req, res) {
+  //Immigration update status
+router.post('/status-update-submit', function (req, res) {
     // this
-    var statustype = req.session.data['Active']
+    var statustype = req.session.data['statustype']
    // Check whether the variable matches a condition
     if (statustype == "Active"){
     // Send user to next page
     res.redirect('/adjustments/beta/18/immigration-detention/active-confirmation')}
     else {
-    // Send user to dpeortation order
+    // Send user to deportation order questions
     res.redirect('/adjustments/beta/18/immigration-detention/inactive-confirmation')
     }
   })
