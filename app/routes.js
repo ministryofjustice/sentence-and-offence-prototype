@@ -101,17 +101,16 @@ router.post('/version-3/add-a-document/add-a-warrant-for-custodial-sentence/add-
     }
 })
 //Special remission - question
-router.post('special-remission-question', function (req, res) {
+router.post('/special-remission-submit', function (req, res) {
+    //this
     var srselect = req.session.data['srselect']
-  
-    // Check whether the variable matches a condition
+   // Check whether the variable matches a condition
     if (srselect == "Yes"){
-     
-     // Send user to next page
-      res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-days')
+    // Send user to next page
+      res.redirect('/adjustments/beta/17/special-remission/special-remission-days')
     } else {
       // Send user to homepage
-      res.redirect('/adjustments/beta/mvp-plus/special-remission/special-remission-required')
+      res.redirect('/adjustments/beta/17/special-remission/special-remission-required')
     }
    })
 //Record immigration
