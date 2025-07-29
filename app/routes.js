@@ -146,10 +146,10 @@ router.post('/tsca-question-submit', function (req, res) {
    // Check whether the variable matches a condition
     if (tscaselect == "Yes"){
     // Send user to next page
-    res.redirect('/adjustments/beta/mvp-plus/TSCA/tsca-days')}
+    res.redirect('/adjustments/beta/17/TSCA/tsca-days')}
     else {
     // Send user to ppcs question
-    res.redirect('/adjustments/beta/mvp-plus/TSCA/tsca-question-ppcs')
+    res.redirect('/adjustments/beta/17/TSCA/tsca-question-ppcs')
     }
   })
 //PPCS
@@ -159,10 +159,10 @@ router.post('/tsca-question-ppcs-submit', function (req, res) {
    // Check whether the variable matches a condition
     if (ppscselect == "Yes"){
     // Send user to next page
-    res.redirect('/adjustments/beta/mvp-plus/TSCA/tsca-ppcs-days')}
+    res.redirect('/adjustments/beta/17/TSCA/tsca-ppcs-days')}
     else {
     // Send user to ppcs question
-    res.redirect('/adjustments/beta/mvp-plus/TSCA/tsca-cannot-continue')
+    res.redirect('/adjustments/beta/17/TSCA/tsca-cannot-continue')
     }
   })
 //TSPANC
@@ -172,10 +172,10 @@ router.post('/time-spent-appeal-question-submit', function (req, res) {
    // Check whether the variable matches a condition
     if (appealselect == "Yes"){
     // Send user to next page
-    res.redirect('/adjustments/beta/mvp-plus/tspanc/time-spent-appeal-days')}
+    res.redirect('/adjustments/beta/17/tspanc/time-spent-appeal-days')}
     else {
     // Send user to ppcs question
-    res.redirect('/adjustments/beta/mvp-plus/tspanc/time-spent-appeal-cannot-continue')
+    res.redirect('/adjustments/beta/17/tspanc/time-spent-appeal-cannot-continue')
     }
   })
 
