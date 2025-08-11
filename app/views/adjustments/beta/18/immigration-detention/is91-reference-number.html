@@ -9,7 +9,7 @@
                 <div class="govuk-grid-column-three-quarters">
                   <form class="form" action="./check-your-answers" method="post">
                        <h1 class="govuk-heading-xl">
-                             <span class="govuk-caption-xl"> Record authority to detain</span>
+                             <span class="govuk-caption-xl">Record IS91</span>
                                <p></p>
   <div class="govuk-form-group">
     <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -22,8 +22,11 @@
                               </div>
                            
                            <div class="govuk-input__wrapper">
-  <input class="govuk-input govuk-input--width-10" {%if (data.is91ref) %}
+                            <label class="govuk-label">
+   Home Office reference number
+  <input class="govuk-input govuk-input--width-15" {%if (data.is91ref) %}
             value="{{data.is91ref}}" {% endif %} id="ref-1" name="is91ref" type="text" autocomplete="is91ref-1">
+            </label>
   </div>
                           </div>      
                       <div class="govuk-button-group">
