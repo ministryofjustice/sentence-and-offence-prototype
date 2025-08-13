@@ -126,6 +126,26 @@ router.post('/record-submit', function (req, res) {
     res.redirect('/adjustments/beta/18/immigration-detention/do-date-issued')
     }
   })
+
+//Record immigration 3 options
+router.post('/record-submit1', function (req, res) {
+    // this
+    var recordDocument = req.session.data['recordDocument']
+   // Check whether the variable matches a condition
+    if (recordDocument == "IS91"){
+    // Send user to next page
+    res.redirect('/adjustments/beta/18/immigration-detention/is91-date-issued')}
+    else if (recordDocument == "Deportation order"){
+    // Send user to deportation order questions
+    res.redirect('/adjustments/beta/18/immigration-detention/do-date-issued')
+    }
+    else 
+      // Send user to no longer of interest
+    {res.redirect('/adjustments/beta/18/immigration-detention/no-longer-of-interest-reason')
+
+    }
+  })
+
   //Immigration update status
 router.post('/status-update-submit', function (req, res) {
     // this

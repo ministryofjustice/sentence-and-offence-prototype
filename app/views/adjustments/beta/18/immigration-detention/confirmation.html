@@ -10,7 +10,11 @@
                     
                     <div class="govuk-panel govuk-panel--confirmation">
   <h1 class="govuk-panel__title">
+    {% if data.recordDocument=="IS91"%}
   IS91 successfully recorded
+   {% else %}
+  Deportation order successfully recorded
+  {% endif %}
   </h1>
  <!-- <div class="govuk-panel__body">
     Your reference number<br><strong>HDJ2123F</strong>
