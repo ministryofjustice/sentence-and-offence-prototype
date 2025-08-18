@@ -18,8 +18,10 @@
                   </svg>
                    {% if data.recordDocument=="IS91"%}
                      <div class="moj-banner__message"><b>Amos Burton is being held under an IS91</b></div>
-                     {% else %}
+                    {% elseif data.recordDocument=="Deportation order" %}
                       <div class="moj-banner__message"><b>Amos Burton is liable for deportation</b></div>
+                      {% else %}
+                      <div class="moj-banner__message"><b>Amos Burton is no longer of interest to the Home Office</b></div>
                        {% endif %}
                    </div>
 {% if data.recordDocument=="IS91"%}
@@ -66,7 +68,7 @@
                           </div>
                           
                         </div>
-                        {% else %}
+                       {% elseif data.recordDocument=="Deportation order" %}
 
                          <div class="govuk-summary-card">
                           <div class="govuk-summary-card__title-wrapper">
@@ -96,14 +98,64 @@
                               </div>
                               <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
-                                  {% if data.recordDocument=="IS91"%}
-                                 Home Office reference number
-                                 {% else %}
+                                  
                                  Reference number
-                                 {% endif %}
+                                 
                                 </dt>
                                 <dd class="govuk-summary-list__value">
                                  ABCD12345
+                                </dd>
+                                 <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">Edit</a>
+                                </dd>
+                              </div>
+                              
+                            </dl>
+                          </div>
+                          
+                        </div>
+                        {% else %}
+                        <div class="govuk-summary-card">
+                          <div class="govuk-summary-card__title-wrapper">
+                            <h2 class="govuk-summary-card__title">
+                            No longer of interest recorded on 15 July 2025
+                            </h2>
+                            <ul class="govuk-summary-card__actions">
+                              <li class="govuk-summary-card__action">
+                                  <a class="govuk-link" href="./delete-documents">
+                                    Delete
+                                  </a>
+                              </li>
+                          </ul>
+                          </div>
+                          <div class="govuk-summary-card__content">
+                            <dl class="govuk-summary-list">
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                 Date of confirmation from Head Office
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  14 July 2025
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                  <a class="govuk-link" href="#">Edit</a>
+                                </dd>
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                  
+                                Reason
+                                 
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                  {%if (data.is91ref) %}
+                {{data.is91ref}}
+                               {% elseif (data.doref) %}
+                {{data.doref}}
+                {% elseif (data.statustype) %}
+                {{data.statustype}}: {{data.contactByPhone}}
+               
+                 {% endif %}
                                 </dd>
                                  <dd class="govuk-summary-list__actions">
                                   <a class="govuk-link" href="#">Edit</a>
@@ -122,15 +174,15 @@
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th scope="col" class="govuk-table__header">Document type</th>
-      <th scope="col" class="govuk-table__header">Date on document</th>
-      <th scope="col" class="govuk-table__header">Home Office reference number</th>
+      <th scope="col" class="govuk-table__header">Date</th>
+      <th scope="col" class="govuk-table__header">Details</th>
       <th scope="col" class="govuk-table__header"></th>
       <th scope="col" class="govuk-table__header"></th>
     </tr>
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
-      <td class="govuk-table__cell"><b>IS91</b></td>
+      <td class="govuk-table__cell"><b>IS91 Detention Authority</b></td>
       <td class="govuk-table__cell">14 December 2024</td>
        <td class="govuk-table__cell">ABCD1234</td>
         <td class="govuk-table__cell"><a href="#">Edit</a></td>

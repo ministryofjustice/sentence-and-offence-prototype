@@ -10,29 +10,33 @@
                     
                     <div class="govuk-panel govuk-panel--confirmation">
   <h1 class="govuk-panel__title">
-    {% if data.recordDocument=="IS91"%}
-  IS91 successfully recorded
-   {% else %}
-  Deportation order successfully recorded
-  {% endif %}
+    {% if data.recordDocument=="IS91" %}
+                              IS91 Detention Authority successfully recorded
+                              {% elseif data.recordDocument=="Deportation order" %}
+                           Deportation order successfully recorded
+                              {% else %}
+                              No longer of interest successfully recorded
+                              {% endif %}
   </h1>
  <!-- <div class="govuk-panel__body">
     Your reference number<br><strong>HDJ2123F</strong>
   </div>-->
 </div>
 <br>
-
+<div class="govuk-heading-l">What you need to do next</div>   
 
  {% if data.recordDocument=="IS91"%}
-                               <p class="govuk-body govuk">IS91 document successfully recorded.</p>
-                                {% else %}
-                               <p class="govuk-body govuk">Deportation order document successfully recorded.</p>
+                               <p class="govuk-body govuk">To prevent release when a IS91 Detention Authority has been issued, you need to:</p>
+                               {% elseif data.recordDocument=="Deportation order" %}
+                               <p class="govuk-body govuk">If this deportation order will impact the release schedule, you need to:</p>
+                               {% else %}
+                            <p class="govuk-body govuk">This person will not be held under immigration powers. You need to check if there are any alerts that might prevent a release</p>
                                 {% endif %}
-    <div class="govuk-heading-l">What you need to do next</div>   
     
-    <p><a href="#">Add or update an alert</a></p>
-    <p><a href="#">Amend release schedule</a></p>
-                  
+    
+    <p><a href="#">Add or update an alert on the prisoner profile</a></p>
+    <p><a href="#">Update the release schedule</a></p>
+                  <br>
                    
                    <div class="govuk-button-group">
                           <a href="../overview2" class="govuk-button govuk-button--secondary" data-module="govuk-button">
