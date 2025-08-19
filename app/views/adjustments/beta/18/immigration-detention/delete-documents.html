@@ -22,9 +22,19 @@
                    {% if data.recordDocument=="IS91"%}
                 <p class="govuk-body">IS91 Detention Authority dated 14 July 2025 recorded on 15 July 2025.</a></p>
                  {% elseif data.recordDocument=="Deportation order" %}
-                               <p class="govuk-body govuk">Deleting will permanently remove this deportation order from their record.</p>
+                               <p class="govuk-body govuk">Deportation order dated 14 July 2025 recorded on 15 July 2025.</p>
                                  {% else %}
-                                 <p class="govuk-body govuk">Deleting will permanently remove this deportation order from their record.</p>
+                                 <p class="govuk-body govuk">No longer of interest dated 14 July 2025 recorded 15 July 2025.</p>
+                           {% endif %}
+
+                            {% if data.recordDocument=="IS91"%}
+                <div class="govuk-inset-text">
+ Deleting will permenantly remove this IS91 from their record.
+</div>
+                 {% elseif data.recordDocument=="Deportation order" %}
+                              <div class="govuk-inset-text">Deleting will permanently remove this deportation order from their record.</div>
+                                 {% else %}
+                                <div class="govuk-inset-text">Deleting will permanently remove this immigration information from their record.</div>
                            {% endif %}
                 </fieldset>
               </div>

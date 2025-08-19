@@ -7,7 +7,7 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds-from-desktop">
                      {% if data.recordDocument=="IS91"%}
- <span class="govuk-caption-xl">Record IS91</span>
+ <span class="govuk-caption-xl">Record IS91 Detention Authority</span>
  {% elseif data.recordDocument=="Deportation order" %}
  <span class="govuk-caption-xl">Record deportation order</span>
  {% else %}
@@ -25,12 +25,18 @@
                        
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                               Document type
+                              {% if data.recordDocument=="IS91"%}
+                               <p class="govuk-body govuk">Document type</p>
+                                {% elseif data.recordDocument=="Deportation order" %}
+                               <p class="govuk-body govuk">Document type</p>
+                                 {% else %}
+                                 <p class="govuk-body govuk"><b>Immigration information</b></p>
+                           {% endif %}
                             </dt>
                             <dt></dt>
                             <dd  id="days" class="govuk-summary-list__value">
                                {% if data.recordDocument=="IS91"%}
-                               <p class="govuk-body govuk">IS91</p>
+                               <p class="govuk-body govuk">IS91 Detention Authority</p>
                                 {% elseif data.recordDocument=="Deportation order" %}
                                <p class="govuk-body govuk">Deportation order</p>
                                  {% else %}
@@ -45,7 +51,13 @@
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key">
-                               Date on document
+                             {% if data.recordDocument=="IS91"%}
+                               <p class="govuk-body govuk">Date on document</p>
+                                {% elseif data.recordDocument=="Deportation order" %}
+                               <p class="govuk-body govuk">Date on document</p>
+                                 {% else %}
+                                 <p class="govuk-body govuk"><b>Date confirmed by the Home Office</b></p>
+                           {% endif %}
                              </dt>
                              <dt></dt>
                             <dd class="govuk-summary-list__value">
@@ -62,7 +74,7 @@
                                   {% if data.recordDocument=="IS91" %}
                               Home Office reference number
                               {% elseif data.recordDocument=="Deportation order" %}
-                              Reference number
+                              Home Office reference number
                               {% else %}
                               Reason
                               {% endif %}
