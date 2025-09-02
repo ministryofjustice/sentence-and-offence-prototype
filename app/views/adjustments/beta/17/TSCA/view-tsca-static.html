@@ -5,20 +5,19 @@
         <a href="index1" class="govuk-back-link">Back</a>
 
         <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
-             <div class="govuk-grid-row">
+            <div class="govuk-grid-row">
                 <div class="govuk-grid-column-three-quarters">
             <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>
-                LAL overview
+               Time spent in custody abroad details
             </h1>
 
             <table class="govuk-table">
                 
                 <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
-                    <th scope="col" class="govuk-table__header">First Day</th>
-                    <th scope="col" class="govuk-table__header">Last Day</th>
+                    <th scope="col" class="govuk-table__header">Type</th>
+                    <th scope="col" class="govuk-table__header">Offences</th>
                     <th scope="col" class="govuk-table__header">Entered by</th>
-                    <th scope="col" class="govuk-table__header">Delays release dates</th>
                     <th scope="col" class="govuk-table__header">Number of days</th>
                     <th scope="col" class="govuk-table__header">Actions</th>
                 </tr>
@@ -27,33 +26,34 @@
 
 
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">15 September 2023</td>
-                    <td class="govuk-table__cell">19 September 2023</td>
+                    <td class="govuk-table__cell">Sentencing warrant <br>from the court</td>
+                    <td class="govuk-table__cell"><b>Affray</b>
+                    <p class="govuk-body-s">Committed on 1 January 2023<br>
+                               Heard at Aberdare County Court</p>
+                    </td>
                     <td class="govuk-table__cell">Kirkham (HMP)</td>
-                    <td class="govuk-table__cell">No</td>
-                    <td class="govuk-table__cell">4</td>
+                    <td class="govuk-table__cell">6</td>
                     <td class="govuk-table__cell">
-                        <a href="lal" class="edit-link" data-caseno="4">Edit</a><a href="#" class="delete-link govuk-!-margin-left-4" data-caseno="4">Delete</a>
+                        <a href="tsca-question" class="edit-link" data-caseno="4">Edit</a> <a href="#" class="delete-link govuk-!-margin-left-4" data-caseno="4">Delete</a>
                     </td>
                 </tr>
-             </tbody>
+ </tbody>
                 <tfoot>
                 <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header" colspan="2">Total days</th>
                     <td class="govuk-table__cell"></td>
                     <td class="govuk-table__cell"></td>
-                    <td id="totalTB" class="govuk-table__header" colspan="2">4</td>
+                    <td id="totalTB" class="govuk-table__header" colspan="2">6</td>
                 </tr>
                 </tfoot>
             </table>
 
-            <a href="lal" class="govuk-button" data-name="RADA" data-desc="RADA (Restore additional days awarded) ">
+            <a href="tsca-question" class="govuk-button" data-name="RADA" data-desc="RADA (Restore additional days awarded) ">
                 Add new
             </a>
         </main>
     </div>
-    </div>
-    
 </div>
+
 
 {% endblock %}
