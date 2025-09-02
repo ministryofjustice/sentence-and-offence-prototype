@@ -1,0 +1,47 @@
+{% extends "version-1/dps/includes/hub-layout-minus-nav.html" %}
+{% block content %}
+<div class="govuk-body">
+    <div class="">
+        <a href="./index.html" class="govuk-back-link">Back</a>
+       <form class="form" action="/time-spent-appeal-question-submit" method="post">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                  
+                       <h1 class="govuk-heading-l">
+                                <span class="govuk-caption-xl">Adjustments</span>
+                                Enter the Court of Appeal reference number
+                            </h1>
+                          <div class="govuk-form-group">
+  <label class="govuk-label" for="width-10">
+    10 character width
+  </label>
+  <input class="govuk-input govuk-input--width-10" id="width-10" name="width10" type="text">
+</div>
+                  <div class="govuk-button-group">
+                         <button class="govuk-button" data-module="govuk-button" type="submit">
+                              Continue
+                          </button>
+                            <a href="./index.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+         
+            
+    </div>
+</div>
+<script src="/public/javascripts/add-remand-mvp.js"></script>
+{% endblock %}
+Collapse
+
+
+
+
+
+
+
+
+
+
