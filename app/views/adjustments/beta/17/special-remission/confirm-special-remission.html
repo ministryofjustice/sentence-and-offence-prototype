@@ -3,7 +3,7 @@
 
     <div class="">
         <a href="./special-remission-type" class="govuk-back-link">Back</a>
-        <main class="govuk-main-wrapper " id="main-content" role="main">
+        <main clas="govuk-main-wrapper " id="main-content" role="main">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds-from-desktop">
                     <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Confirm and save</h1>
@@ -18,7 +18,7 @@
                             <dd  id="days" class="govuk-summary-list__value">
                                 7
                             </dd>
-                            <dd id="start" class="govuk-summary-list__value" style="width: 455px;"></dd>
+                            <dd id="start" class="govuk-summary-list__value"></dd>
                             
                             <dd class="govuk-summary-list__value">
                                 <a href="lal">Edit</a>
@@ -29,11 +29,9 @@
                                 Type of special special remission
                              </dt>
                              <dd class="govuk-summary-list__value">
-                               
-                                {%if (data.specialremission-type) %} 
-                                {{data.specialremission-type}}
-
-                              {% endif %}
+                                {%if (data.specialremission) %}
+                                {{data.specialremission}}
+                                 {% endif %}
                               
                             </dd>
                             <dd id="start" class="govuk-summary-list__value"></dd>
@@ -46,7 +44,7 @@
                         <a href="../special-remission/index1"  id="saveLALButton" class="govuk-button" data-module="govuk-button"  data-journey="7">
                             Confirm and save
                         </a>
-                        <a href="../index-1.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        <a href="./index1" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                             Cancel
                         </a>
                     </div>

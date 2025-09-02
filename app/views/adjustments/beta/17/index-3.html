@@ -18,15 +18,16 @@
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-full govuk-!-padding-top-1">
                     <div id="notificationContainer">
-                        
+
                     </div>
 
                     <h1 class="govuk-heading-xl">
-                        <span class="govuk-caption-xl">Adjustments</span>
+                       <!-- <span class="govuk-caption-xl">Adjustments</span>-->
                         Review and apply adjustments
                     </h1>
                     <p class="govuk-body govuk-!-width-three-quarters">
-                        You can add new adjustments, or review and edit existing adjustments using this service. Make sure you calculate release dates after making any changes to this person's adjustment information.
+                        You can add new adjustments, or review and edit existing adjustments using this service. 
+                        Make sure you calculate release dates after making any changes to this person's adjustment information.
                     </p>
                 </div>
 
@@ -54,7 +55,7 @@
                 </div>
             </div>
             <div class="govuk-grid-row"> 
-                        <h2 class="govuk-heading-m govuk-!-padding-left-4">Deductions</h2>
+                        <h2 class="govuk-heading-m govuk-!-padding-left-3">Deductions</h2>
                     <!-- <div class="govuk-!-padding-left-4">
                         <p class="govuk-inset-text" >
                             Some of the details recorded in NOMIS cannot be used for a sentence calculation. This means unused deductions cannot be automatically calculated by this service. To add any unused remand, go to the sentence adjustments screen in NOMIS.
@@ -67,15 +68,11 @@
                                     <ul class="govuk-summary-card__actions">
 
                                         {% if data['toShow'] == 'remandAdded' %}
-                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="./remand-tool/view-remand-3">
-                                            View<span class="govuk-visually-hidden"> Remand</span>
-                                        </a>
-                                        </li>
-                                       <!--<li id="viewRemand" class="govuk-summary-card__action  view-remand">
+                                        <li id="viewRemand" class="govuk-summary-card__action  view-remand">
                                             <a class="govuk-link" href="remand-tool/view-remand-2">
                                                 View<span class="govuk-visually-hidden"> Remand</span>
                                             </a>
-                                        </li>-->
+                                        </li>
 
                                         {% else %}
 
@@ -92,7 +89,7 @@
                                 <div class="adjustment-card_content">
 
                                     {% if data['toShow'] == 'remandAdded' %}
-                                    <span id="RemandTotal" class="count govuk-body">149</span><span>days</span>  
+                                    <span id="RemandTotal" class="count govuk-body">152</span><span>days</span>  
                                     {% else %}
                                     <span id="RemandTotal" class="count govuk-body">0</span><span>days</span>  
                                     {% endif %}  
@@ -126,28 +123,31 @@
 
                                    <span id="updated" class="govuk-hint"></span>                               </div>
                             </div>
-                            <div class="adjustment-card ">
+                           
+                            <div class="adjustment-card  rada">
                                 <div class="govuk-summary-card__title-wrapper">
-                                    <h2 class="govuk-summary-card__title">Lawfully at large</h2>
+                                    <h2 class="govuk-summary-card__title">Special remission</h2>
                                     <ul class="govuk-summary-card__actions">
-                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
-                                            Add new<span class="govuk-visually-hidden"> add new</span>
-                                        </a>
+                                        <li class="govuk-summary-card__action">
+                                            <a class="govuk-link" href="../17/special-remission/special-remission-question">
+                                                Add new<span class="govuk-visually-hidden"> Special remission</span>
+                                            </a>
                                         </li>
-<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">-->
-<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
-<!--                                        </a>-->
-<!--                                        </li>-->
+                                        <li id="viewRADA" class="govuk-summary-card__action moj-hidden view-rada">
+                                             <a class="govuk-link" href="/special-remission/special-remission-question">
+                                                View<span class="govuk-visually-hidden"> Special remission</span>
+                                            </a>
+                                        </li>
                                     </ul>
                                 </div>
                                 <div class="adjustment-card_content">
-                                    <span id="LAL"  class="count govuk-body">0</span><span>days</span>
+                                    <span id="RADATotal" class="count govuk-body">0</span><span>days</span>
 <!--                                    <a class="govuk-link" href="#">-->
 <!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
 <!--                                    </a>-->
 <!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by HMP Kirkham</p>-->
-
-
+                                    <br>
+                                    <span id="RADAupdated" class="govuk-hint"></span>
                                 </div>
                             </div>
                             <div class="adjustment-card  rada">
@@ -176,13 +176,39 @@
                                     <span id="RADAupdated" class="govuk-hint"></span>
                                 </div>
                             </div>
+                             <div class="adjustment-card  rada">
+                                <div class="govuk-summary-card__title-wrapper">
+                                    <h2 class="govuk-summary-card__title">Time spent in custody abroad</h2>
+                                    <ul class="govuk-summary-card__actions">
+                                        <li class="govuk-summary-card__action">
+                                            <a class="govuk-link" href="./tsca/tsca-question">
+                                                Add new<span class="govuk-visually-hidden"> RADA</span>
+                                            </a>
+                                        </li>
+                                      <!--  <li id="viewRADA" class="govuk-summary-card__action moj-hidden view-rada">
+                                             <a class="govuk-link" href="rada/view-rada">
+                                                View<span class="govuk-visually-hidden"> RADA</span>
+                                            </a>
+                                        </li>-->
+                                    </ul>
+                                </div>
+                                <div class="adjustment-card_content">
+                                    <span id="RADATotal" class="count govuk-body">0</span><span>days</span>
+<!--                                    <a class="govuk-link" href="#">-->
+<!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
+<!--                                    </a>-->
+<!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by HMP Kirkham</p>-->
+                                    <br>
+                                    <span id="RADAupdated" class="govuk-hint"></span>
+                                </div>
+                            </div>
 
 
                         </div>
                 </div>
             </div>
             <div class="govuk-grid-row govuk-!-padding-top-8"> 
-                    <h2 class="govuk-heading-m govuk-!-padding-left-4">
+                    <h2 class="govuk-heading-m govuk-!-padding-left-3">
                         Additions
                     </h2>
                     <div class="container govuk-body">
@@ -195,11 +221,11 @@
                                         Add new<span class="govuk-visually-hidden"> UAL</span>
                                         </a>
                                     </li>
-                                    <li id="viewUAL" class="govuk-summary-card__action moj-hidden view-ual">
+                                  <!--  <li id="viewUAL" class="govuk-summary-card__action moj-hidden view-ual">
                                         <a class="govuk-link" href="ual/view-ual">
                                         View<span class="govuk-visually-hidden"> UAL</span>
                                     </a>
-                                    </li>
+                                    </li>-->
                                 </ul>
                             </div>
                             <div class="adjustment-card_content">
@@ -208,6 +234,7 @@
                                 <span id="UALupdated" class="govuk-hint"></span>
                             </div>
                         </div>
+                        
                         <div class="adjustment-card ">
                                 <div class="govuk-summary-card__title-wrapper">
                                     <h2 class="govuk-summary-card__title">ADA (Additional days awarded)</h2>
@@ -228,6 +255,54 @@
 
                             </div>
                         </div>
+                         <div class="adjustment-card ">
+                                <div class="govuk-summary-card__title-wrapper">
+                                    <h2 class="govuk-summary-card__title">LAL (Lawfully at large)</h2>
+                                    <ul class="govuk-summary-card__actions">
+                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                                            Add new<span class="govuk-visually-hidden"> add new</span>
+                                        </a>
+                                        </li>
+<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">-->
+<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
+<!--                                        </a>-->
+<!--                                        </li>-->
+                                    </ul>
+                                </div>
+                                <div class="adjustment-card_content">
+                                    <span id="LAL"  class="count govuk-body">0</span><span>days</span>
+<!--                                    <a class="govuk-link" href="#">-->
+<!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
+<!--                                    </a>-->
+<!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by HMP Kirkham</p>-->
+
+
+                                </div>
+                            </div>
+                             <div class="adjustment-card ">
+                                <div class="govuk-summary-card__title-wrapper">
+                                    <h2 class="govuk-summary-card__title">Time spent as an appeal applicant not to count</h2>
+                                    <ul class="govuk-summary-card__actions">
+                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                                            Add new<span class="govuk-visually-hidden"> add new</span>
+                                        </a>
+                                        </li>
+<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">-->
+<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
+<!--                                        </a>-->
+<!--                                        </li>-->
+                                    </ul>
+                                </div>
+                                <div class="adjustment-card_content">
+                                    <span id="LAL"  class="count govuk-body">0</span><span>days</span>
+<!--                                    <a class="govuk-link" href="#">-->
+<!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
+<!--                                    </a>-->
+<!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by HMP Kirkham</p>-->
+
+
+                                </div>
+                            </div>
                         <div class="govuk-inset-text govuk-!-margin-left-2 govuk-!-margin-top-9">
                             <h2 class="govuk-heading-m">Calculate release dates</h2>
                             <p>Any changes you make to the adjustments could impact the release dates for Justin Bell. </p>

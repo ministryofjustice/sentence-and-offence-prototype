@@ -16,8 +16,8 @@
         <main class=" offence-outcome " id="main-content" role="main">
 
             <div class="govuk-grid-row">
-               
-                 <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+                <div class="govuk-grid-column-full govuk-!-padding-top-1">
+                      <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
                     <div class="moj-banner__message">
                         <h3 class="govuk-notification-banner__heading"> Special remission information has been saved</h3>
                         <p class="govuk-body">Once all of the adjustments have been applied, you must
@@ -25,51 +25,83 @@
                         </p></div>
                   
                   </div>
-                  
-                
-                <div class="govuk-grid-column-full govuk-!-padding-6 govuk-!-padding-top-1">
 
+                    <div id="notificationContainer">
+
+                    </div>
 
                     <h1 class="govuk-heading-xl">
-                        <span class="govuk-caption-xl">Adjustments</span>
+                       <!-- <span class="govuk-caption-xl">Adjustments</span>-->
                         Review and apply adjustments
                     </h1>
                     <p class="govuk-body govuk-!-width-three-quarters">
-                        You can add new adjustments, or review and edit existing adjustments using this service. Make sure you calculate release dates after making any changes to this person's adjustment information.
+                        You can add new adjustments, or review and edit existing adjustments using this service. 
+                        Make sure you calculate release dates after making any changes to this person's adjustment information.
                     </p>
                 </div>
-            </div>
-            <div class="govuk-grid-row">
-                <div class="govuk-grid-column-full">
-                        <h2 class="govuk-heading-m govuk-!-padding-left-4">Deductions</h2>
-                    <div class="govuk-!-padding-left-4 govuk-!-width-three-quarters">
-                        <p class="govuk-inset-text" >
-                            Unused deductions have not yet been calculated. To do this, you will need to
-                            <a href="review-unused-deductions">review deductions</a>.
-                        </p>
+
+                    {% if data['toShow'] == 'reviewRemand' %}
+
+                    
+                    <div class="govuk-grid-column-three-quarters govuk-!-margin-bottom-4">
+                    <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+                        <section class="moj-ticket-panel__content moj-ticket-panel__content--grey" aria-label="Section 1">
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">There are periods of remand to review</h2>
+                        <p class="govuk-body">This remand tool  has identified periods of remand that may be relevant. You must review these remand periods before calculating a release date.</p>
+                        <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="remand-tool/check-for-replaced-offences-intercept">
+                            Review remand
+                        </a>
+                        </section>
+                    
+                    </article>
                     </div>
+
+                    {% else %}
+
+                    {% endif %}
+ 
+                </div>
+            </div>
+            <div class="govuk-grid-row"> 
+                        <h2 class="govuk-heading-m govuk-!-padding-left-3">Deductions</h2>
+                    <!-- <div class="govuk-!-padding-left-4">
+                        <p class="govuk-inset-text" >
+                            Some of the details recorded in NOMIS cannot be used for a sentence calculation. This means unused deductions cannot be automatically calculated by this service. To add any unused remand, go to the sentence adjustments screen in NOMIS.
+                        </p>
+                    </div> -->
                         <div class="container  govuk-body">
                             <div class="adjustment-card ">
                                 <div class="govuk-summary-card__title-wrapper">
                                     <h2 class="govuk-summary-card__title">Remand</h2>
                                     <ul class="govuk-summary-card__actions">
-                                        <li class="govuk-summary-card__action">
-                                            <a class="govuk-link " href="remand/enter-remand">
-                                            Add new<span class="govuk-visually-hidden"> Remand</span>
-                                            </a>
-                                        </li>
-                                        <li id="viewRemand" class="govuk-summary-card__action moj-hidden view-remand">
-                                            <a class="govuk-link" href="remand/view-remand">
+
+                                        {% if data['toShow'] == 'remandAdded' %}
+                                        <li id="viewRemand" class="govuk-summary-card__action  view-remand">
+                                            <a class="govuk-link" href="remand-tool/view-remand-2">
                                                 View<span class="govuk-visually-hidden"> Remand</span>
                                             </a>
                                         </li>
+
+                                        {% else %}
+
+                                        <li class="govuk-summary-card__action">
+                                            <a class="govuk-link " href="remand-tool/check-for-replaced-offences-intercept">
+                                            Review remand<span class="govuk-visually-hidden"> Remand</span>
+                                            </a>
+                                        </li>
+
+                                        {% endif %}  
                                     </ul>
                                 </div>
 
                                 <div class="adjustment-card_content">
-                                    <span id="RemandTotal" class="count govuk-body">0</span><span>days</span>
-                                    <span id="UR" ></span><br>
-                                    <span id="RemandUpdated" class="govuk-hint"></span>
+
+                                    {% if data['toShow'] == 'remandAdded' %}
+                                    <span id="RemandTotal" class="count govuk-body">152</span><span>days</span>  
+                                    {% else %}
+                                    <span id="RemandTotal" class="count govuk-body">0</span><span>days</span>  
+                                    {% endif %}  
                                 </div>
                             </div>
                             <div class="adjustment-card ">
@@ -80,30 +112,46 @@
                                             Add new<span class="govuk-visually-hidden"> Tagged bail</span>
                                         </a>
                                         </li>
-                                        <li id="viewTaggedBail" class="govuk-summary-card__action moj-hidden view-tagged-bail">
+
+                                        <li id="viewTaggedBail" class="govuk-summary-card__action  view-tagged-bail">
                                             <a class="govuk-link" href="tagged-bail/view-tagged-bail-3">
                                             View
                                                 <span class="govuk-visually-hidden"> Tagged bail</span>
                                             </a>
                                         </li>
+   
                                     </ul>
                                 </div>
                                 <div class="adjustment-card_content">
-                                    <span id="TaggedBailTotal"  class="count govuk-body">0</span><span>days </span><span id="UTB"></span>
-<!--                                    <a class="govuk-link" href="#">-->
-<!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
-<!--                                    </a>-->
-<!--                                    <ul class="govuk-list govuk-!-padding-top-3">-->
-<!--                                        <li><a href="add-tagged-bail.html">Add tagged bail</a></li>-->
-<!--                                        <li><a href="add-tagged-bail.html">View/Edit tagged bail</a></li>-->
-<!--                                    </ul>-->
-<!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by HMP Kirkham</p>-->
-                                    <br>
-
-                                   <span id="updated" class="govuk-hint"></span>                               </div>
+                                 <span id="TaggedBailTotal"  class="count govuk-body">152</span><span>days </span><span id="UTB"></span>
+                                <br>
+                                 <span id="updated" class="govuk-hint"></span>
+                                </div>
                             </div>
-                          
-                            <div class="adjustment-card  rada">
+                           
+                            <div class="adjustment-card">
+                                <div class="govuk-summary-card__title-wrapper">
+                                    <h2 class="govuk-summary-card__title">Special remission</h2>
+                                    <ul class="govuk-summary-card__actions">
+                                        <li class="govuk-summary-card__action">
+                                            <a class="govuk-link" href="../17/special-remission/special-remission-question">
+                                                Add new<span class="govuk-visually-hidden"> Special remission</span>
+                                            </a>
+                                        </li>
+                                       <li id="viewSpecialremission" class="govuk-summary-card__action view-special-remission">
+                                             <a class="govuk-link" href="/special-remission/view-special-remission">
+                                                View<span class="govuk-visually-hidden"> Special remission</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="adjustment-card_content">
+                                    <span id="SpecialremissionTotal" class="count govuk-body">7</span><span>days</span>
+                                <br>
+                                    <span id="updated" class="govuk-hint"></span>
+                                </div>
+                            </div>
+                            <div class="adjustment-card rada">
                                 <div class="govuk-summary-card__title-wrapper">
                                     <h2 class="govuk-summary-card__title">RADA (Restoration of additional days awarded)</h2>
                                     <ul class="govuk-summary-card__actions">
@@ -112,11 +160,11 @@
                                                 Add new<span class="govuk-visually-hidden"> RADA</span>
                                             </a>
                                         </li>
-                                        <li id="viewRADA" class="govuk-summary-card__action moj-hidden view-rada">
+                                     <!--   <li id="viewRADA" class="govuk-summary-card__action moj-hidden view-rada">
                                              <a class="govuk-link" href="rada/view-rada">
                                                 View<span class="govuk-visually-hidden"> RADA</span>
                                             </a>
-                                        </li>
+                                        </li>-->
                                     </ul>
                                 </div>
                                 <div class="adjustment-card_content">
@@ -129,34 +177,30 @@
                                     <span id="RADAupdated" class="govuk-hint"></span>
                                 </div>
                             </div>
-                            <div class="adjustment-card ">
+                             <div class="adjustment-card">
                                 <div class="govuk-summary-card__title-wrapper">
-                                    <h2 class="govuk-summary-card__title">Special remission</h2>
+                                    <h2 class="govuk-summary-card__title">Time spent in custody abroad</h2>
                                     <ul class="govuk-summary-card__actions">
-                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="special-remission-question.html">
-                                            Add new<span class="govuk-visually-hidden"> add new</span>
-                                        </a>
+                                        <li class="govuk-summary-card__action">
+                                            <a class="govuk-link" href="./tsca/tsca-question">
+                                                Add new<span class="govuk-visually-hidden"> Time spent in custody abroad</span>
+                                            </a>
                                         </li>
-                                           <li class="govuk-summary-card__action"> <a class="govuk-link" href="view-special-remission">
-                                            View<span class="govuk-visually-hidden"> View</span>
-                                          </a>
-                                          </li>
                                     </ul>
                                 </div>
                                 <div class="adjustment-card_content">
-                                    <span id="LAL"  class="count govuk-body">7</span><span>days</span>
-                                   
-                                   
-    
+                                    <span id="TSCATotal" class="count govuk-body">0</span><span>days</span>
+                                        <br>
+                                    <span id="updated" class="govuk-hint"></span>
                                 </div>
                             </div>
+
 
                         </div>
                 </div>
             </div>
-            <div class="govuk-grid-row govuk-!-padding-top-8">
-                <div class="govuk-grid-column-full">
-                    <h2 class="govuk-heading-m govuk-!-padding-left-4">
+            <div class="govuk-grid-row govuk-!-padding-top-8"> 
+                    <h2 class="govuk-heading-m govuk-!-padding-left-3">
                         Additions
                     </h2>
                     <div class="container govuk-body">
@@ -166,71 +210,75 @@
                                 <ul class="govuk-summary-card__actions">
                                     <li class="govuk-summary-card__action">
                                         <a class="govuk-link" href="ual/ual">
-                                        Add new<span class="govuk-visually-hidden"> UAL</span>
+                                        Add new<span class="govuk-visually-hidden">UAL</span>
                                         </a>
                                     </li>
-                                    <li id="viewUAL" class="govuk-summary-card__action moj-hidden view-ual">
+                                  <!--  <li id="viewUAL" class="govuk-summary-card__action moj-hidden view-ual">
                                         <a class="govuk-link" href="ual/view-ual">
                                         View<span class="govuk-visually-hidden"> UAL</span>
                                     </a>
-                                    </li>
+                                    </li>-->
                                 </ul>
                             </div>
                             <div class="adjustment-card_content">
                                 <span id="UALTotal" class="count govuk-body">0</span><span>days</span>
                                 <br>
-                                <span id="UALupdated" class="govuk-hint"></span>
+                                <span id="updated" class="govuk-hint"></span>
                             </div>
                         </div>
+                        
                         <div class="adjustment-card ">
                                 <div class="govuk-summary-card__title-wrapper">
                                     <h2 class="govuk-summary-card__title">ADA (Additional days awarded)</h2>
                                     <ul class="govuk-summary-card__actions">
                                         <li class="govuk-summary-card__action">
-<!--                                            <a class="govuk-link" href="date-of-ada.html">-->
-<!--                                            Add new<span class="govuk-visually-hidden"> add new</span>-->
-<!--                                        </a>-->
+                                           <a class="govuk-link" href="#">
+                                           Add new<span class="govuk-visually-hidden"> ADA</span>
+                                    </a>
                                         </li>
-<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="view.html">-->
-<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
-<!--                                        </a>-->
-<!--                                        </li>-->
+<!--                                        <li id="viewADA" class="govuk-summary-card__action moj-hidden view-ada">
+                                        <a class="govuk-link" href="#">
+                                        View<span class="govuk-visually-hidden"> ADA</span>
+                                    </a>
+                                    </li>-->
                                     </ul>
                                 </div>
                             <div class="adjustment-card_content">
-                                <span id="ADA" class="count-2 govuk-body">0</span><span>days</span>
+                                <span id="ADATotal" class="count-2 govuk-body">0</span><span>days</span>
 
                             </div>
                         </div>
-                        <div class="adjustment-card ">
-                            <div class="govuk-summary-card__title-wrapper">
-                                <h2 class="govuk-summary-card__title">LAL (Lawfully at large)</h2>
-                                <ul class="govuk-summary-card__actions">
-                                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="lal">
-                                        Add new<span class="govuk-visually-hidden"> add new</span>
-                                    </a>
-                                    </li>
-                                       <li class="govuk-summary-card__action"> <a class="govuk-link" href="view-lal-static">
-                                        View<span class="govuk-visually-hidden"> View</span>
-                                      </a>
-                                      </li>
-                                </ul>
+                         <div class="adjustment-card">
+                                <div class="govuk-summary-card__title-wrapper">
+                                    <h2 class="govuk-summary-card__title">LAL (Lawfully at large)</h2>
+                                    <ul class="govuk-summary-card__actions">
+                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="lal/lal">
+                                            Add new<span class="govuk-visually-hidden">LAL</span>
+                                        </a>
+                                        </li>
+                                </div>
+                                <div class="adjustment-card_content">
+                                    <span id="LALTotal" class="count govuk-body">0</span><span>days</span>
+                                     <br>
+                                <span id="updated" class="govuk-hint"></span>
+                     </div>
                             </div>
-                            <div class="adjustment-card_content">
-                                <span id="LAL"  class="count govuk-body">4</span><span>days</span>
-                               
-                                {% if data.laltype=="Yes"%}
-                             <p class="govuk-body govuk">These additional days will adjust the release dates</p>
-
-                            {% else %}
-                            <p class="govuk-body govuk">These additional days will not adjust the release dates</p>
-
-                        {% endif %}
-                                   
-
-
+                             <div class="adjustment-card">
+                                <div class="govuk-summary-card__title-wrapper">
+                                    <h2 class="govuk-summary-card__title">Time spent as an appeal applicant not to count</h2>
+                                    <ul class="govuk-summary-card__actions">
+                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="tspanc/time-spent-appeal-question">
+                                            Add new<span class="govuk-visually-hidden">Time spent as an appeal applicant not to count</span>
+                                        </a>
+                                        </li>
+                                </div>
+                                <div class="adjustment-card_content">
+                                    <span id="TSPANCTotal" class="count govuk-body">0</span><span>days</span>
+                                     <br>
+                                <span id="updated" class="govuk-hint"></span>
+                     </div>
                             </div>
-                        </div>
+                             
                         <div class="govuk-inset-text govuk-!-margin-left-2 govuk-!-margin-top-9">
                             <h2 class="govuk-heading-m">Calculate release dates</h2>
                             <p>Any changes you make to the adjustments could impact the release dates for Justin Bell. </p>
@@ -238,9 +286,7 @@
                                 Calculate release dates
                             </a>
                         </div>
-                    </div>
-                </div>
-            </div>
+                    </div> 
         </main>
     </div>
 </div>
