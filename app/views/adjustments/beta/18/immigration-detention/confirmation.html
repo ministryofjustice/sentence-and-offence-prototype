@@ -25,16 +25,21 @@
 <br>
 <div class="govuk-heading-l">What you need to do next</div>   
 
- {% if data.recordDocument=="IS91"%}
-                               <p class="govuk-body govuk">To prevent release when a IS91 Detention Authority has been issued, you need to:</p>
+                                {% if data.recordDocument=="IS91"%}
+                               <p class="govuk-body govuk">If this person will be detained under immigration powers after their release date, you need to:</p>
                                {% elseif data.recordDocument=="Deportation order" %}
-                               <p class="govuk-body govuk">If this deportation order will impact the release schedule, you need to:</p>
+                               <p class="govuk-body govuk">If this person will be detained under immigration powers after their release date, you need to:</p>
                                {% else %}
-                            <p class="govuk-body govuk">This person will not be held under immigration powers. You need to check if there are any alerts that might prevent a release.</p>
+                            <p class="govuk-body govuk">This person will not be detained under immigration powers after their release. You need to check if there are any alerts that might prevent a release.</p>
                                 {% endif %}
     
-    
-    <ol class="govuk-body">1. <a href="#">Add or update an alert on the prisoner profile</a></ol>
+     {% if data.recordDocument=="IS91" %}
+    <ol class="govuk-body">1. <a href="#">Add or update an alert on the person's profile</a></ol>
+     {% elseif data.recordDocument=="Deportation order" %}
+     <ol class="govuk-body">1. <a href="#">Add or update an alert on the person's profile</a></ol>
+     {% else %}
+      <ol class="govuk-body">1. <a href="#">Check and update alerts on the person's profile</a></ol>
+      {% endif %}
     <ol class="govuk-body">2. Go to NOMIS to update the release schedule</ol>
    
                   <br>
