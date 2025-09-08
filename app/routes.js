@@ -217,7 +217,7 @@ function monthToWord (monthNum){
         response.redirect("adjustments/beta/17/remand-tool/check-your-answers-rejected-remand")
     }  
     else {
-        response.redirect("adjustments/beta/17/remand-tool/view-remand")
+        response.redirect("adjustments/beta/17/remand-tool/check-your-answers")
     }
 })
 
