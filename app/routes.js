@@ -221,6 +221,16 @@ function monthToWord (monthNum){
     }
 })
 
+ router.post('/accept-reject-zero-remand-question', function(request, response) {
+
+    var contact = request.session.data['contact']
+    if (contact == "phone"){
+        response.redirect("adjustments/beta/17/remand-tool/check-your-answers-rejected-remand")
+    }  
+    else {
+        response.redirect("adjustments/beta/17/remand-tool/check-your-answers-zero-remand")
+    }
+})
 
  
   
