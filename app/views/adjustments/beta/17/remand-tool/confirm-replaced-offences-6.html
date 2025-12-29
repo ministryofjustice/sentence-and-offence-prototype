@@ -1,21 +1,25 @@
 {% extends "version-1/dps/includes/hub-layout-minus-nav.html" %}
 {% block content %}
 
-    <a href="confirm-replaced-offences-1" class="govuk-back-link">Back</a>
+    <a href="confirm-replaced-offences-4" class="govuk-back-link">Back</a>
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters govuk-!-padding-top-6">
 
                 <h1 class="govuk-heading-l"><span class="govuk-caption-l">Review remand</span>
-                    Check if this offence has been replaced
-                   
-                </h1> 
+                   Check if this remand period is relevant
   
-              
+                </h1> 
+  <p span class="govuk-body">The remand tool will treat the below remand period as not relevant.</p>
+  <p span class="govuk-body">Check if the remand period connects to another offence.</p>
+<p span class="govuk-body">If so, connect it with the related offence to help the remand tool pick it up as a relevant remand period. <br>
+This will not change the court case information held about this offence.</p>
+
+
                 <div class="offence-card sentence-card ">
                     <div class="offence-card-offence-details"> 
                         <!-- <span class="govuk-body">Count 1</span>  -->
                         <h4 class="govuk-heading-s">
-                            Common Assault 
+                            Common assault committed on 1 Nov 2022
                             <br>
                             <strong class="govuk-tag govuk-tag--red govuk-!-margin-top-2" style="max-width: 200px;">
                                 Case not concluded
@@ -27,7 +31,7 @@
                                     Committed on
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                    23 July 2023
+                                    28 October 2023
                                 </dd>
                 
                             </div> 
@@ -37,7 +41,7 @@
                                     Court name
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                   York MC
+                                    Snaresbrook Crown Court
                                 </dd>
                 
                             </div> 
@@ -46,7 +50,7 @@
                                     Case number
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                    T20225678
+                                    T20221234
                                 </dd>
                 
                             </div> 
@@ -56,7 +60,7 @@
                                     Start outcome
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                    Remanded in custody bail refused 
+                                    Remanded in custody bail refused
                                 </dd>
                 
                             </div>
@@ -66,17 +70,18 @@
                                     Stop outcome
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                    Not guilty on 4 August 2021
+                                    Replaced with another offence on 4 August 2024 7 August 2024
                                 </dd>
                 
                             </div>
+
 
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     Offence outcome 
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                    Not guilty 
+                                    Replaced with another offence
                                 </dd>
                 
                             </div>
@@ -86,7 +91,7 @@
                                     Remand
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                    12 days
+                                    130 days
                                 </dd>
                 
                             </div> 
@@ -95,7 +100,7 @@
                                     Period
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                    24 July 2021 to 4 August 2021
+                                    9 January 2024 to 7 August 2024
                                 </dd>
                 
                             </div>
@@ -105,19 +110,19 @@
                     </div>  
                 
                 </div>
-                <span class="govuk-body">Offence 2 of 2</span>
+                <span class="govuk-body">Offence 5 of 5</span>
                 <div class="govuk-form-group govuk-!-margin-top-6">
                     <fieldset class="govuk-fieldset">
                       <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
                         <h1 class="govuk-fieldset__heading">
-                          Has this offence been replaced?
+                          Is this remand period relevant?
                         </h1>
                       </legend>
                       <div class="govuk-radios" data-module="govuk-radios">
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="sentencesReplaced" name="sentencesReplaced" type="radio" value="No, this offence has not been replaced">
                           <label class="govuk-label govuk-radios__label" for="sentencesReplaced">
-                            No, this offence has not been replaced
+                           No, this remand period is not relevant
                           </label>
                         </div>
 
@@ -125,9 +130,9 @@
 
                         <div class="govuk-radios__item">
                           <input class="govuk-radios__input" id="sentencesReplaced-2" name="sentencesReplaced" type="radio" value="
-                          Yes, this offence was replaced with Actual Bodily Harm (Section 47) committed on 29 October 2023">
+                          Yes, this offence was replaced with Actual Bodily Harm (Section 47) committed on 28 October 2023">
                           <label class="govuk-label govuk-radios__label" for="sentencesReplaced-2">
-                            Yes, this offence was replaced with <b>Actual Bodily Harm (Section 47)</b> committed on 29 October 2023
+                            Yes, this offence was replaced with <b>Actual bodily harm (Section 47)</b> committed on 28 October 2023
                           </label>
                         </div> 
                       </div>
@@ -136,7 +141,7 @@
 
   
             <div class="govuk-button-group">
-                <a href="confirm-replaced-offences-3" class="govuk-button" data-module="govuk-button">
+                <a href="check-remand-details-2" class="govuk-button" data-module="govuk-button">
                     Confirm and continue
                 </a>
                 <a href="../index-1.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
