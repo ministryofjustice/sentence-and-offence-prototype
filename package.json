@@ -4,13 +4,15 @@
   "version": "12.1.0",
   "private": true,
   "engines": {
-    "node": ">=18.0.0 <=24.0.0"
+    "node": "^24",
+    "npm": "^11.8"
   },
   "scripts": {
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start",
-    "clean": "rm -rf .tmp node_modules"
+    "clean": "rm -rf .tmp node_modules",
+    "setup": "npm ci && hmpps-npm-script-run-allowlist"
   },
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "2.0.1",
@@ -20,7 +22,6 @@
     "@x-govuk/govuk-prototype-filters": "^2.0.0",
     "accessible-autocomplete": "^3.0.1",
     "chalk": "^5.4.1",
-    "external-editor": "^3.1.0",
     "govuk-frontend": "5.10.1",
     "govuk-prototype-kit": "13.16.2",
     "hmpps-court-cases-release-dates-design": "^4.4.0",
@@ -31,6 +32,8 @@
     "rxjs": "^7.8.2",
     "rxjs-compat": "^6.6.7",
     "sass": "^1.89.0"
+  },
+  "devDependencies": {
+    "@ministryofjustice/hmpps-npm-script-allowlist": "0.0.4"
   }
 }
-
